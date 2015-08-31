@@ -1,0 +1,51 @@
+Updated 8/31/15 - Initial release
+
+
+1) Have a manual switch between temp control and forcing solenoid valve open
+
+2) Ability to calibrate them with ice water and boiling water
+
+3) SD card reader:
+	a) SD card reader can be inside box, no need to access from outside
+	b) Program profiles on PC & put on SD card
+		a. Thinking excel based, then export to CSV?
+		b. Need instructions:
+			1. Setup each beer to a directory
+			2. Load file (csv)
+			3. Excel file to build csv
+			4. Data log output from Arduino to directory
+	c) Record Brewing Session
+		a. All Timers
+		b. Total Time
+		c. All Temperatures
+		d. All Solenoids (have a selection in the Arduino to specify which is low/med/high and how many turns of the needle valve)
+		e. All Thermocouples
+		f. Monitor pumps on/off - use 2nd switch on each pump on/off selector to set Arduino 5V or 3.3V and read the output of the switch
+
+4) Burner modes: Select from Arduino Menu
+	a) Full Manual - Arduino disconnected by switch (menu selects solenoid open/closed, readout temperatures)
+	b) Pulse Width Modulation (PWM) Mode
+		a. Specify Duty Cycle
+		b. Specify Cycle Width
+		c. Specify Burner Intensity,  low/med/high
+	c) Semi-Auto Mode
+		a. Specify Temperature
+		b. Specify Feedback Source
+		c. Specify Burner Intensity,  low/med/high
+	d) Full-Auto Mode
+		a. Specify Temperature
+		b. Specify Feedback Source
+		c. Auto Select Burner Intensity,  low/med/high, based on temperature error
+			i. Error >XX deg - High
+			ii. XX<Error<XX - Medium
+			iii. Error <XX - Low 
+
+5) Ability to program mash profiles/hop/adjunct schedules
+	- SD card read
+	- Manual program from Arduino menus
+	- Run program option (based on csv input), auto-set burner... etc.
+	
+6) Alarms:
+	- If thermocouples are not lit, have an alarm sound (with override option to shut off in menu)
+	- Sound alarm (different tone) for timer complete
+	- Sound alarm durning cooling phase when wort is 70 deg F
