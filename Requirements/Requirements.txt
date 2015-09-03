@@ -1,4 +1,6 @@
-Updated 8/31/15 - Initial release
+Updated 08/31/15 - Initial release
+Updated 09/01/15 - Made clarification for full manual mode
+Updated 09/02/15 - Added information on alarms & removed manual program of brewing profile
 
 
 1) Have a manual switch between temp control and forcing solenoid valve open
@@ -23,7 +25,7 @@ Updated 8/31/15 - Initial release
 		f. Monitor pumps on/off - use 2nd switch on each pump on/off selector to set Arduino 5V or 3.3V and read the output of the switch
 
 4) Burner modes: Select from Arduino Menu
-	a) Full Manual - Arduino disconnected by switch (menu selects solenoid open/closed, readout temperatures)
+	a) Full Manual - Arduino closed loop control disconnected by switch (menu selects solenoid open/closed, readout temperatures)
 	b) Pulse Width Modulation (PWM) Mode
 		a. Specify Duty Cycle
 		b. Specify Cycle Width
@@ -42,10 +44,10 @@ Updated 8/31/15 - Initial release
 
 5) Ability to program mash profiles/hop/adjunct schedules
 	- SD card read
-	- Manual program from Arduino menus
 	- Run program option (based on csv input), auto-set burner... etc.
-	
+	- REMOVED (much easier to make csv input, not worth making a manual input): Manual program from Arduino menus	
+
 6) Alarms:
 	- If thermocouples are not lit, have an alarm sound (with override option to shut off in menu)
 	- Sound alarm (different tone) for timer complete
-	- Sound alarm durning cooling phase when wort is 70 deg F
+	- Sound alarm (2 short beeps) when temperature is achieved (for heating and cooling)
