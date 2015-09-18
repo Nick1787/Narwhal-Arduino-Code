@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0  Date: 8/30/2015 10:50:20 PM
+#
+$CMP ARDUINO_MEGA_SHIELD
+D Original by nicholasclewis
+K arduino mega
+F http://www.thingiverse.com/thing:9630
+$ENDCMP
+#
+$CMP FX614
+D Bell 202 compatible modem
+K MODEM
+F contrib/fx614ds.pdf
+$ENDCMP
+#
+#End Doc Library

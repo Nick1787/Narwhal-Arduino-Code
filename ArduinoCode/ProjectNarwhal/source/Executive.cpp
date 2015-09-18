@@ -1,0 +1,31 @@
+/*
+ *        File: Executive.h
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: Main executive 
+ * ----------------------------------------------------------------
+ *    Revision:
+ *		09152015 - NRD - Initial Version
+ * ----------------------------------------------------------------
+ */
+ 
+#include "Executive.h"
+
+void Executive::run(){
+	frame_count++;
+	exec_frame1();
+	exec_frame2();
+	exec_frame3();
+	exec_frame4();
+}
+
+void Executive::exec_frame1(){
+}
+
+void Executive::exec_frame2(){
+}
+
+void Executive::exec_frame3(){
+}
+
+void Executive::exec_frame4(){
+}

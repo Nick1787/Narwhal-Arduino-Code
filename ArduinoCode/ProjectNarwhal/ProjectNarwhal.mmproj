@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mm_project current="1" serial_port="" programmer="" board="Arduino Mega 2560 or Mega ADK" includePaths=";$(LIBRARIES)/LiquidCrystal;$(LIBRARIES)/LiquidCrystal/docs;$(LIBRARIES)/LiquidCrystal/docs/def;$(LIBRARIES)/LiquidCrystal/docs/html;$(LIBRARIES)/LiquidCrystal/docs/html/search;$(LIBRARIES)/Wire;$(LIBRARIES)/Wire/utility;$(LIBRARIES)/encoder-arduino" libPaths="" srcPaths="" libs="" useCodeAutomation="1" linkPrintfVersion="15495909" serialPortSpeed="9600" isLibrary="0">
+    <files>
+        <file name="ProjectNarwhal.cpp" open="yes"/>
+        <file name="mariamole_auto_generated.h" open="no"/>
+        <file name="iodef.h" open="yes"/>
+        <file name="LUT.cpp" open="yes"/>
+        <file name="LUT.h" open="yes"/>
+        <file name="RTD.cpp" open="yes"/>
+        <file name="RTD.h" open="yes"/>
+        <file name="Hardware.cpp" open="yes"/>
+        <file name="Hardware.h" open="yes"/>
+        <file name="CEncoder.cpp" open="yes"/>
+        <file name="CEncoder.h" open="yes"/>
+        <file name="Executive.h" open="yes"/>
+        <file name="Executive.cpp" open="yes"/>
+    </files>
+    <externals>
+        <external name="LiquidCrystal/FastIO.cpp" open="no"/>
+        <external name="LiquidCrystal/FastIO.h" open="no"/>
+        <external name="LiquidCrystal/I2CIO.cpp" open="no"/>
+        <external name="LiquidCrystal/I2CIO.h" open="no"/>
+        <external name="LiquidCrystal/LCD.cpp" open="no"/>
+        <external name="LiquidCrystal/LCD.h" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal.cpp" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal.h" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal_I2C.cpp" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal_I2C.h" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal_SR.cpp" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal_SR.h" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal_SR2W.cpp" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal_SR2W.h" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal_SR3W.cpp" open="no"/>
+        <external name="LiquidCrystal/LiquidCrystal_SR3W.h" open="no"/>
+        <external name="Wire/utility/twi.c" open="no"/>
+        <external name="Wire/utility/twi.h" open="no"/>
+        <external name="Wire/Wire.cpp" open="no"/>
+        <external name="Wire/Wire.h" open="no"/>
+        <external name="encoder-arduino/ClickEncoder.cpp" open="no"/>
+        <external name="encoder-arduino/ClickEncoder.h" open="no"/>
+    </externals>
+</mm_project>
