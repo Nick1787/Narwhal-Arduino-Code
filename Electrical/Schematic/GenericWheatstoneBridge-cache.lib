@@ -1,0 +1,68 @@
+EESchema-LIBRARY Version 2.3  Date: 9/20/2015 12:23:12 PM
+#encoding utf-8
+#
+# CONN_1
+#
+DEF ~CONN_1 P 0 30 N N 1 F N
+F0 "P" 80 0 40 H V L CNN
+F1 "CONN_1" 0 55 30 H I C CNN
+F2 "~" 0 0 60 H V C CNN
+F3 "~" 0 0 60 H V C CNN
+DRAW
+C 0 0 31 0 1 0 N
+P 2 0 1 0  -30 0  -50 0 N
+X 1 1 -150 0 100 R 60 60 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Ics
+#
+DEF Ics U 0 0 N N 1 F N
+F0 "U" -110 0 30 H I C CNN
+F1 "Ics" 120 0 30 H V C CNN
+F2 "~" -110 0 60 H V C CNN
+F3 "~" -110 0 60 H V C CNN
+DRAW
+C 0 0 71 0 1 0 N
+P 2 0 1 0  0 -50  0 -40 N
+P 3 0 1 0  -15 10  -25 10  -5 10 N
+P 19 0 1 0  0 -40  0 40  30 5  -25 5  -30 5  0 40  25 10  5 10  0 30  15 10  5 15  5 30  20 10  -20 10  -5 30  -5 10  -15 15  -5 20  0 20 N
+X ~ ~ 0 -100 29 U 50 50 1 1 P
+X ~ ~ 0 100 29 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# RESISTOR
+#
+DEF RESISTOR U 0 0 N N 1 F N
+F0 "U" 0 -70 30 H I C CNN
+F1 "RESISTOR" 0 70 30 H V C CNN
+F2 "~" 0 -70 60 H V C CNN
+F3 "~" 0 -70 60 H V C CNN
+DRAW
+P 2 0 1 0  -150 0  -120 0 N
+P 2 0 1 0  120 0  150 0 N
+P 8 0 1 0  -120 0  -100 40  -60 -40  -20 40  20 -40  60 40  100 -40  120 0 N
+X r ~ -150 0 0 L 50 50 1 1 P N
+X ~ ~ 150 0 0 R 50 50 1 1 P N
+ENDDRAW
+ENDDEF
+#
+# Vs
+#
+DEF Vs U 0 0 N N 1 F N
+F0 "U" -110 0 30 H I C CNN
+F1 "Vs" 120 0 30 H V C CNN
+F2 "~" -110 0 60 H V C CNN
+F3 "~" -110 0 60 H V C CNN
+DRAW
+P 2 0 1 0  -60 -10  60 -10 N
+P 2 0 1 0  -60 30  60 30 N
+P 2 0 1 0  -30 -30  30 -30 N
+P 2 0 1 0  -30 10  30 10 N
+X ~ ~ 0 -100 67 U 50 50 1 1 P
+X ~ ~ 0 120 87 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

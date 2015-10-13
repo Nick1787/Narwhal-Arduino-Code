@@ -1,4 +1,4 @@
-update=10/13/2015 8:09:24 AM
+update=9/20/2015 1:58:09 PM
 last_client=eeschema
 [eeschema]
 version=1
@@ -7,7 +7,7 @@ NetFmtName=
 RptD_X=0
 RptD_Y=100
 RptLab=1
-LabSize=236
+LabSize=98
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -37,6 +37,6 @@ LibName25=cypress
 LibName26=siliconi
 LibName27=opto
 LibName28=atmel
-LibName29=valves
-LibName30=Libraries/arduino_shieldsNCL
-LibName31=NarwhalLib/NarwhalLib
+LibName29=contrib
+LibName30=valves
+LibName31=H:/Programming/Project Narwhal/Narwhal_Electrical/NarwhalLib/NarwhalLib
