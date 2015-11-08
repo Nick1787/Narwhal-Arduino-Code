@@ -1,6 +1,7 @@
 Updated 08/31/15 - Initial release
 Updated 09/01/15 - Made clarification for full manual mode
 Updated 09/02/15 - Added information on alarms & removed manual program of brewing profile
+Updated 11/08/15 - Added SW debug mode
 
 
 1) Have a manual switch between temp control and forcing solenoid valve open
@@ -51,3 +52,6 @@ Updated 09/02/15 - Added information on alarms & removed manual program of brewi
 	- If thermocouples are not lit, have an alarm sound (with override option to shut off in menu)
 	- Sound alarm (different tone) for timer complete
 	- Sound alarm (2 short beeps) when temperature is achieved (for heating and cooling)
+
+7) SW Debug Mode:
+	- Code shall have a bypass mode to disable thermocouple interlock on activating Solenoid #1 & #2							- Default code shall have thermocouple bypass mode disabled																					
