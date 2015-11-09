@@ -28,7 +28,6 @@ LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:valves
-LIBS:arduino_shieldsNCL
 LIBS:NarwhalLib
 LIBS:Project_Narwhal_Electrical-cache
 EELAYER 27 0
@@ -37,7 +36,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 2 4
 Title "noname.sch"
-Date "11 oct 2015"
+Date "9 nov 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -347,9 +346,9 @@ F 3 "" H 8500 5450 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Text GLabel 8950 5350 2    50   Input ~ 0
-Pump Volt 1
+Pump Volt 1 (+)
 Text GLabel 8950 5550 2    50   Input ~ 0
-Pump Volt 2
+Pump Volt 1 (-)
 Text Notes 2950 1400 0    200  ~ 0
 Front Panel Connection Board
 $Comp
@@ -515,14 +514,6 @@ Wire Notes Line
 Wire Notes Line
 	8350 7250 1900 7250
 Wire Wire Line
-	4050 5350 7850 5350
-Wire Wire Line
-	4050 5450 7650 5450
-Wire Wire Line
-	7650 5450 7650 5550
-Wire Wire Line
-	7650 5550 7850 5550
-Wire Wire Line
 	7850 1750 4950 1750
 Wire Wire Line
 	4950 1750 4950 5150
@@ -626,4 +617,54 @@ Wire Wire Line
 	4500 6800 4500 5550
 Wire Wire Line
 	4500 5550 4050 5550
+$Comp
+L CONN_2 22-01-?
+U 1 1 56406421
+P 8500 5950
+F 0 "22-01-?" V 8450 5950 40  0000 C CNN
+F 1 "CONN_2" V 8550 5950 40  0000 C CNN
+F 2 "" H 8500 5950 60  0000 C CNN
+F 3 "" H 8500 5950 60  0000 C CNN
+	1    8500 5950
+	-1   0    0    -1  
+$EndComp
+Text GLabel 8950 5850 2    50   Input ~ 0
+Pump Volt 2 (+)
+Text GLabel 8950 6050 2    50   Input ~ 0
+Pump Volt 2 (-)
+Wire Wire Line
+	8950 5850 8850 5850
+Wire Wire Line
+	8950 6050 8850 6050
+$Comp
+L CONN_2 22-23-?
+U 1 1 5640642B
+P 8200 5950
+F 0 "22-23-?" V 8150 5950 40  0000 C CNN
+F 1 "CONN_2" V 8250 5950 40  0000 C CNN
+F 2 "" H 8200 5950 60  0000 C CNN
+F 3 "" H 8200 5950 60  0000 C CNN
+	1    8200 5950
+	1    0    0    -1  
+$EndComp
+Text GLabel 7750 5850 0    50   Input ~ 0
++5V
+Text GLabel 7750 5350 0    50   Input ~ 0
++5V
+Wire Wire Line
+	7850 5350 7750 5350
+Wire Wire Line
+	7750 5850 7850 5850
+Wire Wire Line
+	7250 5550 7850 5550
+Wire Wire Line
+	7150 6050 7850 6050
+Wire Wire Line
+	7250 5550 7250 5350
+Wire Wire Line
+	7250 5350 4050 5350
+Wire Wire Line
+	7150 6050 7150 5450
+Wire Wire Line
+	7150 5450 4050 5450
 $EndSCHEMATC

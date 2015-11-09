@@ -28,7 +28,6 @@ LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:valves
-LIBS:arduino_shieldsNCL
 LIBS:NarwhalLib
 LIBS:Project_Narwhal_Electrical-cache
 EELAYER 27 0
@@ -37,7 +36,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 2 4
 Title "noname.sch"
-Date "11 oct 2015"
+Date "9 nov 2015"
 Rev ""
 Comp ""
 Comment1 ""

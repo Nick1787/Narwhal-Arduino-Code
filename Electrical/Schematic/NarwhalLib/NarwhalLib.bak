@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 9/20/2015 12:02:39 PM
+EESchema-LIBRARY Version 2.3  Date: 9/20/2015 12:04:10 PM
 #encoding utf-8
 #
 # 4.9V_REGULATOR
@@ -156,8 +156,8 @@ P 2 0 1 0  -60 -10  60 -10 N
 P 2 0 1 0  -60 30  60 30 N
 P 2 0 1 0  -30 -30  30 -30 N
 P 2 0 1 0  -30 10  30 10 N
-X ~ ~ 0 -70 39 U 50 50 1 1 P
-X ~ ~ 0 70 39 D 50 50 1 1 P
+X ~ ~ 0 -100 67 U 50 50 1 1 P
+X ~ ~ 0 120 87 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
