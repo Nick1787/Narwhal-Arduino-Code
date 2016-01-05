@@ -9,7 +9,6 @@
  */
 
 #include "WheatstoneBridge.h"
-#include "LUT.h"
 
 //Class Instantiation
 WheatstoneBridge::WheatstoneBridge(LUT1D _LUT_R2DEGC, float _R2, float _R3, float _R4){

@@ -5,9 +5,9 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o) (__addsf3x)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
-                              classes/LUT.o (__ltsf2)
+                              classes/UserInterface/LCDPageItem.o (__nesf2)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
-                              classes/LUT.o (__divsf3)
+                              classes/Executive.o (__divsf3)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o) (__divsf3x)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
@@ -15,7 +15,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
                               src/Print.o (__fixunssfsi)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
-                              src/Print.o (__floatunsisf)
+                              classes/Executive.o (__floatunsisf)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o) (__fp_cmp)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
@@ -45,7 +45,7 @@ C:\Users\Customer\Documents\GitHub\Narwhal-Arduino-Code\ArduinoCode\ProjectNarhw
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_mulsi3.o)
                               src/WMath.o (__mulsi3)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
-                              classes/LCDMenu.o (__divmodhi4)
+                              classes/UserInterface/LCDMenu.o (__divmodhi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
                               include/Wire/Wire.o (__udivmodsi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodsi4.o)
@@ -55,9 +55,9 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_tablejump2.o)
-                              include/Wire/twi.o (__tablejump2__)
+                              classes/UserInterface/LCDPageItem.o (__tablejump2__)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_copy_data.o)
-                              classes/Hardware.o (__do_copy_data)
+                              classes/DigIO.o (__do_copy_data)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_clear_bss.o)
                               classes/Hardware.o (__do_clear_bss)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_ctors.o)
@@ -158,76 +158,148 @@ Discarded input sections
 
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
+ .text          0x00000000        0x0 classes/DigIO.o
+ .data          0x00000000        0x0 classes/DigIO.o
+ .bss           0x00000000        0x0 classes/DigIO.o
+ .text._ZN5DigIOD2Ev
+                0x00000000       0x1a classes/DigIO.o
+ .text._ZN5DigIO7GetModeEv
+                0x00000000        0x6 classes/DigIO.o
+ .text._ZN5DigIO7SetModeENS_8PinModesE
+                0x00000000        0x6 classes/DigIO.o
+ .text._ZN5DigIOC2EiNS_8PinModesE
+                0x00000000       0x44 classes/DigIO.o
+ .group         0x00000000        0x8 classes/Hardware.o
  .text          0x00000000        0x0 classes/Hardware.o
  .data          0x00000000        0x0 classes/Hardware.o
  .bss           0x00000000        0x0 classes/Hardware.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .group         0x00000000        0x8 classes/LCDMenu.o
- .text          0x00000000        0x0 classes/LCDMenu.o
- .data          0x00000000        0x0 classes/LCDMenu.o
- .bss           0x00000000        0x0 classes/LCDMenu.o
- .text._ZN7LCDMenuC2E6StringPS_
-                0x00000000       0xc2 classes/LCDMenu.o
- .text._ZN7LCDMenuD2Ev
-                0x00000000       0x46 classes/LCDMenu.o
- .text._ZN7LCDMenu8prevItemEv
-                0x00000000       0x1a classes/LCDMenu.o
- .text._ZN7LCDMenu8nextItemEv
-                0x00000000       0x1e classes/LCDMenu.o
- .text._ZN7LCDMenu10selectItemE11LCDMenuItem
-                0x00000000        0x2 classes/LCDMenu.o
- .text._ZN7LCDMenu7displayEP17LiquidCrystal_I2C
-                0x00000000      0x232 classes/LCDMenu.o
- .text          0x00000000        0x0 classes/LCDMenuItem.o
- .data          0x00000000        0x0 classes/LCDMenuItem.o
- .bss           0x00000000        0x0 classes/LCDMenuItem.o
- .text._ZN11LCDMenuItem8LCDprintEP17LiquidCrystal_I2C
-                0x00000000       0x58 classes/LCDMenuItem.o
- .group         0x00000000        0x8 classes/UI_BurnerController.o
- .text          0x00000000        0x0 classes/UI_BurnerController.o
- .data          0x00000000        0x0 classes/UI_BurnerController.o
- .bss           0x00000000        0x0 classes/UI_BurnerController.o
- .text._ZN19UI_BurnerControllerD2Ev
-                0x00000000        0x8 classes/UI_BurnerController.o
- .text._ZN19UI_BurnerController7displayEv
-                0x00000000       0x30 classes/UI_BurnerController.o
+ .group         0x00000000        0x8 classes/HLT/HLT_UI.o
+ .text          0x00000000        0x0 classes/HLT/HLT_UI.o
+ .data          0x00000000        0x0 classes/HLT/HLT_UI.o
+ .bss           0x00000000        0x0 classes/HLT/HLT_UI.o
+ .group         0x00000000        0x8 classes/MAIN/MAIN_UI.o
+ .group         0x00000000        0x8 classes/MAIN/MAIN_UI.o
+ .text          0x00000000        0x0 classes/MAIN/MAIN_UI.o
+ .data          0x00000000        0x0 classes/MAIN/MAIN_UI.o
+ .bss           0x00000000        0x0 classes/MAIN/MAIN_UI.o
  .text._ZN10LinkedListI11LCDMenuItemE3addES0_
-                0x00000000       0x92 classes/UI_BurnerController.o
+                0x00000000       0xaa classes/MAIN/MAIN_UI.o
+ .group         0x00000000        0x8 classes/MLT/MLT_UI.o
+ .text          0x00000000        0x0 classes/MLT/MLT_UI.o
+ .data          0x00000000        0x0 classes/MLT/MLT_UI.o
+ .bss           0x00000000        0x0 classes/MLT/MLT_UI.o
+ .text._ZN10LinkedListI11LCDMenuItemE3addES0_
+                0x00000000       0xaa classes/MLT/MLT_UI.o
+ .text          0x00000000        0x0 classes/UserInterface/ClickEncoderWithEvents.o
+ .data          0x00000000        0x0 classes/UserInterface/ClickEncoderWithEvents.o
+ .bss           0x00000000        0x0 classes/UserInterface/ClickEncoderWithEvents.o
+ .text._ZN22ClickEncoderWithEventsD2Ev
+                0x00000000        0x2 classes/UserInterface/ClickEncoderWithEvents.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDMenu.o
+ .text          0x00000000        0x0 classes/UserInterface/LCDMenu.o
+ .data          0x00000000        0x0 classes/UserInterface/LCDMenu.o
+ .bss           0x00000000        0x0 classes/UserInterface/LCDMenu.o
+ .text._ZN10LinkedListI11LCDMenuItemE3addES0_
+                0x00000000       0xaa classes/UserInterface/LCDMenu.o
+ .text._ZN7LCDMenuD2Ev
+                0x00000000       0x46 classes/UserInterface/LCDMenu.o
+ .text          0x00000000        0x0 classes/UserInterface/LCDMenuItem.o
+ .data          0x00000000        0x0 classes/UserInterface/LCDMenuItem.o
+ .bss           0x00000000        0x0 classes/UserInterface/LCDMenuItem.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .group         0x00000000        0x8 classes/UserInterface/LCDPage.o
+ .text          0x00000000        0x0 classes/UserInterface/LCDPage.o
+ .data          0x00000000        0x0 classes/UserInterface/LCDPage.o
+ .bss           0x00000000        0x0 classes/UserInterface/LCDPage.o
+ .text._ZN10LinkedListI11LCDPageItemE3addES0_
+                0x00000000      0x170 classes/UserInterface/LCDPage.o
+ .text._ZN7LCDPageC2Ev
+                0x00000000       0x46 classes/UserInterface/LCDPage.o
+ .text._ZN7LCDPageD2Ev
+                0x00000000       0x48 classes/UserInterface/LCDPage.o
+ .text          0x00000000        0x0 classes/UserInterface/LCDPageItem.o
+ .data          0x00000000        0x0 classes/UserInterface/LCDPageItem.o
+ .bss           0x00000000        0x0 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehh6String
+                0x00000000       0xba classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehhfi
+                0x00000000       0xce classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehhi
+                0x00000000       0xac classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehhj
+                0x00000000       0xac classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehhl
+                0x00000000       0xbe classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehhm
+                0x00000000       0xbe classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehhb
+                0x00000000       0xa6 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehhb6StringS0_
+                0x00000000       0xe2 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2EhhPf
+                0x00000000       0xbe classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2EhhPfi
+                0x00000000       0xca classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2EhhPi
+                0x00000000       0xb6 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2EhhPj
+                0x00000000       0xb6 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2EhhPl
+                0x00000000       0xb6 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2EhhPm
+                0x00000000       0xb6 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2EhhPb
+                0x00000000       0xb2 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2EhhPb6StringS1_
+                0x00000000       0xf0 classes/UserInterface/LCDPageItem.o
+ .text._ZN11LCDPageItemC2Ehh6StringP11LCDMenuItem
+                0x00000000       0xbc classes/UserInterface/LCDPageItem.o
+ .text          0x00000000        0x0 classes/UserInterface/LCDToggleOption.o
+ .data          0x00000000        0x0 classes/UserInterface/LCDToggleOption.o
+ .bss           0x00000000        0x0 classes/UserInterface/LCDToggleOption.o
+ .text._ZN15LCDToggleOption5WriteEi
+                0x00000000       0x52 classes/UserInterface/LCDToggleOption.o
+ .text._ZN15LCDToggleOptionC2E6Stringb
+                0x00000000       0x5a classes/UserInterface/LCDToggleOption.o
+ .text._ZN15LCDToggleOptionC2E6StringbS0_S0_
+                0x00000000       0x9a classes/UserInterface/LCDToggleOption.o
+ .text._ZN15LCDToggleOptionC2E6StringPb
+                0x00000000       0x64 classes/UserInterface/LCDToggleOption.o
+ .text._ZN15LCDToggleOptionC2E6StringPbS0_S0_
+                0x00000000       0xa2 classes/UserInterface/LCDToggleOption.o
+ .text          0x00000000        0x0 classes/UserInterface/UserInterface.o
+ .data          0x00000000        0x0 classes/UserInterface/UserInterface.o
+ .bss           0x00000000        0x0 classes/UserInterface/UserInterface.o
+ .text._ZN13UserInterfaceD2Ev
+                0x00000000        0x8 classes/UserInterface/UserInterface.o
  .text          0x00000000        0x0 classes/Executive.o
  .data          0x00000000        0x0 classes/Executive.o
  .bss           0x00000000        0x0 classes/Executive.o
- .text._ZN9Executive11exec_frame1Ev
-                0x00000000        0x2 classes/Executive.o
  .text._ZN9Executive11exec_frame2Ev
                 0x00000000        0x2 classes/Executive.o
- .rodata.str1.1
-                0x00000000        0xb classes/Executive.o
- .text._ZN9Executive11exec_frame3Ev
-                0x00000000       0x1a classes/Executive.o
- .text._ZN9Executive3runEv
-                0x00000000       0x14 classes/Executive.o
  .text._ZN9Executive11exec_frame4Ev
                 0x00000000        0x2 classes/Executive.o
- .debug_info    0x00000000     0x1b34 classes/Executive.o
- .debug_abbrev  0x00000000      0x398 classes/Executive.o
- .debug_loc     0x00000000       0x4c classes/Executive.o
- .debug_aranges
-                0x00000000       0x40 classes/Executive.o
- .debug_ranges  0x00000000       0x30 classes/Executive.o
- .debug_line    0x00000000      0x2a8 classes/Executive.o
- .debug_str     0x00000000     0x1300 classes/Executive.o
- .comment       0x00000000       0x31 classes/Executive.o
- .debug_frame   0x00000000       0x64 classes/Executive.o
  .text          0x00000000        0x0 classes/LUT.o
  .data          0x00000000        0x0 classes/LUT.o
  .bss           0x00000000        0x0 classes/LUT.o
@@ -258,31 +330,19 @@ Discarded input sections
                 0x00000000       0x88 classes/WheatstoneBridge.o
  .text._ZN16WheatstoneBridge6UpdateEff
                 0x00000000      0x180 classes/WheatstoneBridge.o
- .debug_info    0x00000000      0x4c6 classes/WheatstoneBridge.o
- .debug_abbrev  0x00000000      0x178 classes/WheatstoneBridge.o
+ .debug_info    0x00000000      0x624 classes/WheatstoneBridge.o
+ .debug_abbrev  0x00000000      0x1a5 classes/WheatstoneBridge.o
  .debug_loc     0x00000000      0x60f classes/WheatstoneBridge.o
  .debug_aranges
                 0x00000000       0x38 classes/WheatstoneBridge.o
  .debug_ranges  0x00000000       0x28 classes/WheatstoneBridge.o
- .debug_line    0x00000000      0x14a classes/WheatstoneBridge.o
- .debug_str     0x00000000      0x2b3 classes/WheatstoneBridge.o
+ .debug_line    0x00000000      0x1d1 classes/WheatstoneBridge.o
+ .debug_str     0x00000000      0x350 classes/WheatstoneBridge.o
  .comment       0x00000000       0x31 classes/WheatstoneBridge.o
  .debug_frame   0x00000000      0x15c classes/WheatstoneBridge.o
  .text          0x00000000        0x0 include/ClickEncoder/ClickEncoder.o
  .data          0x00000000        0x0 include/ClickEncoder/ClickEncoder.o
  .bss           0x00000000        0x0 include/ClickEncoder/ClickEncoder.o
- .text._ZN12ClickEncoder7serviceEv
-                0x00000000      0x194 include/ClickEncoder/ClickEncoder.o
- .text._ZN12ClickEncoder8getValueEv
-                0x00000000       0x76 include/ClickEncoder/ClickEncoder.o
- .text._ZN12ClickEncoder9getButtonEv
-                0x00000000        0xe include/ClickEncoder/ClickEncoder.o
- .bss._ZZN12ClickEncoder7serviceEvE16doubleClickTicks
-                0x00000000        0x1 include/ClickEncoder/ClickEncoder.o
- .bss._ZZN12ClickEncoder7serviceEvE12keyDownTicks
-                0x00000000        0x2 include/ClickEncoder/ClickEncoder.o
- .bss._ZZN12ClickEncoder7serviceEvE15lastButtonCheck
-                0x00000000        0x4 include/ClickEncoder/ClickEncoder.o
  .text          0x00000000        0x0 include/LiquidCrystal/FastIO.o
  .data          0x00000000        0x0 include/LiquidCrystal/FastIO.o
  .bss           0x00000000        0x0 include/LiquidCrystal/FastIO.o
@@ -419,14 +479,14 @@ Discarded input sections
  .text          0x00000000        0x0 include/LiquidCrystal/LiquidCrystal_I2C.o
  .data          0x00000000        0x0 include/LiquidCrystal/LiquidCrystal_I2C.o
  .bss           0x00000000        0x0 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .text._ZN17LiquidCrystal_I2CC2Eh
+                0x00000000       0x4a include/LiquidCrystal/LiquidCrystal_I2C.o
  .text._ZN17LiquidCrystal_I2CC2Ehh13t_backlighPol
                 0x00000000       0x60 include/LiquidCrystal/LiquidCrystal_I2C.o
  .text._ZN17LiquidCrystal_I2CC2Ehhhh
                 0x00000000       0x72 include/LiquidCrystal/LiquidCrystal_I2C.o
  .text._ZN17LiquidCrystal_I2CC2Ehhhhh13t_backlighPol
                 0x00000000       0x84 include/LiquidCrystal/LiquidCrystal_I2C.o
- .text._ZN17LiquidCrystal_I2CC2Ehhhhhhhh
-                0x00000000       0xb2 include/LiquidCrystal/LiquidCrystal_I2C.o
  .text._ZN17LiquidCrystal_I2CC2Ehhhhhhhhh13t_backlighPol
                 0x00000000       0xbc include/LiquidCrystal/LiquidCrystal_I2C.o
  .text._ZN17LiquidCrystal_I2C6configEhhhhhhhh
@@ -524,6 +584,10 @@ Discarded input sections
  .debug_str     0x00000000      0x5d4 include/LiquidCrystal/LiquidCrystal_SR3W.o
  .comment       0x00000000       0x31 include/LiquidCrystal/LiquidCrystal_SR3W.o
  .debug_frame   0x00000000      0x238 include/LiquidCrystal/LiquidCrystal_SR3W.o
+ .text          0x00000000        0x0 include/TimerOne/TimerOne.o
+ .data          0x00000000        0x0 include/TimerOne/TimerOne.o
+ .bss           0x00000000        0x0 include/TimerOne/TimerOne.o
+ .bss.Timer1    0x00000000        0x1 include/TimerOne/TimerOne.o
  .text          0x00000000        0x0 include/Wire/twi.o
  .data          0x00000000        0x0 include/Wire/twi.o
  .bss           0x00000000        0x0 include/Wire/twi.o
@@ -647,8 +711,6 @@ Discarded input sections
  .bss           0x00000000        0x0 src/Print.o
  .text._ZN5Print5printEPK19__FlashStringHelper
                 0x00000000       0x52 src/Print.o
- .text._ZN5Print5printERK6String
-                0x00000000       0x1e src/Print.o
  .text._ZN5Print5printERK9Printable
                 0x00000000       0x16 src/Print.o
  .text._ZN5Print7printlnEPK19__FlashStringHelper
@@ -659,14 +721,8 @@ Discarded input sections
                 0x00000000       0x24 src/Print.o
  .text._ZN5Print7printlnERK9Printable
                 0x00000000       0x24 src/Print.o
- .text._ZN5Print5printEli
-                0x00000000       0x78 src/Print.o
- .text._ZN5Print5printEii
-                0x00000000       0x10 src/Print.o
  .text._ZN5Print7printlnEli
                 0x00000000       0x24 src/Print.o
- .text._ZN5Print7printlnEii
-                0x00000000       0x2e src/Print.o
  .text._ZN5Print5printEji
                 0x00000000        0xe src/Print.o
  .text._ZN5Print7printlnEmi
@@ -675,12 +731,6 @@ Discarded input sections
                 0x00000000       0x2c src/Print.o
  .text._ZN5Print7printlnEhi
                 0x00000000       0x2e src/Print.o
- .text._ZN5Print10printFloatEdh
-                0x00000000      0x216 src/Print.o
- .text._ZN5Print5printEdi
-                0x00000000        0x6 src/Print.o
- .text._ZN5Print7printlnEdi
-                0x00000000       0x24 src/Print.o
  .rodata._ZTV5Print
                 0x00000000        0x8 src/Print.o
  .text          0x00000000        0x0 src/Stream.o
@@ -791,7 +841,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/wiring.o
  .data          0x00000000        0x0 src/wiring.o
  .bss           0x00000000        0x0 src/wiring.o
- .text.millis   0x00000000       0x18 src/wiring.o
  .text          0x00000000        0x0 src/wiring_analog.o
  .data          0x00000000        0x0 src/wiring_analog.o
  .bss           0x00000000        0x0 src/wiring_analog.o
@@ -880,6 +929,8 @@ Discarded input sections
  .bss           0x00000000        0x0 src/WString.o
  .text._ZN6String4copyEPK19__FlashStringHelperj
                 0x00000000       0x42 src/WString.o
+ .text._ZN6StringaSEPKc
+                0x00000000       0x2e src/WString.o
  .text._ZN6StringC2Ec
                 0x00000000       0x32 src/WString.o
  .text._ZN6StringC2Ehh
@@ -900,8 +951,6 @@ Discarded input sections
                 0x00000000       0x32 src/WString.o
  .text._ZN6StringC2EPK19__FlashStringHelper
                 0x00000000       0x14 src/WString.o
- .text._ZN6String6concatEPKcj
-                0x00000000       0x60 src/WString.o
  .text._ZN6String6concatERKS_
                 0x00000000       0x10 src/WString.o
  .text._ZN6String6concatEPKc
@@ -924,10 +973,6 @@ Discarded input sections
                 0x00000000       0x62 src/WString.o
  .text._ZN6String6concatEPK19__FlashStringHelper
                 0x00000000       0x62 src/WString.o
- .text._ZplRK15StringSumHelperRK6String
-                0x00000000       0x26 src/WString.o
- .text._ZplRK15StringSumHelperPKc
-                0x00000000       0x32 src/WString.o
  .text._ZplRK15StringSumHelperc
                 0x00000000       0x1c src/WString.o
  .text._ZplRK15StringSumHelperh
@@ -946,10 +991,6 @@ Discarded input sections
                 0x00000000       0x1c src/WString.o
  .text._ZplRK15StringSumHelperPK19__FlashStringHelper
                 0x00000000       0x1c src/WString.o
- .text._ZNK6String9compareToERKS_
-                0x00000000       0x6a src/WString.o
- .text._ZNK6String6equalsERKS_
-                0x00000000       0x26 src/WString.o
  .text._ZNK6String6equalsEPKc
                 0x00000000       0x54 src/WString.o
  .text._ZNK6StringltERKS_
@@ -1021,103 +1062,63 @@ Discarded input sections
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
- .text.avr-libc.fplib
-                0x00000000        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
- .text.avr-libc.fplib
-                0x00000000       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
- .text.avr-libc.fplib
-                0x00000000        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
- .text.avr-libc.fplib
-                0x00000000        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
- .text.avr-libc.fplib
-                0x00000000       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
- .text.avr-libc.fplib
-                0x00000000        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
- .text.avr-libc.fplib
-                0x00000000       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
- .text.avr-libc.fplib
-                0x00000000       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
- .text.avr-libc.fplib
-                0x00000000       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
- .text.avr-libc.fplib
-                0x00000000        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
- .text.avr-libc.fplib
-                0x00000000        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
- .text.avr-libc.fplib
-                0x00000000        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
- .text.avr-libc.fplib
-                0x00000000        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
- .text.avr-libc.fplib
-                0x00000000       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
- .text.avr-libc.fplib
-                0x00000000       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
- .text.avr-libc.fplib
-                0x00000000        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
- .text.avr-libc.fplib
-                0x00000000        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
- .text.avr-libc.fplib
-                0x00000000        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
- .text.avr-libc.fplib
-                0x00000000       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
- .text.avr-libc.fplib
-                0x00000000        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
  .text          0x00000000       0x8a C:\Users\Customer\Documents\GitHub\Narwhal-Arduino-Code\ArduinoCode\ProjectNarhwal\lib\libcore.a(wiring_pulse.S.o)
  .data          0x00000000        0x0 C:\Users\Customer\Documents\GitHub\Narwhal-Arduino-Code\ArduinoCode\ProjectNarhwal\lib\libcore.a(wiring_pulse.S.o)
  .bss           0x00000000        0x0 C:\Users\Customer\Documents\GitHub\Narwhal-Arduino-Code\ArduinoCode\ProjectNarhwal\lib\libcore.a(wiring_pulse.S.o)
@@ -1147,8 +1148,6 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
  .text.libgcc.mul
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
- .text.libgcc.div
-                0x00000000       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
  .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
  .text.libgcc.prologue
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
@@ -1304,8 +1303,6 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
  .text.libgcc.mul
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
- .text.libgcc.div
-                0x00000000       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
  .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
  .text.libgcc.prologue
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
@@ -1407,8 +1404,6 @@ Discarded input sections
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
- .text.avr-libc
-                0x00000000       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
@@ -1549,10 +1544,18 @@ Linker script and memory map
 
 Address of section .data set to 0x800200
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
+LOAD classes/DigIO.o
 LOAD classes/Hardware.o
-LOAD classes/LCDMenu.o
-LOAD classes/LCDMenuItem.o
-LOAD classes/UI_BurnerController.o
+LOAD classes/HLT/HLT_UI.o
+LOAD classes/MAIN/MAIN_UI.o
+LOAD classes/MLT/MLT_UI.o
+LOAD classes/UserInterface/ClickEncoderWithEvents.o
+LOAD classes/UserInterface/LCDMenu.o
+LOAD classes/UserInterface/LCDMenuItem.o
+LOAD classes/UserInterface/LCDPage.o
+LOAD classes/UserInterface/LCDPageItem.o
+LOAD classes/UserInterface/LCDToggleOption.o
+LOAD classes/UserInterface/UserInterface.o
 LOAD classes/Executive.o
 LOAD classes/LUT.o
 LOAD classes/WheatstoneBridge.o
@@ -1565,6 +1568,7 @@ LOAD include/LiquidCrystal/LiquidCrystal_I2C.o
 LOAD include/LiquidCrystal/LiquidCrystal_SR.o
 LOAD include/LiquidCrystal/LiquidCrystal_SR2W.o
 LOAD include/LiquidCrystal/LiquidCrystal_SR3W.o
+LOAD include/TimerOne/TimerOne.o
 LOAD include/Wire/twi.o
 LOAD include/Wire/Wire.o
 LOAD Main.o
@@ -1695,554 +1699,876 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x31e0
+.text           0x00000000     0x7b68
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
                 0x00000000                __vectors
  *(.vectors)
  *(.progmem.gcc*)
+ .progmem.gcc_sw_table._ZN11LCDPageItem5printEP17LiquidCrystal_I2C
+                0x000000e4       0x20 classes/UserInterface/LCDPageItem.o
  .progmem.gcc_sw_table.__vector_39
-                0x000000e4      0x192 include/Wire/twi.o
+                0x00000104      0x192 include/Wire/twi.o
  .progmem.gcc_sw_table.turnOffPWM
-                0x00000276       0x24 src/wiring_digital.o
-                0x0000029a                . = ALIGN (0x2)
-                0x0000029a                __trampolines_start = .
+                0x00000296       0x24 src/wiring_digital.o
+                0x000002ba                . = ALIGN (0x2)
+                0x000002ba                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x0000029a        0x0 linker stubs
+ .trampolines   0x000002ba        0x0 linker stubs
  *(.trampolines*)
-                0x0000029a                __trampolines_end = .
+                0x000002ba                __trampolines_end = .
  *(.progmem*)
  .progmem.data._ZL21tone_pin_to_timer_PGM
-                0x0000029a        0x1 src/Tone.o
+                0x000002ba        0x1 src/Tone.o
  .progmem.data.digital_pin_to_timer_PGM
-                0x0000029b       0x46 src/wiring_digital.o
-                0x0000029b                digital_pin_to_timer_PGM
+                0x000002bb       0x46 src/wiring_digital.o
+                0x000002bb                digital_pin_to_timer_PGM
  .progmem.data.digital_pin_to_bit_mask_PGM
-                0x000002e1       0x46 src/wiring_digital.o
-                0x000002e1                digital_pin_to_bit_mask_PGM
+                0x00000301       0x46 src/wiring_digital.o
+                0x00000301                digital_pin_to_bit_mask_PGM
  .progmem.data.digital_pin_to_port_PGM
-                0x00000327       0x46 src/wiring_digital.o
-                0x00000327                digital_pin_to_port_PGM
+                0x00000347       0x46 src/wiring_digital.o
+                0x00000347                digital_pin_to_port_PGM
  .progmem.data.port_to_input_PGM
-                0x0000036d       0x1a src/wiring_digital.o
-                0x0000036d                port_to_input_PGM
+                0x0000038d       0x1a src/wiring_digital.o
+                0x0000038d                port_to_input_PGM
  .progmem.data.port_to_output_PGM
-                0x00000387       0x1a src/wiring_digital.o
-                0x00000387                port_to_output_PGM
+                0x000003a7       0x1a src/wiring_digital.o
+                0x000003a7                port_to_output_PGM
  .progmem.data.port_to_mode_PGM
-                0x000003a1       0x1a src/wiring_digital.o
-                0x000003a1                port_to_mode_PGM
-                0x000003bc                . = ALIGN (0x2)
- *fill*         0x000003bb        0x1 
+                0x000003c1       0x1a src/wiring_digital.o
+                0x000003c1                port_to_mode_PGM
+                0x000003dc                . = ALIGN (0x2)
+ *fill*         0x000003db        0x1 
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000003bc                __ctors_start = .
+                0x000003dc                __ctors_start = .
  *(.ctors)
- .ctors         0x000003bc        0x2 classes/Hardware.o
- .ctors         0x000003be        0x2 include/Wire/Wire.o
- .ctors         0x000003c0        0x2 src/HardwareSerial0.o
- .ctors         0x000003c2        0x2 src/HardwareSerial1.o
- .ctors         0x000003c4        0x2 src/HardwareSerial2.o
- .ctors         0x000003c6        0x2 src/HardwareSerial3.o
- .ctors         0x000003c8        0x2 src/IPAddress.o
-                0x000003ca                __ctors_end = .
-                0x000003ca                __dtors_start = .
+ .ctors         0x000003dc        0x2 classes/Hardware.o
+ .ctors         0x000003de        0x2 classes/HLT/HLT_UI.o
+ .ctors         0x000003e0        0x2 classes/MAIN/MAIN_UI.o
+ .ctors         0x000003e2        0x2 classes/MLT/MLT_UI.o
+ .ctors         0x000003e4        0x2 include/Wire/Wire.o
+ .ctors         0x000003e6        0x2 Main.o
+ .ctors         0x000003e8        0x2 src/HardwareSerial0.o
+ .ctors         0x000003ea        0x2 src/HardwareSerial1.o
+ .ctors         0x000003ec        0x2 src/HardwareSerial2.o
+ .ctors         0x000003ee        0x2 src/HardwareSerial3.o
+ .ctors         0x000003f0        0x2 src/IPAddress.o
+                0x000003f2                __ctors_end = .
+                0x000003f2                __dtors_start = .
  *(.dtors)
-                0x000003ca                __dtors_end = .
+                0x000003f2                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000003ca        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
-                0x000003ca                __init
+ .init0         0x000003f2        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
+                0x000003f2                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000003ca       0x10 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
+ .init2         0x000003f2       0x10 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000003da       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_copy_data.o)
-                0x000003da                __do_copy_data
- .init4         0x000003f4       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_clear_bss.o)
-                0x000003f4                __do_clear_bss
+ .init4         0x00000402       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_copy_data.o)
+                0x00000402                __do_copy_data
+ .init4         0x0000041c       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_clear_bss.o)
+                0x0000041c                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
  *(.init6)
- .init6         0x00000404       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_ctors.o)
-                0x00000404                __do_global_ctors
+ .init6         0x0000042c       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_ctors.o)
+                0x0000042c                __do_global_ctors
  *(.init6)
  *(.init7)
  *(.init7)
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000424        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
+ .init9         0x0000044c        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
  *(.init9)
  *(.text)
- .text          0x0000042c        0x2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
-                0x0000042c                __vector_38
-                0x0000042c                __vector_22
-                0x0000042c                __vector_28
-                0x0000042c                __vector_32
-                0x0000042c                __vector_34
-                0x0000042c                __vector_24
-                0x0000042c                __vector_12
-                0x0000042c                __vector_46
-                0x0000042c                __bad_interrupt
-                0x0000042c                __vector_31
-                0x0000042c                __vector_35
-                0x0000042c                __vector_30
-                0x0000042c                __vector_45
-                0x0000042c                __vector_11
-                0x0000042c                __vector_17
-                0x0000042c                __vector_19
-                0x0000042c                __vector_56
-                0x0000042c                __vector_49
-                0x0000042c                __vector_41
-                0x0000042c                __vector_43
-                0x0000042c                __vector_27
-                0x0000042c                __vector_33
-                0x0000042c                __vector_47
-                0x0000042c                __vector_44
-                0x0000042c                __vector_9
-                0x0000042c                __vector_21
-                0x0000042c                __vector_15
-                0x0000042c                __vector_29
-                0x0000042c                __vector_40
-                0x0000042c                __vector_48
-                0x0000042c                __vector_14
-                0x0000042c                __vector_53
-                0x0000042c                __vector_10
-                0x0000042c                __vector_50
-                0x0000042c                __vector_16
-                0x0000042c                __vector_18
-                0x0000042c                __vector_20
-                0x0000042c                __vector_42
-                0x0000042e                . = ALIGN (0x2)
+ .text          0x00000454        0x2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
+                0x00000454                __vector_38
+                0x00000454                __vector_22
+                0x00000454                __vector_28
+                0x00000454                __vector_32
+                0x00000454                __vector_34
+                0x00000454                __vector_24
+                0x00000454                __vector_12
+                0x00000454                __vector_46
+                0x00000454                __bad_interrupt
+                0x00000454                __vector_31
+                0x00000454                __vector_35
+                0x00000454                __vector_30
+                0x00000454                __vector_45
+                0x00000454                __vector_11
+                0x00000454                __vector_17
+                0x00000454                __vector_19
+                0x00000454                __vector_56
+                0x00000454                __vector_49
+                0x00000454                __vector_41
+                0x00000454                __vector_43
+                0x00000454                __vector_27
+                0x00000454                __vector_33
+                0x00000454                __vector_47
+                0x00000454                __vector_44
+                0x00000454                __vector_9
+                0x00000454                __vector_21
+                0x00000454                __vector_15
+                0x00000454                __vector_29
+                0x00000454                __vector_40
+                0x00000454                __vector_48
+                0x00000454                __vector_14
+                0x00000454                __vector_53
+                0x00000454                __vector_10
+                0x00000454                __vector_50
+                0x00000454                __vector_16
+                0x00000454                __vector_18
+                0x00000454                __vector_42
+                0x00000456                . = ALIGN (0x2)
  *(.text.*)
- .text._GLOBAL__sub_I_HLT_LCD
-                0x0000042e       0x92 classes/Hardware.o
- .text._ZN10LinkedListI11LCDMenuItemE4sizeEv
-                0x000004c0        0x8 classes/LCDMenu.o
-                0x000004c0                _ZN10LinkedListI11LCDMenuItemE4sizeEv
- .text._ZN10LinkedListI11LCDMenuItemE5clearEv
-                0x000004c8       0x62 classes/LCDMenu.o
-                0x000004c8                _ZN10LinkedListI11LCDMenuItemE5clearEv
- .text._ZN10LinkedListI11LCDMenuItemE7unshiftES0_
-                0x0000052a       0xcc classes/LCDMenu.o
-                0x0000052a                _ZN10LinkedListI11LCDMenuItemE7unshiftES0_
+ .text._ZN5DigIO5ValueEv
+                0x00000456       0x32 classes/DigIO.o
+                0x00000456                _ZN5DigIO5ValueEv
+ .text._ZN5DigIO5WriteEi
+                0x00000488       0x32 classes/DigIO.o
+                0x00000488                _ZN5DigIO5WriteEi
+ .text._ZN5DigIOC2EiNS_8PinModesE6StringS1_
+                0x000004ba       0x82 classes/DigIO.o
+                0x000004ba                _ZN5DigIOC2EiNS_8PinModesE6StringS1_
+                0x000004ba                _ZN5DigIOC1EiNS_8PinModesE6StringS1_
+ .text._Z15serviceEncodersv
+                0x0000053c       0x32 classes/Hardware.o
+                0x0000053c                _Z15serviceEncodersv
+ .text._ZN22ClickEncoderWithEventsC2Ehhhh
+                0x0000056e       0x52 classes/Hardware.o
+                0x0000056e                _ZN22ClickEncoderWithEventsC1Ehhhh
+                0x0000056e                _ZN22ClickEncoderWithEventsC2Ehhhh
+ .text._GLOBAL__sub_I__Z15serviceEncodersv
+                0x000005c0      0x1e8 classes/Hardware.o
+ .text._Z13hardware_initv
+                0x000007a8      0x16c classes/Hardware.o
+                0x000007a8                _Z13hardware_initv
  .text._ZN10LinkedListI11LCDMenuItemE3addES0_
-                0x000005f6       0x90 classes/LCDMenu.o
-                0x000005f6                _ZN10LinkedListI11LCDMenuItemE3addES0_
+                0x00000914       0xaa classes/HLT/HLT_UI.o
+                0x00000914                _ZN10LinkedListI11LCDMenuItemE3addES0_
+ .text._Z11HLT_UI_initv
+                0x000009be      0x218 classes/HLT/HLT_UI.o
+                0x000009be                _Z11HLT_UI_initv
+ .text._GLOBAL__sub_I_HLT_UI
+                0x00000bd6       0x56 classes/HLT/HLT_UI.o
+ .text._ZN10LinkedListI11LCDPageItemE3addES0_
+                0x00000c2c      0x170 classes/MAIN/MAIN_UI.o
+                0x00000c2c                _ZN10LinkedListI11LCDPageItemE3addES0_
+ .text._Z12MAIN_UI_initv
+                0x00000d9c      0xb56 classes/MAIN/MAIN_UI.o
+                0x00000d9c                _Z12MAIN_UI_initv
+ .text._GLOBAL__sub_I_MAIN_UI
+                0x000018f2       0x56 classes/MAIN/MAIN_UI.o
+ .text._Z11MLT_UI_initv
+                0x00001948      0x212 classes/MLT/MLT_UI.o
+                0x00001948                _Z11MLT_UI_initv
+ .text._GLOBAL__sub_I_MLT_UI
+                0x00001b5a       0x56 classes/MLT/MLT_UI.o
+ .text._ZN22ClickEncoderWithEvents4ReadEv
+                0x00001bb0      0x156 classes/UserInterface/ClickEncoderWithEvents.o
+                0x00001bb0                _ZN22ClickEncoderWithEvents4ReadEv
+ .text._ZN10LinkedListI11LCDMenuItemE4sizeEv
+                0x00001d06        0x8 classes/UserInterface/LCDMenu.o
+                0x00001d06                _ZN10LinkedListI11LCDMenuItemE4sizeEv
+ .text._ZN10LinkedListI11LCDMenuItemE5clearEv
+                0x00001d0e       0x62 classes/UserInterface/LCDMenu.o
+                0x00001d0e                _ZN10LinkedListI11LCDMenuItemE5clearEv
+ .text._ZN10LinkedListI11LCDMenuItemE7unshiftES0_
+                0x00001d70      0x10a classes/UserInterface/LCDMenu.o
+                0x00001d70                _ZN10LinkedListI11LCDMenuItemE7unshiftES0_
  .text._ZN10LinkedListI11LCDMenuItemE5shiftEv
-                0x00000686       0xde classes/LCDMenu.o
-                0x00000686                _ZN10LinkedListI11LCDMenuItemE5shiftEv
+                0x00001e7a      0x11e classes/UserInterface/LCDMenu.o
+                0x00001e7a                _ZN10LinkedListI11LCDMenuItemE5shiftEv
  .text._ZN7LCDMenuC2E6String
-                0x00000764       0xb6 classes/LCDMenu.o
-                0x00000764                _ZN7LCDMenuC1E6String
-                0x00000764                _ZN7LCDMenuC2E6String
+                0x00001f98       0xc4 classes/UserInterface/LCDMenu.o
+                0x00001f98                _ZN7LCDMenuC1E6String
+                0x00001f98                _ZN7LCDMenuC2E6String
+ .text._ZN7LCDMenuC2E6StringPS_
+                0x0000205c       0xd4 classes/UserInterface/LCDMenu.o
+                0x0000205c                _ZN7LCDMenuC2E6StringPS_
+                0x0000205c                _ZN7LCDMenuC1E6StringPS_
+ .text._ZN7LCDMenu8prevItemEv
+                0x00002130       0x42 classes/UserInterface/LCDMenu.o
+                0x00002130                _ZN7LCDMenu8prevItemEv
+ .text._ZN7LCDMenu8nextItemEv
+                0x00002172       0x48 classes/UserInterface/LCDMenu.o
+                0x00002172                _ZN7LCDMenu8nextItemEv
  .text._ZN10LinkedListI11LCDMenuItemE7getNodeEi
-                0x0000081a       0x7e classes/LCDMenu.o
-                0x0000081a                _ZN10LinkedListI11LCDMenuItemE7getNodeEi
+                0x000021ba       0x7e classes/UserInterface/LCDMenu.o
+                0x000021ba                _ZN10LinkedListI11LCDMenuItemE7getNodeEi
  .text._ZN10LinkedListI11LCDMenuItemE3getEi
-                0x00000898       0x36 classes/LCDMenu.o
-                0x00000898                _ZN10LinkedListI11LCDMenuItemE3getEi
+                0x00002238       0x4e classes/UserInterface/LCDMenu.o
+                0x00002238                _ZN10LinkedListI11LCDMenuItemE3getEi
+ .text._ZN7LCDMenu7displayEP13UserInterface
+                0x00002286      0x1a0 classes/UserInterface/LCDMenu.o
+                0x00002286                _ZN7LCDMenu7displayEP13UserInterface
+ .text._ZN7LCDMenu10selectItemEP13UserInterface
+                0x00002426       0x64 classes/UserInterface/LCDMenu.o
+                0x00002426                _ZN7LCDMenu10selectItemEP13UserInterface
  .text._ZN10LinkedListI11LCDMenuItemE3popEv
-                0x000008ce      0x11e classes/LCDMenu.o
-                0x000008ce                _ZN10LinkedListI11LCDMenuItemE3popEv
+                0x0000248a      0x180 classes/UserInterface/LCDMenu.o
+                0x0000248a                _ZN10LinkedListI11LCDMenuItemE3popEv
  .text._ZN10LinkedListI11LCDMenuItemE6removeEi
-                0x000009ec      0x10a classes/LCDMenu.o
-                0x000009ec                _ZN10LinkedListI11LCDMenuItemE6removeEi
+                0x0000260a      0x156 classes/UserInterface/LCDMenu.o
+                0x0000260a                _ZN10LinkedListI11LCDMenuItemE6removeEi
  .text._ZN10LinkedListI11LCDMenuItemE3setEiS0_
-                0x00000af6       0x3e classes/LCDMenu.o
-                0x00000af6                _ZN10LinkedListI11LCDMenuItemE3setEiS0_
+                0x00002760       0x56 classes/UserInterface/LCDMenu.o
+                0x00002760                _ZN10LinkedListI11LCDMenuItemE3setEiS0_
  .text._ZN10LinkedListI11LCDMenuItemE3addEiS0_
-                0x00000b34      0x124 classes/LCDMenu.o
-                0x00000b34                _ZN10LinkedListI11LCDMenuItemE3addEiS0_
- .text._ZN11LCDMenuItemC2Ev
-                0x00000c58       0x22 classes/LCDMenuItem.o
-                0x00000c58                _ZN11LCDMenuItemC2Ev
-                0x00000c58                _ZN11LCDMenuItemC1Ev
+                0x000027b6      0x178 classes/UserInterface/LCDMenu.o
+                0x000027b6                _ZN10LinkedListI11LCDMenuItemE3addEiS0_
  .text._ZN11LCDMenuItemC2E6String
-                0x00000c7a       0x2a classes/LCDMenuItem.o
-                0x00000c7a                _ZN11LCDMenuItemC1E6String
-                0x00000c7a                _ZN11LCDMenuItemC2E6String
+                0x0000292e       0x3c classes/UserInterface/LCDMenuItem.o
+                0x0000292e                _ZN11LCDMenuItemC1E6String
+                0x0000292e                _ZN11LCDMenuItemC2E6String
+ .text._ZN11LCDMenuItemC2E6StringP7LCDMenu
+                0x0000296a       0x48 classes/UserInterface/LCDMenuItem.o
+                0x0000296a                _ZN11LCDMenuItemC2E6StringP7LCDMenu
+                0x0000296a                _ZN11LCDMenuItemC1E6StringP7LCDMenu
+ .text._ZN11LCDMenuItemC2E6StringP7LCDPage
+                0x000029b2       0x46 classes/UserInterface/LCDMenuItem.o
+                0x000029b2                _ZN11LCDMenuItemC1E6StringP7LCDPage
+                0x000029b2                _ZN11LCDMenuItemC2E6StringP7LCDPage
+ .text._ZN11LCDMenuItemC2E6StringP15LCDToggleOption
+                0x000029f8       0x48 classes/UserInterface/LCDMenuItem.o
+                0x000029f8                _ZN11LCDMenuItemC2E6StringP15LCDToggleOption
+                0x000029f8                _ZN11LCDMenuItemC1E6StringP15LCDToggleOption
+ .text._ZN11LCDMenuItemC2Ev
+                0x00002a40       0x24 classes/UserInterface/LCDMenuItem.o
+                0x00002a40                _ZN11LCDMenuItemC2Ev
+                0x00002a40                _ZN11LCDMenuItemC1Ev
  .text._ZN11LCDMenuItemD2Ev
-                0x00000ca4        0x6 classes/LCDMenuItem.o
-                0x00000ca4                _ZN11LCDMenuItemD2Ev
-                0x00000ca4                _ZN11LCDMenuItemD1Ev
- .text._ZN19UI_BurnerControllerC2E6StringP17LiquidCrystal_I2CP12ClickEncoder
-                0x00000caa      0x1a0 classes/UI_BurnerController.o
-                0x00000caa                _ZN19UI_BurnerControllerC2E6StringP17LiquidCrystal_I2CP12ClickEncoder
-                0x00000caa                _ZN19UI_BurnerControllerC1E6StringP17LiquidCrystal_I2CP12ClickEncoder
+                0x00002a64        0x6 classes/UserInterface/LCDMenuItem.o
+                0x00002a64                _ZN11LCDMenuItemD2Ev
+                0x00002a64                _ZN11LCDMenuItemD1Ev
+ .text._ZN11LCDMenuItem5PrintEiiP13UserInterface
+                0x00002a6a      0x124 classes/UserInterface/LCDMenuItem.o
+                0x00002a6a                _ZN11LCDMenuItem5PrintEiiP13UserInterface
+ .text._ZN11LCDMenuItem10ItemSelectEP13UserInterface
+                0x00002b8e       0xec classes/UserInterface/LCDMenuItem.o
+                0x00002b8e                _ZN11LCDMenuItem10ItemSelectEP13UserInterface
+ .text._ZN10LinkedListI11LCDPageItemE4sizeEv
+                0x00002c7a        0x8 classes/UserInterface/LCDPage.o
+                0x00002c7a                _ZN10LinkedListI11LCDPageItemE4sizeEv
+ .text._ZN10LinkedListI11LCDPageItemE5clearEv
+                0x00002c82       0x64 classes/UserInterface/LCDPage.o
+                0x00002c82                _ZN10LinkedListI11LCDPageItemE5clearEv
+ .text._ZN10LinkedListI11LCDPageItemE5shiftEv
+                0x00002ce6      0x2a4 classes/UserInterface/LCDPage.o
+                0x00002ce6                _ZN10LinkedListI11LCDPageItemE5shiftEv
+ .text._ZN10LinkedListI11LCDPageItemE7unshiftES0_
+                0x00002f8a      0x2b4 classes/UserInterface/LCDPage.o
+                0x00002f8a                _ZN10LinkedListI11LCDPageItemE7unshiftES0_
+ .text._ZN7LCDPageC2E6String
+                0x0000323e       0x62 classes/UserInterface/LCDPage.o
+                0x0000323e                _ZN7LCDPageC1E6String
+                0x0000323e                _ZN7LCDPageC2E6String
+ .text._ZN10LinkedListI11LCDPageItemE7getNodeEi
+                0x000032a0       0x7e classes/UserInterface/LCDPage.o
+                0x000032a0                _ZN10LinkedListI11LCDPageItemE7getNodeEi
+ .text._ZN10LinkedListI11LCDPageItemE3getEi
+                0x0000331e       0xfa classes/UserInterface/LCDPage.o
+                0x0000331e                _ZN10LinkedListI11LCDPageItemE3getEi
+ .text._ZN7LCDPage7displayEP13UserInterface
+                0x00003418       0xdc classes/UserInterface/LCDPage.o
+                0x00003418                _ZN7LCDPage7displayEP13UserInterface
+ .text._ZN10LinkedListI11LCDPageItemE3popEv
+                0x000034f4      0x41c classes/UserInterface/LCDPage.o
+                0x000034f4                _ZN10LinkedListI11LCDPageItemE3popEv
+ .text._ZN10LinkedListI11LCDPageItemE6removeEi
+                0x00003910      0x2c8 classes/UserInterface/LCDPage.o
+                0x00003910                _ZN10LinkedListI11LCDPageItemE6removeEi
+ .text._ZN10LinkedListI11LCDPageItemE3setEiS0_
+                0x00003bd8      0x106 classes/UserInterface/LCDPage.o
+                0x00003bd8                _ZN10LinkedListI11LCDPageItemE3setEiS0_
+ .text._ZN10LinkedListI11LCDPageItemE3addEiS0_
+                0x00003cde      0x3e8 classes/UserInterface/LCDPage.o
+                0x00003cde                _ZN10LinkedListI11LCDPageItemE3addEiS0_
+ .text._ZN11LCDPageItemC2Ev
+                0x000040c6       0x8a classes/UserInterface/LCDPageItem.o
+                0x000040c6                _ZN11LCDPageItemC1Ev
+                0x000040c6                _ZN11LCDPageItemC2Ev
+ .text._ZN11LCDPageItemD2Ev
+                0x00004150       0x2a classes/UserInterface/LCDPageItem.o
+                0x00004150                _ZN11LCDPageItemD1Ev
+                0x00004150                _ZN11LCDPageItemD2Ev
+ .text._ZN11LCDPageItemC2Ehhf
+                0x0000417a       0xc2 classes/UserInterface/LCDPageItem.o
+                0x0000417a                _ZN11LCDPageItemC1Ehhf
+                0x0000417a                _ZN11LCDPageItemC2Ehhf
+ .text._ZN11LCDPageItemC2EhhP6String
+                0x0000423c       0xc0 classes/UserInterface/LCDPageItem.o
+                0x0000423c                _ZN11LCDPageItemC1EhhP6String
+                0x0000423c                _ZN11LCDPageItemC2EhhP6String
+ .text._ZN11LCDPageItem5printEP17LiquidCrystal_I2C
+                0x000042fc      0x344 classes/UserInterface/LCDPageItem.o
+                0x000042fc                _ZN11LCDPageItem5printEP17LiquidCrystal_I2C
+ .text._ZN15LCDToggleOptionD2Ev
+                0x00004640       0x20 classes/UserInterface/LCDToggleOption.o
+                0x00004640                _ZN15LCDToggleOptionD2Ev
+                0x00004640                _ZN15LCDToggleOptionD1Ev
+ .text._ZN15LCDToggleOption9TrueLabelEv
+                0x00004660       0x48 classes/UserInterface/LCDToggleOption.o
+                0x00004660                _ZN15LCDToggleOption9TrueLabelEv
+ .text._ZN15LCDToggleOption10FalseLabelEv
+                0x000046a8       0x48 classes/UserInterface/LCDToggleOption.o
+                0x000046a8                _ZN15LCDToggleOption10FalseLabelEv
+ .text._ZN15LCDToggleOption5ValueEv
+                0x000046f0       0x44 classes/UserInterface/LCDToggleOption.o
+                0x000046f0                _ZN15LCDToggleOption5ValueEv
+ .text._ZN15LCDToggleOption6ToggleEv
+                0x00004734       0x5e classes/UserInterface/LCDToggleOption.o
+                0x00004734                _ZN15LCDToggleOption6ToggleEv
+ .text._ZN15LCDToggleOptionC2E6StringP5DigIO
+                0x00004792       0x5c classes/UserInterface/LCDToggleOption.o
+                0x00004792                _ZN15LCDToggleOptionC1E6StringP5DigIO
+                0x00004792                _ZN15LCDToggleOptionC2E6StringP5DigIO
+ .text._ZN13UserInterface15EncoderDblClickEv
+                0x000047ee        0x2 classes/UserInterface/UserInterface.o
+                0x000047ee                _ZN13UserInterface15EncoderDblClickEv
+ .text._ZN13UserInterface12EncoderClickEv
+                0x000047f0       0x12 classes/UserInterface/UserInterface.o
+                0x000047f0                _ZN13UserInterface12EncoderClickEv
+ .text._ZN13UserInterface16EncoderIncrementEv
+                0x00004802       0x10 classes/UserInterface/UserInterface.o
+                0x00004802                _ZN13UserInterface16EncoderIncrementEv
+ .text._ZN13UserInterface16EncoderDecrementEv
+                0x00004812       0x10 classes/UserInterface/UserInterface.o
+                0x00004812                _ZN13UserInterface16EncoderDecrementEv
+ .text._ZN13UserInterfaceC2E6String
+                0x00004822       0x46 classes/UserInterface/UserInterface.o
+                0x00004822                _ZN13UserInterfaceC1E6String
+                0x00004822                _ZN13UserInterfaceC2E6String
+ .text._ZN13UserInterface14attatchEncoderEP22ClickEncoderWithEvents
+                0x00004868       0x6c classes/UserInterface/UserInterface.o
+                0x00004868                _ZN13UserInterface14attatchEncoderEP22ClickEncoderWithEvents
+ .text._ZN13UserInterface10attatchLCDEP17LiquidCrystal_I2C
+                0x000048d4        0x8 classes/UserInterface/UserInterface.o
+                0x000048d4                _ZN13UserInterface10attatchLCDEP17LiquidCrystal_I2C
+ .text._ZN13UserInterface7displayEv
+                0x000048dc       0xa0 classes/UserInterface/UserInterface.o
+                0x000048dc                _ZN13UserInterface7displayEv
+ .text._ZN13UserInterface10setDisplayEP7LCDMenu
+                0x0000497c        0xc classes/UserInterface/UserInterface.o
+                0x0000497c                _ZN13UserInterface10setDisplayEP7LCDMenu
+ .text._ZN13UserInterface10setDisplayEP7LCDPage
+                0x00004988        0xc classes/UserInterface/UserInterface.o
+                0x00004988                _ZN13UserInterface10setDisplayEP7LCDPage
+ .text._ZN9Executive11exec_frame1Ev
+                0x00004994       0x32 classes/Executive.o
+                0x00004994                _ZN9Executive11exec_frame1Ev
+ .text._ZN9Executive11exec_frame3Ev
+                0x000049c6       0x2a classes/Executive.o
+                0x000049c6                _ZN9Executive11exec_frame3Ev
+ .text._ZN9Executive3runEv
+                0x000049f0      0x152 classes/Executive.o
+                0x000049f0                _ZN9Executive3runEv
  .text._ZN12ClickEncoderC2Ehhhhb
-                0x00000e4a       0x8c include/ClickEncoder/ClickEncoder.o
-                0x00000e4a                _ZN12ClickEncoderC2Ehhhhb
-                0x00000e4a                _ZN12ClickEncoderC1Ehhhhb
+                0x00004b42       0x8c include/ClickEncoder/ClickEncoder.o
+                0x00004b42                _ZN12ClickEncoderC2Ehhhhb
+                0x00004b42                _ZN12ClickEncoderC1Ehhhhb
+ .text._ZN12ClickEncoder7serviceEv
+                0x00004bce      0x194 include/ClickEncoder/ClickEncoder.o
+                0x00004bce                _ZN12ClickEncoder7serviceEv
+ .text._ZN12ClickEncoder8getValueEv
+                0x00004d62       0x76 include/ClickEncoder/ClickEncoder.o
+                0x00004d62                _ZN12ClickEncoder8getValueEv
+ .text._ZN12ClickEncoder9getButtonEv
+                0x00004dd8        0xe include/ClickEncoder/ClickEncoder.o
+                0x00004dd8                _ZN12ClickEncoder9getButtonEv
  .text._ZN5I2CIOC2Ev
-                0x00000ed6        0xe include/LiquidCrystal/I2CIO.o
-                0x00000ed6                _ZN5I2CIOC2Ev
-                0x00000ed6                _ZN5I2CIOC1Ev
+                0x00004de6        0xe include/LiquidCrystal/I2CIO.o
+                0x00004de6                _ZN5I2CIOC2Ev
+                0x00004de6                _ZN5I2CIOC1Ev
  .text._ZN5I2CIO8portModeEh
-                0x00000ee4       0x18 include/LiquidCrystal/I2CIO.o
-                0x00000ee4                _ZN5I2CIO8portModeEh
+                0x00004df4       0x18 include/LiquidCrystal/I2CIO.o
+                0x00004df4                _ZN5I2CIO8portModeEh
  .text._ZN5I2CIO5beginEh
-                0x00000efc       0x34 include/LiquidCrystal/I2CIO.o
-                0x00000efc                _ZN5I2CIO5beginEh
+                0x00004e0c       0x34 include/LiquidCrystal/I2CIO.o
+                0x00004e0c                _ZN5I2CIO5beginEh
  .text._ZN5I2CIO5writeEh
-                0x00000f30       0x48 include/LiquidCrystal/I2CIO.o
-                0x00000f30                _ZN5I2CIO5writeEh
+                0x00004e40       0x48 include/LiquidCrystal/I2CIO.o
+                0x00004e40                _ZN5I2CIO5writeEh
  .text._ZN3LCD15setBacklightPinEh13t_backlighPol
-                0x00000f78        0x2 include/LiquidCrystal/LCD.o
-                0x00000f78                _ZN3LCD15setBacklightPinEh13t_backlighPol
+                0x00004e88        0x2 include/LiquidCrystal/LCD.o
+                0x00004e88                _ZN3LCD15setBacklightPinEh13t_backlighPol
  .text._ZN3LCD12setBacklightEh
-                0x00000f7a        0x2 include/LiquidCrystal/LCD.o
-                0x00000f7a                _ZN3LCD12setBacklightEh
+                0x00004e8a        0x2 include/LiquidCrystal/LCD.o
+                0x00004e8a                _ZN3LCD12setBacklightEh
  .text._ZN3LCD5writeEh
-                0x00000f7c       0x16 include/LiquidCrystal/LCD.o
-                0x00000f7c                _ZN3LCD5writeEh
+                0x00004e8c       0x16 include/LiquidCrystal/LCD.o
+                0x00004e8c                _ZN3LCD5writeEh
  .text._ZN3LCDC2Ev
-                0x00000f92       0x10 include/LiquidCrystal/LCD.o
-                0x00000f92                _ZN3LCDC1Ev
-                0x00000f92                _ZN3LCDC2Ev
+                0x00004ea2       0x10 include/LiquidCrystal/LCD.o
+                0x00004ea2                _ZN3LCDC1Ev
+                0x00004ea2                _ZN3LCDC2Ev
  .text._ZN3LCD9backlightEv
-                0x00000fa2       0x12 include/LiquidCrystal/LCD.o
-                0x00000fa2                _ZN3LCD9backlightEv
+                0x00004eb2       0x12 include/LiquidCrystal/LCD.o
+                0x00004eb2                _ZN3LCD9backlightEv
  .text._ZN3LCD7commandEh
-                0x00000fb4       0x12 include/LiquidCrystal/LCD.o
-                0x00000fb4                _ZN3LCD7commandEh
+                0x00004ec4       0x12 include/LiquidCrystal/LCD.o
+                0x00004ec4                _ZN3LCD7commandEh
  .text._ZN3LCD5clearEv
-                0x00000fc6        0xe include/LiquidCrystal/LCD.o
-                0x00000fc6                _ZN3LCD5clearEv
+                0x00004ed6        0xe include/LiquidCrystal/LCD.o
+                0x00004ed6                _ZN3LCD5clearEv
  .text._ZN3LCD9setCursorEhh
-                0x00000fd4       0x7c include/LiquidCrystal/LCD.o
-                0x00000fd4                _ZN3LCD9setCursorEhh
+                0x00004ee4       0x7c include/LiquidCrystal/LCD.o
+                0x00004ee4                _ZN3LCD9setCursorEhh
  .text._ZN3LCD7displayEv
-                0x00001050       0x10 include/LiquidCrystal/LCD.o
-                0x00001050                _ZN3LCD7displayEv
+                0x00004f60       0x10 include/LiquidCrystal/LCD.o
+                0x00004f60                _ZN3LCD7displayEv
  .text._ZN3LCD5beginEhhh
-                0x00001060       0xe4 include/LiquidCrystal/LCD.o
-                0x00001060                _ZN3LCD5beginEhhh
+                0x00004f70       0xe4 include/LiquidCrystal/LCD.o
+                0x00004f70                _ZN3LCD5beginEhhh
  .text._ZN17LiquidCrystal_I2C15setBacklightPinEh13t_backlighPol
-                0x00001144       0x28 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x00001144                _ZN17LiquidCrystal_I2C15setBacklightPinEh13t_backlighPol
+                0x00005054       0x28 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00005054                _ZN17LiquidCrystal_I2C15setBacklightPinEh13t_backlighPol
  .text._ZN17LiquidCrystal_I2C12setBacklightEh
-                0x0000116c       0x2c include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x0000116c                _ZN17LiquidCrystal_I2C12setBacklightEh
- .text._ZN17LiquidCrystal_I2CC2Eh
-                0x00001198       0x46 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x00001198                _ZN17LiquidCrystal_I2CC2Eh
-                0x00001198                _ZN17LiquidCrystal_I2CC1Eh
+                0x0000507c       0x2c include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x0000507c                _ZN17LiquidCrystal_I2C12setBacklightEh
+ .text._ZN17LiquidCrystal_I2CC2Ehhhhhhhh
+                0x000050a8       0xae include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x000050a8                _ZN17LiquidCrystal_I2CC2Ehhhhhhhh
+                0x000050a8                _ZN17LiquidCrystal_I2CC1Ehhhhhhhh
  .text._ZN17LiquidCrystal_I2C4initEv
-                0x000011de       0x3c include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x000011de                _ZN17LiquidCrystal_I2C4initEv
+                0x00005156       0x3c include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00005156                _ZN17LiquidCrystal_I2C4initEv
  .text._ZN17LiquidCrystal_I2C11pulseEnableEh
-                0x0000121a       0x34 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x0000121a                _ZN17LiquidCrystal_I2C11pulseEnableEh
+                0x00005192       0x34 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00005192                _ZN17LiquidCrystal_I2C11pulseEnableEh
  .text._ZN17LiquidCrystal_I2C10write4bitsEhh
-                0x0000124e       0x3a include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x0000124e                _ZN17LiquidCrystal_I2C10write4bitsEhh
+                0x000051c6       0x3a include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x000051c6                _ZN17LiquidCrystal_I2C10write4bitsEhh
  .text._ZN17LiquidCrystal_I2C4sendEhh
-                0x00001288       0x42 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x00001288                _ZN17LiquidCrystal_I2C4sendEhh
+                0x00005200       0x42 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00005200                _ZN17LiquidCrystal_I2C4sendEhh
  .text._ZN17LiquidCrystal_I2C5beginEhhh
-                0x000012ca       0x2a include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x000012ca                _ZN17LiquidCrystal_I2C5beginEhhh
+                0x00005242       0x2a include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00005242                _ZN17LiquidCrystal_I2C5beginEhhh
+ .text.__vector_20
+                0x0000526c       0x56 include/TimerOne/TimerOne.o
+                0x0000526c                __vector_20
  .text.twi_init
-                0x000012f4       0x3c include/Wire/twi.o
-                0x000012f4                twi_init
+                0x000052c2       0x3c include/Wire/twi.o
+                0x000052c2                twi_init
  .text.twi_readFrom
-                0x00001330       0x98 include/Wire/twi.o
-                0x00001330                twi_readFrom
+                0x000052fe       0x98 include/Wire/twi.o
+                0x000052fe                twi_readFrom
  .text.twi_writeTo
-                0x000013c8       0xba include/Wire/twi.o
-                0x000013c8                twi_writeTo
+                0x00005396       0xba include/Wire/twi.o
+                0x00005396                twi_writeTo
  .text.twi_transmit
-                0x00001482       0x42 include/Wire/twi.o
-                0x00001482                twi_transmit
+                0x00005450       0x42 include/Wire/twi.o
+                0x00005450                twi_transmit
  .text.twi_stop
-                0x000014c4       0x16 include/Wire/twi.o
-                0x000014c4                twi_stop
+                0x00005492       0x16 include/Wire/twi.o
+                0x00005492                twi_stop
  .text.twi_releaseBus
-                0x000014da        0xc include/Wire/twi.o
-                0x000014da                twi_releaseBus
+                0x000054a8        0xc include/Wire/twi.o
+                0x000054a8                twi_releaseBus
  .text.__vector_39
-                0x000014e6      0x23c include/Wire/twi.o
-                0x000014e6                __vector_39
+                0x000054b4      0x23c include/Wire/twi.o
+                0x000054b4                __vector_39
  .text._ZN7TwoWire9availableEv
-                0x00001722       0x10 include/Wire/Wire.o
-                0x00001722                _ZN7TwoWire9availableEv
+                0x000056f0       0x10 include/Wire/Wire.o
+                0x000056f0                _ZN7TwoWire9availableEv
  .text._ZN7TwoWire4readEv
-                0x00001732       0x28 include/Wire/Wire.o
-                0x00001732                _ZN7TwoWire4readEv
+                0x00005700       0x28 include/Wire/Wire.o
+                0x00005700                _ZN7TwoWire4readEv
  .text._ZN7TwoWire4peekEv
-                0x0000175a       0x1e include/Wire/Wire.o
-                0x0000175a                _ZN7TwoWire4peekEv
+                0x00005728       0x1e include/Wire/Wire.o
+                0x00005728                _ZN7TwoWire4peekEv
  .text._ZN7TwoWire5flushEv
-                0x00001778        0x2 include/Wire/Wire.o
-                0x00001778                _ZN7TwoWire5flushEv
+                0x00005746        0x2 include/Wire/Wire.o
+                0x00005746                _ZN7TwoWire5flushEv
  .text._ZN7TwoWire5writeEPKhj
-                0x0000177a       0x5e include/Wire/Wire.o
-                0x0000177a                _ZN7TwoWire5writeEPKhj
+                0x00005748       0x5e include/Wire/Wire.o
+                0x00005748                _ZN7TwoWire5writeEPKhj
  .text._ZN7TwoWire5writeEh
-                0x000017d8       0x60 include/Wire/Wire.o
-                0x000017d8                _ZN7TwoWire5writeEh
+                0x000057a6       0x60 include/Wire/Wire.o
+                0x000057a6                _ZN7TwoWire5writeEh
  .text._ZN7TwoWireC2Ev
-                0x00001838       0x20 include/Wire/Wire.o
-                0x00001838                _ZN7TwoWireC1Ev
-                0x00001838                _ZN7TwoWireC2Ev
+                0x00005806       0x20 include/Wire/Wire.o
+                0x00005806                _ZN7TwoWireC1Ev
+                0x00005806                _ZN7TwoWireC2Ev
  .text._ZN7TwoWire5beginEv
-                0x00001858       0x14 include/Wire/Wire.o
-                0x00001858                _ZN7TwoWire5beginEv
+                0x00005826       0x14 include/Wire/Wire.o
+                0x00005826                _ZN7TwoWire5beginEv
  .text._ZN7TwoWire11requestFromEhhh
-                0x0000186c       0x18 include/Wire/Wire.o
-                0x0000186c                _ZN7TwoWire11requestFromEhhh
+                0x0000583a       0x18 include/Wire/Wire.o
+                0x0000583a                _ZN7TwoWire11requestFromEhhh
  .text._ZN7TwoWire11requestFromEhh
-                0x00001884        0x6 include/Wire/Wire.o
-                0x00001884                _ZN7TwoWire11requestFromEhh
+                0x00005852        0x6 include/Wire/Wire.o
+                0x00005852                _ZN7TwoWire11requestFromEhh
  .text._ZN7TwoWire17beginTransmissionEh
-                0x0000188a       0x14 include/Wire/Wire.o
-                0x0000188a                _ZN7TwoWire17beginTransmissionEh
+                0x00005858       0x14 include/Wire/Wire.o
+                0x00005858                _ZN7TwoWire17beginTransmissionEh
  .text._ZN7TwoWire15endTransmissionEh
-                0x0000189e       0x24 include/Wire/Wire.o
-                0x0000189e                _ZN7TwoWire15endTransmissionEh
+                0x0000586c       0x24 include/Wire/Wire.o
+                0x0000586c                _ZN7TwoWire15endTransmissionEh
  .text._ZN7TwoWire15endTransmissionEv
-                0x000018c2        0x6 include/Wire/Wire.o
-                0x000018c2                _ZN7TwoWire15endTransmissionEv
+                0x00005890        0x6 include/Wire/Wire.o
+                0x00005890                _ZN7TwoWire15endTransmissionEv
  .text._GLOBAL__sub_I__ZN7TwoWire8rxBufferE
-                0x000018c8        0x8 include/Wire/Wire.o
- .text.loop     0x000018d0        0x2 Main.o
-                0x000018d0                loop
- .text.setup    0x000018d2       0x62 Main.o
-                0x000018d2                setup
+                0x00005896        0x8 include/Wire/Wire.o
+ .text.setup    0x0000589e      0x106 Main.o
+                0x0000589e                setup
+ .text.loop     0x000059a4       0x64 Main.o
+                0x000059a4                loop
+ .text._GLOBAL__sub_I_BootScreenTime
+                0x00005a08       0x1a Main.o
  .text.__cxa_pure_virtual
-                0x00001934        0x4 src/abi.o
-                0x00001934                __cxa_pure_virtual
+                0x00005a22        0x4 src/abi.o
+                0x00005a22                __cxa_pure_virtual
  .text._ZN14HardwareSerial9availableEv
-                0x00001938       0x18 src/HardwareSerial.o
-                0x00001938                _ZN14HardwareSerial9availableEv
+                0x00005a26       0x18 src/HardwareSerial.o
+                0x00005a26                _ZN14HardwareSerial9availableEv
  .text._ZN14HardwareSerial4peekEv
-                0x00001950       0x1c src/HardwareSerial.o
-                0x00001950                _ZN14HardwareSerial4peekEv
+                0x00005a3e       0x1c src/HardwareSerial.o
+                0x00005a3e                _ZN14HardwareSerial4peekEv
  .text._ZN14HardwareSerial4readEv
-                0x0000196c       0x28 src/HardwareSerial.o
-                0x0000196c                _ZN14HardwareSerial4readEv
+                0x00005a5a       0x28 src/HardwareSerial.o
+                0x00005a5a                _ZN14HardwareSerial4readEv
  .text._Z14serialEventRunv
-                0x00001994       0x62 src/HardwareSerial.o
-                0x00001994                _Z14serialEventRunv
+                0x00005a82       0x62 src/HardwareSerial.o
+                0x00005a82                _Z14serialEventRunv
  .text._ZN14HardwareSerial17_tx_udr_empty_irqEv
-                0x000019f6       0x54 src/HardwareSerial.o
-                0x000019f6                _ZN14HardwareSerial17_tx_udr_empty_irqEv
+                0x00005ae4       0x54 src/HardwareSerial.o
+                0x00005ae4                _ZN14HardwareSerial17_tx_udr_empty_irqEv
  .text._ZN14HardwareSerial5flushEv
-                0x00001a4a       0x42 src/HardwareSerial.o
-                0x00001a4a                _ZN14HardwareSerial5flushEv
+                0x00005b38       0x42 src/HardwareSerial.o
+                0x00005b38                _ZN14HardwareSerial5flushEv
  .text._ZN14HardwareSerial5writeEh
-                0x00001a8c       0x9c src/HardwareSerial.o
-                0x00001a8c                _ZN14HardwareSerial5writeEh
+                0x00005b7a       0x9c src/HardwareSerial.o
+                0x00005b7a                _ZN14HardwareSerial5writeEh
  .text._ZN14HardwareSerial5beginEmh
-                0x00001b28       0xd2 src/HardwareSerial.o
-                0x00001b28                _ZN14HardwareSerial5beginEmh
+                0x00005c16       0xd2 src/HardwareSerial.o
+                0x00005c16                _ZN14HardwareSerial5beginEmh
  .text.__vector_25
-                0x00001bfa       0x78 src/HardwareSerial0.o
-                0x00001bfa                __vector_25
+                0x00005ce8       0x78 src/HardwareSerial0.o
+                0x00005ce8                __vector_25
  .text.__vector_26
-                0x00001c72       0x52 src/HardwareSerial0.o
-                0x00001c72                __vector_26
+                0x00005d60       0x52 src/HardwareSerial0.o
+                0x00005d60                __vector_26
  .text._Z17Serial0_availablev
-                0x00001cc4       0x12 src/HardwareSerial0.o
-                0x00001cc4                _Z17Serial0_availablev
+                0x00005db2       0x12 src/HardwareSerial0.o
+                0x00005db2                _Z17Serial0_availablev
  .text._GLOBAL__sub_I___vector_25
-                0x00001cd6       0x5a src/HardwareSerial0.o
+                0x00005dc4       0x5a src/HardwareSerial0.o
  .text.__vector_36
-                0x00001d30       0x78 src/HardwareSerial1.o
-                0x00001d30                __vector_36
+                0x00005e1e       0x78 src/HardwareSerial1.o
+                0x00005e1e                __vector_36
  .text.__vector_37
-                0x00001da8       0x52 src/HardwareSerial1.o
-                0x00001da8                __vector_37
+                0x00005e96       0x52 src/HardwareSerial1.o
+                0x00005e96                __vector_37
  .text._Z17Serial1_availablev
-                0x00001dfa       0x12 src/HardwareSerial1.o
-                0x00001dfa                _Z17Serial1_availablev
+                0x00005ee8       0x12 src/HardwareSerial1.o
+                0x00005ee8                _Z17Serial1_availablev
  .text._GLOBAL__sub_I___vector_36
-                0x00001e0c       0x5a src/HardwareSerial1.o
+                0x00005efa       0x5a src/HardwareSerial1.o
  .text.__vector_51
-                0x00001e66       0x78 src/HardwareSerial2.o
-                0x00001e66                __vector_51
+                0x00005f54       0x78 src/HardwareSerial2.o
+                0x00005f54                __vector_51
  .text.__vector_52
-                0x00001ede       0x52 src/HardwareSerial2.o
-                0x00001ede                __vector_52
+                0x00005fcc       0x52 src/HardwareSerial2.o
+                0x00005fcc                __vector_52
  .text._Z17Serial2_availablev
-                0x00001f30       0x12 src/HardwareSerial2.o
-                0x00001f30                _Z17Serial2_availablev
+                0x0000601e       0x12 src/HardwareSerial2.o
+                0x0000601e                _Z17Serial2_availablev
  .text._GLOBAL__sub_I___vector_51
-                0x00001f42       0x5a src/HardwareSerial2.o
+                0x00006030       0x5a src/HardwareSerial2.o
  .text.__vector_54
-                0x00001f9c       0x78 src/HardwareSerial3.o
-                0x00001f9c                __vector_54
+                0x0000608a       0x78 src/HardwareSerial3.o
+                0x0000608a                __vector_54
  .text.__vector_55
-                0x00002014       0x52 src/HardwareSerial3.o
-                0x00002014                __vector_55
+                0x00006102       0x52 src/HardwareSerial3.o
+                0x00006102                __vector_55
  .text._Z17Serial3_availablev
-                0x00002066       0x12 src/HardwareSerial3.o
-                0x00002066                _Z17Serial3_availablev
+                0x00006154       0x12 src/HardwareSerial3.o
+                0x00006154                _Z17Serial3_availablev
  .text._GLOBAL__sub_I___vector_54
-                0x00002078       0x5a src/HardwareSerial3.o
- .text.__empty  0x000020d2        0x2 src/hooks.o
-                0x000020d2                yield
+                0x00006166       0x5a src/HardwareSerial3.o
+ .text.__empty  0x000061c0        0x2 src/hooks.o
+                0x000061c0                yield
  .text._ZNK9IPAddress7printToER5Print
-                0x000020d4       0x7e src/IPAddress.o
-                0x000020d4                _ZNK9IPAddress7printToER5Print
+                0x000061c2       0x7e src/IPAddress.o
+                0x000061c2                _ZNK9IPAddress7printToER5Print
  .text._GLOBAL__sub_I__ZN9IPAddressC2Ev
-                0x00002152       0x16 src/IPAddress.o
+                0x00006240       0x16 src/IPAddress.o
  .text.initVariant
-                0x00002168        0x2 src/main.o
-                0x00002168                initVariant
- .text.main     0x0000216a       0x14 src/main.o
-                0x0000216a                main
- .text._Znwj    0x0000217e        0x4 src/new.o
-                0x0000217e                _Znwj
- .text._ZdlPv   0x00002182        0x4 src/new.o
-                0x00002182                _ZdlPv
+                0x00006256        0x2 src/main.o
+                0x00006256                initVariant
+ .text.main     0x00006258       0x14 src/main.o
+                0x00006258                main
+ .text._Znwj    0x0000626c        0x6 src/new.o
+                0x0000626c                _Znwj
+ .text._ZdlPv   0x00006272        0x6 src/new.o
+                0x00006272                _ZdlPv
  .text._ZN5Print5writeEPKhj
-                0x00002186       0x5a src/Print.o
-                0x00002186                _ZN5Print5writeEPKhj
+                0x00006278       0x5a src/Print.o
+                0x00006278                _ZN5Print5writeEPKhj
+ .text._ZN5Print5printERK6String
+                0x000062d2       0x1e src/Print.o
+                0x000062d2                _ZN5Print5printERK6String
  .text._ZN5Print5printEPKc
-                0x000021e0       0x2c src/Print.o
-                0x000021e0                _ZN5Print5printEPKc
+                0x000062f0       0x2c src/Print.o
+                0x000062f0                _ZN5Print5printEPKc
  .text._ZN5Print5printEc
-                0x0000220c       0x10 src/Print.o
-                0x0000220c                _ZN5Print5printEc
+                0x0000631c       0x10 src/Print.o
+                0x0000631c                _ZN5Print5printEc
  .text._ZN5Print7printlnEv
-                0x0000221c       0x18 src/Print.o
-                0x0000221c                _ZN5Print7printlnEv
+                0x0000632c       0x18 src/Print.o
+                0x0000632c                _ZN5Print7printlnEv
  .text._ZN5Print7printlnEPKc
-                0x00002234       0x20 src/Print.o
-                0x00002234                _ZN5Print7printlnEPKc
+                0x00006344       0x20 src/Print.o
+                0x00006344                _ZN5Print7printlnEPKc
  .text._ZN5Print11printNumberEmh
-                0x00002254       0xe4 src/Print.o
-                0x00002254                _ZN5Print11printNumberEmh
+                0x00006364       0xe6 src/Print.o
+                0x00006364                _ZN5Print11printNumberEmh
+ .text._ZN5Print5printEli
+                0x0000644a       0x70 src/Print.o
+                0x0000644a                _ZN5Print5printEli
+ .text._ZN5Print5printEii
+                0x000064ba        0xe src/Print.o
+                0x000064ba                _ZN5Print5printEii
+ .text._ZN5Print7printlnEii
+                0x000064c8       0x2a src/Print.o
+                0x000064c8                _ZN5Print7printlnEii
  .text._ZN5Print5printEmi
-                0x00002338       0x1c src/Print.o
-                0x00002338                _ZN5Print5printEmi
+                0x000064f2       0x1c src/Print.o
+                0x000064f2                _ZN5Print5printEmi
  .text._ZN5Print5printEhi
-                0x00002354        0xe src/Print.o
-                0x00002354                _ZN5Print5printEhi
+                0x0000650e        0xe src/Print.o
+                0x0000650e                _ZN5Print5printEhi
+ .text._ZN5Print10printFloatEdh
+                0x0000651c      0x1e6 src/Print.o
+                0x0000651c                _ZN5Print10printFloatEdh
+ .text._ZN5Print5printEdi
+                0x00006702        0x4 src/Print.o
+                0x00006702                _ZN5Print5printEdi
+ .text._ZN5Print7printlnEdi
+                0x00006706       0x20 src/Print.o
+                0x00006706                _ZN5Print7printlnEdi
  .text._Z12disableTimerh
-                0x00002362       0x74 src/Tone.o
-                0x00002362                _Z12disableTimerh
+                0x00006726       0x74 src/Tone.o
+                0x00006726                _Z12disableTimerh
  .text._Z6noToneh
-                0x000023d6       0x2a src/Tone.o
-                0x000023d6                _Z6noToneh
+                0x0000679a       0x2a src/Tone.o
+                0x0000679a                _Z6noToneh
  .text.__vector_13
-                0x00002400       0xbe src/Tone.o
-                0x00002400                __vector_13
+                0x000067c4       0xbe src/Tone.o
+                0x000067c4                __vector_13
  .text.__vector_1
-                0x000024be       0x62 src/WInterrupts.o
-                0x000024be                __vector_1
+                0x00006882       0x62 src/WInterrupts.o
+                0x00006882                __vector_1
  .text.__vector_2
-                0x00002520       0x62 src/WInterrupts.o
-                0x00002520                __vector_2
+                0x000068e4       0x62 src/WInterrupts.o
+                0x000068e4                __vector_2
  .text.__vector_3
-                0x00002582       0x62 src/WInterrupts.o
-                0x00002582                __vector_3
+                0x00006946       0x62 src/WInterrupts.o
+                0x00006946                __vector_3
  .text.__vector_4
-                0x000025e4       0x62 src/WInterrupts.o
-                0x000025e4                __vector_4
+                0x000069a8       0x62 src/WInterrupts.o
+                0x000069a8                __vector_4
  .text.__vector_5
-                0x00002646       0x62 src/WInterrupts.o
-                0x00002646                __vector_5
+                0x00006a0a       0x62 src/WInterrupts.o
+                0x00006a0a                __vector_5
  .text.__vector_6
-                0x000026a8       0x62 src/WInterrupts.o
-                0x000026a8                __vector_6
+                0x00006a6c       0x62 src/WInterrupts.o
+                0x00006a6c                __vector_6
  .text.__vector_7
-                0x0000270a       0x62 src/WInterrupts.o
-                0x0000270a                __vector_7
+                0x00006ace       0x62 src/WInterrupts.o
+                0x00006ace                __vector_7
  .text.__vector_8
-                0x0000276c       0x62 src/WInterrupts.o
-                0x0000276c                __vector_8
+                0x00006b30       0x62 src/WInterrupts.o
+                0x00006b30                __vector_8
  .text.__vector_23
-                0x000027ce       0x94 src/wiring.o
-                0x000027ce                __vector_23
- .text.micros   0x00002862       0x4c src/wiring.o
-                0x00002862                micros
- .text.delay    0x000028ae       0x52 src/wiring.o
-                0x000028ae                delay
+                0x00006b92       0x94 src/wiring.o
+                0x00006b92                __vector_23
+ .text.millis   0x00006c26       0x18 src/wiring.o
+                0x00006c26                millis
+ .text.micros   0x00006c3e       0x4c src/wiring.o
+                0x00006c3e                micros
+ .text.delay    0x00006c8a       0x52 src/wiring.o
+                0x00006c8a                delay
  .text.delayMicroseconds
-                0x00002900       0x16 src/wiring.o
-                0x00002900                delayMicroseconds
- .text.init     0x00002916       0xc4 src/wiring.o
-                0x00002916                init
+                0x00006cdc       0x16 src/wiring.o
+                0x00006cdc                delayMicroseconds
+ .text.init     0x00006cf2       0xc4 src/wiring.o
+                0x00006cf2                init
  .text.turnOffPWM
-                0x000029da       0xd0 src/wiring_digital.o
- .text.pinMode  0x00002aaa       0x7e src/wiring_digital.o
-                0x00002aaa                pinMode
+                0x00006db6       0xd0 src/wiring_digital.o
+ .text.pinMode  0x00006e86       0x7e src/wiring_digital.o
+                0x00006e86                pinMode
  .text.digitalWrite
-                0x00002b28       0x60 src/wiring_digital.o
-                0x00002b28                digitalWrite
+                0x00006f04       0x60 src/wiring_digital.o
+                0x00006f04                digitalWrite
  .text.digitalRead
-                0x00002b88       0x50 src/wiring_digital.o
-                0x00002b88                digitalRead
+                0x00006f64       0x50 src/wiring_digital.o
+                0x00006f64                digitalRead
  .text._ZN6StringD2Ev
-                0x00002bd8        0xa src/WString.o
-                0x00002bd8                _ZN6StringD2Ev
-                0x00002bd8                _ZN6StringD1Ev
+                0x00006fb4        0xa src/WString.o
+                0x00006fb4                _ZN6StringD2Ev
+                0x00006fb4                _ZN6StringD1Ev
  .text._ZN6String10invalidateEv
-                0x00002be2       0x22 src/WString.o
-                0x00002be2                _ZN6String10invalidateEv
+                0x00006fbe       0x22 src/WString.o
+                0x00006fbe                _ZN6String10invalidateEv
  .text._ZN6String12changeBufferEj
-                0x00002c04       0x32 src/WString.o
-                0x00002c04                _ZN6String12changeBufferEj
+                0x00006fe0       0x32 src/WString.o
+                0x00006fe0                _ZN6String12changeBufferEj
  .text._ZN6String7reserveEj
-                0x00002c36       0x3e src/WString.o
-                0x00002c36                _ZN6String7reserveEj
+                0x00007012       0x3e src/WString.o
+                0x00007012                _ZN6String7reserveEj
  .text._ZN6String4copyEPKcj
-                0x00002c74       0x3c src/WString.o
-                0x00002c74                _ZN6String4copyEPKcj
+                0x00007050       0x3c src/WString.o
+                0x00007050                _ZN6String4copyEPKcj
  .text._ZN6StringC2EPKc
-                0x00002cb0       0x28 src/WString.o
-                0x00002cb0                _ZN6StringC2EPKc
-                0x00002cb0                _ZN6StringC1EPKc
+                0x0000708c       0x28 src/WString.o
+                0x0000708c                _ZN6StringC2EPKc
+                0x0000708c                _ZN6StringC1EPKc
  .text._ZN6StringaSERKS_
-                0x00002cd8       0x2a src/WString.o
-                0x00002cd8                _ZN6StringaSERKS_
+                0x000070b4       0x2a src/WString.o
+                0x000070b4                _ZN6StringaSERKS_
  .text._ZN6StringC2ERKS_
-                0x00002d02       0x12 src/WString.o
-                0x00002d02                _ZN6StringC2ERKS_
-                0x00002d02                _ZN6StringC1ERKS_
- .text._ZN6StringaSEPKc
-                0x00002d14       0x2a src/WString.o
-                0x00002d14                _ZN6StringaSEPKc
+                0x000070de       0x12 src/WString.o
+                0x000070de                _ZN6StringC2ERKS_
+                0x000070de                _ZN6StringC1ERKS_
+ .text._ZN6String6concatEPKcj
+                0x000070f0       0x5c src/WString.o
+                0x000070f0                _ZN6String6concatEPKcj
+ .text._ZplRK15StringSumHelperRK6String
+                0x0000714c       0x22 src/WString.o
+                0x0000714c                _ZplRK15StringSumHelperRK6String
+ .text._ZplRK15StringSumHelperPKc
+                0x0000716e       0x2e src/WString.o
+                0x0000716e                _ZplRK15StringSumHelperPKc
+ .text._ZNK6String9compareToERKS_
+                0x0000719c       0x68 src/WString.o
+                0x0000719c                _ZNK6String9compareToERKS_
+ .text._ZNK6String6equalsERKS_
+                0x00007204       0x24 src/WString.o
+                0x00007204                _ZNK6String6equalsERKS_
+ .text.avr-libc.fplib
+                0x00007228        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
+                0x00007228                __subsf3
+                0x0000722a                __addsf3
+ .text.avr-libc.fplib
+                0x00007232       0xc0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+                0x0000724c                __addsf3x
+ .text.avr-libc.fplib
+                0x000072f2        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
+                0x000072f2                __nesf2
+                0x000072f2                __eqsf2
+                0x000072f2                __cmpsf2
+                0x000072f2                __ltsf2
+                0x000072f2                __lesf2
+ .text.avr-libc.fplib
+                0x000072fa        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
+                0x000072fa                __divsf3
+ .text.avr-libc.fplib
+                0x000072fe       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                0x00007314                __divsf3x
+                0x00007318                __divsf3_pse
+ .text.avr-libc.fplib
+                0x000073ca        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
+                0x000073ca                __fixsfsi
+ .text.avr-libc.fplib
+                0x000073d4       0x58 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+                0x000073d4                __fixunssfsi
+ .text.avr-libc.fplib
+                0x0000742c       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+                0x0000742c                __floatunsisf
+                0x00007430                __floatsisf
+ .text.avr-libc.fplib
+                0x000074a6       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
+                0x000074a6                __fp_cmp
+ .text.avr-libc.fplib
+                0x000074ee        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+                0x000074ee                __fp_inf
+ .text.avr-libc.fplib
+                0x000074fa        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+                0x000074fa                __fp_nan
+ .text.avr-libc.fplib
+                0x00007500        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+                0x00007500                __fp_pscA
+ .text.avr-libc.fplib
+                0x0000750e        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+                0x0000750e                __fp_pscB
+ .text.avr-libc.fplib
+                0x0000751c       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
+                0x0000751c                __fp_round
+ .text.avr-libc.fplib
+                0x0000753e       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+                0x0000753e                __fp_split3
+                0x0000754e                __fp_splitA
+ .text.avr-libc.fplib
+                0x00007582        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+                0x00007582                __fp_zero
+                0x00007584                __fp_szero
+ .text.avr-libc.fplib
+                0x00007590        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
+                0x00007590                __gesf2
+                0x00007590                __gtsf2
+ .text.avr-libc.fplib
+                0x00007598        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+                0x00007598                __mulsf3
+ .text.avr-libc.fplib
+                0x0000759c       0xc2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                0x000075b0                __mulsf3x
+                0x000075b4                __mulsf3_pse
+ .text.avr-libc.fplib
+                0x0000765e        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
+                0x0000765e                __unordsf2
  .text.libgcc.div
-                0x00002d3e       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
-                0x00002d3e                __udivmodsi4
- .text.libgcc   0x00002d82       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_tablejump2.o)
-                0x00002d82                __tablejump2__
+                0x00007666       0x26 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
+                0x00007666                _div
+                0x00007666                __divmodhi4
+ .text.libgcc.div
+                0x0000768c       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
+                0x0000768c                __udivmodsi4
+ .text.libgcc   0x000076d0       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_tablejump2.o)
+                0x000076d0                __tablejump2__
+ .text.libgcc.div
+                0x000076e0       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
+                0x000076e0                __udivmodhi4
  .text.avr-libc
-                0x00002d92      0x25a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
-                0x00002d92                malloc
-                0x00002ebc                free
+                0x00007708      0x25a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
+                0x00007708                malloc
+                0x00007832                free
  .text.avr-libc
-                0x00002fec      0x1c8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
-                0x00002fec                realloc
+                0x00007962      0x1c8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
+                0x00007962                realloc
  .text.avr-libc
-                0x000031b4        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
-                0x000031b4                abort
+                0x00007b2a        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
+                0x00007b2a                abort
  .text.avr-libc
-                0x000031bc       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(memcpy.o)
-                0x000031bc                memcpy
+                0x00007b32       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(memcpy.o)
+                0x00007b32                memcpy
  .text.avr-libc
-                0x000031ce        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
-                0x000031ce                strcpy
-                0x000031dc                . = ALIGN (0x2)
+                0x00007b44       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
+                0x00007b44                strcmp
+ .text.avr-libc
+                0x00007b56        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
+                0x00007b56                strcpy
+                0x00007b64                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000031dc        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
-                0x000031dc                _exit
-                0x000031dc                exit
+ .fini9         0x00007b64        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
+                0x00007b64                _exit
+                0x00007b64                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -2261,11 +2587,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000031dc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
+ .fini0         0x00007b64        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x000031e0                _etext = .
+                0x00007b68                _etext = .
 
-.data           0x00800200      0x108 load address 0x000031e0
+.data           0x00800200      0x2fc load address 0x00007b68
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800200        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
@@ -2273,160 +2599,229 @@ END GROUP
                 0x00800202                __malloc_heap_start
                 0x00800204                __malloc_margin
  *(.data*)
+ .data.firstpass
+                0x00800206        0x1 Main.o
+                0x00800206                firstpass
  .data._ZL9tone_pins
-                0x00800206        0x1 src/Tone.o
+                0x00800207        0x1 src/Tone.o
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800207        0x4 classes/Hardware.o
+                0x00800208        0xb classes/DigIO.o
  .rodata.str1.1
-                0x0080020b       0x25 classes/LCDMenu.o
-                                 0x28 (size before relaxing)
+                0x00800213       0x3e classes/Hardware.o
+ .rodata.str1.1
+                0x00800251       0x3c classes/HLT/HLT_UI.o
+                                 0x46 (size before relaxing)
+ .rodata.str1.1
+                0x0080028d       0x5e classes/MAIN/MAIN_UI.o
+                                 0x7f (size before relaxing)
+ .rodata.str1.1
+                0x008002eb        0x4 classes/MLT/MLT_UI.o
+                                 0x46 (size before relaxing)
+ .rodata.str1.1
+                0x008002ef       0x18 classes/UserInterface/LCDMenu.o
+                                 0x20 (size before relaxing)
  .rodata._ZTV10LinkedListI11LCDMenuItemE
-                0x00800230       0x18 classes/LCDMenu.o
-                0x00800230                _ZTV10LinkedListI11LCDMenuItemE
+                0x00800307       0x18 classes/UserInterface/LCDMenu.o
+                0x00800307                _ZTV10LinkedListI11LCDMenuItemE
  .rodata.str1.1
-                0x00800248        0x7 classes/LCDMenuItem.o
-                                  0x8 (size before relaxing)
+                0x0080031f       0x45 classes/UserInterface/LCDMenuItem.o
+                                 0x46 (size before relaxing)
  .rodata.str1.1
-                0x0080024f       0x4d classes/UI_BurnerController.o
-                                 0x4e (size before relaxing)
+                0x00800364        0x1 classes/UserInterface/LCDPage.o
+ .rodata._ZTV10LinkedListI11LCDPageItemE
+                0x00800364       0x18 classes/UserInterface/LCDPage.o
+                0x00800364                _ZTV10LinkedListI11LCDPageItemE
+ .rodata.str1.1
+                0x0080037c       0x2e classes/UserInterface/LCDPageItem.o
+                                 0x2f (size before relaxing)
+ .rodata.str1.1
+                0x008003aa        0xc classes/UserInterface/LCDToggleOption.o
+ .rodata.str1.1
+                0x008003aa       0x19 classes/UserInterface/UserInterface.o
+                                 0x1a (size before relaxing)
+ .rodata.str1.1
+                0x008003c3       0x26 classes/Executive.o
  .rodata._ZTV3LCD
-                0x0080029c       0x10 include/LiquidCrystal/LCD.o
-                0x0080029c                _ZTV3LCD
+                0x008003e9       0x10 include/LiquidCrystal/LCD.o
+                0x008003e9                _ZTV3LCD
  .rodata._ZTV17LiquidCrystal_I2C
-                0x008002ac       0x10 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x008002ac                _ZTV17LiquidCrystal_I2C
+                0x008003f9       0x10 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x008003f9                _ZTV17LiquidCrystal_I2C
  .rodata._ZTV7TwoWire
-                0x008002bc       0x10 include/Wire/Wire.o
-                0x008002bc                _ZTV7TwoWire
+                0x00800409       0x10 include/Wire/Wire.o
+                0x00800409                _ZTV7TwoWire
  .rodata.str1.1
-                0x008002cc       0x16 Main.o
+                0x00800419       0xbd Main.o
+                                 0xbe (size before relaxing)
  .rodata._ZTV14HardwareSerial
-                0x008002e2       0x10 src/HardwareSerial.o
-                0x008002e2                _ZTV14HardwareSerial
+                0x008004d6       0x10 src/HardwareSerial.o
+                0x008004d6                _ZTV14HardwareSerial
  .rodata._ZTV9IPAddress
-                0x008002f2        0x6 src/IPAddress.o
-                0x008002f2                _ZTV9IPAddress
+                0x008004e6        0x6 src/IPAddress.o
+                0x008004e6                _ZTV9IPAddress
  .rodata.str1.1
-                0x008002f8        0xf src/Print.o
+                0x008004ec        0xf src/Print.o
                                  0x11 (size before relaxing)
  *(.gnu.linkonce.d*)
-                0x00800308                . = ALIGN (0x2)
- *fill*         0x00800307        0x1 
-                0x00800308                _edata = .
-                0x00800308                PROVIDE (__data_end, .)
+                0x008004fc                . = ALIGN (0x2)
+ *fill*         0x008004fb        0x1 
+                0x008004fc                _edata = .
+                0x008004fc                PROVIDE (__data_end, .)
 
-.bss            0x00800308      0x37c
-                0x00800308                PROVIDE (__bss_start, .)
+.bss            0x008004fc      0x3e4
+                0x008004fc                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.HLT_UI    0x00800308        0x2 classes/Hardware.o
-                0x00800308                HLT_UI
- .bss.HLT_ENC   0x0080030a        0x2 classes/Hardware.o
-                0x0080030a                HLT_ENC
- .bss.HLT_LCD   0x0080030c       0x18 classes/Hardware.o
-                0x0080030c                HLT_LCD
+ .bss.BK_UI     0x008004fc        0x2 classes/Hardware.o
+                0x008004fc                BK_UI
+ .bss.BK_ENC    0x008004fe        0x2 classes/Hardware.o
+                0x008004fe                BK_ENC
+ .bss.BK_LCD    0x00800500       0x18 classes/Hardware.o
+                0x00800500                BK_LCD
+ .bss.MLT_ENC   0x00800518        0x2 classes/Hardware.o
+                0x00800518                MLT_ENC
+ .bss.MLT_LCD   0x0080051a       0x18 classes/Hardware.o
+                0x0080051a                MLT_LCD
+ .bss.HLT_ENC   0x00800532        0x2 classes/Hardware.o
+                0x00800532                HLT_ENC
+ .bss.HLT_LCD   0x00800534       0x18 classes/Hardware.o
+                0x00800534                HLT_LCD
+ .bss.MAIN_ENC  0x0080054c        0x2 classes/Hardware.o
+                0x0080054c                MAIN_ENC
+ .bss.MAIN_LCD  0x0080054e       0x18 classes/Hardware.o
+                0x0080054e                MAIN_LCD
+ .bss.TempAlarmDIO
+                0x00800566        0x2 classes/Hardware.o
+                0x00800566                TempAlarmDIO
+ .bss.TimerAlarmDIO
+                0x00800568        0x2 classes/Hardware.o
+                0x00800568                TimerAlarmDIO
+ .bss.HLT_UI    0x0080056a        0x2 classes/HLT/HLT_UI.o
+                0x0080056a                HLT_UI
+ .bss.MAIN_UI   0x0080056c        0x2 classes/MAIN/MAIN_UI.o
+                0x0080056c                MAIN_UI
+ .bss.MLT_UI    0x0080056e        0x2 classes/MLT/MLT_UI.o
+                0x0080056e                MLT_UI
+ .bss._ZZN12ClickEncoder7serviceEvE16doubleClickTicks
+                0x00800570        0x1 include/ClickEncoder/ClickEncoder.o
+ .bss._ZZN12ClickEncoder7serviceEvE12keyDownTicks
+                0x00800571        0x2 include/ClickEncoder/ClickEncoder.o
+ .bss._ZZN12ClickEncoder7serviceEvE15lastButtonCheck
+                0x00800573        0x4 include/ClickEncoder/ClickEncoder.o
+ .bss._ZN8TimerOne11isrCallbackE
+                0x00800577        0x2 include/TimerOne/TimerOne.o
+                0x00800577                _ZN8TimerOne11isrCallbackE
+ .bss._ZN8TimerOne15clockSelectBitsE
+                0x00800579        0x1 include/TimerOne/TimerOne.o
+                0x00800579                _ZN8TimerOne15clockSelectBitsE
+ .bss._ZN8TimerOne9pwmPeriodE
+                0x0080057a        0x2 include/TimerOne/TimerOne.o
+                0x0080057a                _ZN8TimerOne9pwmPeriodE
  .bss.twi_error
-                0x00800324        0x1 include/Wire/twi.o
+                0x0080057c        0x1 include/Wire/twi.o
  .bss.twi_rxBufferIndex
-                0x00800325        0x1 include/Wire/twi.o
+                0x0080057d        0x1 include/Wire/twi.o
  .bss.twi_rxBuffer
-                0x00800326       0x20 include/Wire/twi.o
+                0x0080057e       0x20 include/Wire/twi.o
  .bss.twi_txBufferLength
-                0x00800346        0x1 include/Wire/twi.o
+                0x0080059e        0x1 include/Wire/twi.o
  .bss.twi_txBufferIndex
-                0x00800347        0x1 include/Wire/twi.o
+                0x0080059f        0x1 include/Wire/twi.o
  .bss.twi_txBuffer
-                0x00800348       0x20 include/Wire/twi.o
+                0x008005a0       0x20 include/Wire/twi.o
  .bss.twi_masterBufferLength
-                0x00800368        0x1 include/Wire/twi.o
+                0x008005c0        0x1 include/Wire/twi.o
  .bss.twi_masterBufferIndex
-                0x00800369        0x1 include/Wire/twi.o
+                0x008005c1        0x1 include/Wire/twi.o
  .bss.twi_masterBuffer
-                0x0080036a       0x20 include/Wire/twi.o
+                0x008005c2       0x20 include/Wire/twi.o
  .bss.twi_onSlaveReceive
-                0x0080038a        0x2 include/Wire/twi.o
+                0x008005e2        0x2 include/Wire/twi.o
  .bss.twi_onSlaveTransmit
-                0x0080038c        0x2 include/Wire/twi.o
+                0x008005e4        0x2 include/Wire/twi.o
  .bss.twi_inRepStart
-                0x0080038e        0x1 include/Wire/twi.o
+                0x008005e6        0x1 include/Wire/twi.o
  .bss.twi_sendStop
-                0x0080038f        0x1 include/Wire/twi.o
+                0x008005e7        0x1 include/Wire/twi.o
  .bss.twi_slarw
-                0x00800390        0x1 include/Wire/twi.o
+                0x008005e8        0x1 include/Wire/twi.o
  .bss.twi_state
-                0x00800391        0x1 include/Wire/twi.o
- .bss.Wire      0x00800392        0xc include/Wire/Wire.o
-                0x00800392                Wire
+                0x008005e9        0x1 include/Wire/twi.o
+ .bss.Wire      0x008005ea        0xc include/Wire/Wire.o
+                0x008005ea                Wire
  .bss._ZN7TwoWire12transmittingE
-                0x0080039e        0x1 include/Wire/Wire.o
-                0x0080039e                _ZN7TwoWire12transmittingE
+                0x008005f6        0x1 include/Wire/Wire.o
+                0x008005f6                _ZN7TwoWire12transmittingE
  .bss._ZN7TwoWire14txBufferLengthE
-                0x0080039f        0x1 include/Wire/Wire.o
-                0x0080039f                _ZN7TwoWire14txBufferLengthE
+                0x008005f7        0x1 include/Wire/Wire.o
+                0x008005f7                _ZN7TwoWire14txBufferLengthE
  .bss._ZN7TwoWire13txBufferIndexE
-                0x008003a0        0x1 include/Wire/Wire.o
-                0x008003a0                _ZN7TwoWire13txBufferIndexE
+                0x008005f8        0x1 include/Wire/Wire.o
+                0x008005f8                _ZN7TwoWire13txBufferIndexE
  .bss._ZN7TwoWire8txBufferE
-                0x008003a1       0x20 include/Wire/Wire.o
-                0x008003a1                _ZN7TwoWire8txBufferE
+                0x008005f9       0x20 include/Wire/Wire.o
+                0x008005f9                _ZN7TwoWire8txBufferE
  .bss._ZN7TwoWire9txAddressE
-                0x008003c1        0x1 include/Wire/Wire.o
-                0x008003c1                _ZN7TwoWire9txAddressE
+                0x00800619        0x1 include/Wire/Wire.o
+                0x00800619                _ZN7TwoWire9txAddressE
  .bss._ZN7TwoWire14rxBufferLengthE
-                0x008003c2        0x1 include/Wire/Wire.o
-                0x008003c2                _ZN7TwoWire14rxBufferLengthE
+                0x0080061a        0x1 include/Wire/Wire.o
+                0x0080061a                _ZN7TwoWire14rxBufferLengthE
  .bss._ZN7TwoWire13rxBufferIndexE
-                0x008003c3        0x1 include/Wire/Wire.o
-                0x008003c3                _ZN7TwoWire13rxBufferIndexE
+                0x0080061b        0x1 include/Wire/Wire.o
+                0x0080061b                _ZN7TwoWire13rxBufferIndexE
  .bss._ZN7TwoWire8rxBufferE
-                0x008003c4       0x20 include/Wire/Wire.o
-                0x008003c4                _ZN7TwoWire8rxBufferE
- .bss.Exec      0x008003e4        0x2 Main.o
-                0x008003e4                Exec
- .bss.Serial    0x008003e6       0x9d src/HardwareSerial0.o
-                0x008003e6                Serial
- .bss.Serial1   0x00800483       0x9d src/HardwareSerial1.o
-                0x00800483                Serial1
- .bss.Serial2   0x00800520       0x9d src/HardwareSerial2.o
-                0x00800520                Serial2
- .bss.Serial3   0x008005bd       0x9d src/HardwareSerial3.o
-                0x008005bd                Serial3
+                0x0080061c       0x20 include/Wire/Wire.o
+                0x0080061c                _ZN7TwoWire8rxBufferE
+ .bss.Exec      0x0080063c        0x2 Main.o
+                0x0080063c                Exec
+ .bss.BootScreenTime
+                0x0080063e        0x4 Main.o
+                0x0080063e                BootScreenTime
+ .bss.Serial    0x00800642       0x9d src/HardwareSerial0.o
+                0x00800642                Serial
+ .bss.Serial1   0x008006df       0x9d src/HardwareSerial1.o
+                0x008006df                Serial1
+ .bss.Serial2   0x0080077c       0x9d src/HardwareSerial2.o
+                0x0080077c                Serial2
+ .bss.Serial3   0x00800819       0x9d src/HardwareSerial3.o
+                0x00800819                Serial3
  .bss._ZL11INADDR_NONE
-                0x0080065a        0x6 src/IPAddress.o
+                0x008008b6        0x6 src/IPAddress.o
  .bss.timer2_pin_mask
-                0x00800660        0x1 src/Tone.o
-                0x00800660                timer2_pin_mask
+                0x008008bc        0x1 src/Tone.o
+                0x008008bc                timer2_pin_mask
  .bss.timer2_pin_port
-                0x00800661        0x2 src/Tone.o
-                0x00800661                timer2_pin_port
+                0x008008bd        0x2 src/Tone.o
+                0x008008bd                timer2_pin_port
  .bss.timer2_toggle_count
-                0x00800663        0x4 src/Tone.o
-                0x00800663                timer2_toggle_count
- .bss.intFunc   0x00800667       0x10 src/WInterrupts.o
+                0x008008bf        0x4 src/Tone.o
+                0x008008bf                timer2_toggle_count
+ .bss.intFunc   0x008008c3       0x10 src/WInterrupts.o
  .bss.timer0_fract
-                0x00800677        0x1 src/wiring.o
+                0x008008d3        0x1 src/wiring.o
  .bss.timer0_millis
-                0x00800678        0x4 src/wiring.o
-                0x00800678                timer0_millis
+                0x008008d4        0x4 src/wiring.o
+                0x008008d4                timer0_millis
  .bss.timer0_overflow_count
-                0x0080067c        0x4 src/wiring.o
-                0x0080067c                timer0_overflow_count
+                0x008008d8        0x4 src/wiring.o
+                0x008008d8                timer0_overflow_count
  *(COMMON)
- COMMON         0x00800680        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
-                0x00800680                __brkval
-                0x00800682                __flp
-                0x00800684                PROVIDE (__bss_end, .)
-                0x000031e0                __data_load_start = LOADADDR (.data)
-                0x000032e8                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008008dc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
+                0x008008dc                __brkval
+                0x008008de                __flp
+                0x008008e0                PROVIDE (__bss_end, .)
+                0x00007b68                __data_load_start = LOADADDR (.data)
+                0x00007e64                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800684        0x0
-                0x00800684                PROVIDE (__noinit_start, .)
+.noinit         0x008008e0        0x0
+                0x008008e0                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800684                PROVIDE (__noinit_end, .)
-                0x00800684                _end = .
-                0x00800684                PROVIDE (__heap_start, .)
+                0x008008e0                PROVIDE (__noinit_end, .)
+                0x008008e0                _end = .
+                0x008008e0                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -2467,15 +2862,25 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 classes/Hardware.o
+ .comment       0x00000000       0x30 classes/DigIO.o
                                  0x31 (size before relaxing)
- .comment       0x00000030       0x31 classes/LCDMenu.o
- .comment       0x00000030       0x31 classes/LCDMenuItem.o
- .comment       0x00000030       0x31 classes/UI_BurnerController.o
+ .comment       0x00000030       0x31 classes/Hardware.o
+ .comment       0x00000030       0x31 classes/HLT/HLT_UI.o
+ .comment       0x00000030       0x31 classes/MAIN/MAIN_UI.o
+ .comment       0x00000030       0x31 classes/MLT/MLT_UI.o
+ .comment       0x00000030       0x31 classes/UserInterface/ClickEncoderWithEvents.o
+ .comment       0x00000030       0x31 classes/UserInterface/LCDMenu.o
+ .comment       0x00000030       0x31 classes/UserInterface/LCDMenuItem.o
+ .comment       0x00000030       0x31 classes/UserInterface/LCDPage.o
+ .comment       0x00000030       0x31 classes/UserInterface/LCDPageItem.o
+ .comment       0x00000030       0x31 classes/UserInterface/LCDToggleOption.o
+ .comment       0x00000030       0x31 classes/UserInterface/UserInterface.o
+ .comment       0x00000030       0x31 classes/Executive.o
  .comment       0x00000030       0x31 include/ClickEncoder/ClickEncoder.o
  .comment       0x00000030       0x31 include/LiquidCrystal/I2CIO.o
  .comment       0x00000030       0x31 include/LiquidCrystal/LCD.o
  .comment       0x00000030       0x31 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .comment       0x00000030       0x31 include/TimerOne/TimerOne.o
  .comment       0x00000030       0x31 include/Wire/twi.o
  .comment       0x00000030       0x31 include/Wire/Wire.o
  .comment       0x00000030       0x31 Main.o
@@ -2518,268 +2923,359 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0xb98
+.debug_aranges  0x00000000      0xf48
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x20 classes/Hardware.o
+                0x00000000       0x50 classes/DigIO.o
  .debug_aranges
-                0x00000020       0xa8 classes/LCDMenu.o
+                0x00000050       0x38 classes/Hardware.o
  .debug_aranges
-                0x000000c8       0x38 classes/LCDMenuItem.o
+                0x00000088       0x30 classes/HLT/HLT_UI.o
  .debug_aranges
-                0x00000100       0x38 classes/UI_BurnerController.o
+                0x000000b8       0x38 classes/MAIN/MAIN_UI.o
  .debug_aranges
-                0x00000138       0x38 include/ClickEncoder/ClickEncoder.o
+                0x000000f0       0x30 classes/MLT/MLT_UI.o
  .debug_aranges
-                0x00000170       0x58 include/LiquidCrystal/I2CIO.o
+                0x00000120       0x28 classes/UserInterface/ClickEncoderWithEvents.o
  .debug_aranges
-                0x000001c8       0xf8 include/LiquidCrystal/LCD.o
+                0x00000148       0xa8 classes/UserInterface/LCDMenu.o
  .debug_aranges
-                0x000002c0       0x88 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x000001f0       0x58 classes/UserInterface/LCDMenuItem.o
  .debug_aranges
-                0x00000348       0x70 include/Wire/twi.o
+                0x00000248       0x90 classes/UserInterface/LCDPage.o
  .debug_aranges
-                0x000003b8       0xd8 include/Wire/Wire.o
+                0x000002d8       0xc8 classes/UserInterface/LCDPageItem.o
  .debug_aranges
-                0x00000490       0x28 Main.o
+                0x000003a0       0x70 classes/UserInterface/LCDToggleOption.o
  .debug_aranges
-                0x000004b8       0x28 src/abi.o
+                0x00000410       0x70 classes/UserInterface/UserInterface.o
  .debug_aranges
-                0x000004e0       0x68 src/HardwareSerial.o
+                0x00000480       0x40 classes/Executive.o
  .debug_aranges
-                0x00000548       0x38 src/HardwareSerial0.o
+                0x000004c0       0x38 include/ClickEncoder/ClickEncoder.o
  .debug_aranges
-                0x00000580       0x38 src/HardwareSerial1.o
+                0x000004f8       0x58 include/LiquidCrystal/I2CIO.o
  .debug_aranges
-                0x000005b8       0x38 src/HardwareSerial2.o
+                0x00000550       0xf8 include/LiquidCrystal/LCD.o
  .debug_aranges
-                0x000005f0       0x38 src/HardwareSerial3.o
+                0x00000648       0x88 include/LiquidCrystal/LiquidCrystal_I2C.o
  .debug_aranges
-                0x00000628       0x20 src/hooks.o
+                0x000006d0       0x20 include/TimerOne/TimerOne.o
  .debug_aranges
-                0x00000648       0x60 src/IPAddress.o
+                0x000006f0       0x70 include/Wire/twi.o
  .debug_aranges
-                0x000006a8       0x30 src/main.o
+                0x00000760       0xd8 include/Wire/Wire.o
  .debug_aranges
-                0x000006d8       0x38 src/new.o
+                0x00000838       0x30 Main.o
  .debug_aranges
-                0x00000710       0xe8 src/Print.o
+                0x00000868       0x28 src/abi.o
  .debug_aranges
-                0x000007f8       0x38 src/Tone.o
+                0x00000890       0x68 src/HardwareSerial.o
  .debug_aranges
-                0x00000830       0x68 src/WInterrupts.o
+                0x000008f8       0x38 src/HardwareSerial0.o
  .debug_aranges
-                0x00000898       0x48 src/wiring.o
+                0x00000930       0x38 src/HardwareSerial1.o
  .debug_aranges
-                0x000008e0       0x38 src/wiring_digital.o
+                0x00000968       0x38 src/HardwareSerial2.o
  .debug_aranges
-                0x00000918      0x280 src/WString.o
+                0x000009a0       0x38 src/HardwareSerial3.o
+ .debug_aranges
+                0x000009d8       0x20 src/hooks.o
+ .debug_aranges
+                0x000009f8       0x60 src/IPAddress.o
+ .debug_aranges
+                0x00000a58       0x30 src/main.o
+ .debug_aranges
+                0x00000a88       0x38 src/new.o
+ .debug_aranges
+                0x00000ac0       0xe8 src/Print.o
+ .debug_aranges
+                0x00000ba8       0x38 src/Tone.o
+ .debug_aranges
+                0x00000be0       0x68 src/WInterrupts.o
+ .debug_aranges
+                0x00000c48       0x48 src/wiring.o
+ .debug_aranges
+                0x00000c90       0x38 src/wiring_digital.o
+ .debug_aranges
+                0x00000cc8      0x280 src/WString.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x1ecd7
+.debug_info     0x00000000    0x3ff07
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000     0x1a5c classes/Hardware.o
- .debug_info    0x00001a5c     0x2adf classes/LCDMenu.o
- .debug_info    0x0000453b     0x1446 classes/LCDMenuItem.o
- .debug_info    0x00005981     0x202f classes/UI_BurnerController.o
- .debug_info    0x000079b0      0x69a include/ClickEncoder/ClickEncoder.o
- .debug_info    0x0000804a      0x723 include/LiquidCrystal/I2CIO.o
- .debug_info    0x0000876d     0x117c include/LiquidCrystal/LCD.o
- .debug_info    0x000098e9     0x12c0 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_info    0x0000aba9      0x70f include/Wire/twi.o
- .debug_info    0x0000b2b8     0x2229 include/Wire/Wire.o
- .debug_info    0x0000d4e1     0x133c Main.o
- .debug_info    0x0000e81d       0x8e src/abi.o
- .debug_info    0x0000e8ab     0x1b3b src/HardwareSerial.o
- .debug_info    0x000103e6     0x1782 src/HardwareSerial0.o
- .debug_info    0x00011b68     0x1782 src/HardwareSerial1.o
- .debug_info    0x000132ea     0x1782 src/HardwareSerial2.o
- .debug_info    0x00014a6c     0x1788 src/HardwareSerial3.o
- .debug_info    0x000161f4       0x3e src/hooks.o
- .debug_info    0x00016232      0x9ed src/IPAddress.o
- .debug_info    0x00016c1f      0x24b src/main.o
- .debug_info    0x00016e6a      0x188 src/new.o
- .debug_info    0x00016ff2     0x2603 src/Print.o
- .debug_info    0x000195f5      0xa43 src/Tone.o
- .debug_info    0x0001a038      0x2ea src/WInterrupts.o
- .debug_info    0x0001a322      0x319 src/wiring.o
- .debug_info    0x0001a63b      0x635 src/wiring_digital.o
- .debug_info    0x0001ac70     0x4067 src/WString.o
+ .debug_info    0x00000000     0x13ba classes/DigIO.o
+ .debug_info    0x000013ba     0x373d classes/Hardware.o
+ .debug_info    0x00004af7     0x33c0 classes/HLT/HLT_UI.o
+ .debug_info    0x00007eb7     0x40db classes/MAIN/MAIN_UI.o
+ .debug_info    0x0000bf92     0x33c0 classes/MLT/MLT_UI.o
+ .debug_info    0x0000f352     0x2a92 classes/UserInterface/ClickEncoderWithEvents.o
+ .debug_info    0x00011de4     0x401f classes/UserInterface/LCDMenu.o
+ .debug_info    0x00015e03     0x337a classes/UserInterface/LCDMenuItem.o
+ .debug_info    0x0001917d     0x4181 classes/UserInterface/LCDPage.o
+ .debug_info    0x0001d2fe     0x47d8 classes/UserInterface/LCDPageItem.o
+ .debug_info    0x00021ad6     0x1b11 classes/UserInterface/LCDToggleOption.o
+ .debug_info    0x000235e7     0x2e03 classes/UserInterface/UserInterface.o
+ .debug_info    0x000263ea     0x2e7e classes/Executive.o
+ .debug_info    0x00029268      0x69a include/ClickEncoder/ClickEncoder.o
+ .debug_info    0x00029902      0x723 include/LiquidCrystal/I2CIO.o
+ .debug_info    0x0002a025     0x117c include/LiquidCrystal/LCD.o
+ .debug_info    0x0002b1a1     0x12c0 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_info    0x0002c461      0x3d8 include/TimerOne/TimerOne.o
+ .debug_info    0x0002c839      0x70f include/Wire/twi.o
+ .debug_info    0x0002cf48     0x2229 include/Wire/Wire.o
+ .debug_info    0x0002f171      0x8dc Main.o
+ .debug_info    0x0002fa4d       0x8e src/abi.o
+ .debug_info    0x0002fadb     0x1b3b src/HardwareSerial.o
+ .debug_info    0x00031616     0x1782 src/HardwareSerial0.o
+ .debug_info    0x00032d98     0x1782 src/HardwareSerial1.o
+ .debug_info    0x0003451a     0x1782 src/HardwareSerial2.o
+ .debug_info    0x00035c9c     0x1788 src/HardwareSerial3.o
+ .debug_info    0x00037424       0x3e src/hooks.o
+ .debug_info    0x00037462      0x9ed src/IPAddress.o
+ .debug_info    0x00037e4f      0x24b src/main.o
+ .debug_info    0x0003809a      0x188 src/new.o
+ .debug_info    0x00038222     0x2603 src/Print.o
+ .debug_info    0x0003a825      0xa43 src/Tone.o
+ .debug_info    0x0003b268      0x2ea src/WInterrupts.o
+ .debug_info    0x0003b552      0x319 src/wiring.o
+ .debug_info    0x0003b86b      0x635 src/wiring_digital.o
+ .debug_info    0x0003bea0     0x4067 src/WString.o
 
-.debug_abbrev   0x00000000     0x4b54
+.debug_abbrev   0x00000000     0x7528
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x3a2 classes/Hardware.o
- .debug_abbrev  0x000003a2      0x5c3 classes/LCDMenu.o
- .debug_abbrev  0x00000965      0x314 classes/LCDMenuItem.o
- .debug_abbrev  0x00000c79      0x4a1 classes/UI_BurnerController.o
- .debug_abbrev  0x0000111a      0x262 include/ClickEncoder/ClickEncoder.o
- .debug_abbrev  0x0000137c      0x22d include/LiquidCrystal/I2CIO.o
- .debug_abbrev  0x000015a9      0x365 include/LiquidCrystal/LCD.o
- .debug_abbrev  0x0000190e      0x372 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_abbrev  0x00001c80      0x251 include/Wire/twi.o
- .debug_abbrev  0x00001ed1      0x4e2 include/Wire/Wire.o
- .debug_abbrev  0x000023b3      0x335 Main.o
- .debug_abbrev  0x000026e8       0x5e src/abi.o
- .debug_abbrev  0x00002746      0x370 src/HardwareSerial.o
- .debug_abbrev  0x00002ab6      0x35d src/HardwareSerial0.o
- .debug_abbrev  0x00002e13      0x35d src/HardwareSerial1.o
- .debug_abbrev  0x00003170      0x35d src/HardwareSerial2.o
- .debug_abbrev  0x000034cd      0x366 src/HardwareSerial3.o
- .debug_abbrev  0x00003833       0x2a src/hooks.o
- .debug_abbrev  0x0000385d      0x33d src/IPAddress.o
- .debug_abbrev  0x00003b9a       0xd1 src/main.o
- .debug_abbrev  0x00003c6b       0xd6 src/new.o
- .debug_abbrev  0x00003d41      0x3b0 src/Print.o
- .debug_abbrev  0x000040f1      0x261 src/Tone.o
- .debug_abbrev  0x00004352       0xe6 src/WInterrupts.o
- .debug_abbrev  0x00004438      0x145 src/wiring.o
- .debug_abbrev  0x0000457d      0x15a src/wiring_digital.o
- .debug_abbrev  0x000046d7      0x47d src/WString.o
+ .debug_abbrev  0x00000000      0x30c classes/DigIO.o
+ .debug_abbrev  0x0000030c      0x526 classes/Hardware.o
+ .debug_abbrev  0x00000832      0x4fb classes/HLT/HLT_UI.o
+ .debug_abbrev  0x00000d2d      0x517 classes/MAIN/MAIN_UI.o
+ .debug_abbrev  0x00001244      0x4fb classes/MLT/MLT_UI.o
+ .debug_abbrev  0x0000173f      0x3a7 classes/UserInterface/ClickEncoderWithEvents.o
+ .debug_abbrev  0x00001ae6      0x5b4 classes/UserInterface/LCDMenu.o
+ .debug_abbrev  0x0000209a      0x499 classes/UserInterface/LCDMenuItem.o
+ .debug_abbrev  0x00002533      0x599 classes/UserInterface/LCDPage.o
+ .debug_abbrev  0x00002acc      0x46d classes/UserInterface/LCDPageItem.o
+ .debug_abbrev  0x00002f39      0x2bf classes/UserInterface/LCDToggleOption.o
+ .debug_abbrev  0x000031f8      0x42d classes/UserInterface/UserInterface.o
+ .debug_abbrev  0x00003625      0x3de classes/Executive.o
+ .debug_abbrev  0x00003a03      0x262 include/ClickEncoder/ClickEncoder.o
+ .debug_abbrev  0x00003c65      0x22d include/LiquidCrystal/I2CIO.o
+ .debug_abbrev  0x00003e92      0x365 include/LiquidCrystal/LCD.o
+ .debug_abbrev  0x000041f7      0x372 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_abbrev  0x00004569      0x126 include/TimerOne/TimerOne.o
+ .debug_abbrev  0x0000468f      0x251 include/Wire/twi.o
+ .debug_abbrev  0x000048e0      0x4e2 include/Wire/Wire.o
+ .debug_abbrev  0x00004dc2      0x2fa Main.o
+ .debug_abbrev  0x000050bc       0x5e src/abi.o
+ .debug_abbrev  0x0000511a      0x370 src/HardwareSerial.o
+ .debug_abbrev  0x0000548a      0x35d src/HardwareSerial0.o
+ .debug_abbrev  0x000057e7      0x35d src/HardwareSerial1.o
+ .debug_abbrev  0x00005b44      0x35d src/HardwareSerial2.o
+ .debug_abbrev  0x00005ea1      0x366 src/HardwareSerial3.o
+ .debug_abbrev  0x00006207       0x2a src/hooks.o
+ .debug_abbrev  0x00006231      0x33d src/IPAddress.o
+ .debug_abbrev  0x0000656e       0xd1 src/main.o
+ .debug_abbrev  0x0000663f       0xd6 src/new.o
+ .debug_abbrev  0x00006715      0x3b0 src/Print.o
+ .debug_abbrev  0x00006ac5      0x261 src/Tone.o
+ .debug_abbrev  0x00006d26       0xe6 src/WInterrupts.o
+ .debug_abbrev  0x00006e0c      0x145 src/wiring.o
+ .debug_abbrev  0x00006f51      0x15a src/wiring_digital.o
+ .debug_abbrev  0x000070ab      0x47d src/WString.o
 
-.debug_line     0x00000000     0x6707
+.debug_line     0x00000000     0x9d2d
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x1b5 classes/Hardware.o
- .debug_line    0x000001b5      0x8e7 classes/LCDMenu.o
- .debug_line    0x00000a9c      0x1f4 classes/LCDMenuItem.o
- .debug_line    0x00000c90      0x348 classes/UI_BurnerController.o
- .debug_line    0x00000fd8      0x329 include/ClickEncoder/ClickEncoder.o
- .debug_line    0x00001301      0x318 include/LiquidCrystal/I2CIO.o
- .debug_line    0x00001619      0x585 include/LiquidCrystal/LCD.o
- .debug_line    0x00001b9e      0x597 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_line    0x00002135      0x510 include/Wire/twi.o
- .debug_line    0x00002645      0x50e include/Wire/Wire.o
- .debug_line    0x00002b53      0x240 Main.o
- .debug_line    0x00002d93       0xba src/abi.o
- .debug_line    0x00002e4d      0x49f src/HardwareSerial.o
- .debug_line    0x000032ec      0x238 src/HardwareSerial0.o
- .debug_line    0x00003524      0x238 src/HardwareSerial1.o
- .debug_line    0x0000375c      0x236 src/HardwareSerial2.o
- .debug_line    0x00003992      0x236 src/HardwareSerial3.o
- .debug_line    0x00003bc8       0x3c src/hooks.o
- .debug_line    0x00003c04      0x2a9 src/IPAddress.o
- .debug_line    0x00003ead      0x13a src/main.o
- .debug_line    0x00003fe7      0x162 src/new.o
- .debug_line    0x00004149      0x643 src/Print.o
- .debug_line    0x0000478c      0x515 src/Tone.o
- .debug_line    0x00004ca1      0x30e src/WInterrupts.o
- .debug_line    0x00004faf      0x2ac src/wiring.o
- .debug_line    0x0000525b      0x27f src/wiring_digital.o
- .debug_line    0x000054da     0x122d src/WString.o
+ .debug_line    0x00000000      0x1ec classes/DigIO.o
+ .debug_line    0x000001ec      0x4c9 classes/Hardware.o
+ .debug_line    0x000006b5      0x424 classes/HLT/HLT_UI.o
+ .debug_line    0x00000ad9      0x533 classes/MAIN/MAIN_UI.o
+ .debug_line    0x0000100c      0x424 classes/MLT/MLT_UI.o
+ .debug_line    0x00001430      0x355 classes/UserInterface/ClickEncoderWithEvents.o
+ .debug_line    0x00001785      0x9e7 classes/UserInterface/LCDMenu.o
+ .debug_line    0x0000216c      0x50f classes/UserInterface/LCDMenuItem.o
+ .debug_line    0x0000267b      0x8b7 classes/UserInterface/LCDPage.o
+ .debug_line    0x00002f32      0x8f0 classes/UserInterface/LCDPageItem.o
+ .debug_line    0x00003822      0x36a classes/UserInterface/LCDToggleOption.o
+ .debug_line    0x00003b8c      0x47d classes/UserInterface/UserInterface.o
+ .debug_line    0x00004009      0x416 classes/Executive.o
+ .debug_line    0x0000441f      0x329 include/ClickEncoder/ClickEncoder.o
+ .debug_line    0x00004748      0x318 include/LiquidCrystal/I2CIO.o
+ .debug_line    0x00004a60      0x585 include/LiquidCrystal/LCD.o
+ .debug_line    0x00004fe5      0x597 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_line    0x0000557c       0xef include/TimerOne/TimerOne.o
+ .debug_line    0x0000566b      0x510 include/Wire/twi.o
+ .debug_line    0x00005b7b      0x50e include/Wire/Wire.o
+ .debug_line    0x00006089      0x330 Main.o
+ .debug_line    0x000063b9       0xba src/abi.o
+ .debug_line    0x00006473      0x49f src/HardwareSerial.o
+ .debug_line    0x00006912      0x238 src/HardwareSerial0.o
+ .debug_line    0x00006b4a      0x238 src/HardwareSerial1.o
+ .debug_line    0x00006d82      0x236 src/HardwareSerial2.o
+ .debug_line    0x00006fb8      0x236 src/HardwareSerial3.o
+ .debug_line    0x000071ee       0x3c src/hooks.o
+ .debug_line    0x0000722a      0x2a9 src/IPAddress.o
+ .debug_line    0x000074d3      0x13a src/main.o
+ .debug_line    0x0000760d      0x162 src/new.o
+ .debug_line    0x0000776f      0x643 src/Print.o
+ .debug_line    0x00007db2      0x515 src/Tone.o
+ .debug_line    0x000082c7      0x30e src/WInterrupts.o
+ .debug_line    0x000085d5      0x2ac src/wiring.o
+ .debug_line    0x00008881      0x27f src/wiring_digital.o
+ .debug_line    0x00008b00     0x122d src/WString.o
 
-.debug_frame    0x00000000     0x26cc
+.debug_frame    0x00000000     0x3714
  *(.debug_frame)
- .debug_frame   0x00000000       0x50 classes/Hardware.o
- .debug_frame   0x00000050      0x35c classes/LCDMenu.o
- .debug_frame   0x000003ac       0x98 classes/LCDMenuItem.o
- .debug_frame   0x00000444       0xc4 classes/UI_BurnerController.o
- .debug_frame   0x00000508       0x98 include/ClickEncoder/ClickEncoder.o
- .debug_frame   0x000005a0       0xc8 include/LiquidCrystal/I2CIO.o
- .debug_frame   0x00000668      0x228 include/LiquidCrystal/LCD.o
- .debug_frame   0x00000890      0x270 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_frame   0x00000b00      0x114 include/Wire/twi.o
- .debug_frame   0x00000c14      0x1ec include/Wire/Wire.o
- .debug_frame   0x00000e00       0x34 Main.o
- .debug_frame   0x00000e34       0x34 src/abi.o
- .debug_frame   0x00000e68      0x104 src/HardwareSerial.o
- .debug_frame   0x00000f6c       0xcc src/HardwareSerial0.o
- .debug_frame   0x00001038       0xcc src/HardwareSerial1.o
- .debug_frame   0x00001104       0xcc src/HardwareSerial2.o
- .debug_frame   0x000011d0       0xcc src/HardwareSerial3.o
- .debug_frame   0x0000129c       0x24 src/hooks.o
- .debug_frame   0x000012c0       0xe8 src/IPAddress.o
- .debug_frame   0x000013a8       0x44 src/main.o
- .debug_frame   0x000013ec       0x54 src/new.o
- .debug_frame   0x00001440      0x3a8 src/Print.o
- .debug_frame   0x000017e8      0x100 src/Tone.o
- .debug_frame   0x000018e8      0x2f4 src/WInterrupts.o
- .debug_frame   0x00001bdc       0xbc src/wiring.o
- .debug_frame   0x00001c98       0x7c src/wiring_digital.o
- .debug_frame   0x00001d14      0x9b8 src/WString.o
+ .debug_frame   0x00000000      0x110 classes/DigIO.o
+ .debug_frame   0x00000110       0x9c classes/Hardware.o
+ .debug_frame   0x000001ac       0xb0 classes/HLT/HLT_UI.o
+ .debug_frame   0x0000025c      0x114 classes/MAIN/MAIN_UI.o
+ .debug_frame   0x00000370       0xb0 classes/MLT/MLT_UI.o
+ .debug_frame   0x00000420       0x40 classes/UserInterface/ClickEncoderWithEvents.o
+ .debug_frame   0x00000460      0x3ac classes/UserInterface/LCDMenu.o
+ .debug_frame   0x0000080c      0x154 classes/UserInterface/LCDMenuItem.o
+ .debug_frame   0x00000960      0x2fc classes/UserInterface/LCDPage.o
+ .debug_frame   0x00000c5c      0x4f0 classes/UserInterface/LCDPageItem.o
+ .debug_frame   0x0000114c      0x1e4 classes/UserInterface/LCDToggleOption.o
+ .debug_frame   0x00001330       0xf8 classes/UserInterface/UserInterface.o
+ .debug_frame   0x00001428       0xa0 classes/Executive.o
+ .debug_frame   0x000014c8       0x98 include/ClickEncoder/ClickEncoder.o
+ .debug_frame   0x00001560       0xc8 include/LiquidCrystal/I2CIO.o
+ .debug_frame   0x00001628      0x228 include/LiquidCrystal/LCD.o
+ .debug_frame   0x00001850      0x270 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_frame   0x00001ac0       0x6c include/TimerOne/TimerOne.o
+ .debug_frame   0x00001b2c      0x114 include/Wire/twi.o
+ .debug_frame   0x00001c40      0x1ec include/Wire/Wire.o
+ .debug_frame   0x00001e2c       0x50 Main.o
+ .debug_frame   0x00001e7c       0x34 src/abi.o
+ .debug_frame   0x00001eb0      0x104 src/HardwareSerial.o
+ .debug_frame   0x00001fb4       0xcc src/HardwareSerial0.o
+ .debug_frame   0x00002080       0xcc src/HardwareSerial1.o
+ .debug_frame   0x0000214c       0xcc src/HardwareSerial2.o
+ .debug_frame   0x00002218       0xcc src/HardwareSerial3.o
+ .debug_frame   0x000022e4       0x24 src/hooks.o
+ .debug_frame   0x00002308       0xe8 src/IPAddress.o
+ .debug_frame   0x000023f0       0x44 src/main.o
+ .debug_frame   0x00002434       0x54 src/new.o
+ .debug_frame   0x00002488      0x3a8 src/Print.o
+ .debug_frame   0x00002830      0x100 src/Tone.o
+ .debug_frame   0x00002930      0x2f4 src/WInterrupts.o
+ .debug_frame   0x00002c24       0xbc src/wiring.o
+ .debug_frame   0x00002ce0       0x7c src/wiring_digital.o
+ .debug_frame   0x00002d5c      0x9b8 src/WString.o
 
-.debug_str      0x00000000     0x3ad3
+.debug_str      0x00000000     0x4e3f
  *(.debug_str)
- .debug_str     0x00000000     0x1136 classes/Hardware.o
-                               0x124e (size before relaxing)
- .debug_str     0x00001136      0x1c7 classes/LCDMenu.o
-                               0x1059 (size before relaxing)
- .debug_str     0x000012fd       0x9c classes/LCDMenuItem.o
-                                0xc22 (size before relaxing)
- .debug_str     0x00001399       0xad classes/UI_BurnerController.o
-                               0x12f0 (size before relaxing)
- .debug_str     0x00001446       0xbb include/ClickEncoder/ClickEncoder.o
+ .debug_str     0x00000000      0xb49 classes/DigIO.o
+                                0xbf9 (size before relaxing)
+ .debug_str     0x00000b49     0x12f0 classes/Hardware.o
+                               0x1f9a (size before relaxing)
+ .debug_str     0x00001e39       0xe8 classes/HLT/HLT_UI.o
+                               0x1cb2 (size before relaxing)
+ .debug_str     0x00001f21      0x163 classes/MAIN/MAIN_UI.o
+                               0x1dc5 (size before relaxing)
+ .debug_str     0x00002084       0x59 classes/MLT/MLT_UI.o
+                               0x1cb2 (size before relaxing)
+ .debug_str     0x000020dd       0x54 classes/UserInterface/ClickEncoderWithEvents.o
+                               0x1b41 (size before relaxing)
+ .debug_str     0x00002131      0x119 classes/UserInterface/LCDMenu.o
+                               0x1c90 (size before relaxing)
+ .debug_str     0x0000224a      0x125 classes/UserInterface/LCDMenuItem.o
+                               0x1ca1 (size before relaxing)
+ .debug_str     0x0000236f       0x5b classes/UserInterface/LCDPage.o
+                               0x1bec (size before relaxing)
+ .debug_str     0x000023ca      0x28f classes/UserInterface/LCDPageItem.o
+                               0x1e4c (size before relaxing)
+ .debug_str     0x00002659      0x111 classes/UserInterface/LCDToggleOption.o
+                                0xda7 (size before relaxing)
+ .debug_str     0x0000276a       0x68 classes/UserInterface/UserInterface.o
+                               0x1bc1 (size before relaxing)
+ .debug_str     0x000027d2      0x11c classes/Executive.o
+                               0x1cd0 (size before relaxing)
+ .debug_str     0x000028ee       0xa7 include/ClickEncoder/ClickEncoder.o
                                 0x512 (size before relaxing)
- .debug_str     0x00001501      0x209 include/LiquidCrystal/I2CIO.o
+ .debug_str     0x00002995      0x1f0 include/LiquidCrystal/I2CIO.o
                                 0x44f (size before relaxing)
- .debug_str     0x0000170a      0x3dd include/LiquidCrystal/LCD.o
+ .debug_str     0x00002b85      0x3c3 include/LiquidCrystal/LCD.o
                                 0x68f (size before relaxing)
- .debug_str     0x00001ae7      0x2bb include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_str     0x00002f48      0x23a include/LiquidCrystal/LiquidCrystal_I2C.o
                                 0x689 (size before relaxing)
- .debug_str     0x00001da2      0x279 include/Wire/twi.o
+ .debug_str     0x00003182       0x7f include/TimerOne/TimerOne.o
+                                0x465 (size before relaxing)
+ .debug_str     0x00003201      0x279 include/Wire/twi.o
                                 0x390 (size before relaxing)
- .debug_str     0x0000201b      0x765 include/Wire/Wire.o
+ .debug_str     0x0000347a      0x765 include/Wire/Wire.o
                                0x1448 (size before relaxing)
- .debug_str     0x00002780      0x12a Main.o
-                                0xd3b (size before relaxing)
- .debug_str     0x000028aa       0x3e src/abi.o
+ .debug_str     0x00003bdf       0xc4 Main.o
+                                0x57c (size before relaxing)
+ .debug_str     0x00003ca3       0x3e src/abi.o
                                 0x1a9 (size before relaxing)
- .debug_str     0x000028e8      0x406 src/HardwareSerial.o
+ .debug_str     0x00003ce1      0x406 src/HardwareSerial.o
                                0x12c1 (size before relaxing)
- .debug_str     0x00002cee       0x42 src/HardwareSerial0.o
+ .debug_str     0x000040e7       0x42 src/HardwareSerial0.o
                                 0xfe3 (size before relaxing)
- .debug_str     0x00002d30       0x4a src/HardwareSerial1.o
+ .debug_str     0x00004129       0x4a src/HardwareSerial1.o
                                 0xfe4 (size before relaxing)
- .debug_str     0x00002d7a       0x4a src/HardwareSerial2.o
+ .debug_str     0x00004173       0x4a src/HardwareSerial2.o
                                 0xfe4 (size before relaxing)
- .debug_str     0x00002dc4       0x4a src/HardwareSerial3.o
+ .debug_str     0x000041bd       0x4a src/HardwareSerial3.o
                                 0xfe4 (size before relaxing)
- .debug_str     0x00002e0e       0x17 src/hooks.o
+ .debug_str     0x00004207       0x17 src/hooks.o
                                 0x13e (size before relaxing)
- .debug_str     0x00002e25      0x246 src/IPAddress.o
+ .debug_str     0x0000421e      0x246 src/IPAddress.o
                                 0x524 (size before relaxing)
- .debug_str     0x0000306b       0x28 src/main.o
+ .debug_str     0x00004464       0x28 src/main.o
                                 0x253 (size before relaxing)
- .debug_str     0x00003093       0x4b src/new.o
+ .debug_str     0x0000448c       0x4b src/new.o
                                 0x1ec (size before relaxing)
- .debug_str     0x000030de      0x2d7 src/Print.o
+ .debug_str     0x000044d7      0x28b src/Print.o
                                 0xe89 (size before relaxing)
- .debug_str     0x000033b5      0x229 src/Tone.o
+ .debug_str     0x00004762      0x229 src/Tone.o
                                 0x481 (size before relaxing)
- .debug_str     0x000035de       0xb7 src/WInterrupts.o
+ .debug_str     0x0000498b       0x97 src/WInterrupts.o
                                 0x270 (size before relaxing)
- .debug_str     0x00003695       0x68 src/wiring.o
+ .debug_str     0x00004a22       0x62 src/wiring.o
                                 0x240 (size before relaxing)
- .debug_str     0x000036fd       0x5f src/wiring_digital.o
+ .debug_str     0x00004a84       0x5f src/wiring_digital.o
                                 0x2ae (size before relaxing)
- .debug_str     0x0000375c      0x377 src/WString.o
+ .debug_str     0x00004ae3      0x35c src/WString.o
                                 0xe98 (size before relaxing)
 
-.debug_loc      0x00000000     0xd6a1
+.debug_loc      0x00000000    0x1290e
  *(.debug_loc)
- .debug_loc     0x00000000       0x89 classes/Hardware.o
- .debug_loc     0x00000089     0x1358 classes/LCDMenu.o
- .debug_loc     0x000013e1      0x258 classes/LCDMenuItem.o
- .debug_loc     0x00001639      0x3e7 classes/UI_BurnerController.o
- .debug_loc     0x00001a20      0x371 include/ClickEncoder/ClickEncoder.o
- .debug_loc     0x00001d91      0x4e4 include/LiquidCrystal/I2CIO.o
- .debug_loc     0x00002275      0x747 include/LiquidCrystal/LCD.o
- .debug_loc     0x000029bc     0x13b6 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_loc     0x00003d72      0x596 include/Wire/twi.o
- .debug_loc     0x00004308      0x90a include/Wire/Wire.o
- .debug_loc     0x00004c12      0x447 src/HardwareSerial.o
- .debug_loc     0x00005059      0x17b src/HardwareSerial0.o
- .debug_loc     0x000051d4      0x17b src/HardwareSerial1.o
- .debug_loc     0x0000534f      0x17b src/HardwareSerial2.o
- .debug_loc     0x000054ca      0x17b src/HardwareSerial3.o
- .debug_loc     0x00005645      0x2c0 src/IPAddress.o
- .debug_loc     0x00005905       0x98 src/new.o
- .debug_loc     0x0000599d     0x1ddf src/Print.o
- .debug_loc     0x0000777c      0xd4c src/Tone.o
- .debug_loc     0x000084c8      0x79a src/WInterrupts.o
- .debug_loc     0x00008c62      0x22a src/wiring.o
- .debug_loc     0x00008e8c      0x547 src/wiring_digital.o
- .debug_loc     0x000093d3     0x42ce src/WString.o
+ .debug_loc     0x00000000      0x461 classes/DigIO.o
+ .debug_loc     0x00000461      0x1a5 classes/Hardware.o
+ .debug_loc     0x00000606      0x2cb classes/HLT/HLT_UI.o
+ .debug_loc     0x000008d1      0x5ee classes/MAIN/MAIN_UI.o
+ .debug_loc     0x00000ebf      0x2cb classes/MLT/MLT_UI.o
+ .debug_loc     0x0000118a       0x99 classes/UserInterface/ClickEncoderWithEvents.o
+ .debug_loc     0x00001223     0x14fb classes/UserInterface/LCDMenu.o
+ .debug_loc     0x0000271e      0x853 classes/UserInterface/LCDMenuItem.o
+ .debug_loc     0x00002f71     0x1196 classes/UserInterface/LCDPage.o
+ .debug_loc     0x00004107     0x1c06 classes/UserInterface/LCDPageItem.o
+ .debug_loc     0x00005d0d      0xacf classes/UserInterface/LCDToggleOption.o
+ .debug_loc     0x000067dc      0x266 classes/UserInterface/UserInterface.o
+ .debug_loc     0x00006a42      0x151 classes/Executive.o
+ .debug_loc     0x00006b93      0x371 include/ClickEncoder/ClickEncoder.o
+ .debug_loc     0x00006f04      0x4e4 include/LiquidCrystal/I2CIO.o
+ .debug_loc     0x000073e8      0x747 include/LiquidCrystal/LCD.o
+ .debug_loc     0x00007b2f     0x13b6 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_loc     0x00008ee5       0xcb include/TimerOne/TimerOne.o
+ .debug_loc     0x00008fb0      0x596 include/Wire/twi.o
+ .debug_loc     0x00009546      0x90a include/Wire/Wire.o
+ .debug_loc     0x00009e50       0x2f Main.o
+ .debug_loc     0x00009e7f      0x447 src/HardwareSerial.o
+ .debug_loc     0x0000a2c6      0x17b src/HardwareSerial0.o
+ .debug_loc     0x0000a441      0x17b src/HardwareSerial1.o
+ .debug_loc     0x0000a5bc      0x17b src/HardwareSerial2.o
+ .debug_loc     0x0000a737      0x17b src/HardwareSerial3.o
+ .debug_loc     0x0000a8b2      0x2c0 src/IPAddress.o
+ .debug_loc     0x0000ab72       0x98 src/new.o
+ .debug_loc     0x0000ac0a     0x1ddf src/Print.o
+ .debug_loc     0x0000c9e9      0xd4c src/Tone.o
+ .debug_loc     0x0000d735      0x79a src/WInterrupts.o
+ .debug_loc     0x0000decf      0x22a src/wiring.o
+ .debug_loc     0x0000e0f9      0x547 src/wiring_digital.o
+ .debug_loc     0x0000e640     0x42ce src/WString.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2799,35 +3295,45 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0xa90
+.debug_ranges   0x00000000      0xdd0
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x10 classes/Hardware.o
- .debug_ranges  0x00000010       0xc8 classes/LCDMenu.o
- .debug_ranges  0x000000d8       0x28 classes/LCDMenuItem.o
- .debug_ranges  0x00000100       0x28 classes/UI_BurnerController.o
- .debug_ranges  0x00000128       0x28 include/ClickEncoder/ClickEncoder.o
- .debug_ranges  0x00000150       0x48 include/LiquidCrystal/I2CIO.o
- .debug_ranges  0x00000198       0xe8 include/LiquidCrystal/LCD.o
- .debug_ranges  0x00000280       0x78 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_ranges  0x000002f8       0x60 include/Wire/twi.o
- .debug_ranges  0x00000358       0xc8 include/Wire/Wire.o
- .debug_ranges  0x00000420       0x18 Main.o
- .debug_ranges  0x00000438       0x18 src/abi.o
- .debug_ranges  0x00000450       0x58 src/HardwareSerial.o
- .debug_ranges  0x000004a8       0x28 src/HardwareSerial0.o
- .debug_ranges  0x000004d0       0x28 src/HardwareSerial1.o
- .debug_ranges  0x000004f8       0x28 src/HardwareSerial2.o
- .debug_ranges  0x00000520       0x28 src/HardwareSerial3.o
- .debug_ranges  0x00000548       0x10 src/hooks.o
- .debug_ranges  0x00000558       0x50 src/IPAddress.o
- .debug_ranges  0x000005a8       0x20 src/main.o
- .debug_ranges  0x000005c8       0x28 src/new.o
- .debug_ranges  0x000005f0       0xf0 src/Print.o
- .debug_ranges  0x000006e0       0x58 src/Tone.o
- .debug_ranges  0x00000738       0x58 src/WInterrupts.o
- .debug_ranges  0x00000790       0x38 src/wiring.o
- .debug_ranges  0x000007c8       0x28 src/wiring_digital.o
- .debug_ranges  0x000007f0      0x2a0 src/WString.o
+ .debug_ranges  0x00000000       0x40 classes/DigIO.o
+ .debug_ranges  0x00000040       0x28 classes/Hardware.o
+ .debug_ranges  0x00000068       0x20 classes/HLT/HLT_UI.o
+ .debug_ranges  0x00000088       0x28 classes/MAIN/MAIN_UI.o
+ .debug_ranges  0x000000b0       0x20 classes/MLT/MLT_UI.o
+ .debug_ranges  0x000000d0       0x18 classes/UserInterface/ClickEncoderWithEvents.o
+ .debug_ranges  0x000000e8       0xc8 classes/UserInterface/LCDMenu.o
+ .debug_ranges  0x000001b0       0x48 classes/UserInterface/LCDMenuItem.o
+ .debug_ranges  0x000001f8       0xb0 classes/UserInterface/LCDPage.o
+ .debug_ranges  0x000002a8       0xb8 classes/UserInterface/LCDPageItem.o
+ .debug_ranges  0x00000360       0x60 classes/UserInterface/LCDToggleOption.o
+ .debug_ranges  0x000003c0       0x60 classes/UserInterface/UserInterface.o
+ .debug_ranges  0x00000420       0x30 classes/Executive.o
+ .debug_ranges  0x00000450       0x28 include/ClickEncoder/ClickEncoder.o
+ .debug_ranges  0x00000478       0x48 include/LiquidCrystal/I2CIO.o
+ .debug_ranges  0x000004c0       0xe8 include/LiquidCrystal/LCD.o
+ .debug_ranges  0x000005a8       0x78 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_ranges  0x00000620       0x10 include/TimerOne/TimerOne.o
+ .debug_ranges  0x00000630       0x60 include/Wire/twi.o
+ .debug_ranges  0x00000690       0xc8 include/Wire/Wire.o
+ .debug_ranges  0x00000758       0x20 Main.o
+ .debug_ranges  0x00000778       0x18 src/abi.o
+ .debug_ranges  0x00000790       0x58 src/HardwareSerial.o
+ .debug_ranges  0x000007e8       0x28 src/HardwareSerial0.o
+ .debug_ranges  0x00000810       0x28 src/HardwareSerial1.o
+ .debug_ranges  0x00000838       0x28 src/HardwareSerial2.o
+ .debug_ranges  0x00000860       0x28 src/HardwareSerial3.o
+ .debug_ranges  0x00000888       0x10 src/hooks.o
+ .debug_ranges  0x00000898       0x50 src/IPAddress.o
+ .debug_ranges  0x000008e8       0x20 src/main.o
+ .debug_ranges  0x00000908       0x28 src/new.o
+ .debug_ranges  0x00000930       0xf0 src/Print.o
+ .debug_ranges  0x00000a20       0x58 src/Tone.o
+ .debug_ranges  0x00000a78       0x58 src/WInterrupts.o
+ .debug_ranges  0x00000ad0       0x38 src/wiring.o
+ .debug_ranges  0x00000b08       0x28 src/wiring_digital.o
+ .debug_ranges  0x00000b30      0x2a0 src/WString.o
 
 .debug_macro
  *(.debug_macro)

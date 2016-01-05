@@ -1,4 +1,4 @@
-classes/LUT.d classes/LUT.o: ../classes/LUT.cpp \
+classes/LUT.d classes/LUT.o: ../classes/LUT.cpp ../classes/LUT.h \
  ../include\arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
@@ -29,8 +29,9 @@ classes/LUT.d classes/LUT.o: ../classes/LUT.cpp \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\eeprom.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
- ../classes/LUT.h
+ ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h
+
+../classes/LUT.h:
 
 ../include\arduino/Arduino.h:
 
@@ -103,5 +104,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../include\arduino/Arduino.h:
 
 ../include\arduino/pins_arduino.h:
-
-../classes/LUT.h:

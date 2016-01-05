@@ -1,0 +1,36 @@
+﻿------ Build started: Project: ProjectNarwhal, Configuration: Debug AVR ------
+Build started.
+Project "ProjectNarwhal.cppproj" (default targets):
+Target "PreBuildEvent" skipped, due to false condition; ('$(PreBuildEvent)'!='') was evaluated as (''!='').
+Target "CoreBuild" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.targets" from project "C:\Users\Customer\Documents\GitHub\Narwhal-Arduino-Code\ArduinoCode\ProjectNarhwal\ProjectNarwhal.cppproj" (target "Build" depends on it):
+	Task "RunCompilerTask"
+		Shell Utils Path C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils
+		C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils\make.exe all 
+		Building file: ../classes/UserInterface/LCDMenuItem.cpp
+		Invoking: AVR8/GNU C Compiler : 4.9.2
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe" -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "classes/UserInterface/LCDMenuItem.d" -MT"classes/UserInterface/LCDMenuItem.d" -MT"classes/UserInterface/LCDMenuItem.o"   -o "classes/UserInterface/LCDMenuItem.o" "../classes/UserInterface/LCDMenuItem.cpp" 
+		Finished building: ../classes/UserInterface/LCDMenuItem.cpp
+		Building target: ProjectNarwhal.elf
+		Invoking: AVR8/GNU Linker : 4.9.2
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe" -o ProjectNarwhal.elf  classes/Hardware.o classes/HLT/HLT_UI.o classes/MAIN/MAIN_UI.o classes/MLT/MLT_UI.o classes/UserInterface/ClickEncoderWithEvents.o classes/UserInterface/LCDMenu.o classes/UserInterface/LCDMenuItem.o classes/UserInterface/LCDPage.o classes/UserInterface/LCDPageItem.o classes/UserInterface/UserInterface.o classes/Executive.o classes/LUT.o classes/WheatstoneBridge.o include/ClickEncoder/ClickEncoder.o include/LiquidCrystal/FastIO.o include/LiquidCrystal/I2CIO.o include/LiquidCrystal/LCD.o include/LiquidCrystal/LiquidCrystal.o include/LiquidCrystal/LiquidCrystal_I2C.o include/LiquidCrystal/LiquidCrystal_SR.o include/LiquidCrystal/LiquidCrystal_SR2W.o include/LiquidCrystal/LiquidCrystal_SR3W.o include/TimerOne/TimerOne.o include/Wire/twi.o include/Wire/Wire.o Main.o src/abi.o src/CDC.o src/HardwareSerial.o src/HardwareSerial0.o src/HardwareSerial1.o src/HardwareSerial2.o src/HardwareSerial3.o src/HID.o src/hooks.o src/IPAddress.o src/main.o src/new.o src/Print.o src/Stream.o src/Tone.o src/USBCore.o src/WInterrupts.o src/wiring.o src/wiring_analog.o src/wiring_digital.o src/wiring_pulse.o src/wiring_shift.o src/WMath.o src/WString.o   -Wl,-Map="ProjectNarwhal.map" -Wl,--start-group -Wl,-lm -Wl,-lcore  -Wl,--end-group -Wl,-L"C:\Users\Customer\Documents\GitHub\Narwhal-Arduino-Code\ArduinoCode\ProjectNarhwal\lib"  -Wl,--gc-sections -mrelax -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -Os  
+		Finished building target: ProjectNarwhal.elf
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "ProjectNarwhal.elf" "ProjectNarwhal.hex"
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "ProjectNarwhal.elf" "ProjectNarwhal.eep" || exit 0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objdump.exe" -h -S "ProjectNarwhal.elf" > "ProjectNarwhal.lss"
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "ProjectNarwhal.elf" "ProjectNarwhal.srec"
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-size.exe" "ProjectNarwhal.elf"
+		   text	   data	    bss	    dec	    hex	filename
+		  30372	    672	    992	  32036	   7d24	ProjectNarwhal.elf
+	Done executing task "RunCompilerTask".
+	Task "RunOutputFileVerifyTask"
+				Program Memory Usage 	:	31044 bytes   11.8 % Full
+				Data Memory Usage 		:	1664 bytes   20.3 % Full
+	Done executing task "RunOutputFileVerifyTask".
+Done building target "CoreBuild" in project "ProjectNarwhal.cppproj".
+Target "PostBuildEvent" skipped, due to false condition; ('$(PostBuildEvent)' != '') was evaluated as ('' != '').
+Target "Build" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Avr.common.targets" from project "C:\Users\Customer\Documents\GitHub\Narwhal-Arduino-Code\ArduinoCode\ProjectNarhwal\ProjectNarwhal.cppproj" (entry point):
+Done building target "Build" in project "ProjectNarwhal.cppproj".
+Done building project "ProjectNarwhal.cppproj".
+
+Build succeeded.
+========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========

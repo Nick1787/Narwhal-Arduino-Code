@@ -33,6 +33,11 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
+../classes/MAIN \
+../classes/HLT \
+../classes/MLT \
+../classes/BK \
+../classes/UserInterface \
 ../include/ \
 ../include/arduino/ \
 ../include/eightanaloginputs/ \
@@ -43,6 +48,9 @@ SUBDIRS :=  \
 ../include/ClickEncoder \
 ../include/LiquidCrystal \
 ../include/LinkedList \
+../include/FastDelegate \
+../include/TimerOne \
+../include/TimerOne/config \
 ../include/Wire \
 ../include/robot_control/ \
 ../include/robot_motor/ \
@@ -54,10 +62,18 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../classes/DigIO.cpp \
 ../classes/Hardware.cpp \
-../classes/LCDMenu.cpp \
-../classes/LCDMenuItem.cpp \
-../classes/UI_BurnerController.cpp \
+../classes/HLT/HLT_UI.cpp \
+../classes/MAIN/MAIN_UI.cpp \
+../classes/MLT/MLT_UI.cpp \
+../classes/UserInterface/ClickEncoderWithEvents.cpp \
+../classes/UserInterface/LCDMenu.cpp \
+../classes/UserInterface/LCDMenuItem.cpp \
+../classes/UserInterface/LCDPage.cpp \
+../classes/UserInterface/LCDPageItem.cpp \
+../classes/UserInterface/LCDToggleOption.cpp \
+../classes/UserInterface/UserInterface.cpp \
 ../classes/Executive.cpp \
 ../classes/LUT.cpp \
 ../classes/WheatstoneBridge.cpp \
@@ -70,6 +86,7 @@ C_SRCS +=  \
 ../include/LiquidCrystal/LiquidCrystal_SR.cpp \
 ../include/LiquidCrystal/LiquidCrystal_SR2W.cpp \
 ../include/LiquidCrystal/LiquidCrystal_SR3W.cpp \
+../include/TimerOne/TimerOne.cpp \
 ../include/Wire/twi.c \
 ../include/Wire/Wire.cpp \
 ../Main.cpp \
@@ -106,10 +123,18 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+classes/DigIO.o \
 classes/Hardware.o \
-classes/LCDMenu.o \
-classes/LCDMenuItem.o \
-classes/UI_BurnerController.o \
+classes/HLT/HLT_UI.o \
+classes/MAIN/MAIN_UI.o \
+classes/MLT/MLT_UI.o \
+classes/UserInterface/ClickEncoderWithEvents.o \
+classes/UserInterface/LCDMenu.o \
+classes/UserInterface/LCDMenuItem.o \
+classes/UserInterface/LCDPage.o \
+classes/UserInterface/LCDPageItem.o \
+classes/UserInterface/LCDToggleOption.o \
+classes/UserInterface/UserInterface.o \
 classes/Executive.o \
 classes/LUT.o \
 classes/WheatstoneBridge.o \
@@ -122,6 +147,7 @@ include/LiquidCrystal/LiquidCrystal_I2C.o \
 include/LiquidCrystal/LiquidCrystal_SR.o \
 include/LiquidCrystal/LiquidCrystal_SR2W.o \
 include/LiquidCrystal/LiquidCrystal_SR3W.o \
+include/TimerOne/TimerOne.o \
 include/Wire/twi.o \
 include/Wire/Wire.o \
 Main.o \
@@ -151,10 +177,18 @@ src/WMath.o \
 src/WString.o
 
 OBJS_AS_ARGS +=  \
+classes/DigIO.o \
 classes/Hardware.o \
-classes/LCDMenu.o \
-classes/LCDMenuItem.o \
-classes/UI_BurnerController.o \
+classes/HLT/HLT_UI.o \
+classes/MAIN/MAIN_UI.o \
+classes/MLT/MLT_UI.o \
+classes/UserInterface/ClickEncoderWithEvents.o \
+classes/UserInterface/LCDMenu.o \
+classes/UserInterface/LCDMenuItem.o \
+classes/UserInterface/LCDPage.o \
+classes/UserInterface/LCDPageItem.o \
+classes/UserInterface/LCDToggleOption.o \
+classes/UserInterface/UserInterface.o \
 classes/Executive.o \
 classes/LUT.o \
 classes/WheatstoneBridge.o \
@@ -167,6 +201,7 @@ include/LiquidCrystal/LiquidCrystal_I2C.o \
 include/LiquidCrystal/LiquidCrystal_SR.o \
 include/LiquidCrystal/LiquidCrystal_SR2W.o \
 include/LiquidCrystal/LiquidCrystal_SR3W.o \
+include/TimerOne/TimerOne.o \
 include/Wire/twi.o \
 include/Wire/Wire.o \
 Main.o \
@@ -196,10 +231,18 @@ src/WMath.o \
 src/WString.o
 
 C_DEPS +=  \
+classes/DigIO.d \
 classes/Hardware.d \
-classes/LCDMenu.d \
-classes/LCDMenuItem.d \
-classes/UI_BurnerController.d \
+classes/HLT/HLT_UI.d \
+classes/MAIN/MAIN_UI.d \
+classes/MLT/MLT_UI.d \
+classes/UserInterface/ClickEncoderWithEvents.d \
+classes/UserInterface/LCDMenu.d \
+classes/UserInterface/LCDMenuItem.d \
+classes/UserInterface/LCDPage.d \
+classes/UserInterface/LCDPageItem.d \
+classes/UserInterface/LCDToggleOption.d \
+classes/UserInterface/UserInterface.d \
 classes/Executive.d \
 classes/LUT.d \
 classes/WheatstoneBridge.d \
@@ -212,6 +255,7 @@ include/LiquidCrystal/LiquidCrystal_I2C.d \
 include/LiquidCrystal/LiquidCrystal_SR.d \
 include/LiquidCrystal/LiquidCrystal_SR2W.d \
 include/LiquidCrystal/LiquidCrystal_SR3W.d \
+include/TimerOne/TimerOne.d \
 include/Wire/twi.d \
 include/Wire/Wire.d \
 Main.d \
@@ -241,10 +285,18 @@ src/WMath.d \
 src/WString.d
 
 C_DEPS_AS_ARGS +=  \
+classes/DigIO.d \
 classes/Hardware.d \
-classes/LCDMenu.d \
-classes/LCDMenuItem.d \
-classes/UI_BurnerController.d \
+classes/HLT/HLT_UI.d \
+classes/MAIN/MAIN_UI.d \
+classes/MLT/MLT_UI.d \
+classes/UserInterface/ClickEncoderWithEvents.d \
+classes/UserInterface/LCDMenu.d \
+classes/UserInterface/LCDMenuItem.d \
+classes/UserInterface/LCDPage.d \
+classes/UserInterface/LCDPageItem.d \
+classes/UserInterface/LCDToggleOption.d \
+classes/UserInterface/UserInterface.d \
 classes/Executive.d \
 classes/LUT.d \
 classes/WheatstoneBridge.d \
@@ -257,6 +309,7 @@ include/LiquidCrystal/LiquidCrystal_I2C.d \
 include/LiquidCrystal/LiquidCrystal_SR.d \
 include/LiquidCrystal/LiquidCrystal_SR2W.d \
 include/LiquidCrystal/LiquidCrystal_SR3W.d \
+include/TimerOne/TimerOne.d \
 include/Wire/twi.d \
 include/Wire/Wire.d \
 Main.d \
@@ -387,7 +440,53 @@ LINKER_SCRIPT_DEP+=
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 classes/%.o: ../classes/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+classes/HLT/%.o: ../classes/HLT/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+classes/MAIN/%.o: ../classes/MAIN/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+classes/MLT/%.o: ../classes/MLT/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+classes/UserInterface/%.o: ../classes/UserInterface/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -402,6 +501,13 @@ include/ClickEncoder/%.o: ../include/ClickEncoder/%.cpp
 	
 
 include/LiquidCrystal/%.o: ../include/LiquidCrystal/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+include/TimerOne/%.o: ../include/TimerOne/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

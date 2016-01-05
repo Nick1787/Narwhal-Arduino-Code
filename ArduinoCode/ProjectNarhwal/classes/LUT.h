@@ -13,6 +13,8 @@
 #ifndef _LUT_H
 #define _LUT_H
 
+#include <Arduino.h>
+
 /**************************
 *	LUT1D
 **************************/

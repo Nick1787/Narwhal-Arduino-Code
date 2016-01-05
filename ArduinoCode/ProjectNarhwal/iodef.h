@@ -15,20 +15,43 @@
 ///////////////////////////////
 // General
 ///////////////////////////////
-#define AN_OUT A0
+#define AN_REF A0
+
+//Relay Board1
+#define RB1_1 49
+#define RB1_2 48
+#define RB1_3 47
+#define RB1_4 46
+#define RB1_5 45
+#define RB1_6 44
+#define RB1_7 43
+#define RB1_8 42
+
+//Relay Board2
+#define RB2_1 41
+#define RB2_2 40
+#define RB2_3 39
+#define RB2_4 38
+#define RB2_5 37
+#define RB2_6 36
+#define RB2_7 35
+#define RB2_8 34
+
+#define TIMER_ALARM_PIN RB1_1
+#define TEMP_ALARM_PIN RB1_2
 
 ///////////////////////////////
-// Timer
+// Main Screen
 ///////////////////////////////
 
 //LCD
-#define TIM_LCD_I2C_ADDR    0x27  // Define I2C Address where the PCF8574A is 0x27
+#define MAIN_LCD_I2C_ADDR    0x27  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
-#define TIM_ENC_A 31
-#define TIM_ENC_B 32
-#define TIM_ENC_SW 33
-#define TIM_ENC_DEG_PER_NOTCH 4;
+#define MAIN_ENC_A 22
+#define MAIN_ENC_B 23
+#define MAIN_ENC_SW 24
+#define MAIN_ENC_DEG_PER_NOTCH 4
 
 ///////////////////////////////
 // Hot Liquor Tank
@@ -39,16 +62,16 @@
 #define HLT_SOLENOID_2 52			//Ctrl Digital out
 
 //LCD
-#define HLT_LCD_I2C_ADDR    0x27  // Define I2C Address where the PCF8574A is 0x27
+#define HLT_LCD_I2C_ADDR    0x26  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
-#define HLT_ENC_A 22
-#define HLT_ENC_B 23
-#define HLT_ENC_SW 24
-#define HLT_ENC_DEG_PER_NOTCH 4;
+#define HLT_ENC_A 31
+#define HLT_ENC_B 32
+#define HLT_ENC_SW 33
+#define HLT_ENC_DEG_PER_NOTCH 4
 
 ///////////////////////////////
-// Mash Liquor Tank
+// Mash Lauter Tun
 ///////////////////////////////
 
 //Control
@@ -56,13 +79,13 @@
 #define MLT_SOLENOID_2 50			//Ctrl Digital out
 
 //LCD
-#define MLT_LCD_I2C_ADDR    0x27  // Define I2C Address where the PCF8574A is 0x27
+#define MLT_LCD_I2C_ADDR    0x25  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
 #define MLT_ENC_A 25
 #define MLT_ENC_B 26
 #define MLT_ENC_SW 27
-#define MLT_ENC_DEG_PER_NOTCH 4;
+#define MLT_ENC_DEG_PER_NOTCH 4
 
 //RTD
 #define MLT_RTD_R2C_X[36] = {80.31, 84.27, 88.22, 92.16, 96.09, 100, 103.9, 107.79, 111.67, 115.54, 119.4, 123.24, 127.08, 130.9, 134.71, 138.51, 142.29, 146.07, 149.83, 153.58, 157.33, 161.05, 164.77, 168.48, 172.17, 175.86, 179.53, 183.19, 186.84, 190.47, 194.1, 197.71, 201.31, 204.9, 208.48, 212.05}
@@ -77,13 +100,13 @@
 #define BK_SOLENOID_2 48			//Ctrl Digital out
 
 //LCD
-#define BK_LCD_I2C_ADDR    0x27  // Define I2C Address where the PCF8574A is 0x27
+#define BK_LCD_I2C_ADDR    0x23  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
 #define BK_ENC_A 28
 #define BK_ENC_B 29
 #define BK_ENC_SW 30
-#define BK_ENC_DEG_PER_NOTCH 4;
+#define BK_ENC_DEG_PER_NOTCH 4
 
 
 #endif

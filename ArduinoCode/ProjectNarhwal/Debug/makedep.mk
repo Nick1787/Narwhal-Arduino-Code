@@ -2,13 +2,29 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+classes\DigIO.cpp
+
 classes\Hardware.cpp
 
-classes\LCDMenu.cpp
+classes\HLT\HLT_UI.cpp
 
-classes\LCDMenuItem.cpp
+classes\MAIN\MAIN_UI.cpp
 
-classes\UI_BurnerController.cpp
+classes\MLT\MLT_UI.cpp
+
+classes\UserInterface\ClickEncoderWithEvents.cpp
+
+classes\UserInterface\LCDMenu.cpp
+
+classes\UserInterface\LCDMenuItem.cpp
+
+classes\UserInterface\LCDPage.cpp
+
+classes\UserInterface\LCDPageItem.cpp
+
+classes\UserInterface\LCDToggleOption.cpp
+
+classes\UserInterface\UserInterface.cpp
 
 classes\Executive.cpp
 
@@ -33,6 +49,8 @@ include\LiquidCrystal\LiquidCrystal_SR.cpp
 include\LiquidCrystal\LiquidCrystal_SR2W.cpp
 
 include\LiquidCrystal\LiquidCrystal_SR3W.cpp
+
+include\TimerOne\TimerOne.cpp
 
 include\Wire\twi.c
 

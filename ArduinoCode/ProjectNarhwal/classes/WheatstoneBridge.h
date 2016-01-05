@@ -8,10 +8,11 @@
  * ----------------------------------------------------------------
  */
 
-#include "LUT.h"
 
 #ifndef WHEATSTONEBRIDGE_H_
 #define WHEATSTONEBRIDGE_H_
+
+#include "LUT.h"
 
 class WheatstoneBridge{
 	
