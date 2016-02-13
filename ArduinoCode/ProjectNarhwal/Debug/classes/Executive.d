@@ -33,38 +33,32 @@ classes/Executive.d classes/Executive.o: ../classes/Executive.cpp \
  ../classes/Hardware.h \
  ../classes/../include/LiquidCrystal/LiquidCrystal_I2C.h \
  ../include\arduino/Print.h ../classes/../include/LiquidCrystal/I2CIO.h \
- ../classes/../include/LiquidCrystal/LCD.h ../classes/RTD.h \
- ../classes/LUT.h ../classes/DigIO.h \
+ ../classes/../include/LiquidCrystal/LCD.h \
  ../classes/../include/TimerOne/TimerOne.h \
  ../classes/../include/TimerOne/config/known_16bit_timers.h \
- ../classes/../iodef.h ../classes/../config.h \
- ../classes/UserInterface/ClickEncoderWithEvents.h \
- ../classes/UserInterface/../../include/ClickEncoder/ClickEncoder.h \
- ../classes/UserInterface/LCDMenu.h \
- ../classes/UserInterface/../../include/LinkedList/LinkedList.h \
- ../classes/UserInterface/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
- ../classes/UserInterface/UserInterface.h \
- ../classes/UserInterface/../WheatstoneBridge.h \
- ../classes/UserInterface/../LUT.h ../classes/UserInterface/LCDMenuItem.h \
- ../classes/UserInterface/LCDPage.h \
- ../classes/UserInterface/LCDPageItem.h \
- ../classes/UserInterface/LCDToggleOption.h \
- ../classes/UserInterface/../DigIO.h \
- ../classes/UserInterface/ClickEncoderWithEvents.h \
- ../classes/UserInterface/UserInterface.h ../classes/MAIN/MAIN_UI.h \
- ../classes/MAIN/../UserInterface/UserInterface.h \
+ ../classes/../iodef.h ../classes/../config.h ../classes/RTD.h \
+ ../classes/LUT.h ../classes/DigitalIO.h \
+ ../classes/EZUI/ClickEncoderWithEvents.h \
+ ../classes/EZUI/../../include/ClickEncoder/ClickEncoder.h \
+ ../classes/EZUI/EZUI_Menu.h \
+ ../classes/EZUI/../../include/LinkedList/LinkedList.h \
+ ../classes/EZUI/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
+ ../classes/EZUI/EZUI.h ../classes/EZUI/../WheatstoneBridge.h \
+ ../classes/EZUI/../LUT.h ../classes/EZUI/EZUI_MenuItem.h \
+ ../classes/EZUI/EZUI_Page.h ../classes/EZUI/EZUI_PageItem.h \
+ ../classes/EZUI/./Controls/EZUI_Control_ToggleOption.h \
+ ../classes/EZUI/./Controls/../../DigitalIO.h \
+ ../classes/EZUI/./Controls/EZUI_Control_Link.h \
+ ../classes/EZUI/./Controls/../EZUI.h \
+ ../classes/EZUI/./Controls/../EZUI_Menu.h \
+ ../classes/EZUI/./Controls/../EZUI_Page.h \
+ ../classes/EZUI/ClickEncoderWithEvents.h ../classes/EZUI/EZUI.h \
+ ../classes/MAIN/MAIN_UI.h ../classes/MAIN/../EZUI/EZUI.h \
  ../classes/MAIN/../Executive.h ../classes/MAIN/../Hardware.h \
- ../classes/MAIN/../../config.h \
- ../classes/MAIN/../UserInterface/LCDMenu.h \
- ../classes/MAIN/../UserInterface/LCDMenuItem.h \
- ../classes/MAIN/../UserInterface/LCDPage.h \
- ../classes/MAIN/../UserInterface/LCDPageItem.h ../classes/MLT/MLT_UI.h \
- ../classes/MLT/../UserInterface/UserInterface.h \
- ../classes/MLT/../Executive.h ../classes/MLT/../Hardware.h \
- ../classes/MLT/../../config.h ../classes/MLT/../UserInterface/LCDMenu.h \
- ../classes/MLT/../UserInterface/LCDMenuItem.h \
- ../classes/MLT/../UserInterface/LCDPage.h \
- ../classes/MLT/../UserInterface/LCDPageItem.h
+ ../classes/MAIN/../../config.h ../classes/MAIN/../EZUI/EZUI_Menu.h \
+ ../classes/MAIN/../EZUI/EZUI_MenuItem.h \
+ ../classes/MAIN/../EZUI/EZUI_Page.h \
+ ../classes/MAIN/../EZUI/EZUI_PageItem.h
 
 ../classes/Executive.h:
 
@@ -150,12 +144,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/../include/LiquidCrystal/LCD.h:
 
-../classes/RTD.h:
-
-../classes/LUT.h:
-
-../classes/DigIO.h:
-
 ../classes/../include/TimerOne/TimerOne.h:
 
 ../classes/../include/TimerOne/config/known_16bit_timers.h:
@@ -164,39 +152,53 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/../config.h:
 
-../classes/UserInterface/ClickEncoderWithEvents.h:
+../classes/RTD.h:
 
-../classes/UserInterface/../../include/ClickEncoder/ClickEncoder.h:
+../classes/LUT.h:
 
-../classes/UserInterface/LCDMenu.h:
+../classes/DigitalIO.h:
 
-../classes/UserInterface/../../include/LinkedList/LinkedList.h:
+../classes/EZUI/ClickEncoderWithEvents.h:
 
-../classes/UserInterface/../../include/LiquidCrystal/LiquidCrystal_I2C.h:
+../classes/EZUI/../../include/ClickEncoder/ClickEncoder.h:
 
-../classes/UserInterface/UserInterface.h:
+../classes/EZUI/EZUI_Menu.h:
 
-../classes/UserInterface/../WheatstoneBridge.h:
+../classes/EZUI/../../include/LinkedList/LinkedList.h:
 
-../classes/UserInterface/../LUT.h:
+../classes/EZUI/../../include/LiquidCrystal/LiquidCrystal_I2C.h:
 
-../classes/UserInterface/LCDMenuItem.h:
+../classes/EZUI/EZUI.h:
 
-../classes/UserInterface/LCDPage.h:
+../classes/EZUI/../WheatstoneBridge.h:
 
-../classes/UserInterface/LCDPageItem.h:
+../classes/EZUI/../LUT.h:
 
-../classes/UserInterface/LCDToggleOption.h:
+../classes/EZUI/EZUI_MenuItem.h:
 
-../classes/UserInterface/../DigIO.h:
+../classes/EZUI/EZUI_Page.h:
 
-../classes/UserInterface/ClickEncoderWithEvents.h:
+../classes/EZUI/EZUI_PageItem.h:
 
-../classes/UserInterface/UserInterface.h:
+../classes/EZUI/./Controls/EZUI_Control_ToggleOption.h:
+
+../classes/EZUI/./Controls/../../DigitalIO.h:
+
+../classes/EZUI/./Controls/EZUI_Control_Link.h:
+
+../classes/EZUI/./Controls/../EZUI.h:
+
+../classes/EZUI/./Controls/../EZUI_Menu.h:
+
+../classes/EZUI/./Controls/../EZUI_Page.h:
+
+../classes/EZUI/ClickEncoderWithEvents.h:
+
+../classes/EZUI/EZUI.h:
 
 ../classes/MAIN/MAIN_UI.h:
 
-../classes/MAIN/../UserInterface/UserInterface.h:
+../classes/MAIN/../EZUI/EZUI.h:
 
 ../classes/MAIN/../Executive.h:
 
@@ -204,28 +206,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/MAIN/../../config.h:
 
-../classes/MAIN/../UserInterface/LCDMenu.h:
+../classes/MAIN/../EZUI/EZUI_Menu.h:
 
-../classes/MAIN/../UserInterface/LCDMenuItem.h:
+../classes/MAIN/../EZUI/EZUI_MenuItem.h:
 
-../classes/MAIN/../UserInterface/LCDPage.h:
+../classes/MAIN/../EZUI/EZUI_Page.h:
 
-../classes/MAIN/../UserInterface/LCDPageItem.h:
-
-../classes/MLT/MLT_UI.h:
-
-../classes/MLT/../UserInterface/UserInterface.h:
-
-../classes/MLT/../Executive.h:
-
-../classes/MLT/../Hardware.h:
-
-../classes/MLT/../../config.h:
-
-../classes/MLT/../UserInterface/LCDMenu.h:
-
-../classes/MLT/../UserInterface/LCDMenuItem.h:
-
-../classes/MLT/../UserInterface/LCDPage.h:
-
-../classes/MLT/../UserInterface/LCDPageItem.h:
+../classes/MAIN/../EZUI/EZUI_PageItem.h:

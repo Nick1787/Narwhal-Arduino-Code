@@ -39,14 +39,14 @@ classes/UserInterface/LCDPageItem.d classes/UserInterface/LCDPageItem.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
- ../classes/UserInterface/LCDPage.h \
+ ../classes/UserInterface/LCDPage.h ../classes/UserInterface/LCDMenu.h \
  ../classes/UserInterface/UserInterface.h \
  ../classes/UserInterface/../WheatstoneBridge.h \
- ../classes/UserInterface/../LUT.h ../classes/UserInterface/LCDMenu.h \
+ ../classes/UserInterface/../LUT.h \
  ../classes/UserInterface/ClickEncoderWithEvents.h \
  ../classes/UserInterface/../../include/ClickEncoder/ClickEncoder.h \
  ../classes/UserInterface/LCDToggleOption.h \
- ../classes/UserInterface/../DigIO.h
+ ../classes/UserInterface/../DigitalIO.h
 
 ../classes/UserInterface/LCDPageItem.h:
 
@@ -136,13 +136,13 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/UserInterface/LCDPage.h:
 
+../classes/UserInterface/LCDMenu.h:
+
 ../classes/UserInterface/UserInterface.h:
 
 ../classes/UserInterface/../WheatstoneBridge.h:
 
 ../classes/UserInterface/../LUT.h:
-
-../classes/UserInterface/LCDMenu.h:
 
 ../classes/UserInterface/ClickEncoderWithEvents.h:
 
@@ -150,4 +150,4 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/UserInterface/LCDToggleOption.h:
 
-../classes/UserInterface/../DigIO.h:
+../classes/UserInterface/../DigitalIO.h:

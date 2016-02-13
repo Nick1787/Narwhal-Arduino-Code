@@ -12,15 +12,16 @@
 #define _HARDWARE_H
 
 #include "../include/LiquidCrystal/LiquidCrystal_I2C.h"
-#include "RTD.h"
-#include "DigIO.h"
-#include "Executive.h"
 #include "../include/TimerOne/TimerOne.h"
 #include "../iodef.h"
 #include "../config.h"
 
-#include "UserInterface/ClickEncoderWithEvents.h"
-#include "UserInterface/UserInterface.h"
+#include "RTD.h"
+#include "DigitalIO.h"
+#include "Executive.h"
+
+#include "EZUI/ClickEncoderWithEvents.h"
+#include "EZUI/EZUI.h"
 #include "MAIN/MAIN_UI.h"
 
 /**************************
@@ -30,47 +31,82 @@ extern void serviceEncoders();
 extern void hardware_init();
 
 /**************************
-*	Alarms
+*	analogs
 **************************/
-extern DigIO * TimerAlarmDIO;
-extern DigIO * TempAlarmDIO;
+extern float analog0;
+extern float analog1;
+extern float analog2;
+extern float analog3;
+extern float analog4;
+extern float analog5;
+extern float analog6;
+extern float analog7;
+extern float analog8;
+extern float analog9;
+extern float analog10;
+extern float analog11;
+extern float analog12;
+extern float analog13;
+extern float analog14;
+extern float analog15;
+
+/**************************
+*	Solenoids
+**************************/
+extern DigitalIO RC1_OUT1;
+extern DigitalIO RC1_OUT2;
+extern DigitalIO RC1_OUT3;
+extern DigitalIO RC1_OUT4;
+extern DigitalIO RC1_OUT5;
+extern DigitalIO RC1_OUT6;
+extern DigitalIO RC1_OUT7;
+extern DigitalIO RC1_OUT8;
+
+extern DigitalIO RC2_OUT1;
+extern DigitalIO RC2_OUT2;
+extern DigitalIO RC2_OUT3;
+extern DigitalIO RC2_OUT4;
+extern DigitalIO RC2_OUT5;
+extern DigitalIO RC2_OUT6;
+extern DigitalIO RC2_OUT7;
+extern DigitalIO RC2_OUT8;
 
 /**************************
 *	Main Screen
 **************************/
 extern LiquidCrystal_I2C MAIN_LCD;
 extern ClickEncoderWithEvents *MAIN_ENC;
-//extern RTD_CV_3Wire *HLT_RTD1;
-//extern RTD_CV_3Wire *HLT_RTD2;
+
+extern EZUI *MAIN_UI;
 
 /**************************
 *	Hot Liquor Tank
 **************************/
 extern LiquidCrystal_I2C HLT_LCD;
 extern ClickEncoderWithEvents *HLT_ENC;
-//extern RTD_CV_3Wire *HLT_RTD1;
-//extern RTD_CV_3Wire *HLT_RTD2;
+extern WheatstoneBridge *HLT_RTD_BP;
+//extern WheatstoneBridge *HLT_RTD_OP;
 
-extern UserInterface *HLT_UI;
+extern EZUI *HLT_UI;
 
 /**************************
 *	Mach Liquor Tank
 **************************/
 extern LiquidCrystal_I2C MLT_LCD;
 extern ClickEncoderWithEvents *MLT_ENC;
-//extern RTD_CV_3Wire *MLT_RTD1;
-//extern RTD_CV_3Wire *MLT_RTD2;
+//extern WheatstoneBridge *MLT_RTD_BP;
+//extern WheatstoneBridge *MLT_RTD_OP;
 
-extern UserInterface *MLT_UI;
+extern EZUI *MLT_UI;
 
 /**************************
 *	Boil Kettle
 **************************/
 extern LiquidCrystal_I2C BK_LCD;
 extern ClickEncoderWithEvents *BK_ENC;
-//extern RTD_CV_3Wire *BK_RTD1;
-//extern RTD_CV_3Wire *BK_RTD2;
+//extern WheatstoneBridge *BK_RTD_BP;
+//extern WheatstoneBridge *BK_RTD_OP;
 
-extern UserInterface *BK_UI;
+extern EZUI *BK_UI;
 
 #endif

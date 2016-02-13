@@ -11,16 +11,16 @@
 #ifndef MLT_UI_H_
 #define MLT_UI_H_
 
-#include "../UserInterface/UserInterface.h"
+#include "../EZUI/EZUI.h"
 #include "../Executive.h"
 #include "../Hardware.h"
 #include "../../config.h"
-#include "../UserInterface/LCDMenu.h"
-#include "../UserInterface/LCDMenuItem.h"
-#include "../UserInterface/LCDPage.h"
-#include "../UserInterface/LCDPageItem.h"
+#include "../EZUI/EZUI_Menu.h"
+#include "../EZUI/EZUI_MenuItem.h"
+#include "../EZUI/EZUI_Page.h"
+#include "../EZUI/EZUI_PageItem.h"
 
-extern UserInterface *MLT_UI;
+extern EZUI *MLT_UI;
 void MLT_UI_init();
 
 #endif /* MLT_UI_H_ */

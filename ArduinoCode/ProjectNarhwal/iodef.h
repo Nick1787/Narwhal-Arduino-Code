@@ -40,6 +40,13 @@
 #define TIMER_ALARM_PIN RB1_1
 #define TEMP_ALARM_PIN RB1_2
 
+//Wheatstone Bridgets
+#define WB_R2 2000
+#define WB_R3 2000
+#define WB_R4 100
+#define WB_Rs 5
+#define WB_OpAmpGn 51
+
 ///////////////////////////////
 // Main Screen
 ///////////////////////////////
@@ -48,8 +55,8 @@
 #define MAIN_LCD_I2C_ADDR    0x27  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
-#define MAIN_ENC_A 22
-#define MAIN_ENC_B 23
+#define MAIN_ENC_A 23
+#define MAIN_ENC_B 22
 #define MAIN_ENC_SW 24
 #define MAIN_ENC_DEG_PER_NOTCH 4
 
@@ -65,10 +72,16 @@
 #define HLT_LCD_I2C_ADDR    0x26  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
-#define HLT_ENC_A 31
-#define HLT_ENC_B 32
-#define HLT_ENC_SW 33
+#define HLT_ENC_A 26
+#define HLT_ENC_B 25
+#define HLT_ENC_SW 27
+
 #define HLT_ENC_DEG_PER_NOTCH 4
+
+//RTD
+#define HLT_RTD_Vs_AN A0
+#define HLT_RTD_BP_AN A4
+#define HLT_RTD_OP_AN A2
 
 ///////////////////////////////
 // Mash Lauter Tun
@@ -82,14 +95,15 @@
 #define MLT_LCD_I2C_ADDR    0x25  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
-#define MLT_ENC_A 25
-#define MLT_ENC_B 26
-#define MLT_ENC_SW 27
+#define MLT_ENC_A 29
+#define MLT_ENC_B 28
+#define MLT_ENC_SW 30
 #define MLT_ENC_DEG_PER_NOTCH 4
 
 //RTD
-#define MLT_RTD_R2C_X[36] = {80.31, 84.27, 88.22, 92.16, 96.09, 100, 103.9, 107.79, 111.67, 115.54, 119.4, 123.24, 127.08, 130.9, 134.71, 138.51, 142.29, 146.07, 149.83, 153.58, 157.33, 161.05, 164.77, 168.48, 172.17, 175.86, 179.53, 183.19, 186.84, 190.47, 194.1, 197.71, 201.31, 204.9, 208.48, 212.05}
-#define MLT_RTD_R2C_Z[36] ={-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300}
+#define MLT_RTD_Vs_AN A0
+#define MLT_RTD_BP_AN A3
+#define MLT_RTD_OP_AN A4
 
 ///////////////////////////////
 // Boil Kettle
@@ -103,10 +117,15 @@
 #define BK_LCD_I2C_ADDR    0x23  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
-#define BK_ENC_A 28
-#define BK_ENC_B 29
-#define BK_ENC_SW 30
+#define BK_ENC_A 32
+#define BK_ENC_B 31
+#define BK_ENC_SW 33
 #define BK_ENC_DEG_PER_NOTCH 4
+
+//RTD
+#define BK_RTD_Vs_AN A5
+#define BK_RTD_BP_AN A6
+#define BK_RTD_OP_AN A7
 
 
 #endif

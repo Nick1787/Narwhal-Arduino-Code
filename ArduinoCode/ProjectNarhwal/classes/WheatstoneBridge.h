@@ -17,13 +17,16 @@
 class WheatstoneBridge{
 	
 	private:
-		int AN_V;
-		int AN_Vsource;
+		int AN_Vo;
+		int AN_Vs;
+		unsigned long lastSerialPrint = 0;
 		
 	public:
+		String Name = "";
+		
 		//Voltages
-		float V;
-		float Vs;
+		float Vo;	//Output Voltage	
+		float Vs;	//Source Voltage
 		
 		//Bridge Properties
 		float AmpGain;
@@ -41,12 +44,12 @@ class WheatstoneBridge{
 		float degF;
 		
 		//Instantiation
-		WheatstoneBridge(LUT1D LUT_R2DEGC, float R2, float R3, float R4);								//Analog in for both Source Voltage and Vout voltage 
-		WheatstoneBridge(LUT1D LUT_R2DEGC, float R2, float R3, float R4, float AmpGain);				//Analog in for both Source Voltage and Vout voltage - With Amplifier 
-		WheatstoneBridge(LUT1D LUT_R2DEGC, float R2, float R3, float R4, float AmpGain, float Rs);		//Analog in for both Source Voltage and Vout voltage - With Amplifier - With Rs shift resistor in series with Rrtd;
+		WheatstoneBridge(String Name, int AnalogIn_Vs, int AnalogIn_V, LUT1D LUT_R2DEGC, float R2, float R3, float R4);								//Analog in for both Source Voltage and Vout voltage 
+		WheatstoneBridge(String Name, int AnalogIn_Vs, int AnalogIn_V, LUT1D LUT_R2DEGC, float R2, float R3, float R4, float AmpGain);				//Analog in for both Source Voltage and Vout voltage - With Amplifier 
+		WheatstoneBridge(String Name, int AnalogIn_Vs, int AnalogIn_V, LUT1D LUT_R2DEGC, float R2, float R3, float R4, float AmpGain, float Rs);		//Analog in for both Source Voltage and Vout voltage - With Amplifier - With Rs shift resistor in series with Rrtd;
 
 		//Reading Bridge
-		float Update(float Vs, float Vout);
+		float Update();
 };
 
 

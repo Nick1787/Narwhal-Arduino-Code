@@ -255,10 +255,52 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="classes\DigIO.cpp">
+    <Compile Include="classes\BK\BK_UI.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\DigIO.h">
+    <Compile Include="classes\BK\BK_UI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\BurnerController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\BurnerController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\DigitalIO.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\DigitalIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_Button.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_Button.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_Label.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_Label.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_Link.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_Link.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_ListOption.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_ListOption.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_ToggleOption.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_ToggleOption.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\Hardware.cpp">
@@ -282,46 +324,40 @@
     <Compile Include="classes\MLT\MLT_UI.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\ClickEncoderWithEvents.cpp">
+    <Compile Include="classes\EZUI\ClickEncoderWithEvents.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\ClickEncoderWithEvents.h">
+    <Compile Include="classes\EZUI\ClickEncoderWithEvents.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDMenu.cpp">
+    <Compile Include="classes\EZUI\EZUI_Menu.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDMenu.h">
+    <Compile Include="classes\EZUI\EZUI_Menu.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDMenuItem.cpp">
+    <Compile Include="classes\EZUI\EZUI_MenuItem.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDMenuItem.h">
+    <Compile Include="classes\EZUI\EZUI_MenuItem.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDPage.cpp">
+    <Compile Include="classes\EZUI\EZUI_Page.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDPage.h">
+    <Compile Include="classes\EZUI\EZUI_Page.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDPageItem.cpp">
+    <Compile Include="classes\EZUI\EZUI_PageItem.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDPageItem.h">
+    <Compile Include="classes\EZUI\EZUI_PageItem.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDToggleOption.cpp">
+    <Compile Include="classes\EZUI\EZUI.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\UserInterface\LCDToggleOption.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\UserInterface\UserInterface.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\UserInterface\UserInterface.h">
+    <Compile Include="classes\EZUI\EZUI.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\Executive.cpp">
@@ -596,11 +632,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="classes\EZUI\Controls" />
     <Folder Include="classes\MAIN" />
     <Folder Include="classes\HLT" />
     <Folder Include="classes\MLT" />
     <Folder Include="classes\BK" />
-    <Folder Include="classes\UserInterface" />
+    <Folder Include="classes\EZUI" />
     <Folder Include="include\" />
     <Folder Include="include\arduino\" />
     <Folder Include="include\eightanaloginputs\" />

@@ -43,7 +43,7 @@ classes/UserInterface/LCDMenu.d classes/UserInterface/LCDMenu.o: \
  ../classes/UserInterface/LCDPage.h \
  ../classes/UserInterface/LCDPageItem.h \
  ../classes/UserInterface/LCDToggleOption.h \
- ../classes/UserInterface/../DigIO.h \
+ ../classes/UserInterface/../DigitalIO.h \
  ../classes/UserInterface/ClickEncoderWithEvents.h \
  ../classes/UserInterface/../../include/ClickEncoder/ClickEncoder.h
 
@@ -145,7 +145,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/UserInterface/LCDToggleOption.h:
 
-../classes/UserInterface/../DigIO.h:
+../classes/UserInterface/../DigitalIO.h:
 
 ../classes/UserInterface/ClickEncoderWithEvents.h:
 

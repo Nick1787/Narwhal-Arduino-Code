@@ -2,7 +2,7 @@ classes/UserInterface/LCDToggleOption.d \
  classes/UserInterface/LCDToggleOption.o: \
  ../classes/UserInterface/LCDToggleOption.cpp \
  ../classes/UserInterface/LCDToggleOption.h \
- ../classes/UserInterface/../DigIO.h ../include\arduino/Arduino.h \
+ ../classes/UserInterface/../DigitalIO.h ../include\arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
@@ -36,7 +36,7 @@ classes/UserInterface/LCDToggleOption.d \
 
 ../classes/UserInterface/LCDToggleOption.h:
 
-../classes/UserInterface/../DigIO.h:
+../classes/UserInterface/../DigitalIO.h:
 
 ../include\arduino/Arduino.h:
 

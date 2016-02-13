@@ -20,6 +20,7 @@
 #include "classes/MAIN/MAIN_UI.h"
 #include "classes/MLT/MLT_UI.h"
 #include "classes/HLT/HLT_UI.h"
+#include "classes/BK/BK_UI.h"
 
 //typedef FastDelegate2<int, char *> EvtHandler;
 unsigned long BootScreenTime = 0;
@@ -68,6 +69,7 @@ void setup() {
 	MAIN_UI_init();
 	HLT_UI_init();
 	MLT_UI_init();
+	BK_UI_init();
 	delay(3000);
 }
 

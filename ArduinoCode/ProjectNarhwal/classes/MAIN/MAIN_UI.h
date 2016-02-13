@@ -11,16 +11,16 @@
 #ifndef MAIN_UI_H_
 #define MAIN_UI_H_
 
-#include "../UserInterface/UserInterface.h"
+#include "../EZUI/EZUI.h"
 #include "../Executive.h"
 #include "../Hardware.h"
 #include "../../config.h"
-#include "../UserInterface/LCDMenu.h"
-#include "../UserInterface/LCDMenuItem.h"
-#include "../UserInterface/LCDPage.h"
-#include "../UserInterface/LCDPageItem.h"
+#include "../EZUI/EZUI_Menu.h"
+#include "../EZUI/EZUI_MenuItem.h"
+#include "../EZUI/EZUI_Page.h"
+#include "../EZUI/EZUI_PageItem.h"
 
-extern UserInterface *MAIN_UI;
+extern EZUI *MAIN_UI;
 void MAIN_UI_init();
 
 #endif /* MAIN_UI_H_ */

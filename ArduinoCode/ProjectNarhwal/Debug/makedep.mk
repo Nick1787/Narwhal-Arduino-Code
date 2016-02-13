@@ -2,7 +2,21 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-classes\DigIO.cpp
+classes\BK\BK_UI.cpp
+
+classes\BurnerController.cpp
+
+classes\DigitalIO.cpp
+
+classes\EZUI\Controls\EZUI_Control_Button.cpp
+
+classes\EZUI\Controls\EZUI_Control_Label.cpp
+
+classes\EZUI\Controls\EZUI_Control_Link.cpp
+
+classes\EZUI\Controls\EZUI_Control_ListOption.cpp
+
+classes\EZUI\Controls\EZUI_Control_ToggleOption.cpp
 
 classes\Hardware.cpp
 
@@ -12,19 +26,17 @@ classes\MAIN\MAIN_UI.cpp
 
 classes\MLT\MLT_UI.cpp
 
-classes\UserInterface\ClickEncoderWithEvents.cpp
+classes\EZUI\ClickEncoderWithEvents.cpp
 
-classes\UserInterface\LCDMenu.cpp
+classes\EZUI\EZUI_Menu.cpp
 
-classes\UserInterface\LCDMenuItem.cpp
+classes\EZUI\EZUI_MenuItem.cpp
 
-classes\UserInterface\LCDPage.cpp
+classes\EZUI\EZUI_Page.cpp
 
-classes\UserInterface\LCDPageItem.cpp
+classes\EZUI\EZUI_PageItem.cpp
 
-classes\UserInterface\LCDToggleOption.cpp
-
-classes\UserInterface\UserInterface.cpp
+classes\EZUI\EZUI.cpp
 
 classes\Executive.cpp
 
