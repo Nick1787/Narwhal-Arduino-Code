@@ -35,33 +35,8 @@ public:
 protected:
 private:
 	//Static Values
-	String StrVal = "";
-	float FltVal = 0.0;
-	double DblVal = 0.0;
-	bool BlnVal = false;
-	int IntVal = 0;
-	int UIntVal = 0;
-	int LongVal = 0;
-	int ULongVal = 0;
-	
-	int floatPrecision = -1;
-	String BoolTrueText = "";
-	String BoolFalseText = "";
-	
-	//Referenced Values
-	String *StrRef = NULL;
-	float *FltRef = NULL;
-	double *DblRef = NULL;
-	bool *BlnRef = NULL;
-	int *IntRef = NULL;
-	unsigned int *UIntRef = NULL;
-	long *LongRef = NULL;
-	unsigned long *ULongRef = NULL;
-	
-	//UI Items
-	int displayWidth = 0;
-	EZUI_Control_ToggleOption * TglOptRef = NULL;
-	EZUI_Control_Link * LnkRef = NULL;
+	void *valRef;
+	boolean isStatic = false;
 
 //functions
 public:

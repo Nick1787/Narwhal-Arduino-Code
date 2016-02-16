@@ -39,6 +39,7 @@ SUBDIRS :=  \
 ../classes/MLT \
 ../classes/BK \
 ../classes/EZUI \
+../classes/EnhancedIO \
 ../include/ \
 ../include/arduino/ \
 ../include/eightanaloginputs/ \
@@ -65,8 +66,8 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../classes/BK/BK_UI.cpp \
 ../classes/BurnerController.cpp \
-../classes/DigitalIO.cpp \
-../classes/EZUI/Controls/EZUI_Control_Button.cpp \
+../classes/EnhancedIO/AnalogIn.cpp \
+../classes/EnhancedIO/DigitalIO.cpp \
 ../classes/EZUI/Controls/EZUI_Control_Label.cpp \
 ../classes/EZUI/Controls/EZUI_Control_Link.cpp \
 ../classes/EZUI/Controls/EZUI_Control_ListOption.cpp \
@@ -132,8 +133,8 @@ ASM_SRCS +=
 OBJS +=  \
 classes/BK/BK_UI.o \
 classes/BurnerController.o \
-classes/DigitalIO.o \
-classes/EZUI/Controls/EZUI_Control_Button.o \
+classes/EnhancedIO/AnalogIn.o \
+classes/EnhancedIO/DigitalIO.o \
 classes/EZUI/Controls/EZUI_Control_Label.o \
 classes/EZUI/Controls/EZUI_Control_Link.o \
 classes/EZUI/Controls/EZUI_Control_ListOption.o \
@@ -192,8 +193,8 @@ src/WString.o
 OBJS_AS_ARGS +=  \
 classes/BK/BK_UI.o \
 classes/BurnerController.o \
-classes/DigitalIO.o \
-classes/EZUI/Controls/EZUI_Control_Button.o \
+classes/EnhancedIO/AnalogIn.o \
+classes/EnhancedIO/DigitalIO.o \
 classes/EZUI/Controls/EZUI_Control_Label.o \
 classes/EZUI/Controls/EZUI_Control_Link.o \
 classes/EZUI/Controls/EZUI_Control_ListOption.o \
@@ -252,8 +253,8 @@ src/WString.o
 C_DEPS +=  \
 classes/BK/BK_UI.d \
 classes/BurnerController.d \
-classes/DigitalIO.d \
-classes/EZUI/Controls/EZUI_Control_Button.d \
+classes/EnhancedIO/AnalogIn.d \
+classes/EnhancedIO/DigitalIO.d \
 classes/EZUI/Controls/EZUI_Control_Label.d \
 classes/EZUI/Controls/EZUI_Control_Link.d \
 classes/EZUI/Controls/EZUI_Control_ListOption.d \
@@ -312,8 +313,8 @@ src/WString.d
 C_DEPS_AS_ARGS +=  \
 classes/BK/BK_UI.d \
 classes/BurnerController.d \
-classes/DigitalIO.d \
-classes/EZUI/Controls/EZUI_Control_Button.d \
+classes/EnhancedIO/AnalogIn.d \
+classes/EnhancedIO/DigitalIO.d \
 classes/EZUI/Controls/EZUI_Control_Label.d \
 classes/EZUI/Controls/EZUI_Control_Link.d \
 classes/EZUI/Controls/EZUI_Control_ListOption.d \
@@ -509,6 +510,13 @@ classes/BK/%.o: ../classes/BK/%.cpp
 	
 
 classes/%.o: ../classes/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+classes/EnhancedIO/%.o: ../classes/EnhancedIO/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

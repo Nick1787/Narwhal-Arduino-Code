@@ -13,19 +13,19 @@
 #include "EZUI_Control_Link.h"
 
 // default constructor
-EZUI_Control_Link::EZUI_Control_Link(String Text, EZUI_Menu * MenuLink)
+EZUI_Control_Link::EZUI_Control_Link(String Text, EZUI_Menu * Lnk)
 {
 	this->Label = Text;
-	PageRef = NULL;
-	MenuRef = MenuLink;
+	type = MenuLink;
+	LinkRef = Lnk;
 } //EZUI_Control_Link
 
 // default constructor
-EZUI_Control_Link::EZUI_Control_Link(String Text, EZUI_Page * PageLink)
+EZUI_Control_Link::EZUI_Control_Link(String Text, EZUI_Page * Lnk)
 {
 	this->Label = Text;
-	PageRef = PageLink;
-	MenuRef = NULL;
+	type = PageLink;
+	LinkRef = Lnk;
 } //EZUI_Control_Link
 
 // default destructor
@@ -35,9 +35,9 @@ EZUI_Control_Link::~EZUI_Control_Link()
 
 
 void EZUI_Control_Link::FollowLink(EZUI *UI){
-	if (!(PageRef == NULL)){
-		UI->setDisplay(PageRef);
-	}else if (!(MenuRef == NULL)){
-		UI->setDisplay(MenuRef);
+	if (type == MenuLink){
+		UI->setDisplay((EZUI_Menu*)LinkRef);
+	}else if ( type == PageLink){
+		UI->setDisplay((EZUI_Page*)LinkRef);
 	}
 }

@@ -40,10 +40,35 @@ void Executive::run(){
 }
 
 void Executive::exec_frame1(){
+	//IO
+	
+	//Encoders
 	MAIN_ENC->Read();
 	MLT_ENC->Read();
 	HLT_ENC->Read();
 	BK_ENC->Read();
+	
+	//Analog Ins
+	ANIN_A0.update();
+	ANIN_A1.update();
+	ANIN_A2.update();
+	ANIN_A3.update();
+	ANIN_A4.update();
+	ANIN_A5.update();
+	ANIN_A6.update();
+	ANIN_A7.update();
+	ANIN_A8.update();
+	ANIN_A9.update();
+	ANIN_A10.update();
+	ANIN_A11.update();
+	ANIN_A12.update();
+	ANIN_A13.update();
+	ANIN_A14.update();
+
+}
+
+void Executive::exec_frame2(){
+	//Calculate Parameters
 	
 	//Update the RTD values
 	HLT_RTD_BP->Update();
@@ -53,26 +78,7 @@ void Executive::exec_frame1(){
 	//BK_RTD_BP->Update();
 	//BK_RTD_OP->Update();
 	
-	analog0 = (5.0*(float)analogRead(A0))/1023.0;
-	analog1 = (5.0*(float)analogRead(A1))/1023.0;
-	analog2 = (5.0*(float)analogRead(A2))/1023.0;
-	analog3 = (5.0*(float)analogRead(A3))/1023.0;
-	analog4 = (5.0*(float)analogRead(A4))/1023.0;
-	analog5 = (5.0*(float)analogRead(A5))/1023.0;
-	analog6 = (5.0*(float)analogRead(A6))/1023.0;
-	analog7 = (5.0*(float)analogRead(A7))/1023.0;
-	analog8 = (5.0*(float)analogRead(A8))/1023.0;
-	analog9 = (5.0*(float)analogRead(A9))/1023.0;
-	analog10 = (5.0*(float)analogRead(A10))/1023.0;
-	analog11 = (5.0*(float)analogRead(A11))/1023.0;
-	analog12 = (5.0*(float)analogRead(A12))/1023.0;
-	analog13 = (5.0*(float)analogRead(A13))/1023.0;
-	analog14 = (5.0*(float)analogRead(A14))/1023.0;
-	analog15 = (5.0*(float)analogRead(A15))/1023.0;
-}
-
-void Executive::exec_frame2(){
-	//Run the Controllers
+	//Controllers
 	
 }
 

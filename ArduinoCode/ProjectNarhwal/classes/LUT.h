@@ -23,6 +23,7 @@ class LUT1D{
   public:
 	//Constructor
 	LUT1D(int lenx, float *xvals, float *zvals);
+	LUT1D(int lenx, const float *xvals, const float *zvals);
   
     float lookup(float xval);
   private:
@@ -40,6 +41,7 @@ class LUT2D{
   public:
 	//Constructor
 	LUT2D(int lenx, int leny, float *xvals, float *yvals, float *zvals);
+	LUT2D(int lenx, int leny, const float *xvals, const float *yvals, const float *zvals);
     float lookup(float xval, float yval);
   private:
     float *_x;

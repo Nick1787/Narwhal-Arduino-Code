@@ -26,7 +26,7 @@ void HLT_UI_init(){
 	EZUI_Menu * MainMenu = new EZUI_Menu("HLT-Main-Menu");
 	
 	EZUI_Page * TestPage = new EZUI_Page((String)("TestPage"));
-	TestPage->addItem(new EZUI_PageItem(0,3,new EZUI_Control_Link("Back",MainMenu)));
+	//TestPage->addItem(0,3,new EZUI_Control_Link("Back",MainMenu));
 	
 	MainMenu->addItem(new EZUI_Control_Link("TestPage",TestPage));
 	MainMenu->addItem(new EZUI_Control_Link("Test2",MainMenu));

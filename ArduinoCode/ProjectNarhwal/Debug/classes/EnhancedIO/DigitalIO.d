@@ -1,13 +1,17 @@
-classes/EZUI/ClickEncoderWithEvents.d \
- classes/EZUI/ClickEncoderWithEvents.o: \
- ../classes/EZUI/ClickEncoderWithEvents.cpp \
- ../classes/EZUI/ClickEncoderWithEvents.h \
- ../classes/EZUI/../../include/ClickEncoder/ClickEncoder.h \
+classes/EnhancedIO/DigitalIO.d classes/EnhancedIO/DigitalIO.o: \
+ ../classes/EnhancedIO/DigitalIO.cpp ../classes/EnhancedIO/DigitalIO.h \
+ ../include\arduino/Arduino.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\iom2560.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\iomxx0_1.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\portpins.h \
@@ -16,13 +20,6 @@ classes/EZUI/ClickEncoderWithEvents.d \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
- ../include\arduino/Arduino.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../include\arduino/binary.h ../include\arduino/WCharacter.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\ctype.h \
  ../include\arduino/WString.h ../include\arduino/HardwareSerial.h \
@@ -33,30 +30,25 @@ classes/EZUI/ClickEncoderWithEvents.d \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\eeprom.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
- ../classes/EZUI/EZUI_Menu.h \
- ../classes/EZUI/../../include/LinkedList/LinkedList.h \
- ../classes/EZUI/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
- ../include\arduino/Print.h \
- ../classes/EZUI/../../include/LiquidCrystal/I2CIO.h \
- ../classes/EZUI/../../include/LiquidCrystal/LCD.h ../classes/EZUI/EZUI.h \
- ../classes/EZUI/../WheatstoneBridge.h ../classes/EZUI/../LUT.h \
- ../classes/EZUI/EZUI_MenuItem.h ../classes/EZUI/EZUI_Page.h \
- ../classes/EZUI/EZUI_PageItem.h \
- ../classes/EZUI/./Controls/EZUI_Control_ToggleOption.h \
- ../classes/EZUI/./Controls/../../EnhancedIO/DigitalIO.h \
- ../classes/EZUI/./Controls/EZUI_Control_Link.h \
- ../classes/EZUI/./Controls/../EZUI.h \
- ../classes/EZUI/./Controls/../EZUI_Menu.h \
- ../classes/EZUI/./Controls/../EZUI_Page.h \
- ../classes/EZUI/./Controls/EZUI_Control_Label.h \
- ../include\arduino/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
- ../classes/EZUI/./Controls/../../EnhancedIO/AnalogIn.h \
- ../classes/EZUI/./Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h
+ ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h
 
-../classes/EZUI/ClickEncoderWithEvents.h:
+../classes/EnhancedIO/DigitalIO.h:
 
-../classes/EZUI/../../include/ClickEncoder/ClickEncoder.h:
+../include\arduino/Arduino.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdint.h:
 
@@ -65,8 +57,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\iom2560.h:
 
@@ -83,20 +73,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h:
-
-../include\arduino/Arduino.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 ../include\arduino/binary.h:
 
@@ -129,47 +105,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../include\arduino/Arduino.h:
 
 ../include\arduino/pins_arduino.h:
-
-../classes/EZUI/EZUI_Menu.h:
-
-../classes/EZUI/../../include/LinkedList/LinkedList.h:
-
-../classes/EZUI/../../include/LiquidCrystal/LiquidCrystal_I2C.h:
-
-../include\arduino/Print.h:
-
-../classes/EZUI/../../include/LiquidCrystal/I2CIO.h:
-
-../classes/EZUI/../../include/LiquidCrystal/LCD.h:
-
-../classes/EZUI/EZUI.h:
-
-../classes/EZUI/../WheatstoneBridge.h:
-
-../classes/EZUI/../LUT.h:
-
-../classes/EZUI/EZUI_MenuItem.h:
-
-../classes/EZUI/EZUI_Page.h:
-
-../classes/EZUI/EZUI_PageItem.h:
-
-../classes/EZUI/./Controls/EZUI_Control_ToggleOption.h:
-
-../classes/EZUI/./Controls/../../EnhancedIO/DigitalIO.h:
-
-../classes/EZUI/./Controls/EZUI_Control_Link.h:
-
-../classes/EZUI/./Controls/../EZUI.h:
-
-../classes/EZUI/./Controls/../EZUI_Menu.h:
-
-../classes/EZUI/./Controls/../EZUI_Page.h:
-
-../classes/EZUI/./Controls/EZUI_Control_Label.h:
-
-../include\arduino/../../include/LiquidCrystal/LiquidCrystal_I2C.h:
-
-../classes/EZUI/./Controls/../../EnhancedIO/AnalogIn.h:
-
-../classes/EZUI/./Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h:

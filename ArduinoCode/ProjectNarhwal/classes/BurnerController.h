@@ -12,7 +12,7 @@
 #define __BURNERCONTROLLER_H__
 
 #include "WheatstoneBridge.h"
-#include "DigitalIO.h"
+#include "EnhancedIO/DigitalIO.h"
 
 class BurnerController
 {

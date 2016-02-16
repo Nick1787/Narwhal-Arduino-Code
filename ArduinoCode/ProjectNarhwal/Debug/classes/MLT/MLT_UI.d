@@ -43,11 +43,15 @@ classes/MLT/MLT_UI.d classes/MLT/MLT_UI.o: ../classes/MLT/MLT_UI.cpp \
  ../classes/MLT/../EZUI/EZUI_Page.h \
  ../classes/MLT/../EZUI/EZUI_PageItem.h \
  ../classes/MLT/../EZUI/./Controls/EZUI_Control_ToggleOption.h \
- ../classes/MLT/../EZUI/./Controls/../../DigitalIO.h \
+ ../classes/MLT/../EZUI/./Controls/../../EnhancedIO/DigitalIO.h \
  ../classes/MLT/../EZUI/./Controls/EZUI_Control_Link.h \
  ../classes/MLT/../EZUI/./Controls/../EZUI.h \
  ../classes/MLT/../EZUI/./Controls/../EZUI_Menu.h \
  ../classes/MLT/../EZUI/./Controls/../EZUI_Page.h \
+ ../classes/MLT/../EZUI/./Controls/EZUI_Control_Label.h \
+ ../include\arduino/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
+ ../classes/MLT/../EZUI/./Controls/../../EnhancedIO/AnalogIn.h \
+ ../classes/MLT/../EZUI/./Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h \
  ../classes/MLT/../EZUI/ClickEncoderWithEvents.h \
  ../classes/MLT/../EZUI/../../include/ClickEncoder/ClickEncoder.h \
  ../classes/MLT/../Executive.h ../classes/MLT/../Hardware.h \
@@ -56,7 +60,8 @@ classes/MLT/MLT_UI.d classes/MLT/MLT_UI.o: ../classes/MLT/MLT_UI.cpp \
  ../classes/MLT/../../include/TimerOne/config/known_16bit_timers.h \
  ../classes/MLT/../../iodef.h ../classes/MLT/../../config.h \
  ../classes/MLT/../RTD.h ../classes/MLT/../LUT.h \
- ../classes/MLT/../DigitalIO.h ../classes/MLT/../Executive.h \
+ ../classes/MLT/../EnhancedIO/DigitalIO.h \
+ ../classes/MLT/../EnhancedIO/AnalogIn.h ../classes/MLT/../Executive.h \
  ../classes/MLT/../EZUI/ClickEncoderWithEvents.h \
  ../classes/MLT/../EZUI/EZUI.h ../classes/MLT/../MAIN/MAIN_UI.h \
  ../classes/MLT/../MAIN/../EZUI/EZUI.h \
@@ -175,7 +180,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/MLT/../EZUI/./Controls/EZUI_Control_ToggleOption.h:
 
-../classes/MLT/../EZUI/./Controls/../../DigitalIO.h:
+../classes/MLT/../EZUI/./Controls/../../EnhancedIO/DigitalIO.h:
 
 ../classes/MLT/../EZUI/./Controls/EZUI_Control_Link.h:
 
@@ -184,6 +189,14 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../classes/MLT/../EZUI/./Controls/../EZUI_Menu.h:
 
 ../classes/MLT/../EZUI/./Controls/../EZUI_Page.h:
+
+../classes/MLT/../EZUI/./Controls/EZUI_Control_Label.h:
+
+../include\arduino/../../include/LiquidCrystal/LiquidCrystal_I2C.h:
+
+../classes/MLT/../EZUI/./Controls/../../EnhancedIO/AnalogIn.h:
+
+../classes/MLT/../EZUI/./Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h:
 
 ../classes/MLT/../EZUI/ClickEncoderWithEvents.h:
 
@@ -207,7 +220,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/MLT/../LUT.h:
 
-../classes/MLT/../DigitalIO.h:
+../classes/MLT/../EnhancedIO/DigitalIO.h:
+
+../classes/MLT/../EnhancedIO/AnalogIn.h:
 
 ../classes/MLT/../Executive.h:
 

@@ -6,9 +6,9 @@ classes\BK\BK_UI.cpp
 
 classes\BurnerController.cpp
 
-classes\DigitalIO.cpp
+classes\EnhancedIO\AnalogIn.cpp
 
-classes\EZUI\Controls\EZUI_Control_Button.cpp
+classes\EnhancedIO\DigitalIO.cpp
 
 classes\EZUI\Controls\EZUI_Control_Label.cpp
 

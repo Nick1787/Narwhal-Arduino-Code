@@ -5,9 +5,9 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o) (__addsf3x)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
-                              classes/EZUI/EZUI_PageItem.o (__nesf2)
+                              classes/LUT.o (__ltsf2)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
-                              classes/Executive.o (__divsf3)
+                              classes/EnhancedIO/AnalogIn.o (__divsf3)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o) (__divsf3x)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
@@ -15,7 +15,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
                               src/Print.o (__fixunssfsi)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
-                              classes/Executive.o (__floatunsisf)
+                              classes/EnhancedIO/AnalogIn.o (__floatunsisf)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o) (__fp_cmp)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
@@ -35,7 +35,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
                               classes/LUT.o (__gesf2)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
-                              classes/Executive.o (__mulsf3)
+                              classes/EnhancedIO/AnalogIn.o (__mulsf3)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o) (__mulsf3x)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
@@ -47,7 +47,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
                               classes/EZUI/EZUI_Menu.o (__divmodhi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
-                              include/Wire/Wire.o (__udivmodsi4)
+                              classes/EnhancedIO/AnalogIn.o (__udivmodsi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodsi4.o)
                               src/Tone.o (__divmodsi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_negsi2.o)
@@ -172,84 +172,79 @@ Discarded input sections
                 0x00000000       0x60 classes/BurnerController.o
  .text._ZN16BurnerControllerD2Ev
                 0x00000000       0x18 classes/BurnerController.o
- .debug_info    0x00000000     0x144e classes/BurnerController.o
+ .debug_info    0x00000000     0x1480 classes/BurnerController.o
  .debug_abbrev  0x00000000      0x241 classes/BurnerController.o
  .debug_loc     0x00000000       0xca classes/BurnerController.o
  .debug_aranges
                 0x00000000       0x28 classes/BurnerController.o
  .debug_ranges  0x00000000       0x18 classes/BurnerController.o
- .debug_line    0x00000000      0x15b classes/BurnerController.o
+ .debug_line    0x00000000      0x171 classes/BurnerController.o
  .debug_str     0x00000000      0xcd3 classes/BurnerController.o
  .comment       0x00000000       0x31 classes/BurnerController.o
  .debug_frame   0x00000000       0x4c classes/BurnerController.o
- .text          0x00000000        0x0 classes/DigitalIO.o
- .data          0x00000000        0x0 classes/DigitalIO.o
- .bss           0x00000000        0x0 classes/DigitalIO.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .group         0x00000000        0x8 classes/EnhancedIO/AnalogIn.o
+ .text          0x00000000        0x0 classes/EnhancedIO/AnalogIn.o
+ .data          0x00000000        0x0 classes/EnhancedIO/AnalogIn.o
+ .bss           0x00000000        0x0 classes/EnhancedIO/AnalogIn.o
+ .text          0x00000000        0x0 classes/EnhancedIO/DigitalIO.o
+ .data          0x00000000        0x0 classes/EnhancedIO/DigitalIO.o
+ .bss           0x00000000        0x0 classes/EnhancedIO/DigitalIO.o
  .text._ZN9DigitalIO7GetModeEv
-                0x00000000        0x6 classes/DigitalIO.o
+                0x00000000        0x6 classes/EnhancedIO/DigitalIO.o
  .text._ZN9DigitalIO7SetModeENS_8PinModesE
-                0x00000000        0x6 classes/DigitalIO.o
+                0x00000000        0x6 classes/EnhancedIO/DigitalIO.o
  .text._ZN9DigitalIOC2EiNS_8PinModesE
-                0x00000000       0x44 classes/DigitalIO.o
- .text          0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Button.o
- .data          0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Button.o
- .bss           0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Button.o
- .text._ZN19EZUI_Control_ButtonC2Ev
-                0x00000000        0x2 classes/EZUI/Controls/EZUI_Control_Button.o
- .text._ZN19EZUI_Control_ButtonD2Ev
-                0x00000000        0x2 classes/EZUI/Controls/EZUI_Control_Button.o
- .debug_info    0x00000000      0x167 classes/EZUI/Controls/EZUI_Control_Button.o
- .debug_abbrev  0x00000000       0xea classes/EZUI/Controls/EZUI_Control_Button.o
- .debug_aranges
-                0x00000000       0x28 classes/EZUI/Controls/EZUI_Control_Button.o
- .debug_ranges  0x00000000       0x18 classes/EZUI/Controls/EZUI_Control_Button.o
- .debug_line    0x00000000       0x87 classes/EZUI/Controls/EZUI_Control_Button.o
- .debug_str     0x00000000      0x222 classes/EZUI/Controls/EZUI_Control_Button.o
- .comment       0x00000000       0x31 classes/EZUI/Controls/EZUI_Control_Button.o
- .debug_frame   0x00000000       0x34 classes/EZUI/Controls/EZUI_Control_Button.o
+                0x00000000       0x44 classes/EnhancedIO/DigitalIO.o
  .text          0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Label.o
  .data          0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Label.o
  .bss           0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_LabelD2Ev
                 0x00000000        0x8 classes/EZUI/Controls/EZUI_Control_Label.o
- .rodata.str1.1
-                0x00000000        0x3 classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_LabelC2E6String
-                0x00000000       0x80 classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000       0x60 classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_LabelC2Ef
-                0x00000000       0x7a classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000       0x5a classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_LabelC2Ed
-                0x00000000       0x7a classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000       0x5a classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_LabelC2Ei
-                0x00000000       0x6c classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000       0x4c classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_LabelC2Ej
-                0x00000000       0x6c classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000       0x4c classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_LabelC2El
-                0x00000000       0x7a classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000       0x5a classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_LabelC2Em
-                0x00000000       0x7a classes/EZUI/Controls/EZUI_Control_Label.o
- .text._ZN18EZUI_Control_LabelC2Eb
-                0x00000000       0x66 classes/EZUI/Controls/EZUI_Control_Label.o
- .text._ZN18EZUI_Control_LabelC2Efj
-                0x00000000       0x88 classes/EZUI/Controls/EZUI_Control_Label.o
- .text._ZN18EZUI_Control_LabelC2Edj
-                0x00000000       0x88 classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000       0x5a classes/EZUI/Controls/EZUI_Control_Label.o
+ .text._ZN18EZUI_Control_LabelC2EP6String
+                0x00000000       0x3e classes/EZUI/Controls/EZUI_Control_Label.o
+ .text._ZN18EZUI_Control_LabelC2EPd
+                0x00000000       0x3e classes/EZUI/Controls/EZUI_Control_Label.o
+ .text._ZN18EZUI_Control_LabelC2EPi
+                0x00000000       0x3e classes/EZUI/Controls/EZUI_Control_Label.o
+ .text._ZN18EZUI_Control_LabelC2EPj
+                0x00000000       0x3e classes/EZUI/Controls/EZUI_Control_Label.o
+ .text._ZN18EZUI_Control_LabelC2EPl
+                0x00000000       0x3e classes/EZUI/Controls/EZUI_Control_Label.o
+ .text._ZN18EZUI_Control_LabelC2EPm
+                0x00000000       0x3e classes/EZUI/Controls/EZUI_Control_Label.o
+ .text._ZN18EZUI_Control_LabelC2EPb
+                0x00000000       0x3e classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_Label4TextEv
-                0x00000000      0x230 classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000      0x332 classes/EZUI/Controls/EZUI_Control_Label.o
  .progmem.gcc_sw_table._ZN18EZUI_Control_Label4TextEv
-                0x00000000       0x10 classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000000       0x20 classes/EZUI/Controls/EZUI_Control_Label.o
  .text._ZN18EZUI_Control_Label5PrintEP17LiquidCrystal_I2Chh
                 0x00000000      0x102 classes/EZUI/Controls/EZUI_Control_Label.o
- .debug_info    0x00000000     0x1f47 classes/EZUI/Controls/EZUI_Control_Label.o
- .debug_abbrev  0x00000000      0x361 classes/EZUI/Controls/EZUI_Control_Label.o
- .debug_loc     0x00000000      0xb57 classes/EZUI/Controls/EZUI_Control_Label.o
- .debug_aranges
-                0x00000000       0x80 classes/EZUI/Controls/EZUI_Control_Label.o
- .debug_ranges  0x00000000       0x70 classes/EZUI/Controls/EZUI_Control_Label.o
- .debug_line    0x00000000      0x4cd classes/EZUI/Controls/EZUI_Control_Label.o
- .debug_str     0x00000000      0xe47 classes/EZUI/Controls/EZUI_Control_Label.o
- .comment       0x00000000       0x31 classes/EZUI/Controls/EZUI_Control_Label.o
- .debug_frame   0x00000000      0x274 classes/EZUI/Controls/EZUI_Control_Label.o
  .text          0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Link.o
  .data          0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Link.o
  .bss           0x00000000        0x0 classes/EZUI/Controls/EZUI_Control_Link.o
@@ -288,14 +283,18 @@ Discarded input sections
  .text          0x00000000        0x0 classes/Hardware.o
  .data          0x00000000        0x0 classes/Hardware.o
  .bss           0x00000000        0x0 classes/Hardware.o
- .data.WB_R2C_Z
-                0x00000000       0x90 classes/Hardware.o
  .text          0x00000000        0x0 classes/HLT/HLT_UI.o
  .data          0x00000000        0x0 classes/HLT/HLT_UI.o
  .bss           0x00000000        0x0 classes/HLT/HLT_UI.o
  .text          0x00000000        0x0 classes/MAIN/MAIN_UI.o
  .data          0x00000000        0x0 classes/MAIN/MAIN_UI.o
  .bss           0x00000000        0x0 classes/MAIN/MAIN_UI.o
+ .progmem.data._ZZ12MAIN_UI_initvE3__c_3
+                0x00000000        0x5 classes/MAIN/MAIN_UI.o
+ .progmem.data._ZZ12MAIN_UI_initvE3__c_2
+                0x00000000        0x5 classes/MAIN/MAIN_UI.o
+ .progmem.data._ZZ12MAIN_UI_initvE3__c_1
+                0x00000000        0x5 classes/MAIN/MAIN_UI.o
  .text          0x00000000        0x0 classes/MLT/MLT_UI.o
  .data          0x00000000        0x0 classes/MLT/MLT_UI.o
  .bss           0x00000000        0x0 classes/MLT/MLT_UI.o
@@ -351,55 +350,73 @@ Discarded input sections
  .text          0x00000000        0x0 classes/EZUI/EZUI_Page.o
  .data          0x00000000        0x0 classes/EZUI/EZUI_Page.o
  .bss           0x00000000        0x0 classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE4sizeEv
+                0x00000000        0x8 classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE5clearEv
+                0x00000000       0x30 classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE5shiftEv
+                0x00000000       0x6c classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE7unshiftEi
+                0x00000000       0x5e classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE3addEi
+                0x00000000       0x54 classes/EZUI/EZUI_Page.o
  .text._ZN9EZUI_PageC2Ev
                 0x00000000       0x7c classes/EZUI/EZUI_Page.o
  .text._ZN9EZUI_PageD2Ev
                 0x00000000       0x6e classes/EZUI/EZUI_Page.o
+ .text._ZN9EZUI_Page7addItemEhhP25EZUI_Control_ToggleOption
+                0x00000000       0x8a classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE7getNodeEi
+                0x00000000       0x7e classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE3getEi
+                0x00000000       0x16 classes/EZUI/EZUI_Page.o
  .text._ZN9EZUI_Page8prevItemEv
                 0x00000000       0xae classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE3popEv
+                0x00000000       0x88 classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE6removeEi
+                0x00000000       0x98 classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE3setEii
+                0x00000000       0x30 classes/EZUI/EZUI_Page.o
+ .text._ZN10LinkedListIiE3addEii
+                0x00000000       0xa0 classes/EZUI/EZUI_Page.o
+ .rodata._ZTV10LinkedListIiE
+                0x00000000       0x18 classes/EZUI/EZUI_Page.o
  .text          0x00000000        0x0 classes/EZUI/EZUI_PageItem.o
  .data          0x00000000        0x0 classes/EZUI/EZUI_PageItem.o
  .bss           0x00000000        0x0 classes/EZUI/EZUI_PageItem.o
+ .text._ZN13EZUI_PageItemC2Ehh6String
+                0x00000000       0x68 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2Ehhf
-                0x00000000       0xc6 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x66 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2Ehhd
-                0x00000000       0xc6 classes/EZUI/EZUI_PageItem.o
- .text._ZN13EZUI_PageItemC2Ehhfi
-                0x00000000       0xd2 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x68 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2Ehhi
-                0x00000000       0xb0 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x52 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2Ehhj
-                0x00000000       0xb0 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x30 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2Ehhl
-                0x00000000       0xc2 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x68 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2Ehhm
-                0x00000000       0xc2 classes/EZUI/EZUI_PageItem.o
- .text._ZN13EZUI_PageItemC2Ehhb
-                0x00000000       0xaa classes/EZUI/EZUI_PageItem.o
- .text._ZN13EZUI_PageItemC2Ehhb6StringS0_
-                0x00000000       0xe6 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x68 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2EhhP6String
-                0x00000000       0xc0 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
+ .text._ZN13EZUI_PageItemC2EhhPf
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2EhhPd
-                0x00000000       0xbe classes/EZUI/EZUI_PageItem.o
- .text._ZN13EZUI_PageItemC2EhhPfi
-                0x00000000       0xca classes/EZUI/EZUI_PageItem.o
- .text._ZN13EZUI_PageItemC2EhhPdi
-                0x00000000       0xca classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2EhhPi
-                0x00000000       0xb6 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2EhhPj
-                0x00000000       0xb6 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2EhhPl
-                0x00000000       0xb6 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2EhhPm
-                0x00000000       0xb6 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2EhhPb
-                0x00000000       0xb2 classes/EZUI/EZUI_PageItem.o
- .text._ZN13EZUI_PageItemC2EhhPb6StringS1_
-                0x00000000       0xf0 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
  .text._ZN13EZUI_PageItemC2EhhP25EZUI_Control_ToggleOption
-                0x00000000       0xa2 classes/EZUI/EZUI_PageItem.o
+                0x00000000       0x12 classes/EZUI/EZUI_PageItem.o
  .text          0x00000000        0x0 classes/EZUI/EZUI.o
  .data          0x00000000        0x0 classes/EZUI/EZUI.o
  .bss           0x00000000        0x0 classes/EZUI/EZUI.o
@@ -408,13 +425,15 @@ Discarded input sections
  .text          0x00000000        0x0 classes/Executive.o
  .data          0x00000000        0x0 classes/Executive.o
  .bss           0x00000000        0x0 classes/Executive.o
- .text._ZN9Executive11exec_frame2Ev
-                0x00000000        0x2 classes/Executive.o
  .text._ZN9Executive11exec_frame4Ev
                 0x00000000        0x2 classes/Executive.o
  .text          0x00000000        0x0 classes/LUT.o
  .data          0x00000000        0x0 classes/LUT.o
  .bss           0x00000000        0x0 classes/LUT.o
+ .text._ZN5LUT1DC2EiPfS0_
+                0x00000000       0x10 classes/LUT.o
+ .text._ZN5LUT2DC2EiiPKfS1_S1_
+                0x00000000       0x28 classes/LUT.o
  .text._ZN5LUT2DC2EiiPfS0_S0_
                 0x00000000       0x28 classes/LUT.o
  .text          0x00000000        0x0 classes/WheatstoneBridge.o
@@ -805,8 +824,6 @@ Discarded input sections
                 0x00000000       0x24 src/Print.o
  .text._ZN5Print7printlnEli
                 0x00000000       0x24 src/Print.o
- .text._ZN5Print5printEji
-                0x00000000        0xe src/Print.o
  .text._ZN5Print7printlnEmi
                 0x00000000       0x24 src/Print.o
  .text._ZN5Print7printlnEji
@@ -1053,6 +1070,10 @@ Discarded input sections
                 0x00000000       0x1c src/WString.o
  .text._ZplRK15StringSumHelperPK19__FlashStringHelper
                 0x00000000       0x1c src/WString.o
+ .text._ZNK6String9compareToERKS_
+                0x00000000       0x6a src/WString.o
+ .text._ZNK6String6equalsERKS_
+                0x00000000       0x26 src/WString.o
  .text._ZNK6String6equalsEPKc
                 0x00000000       0x54 src/WString.o
  .text._ZNK6StringltERKS_
@@ -1478,6 +1499,8 @@ Discarded input sections
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
+ .text.avr-libc
+                0x00000000       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
@@ -1620,8 +1643,8 @@ Address of section .data set to 0x800200
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
 LOAD classes/BK/BK_UI.o
 LOAD classes/BurnerController.o
-LOAD classes/DigitalIO.o
-LOAD classes/EZUI/Controls/EZUI_Control_Button.o
+LOAD classes/EnhancedIO/AnalogIn.o
+LOAD classes/EnhancedIO/DigitalIO.o
 LOAD classes/EZUI/Controls/EZUI_Control_Label.o
 LOAD classes/EZUI/Controls/EZUI_Control_Link.o
 LOAD classes/EZUI/Controls/EZUI_Control_ListOption.o
@@ -1779,7 +1802,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x8e36
+.text           0x00000000     0x7a28
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -1922,848 +1945,863 @@ END GROUP
                 0x00000472                . = ALIGN (0x2)
  *(.text.*)
  .text._Z10BK_UI_initv
-                0x00000472      0x1b4 classes/BK/BK_UI.o
+                0x00000472      0x168 classes/BK/BK_UI.o
                 0x00000472                _Z10BK_UI_initv
  .text._GLOBAL__sub_I_BK_UI
-                0x00000626       0x56 classes/BK/BK_UI.o
- .text._ZN9DigitalIOD2Ev
-                0x0000067c       0x1a classes/DigitalIO.o
-                0x0000067c                _ZN9DigitalIOD1Ev
-                0x0000067c                _ZN9DigitalIOD2Ev
- .text._ZN9DigitalIO5ValueEv
-                0x00000696       0x32 classes/DigitalIO.o
-                0x00000696                _ZN9DigitalIO5ValueEv
- .text._ZN9DigitalIO5WriteEi
-                0x000006c8       0x38 classes/DigitalIO.o
-                0x000006c8                _ZN9DigitalIO5WriteEi
- .text._ZN9DigitalIOC2EiNS_8PinModesE6StringS1_
-                0x00000700       0x82 classes/DigitalIO.o
-                0x00000700                _ZN9DigitalIOC1EiNS_8PinModesE6StringS1_
-                0x00000700                _ZN9DigitalIOC2EiNS_8PinModesE6StringS1_
- .text._ZN17EZUI_Control_LinkC2E6StringP9EZUI_Menu
-                0x00000782       0x40 classes/EZUI/Controls/EZUI_Control_Link.o
-                0x00000782                _ZN17EZUI_Control_LinkC1E6StringP9EZUI_Menu
-                0x00000782                _ZN17EZUI_Control_LinkC2E6StringP9EZUI_Menu
- .text._ZN17EZUI_Control_LinkC2E6StringP9EZUI_Page
-                0x000007c2       0x40 classes/EZUI/Controls/EZUI_Control_Link.o
-                0x000007c2                _ZN17EZUI_Control_LinkC1E6StringP9EZUI_Page
-                0x000007c2                _ZN17EZUI_Control_LinkC2E6StringP9EZUI_Page
- .text._ZN17EZUI_Control_Link10FollowLinkEP4EZUI
-                0x00000802       0x24 classes/EZUI/Controls/EZUI_Control_Link.o
-                0x00000802                _ZN17EZUI_Control_Link10FollowLinkEP4EZUI
- .text._ZN25EZUI_Control_ToggleOptionD2Ev
-                0x00000826       0x20 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
-                0x00000826                _ZN25EZUI_Control_ToggleOptionD1Ev
-                0x00000826                _ZN25EZUI_Control_ToggleOptionD2Ev
- .text._ZN25EZUI_Control_ToggleOption9TrueLabelEv
-                0x00000846       0x48 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
-                0x00000846                _ZN25EZUI_Control_ToggleOption9TrueLabelEv
- .text._ZN25EZUI_Control_ToggleOption10FalseLabelEv
-                0x0000088e       0x48 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
-                0x0000088e                _ZN25EZUI_Control_ToggleOption10FalseLabelEv
- .text._ZN25EZUI_Control_ToggleOption5ValueEv
-                0x000008d6       0x42 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
-                0x000008d6                _ZN25EZUI_Control_ToggleOption5ValueEv
- .text._ZN25EZUI_Control_ToggleOption6ToggleEv
-                0x00000918       0x58 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
-                0x00000918                _ZN25EZUI_Control_ToggleOption6ToggleEv
- .text._ZN25EZUI_Control_ToggleOptionC2E6StringP9DigitalIO
-                0x00000970       0x5c classes/EZUI/Controls/EZUI_Control_ToggleOption.o
-                0x00000970                _ZN25EZUI_Control_ToggleOptionC1E6StringP9DigitalIO
-                0x00000970                _ZN25EZUI_Control_ToggleOptionC2E6StringP9DigitalIO
- .text._Z15serviceEncodersv
-                0x000009cc       0x32 classes/Hardware.o
-                0x000009cc                _Z15serviceEncodersv
- .text._ZN22ClickEncoderWithEventsC2Ehhhh
-                0x000009fe       0x52 classes/Hardware.o
-                0x000009fe                _ZN22ClickEncoderWithEventsC1Ehhhh
-                0x000009fe                _ZN22ClickEncoderWithEventsC2Ehhhh
- .text._GLOBAL__sub_I__Z15serviceEncodersv
-                0x00000a50      0x62a classes/Hardware.o
- .text._GLOBAL__sub_D__Z15serviceEncodersv
-                0x0000107a       0x62 classes/Hardware.o
- .text._Z13hardware_initv
-                0x000010dc      0x20c classes/Hardware.o
-                0x000010dc                _Z13hardware_initv
- .text._Z11HLT_UI_initv
-                0x000012e8      0x1ae classes/HLT/HLT_UI.o
-                0x000012e8                _Z11HLT_UI_initv
- .text._GLOBAL__sub_I_HLT_UI
-                0x00001496       0x56 classes/HLT/HLT_UI.o
- .text._Z12MAIN_UI_initv
-                0x000014ec      0x5b0 classes/MAIN/MAIN_UI.o
-                0x000014ec                _Z12MAIN_UI_initv
- .text._GLOBAL__sub_I_MAIN_UI
-                0x00001a9c       0x56 classes/MAIN/MAIN_UI.o
- .text._Z11MLT_UI_initv
-                0x00001af2      0x1b4 classes/MLT/MLT_UI.o
-                0x00001af2                _Z11MLT_UI_initv
- .text._GLOBAL__sub_I_MLT_UI
-                0x00001ca6       0x56 classes/MLT/MLT_UI.o
- .text._ZN22ClickEncoderWithEvents4ReadEv
-                0x00001cfc      0x16a classes/EZUI/ClickEncoderWithEvents.o
-                0x00001cfc                _ZN22ClickEncoderWithEvents4ReadEv
- .text._ZN10LinkedListI13EZUI_MenuItemE4sizeEv
-                0x00001e66        0x8 classes/EZUI/EZUI_Menu.o
-                0x00001e66                _ZN10LinkedListI13EZUI_MenuItemE4sizeEv
- .text._ZN10LinkedListI13EZUI_MenuItemE5clearEv
-                0x00001e6e       0x5a classes/EZUI/EZUI_Menu.o
-                0x00001e6e                _ZN10LinkedListI13EZUI_MenuItemE5clearEv
- .text._ZN10LinkedListI13EZUI_MenuItemE5shiftEv
-                0x00001ec8       0xca classes/EZUI/EZUI_Menu.o
-                0x00001ec8                _ZN10LinkedListI13EZUI_MenuItemE5shiftEv
- .text._ZN10LinkedListI13EZUI_MenuItemE7unshiftES0_
-                0x00001f92       0xc0 classes/EZUI/EZUI_Menu.o
-                0x00001f92                _ZN10LinkedListI13EZUI_MenuItemE7unshiftES0_
- .text._ZN10LinkedListI13EZUI_MenuItemE3addES0_
-                0x00002052       0x76 classes/EZUI/EZUI_Menu.o
-                0x00002052                _ZN10LinkedListI13EZUI_MenuItemE3addES0_
- .text._ZN9EZUI_MenuC2E6String
-                0x000020c8       0x5c classes/EZUI/EZUI_Menu.o
-                0x000020c8                _ZN9EZUI_MenuC1E6String
-                0x000020c8                _ZN9EZUI_MenuC2E6String
- .text._ZN9EZUI_Menu7addItemEP17EZUI_Control_Link
-                0x00002124       0x60 classes/EZUI/EZUI_Menu.o
-                0x00002124                _ZN9EZUI_Menu7addItemEP17EZUI_Control_Link
- .text._ZN9EZUI_Menu7addItemEP25EZUI_Control_ToggleOption
-                0x00002184       0x60 classes/EZUI/EZUI_Menu.o
-                0x00002184                _ZN9EZUI_Menu7addItemEP25EZUI_Control_ToggleOption
- .text._ZN9EZUI_Menu8prevItemEv
-                0x000021e4       0x4c classes/EZUI/EZUI_Menu.o
-                0x000021e4                _ZN9EZUI_Menu8prevItemEv
- .text._ZN9EZUI_Menu8nextItemEv
-                0x00002230       0x56 classes/EZUI/EZUI_Menu.o
-                0x00002230                _ZN9EZUI_Menu8nextItemEv
- .text._ZN10LinkedListI13EZUI_MenuItemE7getNodeEi
-                0x00002286       0x7e classes/EZUI/EZUI_Menu.o
-                0x00002286                _ZN10LinkedListI13EZUI_MenuItemE7getNodeEi
- .text._ZN10LinkedListI13EZUI_MenuItemE3getEi
-                0x00002304       0x2c classes/EZUI/EZUI_Menu.o
-                0x00002304                _ZN10LinkedListI13EZUI_MenuItemE3getEi
- .text._ZN9EZUI_Menu7displayEP4EZUI
-                0x00002330      0x198 classes/EZUI/EZUI_Menu.o
-                0x00002330                _ZN9EZUI_Menu7displayEP4EZUI
- .text._ZN9EZUI_Menu10selectItemEP4EZUI
-                0x000024c8       0x5c classes/EZUI/EZUI_Menu.o
-                0x000024c8                _ZN9EZUI_Menu10selectItemEP4EZUI
- .text._ZN10LinkedListI13EZUI_MenuItemE3popEv
-                0x00002524      0x106 classes/EZUI/EZUI_Menu.o
-                0x00002524                _ZN10LinkedListI13EZUI_MenuItemE3popEv
- .text._ZN10LinkedListI13EZUI_MenuItemE6removeEi
-                0x0000262a       0xf4 classes/EZUI/EZUI_Menu.o
-                0x0000262a                _ZN10LinkedListI13EZUI_MenuItemE6removeEi
- .text._ZN10LinkedListI13EZUI_MenuItemE3setEiS0_
-                0x0000271e       0x36 classes/EZUI/EZUI_Menu.o
-                0x0000271e                _ZN10LinkedListI13EZUI_MenuItemE3setEiS0_
- .text._ZN10LinkedListI13EZUI_MenuItemE3addEiS0_
-                0x00002754      0x114 classes/EZUI/EZUI_Menu.o
-                0x00002754                _ZN10LinkedListI13EZUI_MenuItemE3addEiS0_
- .text._ZN13EZUI_MenuItemC2EP17EZUI_Control_Link
-                0x00002868       0x10 classes/EZUI/EZUI_MenuItem.o
-                0x00002868                _ZN13EZUI_MenuItemC1EP17EZUI_Control_Link
-                0x00002868                _ZN13EZUI_MenuItemC2EP17EZUI_Control_Link
- .text._ZN13EZUI_MenuItemC2EP25EZUI_Control_ToggleOption
-                0x00002878       0x10 classes/EZUI/EZUI_MenuItem.o
-                0x00002878                _ZN13EZUI_MenuItemC1EP25EZUI_Control_ToggleOption
-                0x00002878                _ZN13EZUI_MenuItemC2EP25EZUI_Control_ToggleOption
- .text._ZN13EZUI_MenuItemC2Ev
-                0x00002888        0xe classes/EZUI/EZUI_MenuItem.o
-                0x00002888                _ZN13EZUI_MenuItemC2Ev
-                0x00002888                _ZN13EZUI_MenuItemC1Ev
- .text._ZN13EZUI_MenuItemD2Ev
-                0x00002896        0x2 classes/EZUI/EZUI_MenuItem.o
-                0x00002896                _ZN13EZUI_MenuItemD1Ev
-                0x00002896                _ZN13EZUI_MenuItemD2Ev
- .text._ZN13EZUI_MenuItem5PrintEiiP4EZUI
-                0x00002898      0x1e2 classes/EZUI/EZUI_MenuItem.o
-                0x00002898                _ZN13EZUI_MenuItem5PrintEiiP4EZUI
- .text._ZN13EZUI_MenuItem10ItemSelectEP4EZUI
-                0x00002a7a       0xa2 classes/EZUI/EZUI_MenuItem.o
-                0x00002a7a                _ZN13EZUI_MenuItem10ItemSelectEP4EZUI
- .text._ZN10LinkedListI13EZUI_PageItemE4sizeEv
-                0x00002b1c        0x8 classes/EZUI/EZUI_Page.o
-                0x00002b1c                _ZN10LinkedListI13EZUI_PageItemE4sizeEv
+                0x000005da       0x56 classes/BK/BK_UI.o
  .text._ZN10LinkedListIiE4sizeEv
-                0x00002b24        0x8 classes/EZUI/EZUI_Page.o
-                0x00002b24                _ZN10LinkedListIiE4sizeEv
+                0x00000630        0x8 classes/EnhancedIO/AnalogIn.o
+                0x00000630                _ZN10LinkedListIiE4sizeEv
  .text._ZN10LinkedListIiE5clearEv
-                0x00002b2c       0x30 classes/EZUI/EZUI_Page.o
-                0x00002b2c                _ZN10LinkedListIiE5clearEv
- .text._ZN10LinkedListI13EZUI_PageItemE5clearEv
-                0x00002b5c       0x64 classes/EZUI/EZUI_Page.o
-                0x00002b5c                _ZN10LinkedListI13EZUI_PageItemE5clearEv
+                0x00000638       0x30 classes/EnhancedIO/AnalogIn.o
+                0x00000638                _ZN10LinkedListIiE5clearEv
  .text._ZN10LinkedListIiE5shiftEv
-                0x00002bc0       0x6c classes/EZUI/EZUI_Page.o
-                0x00002bc0                _ZN10LinkedListIiE5shiftEv
+                0x00000668       0x6c classes/EnhancedIO/AnalogIn.o
+                0x00000668                _ZN10LinkedListIiE5shiftEv
  .text._ZN10LinkedListIiE7unshiftEi
-                0x00002c2c       0x5e classes/EZUI/EZUI_Page.o
-                0x00002c2c                _ZN10LinkedListIiE7unshiftEi
+                0x000006d4       0x5e classes/EnhancedIO/AnalogIn.o
+                0x000006d4                _ZN10LinkedListIiE7unshiftEi
  .text._ZN10LinkedListIiE3addEi
-                0x00002c8a       0x54 classes/EZUI/EZUI_Page.o
-                0x00002c8a                _ZN10LinkedListIiE3addEi
- .text._ZN10LinkedListI13EZUI_PageItemE3addES0_
-                0x00002cde      0x18c classes/EZUI/EZUI_Page.o
-                0x00002cde                _ZN10LinkedListI13EZUI_PageItemE3addES0_
- .text._ZN10LinkedListI13EZUI_PageItemE5shiftEv
-                0x00002e6a      0x2e8 classes/EZUI/EZUI_Page.o
-                0x00002e6a                _ZN10LinkedListI13EZUI_PageItemE5shiftEv
- .text._ZN10LinkedListI13EZUI_PageItemE7unshiftES0_
-                0x00003152      0x2f0 classes/EZUI/EZUI_Page.o
-                0x00003152                _ZN10LinkedListI13EZUI_PageItemE7unshiftES0_
- .text._ZN9EZUI_PageC2E6String
-                0x00003442       0x98 classes/EZUI/EZUI_Page.o
-                0x00003442                _ZN9EZUI_PageC1E6String
-                0x00003442                _ZN9EZUI_PageC2E6String
- .text._ZN9EZUI_Page7addItemEP13EZUI_PageItem
-                0x000034da      0x162 classes/EZUI/EZUI_Page.o
-                0x000034da                _ZN9EZUI_Page7addItemEP13EZUI_PageItem
- .text._ZN10LinkedListI13EZUI_PageItemE7getNodeEi
-                0x0000363c       0x7e classes/EZUI/EZUI_Page.o
-                0x0000363c                _ZN10LinkedListI13EZUI_PageItemE7getNodeEi
- .text._ZN10LinkedListI13EZUI_PageItemE3getEi
-                0x000036ba      0x10c classes/EZUI/EZUI_Page.o
-                0x000036ba                _ZN10LinkedListI13EZUI_PageItemE3getEi
- .text._ZN9EZUI_Page7displayEP4EZUI
-                0x000037c6      0x160 classes/EZUI/EZUI_Page.o
-                0x000037c6                _ZN9EZUI_Page7displayEP4EZUI
- .text._ZN9EZUI_Page10selectItemEP4EZUI
-                0x00003926       0x68 classes/EZUI/EZUI_Page.o
-                0x00003926                _ZN9EZUI_Page10selectItemEP4EZUI
- .text._ZN10LinkedListI13EZUI_PageItemE3popEv
-                0x0000398e      0x45c classes/EZUI/EZUI_Page.o
-                0x0000398e                _ZN10LinkedListI13EZUI_PageItemE3popEv
- .text._ZN10LinkedListI13EZUI_PageItemE6removeEi
-                0x00003dea      0x308 classes/EZUI/EZUI_Page.o
-                0x00003dea                _ZN10LinkedListI13EZUI_PageItemE6removeEi
- .text._ZN10LinkedListI13EZUI_PageItemE3setEiS0_
-                0x000040f2      0x116 classes/EZUI/EZUI_Page.o
-                0x000040f2                _ZN10LinkedListI13EZUI_PageItemE3setEiS0_
- .text._ZN10LinkedListI13EZUI_PageItemE3addEiS0_
-                0x00004208      0x442 classes/EZUI/EZUI_Page.o
-                0x00004208                _ZN10LinkedListI13EZUI_PageItemE3addEiS0_
+                0x00000732       0x54 classes/EnhancedIO/AnalogIn.o
+                0x00000732                _ZN10LinkedListIiE3addEi
+ .text._ZN8AnalogInC2EifmNS_10filterTypeE
+                0x00000786       0x54 classes/EnhancedIO/AnalogIn.o
+                0x00000786                _ZN8AnalogInC2EifmNS_10filterTypeE
+                0x00000786                _ZN8AnalogInC1EifmNS_10filterTypeE
+ .text._ZN8AnalogInD2Ev
+                0x000007da       0x32 classes/EnhancedIO/AnalogIn.o
+                0x000007da                _ZN8AnalogInD1Ev
+                0x000007da                _ZN8AnalogInD2Ev
  .text._ZN10LinkedListIiE7getNodeEi
-                0x0000464a       0x7e classes/EZUI/EZUI_Page.o
-                0x0000464a                _ZN10LinkedListIiE7getNodeEi
+                0x0000080c       0x7e classes/EnhancedIO/AnalogIn.o
+                0x0000080c                _ZN10LinkedListIiE7getNodeEi
  .text._ZN10LinkedListIiE3getEi
-                0x000046c8       0x14 classes/EZUI/EZUI_Page.o
-                0x000046c8                _ZN10LinkedListIiE3getEi
- .text._ZN9EZUI_Page8nextItemEv
-                0x000046dc       0xc6 classes/EZUI/EZUI_Page.o
-                0x000046dc                _ZN9EZUI_Page8nextItemEv
+                0x0000088a       0x14 classes/EnhancedIO/AnalogIn.o
+                0x0000088a                _ZN10LinkedListIiE3getEi
+ .text._ZN8AnalogIn6updateEv
+                0x0000089e      0x1c8 classes/EnhancedIO/AnalogIn.o
+                0x0000089e                _ZN8AnalogIn6updateEv
  .text._ZN10LinkedListIiE3popEv
-                0x000047a2       0x86 classes/EZUI/EZUI_Page.o
-                0x000047a2                _ZN10LinkedListIiE3popEv
+                0x00000a66       0x86 classes/EnhancedIO/AnalogIn.o
+                0x00000a66                _ZN10LinkedListIiE3popEv
  .text._ZN10LinkedListIiE6removeEi
-                0x00004828       0x96 classes/EZUI/EZUI_Page.o
-                0x00004828                _ZN10LinkedListIiE6removeEi
+                0x00000aec       0x96 classes/EnhancedIO/AnalogIn.o
+                0x00000aec                _ZN10LinkedListIiE6removeEi
  .text._ZN10LinkedListIiE3setEii
-                0x000048be       0x2e classes/EZUI/EZUI_Page.o
-                0x000048be                _ZN10LinkedListIiE3setEii
+                0x00000b82       0x2e classes/EnhancedIO/AnalogIn.o
+                0x00000b82                _ZN10LinkedListIiE3setEii
  .text._ZN10LinkedListIiE3addEii
-                0x000048ec       0x9e classes/EZUI/EZUI_Page.o
-                0x000048ec                _ZN10LinkedListIiE3addEii
+                0x00000bb0       0x9e classes/EnhancedIO/AnalogIn.o
+                0x00000bb0                _ZN10LinkedListIiE3addEii
+ .text._ZN9DigitalIOD2Ev
+                0x00000c4e       0x1a classes/EnhancedIO/DigitalIO.o
+                0x00000c4e                _ZN9DigitalIOD1Ev
+                0x00000c4e                _ZN9DigitalIOD2Ev
+ .text._ZN9DigitalIO5ValueEv
+                0x00000c68       0x32 classes/EnhancedIO/DigitalIO.o
+                0x00000c68                _ZN9DigitalIO5ValueEv
+ .text._ZN9DigitalIO5WriteEi
+                0x00000c9a       0x38 classes/EnhancedIO/DigitalIO.o
+                0x00000c9a                _ZN9DigitalIO5WriteEi
+ .text._ZN9DigitalIOC2EiNS_8PinModesE6StringS1_
+                0x00000cd2       0x82 classes/EnhancedIO/DigitalIO.o
+                0x00000cd2                _ZN9DigitalIOC1EiNS_8PinModesE6StringS1_
+                0x00000cd2                _ZN9DigitalIOC2EiNS_8PinModesE6StringS1_
+ .text._ZN18EZUI_Control_LabelC2Eb
+                0x00000d54       0x46 classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000d54                _ZN18EZUI_Control_LabelC2Eb
+                0x00000d54                _ZN18EZUI_Control_LabelC1Eb
+ .text._ZN18EZUI_Control_LabelC2EPf
+                0x00000d9a       0x3e classes/EZUI/Controls/EZUI_Control_Label.o
+                0x00000d9a                _ZN18EZUI_Control_LabelC2EPf
+                0x00000d9a                _ZN18EZUI_Control_LabelC1EPf
+ .text._ZN17EZUI_Control_LinkC2E6StringP9EZUI_Menu
+                0x00000dd8       0x3c classes/EZUI/Controls/EZUI_Control_Link.o
+                0x00000dd8                _ZN17EZUI_Control_LinkC1E6StringP9EZUI_Menu
+                0x00000dd8                _ZN17EZUI_Control_LinkC2E6StringP9EZUI_Menu
+ .text._ZN17EZUI_Control_LinkC2E6StringP9EZUI_Page
+                0x00000e14       0x3e classes/EZUI/Controls/EZUI_Control_Link.o
+                0x00000e14                _ZN17EZUI_Control_LinkC1E6StringP9EZUI_Page
+                0x00000e14                _ZN17EZUI_Control_LinkC2E6StringP9EZUI_Page
+ .text._ZN17EZUI_Control_Link10FollowLinkEP4EZUI
+                0x00000e52       0x26 classes/EZUI/Controls/EZUI_Control_Link.o
+                0x00000e52                _ZN17EZUI_Control_Link10FollowLinkEP4EZUI
+ .text._ZN25EZUI_Control_ToggleOptionD2Ev
+                0x00000e78       0x20 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+                0x00000e78                _ZN25EZUI_Control_ToggleOptionD1Ev
+                0x00000e78                _ZN25EZUI_Control_ToggleOptionD2Ev
+ .text._ZN25EZUI_Control_ToggleOption9TrueLabelEv
+                0x00000e98       0x48 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+                0x00000e98                _ZN25EZUI_Control_ToggleOption9TrueLabelEv
+ .text._ZN25EZUI_Control_ToggleOption10FalseLabelEv
+                0x00000ee0       0x48 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+                0x00000ee0                _ZN25EZUI_Control_ToggleOption10FalseLabelEv
+ .text._ZN25EZUI_Control_ToggleOption5ValueEv
+                0x00000f28       0x42 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+                0x00000f28                _ZN25EZUI_Control_ToggleOption5ValueEv
+ .text._ZN25EZUI_Control_ToggleOption6ToggleEv
+                0x00000f6a       0x58 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+                0x00000f6a                _ZN25EZUI_Control_ToggleOption6ToggleEv
+ .text._ZN25EZUI_Control_ToggleOptionC2E6StringP9DigitalIO
+                0x00000fc2       0x5c classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+                0x00000fc2                _ZN25EZUI_Control_ToggleOptionC1E6StringP9DigitalIO
+                0x00000fc2                _ZN25EZUI_Control_ToggleOptionC2E6StringP9DigitalIO
+ .text._Z15serviceEncodersv
+                0x0000101e       0x32 classes/Hardware.o
+                0x0000101e                _Z15serviceEncodersv
+ .text._ZN22ClickEncoderWithEventsC2Ehhhh
+                0x00001050       0x52 classes/Hardware.o
+                0x00001050                _ZN22ClickEncoderWithEventsC1Ehhhh
+                0x00001050                _ZN22ClickEncoderWithEventsC2Ehhhh
+ .text._GLOBAL__sub_I__Z15serviceEncodersv
+                0x000010a2      0x75e classes/Hardware.o
+ .text._GLOBAL__sub_D__Z15serviceEncodersv
+                0x00001800       0xda classes/Hardware.o
+ .text._Z13hardware_initv
+                0x000018da      0x20c classes/Hardware.o
+                0x000018da                _Z13hardware_initv
+ .text._Z11HLT_UI_initv
+                0x00001ae6      0x162 classes/HLT/HLT_UI.o
+                0x00001ae6                _Z11HLT_UI_initv
+ .text._GLOBAL__sub_I_HLT_UI
+                0x00001c48       0x56 classes/HLT/HLT_UI.o
+ .text._Z12MAIN_UI_initv
+                0x00001c9e      0x534 classes/MAIN/MAIN_UI.o
+                0x00001c9e                _Z12MAIN_UI_initv
+ .text._GLOBAL__sub_I_MAIN_UI
+                0x000021d2       0x56 classes/MAIN/MAIN_UI.o
+ .text._Z11MLT_UI_initv
+                0x00002228      0x19c classes/MLT/MLT_UI.o
+                0x00002228                _Z11MLT_UI_initv
+ .text._GLOBAL__sub_I_MLT_UI
+                0x000023c4       0x56 classes/MLT/MLT_UI.o
+ .text._ZN22ClickEncoderWithEvents4ReadEv
+                0x0000241a      0x16a classes/EZUI/ClickEncoderWithEvents.o
+                0x0000241a                _ZN22ClickEncoderWithEvents4ReadEv
+ .text._ZN10LinkedListI13EZUI_MenuItemE4sizeEv
+                0x00002584        0x8 classes/EZUI/EZUI_Menu.o
+                0x00002584                _ZN10LinkedListI13EZUI_MenuItemE4sizeEv
+ .text._ZN10LinkedListI13EZUI_MenuItemE5clearEv
+                0x0000258c       0x5a classes/EZUI/EZUI_Menu.o
+                0x0000258c                _ZN10LinkedListI13EZUI_MenuItemE5clearEv
+ .text._ZN10LinkedListI13EZUI_MenuItemE5shiftEv
+                0x000025e6       0xca classes/EZUI/EZUI_Menu.o
+                0x000025e6                _ZN10LinkedListI13EZUI_MenuItemE5shiftEv
+ .text._ZN10LinkedListI13EZUI_MenuItemE7unshiftES0_
+                0x000026b0       0xc0 classes/EZUI/EZUI_Menu.o
+                0x000026b0                _ZN10LinkedListI13EZUI_MenuItemE7unshiftES0_
+ .text._ZN10LinkedListI13EZUI_MenuItemE3addES0_
+                0x00002770       0x76 classes/EZUI/EZUI_Menu.o
+                0x00002770                _ZN10LinkedListI13EZUI_MenuItemE3addES0_
+ .text._ZN9EZUI_MenuC2E6String
+                0x000027e6       0x5c classes/EZUI/EZUI_Menu.o
+                0x000027e6                _ZN9EZUI_MenuC1E6String
+                0x000027e6                _ZN9EZUI_MenuC2E6String
+ .text._ZN9EZUI_Menu7addItemEP17EZUI_Control_Link
+                0x00002842       0x60 classes/EZUI/EZUI_Menu.o
+                0x00002842                _ZN9EZUI_Menu7addItemEP17EZUI_Control_Link
+ .text._ZN9EZUI_Menu7addItemEP25EZUI_Control_ToggleOption
+                0x000028a2       0x60 classes/EZUI/EZUI_Menu.o
+                0x000028a2                _ZN9EZUI_Menu7addItemEP25EZUI_Control_ToggleOption
+ .text._ZN9EZUI_Menu8prevItemEv
+                0x00002902       0x4c classes/EZUI/EZUI_Menu.o
+                0x00002902                _ZN9EZUI_Menu8prevItemEv
+ .text._ZN9EZUI_Menu8nextItemEv
+                0x0000294e       0x56 classes/EZUI/EZUI_Menu.o
+                0x0000294e                _ZN9EZUI_Menu8nextItemEv
+ .text._ZN10LinkedListI13EZUI_MenuItemE7getNodeEi
+                0x000029a4       0x7e classes/EZUI/EZUI_Menu.o
+                0x000029a4                _ZN10LinkedListI13EZUI_MenuItemE7getNodeEi
+ .text._ZN10LinkedListI13EZUI_MenuItemE3getEi
+                0x00002a22       0x2c classes/EZUI/EZUI_Menu.o
+                0x00002a22                _ZN10LinkedListI13EZUI_MenuItemE3getEi
+ .text._ZN9EZUI_Menu7displayEP4EZUI
+                0x00002a4e      0x198 classes/EZUI/EZUI_Menu.o
+                0x00002a4e                _ZN9EZUI_Menu7displayEP4EZUI
+ .text._ZN9EZUI_Menu10selectItemEP4EZUI
+                0x00002be6       0x5c classes/EZUI/EZUI_Menu.o
+                0x00002be6                _ZN9EZUI_Menu10selectItemEP4EZUI
+ .text._ZN10LinkedListI13EZUI_MenuItemE3popEv
+                0x00002c42      0x106 classes/EZUI/EZUI_Menu.o
+                0x00002c42                _ZN10LinkedListI13EZUI_MenuItemE3popEv
+ .text._ZN10LinkedListI13EZUI_MenuItemE6removeEi
+                0x00002d48       0xf4 classes/EZUI/EZUI_Menu.o
+                0x00002d48                _ZN10LinkedListI13EZUI_MenuItemE6removeEi
+ .text._ZN10LinkedListI13EZUI_MenuItemE3setEiS0_
+                0x00002e3c       0x36 classes/EZUI/EZUI_Menu.o
+                0x00002e3c                _ZN10LinkedListI13EZUI_MenuItemE3setEiS0_
+ .text._ZN10LinkedListI13EZUI_MenuItemE3addEiS0_
+                0x00002e72      0x114 classes/EZUI/EZUI_Menu.o
+                0x00002e72                _ZN10LinkedListI13EZUI_MenuItemE3addEiS0_
+ .text._ZN13EZUI_MenuItemC2EP17EZUI_Control_Link
+                0x00002f86       0x10 classes/EZUI/EZUI_MenuItem.o
+                0x00002f86                _ZN13EZUI_MenuItemC1EP17EZUI_Control_Link
+                0x00002f86                _ZN13EZUI_MenuItemC2EP17EZUI_Control_Link
+ .text._ZN13EZUI_MenuItemC2EP25EZUI_Control_ToggleOption
+                0x00002f96       0x10 classes/EZUI/EZUI_MenuItem.o
+                0x00002f96                _ZN13EZUI_MenuItemC1EP25EZUI_Control_ToggleOption
+                0x00002f96                _ZN13EZUI_MenuItemC2EP25EZUI_Control_ToggleOption
+ .text._ZN13EZUI_MenuItemC2Ev
+                0x00002fa6        0xe classes/EZUI/EZUI_MenuItem.o
+                0x00002fa6                _ZN13EZUI_MenuItemC2Ev
+                0x00002fa6                _ZN13EZUI_MenuItemC1Ev
+ .text._ZN13EZUI_MenuItemD2Ev
+                0x00002fb4        0x2 classes/EZUI/EZUI_MenuItem.o
+                0x00002fb4                _ZN13EZUI_MenuItemD1Ev
+                0x00002fb4                _ZN13EZUI_MenuItemD2Ev
+ .text._ZN13EZUI_MenuItem5PrintEiiP4EZUI
+                0x00002fb6      0x1e2 classes/EZUI/EZUI_MenuItem.o
+                0x00002fb6                _ZN13EZUI_MenuItem5PrintEiiP4EZUI
+ .text._ZN13EZUI_MenuItem10ItemSelectEP4EZUI
+                0x00003198       0x9c classes/EZUI/EZUI_MenuItem.o
+                0x00003198                _ZN13EZUI_MenuItem10ItemSelectEP4EZUI
+ .text._ZN10LinkedListI13EZUI_PageItemE4sizeEv
+                0x00003234        0x8 classes/EZUI/EZUI_Page.o
+                0x00003234                _ZN10LinkedListI13EZUI_PageItemE4sizeEv
+ .text._ZN10LinkedListI13EZUI_PageItemE5clearEv
+                0x0000323c       0x5a classes/EZUI/EZUI_Page.o
+                0x0000323c                _ZN10LinkedListI13EZUI_PageItemE5clearEv
+ .text._ZN10LinkedListI13EZUI_PageItemE5shiftEv
+                0x00003296       0xca classes/EZUI/EZUI_Page.o
+                0x00003296                _ZN10LinkedListI13EZUI_PageItemE5shiftEv
+ .text._ZN10LinkedListI13EZUI_PageItemE7unshiftES0_
+                0x00003360       0xc0 classes/EZUI/EZUI_Page.o
+                0x00003360                _ZN10LinkedListI13EZUI_PageItemE7unshiftES0_
+ .text._ZN10LinkedListI13EZUI_PageItemE3addES0_
+                0x00003420       0x76 classes/EZUI/EZUI_Page.o
+                0x00003420                _ZN10LinkedListI13EZUI_PageItemE3addES0_
+ .text._ZN9EZUI_PageC2E6String
+                0x00003496       0x98 classes/EZUI/EZUI_Page.o
+                0x00003496                _ZN9EZUI_PageC1E6String
+                0x00003496                _ZN9EZUI_PageC2E6String
+ .text._ZN9EZUI_Page7addItemEhhP17EZUI_Control_Link
+                0x0000352e       0x82 classes/EZUI/EZUI_Page.o
+                0x0000352e                _ZN9EZUI_Page7addItemEhhP17EZUI_Control_Link
+ .text._ZN9EZUI_Page7addItemEhhP18EZUI_Control_Label
+                0x000035b0       0x76 classes/EZUI/EZUI_Page.o
+                0x000035b0                _ZN9EZUI_Page7addItemEhhP18EZUI_Control_Label
+ .text._ZN10LinkedListI13EZUI_PageItemE7getNodeEi
+                0x00003626       0x7e classes/EZUI/EZUI_Page.o
+                0x00003626                _ZN10LinkedListI13EZUI_PageItemE7getNodeEi
+ .text._ZN10LinkedListI13EZUI_PageItemE3getEi
+                0x000036a4       0x2c classes/EZUI/EZUI_Page.o
+                0x000036a4                _ZN10LinkedListI13EZUI_PageItemE3getEi
+ .text._ZN9EZUI_Page7displayEP4EZUI
+                0x000036d0      0x154 classes/EZUI/EZUI_Page.o
+                0x000036d0                _ZN9EZUI_Page7displayEP4EZUI
+ .text._ZN9EZUI_Page10selectItemEP4EZUI
+                0x00003824       0x5c classes/EZUI/EZUI_Page.o
+                0x00003824                _ZN9EZUI_Page10selectItemEP4EZUI
+ .text._ZN10LinkedListI13EZUI_PageItemE3popEv
+                0x00003880      0x106 classes/EZUI/EZUI_Page.o
+                0x00003880                _ZN10LinkedListI13EZUI_PageItemE3popEv
+ .text._ZN10LinkedListI13EZUI_PageItemE6removeEi
+                0x00003986       0xf4 classes/EZUI/EZUI_Page.o
+                0x00003986                _ZN10LinkedListI13EZUI_PageItemE6removeEi
+ .text._ZN10LinkedListI13EZUI_PageItemE3setEiS0_
+                0x00003a7a       0x36 classes/EZUI/EZUI_Page.o
+                0x00003a7a                _ZN10LinkedListI13EZUI_PageItemE3setEiS0_
+ .text._ZN10LinkedListI13EZUI_PageItemE3addEiS0_
+                0x00003ab0      0x114 classes/EZUI/EZUI_Page.o
+                0x00003ab0                _ZN10LinkedListI13EZUI_PageItemE3addEiS0_
+ .text._ZN9EZUI_Page8nextItemEv
+                0x00003bc4       0xc8 classes/EZUI/EZUI_Page.o
+                0x00003bc4                _ZN9EZUI_Page8nextItemEv
  .text._ZN13EZUI_PageItemC2Ev
-                0x0000498a       0x8e classes/EZUI/EZUI_PageItem.o
-                0x0000498a                _ZN13EZUI_PageItemC1Ev
-                0x0000498a                _ZN13EZUI_PageItemC2Ev
+                0x00003c8c        0xe classes/EZUI/EZUI_PageItem.o
+                0x00003c8c                _ZN13EZUI_PageItemC1Ev
+                0x00003c8c                _ZN13EZUI_PageItemC2Ev
  .text._ZN13EZUI_PageItemD2Ev
-                0x00004a18       0x22 classes/EZUI/EZUI_PageItem.o
-                0x00004a18                _ZN13EZUI_PageItemD2Ev
-                0x00004a18                _ZN13EZUI_PageItemD1Ev
- .text._ZN13EZUI_PageItemC2Ehh6String
-                0x00004a3a       0xbe classes/EZUI/EZUI_PageItem.o
-                0x00004a3a                _ZN13EZUI_PageItemC1Ehh6String
-                0x00004a3a                _ZN13EZUI_PageItemC2Ehh6String
- .text._ZN13EZUI_PageItemC2EhhPf
-                0x00004af8       0xbe classes/EZUI/EZUI_PageItem.o
-                0x00004af8                _ZN13EZUI_PageItemC1EhhPf
-                0x00004af8                _ZN13EZUI_PageItemC2EhhPf
+                0x00003c9a        0x2 classes/EZUI/EZUI_PageItem.o
+                0x00003c9a                _ZN13EZUI_PageItemD2Ev
+                0x00003c9a                _ZN13EZUI_PageItemD1Ev
+ .text._ZN13EZUI_PageItemC2Ehhb
+                0x00003c9c       0x4c classes/EZUI/EZUI_PageItem.o
+                0x00003c9c                _ZN13EZUI_PageItemC1Ehhb
+                0x00003c9c                _ZN13EZUI_PageItemC2Ehhb
  .text._ZN13EZUI_PageItemC2EhhP17EZUI_Control_Link
-                0x00004bb6       0xac classes/EZUI/EZUI_PageItem.o
-                0x00004bb6                _ZN13EZUI_PageItemC1EhhP17EZUI_Control_Link
-                0x00004bb6                _ZN13EZUI_PageItemC2EhhP17EZUI_Control_Link
+                0x00003ce8       0x12 classes/EZUI/EZUI_PageItem.o
+                0x00003ce8                _ZN13EZUI_PageItemC1EhhP17EZUI_Control_Link
+                0x00003ce8                _ZN13EZUI_PageItemC2EhhP17EZUI_Control_Link
  .text._ZN13EZUI_PageItem5printEP17LiquidCrystal_I2Cb
-                0x00004c62      0x3d8 classes/EZUI/EZUI_PageItem.o
-                0x00004c62                _ZN13EZUI_PageItem5printEP17LiquidCrystal_I2Cb
+                0x00003cfa      0x2ee classes/EZUI/EZUI_PageItem.o
+                0x00003cfa                _ZN13EZUI_PageItem5printEP17LiquidCrystal_I2Cb
  .text._ZN13EZUI_PageItem10ItemSelectEP4EZUI
-                0x0000503a       0x66 classes/EZUI/EZUI_PageItem.o
-                0x0000503a                _ZN13EZUI_PageItem10ItemSelectEP4EZUI
+                0x00003fe8       0x64 classes/EZUI/EZUI_PageItem.o
+                0x00003fe8                _ZN13EZUI_PageItem10ItemSelectEP4EZUI
  .text._ZN4EZUI15EncoderDblClickEv
-                0x000050a0        0x2 classes/EZUI/EZUI.o
-                0x000050a0                _ZN4EZUI15EncoderDblClickEv
+                0x0000404c        0x2 classes/EZUI/EZUI.o
+                0x0000404c                _ZN4EZUI15EncoderDblClickEv
  .text._ZN4EZUI12EncoderClickEv
-                0x000050a2       0x22 classes/EZUI/EZUI.o
-                0x000050a2                _ZN4EZUI12EncoderClickEv
+                0x0000404e       0x20 classes/EZUI/EZUI.o
+                0x0000404e                _ZN4EZUI12EncoderClickEv
  .text._ZN4EZUI16EncoderIncrementEv
-                0x000050c4       0x22 classes/EZUI/EZUI.o
-                0x000050c4                _ZN4EZUI16EncoderIncrementEv
+                0x0000406e       0x22 classes/EZUI/EZUI.o
+                0x0000406e                _ZN4EZUI16EncoderIncrementEv
  .text._ZN4EZUI16EncoderDecrementEv
-                0x000050e6       0x10 classes/EZUI/EZUI.o
-                0x000050e6                _ZN4EZUI16EncoderDecrementEv
+                0x00004090       0x10 classes/EZUI/EZUI.o
+                0x00004090                _ZN4EZUI16EncoderDecrementEv
  .text._ZN4EZUIC2E6String
-                0x000050f6       0x46 classes/EZUI/EZUI.o
-                0x000050f6                _ZN4EZUIC2E6String
-                0x000050f6                _ZN4EZUIC1E6String
+                0x000040a0       0x46 classes/EZUI/EZUI.o
+                0x000040a0                _ZN4EZUIC2E6String
+                0x000040a0                _ZN4EZUIC1E6String
  .text._ZN4EZUI14attatchEncoderEP22ClickEncoderWithEvents
-                0x0000513c       0x6c classes/EZUI/EZUI.o
-                0x0000513c                _ZN4EZUI14attatchEncoderEP22ClickEncoderWithEvents
+                0x000040e6       0x6c classes/EZUI/EZUI.o
+                0x000040e6                _ZN4EZUI14attatchEncoderEP22ClickEncoderWithEvents
  .text._ZN4EZUI10attatchLCDEP17LiquidCrystal_I2C
-                0x000051a8        0x8 classes/EZUI/EZUI.o
-                0x000051a8                _ZN4EZUI10attatchLCDEP17LiquidCrystal_I2C
+                0x00004152        0x8 classes/EZUI/EZUI.o
+                0x00004152                _ZN4EZUI10attatchLCDEP17LiquidCrystal_I2C
  .text._ZN4EZUI7displayEv
-                0x000051b0       0xa0 classes/EZUI/EZUI.o
-                0x000051b0                _ZN4EZUI7displayEv
+                0x0000415a       0x9e classes/EZUI/EZUI.o
+                0x0000415a                _ZN4EZUI7displayEv
  .text._ZN4EZUI10setDisplayEP9EZUI_Menu
-                0x00005250        0xc classes/EZUI/EZUI.o
-                0x00005250                _ZN4EZUI10setDisplayEP9EZUI_Menu
+                0x000041f8        0xc classes/EZUI/EZUI.o
+                0x000041f8                _ZN4EZUI10setDisplayEP9EZUI_Menu
  .text._ZN4EZUI10setDisplayEP9EZUI_Page
-                0x0000525c        0xc classes/EZUI/EZUI.o
-                0x0000525c                _ZN4EZUI10setDisplayEP9EZUI_Page
+                0x00004204        0xc classes/EZUI/EZUI.o
+                0x00004204                _ZN4EZUI10setDisplayEP9EZUI_Page
  .text._ZN9Executive11exec_frame1Ev
-                0x00005268      0x3dc classes/Executive.o
-                0x00005268                _ZN9Executive11exec_frame1Ev
+                0x00004210       0xaa classes/Executive.o
+                0x00004210                _ZN9Executive11exec_frame1Ev
+ .text._ZN9Executive11exec_frame2Ev
+                0x000042ba        0xc classes/Executive.o
+                0x000042ba                _ZN9Executive11exec_frame2Ev
  .text._ZN9Executive11exec_frame3Ev
-                0x00005644       0x2a classes/Executive.o
-                0x00005644                _ZN9Executive11exec_frame3Ev
+                0x000042c6       0x2a classes/Executive.o
+                0x000042c6                _ZN9Executive11exec_frame3Ev
  .text._ZN9Executive3runEv
-                0x0000566e      0x152 classes/Executive.o
-                0x0000566e                _ZN9Executive3runEv
- .text._ZN5LUT1DC2EiPfS0_
-                0x000057c0       0x10 classes/LUT.o
-                0x000057c0                _ZN5LUT1DC1EiPfS0_
-                0x000057c0                _ZN5LUT1DC2EiPfS0_
+                0x000042f0      0x156 classes/Executive.o
+                0x000042f0                _ZN9Executive3runEv
+ .text._ZN5LUT1DC2EiPKfS1_
+                0x00004446       0x10 classes/LUT.o
+                0x00004446                _ZN5LUT1DC1EiPKfS1_
+                0x00004446                _ZN5LUT1DC2EiPKfS1_
  .text._ZN5LUT1D6lookupEf
-                0x000057d0      0x1da classes/LUT.o
-                0x000057d0                _ZN5LUT1D6lookupEf
+                0x00004456      0x1da classes/LUT.o
+                0x00004456                _ZN5LUT1D6lookupEf
  .text._ZN16WheatstoneBridgeC2E6Stringii5LUT1Dfffff
-                0x000059aa       0xfa classes/WheatstoneBridge.o
-                0x000059aa                _ZN16WheatstoneBridgeC1E6Stringii5LUT1Dfffff
-                0x000059aa                _ZN16WheatstoneBridgeC2E6Stringii5LUT1Dfffff
+                0x00004630       0xfa classes/WheatstoneBridge.o
+                0x00004630                _ZN16WheatstoneBridgeC1E6Stringii5LUT1Dfffff
+                0x00004630                _ZN16WheatstoneBridgeC2E6Stringii5LUT1Dfffff
  .text._ZN16WheatstoneBridge6UpdateEv
-                0x00005aa4      0x244 classes/WheatstoneBridge.o
-                0x00005aa4                _ZN16WheatstoneBridge6UpdateEv
+                0x0000472a      0x244 classes/WheatstoneBridge.o
+                0x0000472a                _ZN16WheatstoneBridge6UpdateEv
  .text._ZN12ClickEncoderC2Ehhhhb
-                0x00005ce8       0x8c include/ClickEncoder/ClickEncoder.o
-                0x00005ce8                _ZN12ClickEncoderC2Ehhhhb
-                0x00005ce8                _ZN12ClickEncoderC1Ehhhhb
+                0x0000496e       0x8c include/ClickEncoder/ClickEncoder.o
+                0x0000496e                _ZN12ClickEncoderC2Ehhhhb
+                0x0000496e                _ZN12ClickEncoderC1Ehhhhb
  .text._ZN12ClickEncoder7serviceEv
-                0x00005d74      0x194 include/ClickEncoder/ClickEncoder.o
-                0x00005d74                _ZN12ClickEncoder7serviceEv
+                0x000049fa      0x194 include/ClickEncoder/ClickEncoder.o
+                0x000049fa                _ZN12ClickEncoder7serviceEv
  .text._ZN12ClickEncoder8getValueEv
-                0x00005f08       0x76 include/ClickEncoder/ClickEncoder.o
-                0x00005f08                _ZN12ClickEncoder8getValueEv
+                0x00004b8e       0x76 include/ClickEncoder/ClickEncoder.o
+                0x00004b8e                _ZN12ClickEncoder8getValueEv
  .text._ZN12ClickEncoder9getButtonEv
-                0x00005f7e        0xe include/ClickEncoder/ClickEncoder.o
-                0x00005f7e                _ZN12ClickEncoder9getButtonEv
+                0x00004c04        0xe include/ClickEncoder/ClickEncoder.o
+                0x00004c04                _ZN12ClickEncoder9getButtonEv
  .text._ZN5I2CIOC2Ev
-                0x00005f8c        0xe include/LiquidCrystal/I2CIO.o
-                0x00005f8c                _ZN5I2CIOC2Ev
-                0x00005f8c                _ZN5I2CIOC1Ev
+                0x00004c12        0xe include/LiquidCrystal/I2CIO.o
+                0x00004c12                _ZN5I2CIOC2Ev
+                0x00004c12                _ZN5I2CIOC1Ev
  .text._ZN5I2CIO8portModeEh
-                0x00005f9a       0x18 include/LiquidCrystal/I2CIO.o
-                0x00005f9a                _ZN5I2CIO8portModeEh
+                0x00004c20       0x18 include/LiquidCrystal/I2CIO.o
+                0x00004c20                _ZN5I2CIO8portModeEh
  .text._ZN5I2CIO5beginEh
-                0x00005fb2       0x34 include/LiquidCrystal/I2CIO.o
-                0x00005fb2                _ZN5I2CIO5beginEh
+                0x00004c38       0x34 include/LiquidCrystal/I2CIO.o
+                0x00004c38                _ZN5I2CIO5beginEh
  .text._ZN5I2CIO5writeEh
-                0x00005fe6       0x48 include/LiquidCrystal/I2CIO.o
-                0x00005fe6                _ZN5I2CIO5writeEh
+                0x00004c6c       0x48 include/LiquidCrystal/I2CIO.o
+                0x00004c6c                _ZN5I2CIO5writeEh
  .text._ZN3LCD15setBacklightPinEh13t_backlighPol
-                0x0000602e        0x2 include/LiquidCrystal/LCD.o
-                0x0000602e                _ZN3LCD15setBacklightPinEh13t_backlighPol
+                0x00004cb4        0x2 include/LiquidCrystal/LCD.o
+                0x00004cb4                _ZN3LCD15setBacklightPinEh13t_backlighPol
  .text._ZN3LCD12setBacklightEh
-                0x00006030        0x2 include/LiquidCrystal/LCD.o
-                0x00006030                _ZN3LCD12setBacklightEh
+                0x00004cb6        0x2 include/LiquidCrystal/LCD.o
+                0x00004cb6                _ZN3LCD12setBacklightEh
  .text._ZN3LCD5writeEh
-                0x00006032       0x16 include/LiquidCrystal/LCD.o
-                0x00006032                _ZN3LCD5writeEh
+                0x00004cb8       0x16 include/LiquidCrystal/LCD.o
+                0x00004cb8                _ZN3LCD5writeEh
  .text._ZN3LCDC2Ev
-                0x00006048       0x10 include/LiquidCrystal/LCD.o
-                0x00006048                _ZN3LCDC1Ev
-                0x00006048                _ZN3LCDC2Ev
+                0x00004cce       0x10 include/LiquidCrystal/LCD.o
+                0x00004cce                _ZN3LCDC1Ev
+                0x00004cce                _ZN3LCDC2Ev
  .text._ZN3LCD9backlightEv
-                0x00006058       0x12 include/LiquidCrystal/LCD.o
-                0x00006058                _ZN3LCD9backlightEv
+                0x00004cde       0x12 include/LiquidCrystal/LCD.o
+                0x00004cde                _ZN3LCD9backlightEv
  .text._ZN3LCD7commandEh
-                0x0000606a       0x12 include/LiquidCrystal/LCD.o
-                0x0000606a                _ZN3LCD7commandEh
+                0x00004cf0       0x12 include/LiquidCrystal/LCD.o
+                0x00004cf0                _ZN3LCD7commandEh
  .text._ZN3LCD5clearEv
-                0x0000607c        0xe include/LiquidCrystal/LCD.o
-                0x0000607c                _ZN3LCD5clearEv
+                0x00004d02        0xe include/LiquidCrystal/LCD.o
+                0x00004d02                _ZN3LCD5clearEv
  .text._ZN3LCD9setCursorEhh
-                0x0000608a       0x7c include/LiquidCrystal/LCD.o
-                0x0000608a                _ZN3LCD9setCursorEhh
+                0x00004d10       0x7c include/LiquidCrystal/LCD.o
+                0x00004d10                _ZN3LCD9setCursorEhh
  .text._ZN3LCD7displayEv
-                0x00006106       0x10 include/LiquidCrystal/LCD.o
-                0x00006106                _ZN3LCD7displayEv
+                0x00004d8c       0x10 include/LiquidCrystal/LCD.o
+                0x00004d8c                _ZN3LCD7displayEv
  .text._ZN3LCD5beginEhhh
-                0x00006116       0xe4 include/LiquidCrystal/LCD.o
-                0x00006116                _ZN3LCD5beginEhhh
+                0x00004d9c       0xe4 include/LiquidCrystal/LCD.o
+                0x00004d9c                _ZN3LCD5beginEhhh
  .text._ZN17LiquidCrystal_I2C15setBacklightPinEh13t_backlighPol
-                0x000061fa       0x28 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x000061fa                _ZN17LiquidCrystal_I2C15setBacklightPinEh13t_backlighPol
+                0x00004e80       0x28 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00004e80                _ZN17LiquidCrystal_I2C15setBacklightPinEh13t_backlighPol
  .text._ZN17LiquidCrystal_I2C12setBacklightEh
-                0x00006222       0x2c include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x00006222                _ZN17LiquidCrystal_I2C12setBacklightEh
+                0x00004ea8       0x2c include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00004ea8                _ZN17LiquidCrystal_I2C12setBacklightEh
  .text._ZN17LiquidCrystal_I2CC2Ehhhhhhhh
-                0x0000624e       0xae include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x0000624e                _ZN17LiquidCrystal_I2CC2Ehhhhhhhh
-                0x0000624e                _ZN17LiquidCrystal_I2CC1Ehhhhhhhh
+                0x00004ed4       0xae include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00004ed4                _ZN17LiquidCrystal_I2CC2Ehhhhhhhh
+                0x00004ed4                _ZN17LiquidCrystal_I2CC1Ehhhhhhhh
  .text._ZN17LiquidCrystal_I2C4initEv
-                0x000062fc       0x3c include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x000062fc                _ZN17LiquidCrystal_I2C4initEv
+                0x00004f82       0x3c include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00004f82                _ZN17LiquidCrystal_I2C4initEv
  .text._ZN17LiquidCrystal_I2C11pulseEnableEh
-                0x00006338       0x34 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x00006338                _ZN17LiquidCrystal_I2C11pulseEnableEh
+                0x00004fbe       0x34 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00004fbe                _ZN17LiquidCrystal_I2C11pulseEnableEh
  .text._ZN17LiquidCrystal_I2C10write4bitsEhh
-                0x0000636c       0x3a include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x0000636c                _ZN17LiquidCrystal_I2C10write4bitsEhh
+                0x00004ff2       0x3a include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00004ff2                _ZN17LiquidCrystal_I2C10write4bitsEhh
  .text._ZN17LiquidCrystal_I2C4sendEhh
-                0x000063a6       0x42 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x000063a6                _ZN17LiquidCrystal_I2C4sendEhh
+                0x0000502c       0x42 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x0000502c                _ZN17LiquidCrystal_I2C4sendEhh
  .text._ZN17LiquidCrystal_I2C5beginEhhh
-                0x000063e8       0x2a include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x000063e8                _ZN17LiquidCrystal_I2C5beginEhhh
+                0x0000506e       0x2a include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x0000506e                _ZN17LiquidCrystal_I2C5beginEhhh
  .text.__vector_20
-                0x00006412       0x56 include/TimerOne/TimerOne.o
-                0x00006412                __vector_20
+                0x00005098       0x56 include/TimerOne/TimerOne.o
+                0x00005098                __vector_20
  .text.twi_init
-                0x00006468       0x3c include/Wire/twi.o
-                0x00006468                twi_init
+                0x000050ee       0x3c include/Wire/twi.o
+                0x000050ee                twi_init
  .text.twi_readFrom
-                0x000064a4       0x98 include/Wire/twi.o
-                0x000064a4                twi_readFrom
+                0x0000512a       0x98 include/Wire/twi.o
+                0x0000512a                twi_readFrom
  .text.twi_writeTo
-                0x0000653c       0xba include/Wire/twi.o
-                0x0000653c                twi_writeTo
+                0x000051c2       0xba include/Wire/twi.o
+                0x000051c2                twi_writeTo
  .text.twi_transmit
-                0x000065f6       0x42 include/Wire/twi.o
-                0x000065f6                twi_transmit
+                0x0000527c       0x42 include/Wire/twi.o
+                0x0000527c                twi_transmit
  .text.twi_stop
-                0x00006638       0x16 include/Wire/twi.o
-                0x00006638                twi_stop
+                0x000052be       0x16 include/Wire/twi.o
+                0x000052be                twi_stop
  .text.twi_releaseBus
-                0x0000664e        0xc include/Wire/twi.o
-                0x0000664e                twi_releaseBus
+                0x000052d4        0xc include/Wire/twi.o
+                0x000052d4                twi_releaseBus
  .text.__vector_39
-                0x0000665a      0x23c include/Wire/twi.o
-                0x0000665a                __vector_39
+                0x000052e0      0x23c include/Wire/twi.o
+                0x000052e0                __vector_39
  .text._ZN7TwoWire9availableEv
-                0x00006896       0x10 include/Wire/Wire.o
-                0x00006896                _ZN7TwoWire9availableEv
+                0x0000551c       0x10 include/Wire/Wire.o
+                0x0000551c                _ZN7TwoWire9availableEv
  .text._ZN7TwoWire4readEv
-                0x000068a6       0x28 include/Wire/Wire.o
-                0x000068a6                _ZN7TwoWire4readEv
+                0x0000552c       0x28 include/Wire/Wire.o
+                0x0000552c                _ZN7TwoWire4readEv
  .text._ZN7TwoWire4peekEv
-                0x000068ce       0x1e include/Wire/Wire.o
-                0x000068ce                _ZN7TwoWire4peekEv
+                0x00005554       0x1e include/Wire/Wire.o
+                0x00005554                _ZN7TwoWire4peekEv
  .text._ZN7TwoWire5flushEv
-                0x000068ec        0x2 include/Wire/Wire.o
-                0x000068ec                _ZN7TwoWire5flushEv
+                0x00005572        0x2 include/Wire/Wire.o
+                0x00005572                _ZN7TwoWire5flushEv
  .text._ZN7TwoWire5writeEPKhj
-                0x000068ee       0x5e include/Wire/Wire.o
-                0x000068ee                _ZN7TwoWire5writeEPKhj
+                0x00005574       0x5e include/Wire/Wire.o
+                0x00005574                _ZN7TwoWire5writeEPKhj
  .text._ZN7TwoWire5writeEh
-                0x0000694c       0x60 include/Wire/Wire.o
-                0x0000694c                _ZN7TwoWire5writeEh
+                0x000055d2       0x60 include/Wire/Wire.o
+                0x000055d2                _ZN7TwoWire5writeEh
  .text._ZN7TwoWireC2Ev
-                0x000069ac       0x20 include/Wire/Wire.o
-                0x000069ac                _ZN7TwoWireC1Ev
-                0x000069ac                _ZN7TwoWireC2Ev
+                0x00005632       0x20 include/Wire/Wire.o
+                0x00005632                _ZN7TwoWireC1Ev
+                0x00005632                _ZN7TwoWireC2Ev
  .text._ZN7TwoWire5beginEv
-                0x000069cc       0x14 include/Wire/Wire.o
-                0x000069cc                _ZN7TwoWire5beginEv
+                0x00005652       0x14 include/Wire/Wire.o
+                0x00005652                _ZN7TwoWire5beginEv
  .text._ZN7TwoWire11requestFromEhhh
-                0x000069e0       0x18 include/Wire/Wire.o
-                0x000069e0                _ZN7TwoWire11requestFromEhhh
+                0x00005666       0x18 include/Wire/Wire.o
+                0x00005666                _ZN7TwoWire11requestFromEhhh
  .text._ZN7TwoWire11requestFromEhh
-                0x000069f8        0x6 include/Wire/Wire.o
-                0x000069f8                _ZN7TwoWire11requestFromEhh
+                0x0000567e        0x6 include/Wire/Wire.o
+                0x0000567e                _ZN7TwoWire11requestFromEhh
  .text._ZN7TwoWire17beginTransmissionEh
-                0x000069fe       0x14 include/Wire/Wire.o
-                0x000069fe                _ZN7TwoWire17beginTransmissionEh
+                0x00005684       0x14 include/Wire/Wire.o
+                0x00005684                _ZN7TwoWire17beginTransmissionEh
  .text._ZN7TwoWire15endTransmissionEh
-                0x00006a12       0x24 include/Wire/Wire.o
-                0x00006a12                _ZN7TwoWire15endTransmissionEh
+                0x00005698       0x24 include/Wire/Wire.o
+                0x00005698                _ZN7TwoWire15endTransmissionEh
  .text._ZN7TwoWire15endTransmissionEv
-                0x00006a36        0x6 include/Wire/Wire.o
-                0x00006a36                _ZN7TwoWire15endTransmissionEv
+                0x000056bc        0x6 include/Wire/Wire.o
+                0x000056bc                _ZN7TwoWire15endTransmissionEv
  .text._GLOBAL__sub_I__ZN7TwoWire8rxBufferE
-                0x00006a3c        0x8 include/Wire/Wire.o
- .text.setup    0x00006a44      0x10a Main.o
-                0x00006a44                setup
- .text.loop     0x00006b4e       0x64 Main.o
-                0x00006b4e                loop
+                0x000056c2        0x8 include/Wire/Wire.o
+ .text.setup    0x000056ca      0x10a Main.o
+                0x000056ca                setup
+ .text.loop     0x000057d4       0x64 Main.o
+                0x000057d4                loop
  .text._GLOBAL__sub_I_BootScreenTime
-                0x00006bb2       0x1a Main.o
+                0x00005838       0x1a Main.o
  .text.__cxa_pure_virtual
-                0x00006bcc        0x4 src/abi.o
-                0x00006bcc                __cxa_pure_virtual
+                0x00005852        0x4 src/abi.o
+                0x00005852                __cxa_pure_virtual
  .text._ZN14HardwareSerial9availableEv
-                0x00006bd0       0x18 src/HardwareSerial.o
-                0x00006bd0                _ZN14HardwareSerial9availableEv
+                0x00005856       0x18 src/HardwareSerial.o
+                0x00005856                _ZN14HardwareSerial9availableEv
  .text._ZN14HardwareSerial4peekEv
-                0x00006be8       0x1c src/HardwareSerial.o
-                0x00006be8                _ZN14HardwareSerial4peekEv
+                0x0000586e       0x1c src/HardwareSerial.o
+                0x0000586e                _ZN14HardwareSerial4peekEv
  .text._ZN14HardwareSerial4readEv
-                0x00006c04       0x28 src/HardwareSerial.o
-                0x00006c04                _ZN14HardwareSerial4readEv
+                0x0000588a       0x28 src/HardwareSerial.o
+                0x0000588a                _ZN14HardwareSerial4readEv
  .text._Z14serialEventRunv
-                0x00006c2c       0x62 src/HardwareSerial.o
-                0x00006c2c                _Z14serialEventRunv
+                0x000058b2       0x62 src/HardwareSerial.o
+                0x000058b2                _Z14serialEventRunv
  .text._ZN14HardwareSerial17_tx_udr_empty_irqEv
-                0x00006c8e       0x54 src/HardwareSerial.o
-                0x00006c8e                _ZN14HardwareSerial17_tx_udr_empty_irqEv
+                0x00005914       0x54 src/HardwareSerial.o
+                0x00005914                _ZN14HardwareSerial17_tx_udr_empty_irqEv
  .text._ZN14HardwareSerial5flushEv
-                0x00006ce2       0x42 src/HardwareSerial.o
-                0x00006ce2                _ZN14HardwareSerial5flushEv
+                0x00005968       0x42 src/HardwareSerial.o
+                0x00005968                _ZN14HardwareSerial5flushEv
  .text._ZN14HardwareSerial5writeEh
-                0x00006d24       0x9c src/HardwareSerial.o
-                0x00006d24                _ZN14HardwareSerial5writeEh
+                0x000059aa       0x9c src/HardwareSerial.o
+                0x000059aa                _ZN14HardwareSerial5writeEh
  .text._ZN14HardwareSerial5beginEmh
-                0x00006dc0       0xd2 src/HardwareSerial.o
-                0x00006dc0                _ZN14HardwareSerial5beginEmh
+                0x00005a46       0xd2 src/HardwareSerial.o
+                0x00005a46                _ZN14HardwareSerial5beginEmh
  .text.__vector_25
-                0x00006e92       0x78 src/HardwareSerial0.o
-                0x00006e92                __vector_25
+                0x00005b18       0x78 src/HardwareSerial0.o
+                0x00005b18                __vector_25
  .text.__vector_26
-                0x00006f0a       0x52 src/HardwareSerial0.o
-                0x00006f0a                __vector_26
+                0x00005b90       0x52 src/HardwareSerial0.o
+                0x00005b90                __vector_26
  .text._Z17Serial0_availablev
-                0x00006f5c       0x12 src/HardwareSerial0.o
-                0x00006f5c                _Z17Serial0_availablev
+                0x00005be2       0x12 src/HardwareSerial0.o
+                0x00005be2                _Z17Serial0_availablev
  .text._GLOBAL__sub_I___vector_25
-                0x00006f6e       0x5a src/HardwareSerial0.o
+                0x00005bf4       0x5a src/HardwareSerial0.o
  .text.__vector_36
-                0x00006fc8       0x78 src/HardwareSerial1.o
-                0x00006fc8                __vector_36
+                0x00005c4e       0x78 src/HardwareSerial1.o
+                0x00005c4e                __vector_36
  .text.__vector_37
-                0x00007040       0x52 src/HardwareSerial1.o
-                0x00007040                __vector_37
+                0x00005cc6       0x52 src/HardwareSerial1.o
+                0x00005cc6                __vector_37
  .text._Z17Serial1_availablev
-                0x00007092       0x12 src/HardwareSerial1.o
-                0x00007092                _Z17Serial1_availablev
+                0x00005d18       0x12 src/HardwareSerial1.o
+                0x00005d18                _Z17Serial1_availablev
  .text._GLOBAL__sub_I___vector_36
-                0x000070a4       0x5a src/HardwareSerial1.o
+                0x00005d2a       0x5a src/HardwareSerial1.o
  .text.__vector_51
-                0x000070fe       0x78 src/HardwareSerial2.o
-                0x000070fe                __vector_51
+                0x00005d84       0x78 src/HardwareSerial2.o
+                0x00005d84                __vector_51
  .text.__vector_52
-                0x00007176       0x52 src/HardwareSerial2.o
-                0x00007176                __vector_52
+                0x00005dfc       0x52 src/HardwareSerial2.o
+                0x00005dfc                __vector_52
  .text._Z17Serial2_availablev
-                0x000071c8       0x12 src/HardwareSerial2.o
-                0x000071c8                _Z17Serial2_availablev
+                0x00005e4e       0x12 src/HardwareSerial2.o
+                0x00005e4e                _Z17Serial2_availablev
  .text._GLOBAL__sub_I___vector_51
-                0x000071da       0x5a src/HardwareSerial2.o
+                0x00005e60       0x5a src/HardwareSerial2.o
  .text.__vector_54
-                0x00007234       0x78 src/HardwareSerial3.o
-                0x00007234                __vector_54
+                0x00005eba       0x78 src/HardwareSerial3.o
+                0x00005eba                __vector_54
  .text.__vector_55
-                0x000072ac       0x52 src/HardwareSerial3.o
-                0x000072ac                __vector_55
+                0x00005f32       0x52 src/HardwareSerial3.o
+                0x00005f32                __vector_55
  .text._Z17Serial3_availablev
-                0x000072fe       0x12 src/HardwareSerial3.o
-                0x000072fe                _Z17Serial3_availablev
+                0x00005f84       0x12 src/HardwareSerial3.o
+                0x00005f84                _Z17Serial3_availablev
  .text._GLOBAL__sub_I___vector_54
-                0x00007310       0x5a src/HardwareSerial3.o
- .text.__empty  0x0000736a        0x2 src/hooks.o
-                0x0000736a                yield
+                0x00005f96       0x5a src/HardwareSerial3.o
+ .text.__empty  0x00005ff0        0x2 src/hooks.o
+                0x00005ff0                yield
  .text._ZNK9IPAddress7printToER5Print
-                0x0000736c       0x7e src/IPAddress.o
-                0x0000736c                _ZNK9IPAddress7printToER5Print
+                0x00005ff2       0x7e src/IPAddress.o
+                0x00005ff2                _ZNK9IPAddress7printToER5Print
  .text._GLOBAL__sub_I__ZN9IPAddressC2Ev
-                0x000073ea       0x16 src/IPAddress.o
+                0x00006070       0x16 src/IPAddress.o
  .text.initVariant
-                0x00007400        0x2 src/main.o
-                0x00007400                initVariant
- .text.main     0x00007402       0x14 src/main.o
-                0x00007402                main
- .text._Znwj    0x00007416        0x6 src/new.o
-                0x00007416                _Znwj
- .text._ZdlPv   0x0000741c        0x6 src/new.o
-                0x0000741c                _ZdlPv
+                0x00006086        0x2 src/main.o
+                0x00006086                initVariant
+ .text.main     0x00006088       0x14 src/main.o
+                0x00006088                main
+ .text._Znwj    0x0000609c        0x6 src/new.o
+                0x0000609c                _Znwj
+ .text._ZdlPv   0x000060a2        0x6 src/new.o
+                0x000060a2                _ZdlPv
  .text._ZN5Print5writeEPKhj
-                0x00007422       0x5a src/Print.o
-                0x00007422                _ZN5Print5writeEPKhj
+                0x000060a8       0x5a src/Print.o
+                0x000060a8                _ZN5Print5writeEPKhj
  .text._ZN5Print5printERK6String
-                0x0000747c       0x1e src/Print.o
-                0x0000747c                _ZN5Print5printERK6String
+                0x00006102       0x1e src/Print.o
+                0x00006102                _ZN5Print5printERK6String
  .text._ZN5Print5printEPKc
-                0x0000749a       0x2c src/Print.o
-                0x0000749a                _ZN5Print5printEPKc
+                0x00006120       0x2c src/Print.o
+                0x00006120                _ZN5Print5printEPKc
  .text._ZN5Print5printEc
-                0x000074c6       0x10 src/Print.o
-                0x000074c6                _ZN5Print5printEc
+                0x0000614c       0x10 src/Print.o
+                0x0000614c                _ZN5Print5printEc
  .text._ZN5Print7printlnEv
-                0x000074d6       0x18 src/Print.o
-                0x000074d6                _ZN5Print7printlnEv
+                0x0000615c       0x18 src/Print.o
+                0x0000615c                _ZN5Print7printlnEv
  .text._ZN5Print7printlnERK6String
-                0x000074ee       0x20 src/Print.o
-                0x000074ee                _ZN5Print7printlnERK6String
+                0x00006174       0x20 src/Print.o
+                0x00006174                _ZN5Print7printlnERK6String
  .text._ZN5Print7printlnEPKc
-                0x0000750e       0x20 src/Print.o
-                0x0000750e                _ZN5Print7printlnEPKc
+                0x00006194       0x20 src/Print.o
+                0x00006194                _ZN5Print7printlnEPKc
  .text._ZN5Print11printNumberEmh
-                0x0000752e       0xe6 src/Print.o
-                0x0000752e                _ZN5Print11printNumberEmh
+                0x000061b4       0xe6 src/Print.o
+                0x000061b4                _ZN5Print11printNumberEmh
  .text._ZN5Print5printEli
-                0x00007614       0x70 src/Print.o
-                0x00007614                _ZN5Print5printEli
+                0x0000629a       0x70 src/Print.o
+                0x0000629a                _ZN5Print5printEli
  .text._ZN5Print5printEii
-                0x00007684        0xe src/Print.o
-                0x00007684                _ZN5Print5printEii
+                0x0000630a        0xe src/Print.o
+                0x0000630a                _ZN5Print5printEii
  .text._ZN5Print7printlnEii
-                0x00007692       0x2a src/Print.o
-                0x00007692                _ZN5Print7printlnEii
+                0x00006318       0x2a src/Print.o
+                0x00006318                _ZN5Print7printlnEii
  .text._ZN5Print5printEmi
-                0x000076bc       0x1c src/Print.o
-                0x000076bc                _ZN5Print5printEmi
+                0x00006342       0x1c src/Print.o
+                0x00006342                _ZN5Print5printEmi
  .text._ZN5Print5printEhi
-                0x000076d8        0xe src/Print.o
-                0x000076d8                _ZN5Print5printEhi
+                0x0000635e        0xe src/Print.o
+                0x0000635e                _ZN5Print5printEhi
+ .text._ZN5Print5printEji
+                0x0000636c        0xc src/Print.o
+                0x0000636c                _ZN5Print5printEji
  .text._ZN5Print10printFloatEdh
-                0x000076e6      0x1ea src/Print.o
-                0x000076e6                _ZN5Print10printFloatEdh
+                0x00006378      0x1e8 src/Print.o
+                0x00006378                _ZN5Print10printFloatEdh
  .text._ZN5Print5printEdi
-                0x000078d0        0x4 src/Print.o
-                0x000078d0                _ZN5Print5printEdi
+                0x00006560        0x4 src/Print.o
+                0x00006560                _ZN5Print5printEdi
  .text._ZN5Print7printlnEdi
-                0x000078d4       0x20 src/Print.o
-                0x000078d4                _ZN5Print7printlnEdi
+                0x00006564       0x20 src/Print.o
+                0x00006564                _ZN5Print7printlnEdi
  .text._Z12disableTimerh
-                0x000078f4       0x74 src/Tone.o
-                0x000078f4                _Z12disableTimerh
+                0x00006584       0x74 src/Tone.o
+                0x00006584                _Z12disableTimerh
  .text._Z6noToneh
-                0x00007968       0x2a src/Tone.o
-                0x00007968                _Z6noToneh
+                0x000065f8       0x2a src/Tone.o
+                0x000065f8                _Z6noToneh
  .text.__vector_13
-                0x00007992       0xbe src/Tone.o
-                0x00007992                __vector_13
+                0x00006622       0xbe src/Tone.o
+                0x00006622                __vector_13
  .text.__vector_1
-                0x00007a50       0x62 src/WInterrupts.o
-                0x00007a50                __vector_1
+                0x000066e0       0x62 src/WInterrupts.o
+                0x000066e0                __vector_1
  .text.__vector_2
-                0x00007ab2       0x62 src/WInterrupts.o
-                0x00007ab2                __vector_2
+                0x00006742       0x62 src/WInterrupts.o
+                0x00006742                __vector_2
  .text.__vector_3
-                0x00007b14       0x62 src/WInterrupts.o
-                0x00007b14                __vector_3
+                0x000067a4       0x62 src/WInterrupts.o
+                0x000067a4                __vector_3
  .text.__vector_4
-                0x00007b76       0x62 src/WInterrupts.o
-                0x00007b76                __vector_4
+                0x00006806       0x62 src/WInterrupts.o
+                0x00006806                __vector_4
  .text.__vector_5
-                0x00007bd8       0x62 src/WInterrupts.o
-                0x00007bd8                __vector_5
+                0x00006868       0x62 src/WInterrupts.o
+                0x00006868                __vector_5
  .text.__vector_6
-                0x00007c3a       0x62 src/WInterrupts.o
-                0x00007c3a                __vector_6
+                0x000068ca       0x62 src/WInterrupts.o
+                0x000068ca                __vector_6
  .text.__vector_7
-                0x00007c9c       0x62 src/WInterrupts.o
-                0x00007c9c                __vector_7
+                0x0000692c       0x62 src/WInterrupts.o
+                0x0000692c                __vector_7
  .text.__vector_8
-                0x00007cfe       0x62 src/WInterrupts.o
-                0x00007cfe                __vector_8
+                0x0000698e       0x62 src/WInterrupts.o
+                0x0000698e                __vector_8
  .text.__vector_23
-                0x00007d60       0x94 src/wiring.o
-                0x00007d60                __vector_23
- .text.millis   0x00007df4       0x18 src/wiring.o
-                0x00007df4                millis
- .text.micros   0x00007e0c       0x4c src/wiring.o
-                0x00007e0c                micros
- .text.delay    0x00007e58       0x52 src/wiring.o
-                0x00007e58                delay
+                0x000069f0       0x94 src/wiring.o
+                0x000069f0                __vector_23
+ .text.millis   0x00006a84       0x18 src/wiring.o
+                0x00006a84                millis
+ .text.micros   0x00006a9c       0x4c src/wiring.o
+                0x00006a9c                micros
+ .text.delay    0x00006ae8       0x52 src/wiring.o
+                0x00006ae8                delay
  .text.delayMicroseconds
-                0x00007eaa       0x16 src/wiring.o
-                0x00007eaa                delayMicroseconds
- .text.init     0x00007ec0       0xc4 src/wiring.o
-                0x00007ec0                init
+                0x00006b3a       0x16 src/wiring.o
+                0x00006b3a                delayMicroseconds
+ .text.init     0x00006b50       0xc4 src/wiring.o
+                0x00006b50                init
  .text.analogRead
-                0x00007f84       0x48 src/wiring_analog.o
-                0x00007f84                analogRead
+                0x00006c14       0x48 src/wiring_analog.o
+                0x00006c14                analogRead
  .text.turnOffPWM
-                0x00007fcc       0xd0 src/wiring_digital.o
- .text.pinMode  0x0000809c       0x7e src/wiring_digital.o
-                0x0000809c                pinMode
+                0x00006c5c       0xd0 src/wiring_digital.o
+ .text.pinMode  0x00006d2c       0x7e src/wiring_digital.o
+                0x00006d2c                pinMode
  .text.digitalWrite
-                0x0000811a       0x60 src/wiring_digital.o
-                0x0000811a                digitalWrite
+                0x00006daa       0x60 src/wiring_digital.o
+                0x00006daa                digitalWrite
  .text.digitalRead
-                0x0000817a       0x50 src/wiring_digital.o
-                0x0000817a                digitalRead
+                0x00006e0a       0x50 src/wiring_digital.o
+                0x00006e0a                digitalRead
  .text._ZN6StringD2Ev
-                0x000081ca        0xa src/WString.o
-                0x000081ca                _ZN6StringD2Ev
-                0x000081ca                _ZN6StringD1Ev
+                0x00006e5a        0xa src/WString.o
+                0x00006e5a                _ZN6StringD2Ev
+                0x00006e5a                _ZN6StringD1Ev
  .text._ZN6String10invalidateEv
-                0x000081d4       0x22 src/WString.o
-                0x000081d4                _ZN6String10invalidateEv
+                0x00006e64       0x22 src/WString.o
+                0x00006e64                _ZN6String10invalidateEv
  .text._ZN6String12changeBufferEj
-                0x000081f6       0x32 src/WString.o
-                0x000081f6                _ZN6String12changeBufferEj
+                0x00006e86       0x32 src/WString.o
+                0x00006e86                _ZN6String12changeBufferEj
  .text._ZN6String7reserveEj
-                0x00008228       0x3e src/WString.o
-                0x00008228                _ZN6String7reserveEj
+                0x00006eb8       0x3e src/WString.o
+                0x00006eb8                _ZN6String7reserveEj
  .text._ZN6String4copyEPKcj
-                0x00008266       0x3c src/WString.o
-                0x00008266                _ZN6String4copyEPKcj
+                0x00006ef6       0x3c src/WString.o
+                0x00006ef6                _ZN6String4copyEPKcj
  .text._ZN6StringC2EPKc
-                0x000082a2       0x28 src/WString.o
-                0x000082a2                _ZN6StringC2EPKc
-                0x000082a2                _ZN6StringC1EPKc
+                0x00006f32       0x28 src/WString.o
+                0x00006f32                _ZN6StringC2EPKc
+                0x00006f32                _ZN6StringC1EPKc
  .text._ZN6String4copyEPK19__FlashStringHelperj
-                0x000082ca       0x3c src/WString.o
-                0x000082ca                _ZN6String4copyEPK19__FlashStringHelperj
+                0x00006f5a       0x3c src/WString.o
+                0x00006f5a                _ZN6String4copyEPK19__FlashStringHelperj
  .text._ZN6StringaSERKS_
-                0x00008306       0x2a src/WString.o
-                0x00008306                _ZN6StringaSERKS_
+                0x00006f96       0x2a src/WString.o
+                0x00006f96                _ZN6StringaSERKS_
  .text._ZN6StringC2ERKS_
-                0x00008330       0x12 src/WString.o
-                0x00008330                _ZN6StringC2ERKS_
-                0x00008330                _ZN6StringC1ERKS_
+                0x00006fc0       0x12 src/WString.o
+                0x00006fc0                _ZN6StringC2ERKS_
+                0x00006fc0                _ZN6StringC1ERKS_
  .text._ZN6StringaSEPK19__FlashStringHelper
-                0x00008342       0x2c src/WString.o
-                0x00008342                _ZN6StringaSEPK19__FlashStringHelper
+                0x00006fd2       0x2c src/WString.o
+                0x00006fd2                _ZN6StringaSEPK19__FlashStringHelper
  .text._ZN6StringC2EPK19__FlashStringHelper
-                0x0000836e       0x12 src/WString.o
-                0x0000836e                _ZN6StringC1EPK19__FlashStringHelper
-                0x0000836e                _ZN6StringC2EPK19__FlashStringHelper
+                0x00006ffe       0x12 src/WString.o
+                0x00006ffe                _ZN6StringC1EPK19__FlashStringHelper
+                0x00006ffe                _ZN6StringC2EPK19__FlashStringHelper
  .text._ZN6String6concatEPKcj
-                0x00008380       0x5c src/WString.o
-                0x00008380                _ZN6String6concatEPKcj
+                0x00007010       0x5c src/WString.o
+                0x00007010                _ZN6String6concatEPKcj
  .text._ZplRK15StringSumHelperRK6String
-                0x000083dc       0x22 src/WString.o
-                0x000083dc                _ZplRK15StringSumHelperRK6String
+                0x0000706c       0x22 src/WString.o
+                0x0000706c                _ZplRK15StringSumHelperRK6String
  .text._ZplRK15StringSumHelperPKc
-                0x000083fe       0x2e src/WString.o
-                0x000083fe                _ZplRK15StringSumHelperPKc
- .text._ZNK6String9compareToERKS_
-                0x0000842c       0x68 src/WString.o
-                0x0000842c                _ZNK6String9compareToERKS_
- .text._ZNK6String6equalsERKS_
-                0x00008494       0x24 src/WString.o
-                0x00008494                _ZNK6String6equalsERKS_
+                0x0000708e       0x2e src/WString.o
+                0x0000708e                _ZplRK15StringSumHelperPKc
  .text.avr-libc.fplib
-                0x000084b8        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
-                0x000084b8                __subsf3
-                0x000084ba                __addsf3
+                0x000070bc        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3.o)
+                0x000070bc                __subsf3
+                0x000070be                __addsf3
  .text.avr-libc.fplib
-                0x000084c2       0xc0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
-                0x000084dc                __addsf3x
+                0x000070c6       0xc0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+                0x000070e0                __addsf3x
  .text.avr-libc.fplib
-                0x00008582        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
-                0x00008582                __nesf2
-                0x00008582                __eqsf2
-                0x00008582                __cmpsf2
-                0x00008582                __ltsf2
-                0x00008582                __lesf2
+                0x00007186        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(cmpsf2.o)
+                0x00007186                __nesf2
+                0x00007186                __eqsf2
+                0x00007186                __cmpsf2
+                0x00007186                __ltsf2
+                0x00007186                __lesf2
  .text.avr-libc.fplib
-                0x0000858a        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
-                0x0000858a                __divsf3
+                0x0000718e        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3.o)
+                0x0000718e                __divsf3
  .text.avr-libc.fplib
-                0x0000858e       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
-                0x000085a4                __divsf3x
-                0x000085a8                __divsf3_pse
+                0x00007192       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                0x000071a8                __divsf3x
+                0x000071ac                __divsf3_pse
  .text.avr-libc.fplib
-                0x0000865a        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
-                0x0000865a                __fixsfsi
+                0x0000725e        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixsfsi.o)
+                0x0000725e                __fixsfsi
  .text.avr-libc.fplib
-                0x00008664       0x58 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
-                0x00008664                __fixunssfsi
+                0x00007268       0x58 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+                0x00007268                __fixunssfsi
  .text.avr-libc.fplib
-                0x000086bc       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
-                0x000086bc                __floatunsisf
-                0x000086c0                __floatsisf
+                0x000072c0       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+                0x000072c0                __floatunsisf
+                0x000072c4                __floatsisf
  .text.avr-libc.fplib
-                0x00008736       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
-                0x00008736                __fp_cmp
+                0x0000733a       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_cmp.o)
+                0x0000733a                __fp_cmp
  .text.avr-libc.fplib
-                0x0000877e        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
-                0x0000877e                __fp_inf
+                0x00007382        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+                0x00007382                __fp_inf
  .text.avr-libc.fplib
-                0x0000878a        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
-                0x0000878a                __fp_nan
+                0x0000738e        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+                0x0000738e                __fp_nan
  .text.avr-libc.fplib
-                0x00008790        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
-                0x00008790                __fp_pscA
+                0x00007394        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+                0x00007394                __fp_pscA
  .text.avr-libc.fplib
-                0x0000879e        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
-                0x0000879e                __fp_pscB
+                0x000073a2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+                0x000073a2                __fp_pscB
  .text.avr-libc.fplib
-                0x000087ac       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
-                0x000087ac                __fp_round
+                0x000073b0       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_round.o)
+                0x000073b0                __fp_round
  .text.avr-libc.fplib
-                0x000087ce       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
-                0x000087ce                __fp_split3
-                0x000087de                __fp_splitA
+                0x000073d2       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+                0x000073d2                __fp_split3
+                0x000073e2                __fp_splitA
  .text.avr-libc.fplib
-                0x00008812        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
-                0x00008812                __fp_zero
-                0x00008814                __fp_szero
+                0x00007416        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+                0x00007416                __fp_zero
+                0x00007418                __fp_szero
  .text.avr-libc.fplib
-                0x00008820        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
-                0x00008820                __gesf2
-                0x00008820                __gtsf2
+                0x00007424        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(gesf2.o)
+                0x00007424                __gesf2
+                0x00007424                __gtsf2
  .text.avr-libc.fplib
-                0x00008828        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
-                0x00008828                __mulsf3
+                0x0000742c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+                0x0000742c                __mulsf3
  .text.avr-libc.fplib
-                0x0000882c       0xc2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
-                0x00008840                __mulsf3x
-                0x00008844                __mulsf3_pse
+                0x00007430       0xc2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                0x00007444                __mulsf3x
+                0x00007448                __mulsf3_pse
  .text.avr-libc.fplib
-                0x000088ee        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
-                0x000088ee                __unordsf2
+                0x000074f2        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libm.a(unordsf2.o)
+                0x000074f2                __unordsf2
  .text.libgcc.div
-                0x000088f6       0x26 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
-                0x000088f6                _div
-                0x000088f6                __divmodhi4
+                0x000074fa       0x26 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_divmodhi4.o)
+                0x000074fa                _div
+                0x000074fa                __divmodhi4
  .text.libgcc.div
-                0x0000891c       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
-                0x0000891c                __udivmodsi4
- .text.libgcc   0x00008960       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_tablejump2.o)
-                0x00008960                __tablejump2__
+                0x00007520       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodsi4.o)
+                0x00007520                __udivmodsi4
+ .text.libgcc   0x00007564       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_tablejump2.o)
+                0x00007564                __tablejump2__
  .text.libgcc.div
-                0x00008970       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
-                0x00008970                __udivmodhi4
+                0x00007574       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_udivmodhi4.o)
+                0x00007574                __udivmodhi4
  .text.avr-libc
-                0x00008998      0x25a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
-                0x00008998                malloc
-                0x00008ac2                free
+                0x0000759c      0x25a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
+                0x0000759c                malloc
+                0x000076c6                free
  .text.avr-libc
-                0x00008bf2      0x1c8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
-                0x00008bf2                realloc
+                0x000077f6      0x1c8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(realloc.o)
+                0x000077f6                realloc
  .text.avr-libc
-                0x00008dba        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
-                0x00008dba                abort
+                0x000079be        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(abort.o)
+                0x000079be                abort
  .text.avr-libc
-                0x00008dc2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy_P.o)
-                0x00008dc2                strcpy_P
+                0x000079c6        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy_P.o)
+                0x000079c6                strcpy_P
  .text.avr-libc
-                0x00008dd0       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strlen_P.o)
-                0x00008dd0                __strlen_P
+                0x000079d4       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strlen_P.o)
+                0x000079d4                __strlen_P
  .text.avr-libc
-                0x00008de2       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(memcpy.o)
-                0x00008de2                memcpy
+                0x000079e6       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(memcpy.o)
+                0x000079e6                memcpy
  .text.avr-libc
-                0x00008df4       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcmp.o)
-                0x00008df4                strcmp
- .text.avr-libc
-                0x00008e06        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
-                0x00008e06                strcpy
-                0x00008e14                . = ALIGN (0x2)
+                0x000079f8        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(strcpy.o)
+                0x000079f8                strcpy
+                0x00007a06                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00008e14        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
-                0x00008e14                _exit
-                0x00008e14                exit
+ .fini9         0x00007a06        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
+                0x00007a06                _exit
+                0x00007a06                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x00008e14       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_dtors.o)
-                0x00008e14                __do_global_dtors
+ .fini6         0x00007a06       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_dtors.o)
+                0x00007a06                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -2776,11 +2814,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00008e32        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
+ .fini0         0x00007a24        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00008e36                _etext = .
+                0x00007a28                _etext = .
 
-.data           0x00800200      0x3ee load address 0x00008e36
+.data           0x00800200      0x46e load address 0x00007a28
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800200        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
@@ -2788,311 +2826,313 @@ END GROUP
                 0x00800202                __malloc_heap_start
                 0x00800204                __malloc_margin
  *(.data*)
- .data.WB_R2C_X
-                0x00800206       0x90 classes/Hardware.o
-                0x00800206                WB_R2C_X
  .data.firstpass
-                0x00800296        0x1 Main.o
-                0x00800296                firstpass
+                0x00800206        0x1 Main.o
+                0x00800206                firstpass
  .data._ZL9tone_pins
-                0x00800297        0x1 src/Tone.o
+                0x00800207        0x1 src/Tone.o
  .data.analog_reference
-                0x00800298        0x1 src/wiring_analog.o
-                0x00800298                analog_reference
+                0x00800208        0x1 src/wiring_analog.o
+                0x00800208                analog_reference
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800299       0x3d classes/BK/BK_UI.o
-                                 0x41 (size before relaxing)
+                0x00800209       0x38 classes/BK/BK_UI.o
+                                 0x3c (size before relaxing)
+ .rodata._ZTV10LinkedListIiE
+                0x00800241       0x18 classes/EnhancedIO/AnalogIn.o
+                0x00800241                _ZTV10LinkedListIiE
  .rodata.str1.1
-                0x008002d6        0xb classes/DigitalIO.o
+                0x00800259        0xb classes/EnhancedIO/DigitalIO.o
  .rodata.str1.1
-                0x008002e1        0xb classes/EZUI/Controls/EZUI_Control_Link.o
-                                  0x1 (size before relaxing)
+                0x00800264        0xb classes/EZUI/Controls/EZUI_Control_Label.o
+                                  0x3 (size before relaxing)
  .rodata.str1.1
-                0x008002e1        0xc classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+                0x00800264        0x1 classes/EZUI/Controls/EZUI_Control_Link.o
  .rodata.str1.1
-                0x008002e1       0x40 classes/Hardware.o
+                0x00800264        0xc classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+ .rodata.str1.1
+                0x00800264       0x40 classes/Hardware.o
                                  0x46 (size before relaxing)
+ .rodata._ZL8WB_R2C_Z
+                0x008002a4       0x90 classes/Hardware.o
+ .rodata._ZL8WB_R2C_X
+                0x00800334       0x90 classes/Hardware.o
  .rodata.str1.1
-                0x00800321       0x12 classes/HLT/HLT_UI.o
+                0x008003c4       0x12 classes/HLT/HLT_UI.o
+                                 0x3e (size before relaxing)
+ .rodata.str1.1
+                0x008003d6       0x91 classes/MAIN/MAIN_UI.o
+                                 0xae (size before relaxing)
+ .rodata.str1.1
+                0x00800467       0x12 classes/MLT/MLT_UI.o
                                  0x43 (size before relaxing)
  .rodata.str1.1
-                0x00800333       0x9b classes/MAIN/MAIN_UI.o
-                                 0xbd (size before relaxing)
+                0x00800479       0x10 classes/EZUI/ClickEncoderWithEvents.o
  .rodata.str1.1
-                0x008003ce       0x12 classes/MLT/MLT_UI.o
-                                 0x43 (size before relaxing)
- .rodata.str1.1
-                0x008003e0       0x10 classes/EZUI/ClickEncoderWithEvents.o
- .rodata.str1.1
-                0x008003f0       0x16 classes/EZUI/EZUI_Menu.o
+                0x00800489       0x16 classes/EZUI/EZUI_Menu.o
                                  0x19 (size before relaxing)
  .rodata._ZTV10LinkedListI13EZUI_MenuItemE
-                0x00800406       0x18 classes/EZUI/EZUI_Menu.o
-                0x00800406                _ZTV10LinkedListI13EZUI_MenuItemE
+                0x0080049f       0x18 classes/EZUI/EZUI_Menu.o
+                0x0080049f                _ZTV10LinkedListI13EZUI_MenuItemE
  .rodata.str1.1
-                0x0080041e       0x43 classes/EZUI/EZUI_MenuItem.o
+                0x008004b7       0x43 classes/EZUI/EZUI_MenuItem.o
                                  0x45 (size before relaxing)
  .rodata.str1.1
-                0x00800461        0xb classes/EZUI/EZUI_Page.o
+                0x008004fa        0xb classes/EZUI/EZUI_Page.o
                                  0x20 (size before relaxing)
  .rodata._ZTV10LinkedListI13EZUI_PageItemE
-                0x0080046c       0x18 classes/EZUI/EZUI_Page.o
-                0x0080046c                _ZTV10LinkedListI13EZUI_PageItemE
- .rodata._ZTV10LinkedListIiE
-                0x00800484       0x18 classes/EZUI/EZUI_Page.o
-                0x00800484                _ZTV10LinkedListIiE
+                0x00800505       0x18 classes/EZUI/EZUI_Page.o
+                0x00800505                _ZTV10LinkedListI13EZUI_PageItemE
  .rodata.str1.1
-                0x0080049c        0xb classes/EZUI/EZUI_PageItem.o
+                0x0080051d        0xb classes/EZUI/EZUI_PageItem.o
                                  0x29 (size before relaxing)
  .rodata.str1.1
-                0x0080049c       0x19 classes/EZUI/EZUI.o
+                0x0080051d       0x19 classes/EZUI/EZUI.o
                                  0x1a (size before relaxing)
  .rodata.str1.1
-                0x008004b5       0x26 classes/Executive.o
+                0x00800536       0x26 classes/Executive.o
  .rodata.str1.1
-                0x008004db        0x1 classes/WheatstoneBridge.o
+                0x0080055c        0x1 classes/WheatstoneBridge.o
  .rodata._ZTV3LCD
-                0x008004db       0x10 include/LiquidCrystal/LCD.o
-                0x008004db                _ZTV3LCD
+                0x0080055c       0x10 include/LiquidCrystal/LCD.o
+                0x0080055c                _ZTV3LCD
  .rodata._ZTV17LiquidCrystal_I2C
-                0x008004eb       0x10 include/LiquidCrystal/LiquidCrystal_I2C.o
-                0x008004eb                _ZTV17LiquidCrystal_I2C
+                0x0080056c       0x10 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x0080056c                _ZTV17LiquidCrystal_I2C
  .rodata._ZTV7TwoWire
-                0x008004fb       0x10 include/Wire/Wire.o
-                0x008004fb                _ZTV7TwoWire
+                0x0080057c       0x10 include/Wire/Wire.o
+                0x0080057c                _ZTV7TwoWire
  .rodata.str1.1
-                0x0080050b       0xbd Main.o
+                0x0080058c       0xbd Main.o
                                  0xbe (size before relaxing)
  .rodata._ZTV14HardwareSerial
-                0x008005c8       0x10 src/HardwareSerial.o
-                0x008005c8                _ZTV14HardwareSerial
+                0x00800649       0x10 src/HardwareSerial.o
+                0x00800649                _ZTV14HardwareSerial
  .rodata._ZTV9IPAddress
-                0x008005d8        0x6 src/IPAddress.o
-                0x008005d8                _ZTV9IPAddress
+                0x00800659        0x6 src/IPAddress.o
+                0x00800659                _ZTV9IPAddress
  .rodata.str1.1
-                0x008005de        0xf src/Print.o
+                0x0080065f        0xf src/Print.o
                                  0x11 (size before relaxing)
  *(.gnu.linkonce.d*)
-                0x008005ee                . = ALIGN (0x2)
- *fill*         0x008005ed        0x1 
-                0x008005ee                _edata = .
-                0x008005ee                PROVIDE (__data_end, .)
+                0x0080066e                . = ALIGN (0x2)
+                0x0080066e                _edata = .
+                0x0080066e                PROVIDE (__data_end, .)
 
-.bss            0x008005ee      0x532
-                0x008005ee                PROVIDE (__bss_start, .)
+.bss            0x0080066e      0x6d8
+                0x0080066e                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.BK_UI     0x008005ee        0x2 classes/BK/BK_UI.o
-                0x008005ee                BK_UI
- .bss.BK_ENC    0x008005f0        0x2 classes/Hardware.o
-                0x008005f0                BK_ENC
- .bss.BK_LCD    0x008005f2       0x18 classes/Hardware.o
-                0x008005f2                BK_LCD
- .bss.MLT_ENC   0x0080060a        0x2 classes/Hardware.o
-                0x0080060a                MLT_ENC
- .bss.MLT_LCD   0x0080060c       0x18 classes/Hardware.o
-                0x0080060c                MLT_LCD
+ .bss.BK_UI     0x0080066e        0x2 classes/BK/BK_UI.o
+                0x0080066e                BK_UI
+ .bss.BK_ENC    0x00800670        0x2 classes/Hardware.o
+                0x00800670                BK_ENC
+ .bss.BK_LCD    0x00800672       0x18 classes/Hardware.o
+                0x00800672                BK_LCD
+ .bss.MLT_ENC   0x0080068a        0x2 classes/Hardware.o
+                0x0080068a                MLT_ENC
+ .bss.MLT_LCD   0x0080068c       0x18 classes/Hardware.o
+                0x0080068c                MLT_LCD
  .bss.HLT_RTD_BP
-                0x00800624        0x2 classes/Hardware.o
-                0x00800624                HLT_RTD_BP
- .bss.HLT_ENC   0x00800626        0x2 classes/Hardware.o
-                0x00800626                HLT_ENC
- .bss.HLT_LCD   0x00800628       0x18 classes/Hardware.o
-                0x00800628                HLT_LCD
- .bss.MAIN_ENC  0x00800640        0x2 classes/Hardware.o
-                0x00800640                MAIN_ENC
- .bss.MAIN_LCD  0x00800642       0x18 classes/Hardware.o
-                0x00800642                MAIN_LCD
- .bss.RC2_OUT8  0x0080065a       0x11 classes/Hardware.o
-                0x0080065a                RC2_OUT8
- .bss.RC2_OUT7  0x0080066b       0x11 classes/Hardware.o
-                0x0080066b                RC2_OUT7
- .bss.RC2_OUT6  0x0080067c       0x11 classes/Hardware.o
-                0x0080067c                RC2_OUT6
- .bss.RC2_OUT5  0x0080068d       0x11 classes/Hardware.o
-                0x0080068d                RC2_OUT5
- .bss.RC2_OUT4  0x0080069e       0x11 classes/Hardware.o
-                0x0080069e                RC2_OUT4
- .bss.RC2_OUT3  0x008006af       0x11 classes/Hardware.o
-                0x008006af                RC2_OUT3
- .bss.RC2_OUT2  0x008006c0       0x11 classes/Hardware.o
-                0x008006c0                RC2_OUT2
- .bss.RC2_OUT1  0x008006d1       0x11 classes/Hardware.o
-                0x008006d1                RC2_OUT1
- .bss.RC1_OUT8  0x008006e2       0x11 classes/Hardware.o
-                0x008006e2                RC1_OUT8
- .bss.RC1_OUT7  0x008006f3       0x11 classes/Hardware.o
-                0x008006f3                RC1_OUT7
- .bss.RC1_OUT6  0x00800704       0x11 classes/Hardware.o
-                0x00800704                RC1_OUT6
- .bss.RC1_OUT5  0x00800715       0x11 classes/Hardware.o
-                0x00800715                RC1_OUT5
- .bss.RC1_OUT4  0x00800726       0x11 classes/Hardware.o
-                0x00800726                RC1_OUT4
- .bss.RC1_OUT3  0x00800737       0x11 classes/Hardware.o
-                0x00800737                RC1_OUT3
- .bss.RC1_OUT2  0x00800748       0x11 classes/Hardware.o
-                0x00800748                RC1_OUT2
- .bss.RC1_OUT1  0x00800759       0x11 classes/Hardware.o
-                0x00800759                RC1_OUT1
- .bss.analog15  0x0080076a        0x4 classes/Hardware.o
-                0x0080076a                analog15
- .bss.analog14  0x0080076e        0x4 classes/Hardware.o
-                0x0080076e                analog14
- .bss.analog13  0x00800772        0x4 classes/Hardware.o
-                0x00800772                analog13
- .bss.analog12  0x00800776        0x4 classes/Hardware.o
-                0x00800776                analog12
- .bss.analog11  0x0080077a        0x4 classes/Hardware.o
-                0x0080077a                analog11
- .bss.analog10  0x0080077e        0x4 classes/Hardware.o
-                0x0080077e                analog10
- .bss.analog9   0x00800782        0x4 classes/Hardware.o
-                0x00800782                analog9
- .bss.analog8   0x00800786        0x4 classes/Hardware.o
-                0x00800786                analog8
- .bss.analog7   0x0080078a        0x4 classes/Hardware.o
-                0x0080078a                analog7
- .bss.analog6   0x0080078e        0x4 classes/Hardware.o
-                0x0080078e                analog6
- .bss.analog5   0x00800792        0x4 classes/Hardware.o
-                0x00800792                analog5
- .bss.analog4   0x00800796        0x4 classes/Hardware.o
-                0x00800796                analog4
- .bss.analog3   0x0080079a        0x4 classes/Hardware.o
-                0x0080079a                analog3
- .bss.analog2   0x0080079e        0x4 classes/Hardware.o
-                0x0080079e                analog2
- .bss.analog1   0x008007a2        0x4 classes/Hardware.o
-                0x008007a2                analog1
- .bss.analog0   0x008007a6        0x4 classes/Hardware.o
-                0x008007a6                analog0
- .bss.HLT_UI    0x008007aa        0x2 classes/HLT/HLT_UI.o
-                0x008007aa                HLT_UI
- .bss.MAIN_UI   0x008007ac        0x2 classes/MAIN/MAIN_UI.o
-                0x008007ac                MAIN_UI
- .bss.MLT_UI    0x008007ae        0x2 classes/MLT/MLT_UI.o
-                0x008007ae                MLT_UI
+                0x008006a4        0x2 classes/Hardware.o
+                0x008006a4                HLT_RTD_BP
+ .bss.HLT_ENC   0x008006a6        0x2 classes/Hardware.o
+                0x008006a6                HLT_ENC
+ .bss.HLT_LCD   0x008006a8       0x18 classes/Hardware.o
+                0x008006a8                HLT_LCD
+ .bss.MAIN_ENC  0x008006c0        0x2 classes/Hardware.o
+                0x008006c0                MAIN_ENC
+ .bss.MAIN_LCD  0x008006c2       0x18 classes/Hardware.o
+                0x008006c2                MAIN_LCD
+ .bss._ZL6RTDLUT
+                0x008006da        0x6 classes/Hardware.o
+ .bss.ANIN_A14  0x008006e0       0x20 classes/Hardware.o
+                0x008006e0                ANIN_A14
+ .bss.ANIN_A13  0x00800700       0x20 classes/Hardware.o
+                0x00800700                ANIN_A13
+ .bss.ANIN_A12  0x00800720       0x20 classes/Hardware.o
+                0x00800720                ANIN_A12
+ .bss.ANIN_A11  0x00800740       0x20 classes/Hardware.o
+                0x00800740                ANIN_A11
+ .bss.ANIN_A10  0x00800760       0x20 classes/Hardware.o
+                0x00800760                ANIN_A10
+ .bss.ANIN_A9   0x00800780       0x20 classes/Hardware.o
+                0x00800780                ANIN_A9
+ .bss.ANIN_A8   0x008007a0       0x20 classes/Hardware.o
+                0x008007a0                ANIN_A8
+ .bss.ANIN_A7   0x008007c0       0x20 classes/Hardware.o
+                0x008007c0                ANIN_A7
+ .bss.ANIN_A6   0x008007e0       0x20 classes/Hardware.o
+                0x008007e0                ANIN_A6
+ .bss.ANIN_A5   0x00800800       0x20 classes/Hardware.o
+                0x00800800                ANIN_A5
+ .bss.ANIN_A4   0x00800820       0x20 classes/Hardware.o
+                0x00800820                ANIN_A4
+ .bss.ANIN_A3   0x00800840       0x20 classes/Hardware.o
+                0x00800840                ANIN_A3
+ .bss.ANIN_A2   0x00800860       0x20 classes/Hardware.o
+                0x00800860                ANIN_A2
+ .bss.ANIN_A1   0x00800880       0x20 classes/Hardware.o
+                0x00800880                ANIN_A1
+ .bss.ANIN_A0   0x008008a0       0x20 classes/Hardware.o
+                0x008008a0                ANIN_A0
+ .bss.RC2_OUT8  0x008008c0       0x11 classes/Hardware.o
+                0x008008c0                RC2_OUT8
+ .bss.RC2_OUT7  0x008008d1       0x11 classes/Hardware.o
+                0x008008d1                RC2_OUT7
+ .bss.RC2_OUT6  0x008008e2       0x11 classes/Hardware.o
+                0x008008e2                RC2_OUT6
+ .bss.RC2_OUT5  0x008008f3       0x11 classes/Hardware.o
+                0x008008f3                RC2_OUT5
+ .bss.RC2_OUT4  0x00800904       0x11 classes/Hardware.o
+                0x00800904                RC2_OUT4
+ .bss.RC2_OUT3  0x00800915       0x11 classes/Hardware.o
+                0x00800915                RC2_OUT3
+ .bss.RC2_OUT2  0x00800926       0x11 classes/Hardware.o
+                0x00800926                RC2_OUT2
+ .bss.RC2_OUT1  0x00800937       0x11 classes/Hardware.o
+                0x00800937                RC2_OUT1
+ .bss.RC1_OUT8  0x00800948       0x11 classes/Hardware.o
+                0x00800948                RC1_OUT8
+ .bss.RC1_OUT7  0x00800959       0x11 classes/Hardware.o
+                0x00800959                RC1_OUT7
+ .bss.RC1_OUT6  0x0080096a       0x11 classes/Hardware.o
+                0x0080096a                RC1_OUT6
+ .bss.RC1_OUT5  0x0080097b       0x11 classes/Hardware.o
+                0x0080097b                RC1_OUT5
+ .bss.RC1_OUT4  0x0080098c       0x11 classes/Hardware.o
+                0x0080098c                RC1_OUT4
+ .bss.RC1_OUT3  0x0080099d       0x11 classes/Hardware.o
+                0x0080099d                RC1_OUT3
+ .bss.RC1_OUT2  0x008009ae       0x11 classes/Hardware.o
+                0x008009ae                RC1_OUT2
+ .bss.RC1_OUT1  0x008009bf       0x11 classes/Hardware.o
+                0x008009bf                RC1_OUT1
+ .bss.HLT_UI    0x008009d0        0x2 classes/HLT/HLT_UI.o
+                0x008009d0                HLT_UI
+ .bss.MAIN_UI   0x008009d2        0x2 classes/MAIN/MAIN_UI.o
+                0x008009d2                MAIN_UI
+ .bss.MLT_UI    0x008009d4        0x2 classes/MLT/MLT_UI.o
+                0x008009d4                MLT_UI
  .bss._ZZN12ClickEncoder7serviceEvE16doubleClickTicks
-                0x008007b0        0x1 include/ClickEncoder/ClickEncoder.o
+                0x008009d6        0x1 include/ClickEncoder/ClickEncoder.o
  .bss._ZZN12ClickEncoder7serviceEvE12keyDownTicks
-                0x008007b1        0x2 include/ClickEncoder/ClickEncoder.o
+                0x008009d7        0x2 include/ClickEncoder/ClickEncoder.o
  .bss._ZZN12ClickEncoder7serviceEvE15lastButtonCheck
-                0x008007b3        0x4 include/ClickEncoder/ClickEncoder.o
+                0x008009d9        0x4 include/ClickEncoder/ClickEncoder.o
  .bss._ZN8TimerOne11isrCallbackE
-                0x008007b7        0x2 include/TimerOne/TimerOne.o
-                0x008007b7                _ZN8TimerOne11isrCallbackE
+                0x008009dd        0x2 include/TimerOne/TimerOne.o
+                0x008009dd                _ZN8TimerOne11isrCallbackE
  .bss._ZN8TimerOne15clockSelectBitsE
-                0x008007b9        0x1 include/TimerOne/TimerOne.o
-                0x008007b9                _ZN8TimerOne15clockSelectBitsE
+                0x008009df        0x1 include/TimerOne/TimerOne.o
+                0x008009df                _ZN8TimerOne15clockSelectBitsE
  .bss._ZN8TimerOne9pwmPeriodE
-                0x008007ba        0x2 include/TimerOne/TimerOne.o
-                0x008007ba                _ZN8TimerOne9pwmPeriodE
+                0x008009e0        0x2 include/TimerOne/TimerOne.o
+                0x008009e0                _ZN8TimerOne9pwmPeriodE
  .bss.twi_error
-                0x008007bc        0x1 include/Wire/twi.o
+                0x008009e2        0x1 include/Wire/twi.o
  .bss.twi_rxBufferIndex
-                0x008007bd        0x1 include/Wire/twi.o
+                0x008009e3        0x1 include/Wire/twi.o
  .bss.twi_rxBuffer
-                0x008007be       0x20 include/Wire/twi.o
+                0x008009e4       0x20 include/Wire/twi.o
  .bss.twi_txBufferLength
-                0x008007de        0x1 include/Wire/twi.o
+                0x00800a04        0x1 include/Wire/twi.o
  .bss.twi_txBufferIndex
-                0x008007df        0x1 include/Wire/twi.o
+                0x00800a05        0x1 include/Wire/twi.o
  .bss.twi_txBuffer
-                0x008007e0       0x20 include/Wire/twi.o
+                0x00800a06       0x20 include/Wire/twi.o
  .bss.twi_masterBufferLength
-                0x00800800        0x1 include/Wire/twi.o
+                0x00800a26        0x1 include/Wire/twi.o
  .bss.twi_masterBufferIndex
-                0x00800801        0x1 include/Wire/twi.o
+                0x00800a27        0x1 include/Wire/twi.o
  .bss.twi_masterBuffer
-                0x00800802       0x20 include/Wire/twi.o
+                0x00800a28       0x20 include/Wire/twi.o
  .bss.twi_onSlaveReceive
-                0x00800822        0x2 include/Wire/twi.o
+                0x00800a48        0x2 include/Wire/twi.o
  .bss.twi_onSlaveTransmit
-                0x00800824        0x2 include/Wire/twi.o
+                0x00800a4a        0x2 include/Wire/twi.o
  .bss.twi_inRepStart
-                0x00800826        0x1 include/Wire/twi.o
+                0x00800a4c        0x1 include/Wire/twi.o
  .bss.twi_sendStop
-                0x00800827        0x1 include/Wire/twi.o
+                0x00800a4d        0x1 include/Wire/twi.o
  .bss.twi_slarw
-                0x00800828        0x1 include/Wire/twi.o
+                0x00800a4e        0x1 include/Wire/twi.o
  .bss.twi_state
-                0x00800829        0x1 include/Wire/twi.o
- .bss.Wire      0x0080082a        0xc include/Wire/Wire.o
-                0x0080082a                Wire
+                0x00800a4f        0x1 include/Wire/twi.o
+ .bss.Wire      0x00800a50        0xc include/Wire/Wire.o
+                0x00800a50                Wire
  .bss._ZN7TwoWire12transmittingE
-                0x00800836        0x1 include/Wire/Wire.o
-                0x00800836                _ZN7TwoWire12transmittingE
+                0x00800a5c        0x1 include/Wire/Wire.o
+                0x00800a5c                _ZN7TwoWire12transmittingE
  .bss._ZN7TwoWire14txBufferLengthE
-                0x00800837        0x1 include/Wire/Wire.o
-                0x00800837                _ZN7TwoWire14txBufferLengthE
+                0x00800a5d        0x1 include/Wire/Wire.o
+                0x00800a5d                _ZN7TwoWire14txBufferLengthE
  .bss._ZN7TwoWire13txBufferIndexE
-                0x00800838        0x1 include/Wire/Wire.o
-                0x00800838                _ZN7TwoWire13txBufferIndexE
+                0x00800a5e        0x1 include/Wire/Wire.o
+                0x00800a5e                _ZN7TwoWire13txBufferIndexE
  .bss._ZN7TwoWire8txBufferE
-                0x00800839       0x20 include/Wire/Wire.o
-                0x00800839                _ZN7TwoWire8txBufferE
+                0x00800a5f       0x20 include/Wire/Wire.o
+                0x00800a5f                _ZN7TwoWire8txBufferE
  .bss._ZN7TwoWire9txAddressE
-                0x00800859        0x1 include/Wire/Wire.o
-                0x00800859                _ZN7TwoWire9txAddressE
+                0x00800a7f        0x1 include/Wire/Wire.o
+                0x00800a7f                _ZN7TwoWire9txAddressE
  .bss._ZN7TwoWire14rxBufferLengthE
-                0x0080085a        0x1 include/Wire/Wire.o
-                0x0080085a                _ZN7TwoWire14rxBufferLengthE
+                0x00800a80        0x1 include/Wire/Wire.o
+                0x00800a80                _ZN7TwoWire14rxBufferLengthE
  .bss._ZN7TwoWire13rxBufferIndexE
-                0x0080085b        0x1 include/Wire/Wire.o
-                0x0080085b                _ZN7TwoWire13rxBufferIndexE
+                0x00800a81        0x1 include/Wire/Wire.o
+                0x00800a81                _ZN7TwoWire13rxBufferIndexE
  .bss._ZN7TwoWire8rxBufferE
-                0x0080085c       0x20 include/Wire/Wire.o
-                0x0080085c                _ZN7TwoWire8rxBufferE
- .bss.Exec      0x0080087c        0x2 Main.o
-                0x0080087c                Exec
+                0x00800a82       0x20 include/Wire/Wire.o
+                0x00800a82                _ZN7TwoWire8rxBufferE
+ .bss.Exec      0x00800aa2        0x2 Main.o
+                0x00800aa2                Exec
  .bss.BootScreenTime
-                0x0080087e        0x4 Main.o
-                0x0080087e                BootScreenTime
- .bss.Serial    0x00800882       0x9d src/HardwareSerial0.o
-                0x00800882                Serial
- .bss.Serial1   0x0080091f       0x9d src/HardwareSerial1.o
-                0x0080091f                Serial1
- .bss.Serial2   0x008009bc       0x9d src/HardwareSerial2.o
-                0x008009bc                Serial2
- .bss.Serial3   0x00800a59       0x9d src/HardwareSerial3.o
-                0x00800a59                Serial3
+                0x00800aa4        0x4 Main.o
+                0x00800aa4                BootScreenTime
+ .bss.Serial    0x00800aa8       0x9d src/HardwareSerial0.o
+                0x00800aa8                Serial
+ .bss.Serial1   0x00800b45       0x9d src/HardwareSerial1.o
+                0x00800b45                Serial1
+ .bss.Serial2   0x00800be2       0x9d src/HardwareSerial2.o
+                0x00800be2                Serial2
+ .bss.Serial3   0x00800c7f       0x9d src/HardwareSerial3.o
+                0x00800c7f                Serial3
  .bss._ZL11INADDR_NONE
-                0x00800af6        0x6 src/IPAddress.o
+                0x00800d1c        0x6 src/IPAddress.o
  .bss.timer2_pin_mask
-                0x00800afc        0x1 src/Tone.o
-                0x00800afc                timer2_pin_mask
+                0x00800d22        0x1 src/Tone.o
+                0x00800d22                timer2_pin_mask
  .bss.timer2_pin_port
-                0x00800afd        0x2 src/Tone.o
-                0x00800afd                timer2_pin_port
+                0x00800d23        0x2 src/Tone.o
+                0x00800d23                timer2_pin_port
  .bss.timer2_toggle_count
-                0x00800aff        0x4 src/Tone.o
-                0x00800aff                timer2_toggle_count
- .bss.intFunc   0x00800b03       0x10 src/WInterrupts.o
+                0x00800d25        0x4 src/Tone.o
+                0x00800d25                timer2_toggle_count
+ .bss.intFunc   0x00800d29       0x10 src/WInterrupts.o
  .bss.timer0_fract
-                0x00800b13        0x1 src/wiring.o
+                0x00800d39        0x1 src/wiring.o
  .bss.timer0_millis
-                0x00800b14        0x4 src/wiring.o
-                0x00800b14                timer0_millis
+                0x00800d3a        0x4 src/wiring.o
+                0x00800d3a                timer0_millis
  .bss.timer0_overflow_count
-                0x00800b18        0x4 src/wiring.o
-                0x00800b18                timer0_overflow_count
+                0x00800d3e        0x4 src/wiring.o
+                0x00800d3e                timer0_overflow_count
  *(COMMON)
- COMMON         0x00800b1c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
-                0x00800b1c                __brkval
-                0x00800b1e                __flp
-                0x00800b20                PROVIDE (__bss_end, .)
-                0x00008e36                __data_load_start = LOADADDR (.data)
-                0x00009224                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800d42        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr6\libc.a(malloc.o)
+                0x00800d42                __brkval
+                0x00800d44                __flp
+                0x00800d46                PROVIDE (__bss_end, .)
+                0x00007a28                __data_load_start = LOADADDR (.data)
+                0x00007e96                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800b20        0x0
-                0x00800b20                PROVIDE (__noinit_start, .)
+.noinit         0x00800d46        0x0
+                0x00800d46                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800b20                PROVIDE (__noinit_end, .)
-                0x00800b20                _end = .
-                0x00800b20                PROVIDE (__heap_start, .)
+                0x00800d46                PROVIDE (__noinit_end, .)
+                0x00800d46                _end = .
+                0x00800d46                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -3135,7 +3175,9 @@ END GROUP
  *(.comment)
  .comment       0x00000000       0x30 classes/BK/BK_UI.o
                                  0x31 (size before relaxing)
- .comment       0x00000030       0x31 classes/DigitalIO.o
+ .comment       0x00000030       0x31 classes/EnhancedIO/AnalogIn.o
+ .comment       0x00000030       0x31 classes/EnhancedIO/DigitalIO.o
+ .comment       0x00000030       0x31 classes/EZUI/Controls/EZUI_Control_Label.o
  .comment       0x00000030       0x31 classes/EZUI/Controls/EZUI_Control_Link.o
  .comment       0x00000030       0x31 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
  .comment       0x00000030       0x31 classes/Hardware.o
@@ -3199,404 +3241,422 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000     0x10c0
+.debug_aranges  0x00000000     0x11f0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x28 classes/BK/BK_UI.o
  .debug_aranges
-                0x00000028       0x50 classes/DigitalIO.o
+                0x00000028       0x88 classes/EnhancedIO/AnalogIn.o
  .debug_aranges
-                0x00000078       0x38 classes/EZUI/Controls/EZUI_Control_Link.o
+                0x000000b0       0x50 classes/EnhancedIO/DigitalIO.o
  .debug_aranges
-                0x000000b0       0x70 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+                0x00000100       0xb0 classes/EZUI/Controls/EZUI_Control_Label.o
  .debug_aranges
-                0x00000120       0x40 classes/Hardware.o
+                0x000001b0       0x38 classes/EZUI/Controls/EZUI_Control_Link.o
  .debug_aranges
-                0x00000160       0x28 classes/HLT/HLT_UI.o
+                0x000001e8       0x70 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
  .debug_aranges
-                0x00000188       0x28 classes/MAIN/MAIN_UI.o
+                0x00000258       0x40 classes/Hardware.o
  .debug_aranges
-                0x000001b0       0x28 classes/MLT/MLT_UI.o
+                0x00000298       0x28 classes/HLT/HLT_UI.o
  .debug_aranges
-                0x000001d8       0x28 classes/EZUI/ClickEncoderWithEvents.o
+                0x000002c0       0x28 classes/MAIN/MAIN_UI.o
  .debug_aranges
-                0x00000200       0xb0 classes/EZUI/EZUI_Menu.o
+                0x000002e8       0x28 classes/MLT/MLT_UI.o
  .debug_aranges
-                0x000002b0       0x48 classes/EZUI/EZUI_MenuItem.o
+                0x00000310       0x28 classes/EZUI/ClickEncoderWithEvents.o
  .debug_aranges
-                0x000002f8      0x108 classes/EZUI/EZUI_Page.o
+                0x00000338       0xb0 classes/EZUI/EZUI_Menu.o
  .debug_aranges
-                0x00000400       0xf0 classes/EZUI/EZUI_PageItem.o
+                0x000003e8       0x48 classes/EZUI/EZUI_MenuItem.o
  .debug_aranges
-                0x000004f0       0x70 classes/EZUI/EZUI.o
+                0x00000430      0x118 classes/EZUI/EZUI_Page.o
  .debug_aranges
-                0x00000560       0x40 classes/Executive.o
+                0x00000548       0xc8 classes/EZUI/EZUI_PageItem.o
  .debug_aranges
-                0x000005a0       0x30 classes/LUT.o
+                0x00000610       0x70 classes/EZUI/EZUI.o
  .debug_aranges
-                0x000005d0       0x38 classes/WheatstoneBridge.o
+                0x00000680       0x40 classes/Executive.o
  .debug_aranges
-                0x00000608       0x38 include/ClickEncoder/ClickEncoder.o
+                0x000006c0       0x40 classes/LUT.o
  .debug_aranges
-                0x00000640       0x58 include/LiquidCrystal/I2CIO.o
+                0x00000700       0x38 classes/WheatstoneBridge.o
  .debug_aranges
-                0x00000698       0xf8 include/LiquidCrystal/LCD.o
+                0x00000738       0x38 include/ClickEncoder/ClickEncoder.o
  .debug_aranges
-                0x00000790       0x88 include/LiquidCrystal/LiquidCrystal_I2C.o
+                0x00000770       0x58 include/LiquidCrystal/I2CIO.o
  .debug_aranges
-                0x00000818       0x20 include/TimerOne/TimerOne.o
+                0x000007c8       0xf8 include/LiquidCrystal/LCD.o
  .debug_aranges
-                0x00000838       0x70 include/Wire/twi.o
+                0x000008c0       0x88 include/LiquidCrystal/LiquidCrystal_I2C.o
  .debug_aranges
-                0x000008a8       0xd8 include/Wire/Wire.o
+                0x00000948       0x20 include/TimerOne/TimerOne.o
  .debug_aranges
-                0x00000980       0x30 Main.o
+                0x00000968       0x70 include/Wire/twi.o
  .debug_aranges
-                0x000009b0       0x28 src/abi.o
+                0x000009d8       0xd8 include/Wire/Wire.o
  .debug_aranges
-                0x000009d8       0x68 src/HardwareSerial.o
+                0x00000ab0       0x30 Main.o
  .debug_aranges
-                0x00000a40       0x38 src/HardwareSerial0.o
+                0x00000ae0       0x28 src/abi.o
  .debug_aranges
-                0x00000a78       0x38 src/HardwareSerial1.o
+                0x00000b08       0x68 src/HardwareSerial.o
  .debug_aranges
-                0x00000ab0       0x38 src/HardwareSerial2.o
+                0x00000b70       0x38 src/HardwareSerial0.o
  .debug_aranges
-                0x00000ae8       0x38 src/HardwareSerial3.o
+                0x00000ba8       0x38 src/HardwareSerial1.o
  .debug_aranges
-                0x00000b20       0x20 src/hooks.o
+                0x00000be0       0x38 src/HardwareSerial2.o
  .debug_aranges
-                0x00000b40       0x60 src/IPAddress.o
+                0x00000c18       0x38 src/HardwareSerial3.o
  .debug_aranges
-                0x00000ba0       0x30 src/main.o
+                0x00000c50       0x20 src/hooks.o
  .debug_aranges
-                0x00000bd0       0x38 src/new.o
+                0x00000c70       0x60 src/IPAddress.o
  .debug_aranges
-                0x00000c08       0xe8 src/Print.o
+                0x00000cd0       0x30 src/main.o
  .debug_aranges
-                0x00000cf0       0x38 src/Tone.o
+                0x00000d00       0x38 src/new.o
  .debug_aranges
-                0x00000d28       0x68 src/WInterrupts.o
+                0x00000d38       0xe8 src/Print.o
  .debug_aranges
-                0x00000d90       0x48 src/wiring.o
+                0x00000e20       0x38 src/Tone.o
  .debug_aranges
-                0x00000dd8       0x30 src/wiring_analog.o
+                0x00000e58       0x68 src/WInterrupts.o
  .debug_aranges
-                0x00000e08       0x38 src/wiring_digital.o
+                0x00000ec0       0x48 src/wiring.o
  .debug_aranges
-                0x00000e40      0x280 src/WString.o
+                0x00000f08       0x30 src/wiring_analog.o
+ .debug_aranges
+                0x00000f38       0x38 src/wiring_digital.o
+ .debug_aranges
+                0x00000f70      0x280 src/WString.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x4da15
+.debug_info     0x00000000    0x53508
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000     0x37a9 classes/BK/BK_UI.o
- .debug_info    0x000037a9     0x13c6 classes/DigitalIO.o
- .debug_info    0x00004b6f     0x31d7 classes/EZUI/Controls/EZUI_Control_Link.o
- .debug_info    0x00007d46     0x1b11 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
- .debug_info    0x00009857     0x4d60 classes/Hardware.o
- .debug_info    0x0000e5b7     0x37a9 classes/HLT/HLT_UI.o
- .debug_info    0x00011d60     0x43ef classes/MAIN/MAIN_UI.o
- .debug_info    0x0001614f     0x37a9 classes/MLT/MLT_UI.o
- .debug_info    0x000198f8     0x3122 classes/EZUI/ClickEncoderWithEvents.o
- .debug_info    0x0001ca1a     0x4075 classes/EZUI/EZUI_Menu.o
- .debug_info    0x00020a8f     0x373a classes/EZUI/EZUI_MenuItem.o
- .debug_info    0x000241c9     0x52b8 classes/EZUI/EZUI_Page.o
- .debug_info    0x00029481     0x5037 classes/EZUI/EZUI_PageItem.o
- .debug_info    0x0002e4b8     0x3414 classes/EZUI/EZUI.o
- .debug_info    0x000318cc     0x36a5 classes/Executive.o
- .debug_info    0x00034f71      0x59b classes/LUT.o
- .debug_info    0x0003550c     0x1525 classes/WheatstoneBridge.o
- .debug_info    0x00036a31      0x69a include/ClickEncoder/ClickEncoder.o
- .debug_info    0x000370cb      0x723 include/LiquidCrystal/I2CIO.o
- .debug_info    0x000377ee     0x117c include/LiquidCrystal/LCD.o
- .debug_info    0x0003896a     0x12c0 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_info    0x00039c2a      0x3d8 include/TimerOne/TimerOne.o
- .debug_info    0x0003a002      0x70f include/Wire/twi.o
- .debug_info    0x0003a711     0x2229 include/Wire/Wire.o
- .debug_info    0x0003c93a      0x8f2 Main.o
- .debug_info    0x0003d22c       0x8e src/abi.o
- .debug_info    0x0003d2ba     0x1b3b src/HardwareSerial.o
- .debug_info    0x0003edf5     0x1782 src/HardwareSerial0.o
- .debug_info    0x00040577     0x1782 src/HardwareSerial1.o
- .debug_info    0x00041cf9     0x1782 src/HardwareSerial2.o
- .debug_info    0x0004347b     0x1788 src/HardwareSerial3.o
- .debug_info    0x00044c03       0x3e src/hooks.o
- .debug_info    0x00044c41      0x9ed src/IPAddress.o
- .debug_info    0x0004562e      0x24b src/main.o
- .debug_info    0x00045879      0x188 src/new.o
- .debug_info    0x00045a01     0x2603 src/Print.o
- .debug_info    0x00048004      0xa43 src/Tone.o
- .debug_info    0x00048a47      0x2ea src/WInterrupts.o
- .debug_info    0x00048d31      0x319 src/wiring.o
- .debug_info    0x0004904a      0x32f src/wiring_analog.o
- .debug_info    0x00049379      0x635 src/wiring_digital.o
- .debug_info    0x000499ae     0x4067 src/WString.o
+ .debug_info    0x00000000     0x3aba classes/BK/BK_UI.o
+ .debug_info    0x00003aba      0xda9 classes/EnhancedIO/AnalogIn.o
+ .debug_info    0x00004863     0x13c6 classes/EnhancedIO/DigitalIO.o
+ .debug_info    0x00005c29     0x26d3 classes/EZUI/Controls/EZUI_Control_Label.o
+ .debug_info    0x000082fc     0x35d9 classes/EZUI/Controls/EZUI_Control_Link.o
+ .debug_info    0x0000b8d5     0x1b11 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+ .debug_info    0x0000d3e6     0x577a classes/Hardware.o
+ .debug_info    0x00012b60     0x3aba classes/HLT/HLT_UI.o
+ .debug_info    0x0001661a     0x46a4 classes/MAIN/MAIN_UI.o
+ .debug_info    0x0001acbe     0x3b63 classes/MLT/MLT_UI.o
+ .debug_info    0x0001e821     0x3517 classes/EZUI/ClickEncoderWithEvents.o
+ .debug_info    0x00021d38     0x4468 classes/EZUI/EZUI_Menu.o
+ .debug_info    0x000261a0     0x3b2f classes/EZUI/EZUI_MenuItem.o
+ .debug_info    0x00029ccf     0x4f44 classes/EZUI/EZUI_Page.o
+ .debug_info    0x0002ec13     0x4970 classes/EZUI/EZUI_PageItem.o
+ .debug_info    0x00033583     0x3809 classes/EZUI/EZUI.o
+ .debug_info    0x00036d8c     0x39d7 classes/Executive.o
+ .debug_info    0x0003a763      0x86a classes/LUT.o
+ .debug_info    0x0003afcd     0x1557 classes/WheatstoneBridge.o
+ .debug_info    0x0003c524      0x69a include/ClickEncoder/ClickEncoder.o
+ .debug_info    0x0003cbbe      0x723 include/LiquidCrystal/I2CIO.o
+ .debug_info    0x0003d2e1     0x117c include/LiquidCrystal/LCD.o
+ .debug_info    0x0003e45d     0x12c0 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_info    0x0003f71d      0x3d8 include/TimerOne/TimerOne.o
+ .debug_info    0x0003faf5      0x70f include/Wire/twi.o
+ .debug_info    0x00040204     0x2229 include/Wire/Wire.o
+ .debug_info    0x0004242d      0x8f2 Main.o
+ .debug_info    0x00042d1f       0x8e src/abi.o
+ .debug_info    0x00042dad     0x1b3b src/HardwareSerial.o
+ .debug_info    0x000448e8     0x1782 src/HardwareSerial0.o
+ .debug_info    0x0004606a     0x1782 src/HardwareSerial1.o
+ .debug_info    0x000477ec     0x1782 src/HardwareSerial2.o
+ .debug_info    0x00048f6e     0x1788 src/HardwareSerial3.o
+ .debug_info    0x0004a6f6       0x3e src/hooks.o
+ .debug_info    0x0004a734      0x9ed src/IPAddress.o
+ .debug_info    0x0004b121      0x24b src/main.o
+ .debug_info    0x0004b36c      0x188 src/new.o
+ .debug_info    0x0004b4f4     0x2603 src/Print.o
+ .debug_info    0x0004daf7      0xa43 src/Tone.o
+ .debug_info    0x0004e53a      0x2ea src/WInterrupts.o
+ .debug_info    0x0004e824      0x319 src/wiring.o
+ .debug_info    0x0004eb3d      0x32f src/wiring_analog.o
+ .debug_info    0x0004ee6c      0x635 src/wiring_digital.o
+ .debug_info    0x0004f4a1     0x4067 src/WString.o
 
-.debug_abbrev   0x00000000     0x83ce
+.debug_abbrev   0x00000000     0x8dcc
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x49f classes/BK/BK_UI.o
- .debug_abbrev  0x0000049f      0x30c classes/DigitalIO.o
- .debug_abbrev  0x000007ab      0x3f6 classes/EZUI/Controls/EZUI_Control_Link.o
- .debug_abbrev  0x00000ba1      0x2bf classes/EZUI/Controls/EZUI_Control_ToggleOption.o
- .debug_abbrev  0x00000e60      0x561 classes/Hardware.o
- .debug_abbrev  0x000013c1      0x49f classes/HLT/HLT_UI.o
- .debug_abbrev  0x00001860      0x49f classes/MAIN/MAIN_UI.o
- .debug_abbrev  0x00001cff      0x49f classes/MLT/MLT_UI.o
- .debug_abbrev  0x0000219e      0x3d8 classes/EZUI/ClickEncoderWithEvents.o
- .debug_abbrev  0x00002576      0x594 classes/EZUI/EZUI_Menu.o
- .debug_abbrev  0x00002b0a      0x491 classes/EZUI/EZUI_MenuItem.o
- .debug_abbrev  0x00002f9b      0x61c classes/EZUI/EZUI_Page.o
- .debug_abbrev  0x000035b7      0x4a7 classes/EZUI/EZUI_PageItem.o
- .debug_abbrev  0x00003a5e      0x442 classes/EZUI/EZUI.o
- .debug_abbrev  0x00003ea0      0x41e classes/Executive.o
- .debug_abbrev  0x000042be      0x1c1 classes/LUT.o
- .debug_abbrev  0x0000447f      0x29a classes/WheatstoneBridge.o
- .debug_abbrev  0x00004719      0x262 include/ClickEncoder/ClickEncoder.o
- .debug_abbrev  0x0000497b      0x22d include/LiquidCrystal/I2CIO.o
- .debug_abbrev  0x00004ba8      0x365 include/LiquidCrystal/LCD.o
- .debug_abbrev  0x00004f0d      0x372 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_abbrev  0x0000527f      0x126 include/TimerOne/TimerOne.o
- .debug_abbrev  0x000053a5      0x251 include/Wire/twi.o
- .debug_abbrev  0x000055f6      0x4e2 include/Wire/Wire.o
- .debug_abbrev  0x00005ad8      0x2fa Main.o
- .debug_abbrev  0x00005dd2       0x5e src/abi.o
- .debug_abbrev  0x00005e30      0x370 src/HardwareSerial.o
- .debug_abbrev  0x000061a0      0x35d src/HardwareSerial0.o
- .debug_abbrev  0x000064fd      0x35d src/HardwareSerial1.o
- .debug_abbrev  0x0000685a      0x35d src/HardwareSerial2.o
- .debug_abbrev  0x00006bb7      0x366 src/HardwareSerial3.o
- .debug_abbrev  0x00006f1d       0x2a src/hooks.o
- .debug_abbrev  0x00006f47      0x33d src/IPAddress.o
- .debug_abbrev  0x00007284       0xd1 src/main.o
- .debug_abbrev  0x00007355       0xd6 src/new.o
- .debug_abbrev  0x0000742b      0x3b0 src/Print.o
- .debug_abbrev  0x000077db      0x261 src/Tone.o
- .debug_abbrev  0x00007a3c       0xe6 src/WInterrupts.o
- .debug_abbrev  0x00007b22      0x145 src/wiring.o
- .debug_abbrev  0x00007c67      0x190 src/wiring_analog.o
- .debug_abbrev  0x00007df7      0x15a src/wiring_digital.o
- .debug_abbrev  0x00007f51      0x47d src/WString.o
+ .debug_abbrev  0x00000000      0x4b0 classes/BK/BK_UI.o
+ .debug_abbrev  0x000004b0      0x45d classes/EnhancedIO/AnalogIn.o
+ .debug_abbrev  0x0000090d      0x30c classes/EnhancedIO/DigitalIO.o
+ .debug_abbrev  0x00000c19      0x43e classes/EZUI/Controls/EZUI_Control_Label.o
+ .debug_abbrev  0x00001057      0x410 classes/EZUI/Controls/EZUI_Control_Link.o
+ .debug_abbrev  0x00001467      0x2bf classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+ .debug_abbrev  0x00001726      0x581 classes/Hardware.o
+ .debug_abbrev  0x00001ca7      0x4b0 classes/HLT/HLT_UI.o
+ .debug_abbrev  0x00002157      0x4b0 classes/MAIN/MAIN_UI.o
+ .debug_abbrev  0x00002607      0x4b0 classes/MLT/MLT_UI.o
+ .debug_abbrev  0x00002ab7      0x3f0 classes/EZUI/ClickEncoderWithEvents.o
+ .debug_abbrev  0x00002ea7      0x5a5 classes/EZUI/EZUI_Menu.o
+ .debug_abbrev  0x0000344c      0x4a9 classes/EZUI/EZUI_MenuItem.o
+ .debug_abbrev  0x000038f5      0x619 classes/EZUI/EZUI_Page.o
+ .debug_abbrev  0x00003f0e      0x549 classes/EZUI/EZUI_PageItem.o
+ .debug_abbrev  0x00004457      0x45a classes/EZUI/EZUI.o
+ .debug_abbrev  0x000048b1      0x40b classes/Executive.o
+ .debug_abbrev  0x00004cbc      0x1c1 classes/LUT.o
+ .debug_abbrev  0x00004e7d      0x29a classes/WheatstoneBridge.o
+ .debug_abbrev  0x00005117      0x262 include/ClickEncoder/ClickEncoder.o
+ .debug_abbrev  0x00005379      0x22d include/LiquidCrystal/I2CIO.o
+ .debug_abbrev  0x000055a6      0x365 include/LiquidCrystal/LCD.o
+ .debug_abbrev  0x0000590b      0x372 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_abbrev  0x00005c7d      0x126 include/TimerOne/TimerOne.o
+ .debug_abbrev  0x00005da3      0x251 include/Wire/twi.o
+ .debug_abbrev  0x00005ff4      0x4e2 include/Wire/Wire.o
+ .debug_abbrev  0x000064d6      0x2fa Main.o
+ .debug_abbrev  0x000067d0       0x5e src/abi.o
+ .debug_abbrev  0x0000682e      0x370 src/HardwareSerial.o
+ .debug_abbrev  0x00006b9e      0x35d src/HardwareSerial0.o
+ .debug_abbrev  0x00006efb      0x35d src/HardwareSerial1.o
+ .debug_abbrev  0x00007258      0x35d src/HardwareSerial2.o
+ .debug_abbrev  0x000075b5      0x366 src/HardwareSerial3.o
+ .debug_abbrev  0x0000791b       0x2a src/hooks.o
+ .debug_abbrev  0x00007945      0x33d src/IPAddress.o
+ .debug_abbrev  0x00007c82       0xd1 src/main.o
+ .debug_abbrev  0x00007d53       0xd6 src/new.o
+ .debug_abbrev  0x00007e29      0x3b0 src/Print.o
+ .debug_abbrev  0x000081d9      0x261 src/Tone.o
+ .debug_abbrev  0x0000843a       0xe6 src/WInterrupts.o
+ .debug_abbrev  0x00008520      0x145 src/wiring.o
+ .debug_abbrev  0x00008665      0x190 src/wiring_analog.o
+ .debug_abbrev  0x000087f5      0x15a src/wiring_digital.o
+ .debug_abbrev  0x0000894f      0x47d src/WString.o
 
-.debug_line     0x00000000     0xb3ab
+.debug_line     0x00000000     0xc1bf
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x3d8 classes/BK/BK_UI.o
- .debug_line    0x000003d8      0x1fa classes/DigitalIO.o
- .debug_line    0x000005d2      0x373 classes/EZUI/Controls/EZUI_Control_Link.o
- .debug_line    0x00000945      0x385 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
- .debug_line    0x00000cca      0x5e9 classes/Hardware.o
- .debug_line    0x000012b3      0x3e2 classes/HLT/HLT_UI.o
- .debug_line    0x00001695      0x46c classes/MAIN/MAIN_UI.o
- .debug_line    0x00001b01      0x3e2 classes/MLT/MLT_UI.o
- .debug_line    0x00001ee3      0x430 classes/EZUI/ClickEncoderWithEvents.o
- .debug_line    0x00002313      0x94d classes/EZUI/EZUI_Menu.o
- .debug_line    0x00002c60      0x502 classes/EZUI/EZUI_MenuItem.o
- .debug_line    0x00003162      0xe56 classes/EZUI/EZUI_Page.o
- .debug_line    0x00003fb8      0xaee classes/EZUI/EZUI_PageItem.o
- .debug_line    0x00004aa6      0x4c6 classes/EZUI/EZUI.o
- .debug_line    0x00004f6c      0x462 classes/Executive.o
- .debug_line    0x000053ce      0x17f classes/LUT.o
- .debug_line    0x0000554d      0x287 classes/WheatstoneBridge.o
- .debug_line    0x000057d4      0x329 include/ClickEncoder/ClickEncoder.o
- .debug_line    0x00005afd      0x318 include/LiquidCrystal/I2CIO.o
- .debug_line    0x00005e15      0x585 include/LiquidCrystal/LCD.o
- .debug_line    0x0000639a      0x597 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_line    0x00006931       0xef include/TimerOne/TimerOne.o
- .debug_line    0x00006a20      0x510 include/Wire/twi.o
- .debug_line    0x00006f30      0x50e include/Wire/Wire.o
- .debug_line    0x0000743e      0x352 Main.o
- .debug_line    0x00007790       0xba src/abi.o
- .debug_line    0x0000784a      0x49f src/HardwareSerial.o
- .debug_line    0x00007ce9      0x238 src/HardwareSerial0.o
- .debug_line    0x00007f21      0x238 src/HardwareSerial1.o
- .debug_line    0x00008159      0x236 src/HardwareSerial2.o
- .debug_line    0x0000838f      0x236 src/HardwareSerial3.o
- .debug_line    0x000085c5       0x3c src/hooks.o
- .debug_line    0x00008601      0x2a9 src/IPAddress.o
- .debug_line    0x000088aa      0x13a src/main.o
- .debug_line    0x000089e4      0x162 src/new.o
- .debug_line    0x00008b46      0x643 src/Print.o
- .debug_line    0x00009189      0x515 src/Tone.o
- .debug_line    0x0000969e      0x30e src/WInterrupts.o
- .debug_line    0x000099ac      0x2ac src/wiring.o
- .debug_line    0x00009c58      0x2a7 src/wiring_analog.o
- .debug_line    0x00009eff      0x27f src/wiring_digital.o
- .debug_line    0x0000a17e     0x122d src/WString.o
+ .debug_line    0x00000000      0x410 classes/BK/BK_UI.o
+ .debug_line    0x00000410      0x5b8 classes/EnhancedIO/AnalogIn.o
+ .debug_line    0x000009c8      0x205 classes/EnhancedIO/DigitalIO.o
+ .debug_line    0x00000bcd      0x654 classes/EZUI/Controls/EZUI_Control_Label.o
+ .debug_line    0x00001221      0x3b1 classes/EZUI/Controls/EZUI_Control_Link.o
+ .debug_line    0x000015d2      0x390 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+ .debug_line    0x00001962      0x6f3 classes/Hardware.o
+ .debug_line    0x00002055      0x41a classes/HLT/HLT_UI.o
+ .debug_line    0x0000246f      0x4aa classes/MAIN/MAIN_UI.o
+ .debug_line    0x00002919      0x420 classes/MLT/MLT_UI.o
+ .debug_line    0x00002d39      0x46e classes/EZUI/ClickEncoderWithEvents.o
+ .debug_line    0x000031a7      0x98b classes/EZUI/EZUI_Menu.o
+ .debug_line    0x00003b32      0x533 classes/EZUI/EZUI_MenuItem.o
+ .debug_line    0x00004065      0xe39 classes/EZUI/EZUI_Page.o
+ .debug_line    0x00004e9e      0x952 classes/EZUI/EZUI_PageItem.o
+ .debug_line    0x000057f0      0x4f7 classes/EZUI/EZUI.o
+ .debug_line    0x00005ce7      0x4a4 classes/Executive.o
+ .debug_line    0x0000618b      0x1d6 classes/LUT.o
+ .debug_line    0x00006361      0x287 classes/WheatstoneBridge.o
+ .debug_line    0x000065e8      0x329 include/ClickEncoder/ClickEncoder.o
+ .debug_line    0x00006911      0x318 include/LiquidCrystal/I2CIO.o
+ .debug_line    0x00006c29      0x585 include/LiquidCrystal/LCD.o
+ .debug_line    0x000071ae      0x597 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_line    0x00007745       0xef include/TimerOne/TimerOne.o
+ .debug_line    0x00007834      0x510 include/Wire/twi.o
+ .debug_line    0x00007d44      0x50e include/Wire/Wire.o
+ .debug_line    0x00008252      0x352 Main.o
+ .debug_line    0x000085a4       0xba src/abi.o
+ .debug_line    0x0000865e      0x49f src/HardwareSerial.o
+ .debug_line    0x00008afd      0x238 src/HardwareSerial0.o
+ .debug_line    0x00008d35      0x238 src/HardwareSerial1.o
+ .debug_line    0x00008f6d      0x236 src/HardwareSerial2.o
+ .debug_line    0x000091a3      0x236 src/HardwareSerial3.o
+ .debug_line    0x000093d9       0x3c src/hooks.o
+ .debug_line    0x00009415      0x2a9 src/IPAddress.o
+ .debug_line    0x000096be      0x13a src/main.o
+ .debug_line    0x000097f8      0x162 src/new.o
+ .debug_line    0x0000995a      0x643 src/Print.o
+ .debug_line    0x00009f9d      0x515 src/Tone.o
+ .debug_line    0x0000a4b2      0x30e src/WInterrupts.o
+ .debug_line    0x0000a7c0      0x2ac src/wiring.o
+ .debug_line    0x0000aa6c      0x2a7 src/wiring_analog.o
+ .debug_line    0x0000ad13      0x27f src/wiring_digital.o
+ .debug_line    0x0000af92     0x122d src/WString.o
 
-.debug_frame    0x00000000     0x3d28
+.debug_frame    0x00000000     0x3ff0
  *(.debug_frame)
- .debug_frame   0x00000000       0x88 classes/BK/BK_UI.o
- .debug_frame   0x00000088      0x110 classes/DigitalIO.o
- .debug_frame   0x00000198       0x94 classes/EZUI/Controls/EZUI_Control_Link.o
- .debug_frame   0x0000022c      0x1e4 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
- .debug_frame   0x00000410       0xc8 classes/Hardware.o
- .debug_frame   0x000004d8       0x88 classes/HLT/HLT_UI.o
- .debug_frame   0x00000560       0xa8 classes/MAIN/MAIN_UI.o
- .debug_frame   0x00000608       0x88 classes/MLT/MLT_UI.o
- .debug_frame   0x00000690       0x40 classes/EZUI/ClickEncoderWithEvents.o
- .debug_frame   0x000006d0      0x39c classes/EZUI/EZUI_Menu.o
- .debug_frame   0x00000a6c       0xc4 classes/EZUI/EZUI_MenuItem.o
- .debug_frame   0x00000b30      0x560 classes/EZUI/EZUI_Page.o
- .debug_frame   0x00001090      0x5d0 classes/EZUI/EZUI_PageItem.o
- .debug_frame   0x00001660      0x104 classes/EZUI/EZUI.o
- .debug_frame   0x00001764       0xa0 classes/Executive.o
- .debug_frame   0x00001804       0xb8 classes/LUT.o
- .debug_frame   0x000018bc      0x1cc classes/WheatstoneBridge.o
- .debug_frame   0x00001a88       0x98 include/ClickEncoder/ClickEncoder.o
- .debug_frame   0x00001b20       0xc8 include/LiquidCrystal/I2CIO.o
- .debug_frame   0x00001be8      0x228 include/LiquidCrystal/LCD.o
- .debug_frame   0x00001e10      0x270 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_frame   0x00002080       0x6c include/TimerOne/TimerOne.o
- .debug_frame   0x000020ec      0x114 include/Wire/twi.o
- .debug_frame   0x00002200      0x1ec include/Wire/Wire.o
- .debug_frame   0x000023ec       0x50 Main.o
- .debug_frame   0x0000243c       0x34 src/abi.o
- .debug_frame   0x00002470      0x104 src/HardwareSerial.o
- .debug_frame   0x00002574       0xcc src/HardwareSerial0.o
- .debug_frame   0x00002640       0xcc src/HardwareSerial1.o
- .debug_frame   0x0000270c       0xcc src/HardwareSerial2.o
- .debug_frame   0x000027d8       0xcc src/HardwareSerial3.o
- .debug_frame   0x000028a4       0x24 src/hooks.o
- .debug_frame   0x000028c8       0xe8 src/IPAddress.o
- .debug_frame   0x000029b0       0x44 src/main.o
- .debug_frame   0x000029f4       0x54 src/new.o
- .debug_frame   0x00002a48      0x3a8 src/Print.o
- .debug_frame   0x00002df0      0x100 src/Tone.o
- .debug_frame   0x00002ef0      0x2f4 src/WInterrupts.o
- .debug_frame   0x000031e4       0xbc src/wiring.o
- .debug_frame   0x000032a0       0x54 src/wiring_analog.o
- .debug_frame   0x000032f4       0x7c src/wiring_digital.o
- .debug_frame   0x00003370      0x9b8 src/WString.o
+ .debug_frame   0x00000000       0x80 classes/BK/BK_UI.o
+ .debug_frame   0x00000080      0x220 classes/EnhancedIO/AnalogIn.o
+ .debug_frame   0x000002a0      0x110 classes/EnhancedIO/DigitalIO.o
+ .debug_frame   0x000003b0      0x324 classes/EZUI/Controls/EZUI_Control_Label.o
+ .debug_frame   0x000006d4       0x94 classes/EZUI/Controls/EZUI_Control_Link.o
+ .debug_frame   0x00000768      0x1e4 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+ .debug_frame   0x0000094c       0xc8 classes/Hardware.o
+ .debug_frame   0x00000a14       0x80 classes/HLT/HLT_UI.o
+ .debug_frame   0x00000a94       0xa0 classes/MAIN/MAIN_UI.o
+ .debug_frame   0x00000b34       0x80 classes/MLT/MLT_UI.o
+ .debug_frame   0x00000bb4       0x40 classes/EZUI/ClickEncoderWithEvents.o
+ .debug_frame   0x00000bf4      0x39c classes/EZUI/EZUI_Menu.o
+ .debug_frame   0x00000f90       0xc4 classes/EZUI/EZUI_MenuItem.o
+ .debug_frame   0x00001054      0x598 classes/EZUI/EZUI_Page.o
+ .debug_frame   0x000015ec      0x308 classes/EZUI/EZUI_PageItem.o
+ .debug_frame   0x000018f4      0x104 classes/EZUI/EZUI.o
+ .debug_frame   0x000019f8       0xa0 classes/Executive.o
+ .debug_frame   0x00001a98       0xec classes/LUT.o
+ .debug_frame   0x00001b84      0x1cc classes/WheatstoneBridge.o
+ .debug_frame   0x00001d50       0x98 include/ClickEncoder/ClickEncoder.o
+ .debug_frame   0x00001de8       0xc8 include/LiquidCrystal/I2CIO.o
+ .debug_frame   0x00001eb0      0x228 include/LiquidCrystal/LCD.o
+ .debug_frame   0x000020d8      0x270 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_frame   0x00002348       0x6c include/TimerOne/TimerOne.o
+ .debug_frame   0x000023b4      0x114 include/Wire/twi.o
+ .debug_frame   0x000024c8      0x1ec include/Wire/Wire.o
+ .debug_frame   0x000026b4       0x50 Main.o
+ .debug_frame   0x00002704       0x34 src/abi.o
+ .debug_frame   0x00002738      0x104 src/HardwareSerial.o
+ .debug_frame   0x0000283c       0xcc src/HardwareSerial0.o
+ .debug_frame   0x00002908       0xcc src/HardwareSerial1.o
+ .debug_frame   0x000029d4       0xcc src/HardwareSerial2.o
+ .debug_frame   0x00002aa0       0xcc src/HardwareSerial3.o
+ .debug_frame   0x00002b6c       0x24 src/hooks.o
+ .debug_frame   0x00002b90       0xe8 src/IPAddress.o
+ .debug_frame   0x00002c78       0x44 src/main.o
+ .debug_frame   0x00002cbc       0x54 src/new.o
+ .debug_frame   0x00002d10      0x3a8 src/Print.o
+ .debug_frame   0x000030b8      0x100 src/Tone.o
+ .debug_frame   0x000031b8      0x2f4 src/WInterrupts.o
+ .debug_frame   0x000034ac       0xbc src/wiring.o
+ .debug_frame   0x00003568       0x54 src/wiring_analog.o
+ .debug_frame   0x000035bc       0x7c src/wiring_digital.o
+ .debug_frame   0x00003638      0x9b8 src/WString.o
 
-.debug_str      0x00000000     0x54de
+.debug_str      0x00000000     0x5891
  *(.debug_str)
- .debug_str     0x00000000     0x1dac classes/BK/BK_UI.o
-                               0x1fc9 (size before relaxing)
- .debug_str     0x00001dac       0xb6 classes/DigitalIO.o
-                                0xc21 (size before relaxing)
- .debug_str     0x00001e62       0xb4 classes/EZUI/Controls/EZUI_Control_Link.o
-                               0x1ee6 (size before relaxing)
- .debug_str     0x00001f16      0x15b classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+ .debug_str     0x00000000     0x1f63 classes/BK/BK_UI.o
+                               0x217e (size before relaxing)
+ .debug_str     0x00001f63       0xaa classes/EnhancedIO/AnalogIn.o
+                                0x52d (size before relaxing)
+ .debug_str     0x0000200d       0xc1 classes/EnhancedIO/DigitalIO.o
+                                0xc2c (size before relaxing)
+ .debug_str     0x000020ce      0x253 classes/EZUI/Controls/EZUI_Control_Label.o
+                               0x1165 (size before relaxing)
+ .debug_str     0x00002321       0xa2 classes/EZUI/Controls/EZUI_Control_Link.o
+                               0x2084 (size before relaxing)
+ .debug_str     0x000023c3      0x154 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
                                 0xe4f (size before relaxing)
- .debug_str     0x00002071      0x4ef classes/Hardware.o
-                               0x241f (size before relaxing)
- .debug_str     0x00002560       0x4d classes/HLT/HLT_UI.o
-                               0x1fd1 (size before relaxing)
- .debug_str     0x000025ad       0xa8 classes/MAIN/MAIN_UI.o
-                               0x2059 (size before relaxing)
- .debug_str     0x00002655       0x4d classes/MLT/MLT_UI.o
-                               0x1fd1 (size before relaxing)
- .debug_str     0x000026a2       0x4b classes/EZUI/ClickEncoderWithEvents.o
-                               0x1ece (size before relaxing)
- .debug_str     0x000026ed       0xf6 classes/EZUI/EZUI_Menu.o
-                               0x1fb6 (size before relaxing)
- .debug_str     0x000027e3       0xe9 classes/EZUI/EZUI_MenuItem.o
-                               0x1fbd (size before relaxing)
- .debug_str     0x000028cc       0x7c classes/EZUI/EZUI_Page.o
-                               0x1ff9 (size before relaxing)
- .debug_str     0x00002948      0x332 classes/EZUI/EZUI_PageItem.o
-                               0x2268 (size before relaxing)
- .debug_str     0x00002c7a       0x42 classes/EZUI/EZUI.o
-                               0x1edb (size before relaxing)
- .debug_str     0x00002cbc      0x127 classes/Executive.o
-                               0x20ac (size before relaxing)
- .debug_str     0x00002de3       0x95 classes/LUT.o
-                                0x2cb (size before relaxing)
- .debug_str     0x00002e78       0xf6 classes/WheatstoneBridge.o
+ .debug_str     0x00002517      0x4d9 classes/Hardware.o
+                               0x25d2 (size before relaxing)
+ .debug_str     0x000029f0       0x4d classes/HLT/HLT_UI.o
+                               0x2186 (size before relaxing)
+ .debug_str     0x00002a3d       0xa8 classes/MAIN/MAIN_UI.o
+                               0x220e (size before relaxing)
+ .debug_str     0x00002ae5       0x4d classes/MLT/MLT_UI.o
+                               0x2186 (size before relaxing)
+ .debug_str     0x00002b32       0x4b classes/EZUI/ClickEncoderWithEvents.o
+                               0x2083 (size before relaxing)
+ .debug_str     0x00002b7d       0x98 classes/EZUI/EZUI_Menu.o
+                               0x216b (size before relaxing)
+ .debug_str     0x00002c15       0xe9 classes/EZUI/EZUI_MenuItem.o
+                               0x2172 (size before relaxing)
+ .debug_str     0x00002cfe       0x86 classes/EZUI/EZUI_Page.o
+                               0x21c7 (size before relaxing)
+ .debug_str     0x00002d84      0x2c1 classes/EZUI/EZUI_PageItem.o
+                               0x23dc (size before relaxing)
+ .debug_str     0x00003045       0x42 classes/EZUI/EZUI.o
+                               0x2090 (size before relaxing)
+ .debug_str     0x00003087       0xf6 classes/Executive.o
+                               0x224d (size before relaxing)
+ .debug_str     0x0000317d       0xc1 classes/LUT.o
+                                0x2f7 (size before relaxing)
+ .debug_str     0x0000323e       0xf6 classes/WheatstoneBridge.o
                                 0xc37 (size before relaxing)
- .debug_str     0x00002f6e       0xa7 include/ClickEncoder/ClickEncoder.o
+ .debug_str     0x00003334       0xa7 include/ClickEncoder/ClickEncoder.o
                                 0x512 (size before relaxing)
- .debug_str     0x00003015      0x1f0 include/LiquidCrystal/I2CIO.o
+ .debug_str     0x000033db      0x1f0 include/LiquidCrystal/I2CIO.o
                                 0x44f (size before relaxing)
- .debug_str     0x00003205      0x3ba include/LiquidCrystal/LCD.o
+ .debug_str     0x000035cb      0x3ba include/LiquidCrystal/LCD.o
                                 0x68f (size before relaxing)
- .debug_str     0x000035bf      0x23a include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_str     0x00003985      0x23a include/LiquidCrystal/LiquidCrystal_I2C.o
                                 0x689 (size before relaxing)
- .debug_str     0x000037f9       0x7f include/TimerOne/TimerOne.o
+ .debug_str     0x00003bbf       0x7f include/TimerOne/TimerOne.o
                                 0x465 (size before relaxing)
- .debug_str     0x00003878      0x279 include/Wire/twi.o
+ .debug_str     0x00003c3e      0x279 include/Wire/twi.o
                                 0x390 (size before relaxing)
- .debug_str     0x00003af1      0x765 include/Wire/Wire.o
+ .debug_str     0x00003eb7      0x765 include/Wire/Wire.o
                                0x1448 (size before relaxing)
- .debug_str     0x00004256       0xc4 Main.o
+ .debug_str     0x0000461c       0xc4 Main.o
                                 0x597 (size before relaxing)
- .debug_str     0x0000431a       0x3e src/abi.o
+ .debug_str     0x000046e0       0x3e src/abi.o
                                 0x1a9 (size before relaxing)
- .debug_str     0x00004358      0x406 src/HardwareSerial.o
+ .debug_str     0x0000471e      0x406 src/HardwareSerial.o
                                0x12c1 (size before relaxing)
- .debug_str     0x0000475e       0x42 src/HardwareSerial0.o
+ .debug_str     0x00004b24       0x42 src/HardwareSerial0.o
                                 0xfe3 (size before relaxing)
- .debug_str     0x000047a0       0x4a src/HardwareSerial1.o
+ .debug_str     0x00004b66       0x4a src/HardwareSerial1.o
                                 0xfe4 (size before relaxing)
- .debug_str     0x000047ea       0x4a src/HardwareSerial2.o
+ .debug_str     0x00004bb0       0x4a src/HardwareSerial2.o
                                 0xfe4 (size before relaxing)
- .debug_str     0x00004834       0x4a src/HardwareSerial3.o
+ .debug_str     0x00004bfa       0x4a src/HardwareSerial3.o
                                 0xfe4 (size before relaxing)
- .debug_str     0x0000487e       0x17 src/hooks.o
+ .debug_str     0x00004c44       0x17 src/hooks.o
                                 0x13e (size before relaxing)
- .debug_str     0x00004895      0x246 src/IPAddress.o
+ .debug_str     0x00004c5b      0x246 src/IPAddress.o
                                 0x524 (size before relaxing)
- .debug_str     0x00004adb       0x28 src/main.o
+ .debug_str     0x00004ea1       0x28 src/main.o
                                 0x253 (size before relaxing)
- .debug_str     0x00004b03       0x4b src/new.o
+ .debug_str     0x00004ec9       0x4b src/new.o
                                 0x1ec (size before relaxing)
- .debug_str     0x00004b4e      0x26f src/Print.o
+ .debug_str     0x00004f14      0x25c src/Print.o
                                 0xe89 (size before relaxing)
- .debug_str     0x00004dbd      0x229 src/Tone.o
+ .debug_str     0x00005170      0x229 src/Tone.o
                                 0x481 (size before relaxing)
- .debug_str     0x00004fe6       0x97 src/WInterrupts.o
+ .debug_str     0x00005399       0x97 src/WInterrupts.o
                                 0x270 (size before relaxing)
- .debug_str     0x0000507d       0x62 src/wiring.o
+ .debug_str     0x00005430       0x62 src/wiring.o
                                 0x240 (size before relaxing)
- .debug_str     0x000050df       0x62 src/wiring_analog.o
+ .debug_str     0x00005492       0x62 src/wiring_analog.o
                                 0x24d (size before relaxing)
- .debug_str     0x00005141       0x46 src/wiring_digital.o
+ .debug_str     0x000054f4       0x46 src/wiring_digital.o
                                 0x2ae (size before relaxing)
- .debug_str     0x00005187      0x357 src/WString.o
+ .debug_str     0x0000553a      0x357 src/WString.o
                                 0xe98 (size before relaxing)
 
-.debug_loc      0x00000000    0x1407e
+.debug_loc      0x00000000    0x14877
  *(.debug_loc)
- .debug_loc     0x00000000      0x141 classes/BK/BK_UI.o
- .debug_loc     0x00000141      0x471 classes/DigitalIO.o
- .debug_loc     0x000005b2      0x2da classes/EZUI/Controls/EZUI_Control_Link.o
- .debug_loc     0x0000088c      0xacf classes/EZUI/Controls/EZUI_Control_ToggleOption.o
- .debug_loc     0x0000135b      0x1e7 classes/Hardware.o
- .debug_loc     0x00001542      0x141 classes/HLT/HLT_UI.o
- .debug_loc     0x00001683      0x208 classes/MAIN/MAIN_UI.o
- .debug_loc     0x0000188b      0x141 classes/MLT/MLT_UI.o
- .debug_loc     0x000019cc       0x8e classes/EZUI/ClickEncoderWithEvents.o
- .debug_loc     0x00001a5a     0x11c1 classes/EZUI/EZUI_Menu.o
- .debug_loc     0x00002c1b      0x50e classes/EZUI/EZUI_MenuItem.o
- .debug_loc     0x00003129     0x20bc classes/EZUI/EZUI_Page.o
- .debug_loc     0x000051e5     0x2210 classes/EZUI/EZUI_PageItem.o
- .debug_loc     0x000073f5      0x2b3 classes/EZUI/EZUI.o
- .debug_loc     0x000076a8      0x151 classes/Executive.o
- .debug_loc     0x000077f9      0x253 classes/LUT.o
- .debug_loc     0x00007a4c      0x7d2 classes/WheatstoneBridge.o
- .debug_loc     0x0000821e      0x371 include/ClickEncoder/ClickEncoder.o
- .debug_loc     0x0000858f      0x4e4 include/LiquidCrystal/I2CIO.o
- .debug_loc     0x00008a73      0x747 include/LiquidCrystal/LCD.o
- .debug_loc     0x000091ba     0x13b6 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_loc     0x0000a570       0xcb include/TimerOne/TimerOne.o
- .debug_loc     0x0000a63b      0x596 include/Wire/twi.o
- .debug_loc     0x0000abd1      0x90a include/Wire/Wire.o
- .debug_loc     0x0000b4db       0x2f Main.o
- .debug_loc     0x0000b50a      0x447 src/HardwareSerial.o
- .debug_loc     0x0000b951      0x17b src/HardwareSerial0.o
- .debug_loc     0x0000bacc      0x17b src/HardwareSerial1.o
- .debug_loc     0x0000bc47      0x17b src/HardwareSerial2.o
- .debug_loc     0x0000bdc2      0x17b src/HardwareSerial3.o
- .debug_loc     0x0000bf3d      0x2c0 src/IPAddress.o
- .debug_loc     0x0000c1fd       0x98 src/new.o
- .debug_loc     0x0000c295     0x1ddf src/Print.o
- .debug_loc     0x0000e074      0xd4c src/Tone.o
- .debug_loc     0x0000edc0      0x79a src/WInterrupts.o
- .debug_loc     0x0000f55a      0x22a src/wiring.o
- .debug_loc     0x0000f784       0xe5 src/wiring_analog.o
- .debug_loc     0x0000f869      0x547 src/wiring_digital.o
- .debug_loc     0x0000fdb0     0x42ce src/WString.o
+ .debug_loc     0x00000000      0x127 classes/BK/BK_UI.o
+ .debug_loc     0x00000127      0xcb0 classes/EnhancedIO/AnalogIn.o
+ .debug_loc     0x00000dd7      0x471 classes/EnhancedIO/DigitalIO.o
+ .debug_loc     0x00001248      0xe9a classes/EZUI/Controls/EZUI_Control_Label.o
+ .debug_loc     0x000020e2      0x2ea classes/EZUI/Controls/EZUI_Control_Link.o
+ .debug_loc     0x000023cc      0xacf classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+ .debug_loc     0x00002e9b      0x1e7 classes/Hardware.o
+ .debug_loc     0x00003082      0x127 classes/HLT/HLT_UI.o
+ .debug_loc     0x000031a9      0x1ee classes/MAIN/MAIN_UI.o
+ .debug_loc     0x00003397      0x127 classes/MLT/MLT_UI.o
+ .debug_loc     0x000034be       0x8e classes/EZUI/ClickEncoderWithEvents.o
+ .debug_loc     0x0000354c     0x11c1 classes/EZUI/EZUI_Menu.o
+ .debug_loc     0x0000470d      0x50e classes/EZUI/EZUI_MenuItem.o
+ .debug_loc     0x00004c1b     0x1f61 classes/EZUI/EZUI_Page.o
+ .debug_loc     0x00006b7c      0xfbb classes/EZUI/EZUI_PageItem.o
+ .debug_loc     0x00007b37      0x2b3 classes/EZUI/EZUI.o
+ .debug_loc     0x00007dea      0x177 classes/Executive.o
+ .debug_loc     0x00007f61      0x2e4 classes/LUT.o
+ .debug_loc     0x00008245      0x7d2 classes/WheatstoneBridge.o
+ .debug_loc     0x00008a17      0x371 include/ClickEncoder/ClickEncoder.o
+ .debug_loc     0x00008d88      0x4e4 include/LiquidCrystal/I2CIO.o
+ .debug_loc     0x0000926c      0x747 include/LiquidCrystal/LCD.o
+ .debug_loc     0x000099b3     0x13b6 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_loc     0x0000ad69       0xcb include/TimerOne/TimerOne.o
+ .debug_loc     0x0000ae34      0x596 include/Wire/twi.o
+ .debug_loc     0x0000b3ca      0x90a include/Wire/Wire.o
+ .debug_loc     0x0000bcd4       0x2f Main.o
+ .debug_loc     0x0000bd03      0x447 src/HardwareSerial.o
+ .debug_loc     0x0000c14a      0x17b src/HardwareSerial0.o
+ .debug_loc     0x0000c2c5      0x17b src/HardwareSerial1.o
+ .debug_loc     0x0000c440      0x17b src/HardwareSerial2.o
+ .debug_loc     0x0000c5bb      0x17b src/HardwareSerial3.o
+ .debug_loc     0x0000c736      0x2c0 src/IPAddress.o
+ .debug_loc     0x0000c9f6       0x98 src/new.o
+ .debug_loc     0x0000ca8e     0x1ddf src/Print.o
+ .debug_loc     0x0000e86d      0xd4c src/Tone.o
+ .debug_loc     0x0000f5b9      0x79a src/WInterrupts.o
+ .debug_loc     0x0000fd53      0x22a src/wiring.o
+ .debug_loc     0x0000ff7d       0xe5 src/wiring_analog.o
+ .debug_loc     0x00010062      0x547 src/wiring_digital.o
+ .debug_loc     0x000105a9     0x42ce src/WString.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -3616,50 +3676,52 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0xf10
+.debug_ranges   0x00000000     0x1020
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x18 classes/BK/BK_UI.o
- .debug_ranges  0x00000018       0x40 classes/DigitalIO.o
- .debug_ranges  0x00000058       0x28 classes/EZUI/Controls/EZUI_Control_Link.o
- .debug_ranges  0x00000080       0x60 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
- .debug_ranges  0x000000e0       0x30 classes/Hardware.o
- .debug_ranges  0x00000110       0x18 classes/HLT/HLT_UI.o
- .debug_ranges  0x00000128       0x18 classes/MAIN/MAIN_UI.o
- .debug_ranges  0x00000140       0x18 classes/MLT/MLT_UI.o
- .debug_ranges  0x00000158       0x18 classes/EZUI/ClickEncoderWithEvents.o
- .debug_ranges  0x00000170       0xd0 classes/EZUI/EZUI_Menu.o
- .debug_ranges  0x00000240       0x38 classes/EZUI/EZUI_MenuItem.o
- .debug_ranges  0x00000278      0x128 classes/EZUI/EZUI_Page.o
- .debug_ranges  0x000003a0       0xe0 classes/EZUI/EZUI_PageItem.o
- .debug_ranges  0x00000480       0x60 classes/EZUI/EZUI.o
- .debug_ranges  0x000004e0       0x30 classes/Executive.o
- .debug_ranges  0x00000510       0x38 classes/LUT.o
- .debug_ranges  0x00000548       0x28 classes/WheatstoneBridge.o
- .debug_ranges  0x00000570       0x28 include/ClickEncoder/ClickEncoder.o
- .debug_ranges  0x00000598       0x48 include/LiquidCrystal/I2CIO.o
- .debug_ranges  0x000005e0       0xe8 include/LiquidCrystal/LCD.o
- .debug_ranges  0x000006c8       0x78 include/LiquidCrystal/LiquidCrystal_I2C.o
- .debug_ranges  0x00000740       0x10 include/TimerOne/TimerOne.o
- .debug_ranges  0x00000750       0x60 include/Wire/twi.o
- .debug_ranges  0x000007b0       0xc8 include/Wire/Wire.o
- .debug_ranges  0x00000878       0x20 Main.o
- .debug_ranges  0x00000898       0x18 src/abi.o
- .debug_ranges  0x000008b0       0x58 src/HardwareSerial.o
- .debug_ranges  0x00000908       0x28 src/HardwareSerial0.o
- .debug_ranges  0x00000930       0x28 src/HardwareSerial1.o
- .debug_ranges  0x00000958       0x28 src/HardwareSerial2.o
- .debug_ranges  0x00000980       0x28 src/HardwareSerial3.o
- .debug_ranges  0x000009a8       0x10 src/hooks.o
- .debug_ranges  0x000009b8       0x50 src/IPAddress.o
- .debug_ranges  0x00000a08       0x20 src/main.o
- .debug_ranges  0x00000a28       0x28 src/new.o
- .debug_ranges  0x00000a50       0xf0 src/Print.o
- .debug_ranges  0x00000b40       0x58 src/Tone.o
- .debug_ranges  0x00000b98       0x58 src/WInterrupts.o
- .debug_ranges  0x00000bf0       0x38 src/wiring.o
- .debug_ranges  0x00000c28       0x20 src/wiring_analog.o
- .debug_ranges  0x00000c48       0x28 src/wiring_digital.o
- .debug_ranges  0x00000c70      0x2a0 src/WString.o
+ .debug_ranges  0x00000018       0x78 classes/EnhancedIO/AnalogIn.o
+ .debug_ranges  0x00000090       0x40 classes/EnhancedIO/DigitalIO.o
+ .debug_ranges  0x000000d0       0xa0 classes/EZUI/Controls/EZUI_Control_Label.o
+ .debug_ranges  0x00000170       0x28 classes/EZUI/Controls/EZUI_Control_Link.o
+ .debug_ranges  0x00000198       0x60 classes/EZUI/Controls/EZUI_Control_ToggleOption.o
+ .debug_ranges  0x000001f8       0x30 classes/Hardware.o
+ .debug_ranges  0x00000228       0x18 classes/HLT/HLT_UI.o
+ .debug_ranges  0x00000240       0x18 classes/MAIN/MAIN_UI.o
+ .debug_ranges  0x00000258       0x18 classes/MLT/MLT_UI.o
+ .debug_ranges  0x00000270       0x18 classes/EZUI/ClickEncoderWithEvents.o
+ .debug_ranges  0x00000288       0xd0 classes/EZUI/EZUI_Menu.o
+ .debug_ranges  0x00000358       0x38 classes/EZUI/EZUI_MenuItem.o
+ .debug_ranges  0x00000390      0x138 classes/EZUI/EZUI_Page.o
+ .debug_ranges  0x000004c8       0xb8 classes/EZUI/EZUI_PageItem.o
+ .debug_ranges  0x00000580       0x60 classes/EZUI/EZUI.o
+ .debug_ranges  0x000005e0       0x30 classes/Executive.o
+ .debug_ranges  0x00000610       0x48 classes/LUT.o
+ .debug_ranges  0x00000658       0x28 classes/WheatstoneBridge.o
+ .debug_ranges  0x00000680       0x28 include/ClickEncoder/ClickEncoder.o
+ .debug_ranges  0x000006a8       0x48 include/LiquidCrystal/I2CIO.o
+ .debug_ranges  0x000006f0       0xe8 include/LiquidCrystal/LCD.o
+ .debug_ranges  0x000007d8       0x78 include/LiquidCrystal/LiquidCrystal_I2C.o
+ .debug_ranges  0x00000850       0x10 include/TimerOne/TimerOne.o
+ .debug_ranges  0x00000860       0x60 include/Wire/twi.o
+ .debug_ranges  0x000008c0       0xc8 include/Wire/Wire.o
+ .debug_ranges  0x00000988       0x20 Main.o
+ .debug_ranges  0x000009a8       0x18 src/abi.o
+ .debug_ranges  0x000009c0       0x58 src/HardwareSerial.o
+ .debug_ranges  0x00000a18       0x28 src/HardwareSerial0.o
+ .debug_ranges  0x00000a40       0x28 src/HardwareSerial1.o
+ .debug_ranges  0x00000a68       0x28 src/HardwareSerial2.o
+ .debug_ranges  0x00000a90       0x28 src/HardwareSerial3.o
+ .debug_ranges  0x00000ab8       0x10 src/hooks.o
+ .debug_ranges  0x00000ac8       0x50 src/IPAddress.o
+ .debug_ranges  0x00000b18       0x20 src/main.o
+ .debug_ranges  0x00000b38       0x28 src/new.o
+ .debug_ranges  0x00000b60       0xf0 src/Print.o
+ .debug_ranges  0x00000c50       0x58 src/Tone.o
+ .debug_ranges  0x00000ca8       0x58 src/WInterrupts.o
+ .debug_ranges  0x00000d00       0x38 src/wiring.o
+ .debug_ranges  0x00000d38       0x20 src/wiring_analog.o
+ .debug_ranges  0x00000d58       0x28 src/wiring_digital.o
+ .debug_ranges  0x00000d80      0x2a0 src/WString.o
 
 .debug_macro
  *(.debug_macro)

@@ -18,6 +18,19 @@
 
 //---Constructor-----
 
+LUT1D::LUT1D(int lenx, const float *xvals, const float *zvals){
+	//Copy the X data
+	_lenx=lenx;
+	float xvals_temp[lenx];
+	_x = xvals_temp;
+	memcpy(&_x, &xvals, sizeof xvals);
+
+	//Copy the z data
+	float zvals_temp[lenx];
+	_z=zvals_temp;
+	memcpy(&_z, &zvals, sizeof zvals);
+}
+
 LUT1D::LUT1D(int lenx, float *xvals, float *zvals){
 	//Copy the X data
 	_lenx=lenx;
@@ -62,6 +75,25 @@ float LUT1D::lookup(float xval){
 **************************/
 
 //---Constructor-----
+
+LUT2D::LUT2D(int lenx, int leny, const float *xvals, const float *yvals, const float *zvals){
+	//Copy the X data
+	_lenx=lenx;
+	float xvals_temp[lenx];
+	_x = xvals_temp;
+	memcpy(&_x, &xvals, sizeof xvals);
+	
+	//Copy the Y data
+	_leny=leny;
+	float yvals_temp[leny];
+	_y = yvals_temp;
+	memcpy(&_y, &yvals, sizeof yvals);
+
+	//Copy the z data
+	float zvals_temp[lenx][leny];
+	_z=&zvals_temp[0][0];
+	memcpy(&_z, &zvals, sizeof zvals);
+}
 
 LUT2D::LUT2D(int lenx, int leny, float *xvals, float *yvals, float *zvals){
 	//Copy the X data

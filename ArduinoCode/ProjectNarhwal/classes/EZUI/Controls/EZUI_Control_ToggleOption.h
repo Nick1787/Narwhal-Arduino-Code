@@ -5,7 +5,7 @@
 * Author: Customer
 */
 
-#include "../../DigitalIO.h"
+#include "../../EnhancedIO/DigitalIO.h"
 
 #ifndef __LCDTOGGLEOPTION_H__
 #define __LCDTOGGLEOPTION_H__

@@ -1,5 +1,6 @@
-classes/DigitalIO.d classes/DigitalIO.o: ../classes/DigitalIO.cpp \
- ../classes/DigitalIO.h ../include\arduino/Arduino.h \
+classes/EnhancedIO/AnalogIn.d classes/EnhancedIO/AnalogIn.o: \
+ ../classes/EnhancedIO/AnalogIn.cpp ../classes/EnhancedIO/AnalogIn.h \
+ ../include\arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
@@ -29,9 +30,10 @@ classes/DigitalIO.d classes/DigitalIO.o: ../classes/DigitalIO.cpp \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\eeprom.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h
+ ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
+ ../classes/EnhancedIO/../../include/LinkedList/LinkedList.h
 
-../classes/DigitalIO.h:
+../classes/EnhancedIO/AnalogIn.h:
 
 ../include\arduino/Arduino.h:
 
@@ -104,3 +106,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../include\arduino/Arduino.h:
 
 ../include\arduino/pins_arduino.h:
+
+../classes/EnhancedIO/../../include/LinkedList/LinkedList.h:

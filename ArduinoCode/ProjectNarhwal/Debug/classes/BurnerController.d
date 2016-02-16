@@ -32,7 +32,7 @@ classes/BurnerController.d classes/BurnerController.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
- ../classes/DigitalIO.h
+ ../classes/EnhancedIO/DigitalIO.h
 
 ../classes/BurnerController.h:
 
@@ -112,4 +112,4 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../include\arduino/pins_arduino.h:
 
-../classes/DigitalIO.h:
+../classes/EnhancedIO/DigitalIO.h:

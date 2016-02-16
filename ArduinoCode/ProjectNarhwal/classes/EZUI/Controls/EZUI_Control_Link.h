@@ -27,8 +27,9 @@ public:
 	
 protected:
 private:
-	EZUI_Menu * MenuRef = NULL;
-	EZUI_Page * PageRef = NULL;
+	enum LinkType{MenuLink, PageLink};
+	LinkType type = MenuLink;
+	void *LinkRef = NULL;
 
 //functions
 public:

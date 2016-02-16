@@ -17,10 +17,16 @@
 #include "EZUI_MenuItem.h"
 #include "EZUI_Menu.h"
 #include "EZUI.h"
+#include "./Controls/EZUI_Control_Link.h"
+#include "./Controls/EZUI_Control_ToggleOption.h"
+#include "./Controls/EZUI_Control_Label.h"
 
 class EZUI_Menu;
 class EZUI_PageItem;
 class EZUI;
+class EZUI_Control_ToggleOption;
+class EZUI_Control_Link;
+class EZUI_Control_Label;
 class EZUI_Page
 {
 //variables
@@ -44,7 +50,10 @@ public:
 	EZUI_Page(String _Name);
 	~EZUI_Page();
 	
-	void addItem(EZUI_PageItem *item);
+	void addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_ToggleOption *item);
+	//void addItem(EZUI_Control_ListOption *item);
+	void addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_Label *item);
+	void addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_Link *item);
 	void display(EZUI *UI);
 	void prevItem();						//Moves cursor to next item (also calls display to refresh the LCD)
 	void nextItem();						//Moves cursor to next item (also calls display to refresh the LCD)

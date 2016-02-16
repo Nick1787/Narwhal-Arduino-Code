@@ -44,12 +44,12 @@ void MAIN_UI_init(){
 	***************************************/
 	
 	EZUI_Page * Analogs_0_to_5 = new EZUI_Page((String)("Analogs 0-5"));
-	Analogs_0_to_5->addItem(new EZUI_PageItem(0,0,(String)(" A0:")));
-	Analogs_0_to_5->addItem(new EZUI_PageItem(4,0,&analog0));
-	Analogs_0_to_5->addItem(new EZUI_PageItem(0,1,(String)(" A1:")));
-	Analogs_0_to_5->addItem(new EZUI_PageItem(4,1,&analog1));
-	Analogs_0_to_5->addItem(new EZUI_PageItem(0,2,(String)(" A2:")));
-	Analogs_0_to_5->addItem(new EZUI_PageItem(4,2,&analog2));/*
+	Analogs_0_to_5->addItem(0,0,new EZUI_Control_Label(F(" A0:")));
+	Analogs_0_to_5->addItem(4,0,new EZUI_Control_Label(&(ANIN_A0.value)));
+	Analogs_0_to_5->addItem(0,1,new EZUI_Control_Label(F(" A1:")));
+	Analogs_0_to_5->addItem(4,1,new EZUI_Control_Label(&(ANIN_A1.value)));
+	Analogs_0_to_5->addItem(0,2,new EZUI_Control_Label(F(" A2:")));
+	Analogs_0_to_5->addItem(4,2,new EZUI_Control_Label(&(ANIN_A2.value)));/*
 	Analogs_0_to_5->addItem(new EZUI_PageItem(10,0,(String)(" A3:")));
 	Analogs_0_to_5->addItem(new EZUI_PageItem(14,0,&analog3));
 	Analogs_0_to_5->addItem(new EZUI_PageItem(10,1,(String)(" A4:")));
@@ -100,7 +100,7 @@ void MAIN_UI_init(){
 	***************************************/
 	
 	EZUI_Menu * MenuAnalogsMonitor = new EZUI_Menu("Analog Diagnostics");
-	Analogs_0_to_5->addItem(new EZUI_PageItem(0,3,new EZUI_Control_Link("Back",MainMenu)));
+	Analogs_0_to_5->addItem(0,3,new EZUI_Control_Link("Back",MainMenu));
 	//Analogs_6_to_11->addItem(new EZUI_PageItem(0,3,new EZUI_Control_Link("Back",MainMenu)));
 	//Analogs_12_to_15->addItem(new EZUI_PageItem(0,3,new EZUI_Control_Link("Back",MainMenu)));
 	MenuAnalogsMonitor->addItem(new EZUI_Control_Link("Analogs 0 to 5",Analogs_0_to_5));
@@ -195,7 +195,7 @@ void MAIN_UI_init(){
 	  RTD Diagnostics Menu
 	***************************************/
 	EZUI_Menu * MenuRTDMonitor = new EZUI_Menu("RTD Diagnostics");
-	Page_HLT_BP->addItem(new EZUI_PageItem(0,3,new EZUI_Control_Link("Back",MenuRTDMonitor)));
+	Page_HLT_BP->addItem(0,3,new EZUI_Control_Link("Back",MenuRTDMonitor));
 	//Page_HLT_OP->addItem(new EZUI_PageItem(0,3,new EZUI_Control_Link("Back",MenuRTDMonitor)));
 	//Page_MLT_BP->addItem(new EZUI_PageItem(0,3,new EZUI_Control_Link("Back",MenuRTDMonitor)));
 	//Page_MLT_OP->addItem(new EZUI_PageItem(0,3,new EZUI_Control_Link("Back",MenuRTDMonitor)));

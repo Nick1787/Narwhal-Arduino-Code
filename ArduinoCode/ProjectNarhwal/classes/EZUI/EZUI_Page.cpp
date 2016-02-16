@@ -29,6 +29,31 @@ EZUI_Page::~EZUI_Page()
 {
 } //~LCDPage
 
+
+void EZUI_Page::addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_Link * Link){
+	EZUI_PageItem Item = EZUI_PageItem(colIndx,rowIndx,Link);
+	this->_Items.add(Item);
+	SelectableItems.add(1);
+	if(currentItem == -1){
+		currentItem = SelectableItems.size()-1;
+	}
+}
+
+void EZUI_Page::addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_ToggleOption * ToggleOpt){
+	EZUI_PageItem Item = EZUI_PageItem(colIndx,rowIndx,ToggleOpt);
+	this->_Items.add(Item);
+	SelectableItems.add(1);
+	if(currentItem == -1){
+		currentItem = SelectableItems.size()-1;
+	}
+}
+
+void EZUI_Page::addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_Label * Label){
+	EZUI_PageItem Item = EZUI_PageItem(colIndx,rowIndx,Label);
+	this->_Items.add(Item);
+	SelectableItems.add(0);
+}
+
 void EZUI_Page::display(EZUI *UI){
 	if((millis() - lastUpdate)>refreshRate){
 		lastUpdate = millis();
@@ -47,20 +72,6 @@ void EZUI_Page::display(EZUI *UI){
 				}
 			}
 		}
-	}
-}
-
-
-void EZUI_Page::addItem(EZUI_PageItem * _Item){
-	_Items.add(*_Item);
-	
-	if((_Item->Type == EZUI_PageItem::Link) || (_Item->Type == EZUI_PageItem::ToggleOption)){
-		SelectableItems.add(1);
-		if(currentItem == -1){
-			currentItem = SelectableItems.size()-1;
-		}
-	}else{
-		SelectableItems.add(0);
 	}
 }
 

@@ -14,78 +14,115 @@ EZUI_Control_Label::~EZUI_Control_Label()
 } //~EZUI_Control_Lablel
 
 /****************************************************************************
-	Constructors - No Print Format
+	Constructors - Static Values
 *****************************************************************************/
 
 EZUI_Control_Label::EZUI_Control_Label(String val){
 	Type = StaticString;
 	
 	//Save the value
-	this->stringVal = new String();
-	*(this->stringVal) = val;
+	this->ItemRef = new String();
+	*(String*)(this->ItemRef) = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(float val){
-	this->Type = StaticDouble;
+	this->Type = StaticFloat;
 	
 	//Save the value
-	float *Storage = new float();
-	*Storage = val;
-	this->floatVal = Storage;
+	this->ItemRef = new float();
+	*(float*)(this->ItemRef) = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(double val){
 	this->Type = StaticDouble;
 	
 	//Save the value
-	double *Storage = new double();
-	*Storage = val;
-	this->doubleVal = Storage;
+	this->ItemRef = new double();
+	*(double*)(this->ItemRef) = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(int val){
 	this->Type = StaticInt;
 	
 	//Save the value
-	int *Storage = new int();
-	*Storage = val;
-	this->intVal = Storage;
+	this->ItemRef = new int();
+	*(int*)(this->ItemRef) = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(unsigned int val){
 	this->Type = StaticUInt;
 	
 	//Save the value
-	unsigned int *Storage = new unsigned int();
-	*Storage = val;
-	this->uIntVal = Storage;
+	this->ItemRef = new unsigned int();
+	*(unsigned int*)(this->ItemRef) = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(long val){
 	this->Type = StaticLong;
 	
 	//Save the value
-	long *Storage = new long();
-	*Storage = val;
-	this->longVal = Storage;
+	this->ItemRef = new long();
+	*(long*)(this->ItemRef) = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(unsigned long val){
 	this->Type = StaticULong;
 	
 	//Save the value
-	unsigned long *Storage = new unsigned long();
-	*Storage = val;
-	this->uLongVal = Storage;
+	this->ItemRef = new unsigned long();
+	*(unsigned long*)(this->ItemRef) = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(bool val){
 	this->Type = StaticBool;
 	
 	//Save the value
-	bool *Storage = new bool();
-	*Storage = val;
-	this->boolVal = Storage;
+	this->ItemRef = new bool();
+	*(bool*)(this->ItemRef) = val;
+}
+
+/****************************************************************************
+	Constructors - Dynamic Values
+*****************************************************************************/
+
+EZUI_Control_Label::EZUI_Control_Label(String *val){
+	Type = DynamicString;
+	this->ItemRef = val;
+}
+
+EZUI_Control_Label::EZUI_Control_Label(float *val){
+	Type = DynamicFloat;
+	this->ItemRef = val;
+}
+
+EZUI_Control_Label::EZUI_Control_Label(double *val){
+	Type = DynamicDouble;
+	this->ItemRef = val;
+}
+
+EZUI_Control_Label::EZUI_Control_Label(int *val){
+	Type = DynamicInt;
+	this->ItemRef = val;
+}
+
+EZUI_Control_Label::EZUI_Control_Label(unsigned int *val){
+	Type = DynamicUInt;
+	this->ItemRef = val;
+}
+
+EZUI_Control_Label::EZUI_Control_Label(long *val){
+	Type = DynamicLong;
+	this->ItemRef = val;
+}
+
+EZUI_Control_Label::EZUI_Control_Label(unsigned long *val){
+	Type = DynamicULong;
+	this->ItemRef = val;
+}
+
+EZUI_Control_Label::EZUI_Control_Label(bool *val){
+	Type = DynamicBool;
+	this->ItemRef = val;
 }
 
 
@@ -93,29 +130,7 @@ EZUI_Control_Label::EZUI_Control_Label(bool val){
 	Constructors - With number of decimal places
 *****************************************************************************/
 
-EZUI_Control_Label::EZUI_Control_Label(float val, unsigned int decimalPlaces){
-	this->Type = StaticDouble;
-	
-	//Save the value
-	float *Storage = new float();
-	*Storage = val;
-	this->floatVal = Storage;
-	
-	//Save the print format
-	this->decPlaces = decimalPlaces;
-}
-
-EZUI_Control_Label::EZUI_Control_Label(double val, unsigned int decimalPlaces){
-	this->Type = StaticDouble;
-	
-	//Save the value
-	double *Storage = new double();
-	*Storage = val;
-	this->doubleVal = Storage;
-	
-	//Save the print format
-	this->decPlaces = decimalPlaces;
-}
+//TODO (maybe)
 
 /****************************************************************************
 	Print and Text Format
@@ -124,36 +139,53 @@ String EZUI_Control_Label::Text(){
 	String Str = "";
 	switch(this->Type){
 		case(StaticString):
-			Str = *(this->stringVal);
+			Str = *(String*)(this->ItemRef);
 			break;
 		case(StaticFloat):
-			if(decPlaces == NULL){
-				Str = String(*(this->floatVal));
-			}else{
-				Str = String(*(this->floatVal),decPlaces);
-			}
+			Str = String(*(float*)(this->ItemRef));
 			break;
 		case(StaticDouble):
-			if(decPlaces == NULL){
-				Str = String(*(this->doubleVal));
-			}else{
-				Str = String(*(this->doubleVal),decPlaces);
-			}
+			Str = String(*(double*)(this->ItemRef));
 			break;
 		case(StaticInt):
-			Str = String(*(this->intVal));
+			Str = String(*(int*)(this->ItemRef));
 			break;
 		case(StaticUInt):
-			Str = String(*(this->uIntVal));
+			Str = String(*(unsigned int*)(this->ItemRef));
 			break;
 		case(StaticLong):
-			Str = String(*(this->longVal));
+			Str = String(*(long*)(this->ItemRef));
 			break;
 		case(StaticULong):
-			Str = String(*(this->uIntVal));
+			Str = String(*(unsigned long*)(this->ItemRef));
 			break;
 		case(StaticBool):
-			Str = String(*(this->boolVal));
+			Str = String(*(bool*)(this->ItemRef));
+			break;
+		
+		case(DynamicString):
+			Str = *(String*)(this->ItemRef);
+			break;
+		case(DynamicFloat):
+			Str = String(*(float*)(this->ItemRef));
+			break;
+		case(DynamicDouble):
+			Str = String(*(double*)(this->ItemRef));
+			break;
+		case(DynamicInt):
+			Str = String(*(int*)(this->ItemRef));
+			break;
+		case(DynamicUInt):
+			Str = String(*(unsigned int*)(this->ItemRef));
+			break;
+		case(DynamicLong):
+			Str = String(*(long*)(this->ItemRef));
+			break;
+		case(DynamicULong):
+			Str = String(*(unsigned long*)(this->ItemRef));
+			break;
+		case(DynamicBool):
+			Str = String(*(bool*)(this->ItemRef));
 			break;
 	}
 	return Str;

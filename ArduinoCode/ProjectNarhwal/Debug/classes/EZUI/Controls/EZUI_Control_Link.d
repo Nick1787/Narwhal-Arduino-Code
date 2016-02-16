@@ -48,8 +48,12 @@ classes/EZUI/Controls/EZUI_Control_Link.d \
  ../classes/EZUI/Controls/../EZUI_Page.h \
  ../classes/EZUI/Controls/../EZUI_PageItem.h \
  ../classes/EZUI/Controls/.././Controls/EZUI_Control_ToggleOption.h \
- ../classes/EZUI/Controls/.././Controls/../../DigitalIO.h \
+ ../classes/EZUI/Controls/.././Controls/../../EnhancedIO/DigitalIO.h \
  ../classes/EZUI/Controls/.././Controls/EZUI_Control_Link.h \
+ ../classes/EZUI/Controls/.././Controls/EZUI_Control_Label.h \
+ ../include\arduino/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
+ ../classes/EZUI/Controls/.././Controls/../../EnhancedIO/AnalogIn.h \
+ ../classes/EZUI/Controls/.././Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h \
  ../classes/EZUI/Controls/../ClickEncoderWithEvents.h \
  ../classes/EZUI/Controls/../../../include/ClickEncoder/ClickEncoder.h \
  ../classes/EZUI/Controls/../EZUI_Menu.h \
@@ -157,9 +161,17 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/EZUI/Controls/.././Controls/EZUI_Control_ToggleOption.h:
 
-../classes/EZUI/Controls/.././Controls/../../DigitalIO.h:
+../classes/EZUI/Controls/.././Controls/../../EnhancedIO/DigitalIO.h:
 
 ../classes/EZUI/Controls/.././Controls/EZUI_Control_Link.h:
+
+../classes/EZUI/Controls/.././Controls/EZUI_Control_Label.h:
+
+../include\arduino/../../include/LiquidCrystal/LiquidCrystal_I2C.h:
+
+../classes/EZUI/Controls/.././Controls/../../EnhancedIO/AnalogIn.h:
+
+../classes/EZUI/Controls/.././Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h:
 
 ../classes/EZUI/Controls/../ClickEncoderWithEvents.h:
 

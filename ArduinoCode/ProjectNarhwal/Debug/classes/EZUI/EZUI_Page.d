@@ -41,13 +41,17 @@ classes/EZUI/EZUI_Page.d classes/EZUI/EZUI_Page.o: \
  ../classes/EZUI/../WheatstoneBridge.h ../classes/EZUI/../LUT.h \
  ../classes/EZUI/EZUI_Menu.h ../classes/EZUI/EZUI_MenuItem.h \
  ../classes/EZUI/./Controls/EZUI_Control_ToggleOption.h \
- ../classes/EZUI/./Controls/../../DigitalIO.h \
+ ../classes/EZUI/./Controls/../../EnhancedIO/DigitalIO.h \
  ../classes/EZUI/./Controls/EZUI_Control_Link.h \
  ../classes/EZUI/./Controls/../EZUI.h \
  ../classes/EZUI/./Controls/../EZUI_Menu.h \
  ../classes/EZUI/./Controls/../EZUI_Page.h \
  ../classes/EZUI/ClickEncoderWithEvents.h \
- ../classes/EZUI/../../include/ClickEncoder/ClickEncoder.h
+ ../classes/EZUI/../../include/ClickEncoder/ClickEncoder.h \
+ ../classes/EZUI/./Controls/EZUI_Control_Label.h \
+ ../include\arduino/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
+ ../classes/EZUI/./Controls/../../EnhancedIO/AnalogIn.h \
+ ../classes/EZUI/./Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h
 
 ../classes/EZUI/EZUI_Page.h:
 
@@ -147,7 +151,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../classes/EZUI/./Controls/EZUI_Control_ToggleOption.h:
 
-../classes/EZUI/./Controls/../../DigitalIO.h:
+../classes/EZUI/./Controls/../../EnhancedIO/DigitalIO.h:
 
 ../classes/EZUI/./Controls/EZUI_Control_Link.h:
 
@@ -160,3 +164,11 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../classes/EZUI/ClickEncoderWithEvents.h:
 
 ../classes/EZUI/../../include/ClickEncoder/ClickEncoder.h:
+
+../classes/EZUI/./Controls/EZUI_Control_Label.h:
+
+../include\arduino/../../include/LiquidCrystal/LiquidCrystal_I2C.h:
+
+../classes/EZUI/./Controls/../../EnhancedIO/AnalogIn.h:
+
+../classes/EZUI/./Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h:

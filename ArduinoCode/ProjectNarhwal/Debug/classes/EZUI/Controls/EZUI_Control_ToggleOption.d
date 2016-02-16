@@ -2,7 +2,8 @@ classes/EZUI/Controls/EZUI_Control_ToggleOption.d \
  classes/EZUI/Controls/EZUI_Control_ToggleOption.o: \
  ../classes/EZUI/Controls/EZUI_Control_ToggleOption.cpp \
  ../classes/EZUI/Controls/EZUI_Control_ToggleOption.h \
- ../classes/EZUI/Controls/../../DigitalIO.h ../include\arduino/Arduino.h \
+ ../classes/EZUI/Controls/../../EnhancedIO/DigitalIO.h \
+ ../include\arduino/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
@@ -36,7 +37,7 @@ classes/EZUI/Controls/EZUI_Control_ToggleOption.d \
 
 ../classes/EZUI/Controls/EZUI_Control_ToggleOption.h:
 
-../classes/EZUI/Controls/../../DigitalIO.h:
+../classes/EZUI/Controls/../../EnhancedIO/DigitalIO.h:
 
 ../include\arduino/Arduino.h:
 

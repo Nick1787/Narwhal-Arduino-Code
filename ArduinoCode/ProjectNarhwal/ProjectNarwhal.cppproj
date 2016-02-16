@@ -267,16 +267,16 @@
     <Compile Include="classes\BurnerController.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\DigitalIO.cpp">
+    <Compile Include="classes\EnhancedIO\AnalogIn.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\DigitalIO.h">
+    <Compile Include="classes\EnhancedIO\AnalogIn.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_Button.cpp">
+    <Compile Include="classes\EnhancedIO\DigitalIO.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_Button.h">
+    <Compile Include="classes\EnhancedIO\DigitalIO.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EZUI\Controls\EZUI_Control_Label.cpp">
@@ -638,6 +638,7 @@
     <Folder Include="classes\MLT" />
     <Folder Include="classes\BK" />
     <Folder Include="classes\EZUI" />
+    <Folder Include="classes\EnhancedIO" />
     <Folder Include="include\" />
     <Folder Include="include\arduino\" />
     <Folder Include="include\eightanaloginputs\" />

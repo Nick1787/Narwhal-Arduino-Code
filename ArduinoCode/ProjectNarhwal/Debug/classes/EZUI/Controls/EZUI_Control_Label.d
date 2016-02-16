@@ -37,7 +37,9 @@ classes/EZUI/Controls/EZUI_Control_Label.d \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\eeprom.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h
+ ../include\arduino/Arduino.h ../include\arduino/pins_arduino.h \
+ ../classes/EZUI/Controls/../../EnhancedIO/AnalogIn.h \
+ ../classes/EZUI/Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h
 
 ../classes/EZUI/Controls/EZUI_Control_Label.h:
 
@@ -120,3 +122,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../include\arduino/Arduino.h:
 
 ../include\arduino/pins_arduino.h:
+
+../classes/EZUI/Controls/../../EnhancedIO/AnalogIn.h:
+
+../classes/EZUI/Controls/../../EnhancedIO/../../include/LinkedList/LinkedList.h:

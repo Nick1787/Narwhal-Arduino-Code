@@ -17,7 +17,8 @@
 #include "../config.h"
 
 #include "RTD.h"
-#include "DigitalIO.h"
+#include "EnhancedIO/DigitalIO.h"
+#include "EnhancedIO/AnalogIn.h"
 #include "Executive.h"
 
 #include "EZUI/ClickEncoderWithEvents.h"
@@ -33,22 +34,21 @@ extern void hardware_init();
 /**************************
 *	analogs
 **************************/
-extern float analog0;
-extern float analog1;
-extern float analog2;
-extern float analog3;
-extern float analog4;
-extern float analog5;
-extern float analog6;
-extern float analog7;
-extern float analog8;
-extern float analog9;
-extern float analog10;
-extern float analog11;
-extern float analog12;
-extern float analog13;
-extern float analog14;
-extern float analog15;
+extern AnalogIn ANIN_A0;
+extern AnalogIn ANIN_A1;
+extern AnalogIn ANIN_A2;
+extern AnalogIn ANIN_A3;
+extern AnalogIn ANIN_A4;
+extern AnalogIn ANIN_A5;
+extern AnalogIn ANIN_A6;
+extern AnalogIn ANIN_A7;
+extern AnalogIn ANIN_A8;
+extern AnalogIn ANIN_A9;
+extern AnalogIn ANIN_A10;
+extern AnalogIn ANIN_A11;
+extern AnalogIn ANIN_A12;
+extern AnalogIn ANIN_A13;
+extern AnalogIn ANIN_A14;
 
 /**************************
 *	Solenoids
