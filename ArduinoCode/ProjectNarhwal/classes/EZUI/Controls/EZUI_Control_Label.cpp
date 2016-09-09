@@ -8,120 +8,88 @@
 
 #include "EZUI_Control_Label.h"
 
-// default destructor
-EZUI_Control_Label::~EZUI_Control_Label()
-{
-} //~EZUI_Control_Lablel
-
 /****************************************************************************
 	Constructors - Static Values
 *****************************************************************************/
 
-EZUI_Control_Label::EZUI_Control_Label(String val){
-	Type = StaticString;
+EZUI_Control_Label::EZUI_Control_Label(char val[]){
+	//Serial.println(F("--Label-StaticString--");
+	//Serial.flush();
+	Label_Type = LblString;
+	this->Type = Label;
 	
 	//Save the value
-	this->ItemRef = new String();
-	*(String*)(this->ItemRef) = val;
-}
-
-EZUI_Control_Label::EZUI_Control_Label(float val){
-	this->Type = StaticFloat;
+	//Serial.print(F("---");
+	//Serial.print(val);
+	//Serial.println(F("---");
+	//Serial.flush();
+	this->ItemRef = new String(val);
 	
-	//Save the value
-	this->ItemRef = new float();
-	*(float*)(this->ItemRef) = val;
-}
-
-EZUI_Control_Label::EZUI_Control_Label(double val){
-	this->Type = StaticDouble;
-	
-	//Save the value
-	this->ItemRef = new double();
-	*(double*)(this->ItemRef) = val;
-}
-
-EZUI_Control_Label::EZUI_Control_Label(int val){
-	this->Type = StaticInt;
-	
-	//Save the value
-	this->ItemRef = new int();
-	*(int*)(this->ItemRef) = val;
-}
-
-EZUI_Control_Label::EZUI_Control_Label(unsigned int val){
-	this->Type = StaticUInt;
-	
-	//Save the value
-	this->ItemRef = new unsigned int();
-	*(unsigned int*)(this->ItemRef) = val;
-}
-
-EZUI_Control_Label::EZUI_Control_Label(long val){
-	this->Type = StaticLong;
-	
-	//Save the value
-	this->ItemRef = new long();
-	*(long*)(this->ItemRef) = val;
-}
-
-EZUI_Control_Label::EZUI_Control_Label(unsigned long val){
-	this->Type = StaticULong;
-	
-	//Save the value
-	this->ItemRef = new unsigned long();
-	*(unsigned long*)(this->ItemRef) = val;
-}
-
-EZUI_Control_Label::EZUI_Control_Label(bool val){
-	this->Type = StaticBool;
-	
-	//Save the value
-	this->ItemRef = new bool();
-	*(bool*)(this->ItemRef) = val;
-}
-
-/****************************************************************************
-	Constructors - Dynamic Values
-*****************************************************************************/
-
-EZUI_Control_Label::EZUI_Control_Label(String *val){
-	Type = DynamicString;
-	this->ItemRef = val;
+	//Serial.print(F(">>>");
+	//Serial.print(*(String*)this->ItemRef);
+	//Serial.print(F("<<<");
+	//Serial.flush();
 }
 
 EZUI_Control_Label::EZUI_Control_Label(float *val){
-	Type = DynamicFloat;
+	//Serial.println(F("--Label-DynamicFloat--");
+	//Serial.flush();
+	this->Label_Type = LblFloat;
+	this->Type = Label;
 	this->ItemRef = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(double *val){
-	Type = DynamicDouble;
+	//Serial.println(F("--Label-DynamicDouble--");
+	//Serial.flush();
+	Label_Type = LblDouble;
+	this->Type = Label;
 	this->ItemRef = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(int *val){
-	Type = DynamicInt;
+	//Serial.println(F("--Label-DynamicInt--");
+	//Serial.flush();
+	Label_Type = LblInt;
+	this->Type = Label;
 	this->ItemRef = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(unsigned int *val){
-	Type = DynamicUInt;
+	//Serial.println(F("--Label-DynamicUint--");
+	//Serial.flush();
+	Label_Type = LblUInt;
+	this->Type = Label;
 	this->ItemRef = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(long *val){
-	Type = DynamicLong;
+	//Serial.println(F("--Label-DynamicLong--");
+	//Serial.flush();
+	Label_Type = LblLong;
+	this->Type = Label;
 	this->ItemRef = val;
 }
 
 EZUI_Control_Label::EZUI_Control_Label(unsigned long *val){
-	Type = DynamicULong;
+	//Serial.println(F("--Label-DynamicULong--");
+	//Serial.flush();
+	Label_Type = LblULong;
+	this->Type = Label;
 	this->ItemRef = val;
 }
 
-EZUI_Control_Label::EZUI_Control_Label(bool *val){
-	Type = DynamicBool;
+EZUI_Control_Label::EZUI_Control_Label(boolean *val, String TrueTxt, String FalseTxt){
+	Label_Type = LblBoolWithText;
+	blnTrueTxt = TrueTxt;
+	blnFalseTxt = FalseTxt;
+	this->Type = Label;
+	this->ItemRef = val;
+}
+
+EZUI_Control_Label::EZUI_Control_Label(DigitalIO *val){
+	Label_Type = LblDigitalIO;
+	this->Type = Label;
 	this->ItemRef = val;
 }
 
@@ -135,76 +103,48 @@ EZUI_Control_Label::EZUI_Control_Label(bool *val){
 /****************************************************************************
 	Print and Text Format
 *****************************************************************************/
-String EZUI_Control_Label::Text(){
+String EZUI_Control_Label::Text() const {
 	String Str = "";
-	switch(this->Type){
-		case(StaticString):
+	switch(this->Label_Type){;		
+		case(LblString):
 			Str = *(String*)(this->ItemRef);
 			break;
-		case(StaticFloat):
+		case(LblFloat):
 			Str = String(*(float*)(this->ItemRef));
 			break;
-		case(StaticDouble):
+		case(LblDouble):
 			Str = String(*(double*)(this->ItemRef));
 			break;
-		case(StaticInt):
+		case(LblInt):
 			Str = String(*(int*)(this->ItemRef));
 			break;
-		case(StaticUInt):
+		case(LblUInt):
 			Str = String(*(unsigned int*)(this->ItemRef));
 			break;
-		case(StaticLong):
+		case(LblLong):
 			Str = String(*(long*)(this->ItemRef));
 			break;
-		case(StaticULong):
+		case(LblULong):
 			Str = String(*(unsigned long*)(this->ItemRef));
 			break;
-		case(StaticBool):
-			Str = String(*(bool*)(this->ItemRef));
+		case(LblBoolWithText):{
+			boolean val = *(bool*)(this->ItemRef);
+			if(val){
+				Str = blnTrueTxt;
+			}else{
+				Str = blnFalseTxt;
+			}
 			break;
-		
-		case(DynamicString):
-			Str = *(String*)(this->ItemRef);
-			break;
-		case(DynamicFloat):
-			Str = String(*(float*)(this->ItemRef));
-			break;
-		case(DynamicDouble):
-			Str = String(*(double*)(this->ItemRef));
-			break;
-		case(DynamicInt):
-			Str = String(*(int*)(this->ItemRef));
-			break;
-		case(DynamicUInt):
-			Str = String(*(unsigned int*)(this->ItemRef));
-			break;
-		case(DynamicLong):
-			Str = String(*(long*)(this->ItemRef));
-			break;
-		case(DynamicULong):
-			Str = String(*(unsigned long*)(this->ItemRef));
-			break;
-		case(DynamicBool):
-			Str = String(*(bool*)(this->ItemRef));
+		}
+		case(LblDigitalIO):
+			DigitalIO val = *(DigitalIO*)(this->ItemRef);
+			if(val.Value()){
+				Str= val.TrueLabel;
+			}else{
+				Str = val.FalseLabel;
+			}
 			break;
 	}
 	return Str;
-}
-
-void EZUI_Control_Label::Print(LiquidCrystal_I2C *LCD, uint8_t col, uint8_t row){
-	if((millis() - timeLastPrinted)>1000){
-		//First Print blanks to over-write the whole field
-		LCD->setCursor(col,row);
-		int i=0;
-		for(i=0;i<prevOut.length();i++){
-			LCD->print(" ");
-		}
-	
-		//Print the value
-		LCD->setCursor(col,row);
-		prevOut = Text();
-		LCD->print(prevOut);
-	}
-	timeLastPrinted = millis();
 }
 

@@ -13,6 +13,6 @@
 
 // Main Code version
 #define VERSION 0.1
-#define SERIAL_VERBOSE 2			// 0 = Disabled, 1 = Enabled with Basic events, 2= Enabled with detailed events (i.e. ecoder values).
+#define SERIAL_VERBOSE 3			// 0 = Disabled, 1 = Enabled with Basic events, 2= Enabled with detailed events (i.e. ecoder values), 2= Enabled with debugging details (i.e. Page Item Count, etc.).
 
 #endif

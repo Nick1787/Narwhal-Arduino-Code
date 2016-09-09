@@ -59,6 +59,9 @@ classes/MAIN/MAIN_UI.d classes/MAIN/MAIN_UI.o: \
  ../classes/MAIN/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
  ../classes/MAIN/../../include/TimerOne/TimerOne.h \
  ../classes/MAIN/../../include/TimerOne/config/known_16bit_timers.h \
+ ../classes/MAIN/../../include/AdvancedSerial/AdvancedSerial.h \
+ ../classes/MAIN/../../include/AdvancedSerial/LinkedList.h \
+ ../classes/MAIN/../../include/MemoryFree/MemoryFree.h \
  ../classes/MAIN/../../iodef.h ../classes/MAIN/../../config.h \
  ../classes/MAIN/../RTD.h ../classes/MAIN/../LUT.h \
  ../classes/MAIN/../EnhancedIO/DigitalIO.h \
@@ -204,6 +207,12 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../classes/MAIN/../../include/TimerOne/TimerOne.h:
 
 ../classes/MAIN/../../include/TimerOne/config/known_16bit_timers.h:
+
+../classes/MAIN/../../include/AdvancedSerial/AdvancedSerial.h:
+
+../classes/MAIN/../../include/AdvancedSerial/LinkedList.h:
+
+../classes/MAIN/../../include/MemoryFree/MemoryFree.h:
 
 ../classes/MAIN/../../iodef.h:
 

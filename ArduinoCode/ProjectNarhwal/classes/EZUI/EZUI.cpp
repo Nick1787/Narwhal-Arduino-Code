@@ -10,8 +10,7 @@
 
 #include "EZUI.h"
 
-EZUI::EZUI(String _Name){
-	Name = _Name;
+EZUI::EZUI(){
 }
 
 EZUI::~EZUI(){
@@ -34,8 +33,7 @@ void EZUI::attatchLCD( LiquidCrystal_I2C *_LCD ){
 
 void EZUI::EncoderClick(){
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
-		Serial.print(Name);
-		Serial.println(" - Encoder Click");
+		Serial.println(F("Encoder Click"));
 	#endif
 	
 	if ( CurrentMenu != NULL){
@@ -49,16 +47,14 @@ void EZUI::EncoderClick(){
 
 void EZUI::EncoderDblClick(){
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
-		Serial.print(Name);
-		Serial.println(" - Encoder Click");
+		Serial.println(F("Encoder Click"));
 	#endif
 	
 }
 
 void EZUI::EncoderIncrement(){
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
-		Serial.print(Name);
-		Serial.println(" - Encoder Increment");
+		Serial.println(F("Encoder Increment"));
 	#endif
 	
 	if (!( CurrentMenu == NULL)){
@@ -72,14 +68,18 @@ void EZUI::EncoderIncrement(){
 
 void EZUI::EncoderDecrement(){
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
-		Serial.print(Name);
-		Serial.println(" - Encoder Decrement");
+		Serial.println(F("Encoder Decrement"));
 	#endif
 	
 	if (!( CurrentMenu == NULL)){
 		CurrentMenu->prevItem();
 	}
+	
+	if (!( CurrentPage == NULL)){
+		CurrentPage->prevItem();
+	}
 }
+
 
 void EZUI::display(){
 	//Attatch all event handlers
@@ -100,20 +100,38 @@ void EZUI::display(){
 	}
 }
 
+void EZUI::refresh(){
+	if(CurrentMenu!=NULL){
+		CurrentMenu->cleanup(this);
+		CurrentMenu->init(this);
+		CurrentMenu->display(this);
+	}
+	if(CurrentPage != NULL){
+		CurrentPage->cleanup(this);
+		CurrentPage->init(this);
+		CurrentPage->display(this);
+	}
+}
 void EZUI::setDisplay(EZUI_Menu *Menu){
+	if(CurrentMenu!=NULL){
+		CurrentMenu->cleanup(this);
+	}
+	if(CurrentPage != NULL){
+		CurrentPage->cleanup(this);
+	}
 	CurrentMenu = Menu;
+	CurrentMenu->init(this);
 	CurrentPage = NULL;
-	
-	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-		Serial.println( "  " + Name + "-UI-" + "-DisplayMenu->" + CurrentMenu->Name);
-	#endif
 }
 
 void EZUI::setDisplay(EZUI_Page *Page){
+	if(CurrentMenu!=NULL){
+		CurrentMenu->cleanup(this);
+	}
+	if(CurrentPage != NULL){
+		CurrentPage->cleanup(this);
+	}
 	CurrentMenu = NULL;
 	CurrentPage = Page;
-	
-	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-		Serial.println( "  " + Name + "-UI-" + "-DisplayPage->" + CurrentPage->Name);
-	#endif
+	CurrentPage->init(this);
 }

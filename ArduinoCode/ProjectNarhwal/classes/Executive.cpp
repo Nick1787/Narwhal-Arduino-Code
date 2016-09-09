@@ -10,6 +10,8 @@
 
 #include "Executive.h"
 
+unsigned long lastms = 0;
+
 void Executive::run(){
 	frame_count++;
 	time = millis();
@@ -17,66 +19,97 @@ void Executive::run(){
 	exec_frame2();
 	exec_frame3();
 	exec_frame4();
-	
+		
 	//Execution rate
 	temp_frame_count++;
 	if((time - temp_time)>3000){
 		float Hz = (((float)temp_frame_count) / ((float)(time-temp_time)/1000));
-		Serial.print("Running at ");
+		
+		Serial.print(F("Running at "));
 		Serial.print(Hz);
-		Serial.print(" Hertz (");
+		Serial.print(F(" Hertz ("));
 		Serial.print(temp_frame_count);
-		Serial.print(" frames / ");
+		Serial.print(F(" frames / "));
 		Serial.print(time-temp_time);
-		Serial.println(" ms )");
+		Serial.print(F(" ms ) - "));
+		Serial.print(freeMemory());
+		Serial.println(F(" bytes free."));
+		Serial.flush();
 		
 		//reset counters
 		temp_time = time;
 		temp_frame_count=0;
 	}
 	
-	//global::timems = time;
-	//global::timsec = (float)(time/1000);
 }
 
-void Executive::exec_frame1(){
-	//IO
+void Executive::exec_frame1(){		
+	//Pump Monitor #1
+	Pump1_V = 5.0 * ((float)analogRead(PUMP1_VIN) / 1023.0);
+	if(Pump1_V > 2.5){
+		Pump1_On = true;
+	}else{
+		Pump1_On = false;
+	}
+	
+	//Pump Monitor #2
+	Pump2_V = 5.0 * ((float)analogRead(PUMP2_VIN) / 1023.0);
+	if(Pump2_V > 2.5){
+		Pump2_On = true;
+	}else{
+		Pump2_On = false;
+	}
+	
+	//HLT Thermocouple
+	HLT_TC_V = 100*5.0 * ((float)analogRead(HLT_TC_VIN) / 1023.0);
+	if(HLT_TC_V > 0.25){
+		HLT_TC_ON = true;
+	}else{
+		HLT_TC_ON = false;
+	}
+	
+	//MLT Thermocouple
+	MLT_TC_V = 100*5.0 * ((float)analogRead(MLT_TC_VIN) / 1023.0);
+	if(MLT_TC_V > 0.25){
+		MLT_TC_ON = true;
+	}else{
+		MLT_TC_ON = false;
+	}
+	
+	//BK Thermocouple
+	BK_TC_V = 100*5.0 * ((float)analogRead(BK_TC_VIN) / 1023.0);
+	if(BK_TC_V > 0.25){
+		BK_TC_ON = true;
+	}else{
+		BK_TC_ON = false;
+	}
 	
 	//Encoders
-	MAIN_ENC->Read();
-	MLT_ENC->Read();
-	HLT_ENC->Read();
-	BK_ENC->Read();
+	MAIN_ENC.Read();
+	MLT_ENC.Read();
+	HLT_ENC.Read();
+	BK_ENC.Read();
 	
-	//Analog Ins
-	ANIN_A0.update();
-	ANIN_A1.update();
-	ANIN_A2.update();
-	ANIN_A3.update();
-	ANIN_A4.update();
-	ANIN_A5.update();
-	ANIN_A6.update();
-	ANIN_A7.update();
-	ANIN_A8.update();
-	ANIN_A9.update();
-	ANIN_A10.update();
-	ANIN_A11.update();
-	ANIN_A12.update();
-	ANIN_A13.update();
-	ANIN_A14.update();
-
+	//RTDs
+	HLT_RTD_Vs = 5.0 * ((float)analogRead(HLT_RTD_Vs_AN) / 1023.0);
+	HLT_RTD_BP_V = 5.0 * ((float)analogRead(HLT_RTD_BP_AN) / 1023.0);
+	HLT_RTD_OP_V = 5.0 * ((float)analogRead(HLT_RTD_OP_AN) / 1023.0);
+	MLT_RTD_Vs = 5.0 * ((float)analogRead(MLT_RTD_Vs_AN) / 1023.0);
+	MLT_RTD_BP_V = 5.0 * ((float)analogRead(MLT_RTD_BP_AN) / 1023.0);
+	MLT_RTD_OP_V = 5.0 * ((float)analogRead(MLT_RTD_OP_AN) / 1023.0);
+	BK_RTD_Vs = 5.0 * ((float)analogRead(BK_RTD_Vs_AN) / 1023.0);
+	BK_RTD_BP_V = 5.0 * ((float)analogRead(BK_RTD_BP_AN) / 1023.0);
+	BK_RTD_OP_V = 5.0 * ((float)analogRead(BK_RTD_OP_AN) / 1023.0);
 }
 
 void Executive::exec_frame2(){
-	//Calculate Parameters
-	
 	//Update the RTD values
-	HLT_RTD_BP->Update();
-	//HLT_RTD_OP->Update();
-	//MLT_RTD_BP->Update();
-	//MLT_RTD_OP->Update();
-	//BK_RTD_BP->Update();
-	//BK_RTD_OP->Update();
+	HLT_RTD_BP.Calculate(HLT_RTD_Vs,HLT_RTD_BP_V);
+	HLT_RTD_OP.Calculate(HLT_RTD_Vs,HLT_RTD_OP_V);
+	MLT_RTD_BP.Calculate(MLT_RTD_Vs,MLT_RTD_BP_V);
+	MLT_RTD_OP.Calculate(MLT_RTD_Vs,MLT_RTD_OP_V);
+	BK_RTD_BP.Calculate(BK_RTD_Vs,BK_RTD_BP_V);
+	BK_RTD_OP.Calculate(BK_RTD_Vs,BK_RTD_OP_V);
 	
 	//Controllers
 	
@@ -84,12 +117,19 @@ void Executive::exec_frame2(){
 
 void Executive::exec_frame3(){
 	//Update the UI
-	MAIN_UI->display();
-	MLT_UI->display();
-	HLT_UI->display();
-	BK_UI->display();
+	UI_MAIN::UI->display();
+	UI_HLT::UI->display();
+	UI_MLT::UI->display();
+	UI_BK::UI->display();
 }
 
 void Executive::exec_frame4(){
+	//Update Free Memory Calculations
+	freeSramBytes=freeMemory();
+	freeSramPct=100.0*(float)(freeSramBytes/8000);
+	
+	//Transmit Serial DAta
+	//	AdvSerial.exec();
+	
 	//Do logging + PHM
 }

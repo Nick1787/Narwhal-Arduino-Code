@@ -11,8 +11,13 @@
 #include "BurnerController.h"
 
 // default constructor
-BurnerController::BurnerController()
+BurnerController::BurnerController(bool *PilotRef, WheatstoneBridge *BP, WheatstoneBridge *OP, DigitalIO *Sol1, DigitalIO *Sol2)
 {
+	PilotLitRef = PilotRef;
+	TProbe1 = BP;
+	TProbe2 = OP;
+	GasValve1 = Sol1;
+	GasValve2 = Sol2;
 } //BurnerController
 
 // default destructor

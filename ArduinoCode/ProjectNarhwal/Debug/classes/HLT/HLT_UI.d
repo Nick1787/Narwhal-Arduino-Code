@@ -58,6 +58,9 @@ classes/HLT/HLT_UI.d classes/HLT/HLT_UI.o: ../classes/HLT/HLT_UI.cpp \
  ../classes/HLT/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
  ../classes/HLT/../../include/TimerOne/TimerOne.h \
  ../classes/HLT/../../include/TimerOne/config/known_16bit_timers.h \
+ ../classes/HLT/../../include/AdvancedSerial/AdvancedSerial.h \
+ ../classes/HLT/../../include/AdvancedSerial/LinkedList.h \
+ ../classes/HLT/../../include/MemoryFree/MemoryFree.h \
  ../classes/HLT/../../iodef.h ../classes/HLT/../../config.h \
  ../classes/HLT/../RTD.h ../classes/HLT/../LUT.h \
  ../classes/HLT/../EnhancedIO/DigitalIO.h \
@@ -211,6 +214,12 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../classes/HLT/../../include/TimerOne/TimerOne.h:
 
 ../classes/HLT/../../include/TimerOne/config/known_16bit_timers.h:
+
+../classes/HLT/../../include/AdvancedSerial/AdvancedSerial.h:
+
+../classes/HLT/../../include/AdvancedSerial/LinkedList.h:
+
+../classes/HLT/../../include/MemoryFree/MemoryFree.h:
 
 ../classes/HLT/../../iodef.h:
 

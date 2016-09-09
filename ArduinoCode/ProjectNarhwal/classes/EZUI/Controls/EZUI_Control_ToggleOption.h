@@ -5,40 +5,44 @@
 * Author: Customer
 */
 
-#include "../../EnhancedIO/DigitalIO.h"
-
 #ifndef __LCDTOGGLEOPTION_H__
 #define __LCDTOGGLEOPTION_H__
 
-class EZUI_Control_ToggleOption
+#include "../EZUI.h"
+#include "../../EnhancedIO/DigitalIO.h"
+
+class EZUI_Control_ToggleOption : public EZUI_Control
 {
 //variables
 public:
+	using EZUI_Control::Type;
 	String Label = "";
-	enum ToggleOptionType { VarDigIO , StaticBool, VarBool };
-	ToggleOptionType Type = StaticBool;
+	enum ToggleOptionType { VarDigIO , VarBool };
+	ToggleOptionType ToggleType = VarBool;
 	
 protected:
 private:
 	String BoolTrueText = "true";
 	String BoolFalseText = "false";
-	bool BlnVal = false;
 	bool *BlnRef = NULL;
 	DigitalIO * DIORef = NULL;
 
 //functions
 public:
+
+	boolean isSelectable() const  override {return true;};
+	String Text() const override {return Label;};
+	void Select(EZUI *UI) const override {Toggle();};
+	
 	EZUI_Control_ToggleOption();
 	String TrueLabel(void);
 	String FalseLabel(void);
 	int Value();
 	void Write(int value);
-	void Toggle();
+	void Toggle() const;
 	EZUI_Control_ToggleOption(String Label, DigitalIO * DigIO_Object);
-	EZUI_Control_ToggleOption(String Label, bool val);
-	EZUI_Control_ToggleOption(String Label, bool val, String TrueLabel, String FalseTable);
 	EZUI_Control_ToggleOption(String Label, bool * val);
-	EZUI_Control_ToggleOption(String Label, bool * val, String TrueLabel, String FalseTable);
+	EZUI_Control_ToggleOption(String Label, bool * val, String TrueLabel, String FalseLabel);
 	~EZUI_Control_ToggleOption();
 	
 protected:

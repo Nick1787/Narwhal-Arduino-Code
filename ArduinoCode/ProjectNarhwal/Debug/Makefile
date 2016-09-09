@@ -34,10 +34,10 @@ LINKER_SCRIPT_DEP:=
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
 ../classes/EZUI/Controls \
-../classes/MAIN \
-../classes/HLT \
-../classes/MLT \
-../classes/BK \
+../classes/UI_BK/ \
+../classes/UI_MAIN \
+../classes/UI_HLT \
+../classes/UI_MLT \
 ../classes/EZUI \
 ../classes/EnhancedIO \
 ../include/ \
@@ -51,6 +51,8 @@ SUBDIRS :=  \
 ../include/LiquidCrystal \
 ../include/LinkedList \
 ../include/FastDelegate \
+../include/AdvancedSerial \
+../include/MemoryFree \
 ../include/TimerOne \
 ../include/TimerOne/config \
 ../include/Wire \
@@ -64,27 +66,27 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../classes/BK/BK_UI.cpp \
 ../classes/BurnerController.cpp \
 ../classes/EnhancedIO/AnalogIn.cpp \
 ../classes/EnhancedIO/DigitalIO.cpp \
+../classes/EZUI/Controls/EZUI_Control.cpp \
 ../classes/EZUI/Controls/EZUI_Control_Label.cpp \
 ../classes/EZUI/Controls/EZUI_Control_Link.cpp \
 ../classes/EZUI/Controls/EZUI_Control_ListOption.cpp \
 ../classes/EZUI/Controls/EZUI_Control_ToggleOption.cpp \
 ../classes/Hardware.cpp \
-../classes/HLT/HLT_UI.cpp \
-../classes/MAIN/MAIN_UI.cpp \
-../classes/MLT/MLT_UI.cpp \
+../classes/UI_BK/UI_BK.cpp \
+../classes/UI_HLT/UI_HLT.cpp \
+../classes/UI_MAIN/UI_MAIN.cpp \
+../classes/UI_MLT/UI_MLT.cpp \
 ../classes/EZUI/ClickEncoderWithEvents.cpp \
 ../classes/EZUI/EZUI_Menu.cpp \
-../classes/EZUI/EZUI_MenuItem.cpp \
 ../classes/EZUI/EZUI_Page.cpp \
-../classes/EZUI/EZUI_PageItem.cpp \
 ../classes/EZUI/EZUI.cpp \
 ../classes/Executive.cpp \
 ../classes/LUT.cpp \
 ../classes/WheatstoneBridge.cpp \
+../include/AdvancedSerial/AdvancedSerial.cpp \
 ../include/ClickEncoder/ClickEncoder.cpp \
 ../include/LiquidCrystal/FastIO.cpp \
 ../include/LiquidCrystal/I2CIO.cpp \
@@ -94,6 +96,7 @@ C_SRCS +=  \
 ../include/LiquidCrystal/LiquidCrystal_SR.cpp \
 ../include/LiquidCrystal/LiquidCrystal_SR2W.cpp \
 ../include/LiquidCrystal/LiquidCrystal_SR3W.cpp \
+../include/MemoryFree/MemoryFree.cpp \
 ../include/TimerOne/TimerOne.cpp \
 ../include/Wire/twi.c \
 ../include/Wire/Wire.cpp \
@@ -131,27 +134,27 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-classes/BK/BK_UI.o \
 classes/BurnerController.o \
 classes/EnhancedIO/AnalogIn.o \
 classes/EnhancedIO/DigitalIO.o \
+classes/EZUI/Controls/EZUI_Control.o \
 classes/EZUI/Controls/EZUI_Control_Label.o \
 classes/EZUI/Controls/EZUI_Control_Link.o \
 classes/EZUI/Controls/EZUI_Control_ListOption.o \
 classes/EZUI/Controls/EZUI_Control_ToggleOption.o \
 classes/Hardware.o \
-classes/HLT/HLT_UI.o \
-classes/MAIN/MAIN_UI.o \
-classes/MLT/MLT_UI.o \
+classes/UI_BK/UI_BK.o \
+classes/UI_HLT/UI_HLT.o \
+classes/UI_MAIN/UI_MAIN.o \
+classes/UI_MLT/UI_MLT.o \
 classes/EZUI/ClickEncoderWithEvents.o \
 classes/EZUI/EZUI_Menu.o \
-classes/EZUI/EZUI_MenuItem.o \
 classes/EZUI/EZUI_Page.o \
-classes/EZUI/EZUI_PageItem.o \
 classes/EZUI/EZUI.o \
 classes/Executive.o \
 classes/LUT.o \
 classes/WheatstoneBridge.o \
+include/AdvancedSerial/AdvancedSerial.o \
 include/ClickEncoder/ClickEncoder.o \
 include/LiquidCrystal/FastIO.o \
 include/LiquidCrystal/I2CIO.o \
@@ -161,6 +164,7 @@ include/LiquidCrystal/LiquidCrystal_I2C.o \
 include/LiquidCrystal/LiquidCrystal_SR.o \
 include/LiquidCrystal/LiquidCrystal_SR2W.o \
 include/LiquidCrystal/LiquidCrystal_SR3W.o \
+include/MemoryFree/MemoryFree.o \
 include/TimerOne/TimerOne.o \
 include/Wire/twi.o \
 include/Wire/Wire.o \
@@ -191,27 +195,27 @@ src/WMath.o \
 src/WString.o
 
 OBJS_AS_ARGS +=  \
-classes/BK/BK_UI.o \
 classes/BurnerController.o \
 classes/EnhancedIO/AnalogIn.o \
 classes/EnhancedIO/DigitalIO.o \
+classes/EZUI/Controls/EZUI_Control.o \
 classes/EZUI/Controls/EZUI_Control_Label.o \
 classes/EZUI/Controls/EZUI_Control_Link.o \
 classes/EZUI/Controls/EZUI_Control_ListOption.o \
 classes/EZUI/Controls/EZUI_Control_ToggleOption.o \
 classes/Hardware.o \
-classes/HLT/HLT_UI.o \
-classes/MAIN/MAIN_UI.o \
-classes/MLT/MLT_UI.o \
+classes/UI_BK/UI_BK.o \
+classes/UI_HLT/UI_HLT.o \
+classes/UI_MAIN/UI_MAIN.o \
+classes/UI_MLT/UI_MLT.o \
 classes/EZUI/ClickEncoderWithEvents.o \
 classes/EZUI/EZUI_Menu.o \
-classes/EZUI/EZUI_MenuItem.o \
 classes/EZUI/EZUI_Page.o \
-classes/EZUI/EZUI_PageItem.o \
 classes/EZUI/EZUI.o \
 classes/Executive.o \
 classes/LUT.o \
 classes/WheatstoneBridge.o \
+include/AdvancedSerial/AdvancedSerial.o \
 include/ClickEncoder/ClickEncoder.o \
 include/LiquidCrystal/FastIO.o \
 include/LiquidCrystal/I2CIO.o \
@@ -221,6 +225,7 @@ include/LiquidCrystal/LiquidCrystal_I2C.o \
 include/LiquidCrystal/LiquidCrystal_SR.o \
 include/LiquidCrystal/LiquidCrystal_SR2W.o \
 include/LiquidCrystal/LiquidCrystal_SR3W.o \
+include/MemoryFree/MemoryFree.o \
 include/TimerOne/TimerOne.o \
 include/Wire/twi.o \
 include/Wire/Wire.o \
@@ -251,27 +256,27 @@ src/WMath.o \
 src/WString.o
 
 C_DEPS +=  \
-classes/BK/BK_UI.d \
 classes/BurnerController.d \
 classes/EnhancedIO/AnalogIn.d \
 classes/EnhancedIO/DigitalIO.d \
+classes/EZUI/Controls/EZUI_Control.d \
 classes/EZUI/Controls/EZUI_Control_Label.d \
 classes/EZUI/Controls/EZUI_Control_Link.d \
 classes/EZUI/Controls/EZUI_Control_ListOption.d \
 classes/EZUI/Controls/EZUI_Control_ToggleOption.d \
 classes/Hardware.d \
-classes/HLT/HLT_UI.d \
-classes/MAIN/MAIN_UI.d \
-classes/MLT/MLT_UI.d \
+classes/UI_BK/UI_BK.d \
+classes/UI_HLT/UI_HLT.d \
+classes/UI_MAIN/UI_MAIN.d \
+classes/UI_MLT/UI_MLT.d \
 classes/EZUI/ClickEncoderWithEvents.d \
 classes/EZUI/EZUI_Menu.d \
-classes/EZUI/EZUI_MenuItem.d \
 classes/EZUI/EZUI_Page.d \
-classes/EZUI/EZUI_PageItem.d \
 classes/EZUI/EZUI.d \
 classes/Executive.d \
 classes/LUT.d \
 classes/WheatstoneBridge.d \
+include/AdvancedSerial/AdvancedSerial.d \
 include/ClickEncoder/ClickEncoder.d \
 include/LiquidCrystal/FastIO.d \
 include/LiquidCrystal/I2CIO.d \
@@ -281,6 +286,7 @@ include/LiquidCrystal/LiquidCrystal_I2C.d \
 include/LiquidCrystal/LiquidCrystal_SR.d \
 include/LiquidCrystal/LiquidCrystal_SR2W.d \
 include/LiquidCrystal/LiquidCrystal_SR3W.d \
+include/MemoryFree/MemoryFree.d \
 include/TimerOne/TimerOne.d \
 include/Wire/twi.d \
 include/Wire/Wire.d \
@@ -311,27 +317,27 @@ src/WMath.d \
 src/WString.d
 
 C_DEPS_AS_ARGS +=  \
-classes/BK/BK_UI.d \
 classes/BurnerController.d \
 classes/EnhancedIO/AnalogIn.d \
 classes/EnhancedIO/DigitalIO.d \
+classes/EZUI/Controls/EZUI_Control.d \
 classes/EZUI/Controls/EZUI_Control_Label.d \
 classes/EZUI/Controls/EZUI_Control_Link.d \
 classes/EZUI/Controls/EZUI_Control_ListOption.d \
 classes/EZUI/Controls/EZUI_Control_ToggleOption.d \
 classes/Hardware.d \
-classes/HLT/HLT_UI.d \
-classes/MAIN/MAIN_UI.d \
-classes/MLT/MLT_UI.d \
+classes/UI_BK/UI_BK.d \
+classes/UI_HLT/UI_HLT.d \
+classes/UI_MAIN/UI_MAIN.d \
+classes/UI_MLT/UI_MLT.d \
 classes/EZUI/ClickEncoderWithEvents.d \
 classes/EZUI/EZUI_Menu.d \
-classes/EZUI/EZUI_MenuItem.d \
 classes/EZUI/EZUI_Page.d \
-classes/EZUI/EZUI_PageItem.d \
 classes/EZUI/EZUI.d \
 classes/Executive.d \
 classes/LUT.d \
 classes/WheatstoneBridge.d \
+include/AdvancedSerial/AdvancedSerial.d \
 include/ClickEncoder/ClickEncoder.d \
 include/LiquidCrystal/FastIO.d \
 include/LiquidCrystal/I2CIO.d \
@@ -341,6 +347,7 @@ include/LiquidCrystal/LiquidCrystal_I2C.d \
 include/LiquidCrystal/LiquidCrystal_SR.d \
 include/LiquidCrystal/LiquidCrystal_SR2W.d \
 include/LiquidCrystal/LiquidCrystal_SR3W.d \
+include/MemoryFree/MemoryFree.d \
 include/TimerOne/TimerOne.d \
 include/Wire/twi.d \
 include/Wire/Wire.d \
@@ -502,12 +509,7 @@ LINKER_SCRIPT_DEP+=
 
 
 
-classes/BK/%.o: ../classes/BK/%.cpp
-	@echo Building file: $<
-	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
+
 
 classes/%.o: ../classes/%.cpp
 	@echo Building file: $<
@@ -530,21 +532,28 @@ classes/EZUI/Controls/%.o: ../classes/EZUI/Controls/%.cpp
 	@echo Finished building: $<
 	
 
-classes/HLT/%.o: ../classes/HLT/%.cpp
+classes/UI_BK/%.o: ../classes/UI_BK/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-classes/MAIN/%.o: ../classes/MAIN/%.cpp
+classes/UI_HLT/%.o: ../classes/UI_HLT/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-classes/MLT/%.o: ../classes/MLT/%.cpp
+classes/UI_MAIN/%.o: ../classes/UI_MAIN/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+classes/UI_MLT/%.o: ../classes/UI_MLT/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -552,6 +561,13 @@ classes/MLT/%.o: ../classes/MLT/%.cpp
 	
 
 classes/EZUI/%.o: ../classes/EZUI/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+include/AdvancedSerial/%.o: ../include/AdvancedSerial/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -566,6 +582,13 @@ include/ClickEncoder/%.o: ../include/ClickEncoder/%.cpp
 	
 
 include/LiquidCrystal/%.o: ../include/LiquidCrystal/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+include/MemoryFree/%.o: ../include/MemoryFree/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG -DF_CPU=16000000L -DARDUINO=165-r2 -DARDUINO_AVR_MEGA2560 -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x0010 -DUSB_MANUFACTURER=Unknown  -I"../include\arduino" -I"../include\eightanaloginputs" -I"../include\ethernet" -I"../include\gemma" -I"../include\leonardo" -I"../include\mega" -I"../include\micro" -I"../include\robot_control" -I"../include\robot_motor" -I"../include\standard" -I"../include\yun"  -O1 -fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -w -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\gcc\dev\atmega2560" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

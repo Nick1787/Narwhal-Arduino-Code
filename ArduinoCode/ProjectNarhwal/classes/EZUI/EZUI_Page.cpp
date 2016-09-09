@@ -8,103 +8,165 @@
  * ----------------------------------------------------------------
  */
 
-
 #include "EZUI_Page.h"
 
-// default constructor
-EZUI_Page::EZUI_Page()
-{
-} //LCDPage
-
-// constructor with name passed, no parent menu or page
-EZUI_Page::EZUI_Page(String _Name)
-{
-	_ParentMenuRef = NULL;
-	_ParentPageRef = NULL;
-	Name = _Name;
-}
-
-// default destructor
-EZUI_Page::~EZUI_Page()
-{
-} //~LCDPage
-
-
-void EZUI_Page::addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_Link * Link){
-	EZUI_PageItem Item = EZUI_PageItem(colIndx,rowIndx,Link);
-	this->_Items.add(Item);
-	SelectableItems.add(1);
-	if(currentItem == -1){
-		currentItem = SelectableItems.size()-1;
+void EZUI_Page::setItems(const PageItem items[], unsigned int size){
+	
+	this->items = items;
+	this->itemCount = size;
+	
+	//Determine the current item as the first selectable item
+	currentItem = -1;
+	for(int i=0; i<size;i++){
+		if(items[i].Control->isSelectable()){
+			currentItem = i;
+			break;
+		}
 	}
-}
-
-void EZUI_Page::addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_ToggleOption * ToggleOpt){
-	EZUI_PageItem Item = EZUI_PageItem(colIndx,rowIndx,ToggleOpt);
-	this->_Items.add(Item);
-	SelectableItems.add(1);
-	if(currentItem == -1){
-		currentItem = SelectableItems.size()-1;
-	}
-}
-
-void EZUI_Page::addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_Label * Label){
-	EZUI_PageItem Item = EZUI_PageItem(colIndx,rowIndx,Label);
-	this->_Items.add(Item);
-	SelectableItems.add(0);
 }
 
 void EZUI_Page::display(EZUI *UI){
-	if((millis() - lastUpdate)>refreshRate){
-		lastUpdate = millis();
+	LiquidCrystal_I2C *LCD = UI->LCD;
+	
+	//Cycle through page items and refresh those which need it.
+	unsigned long ctime = millis();
+	if ((ctime - lastPrint)>=refreshRate){
+		lastPrint = ctime;
 		
-		LiquidCrystal_I2C *LCD = UI->LCD;
-		LCD->clear();
-		for(int i=0; i<_Items.size(); i++){
-			_Items.get(i).print(LCD, true);
+		for(int i=0; i<(itemCount); i++){
+			const PageItem *Item = &items[i];
+			String newText = Item->Control->Text();
 			
-			Serial.print("  Item ...");
-			//Print Cursor if at the current Item
-			if (SelectableItems.size() > 0){
-				if(i==currentItem){
-					LCD->setCursor(_Items.get(i).col,_Items.get(i).row);
-					LCD->print(">");
+			//Truncate the string if needed
+			if(newText.length() > Item->fieldWidth){
+				newText = newText.substring(0,Item->fieldWidth);
+			}
+			String oldText = itemsText[i];
+		
+			unsigned long ctime = millis();
+			if( refresh || !(newText.equals(oldText)) ) {
+			
+				//Print the new Text, if its a selectable item put a space before it;
+				switch(Item->Control->Type){
+					case(EZUI_Control::Label):
+					{
+						//Clear the old text
+						LCD->setCursor(Item->col,Item->row);
+						for(int k=0; k<oldText.length(); k++){
+							LCD->print(" ");
+						}
+					
+						//Write the New Text
+						itemsText[i] = newText;
+						LCD->setCursor(Item->col,Item->row);
+						LCD->print(newText);
+					} break;
+					case(EZUI_Control::Link):
+					{	
+						//Clear the old text
+						LCD->setCursor(Item->col+1,Item->row);
+						for(int k=0; k<oldText.length(); k++){
+							LCD->print(" ");
+						}
+					
+						//Write the New Text
+						itemsText[i] = newText;
+						LCD->setCursor(Item->col+1,Item->row);
+						LCD->print(newText);
+					} break;
+					case(EZUI_Control::ToggleOpt):
+					{
+						//Clear the old text
+						LCD->setCursor(Item->col+1,Item->row);
+						for(int k=0; k<oldText.length(); k++){
+							LCD->print(" ");
+						}
+					
+						//Write the New Tex
+						itemsText[i] = newText;
+						LCD->setCursor(Item->col+1,Item->row);
+						LCD->print(newText);
+					} break;
+					default:{
+						//Clear the old text
+						LCD->setCursor(Item->col,Item->row);
+						for(int k=0; k<oldText.length(); k++){
+							LCD->print(" ");
+						}
+					
+						//Write the New Text
+						LCD->setCursor(Item->col+1,Item->row);
+						LCD->print(newText);
+					}break;
 				}
 			}
 		}
+	}
+	
+	//Clear refresh flag
+	refresh = false; 
+	
+	if(itemChanged){			
+		//Place the Cursor
+			itemChanged = false;
+			for(int i=0;i<itemCount;i++){
+				const PageItem *Item = &items[i];
+				if( Item->Control->isSelectable()){
+					if(i==currentItem){
+						LCD->setCursor(Item->col,Item->row);
+						LCD->print(">");
+					}else{
+						LCD->setCursor(Item->col,Item->row);
+						LCD->print(" ");
+					}
+				}
+			}
 	}
 }
 
 void EZUI_Page::prevItem(void){
 	//See if theres a previously selectable item, if so set current item to that.
-	if(currentItem > -1){
-		for( int i=currentItem; i>0; i--){
-			if (SelectableItems.get(i) == 1){
-				currentItem = i;
-				break;
-			}
+	for(int i=(currentItem-1);i>=0;i--){
+		if( this->items[i].Control->isSelectable()){
+			currentItem = i;
+			break;
 		}
 	}
-	Serial.println(Name + " - Encoder Item: ");
-	Serial.println(currentItem);
-	refresh = 1;
+	itemChanged = true;
 }
 
 void EZUI_Page::nextItem(void){
-	if(currentItem > -1){
-		for( int i=currentItem; i<(SelectableItems.size()-1); i++){
-			if (SelectableItems.get(i) == 1){
-				currentItem = i;
-				break;
-			}
+	//See if theres a previously selectable item, if so set current item to that.
+	//See if theres a previously selectable item, if so set current item to that.
+	for(int i=(currentItem+1);i<itemCount;i++){
+		if( this->items[i].Control->isSelectable()){
+			currentItem = i;
+			itemChanged = true;
+			break;
 		}
 	}
-	Serial.println(Name + " - Encoder Item: ");
-	Serial.println(currentItem);
-	refresh = 1;
+	itemChanged = true;
+}
+
+void EZUI_Page::init(EZUI *UI){
+	UI->LCD->clear();
+	this->itemsText = new String[this->itemCount];
+	for(int i=0; i<this->itemCount; i++){
+		this->itemsText[i] = "!";
+	}
+	refresh = true;
+	itemChanged = true;
+}
+
+void EZUI_Page::cleanup(EZUI *UI){
+	UI->LCD->clear();
+	String *txtArr = this->itemsText;
+	delete[] txtArr; 
 }
 
 void EZUI_Page::selectItem(EZUI *UI){
-	_Items.get(currentItem).ItemSelect(UI);
-	refresh = 1;
+	//See if theres a previously selectable item, if so set current item to that.
+	if(currentItem > -1){
+		items[currentItem].Control->Select(UI);
+	}
 }

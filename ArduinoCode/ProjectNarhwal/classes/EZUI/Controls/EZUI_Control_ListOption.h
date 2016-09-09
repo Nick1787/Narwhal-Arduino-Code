@@ -9,22 +9,46 @@
 #ifndef __EZUI_CONTROL_LISTOPTION_H__
 #define __EZUI_CONTROL_LISTOPTION_H__
 
+#include "../EZUI.h"
 
-class EZUI_Control_ListOption
+//Includes
+#include "EZUI_Control.h"
+#include "../EZUI.h"
+
+struct EZUI_ListOption{
+	int value = 0;
+	String Text = "";
+};
+
+class EZUI_Control_ListOption: public EZUI_Control
 {
 //variables
 public:
 protected:
 private:
-
+	EZUI_ListOption *items = NULL;
+	unsigned int itemCount = 0;
+	EZUI_Page * PageRef = NULL;
+	EZUI_Menu * MenuRef = NULL;
+	
 //functions
 public:
-	EZUI_Control_ListOption();
+	//Menu Label
+	String MenuLabel = "";
+	
+	//Over-ridden base class functions
+	String Text(void) const  override;
+	boolean isSelectable() const  override {return true;};
+
+	//UI Stuff
+	void Select(EZUI *UI) const override;
+	
+	EZUI_Control_ListOption(EZUI_ListOption[],  unsigned int size);
+	EZUI_Control_ListOption(String Label, EZUI_ListOption[],  unsigned int size);
 	~EZUI_Control_ListOption();
+	
 protected:
 private:
-	EZUI_Control_ListOption( const EZUI_Control_ListOption &c );
-	EZUI_Control_ListOption& operator=( const EZUI_Control_ListOption &c );
 
 }; //EZUI_Control_ListOption
 

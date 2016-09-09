@@ -11,10 +11,9 @@
 #ifndef __EZUI_PAGE_H__
 #define __EZUI_PAGE_H__
 
+#include "../Hardware.h"
 #include "../../include/LinkedList/LinkedList.h"
 #include "../../include/LiquidCrystal/LiquidCrystal_I2C.h"
-#include "EZUI_PageItem.h"
-#include "EZUI_MenuItem.h"
 #include "EZUI_Menu.h"
 #include "EZUI.h"
 #include "./Controls/EZUI_Control_Link.h"
@@ -22,41 +21,48 @@
 #include "./Controls/EZUI_Control_Label.h"
 
 class EZUI_Menu;
-class EZUI_PageItem;
 class EZUI;
-class EZUI_Control_ToggleOption;
 class EZUI_Control_Link;
-class EZUI_Control_Label;
+class EZUI_Control;
+
+struct PageItem
+{
+	uint8_t col;
+	uint8_t row;
+	uint8_t fieldWidth;
+	const EZUI_Control *Control;
+};
+	
 class EZUI_Page
 {
 //variables
 public:
-	int refreshRate = 1000;	//refresh rate in ms (default 1000ms)
-	String Name = "";
-	
+	unsigned long refreshRate = 500;
+			
 protected:
 private:
-	LinkedList<EZUI_PageItem> _Items = LinkedList<EZUI_PageItem>();
-	LinkedList<int> SelectableItems = LinkedList<int>();
-	EZUI_Page *_ParentPageRef = NULL;
-	EZUI_Menu *_ParentMenuRef = NULL;
-	unsigned long lastUpdate = 0;
+	const PageItem *items;
+	String *itemsText;
+	int itemCount = 0;
 	int currentItem = -1;
-	int refresh = 1;
+	boolean itemChanged = true;
+	boolean refresh = false;
+	unsigned long lastPrint = 0;
 
 //functions
 public:
-	EZUI_Page();
-	EZUI_Page(String _Name);
-	~EZUI_Page();
+	EZUI_Page() {};
+	~EZUI_Page() {};
 	
-	void addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_ToggleOption *item);
-	//void addItem(EZUI_Control_ListOption *item);
-	void addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_Label *item);
-	void addItem(uint8_t colIndx, uint8_t rowIndx, EZUI_Control_Link *item);
+	//Different types of items whih can be added
+	void setItems(const PageItem items[], unsigned int size);
+	
+	//Actions
 	void display(EZUI *UI);
-	void prevItem();						//Moves cursor to next item (also calls display to refresh the LCD)
-	void nextItem();						//Moves cursor to next item (also calls display to refresh the LCD)
+	void init(EZUI *UI);
+	void cleanup(EZUI *UI);
+	void prevItem();				//Moves cursor to next item (also calls display to refresh the LCD)
+	void nextItem();				//Moves cursor to next item (also calls display to refresh the LCD)
 	void selectItem(EZUI *UI);		//Select the Item, Passes the User interface parent by reference
 	
 protected:

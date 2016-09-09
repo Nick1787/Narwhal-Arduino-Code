@@ -15,82 +15,103 @@
 #include "classes/Hardware.h"
 #include "include/FastDelegate/FastDelegate.h"
 #include "include/FastDelegate/FastDelegateBind.h"
+#include "include/AdvancedSerial/AdvancedSerial.h"
 #include "iodef.h"
 #include "config.h"
-#include "classes/MAIN/MAIN_UI.h"
-#include "classes/MLT/MLT_UI.h"
-#include "classes/HLT/HLT_UI.h"
-#include "classes/BK/BK_UI.h"
+#include "classes/UI/UI_MAIN.h"
+#include "classes/UI/UI_MLT.h"
+#include "classes/UI/UI_HLT.h"
+#include "classes/UI/UI_BK.h"
 
 //typedef FastDelegate2<int, char *> EvtHandler;
 unsigned long BootScreenTime = 0;
 bool firstpass = true;
 
-Executive *Exec = new Executive();
+Executive Exec;
 
 void setup() {
+	
+	//Setup Analog for External
+	analogReference(EXTERNAL);
+	
 	//Setup the Hardware
-	Serial.begin(9600);      // open the serial port at 9600 bps:
+	Serial.begin(115200);      // open the serial port at 115200 bps:
 	
 	//Print out the version
-	Serial.println("*************************************");
-	Serial.println("  Project Narwhal Estd. 2015         ");
-	Serial.println("*************************************");
-	Serial.print("  Version: ");
+	Serial.println(F("*************************************"));
+	Serial.println(F("  Project Narwhal Estd. 2015         "));
+	Serial.println(F("*************************************"));
+	Serial.print(F("  Version: "));
 	Serial.println(VERSION);
-	Serial.println("");
+	Serial.println(F(""));
 		
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-		Serial.println("-INITIALIZING-");
+		Serial.println(F("-INITIALIZING-"));
 	#endif
 	
 	//Initialize Hardware
+	Serial.print(F("Free Bytes: "));
+	Serial.println(freeMemory());
+	Serial.flush();
+	
 	hardware_init();
+	UI_MAIN::UI_init();
+	UI_HLT::UI_init();
+	UI_MLT::UI_init();
+	UI_BK::UI_init();
 
 	//Display the Boot screens	
 	BootScreenTime = millis();
 	
+	MAIN_LCD.clear();
 	MAIN_LCD.setCursor(3,1);
 	MAIN_LCD.print("Narwhal v");
 	MAIN_LCD.print(VERSION);
 	MAIN_LCD.setCursor(2,2);
 	MAIN_LCD.print("Established 2015");
-		
+	
+	HLT_LCD.clear();
 	HLT_LCD.setCursor(2,1);
 	HLT_LCD.print("Hot Liquor Tank");
-		
+	MLT_LCD.clear();	
 	MLT_LCD.setCursor(2,1);
 	MLT_LCD.print("Mash/Lauter Tun");
 		
+	BK_LCD.clear();
 	BK_LCD.setCursor(2,1);
 	BK_LCD.print("Boil Kettle");
-
-	//Initialize the rest of the programs
-	MAIN_UI_init();
-	HLT_UI_init();
-	MLT_UI_init();
-	BK_UI_init();
-	delay(3000);
+		
+	//Report free memory after initialization
+	Serial.print(F("Free Bytes: "));
+	Serial.println(freeMemory());
 }
 
 void loop() {
-	
 	//On first pass print out a verbose message
 	if(firstpass){
 		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-			Serial.println("-MAIN-PROGRAM-");
+			Serial.println(F(""));
+			Serial.println(F("-MAIN-PROGRAM-"));
 		#endif
+		
+		//Make sure boot screens display for atleast 3 seconds (3000ms)
+		while((millis()-BootScreenTime)<3000){
+			//Wait
+			delay(500);
+		}
+		
+		//Clear the Displays
+		Serial.println(F("======================="));
+		Serial.flush();
+		UI_MAIN::UI->refresh();
+		UI_HLT::UI->refresh();
+		UI_MLT::UI->refresh();
+		UI_BK::UI->refresh();
 	}
 	firstpass = false;
 	
-	//Make sure boot screens display for atleast 3 seconds (3000ms)
-	while((millis()-BootScreenTime)<3000){
-		//Wait
-		delay(500);
-	}
-	
 	//Run the Executive
-	Exec->run();
+	Exec.run();
 }
 
 

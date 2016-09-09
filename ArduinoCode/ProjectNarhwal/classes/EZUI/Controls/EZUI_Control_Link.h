@@ -12,36 +12,45 @@
 #ifndef __EZUI_CONTROL_LINK_H__
 #define __EZUI_CONTROL_LINK_H__
 
+//Includes
+#include "EZUI_Control.h"
 #include "../EZUI.h"
-#include "../EZUI_Menu.h"
-#include "../EZUI_Page.h"
 
+//Forward Declarations
 class EZUI;
 class EZUI_Page;
 class EZUI_Menu;
-class EZUI_Control_Link
+class DigitalIO;
+
+class EZUI_Control_Link : public EZUI_Control
 {
 //variables
 public:
+	using EZUI_Control::Type;
 	String Label = "";
 	
 protected:
 private:
 	enum LinkType{MenuLink, PageLink};
-	LinkType type = MenuLink;
+	LinkType Link = MenuLink;
 	void *LinkRef = NULL;
 
 //functions
 public:
-	void FollowLink(EZUI *UI);
+	//Over-ridden base class functions
+	String Text(void) const  override;
+	boolean isSelectable() const  override {return true;};
+	void Select(EZUI *UI) const override;
+	
+	//void FollowLink(EZUI *UI) const;
 	EZUI_Control_Link(String Text, EZUI_Menu * MenuLink);
 	EZUI_Control_Link(String Text, EZUI_Page * PageLink);
-	~EZUI_Control_Link();
+	~EZUI_Control_Link() override {};
 	
 protected:
 private:
-	EZUI_Control_Link( const EZUI_Control_Link &c );
-	EZUI_Control_Link& operator=( const EZUI_Control_Link &c );
+	//EZUI_Control_Link( const EZUI_Control_Link &c );
+	//EZUI_Control_Link& operator=( const EZUI_Control_Link &c );
 
 }; //EZUI_Control_Link
 

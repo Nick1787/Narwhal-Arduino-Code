@@ -14,17 +14,6 @@ ClickEncoderWithEvents::~ClickEncoderWithEvents()
 } //~ClickEncoderWithEvents
 
 void ClickEncoderWithEvents::Read(){
-	//service();
-
-	//value += this->getValue();
-	
-	//if (value != last) {
-	//	last = value;
-	//	Serial.print("Encoder Value: ");
-	//	Serial.println(value);
-	//}
-	
-			//See if Incremented or not
 			t_value += this->getValue();
 			if(t_value > t_prev_value){
 				if( !(IncrementHandler == NULL)){
@@ -45,29 +34,33 @@ void ClickEncoderWithEvents::Read(){
 			if (b != ClickEncoder::Open) {
 				 switch (b) {
 					 case(ClickEncoder::Pressed):
+						 #if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
+							 Serial.println(F("Encoder Pressed. No Action"));
+							 Serial.flush();
+						 #endif
 						break;
 					 case(ClickEncoder::Held):
+						 #if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
+							 Serial.println(F("Encoder Held. No Action"));
+							 Serial.flush();
+						 #endif
 						break;
 					 case(ClickEncoder::Released):
+						#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
+							 Serial.println(F("Encoder Released. No Action"));
+							 Serial.flush();
+						#endif
 						break;
 					 case(ClickEncoder::Clicked):
-						if (!(ClickHandler == NULL)){
-							Serial.println("Click Detected!");
-							(UI->*ClickHandler)();
-					}
-					break;
+						#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
+							Serial.println(F("Encoder Click."));
+							Serial.flush();
+						#endif
+						(UI->*ClickHandler)();
+						break;
 					 case (ClickEncoder::DoubleClicked):
-						if (!(DblClickHandler == NULL)){
 							(UI->*DblClickHandler)();
-						}
 						break;
 				 }
 			}
 }
-
-//void ClickEncoderWithEsErnts::ClearHandlers(){
-	//ClickHandler = NULL;
-	//DblClickHandler = NULL;
-	//IncrementHandler = NULL;
-	//DecrementHandler = NULL;
-//}

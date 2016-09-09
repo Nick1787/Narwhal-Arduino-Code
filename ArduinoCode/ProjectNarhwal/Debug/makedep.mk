@@ -2,13 +2,13 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-classes\BK\BK_UI.cpp
-
 classes\BurnerController.cpp
 
 classes\EnhancedIO\AnalogIn.cpp
 
 classes\EnhancedIO\DigitalIO.cpp
+
+classes\EZUI\Controls\EZUI_Control.cpp
 
 classes\EZUI\Controls\EZUI_Control_Label.cpp
 
@@ -20,21 +20,19 @@ classes\EZUI\Controls\EZUI_Control_ToggleOption.cpp
 
 classes\Hardware.cpp
 
-classes\HLT\HLT_UI.cpp
+classes\UI_BK\UI_BK.cpp
 
-classes\MAIN\MAIN_UI.cpp
+classes\UI_HLT\UI_HLT.cpp
 
-classes\MLT\MLT_UI.cpp
+classes\UI_MAIN\UI_MAIN.cpp
+
+classes\UI_MLT\UI_MLT.cpp
 
 classes\EZUI\ClickEncoderWithEvents.cpp
 
 classes\EZUI\EZUI_Menu.cpp
 
-classes\EZUI\EZUI_MenuItem.cpp
-
 classes\EZUI\EZUI_Page.cpp
-
-classes\EZUI\EZUI_PageItem.cpp
 
 classes\EZUI\EZUI.cpp
 
@@ -43,6 +41,8 @@ classes\Executive.cpp
 classes\LUT.cpp
 
 classes\WheatstoneBridge.cpp
+
+include\AdvancedSerial\AdvancedSerial.cpp
 
 include\ClickEncoder\ClickEncoder.cpp
 
@@ -61,6 +61,8 @@ include\LiquidCrystal\LiquidCrystal_SR.cpp
 include\LiquidCrystal\LiquidCrystal_SR2W.cpp
 
 include\LiquidCrystal\LiquidCrystal_SR3W.cpp
+
+include\MemoryFree\MemoryFree.cpp
 
 include\TimerOne\TimerOne.cpp
 

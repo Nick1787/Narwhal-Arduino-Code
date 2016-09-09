@@ -57,6 +57,9 @@ classes/BK/BK_UI.d classes/BK/BK_UI.o: ../classes/BK/BK_UI.cpp \
  ../classes/BK/../../include/LiquidCrystal/LiquidCrystal_I2C.h \
  ../classes/BK/../../include/TimerOne/TimerOne.h \
  ../classes/BK/../../include/TimerOne/config/known_16bit_timers.h \
+ ../classes/BK/../../include/AdvancedSerial/AdvancedSerial.h \
+ ../classes/BK/../../include/AdvancedSerial/LinkedList.h \
+ ../classes/BK/../../include/MemoryFree/MemoryFree.h \
  ../classes/BK/../../iodef.h ../classes/BK/../../config.h \
  ../classes/BK/../RTD.h ../classes/BK/../LUT.h \
  ../classes/BK/../EnhancedIO/DigitalIO.h \
@@ -207,6 +210,12 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../classes/BK/../../include/TimerOne/TimerOne.h:
 
 ../classes/BK/../../include/TimerOne/config/known_16bit_timers.h:
+
+../classes/BK/../../include/AdvancedSerial/AdvancedSerial.h:
+
+../classes/BK/../../include/AdvancedSerial/LinkedList.h:
+
+../classes/BK/../../include/MemoryFree/MemoryFree.h:
 
 ../classes/BK/../../iodef.h:
 

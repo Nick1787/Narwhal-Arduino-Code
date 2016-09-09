@@ -100,6 +100,8 @@
         <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
         <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
         <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.warnings.ExtraWarnings>True</avrgcc.compiler.warnings.ExtraWarnings>
+        <avrgcc.compiler.warnings.Undefined>True</avrgcc.compiler.warnings.Undefined>
         <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
         <avrgcc.compiler.miscellaneous.OtherFlags />
         <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
@@ -255,28 +257,34 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="classes\BK\BK_UI.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\BK\BK_UI.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="classes\BurnerController.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\BurnerController.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\EnhancedIO\AnalogIn.cpp">
+    <Compile Include="classes\EnhancedIO\AdjustableParam.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\EnhancedIO\AnalogIn.h">
+    <Compile Include="classes\EnhancedIO\AdjustableParam.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EnhancedIO\DigitalIO.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EnhancedIO\DigitalIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_AdjustParam.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control_AdjustParam.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\Controls\EZUI_Control.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EZUI\Controls\EZUI_Control_Label.cpp">
@@ -306,22 +314,28 @@
     <Compile Include="classes\Hardware.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\HLT\HLT_UI.cpp">
+    <Compile Include="classes\UI\UI_BK.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\HLT\HLT_UI.h">
+    <Compile Include="classes\UI\UI_BK.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\MAIN\MAIN_UI.cpp">
+    <Compile Include="classes\UI\UI_HLT.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\MAIN\MAIN_UI.h">
+    <Compile Include="classes\UI\UI_HLT.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\MLT\MLT_UI.cpp">
+    <Compile Include="classes\UI\UI_MAIN.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\MLT\MLT_UI.h">
+    <Compile Include="classes\UI\UI_MAIN.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\UI\UI_MLT.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\UI\UI_MLT.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EZUI\ClickEncoderWithEvents.cpp">
@@ -336,22 +350,10 @@
     <Compile Include="classes\EZUI\EZUI_Menu.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\EZUI\EZUI_MenuItem.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\EZUI_MenuItem.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="classes\EZUI\EZUI_Page.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EZUI\EZUI_Page.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\EZUI_PageItem.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\EZUI_PageItem.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EZUI\EZUI.cpp">
@@ -369,19 +371,28 @@
     <Compile Include="classes\Hardware.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\LUT.cpp">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="classes\LUT.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\WheatstoneBridge.cpp">
+    <Compile Include="classes\UI\UI_Shared.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\UI\UI_Shared.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\WheatstoneBridge.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\AdvancedSerial\AdvancedSerial.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\AdvancedSerial\AdvancedSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\AdvancedSerial\LinkedList.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\arduino\Arduino.h">
@@ -516,6 +527,12 @@
     <Compile Include="include\LiquidCrystal\LiquidCrystal_SR3W.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\MemoryFree\MemoryFree.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\MemoryFree\MemoryFree.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\micro\pins_arduino.h">
       <SubType>compile</SubType>
     </Compile>
@@ -633,10 +650,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="classes\EZUI\Controls" />
-    <Folder Include="classes\MAIN" />
-    <Folder Include="classes\HLT" />
-    <Folder Include="classes\MLT" />
-    <Folder Include="classes\BK" />
+    <Folder Include="classes\UI" />
     <Folder Include="classes\EZUI" />
     <Folder Include="classes\EnhancedIO" />
     <Folder Include="include\" />
@@ -650,6 +664,8 @@
     <Folder Include="include\LiquidCrystal" />
     <Folder Include="include\LinkedList" />
     <Folder Include="include\FastDelegate" />
+    <Folder Include="include\AdvancedSerial" />
+    <Folder Include="include\MemoryFree" />
     <Folder Include="include\TimerOne" />
     <Folder Include="include\TimerOne\config" />
     <Folder Include="include\Wire" />
