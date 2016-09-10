@@ -89,30 +89,21 @@ void Executive::exec_frame1(){
 	MLT_ENC.Read();
 	HLT_ENC.Read();
 	BK_ENC.Read();
-	
-	//RTDs
-	HLT_RTD_Vs = 5.0 * ((float)analogRead(HLT_RTD_Vs_AN) / 1023.0);
-	HLT_RTD_BP_V = 5.0 * ((float)analogRead(HLT_RTD_BP_AN) / 1023.0);
-	HLT_RTD_OP_V = 5.0 * ((float)analogRead(HLT_RTD_OP_AN) / 1023.0);
-	MLT_RTD_Vs = 5.0 * ((float)analogRead(MLT_RTD_Vs_AN) / 1023.0);
-	MLT_RTD_BP_V = 5.0 * ((float)analogRead(MLT_RTD_BP_AN) / 1023.0);
-	MLT_RTD_OP_V = 5.0 * ((float)analogRead(MLT_RTD_OP_AN) / 1023.0);
-	BK_RTD_Vs = 5.0 * ((float)analogRead(BK_RTD_Vs_AN) / 1023.0);
-	BK_RTD_BP_V = 5.0 * ((float)analogRead(BK_RTD_BP_AN) / 1023.0);
-	BK_RTD_OP_V = 5.0 * ((float)analogRead(BK_RTD_OP_AN) / 1023.0);
 }
 
 void Executive::exec_frame2(){
 	//Update the RTD values
-	HLT_RTD_BP.Calculate(HLT_RTD_Vs,HLT_RTD_BP_V);
-	HLT_RTD_OP.Calculate(HLT_RTD_Vs,HLT_RTD_OP_V);
-	MLT_RTD_BP.Calculate(MLT_RTD_Vs,MLT_RTD_BP_V);
-	MLT_RTD_OP.Calculate(MLT_RTD_Vs,MLT_RTD_OP_V);
-	BK_RTD_BP.Calculate(BK_RTD_Vs,BK_RTD_BP_V);
-	BK_RTD_OP.Calculate(BK_RTD_Vs,BK_RTD_OP_V);
+	HLT_RTD_BP.Calculate( (float)analogRead(HLT_RTD_Vs_AN) / 1023.0, (float)analogRead(HLT_RTD_BP_AN) / 1023.0 );
+	HLT_RTD_OP.Calculate( (float)analogRead(HLT_RTD_Vs_AN) / 1023.0, (float)analogRead(HLT_RTD_OP_AN) / 1023.0 );
+	MLT_RTD_BP.Calculate( (float)analogRead(MLT_RTD_Vs_AN) / 1023.0, (float)analogRead(MLT_RTD_BP_AN) / 1023.0 );
+	MLT_RTD_OP.Calculate( (float)analogRead(MLT_RTD_Vs_AN) / 1023.0, (float)analogRead(MLT_RTD_OP_AN) / 1023.0 );
+	BK_RTD_BP.Calculate(  (float)analogRead(BK_RTD_Vs_AN)  / 1023.0, (float)analogRead(BK_RTD_BP_AN)  / 1023.0 );
+	BK_RTD_OP.Calculate(  (float)analogRead(BK_RTD_Vs_AN)  / 1023.0, (float)analogRead(BK_RTD_OP_AN)  / 1023.0 );
 	
 	//Controllers
-	
+	HLT_Controller.Exec();
+	MLT_Controller.Exec();
+	BK_Controller.Exec();
 }
 
 void Executive::exec_frame3(){

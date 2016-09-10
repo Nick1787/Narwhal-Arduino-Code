@@ -9,9 +9,8 @@
 #define __CLICKENCODERWITHEVENTS_H__
 
 #include "../../include/ClickEncoder/ClickEncoder.h"
-#include "EZUI_Menu.h"
+#include "EZUI.h"
 
-class EZUI; //Defines the class so it can be used.
 class ClickEncoderWithEvents : public ClickEncoder
 {
 	//variables

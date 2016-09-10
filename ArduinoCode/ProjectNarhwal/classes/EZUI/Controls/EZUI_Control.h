@@ -19,8 +19,8 @@ class EZUI_Control
 {
 //variables
 public:
-	enum ControlType { None, Label, Link, ToggleOpt};
-	ControlType Type = None;
+	enum EZUI_ControlType { None, Label, Link, ToggleControl, ListControl, AdjParam};
+	const EZUI_ControlType Type;
 	
 protected:
 private:
@@ -28,10 +28,15 @@ private:
 //functions
 public:
 	virtual boolean isSelectable()  const { return false; };
+	virtual boolean hasValueText()  const { return false; };
 	virtual void Select(EZUI *UI) const { };
-	virtual String Text() const  { return "ControlText!"; };
-	EZUI_Control();
-	virtual ~EZUI_Control();
+	virtual String LabelText()  { return "LabelText!"; };
+	virtual String ValueText()  { return "ValueText!"; };
+		
+	//Default constructors / destructor
+	constexpr EZUI_Control() : Type(EZUI_ControlType::None) {};
+	constexpr EZUI_Control(EZUI_ControlType _Type) : Type(_Type) {};
+	virtual ~EZUI_Control() {};
 	
 protected:
 private:

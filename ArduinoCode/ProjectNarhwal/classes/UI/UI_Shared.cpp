@@ -8,6 +8,7 @@
 
 #include "UI_Shared.h"
 #include "../EZUI/Controls/EZUI_Control.h"
+#include "../EZUI/Controls/EZUI_Control_Label.h"
 
 EZUI_Control_Label Shared_Lbl_HLT("HLT:");
 EZUI_Control_Label Shared_Lbl_MLT("MLT:");

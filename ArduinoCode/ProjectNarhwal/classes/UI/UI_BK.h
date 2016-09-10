@@ -16,8 +16,8 @@
 #include "../Executive.h"
 #include "../Hardware.h"
 #include "../../config.h"
-#include "../EZUI/EZUI_Menu.h"
-#include "../EZUI/EZUI_Page.h"
+#include "../EZUI/EZUI_Display.h"
+#include "../EZUI/Controls/EZUI_Control_Label.h"
 #include "UI_Shared.h"
 
 namespace UI_BK{

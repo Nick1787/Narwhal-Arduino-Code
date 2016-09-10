@@ -82,6 +82,20 @@ void hardware_init(){
 	//Set all Solenoids to output high which is "off" mode
 	RC1_OUT1.Write(1);
 	RC1_OUT2.Write(1);
+	RC1_OUT3.Write(1);
+	RC1_OUT4.Write(1);
+	RC1_OUT5.Write(1);
+	RC1_OUT6.Write(1);
+	RC1_OUT7.Write(1);
+	RC1_OUT8.Write(1);
+	RC2_OUT1.Write(1);
+	RC2_OUT2.Write(1);
+	RC2_OUT3.Write(1);
+	RC2_OUT4.Write(1);
+	RC2_OUT5.Write(1);
+	RC2_OUT6.Write(1);
+	RC2_OUT7.Write(1);
+	RC2_OUT8.Write(1);
 	
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
 		Serial.println(F("Done."));
@@ -165,11 +179,8 @@ DigitalIO * HLT_SOL1 = &RC1_OUT1;
 DigitalIO * HLT_SOL2 = &RC1_OUT2;
 WheatstoneBridge HLT_RTD_BP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
 WheatstoneBridge HLT_RTD_OP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
-float HLT_RTD_Vs = 0.0;
-float HLT_RTD_BP_V = 0.0;
-float HLT_RTD_OP_V = 0.0;
-
-
+BurnerController HLT_Controller(&HLT_TC_ON, &HLT_RTD_BP, &HLT_RTD_OP, HLT_SOL1, HLT_SOL2);
+	
 /**************************
 *	Mash Lauter Tun
 **************************/
@@ -179,9 +190,7 @@ DigitalIO * MLT_SOL1 = &RC1_OUT3;
 DigitalIO * MLT_SOL2 = &RC1_OUT4;
 WheatstoneBridge MLT_RTD_BP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
 WheatstoneBridge MLT_RTD_OP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
-float MLT_RTD_Vs = 0.0;
-float MLT_RTD_BP_V = 0.0;
-float MLT_RTD_OP_V = 0.0;
+BurnerController MLT_Controller(&MLT_TC_ON, &MLT_RTD_BP, &MLT_RTD_OP, MLT_SOL1, MLT_SOL2);
 
 /**************************
 *	Boil Kettle
@@ -192,7 +201,4 @@ DigitalIO * BK_SOL1 = &RC1_OUT5;
 DigitalIO * BK_SOL2 = &RC1_OUT6;
 WheatstoneBridge BK_RTD_BP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
 WheatstoneBridge BK_RTD_OP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
-float BK_RTD_Vs = 0.0;
-float BK_RTD_BP_V = 0.0;
-float BK_RTD_OP_V = 0.0;
-
+BurnerController BK_Controller(&BK_TC_ON, &BK_RTD_BP, &BK_RTD_OP, BK_SOL1, BK_SOL2);

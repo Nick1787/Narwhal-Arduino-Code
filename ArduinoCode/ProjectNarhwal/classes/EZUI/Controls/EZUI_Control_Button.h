@@ -1,31 +1,54 @@
-/* 
-* EZUI_Control_Button.h
-*
-* Created: 1/10/2016 9:25:03 AM
-* Author: Customer
-*/
+/*
+ *        File: EZUI_Control_Button.h
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - Button Control
+ *			- Buttons have void(void) callback functions
+ * ----------------------------------------------------------------
+ *    Revision:
+ *		11062015 - NRD - Initial Version
+ * ----------------------------------------------------------------
+ */
 
+#ifndef __EZUI_CONTROL_Button_H__
+#define __EZUI_CONTROL_Button_H__
 
-#ifndef __EZUI_CONTROL_BUTTON_H__
-#define __EZUI_CONTROL_BUTTON_H__
+//Includes
+#include "EZUI_Control.h"
+#include "../EZUI.h"
 
+//Forward Declarations
+class EZUI;
+class EZUI_Page;
+class EZUI_Menu;
+class DigitalIO;
 
-class EZUI_Control_Button
+class EZUI_Control_Button : public EZUI_Control
 {
 //variables
-public:
+public:	
 protected:
 private:
+	char * _Label;
 
 //functions
 public:
-	EZUI_Control_Button();
-	~EZUI_Control_Button();
+
+	//Over-ridden base class functions
+	boolean isSelectable() const  override {return true;};
+	boolean hasValueText() const override { return false;};
+	String LabelText(void) override{ return String(this->_Label); };
+	void Select(EZUI *UI) const override {
+	};
+	
+	//Default Destructor
+	~EZUI_Control_Button() override {};	
+		
+	//void FollowButton(EZUI *UI) const;
+	EZUI_Control_Button(char Text[], EZUI_Display * Button): EZUI_Control(EZUI_ControlType::Button), _ButtonRef(Button), _Label(Text){};
+
 protected:
 private:
-	EZUI_Control_Button( const EZUI_Control_Button &c );
-	EZUI_Control_Button& operator=( const EZUI_Control_Button &c );
 
 }; //EZUI_Control_Button
 
-#endif //__EZUI_CONTROL_BUTTON_H__
+#endif //__EZUI_CONTROL_Button_H__

@@ -8,8 +8,8 @@
  * ----------------------------------------------------------------
  */
  
-#ifndef _HARDWARE_H
-#define _HARDWARE_H
+#ifndef __HARDWARE_H__
+#define __HARDWARE_H__
 
 #include "../include/LiquidCrystal/LiquidCrystal_I2C.h"
 #include "../include/TimerOne/TimerOne.h"
@@ -17,10 +17,12 @@
 #include "../include/MemoryFree/MemoryFree.h"
 #include "../iodef.h"
 #include "../config.h"
+#include "BurnerController.h"
 
 #include "WheatstoneBridge.h"
-#include "EnhancedIO/DigitalIO.h"
 #include "Executive.h"
+#include "EnhancedTypes/DigitalIO.h"
+#include "EnhancedTypes/AdjustableParam.h"
 
 #include "EZUI/ClickEncoderWithEvents.h"
 #include "EZUI/EZUI.h"
@@ -98,13 +100,11 @@ extern EZUI *MAIN_UI;
 /**************************
 *	Hot Liquor Tank
 **************************/
+extern BurnerController HLT_Controller;
 extern LiquidCrystal_I2C HLT_LCD;
 extern ClickEncoderWithEvents HLT_ENC;
 extern WheatstoneBridge HLT_RTD_BP;
 extern WheatstoneBridge HLT_RTD_OP;
-extern float HLT_RTD_Vs;
-extern float HLT_RTD_BP_V;
-extern float HLT_RTD_OP_V;
 
 //User Interface
 extern EZUI *HLTUI;
@@ -116,13 +116,11 @@ extern DigitalIO *HLT_SOL2;
 /**************************
 *	Mach Liquor Tank
 **************************/
+extern BurnerController MLT_Controller;
 extern LiquidCrystal_I2C MLT_LCD;
 extern ClickEncoderWithEvents MLT_ENC;
 extern WheatstoneBridge MLT_RTD_BP;
 extern WheatstoneBridge MLT_RTD_OP;
-extern float MLT_RTD_Vs;
-extern float MLT_RTD_BP_V;
-extern float MLT_RTD_OP_V;
 
 //User Interface
 extern EZUI *MLTUI;
@@ -134,13 +132,12 @@ extern DigitalIO *MLT_SOL2;
 /**************************
 *	Boil Kettle
 **************************/
+
+extern BurnerController BK_Controller;
 extern LiquidCrystal_I2C BK_LCD;
 extern ClickEncoderWithEvents BK_ENC;
 extern WheatstoneBridge BK_RTD_BP;
 extern WheatstoneBridge BK_RTD_OP;
-extern float BK_RTD_Vs;
-extern float BK_RTD_BP_V;
-extern float BK_RTD_OP_V;
 
 //User Interface
 extern EZUI *BKUI;

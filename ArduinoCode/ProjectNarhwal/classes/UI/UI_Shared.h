@@ -10,8 +10,7 @@
 #define __UI_SHARED_H__
 
 #include "../EZUI/EZUI.h"
-#include "../EZUI/EZUI_Menu.h"
-#include "../EZUI/EZUI_Page.h"
+#include "../EZUI/EZUI_Display.h"
 #include "../EZUI/Controls/EZUI_Control.h"
 
 class EZUI_Control_Label;

@@ -12,8 +12,7 @@
 #define MAIN_UI_H_
 
 #include "../EZUI/EZUI.h"
-#include "../EZUI/EZUI_Menu.h"
-#include "../EZUI/EZUI_Page.h"
+#include "../EZUI/EZUI_Display.h"
 #include "../Executive.h"
 #include "../Hardware.h"
 #include "../../config.h"

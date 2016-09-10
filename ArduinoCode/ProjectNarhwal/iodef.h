@@ -67,7 +67,7 @@
 ///////////////////////////////
 
 //LCD
-#define MAIN_LCD_I2C_ADDR    0x29 //7  // Define I2C Address where the PCF8574A is 0x27
+#define MAIN_LCD_I2C_ADDR    0x27  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
 #define MAIN_ENC_A 32
@@ -84,7 +84,7 @@
 #define HLT_SOLENOID_2 52			//Ctrl Digital out
 
 //LCD
-#define HLT_LCD_I2C_ADDR    0x27 //6  // Define I2C Address where the PCF8574A is 0x27
+#define HLT_LCD_I2C_ADDR    0x26  // Define I2C Address where the PCF8574A is 0x27
 
 //Encoder
 

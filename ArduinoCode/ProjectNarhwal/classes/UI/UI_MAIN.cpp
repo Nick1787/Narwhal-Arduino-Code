@@ -47,6 +47,7 @@ namespace UI_MAIN{
 		{&Tgl_Pilot3Opt},
 		{&Lnk_BackMainMenu}
 	};
+	
 	/***************************************
 	  Page - ThermoCouples Monitor
 	***************************************/
@@ -80,12 +81,12 @@ namespace UI_MAIN{
 	***************************************/
 	EZUI_Page Page_PumpMonitor;
 	EZUI_Control_Link Lnk_PagePumpMonitor("Pump Monitor",&Page_PumpMonitor);
-	const EZUI_Control_Label Lbl_Pump1lbl("Pump#1");
-	const EZUI_Control_Label Lbl_Pump1Val(&Pump1_On, "ON", "OFF");
-	const EZUI_Control_Label Lbl_Pump2lbl("Pump#2");
-	const EZUI_Control_Label Lbl_Pump2Val(&Pump2_On, "ON", "OFF");
-	const EZUI_Control_Label Lbl_Pump1Volt(&Pump1_V);
-	const EZUI_Control_Label Lbl_Pump2Volt(&Pump2_V);
+	EZUI_Control_Label Lbl_Pump1lbl("Pump#1");
+	EZUI_Control_Label Lbl_Pump1Val(&Pump1_On, "ON", "OFF");
+	EZUI_Control_Label Lbl_Pump2lbl("Pump#2");
+	EZUI_Control_Label Lbl_Pump2Val(&Pump2_On, "ON", "OFF");
+	EZUI_Control_Label Lbl_Pump1Volt(&Pump1_V);
+	EZUI_Control_Label Lbl_Pump2Volt(&Pump2_V);
 	PageItem Page_PumpMonitor_Items[9] = {
 		{ 0,  0, 6, &Lbl_Pump1lbl},
 		{ 8,  0, 3, &Lbl_Pump1Val},
@@ -97,11 +98,36 @@ namespace UI_MAIN{
 		{ 16, 1, 4, &Lbl_Pump2Volt},
 		{  0, 3, 4, &Lnk_BackMainMenu}
 	};
+	
+	
+	/***************************************
+	 Menu - TestItems
+	***************************************/
+	/*EZUI_Menu Menu_BurnerModes;
+	EZUI_Control_Link Lnk_Menu_BurnerModes("Burner Modes",&Menu_BurnerModes);
+	EZUI_ListOption Lst_BurnerModes[]={
+		{0,"Off"},
+		{1,"Manual"},
+		{2,"Active"}
+	};
+	int Cntr1 = 1;
+	int Cntr2 = 1;
+	int Cntr3 = 1;
+	EZUI_Control_ListOption Lst_HLT_Mode(&Cntr1, "HLT Control", A(Lst_BurnerModes));
+	EZUI_Control_ListOption Lst_MLT_Mode(&Cntr2, "MLT Control", A(Lst_BurnerModes));
+	EZUI_Control_ListOption Lst_BK_Mode(&Cntr3, "BK Control", A(Lst_BurnerModes));
+	MenuItem Menu_BurnerModes_Items[4] = {
+		{&Lst_HLT_Mode},
+		{&Lst_MLT_Mode},
+		{&Lst_BK_Mode},
+		{&Lnk_BackMainMenu}
+	};
+	*/
 	MenuItem Menu_MainMenu_Items[] = {
 		{  &Lnk_MenuPumpMonitor},
 		{  &Lnk_PageTCMonitor},
 		{  &Lnk_MenuPilotMonitor},
-		{  &Lnk_PagePumpMonitor},
+		{  &Lnk_PagePumpMonitor}
 	};
 
 	void UI_init(){
@@ -118,6 +144,7 @@ namespace UI_MAIN{
 		Menu_PilotMontior.setItems(A(Menu_PilotMonitor_Items));
 		Page_TCMonitor.setItems(A(Page_TCMonitor_Items));
 		Page_PumpMonitor.setItems(A(Page_PumpMonitor_Items));
+		//Menu_BurnerModes.setItems(A(Menu_BurnerModes_Items));
 	
 		/**************************************
 		  Setup + Initialization

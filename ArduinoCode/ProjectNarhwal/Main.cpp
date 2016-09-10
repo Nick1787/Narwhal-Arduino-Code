@@ -44,7 +44,8 @@ void setup() {
 	Serial.print(F("  Version: "));
 	Serial.println(VERSION);
 	Serial.println(F(""));
-		
+	Serial.flush();
+	
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
 		Serial.println(F("-INITIALIZING-"));
 	#endif

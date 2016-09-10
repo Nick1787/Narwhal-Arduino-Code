@@ -25,32 +25,31 @@ class DigitalIO;
 class EZUI_Control_Link : public EZUI_Control
 {
 //variables
-public:
-	using EZUI_Control::Type;
-	String Label = "";
-	
+public:	
 protected:
 private:
-	enum LinkType{MenuLink, PageLink};
-	LinkType Link = MenuLink;
-	void *LinkRef = NULL;
+	EZUI_Display * _LinkRef;
+	char * _Label;
 
 //functions
 public:
+
 	//Over-ridden base class functions
-	String Text(void) const  override;
 	boolean isSelectable() const  override {return true;};
-	void Select(EZUI *UI) const override;
+	boolean hasValueText() const override { return false;};
+	String LabelText(void) override{ return String(this->_Label); };
+	void Select(EZUI *UI) const override {
+		UI->setDisplay(_LinkRef);
+	};
 	
+	//Default Destructor
+	~EZUI_Control_Link() override {};	
+		
 	//void FollowLink(EZUI *UI) const;
-	EZUI_Control_Link(String Text, EZUI_Menu * MenuLink);
-	EZUI_Control_Link(String Text, EZUI_Page * PageLink);
-	~EZUI_Control_Link() override {};
-	
+	EZUI_Control_Link(char Text[], EZUI_Display * Link): EZUI_Control(EZUI_ControlType::Link), _LinkRef(Link), _Label(Text){};
+
 protected:
 private:
-	//EZUI_Control_Link( const EZUI_Control_Link &c );
-	//EZUI_Control_Link& operator=( const EZUI_Control_Link &c );
 
 }; //EZUI_Control_Link
 

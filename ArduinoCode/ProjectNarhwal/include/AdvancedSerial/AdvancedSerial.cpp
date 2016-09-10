@@ -9,7 +9,7 @@
  */
  
 #include "AdvancedSerial.h"
-#include "Arduino.h"s
+#include "Arduino.h"
 
 AdvancedSerial::AdvancedSerial( HardwareSerial *Ref){
   SerialRef = Ref;

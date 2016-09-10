@@ -23,6 +23,7 @@ class WheatstoneBridge{
 		//Voltages
 		float Vo;	//Output Voltage	
 		float Vs;	//Source Voltage
+		boolean Faulted = false;
 		
 		//Bridge Properties
 		float AmpGain;
@@ -84,6 +85,10 @@ class WheatstoneBridge{
 			degF = degC * 9/5 + 32;
 			
 			return degC;
+			
+			if((Vo < 0.1) || (Vo>Vs)){
+				Faulted = true;
+			}
 		};
 };
 
