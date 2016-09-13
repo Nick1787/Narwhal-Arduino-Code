@@ -12,7 +12,7 @@
 #define __BURNERCONTROLLER_H__
 
 #include "Hardware.h"
-#include "../lists.h"
+#include "../ListsAndAdjustments.h"
 #include "WheatstoneBridge.h"
 #include "EZUI/EZUI.h"
 #include "EnhancedTypes/DigitalIO.h"

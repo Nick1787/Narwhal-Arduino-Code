@@ -14,6 +14,8 @@
 #include "EZUI.h"
 #include "./Controls/EZUI_Control_Link.h"
 #include "./Controls/EZUI_Control_ToggleOption.h"
+#include "./Controls/EZUI_Control_ListOption.h"
+#include "./Controls/EZUI_Control_Button.h"
 
 
 /*-----------------------------------------------
@@ -132,6 +134,39 @@ class EZUI_Page : public EZUI_Display{
 	private:
 };
 
+/*-----------------------------------------------
+	List Option Edit
+------------------------------------------------*/
+class EZUI_ListEdit : public EZUI_Display{
+	private:
+		EZUI_Control_ListOption * ListOptRef;
+		EZUI_Control_ListOption * ListOptClone;
+		EZUI_Control_Button * CancelButton;
+		EZUI_Control_Button * ApplyButton;
+	protected:
+	public:
+		//Constructor 
+		EZUI_ListEdit(EZUI_Control_ListOption * ListOptRef): EZUI_ListEdit(EZUI_DisplayType::ListOpt){
+			CancelButton = new EZUI_Control_Button("Cancel",this->CancelCalback);
+			CancelButton = new EZUI_Control_Button("Apply",this->ApplyCallback);
+		};	
+			
+		//Special functions
+		void ApplyCallback();
+		void CancelCalback();
+		
+		void setItems(const PageItem _items[], unsigned int _size);
+	
+		//Actions - Generic for all Display Types
+		void display(EZUI *UI) override;
+		void init(EZUI *UI) override;
+		void cleanup(EZUI *UI) override;
+		void prevItem(EZUI *UI) override;
+		void nextItem(EZUI *UI)  override;
+		void selectItem(EZUI *UI) override;
+	
+	private:
+};
 
 
 #endif //__LCDMENU_H__
