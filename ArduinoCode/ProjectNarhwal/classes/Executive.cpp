@@ -61,29 +61,34 @@ void Executive::exec_frame1(){
 	}
 	
 	//HLT Thermocouple
-	HLT_TC_V = 100*5.0 * ((float)analogRead(HLT_TC_VIN) / 1023.0);
+	HLT_TC_V = 5.0 * ((float)analogRead(HLT_TC_VIN) / 1023.0);
 	if(HLT_TC_V > 0.25){
 		HLT_TC_ON = true;
 	}else{
 		HLT_TC_ON = false;
 	}
-	
+	Serial.print("HLTTC:");
+	Serial.println(HLT_TC_V);
 	//MLT Thermocouple
-	MLT_TC_V = 100*5.0 * ((float)analogRead(MLT_TC_VIN) / 1023.0);
+	MLT_TC_V = 5.0 * ((float)analogRead(MLT_TC_VIN) / 1023.0);
 	if(MLT_TC_V > 0.25){
 		MLT_TC_ON = true;
 	}else{
 		MLT_TC_ON = false;
 	}
 	
+	Serial.print("MLTTC:");
+	Serial.println(MLT_TC_V);
 	//BK Thermocouple
-	BK_TC_V = 100*5.0 * ((float)analogRead(BK_TC_VIN) / 1023.0);
+	BK_TC_V = 5.0 * ((float)analogRead(BK_TC_VIN) / 1023.0);
 	if(BK_TC_V > 0.25){
 		BK_TC_ON = true;
 	}else{
 		BK_TC_ON = false;
 	}
 	
+	Serial.print("BKTC:");
+	Serial.println(BK_TC_V);
 	//Encoders
 	MAIN_ENC.Read();
 	MLT_ENC.Read();
