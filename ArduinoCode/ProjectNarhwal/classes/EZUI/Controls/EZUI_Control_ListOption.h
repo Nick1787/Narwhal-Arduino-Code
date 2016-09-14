@@ -8,6 +8,8 @@
 #ifndef __EZUI_CONTROL_LISTOPTION_H__
 #define __EZUI_CONTROL_LISTOPTION_H__
 
+#include "../../EnhancedTypes/ListOption.h"
+
 class EZUI_Control_ListOption : public EZUI_Control
 {
 	//variables
@@ -15,7 +17,7 @@ class EZUI_Control_ListOption : public EZUI_Control
 	protected:
 	private:
 		const char* _Label;
-		ListOption * _Ref = NULL;
+		//ListOption * _Ref = NULL;
 
 	//functions
 	public:
@@ -24,7 +26,7 @@ class EZUI_Control_ListOption : public EZUI_Control
 	boolean isSelectable() const  override {return true;};
 	boolean hasValueText() const override {return true;};
 	String LabelText() override {return _Label;};
-	String ValueText() override { return _Ref->ItemText(_Ref->currentValue()); };
+	String ValueText() override { return ""; };
 	void Select(EZUI *UI) const override {
 		
 	};
@@ -32,7 +34,8 @@ class EZUI_Control_ListOption : public EZUI_Control
 	~EZUI_Control_ListOption(){};
 	
 	//Constructors
-	EZUI_Control_ToggleOption(char* _Label, ListOption * ObjRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(_Label), _Ref(ObjRef){};
+	//EZUI_Control_ToggleOption(char* _Label, ListOption * ObjRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(_Label), _Ref(ObjRef){};
+	EZUI_Control_ListOption(char* _Label): EZUI_Control(EZUI_ControlType::ListControl), _Label(_Label){};
 	
 	protected:
 	private:

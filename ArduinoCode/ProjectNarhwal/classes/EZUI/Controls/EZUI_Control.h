@@ -19,7 +19,7 @@ class EZUI_Control
 {
 //variables
 public:
-	enum EZUI_ControlType { None, Label, Link, ToggleControl, ListControl, AdjParam};
+	enum EZUI_ControlType { None, Label, Link, ToggleControl, ListControl, AdjParam, Button};
 	const EZUI_ControlType Type;
 	
 protected:
