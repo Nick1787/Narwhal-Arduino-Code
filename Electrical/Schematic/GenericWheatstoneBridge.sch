@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:GenericWheatstoneBridge-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,7 +11,6 @@ LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
-LIBS:special
 LIBS:microcontrollers
 LIBS:dsp
 LIBS:microchip
@@ -30,15 +30,15 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:NarwhalLib
-LIBS:noname-cache
-EELAYER 27 0
+LIBS:GenericWheatstoneBridge-cache
+EELAYER 25 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
-Title "noname.sch"
-Date "20 sep 2015"
-Rev ""
+Title "Generic Wheatstone Bridge RTD Circuits"
+Date "2016-09-18"
+Rev "2"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -502,7 +502,7 @@ Constant Current - 2 Wire RTD
 Text Notes 6750 4450 0    98   ~ 20
 Constant Current - 3 Wire RTD
 $Comp
-L ICS U?
+L Ics U?
 U 1 1 55FED564
 P 6400 5600
 F 0 "U?" H 6290 5600 30  0001 C CNN
@@ -513,7 +513,7 @@ F 3 "" H 6290 5600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ICS U?
+L Ics U?
 U 1 1 55FEDC33
 P 2300 5550
 F 0 "U?" H 2190 5550 30  0001 C CNN
@@ -524,7 +524,7 @@ F 3 "" H 2190 5550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VS U?
+L Vs U?
 U 1 1 55FEE2AE
 P 2300 2600
 F 0 "U?" H 2190 2600 30  0001 C CNN
@@ -743,7 +743,7 @@ Wire Wire Line
 Wire Wire Line
 	3250 3500 3250 3350
 $Comp
-L VS U?
+L Vs U?
 U 1 1 55FEE7CB
 P 6400 2675
 F 0 "U?" H 6290 2675 30  0001 C CNN

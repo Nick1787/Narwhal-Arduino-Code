@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:Project_Narwhal_Electrical-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,7 +11,6 @@ LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
-LIBS:special
 LIBS:microcontrollers
 LIBS:dsp
 LIBS:microchip
@@ -30,15 +30,15 @@ LIBS:atmel
 LIBS:valves
 LIBS:NarwhalLib
 LIBS:Project_Narwhal_Electrical-cache
-EELAYER 27 0
+EELAYER 25 0
 EELAYER END
 $Descr USLedger 17000 11000
 encoding utf-8
 Sheet 1 4
-Title "noname.sch"
-Date "9 nov 2015"
-Rev ""
-Comp ""
+Title "Arduino Mega Shield"
+Date "2016-09-18"
+Rev "2"
+Comp "Project Narwhal"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -161,28 +161,6 @@ Pilot Light Thermocouple (MLT)
 Text Notes 3100 5775 0    60   ~ 0
 Pilot Light Thermocouple (BK)
 $Comp
-L GND #PWR?
-U 1 1 55E1F75B
-P 5750 9000
-F 0 "#PWR?" H 5750 9000 30  0001 C CNN
-F 1 "GND" H 5750 8930 30  0001 C CNN
-F 2 "" H 5750 9000 60  0000 C CNN
-F 3 "" H 5750 9000 60  0000 C CNN
-	1    5750 9000
-	0    -1   1    0   
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 55E1F93C
-P 5750 7650
-F 0 "#PWR?" H 5750 7650 30  0001 C CNN
-F 1 "GND" H 5750 7580 30  0001 C CNN
-F 2 "" H 5750 7650 60  0000 C CNN
-F 3 "" H 5750 7650 60  0000 C CNN
-	1    5750 7650
-	0    -1   1    0   
-$EndComp
-$Comp
 L CONN_10 Onboard
 U 1 1 55E371C2
 P 3000 7200
@@ -191,7 +169,7 @@ F 1 "CONN_10" V 3050 7200 60  0000 C CNN
 F 2 "" H 3000 7200 60  0000 C CNN
 F 3 "" H 3000 7200 60  0000 C CNN
 	1    3000 7200
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L CONN_10 Onboard
@@ -202,7 +180,7 @@ F 1 "CONN_10" V 3075 8550 60  0000 C CNN
 F 2 "" H 3025 8550 60  0000 C CNN
 F 3 "" H 3025 8550 60  0000 C CNN
 	1    3025 8550
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L CONN_10 22-01-2105
@@ -231,16 +209,16 @@ Relay Board (#2)
 Text Notes 1300 7200 0    60   ~ 0
 Relay Board (#1)
 $Sheet
-S 13600 4500 2800 1950
+S 13550 5600 2800 1950
 U 55E39838
 F0 "FrontPanel" 79
 F1 "FrontPanel.sch" 79
 $EndSheet
 $Comp
-L ARDUINO_MEGA_SHIELD SHIELD?
+L ARDUINO_MEGA_SHIELD SHIELD
 U 1 1 55E3C008
 P 10050 4800
-F 0 "SHIELD?" H 9650 7300 60  0000 C CNN
+F 0 "SHIELD" H 9650 7300 60  0000 C CNN
 F 1 "ARDUINO_MEGA_SHIELD" H 9950 2100 60  0000 C CNN
 F 2 "" H 10050 4800 60  0000 C CNN
 F 3 "" H 10050 4800 60  0000 C CNN
@@ -254,62 +232,62 @@ RTD_B (HLT1)
 Text GLabel 1250 1650 0    47   Input ~ 0
 RTD_C (HLT1)
 Text GLabel 2550 7050 0    47   Input ~ 0
-EN2 (RB1)
+BK_Sol2
 Text GLabel 2550 7150 0    47   Input ~ 0
-EN3 (RB1)
+BK_Sol1
 Text GLabel 2550 7250 0    47   Input ~ 0
-EN4 (RB1)
+MLT_Sol2
 Text GLabel 2550 7350 0    47   Input ~ 0
-EN5 (RB1)
+MLT_Sol1
 Text GLabel 2550 7450 0    47   Input ~ 0
-EN6 (RB1)
+HLT_Sol2
 Text GLabel 2550 7550 0    47   Input ~ 0
-EN7 (RB1)
+HLT_Sol1
 Text GLabel 2550 7650 0    47   Input ~ 0
-GND (RB1)
++5V
 Text GLabel 2575 8100 0    47   Input ~ 0
-VCC (RB2)
+GND_5V
 Text GLabel 2575 8200 0    47   Input ~ 0
-EN0 (RB2)
+Spare
 Text GLabel 2575 8300 0    47   Input ~ 0
-EN1 (RB2)
+Spare
 Text GLabel 2575 8400 0    47   Input ~ 0
-EN2 (RB2)
+Spare
 Text GLabel 2575 8500 0    47   Input ~ 0
-EN3 (RB2)
+Alarm2
 Text GLabel 2575 8600 0    47   Input ~ 0
-EN4 (RB2)
+Alarm1
 Text GLabel 2575 8700 0    47   Input ~ 0
-EN5 (RB2)
+BK_PilotLight
 Text GLabel 2575 8800 0    47   Input ~ 0
-EN6 (RB2)
+MLT_PilotLight
 Text GLabel 2575 8900 0    47   Input ~ 0
-EN7 (RB2)
+HLT_PilotLight
 Text GLabel 2575 9000 0    47   Input ~ 0
-GND (RB2)
++5V
 $Comp
 L CONN_2 22-01-2025
 U 1 1 55E52D55
-P 12800 1250
-F 0 "22-01-2025" V 12750 1250 40  0000 C CNN
-F 1 "CONN_2" V 12850 1250 40  0000 C CNN
-F 2 "" H 12800 1250 60  0000 C CNN
-F 3 "" H 12800 1250 60  0000 C CNN
-	1    12800 1250
+P 12000 1300
+F 0 "22-01-2025" V 11950 1300 40  0000 C CNN
+F 1 "CONN_2" V 12050 1300 40  0000 C CNN
+F 2 "" H 12000 1300 60  0000 C CNN
+F 3 "" H 12000 1300 60  0000 C CNN
+	1    12000 1300
 	0    -1   1    0   
 $EndComp
 Text GLabel 5700 5875 2    60   Input ~ 0
-GND
+GND_??V
 Text GLabel 5700 5450 2    60   Input ~ 0
-GND
+GND_??V
 Text GLabel 5675 5050 2    60   Input ~ 0
-GND
-Text Label 8750 4650 0    39   ~ 0
-PL1_AN
-Text Label 8750 4750 0    39   ~ 0
-PL2_AN
-Text Label 8750 4850 0    39   ~ 0
-PL3_AN
+GND_??V
+Text Label 8550 4850 0    39   ~ 0
+PL1_AN_(HLT_TC)
+Text Label 8550 4950 0    39   ~ 0
+PL2_AN_(MLT_TC)
+Text Label 8550 5050 0    39   ~ 0
+PL3_AN_(BK_TC)
 Text Label 8750 3550 0    39   ~ 0
 WB0_Vref
 Text Label 8350 3650 0    39   ~ 0
@@ -356,7 +334,7 @@ $EndSheet
 Text GLabel 5725 1850 2    43   Input ~ 0
 +12V
 Text GLabel 5725 1950 2    43   Input ~ 0
-GND
+GND_12V
 Text GLabel 5650 6750 2    60   Input ~ 0
 +5V
 Text GLabel 5650 8100 2    60   Input ~ 0
@@ -364,11 +342,11 @@ Text GLabel 5650 8100 2    60   Input ~ 0
 Text GLabel 8950 3050 0    47   Input ~ 0
 +5V
 Text GLabel 8950 3150 0    47   Input ~ 0
-GND
-Text GLabel 12700 800  1    60   Input ~ 0
+GND_5V
+Text GLabel 11900 950  1    60   Input ~ 0
 +5V
-Text GLabel 12900 800  1    60   Input ~ 0
-GND
+Text GLabel 12100 950  1    60   Input ~ 0
+GND_5V
 Text GLabel 1250 1800 0    47   Input ~ 0
 RTD_A (HLT2)
 Text GLabel 1250 1900 0    47   Input ~ 0
@@ -519,18 +497,18 @@ TIMER ENC_SW
 $Comp
 L CONN_2 22-23-2021
 U 1 1 55E648BF
-P 12800 1600
-F 0 "22-23-2021" V 12750 1600 40  0000 C CNN
-F 1 "CONN_2" V 12850 1600 40  0000 C CNN
-F 2 "" H 12800 1600 60  0000 C CNN
-F 3 "" H 12800 1600 60  0000 C CNN
-	1    12800 1600
+P 12000 1600
+F 0 "22-23-2021" V 11950 1600 40  0000 C CNN
+F 1 "CONN_2" V 12050 1600 40  0000 C CNN
+F 2 "" H 12000 1600 60  0000 C CNN
+F 3 "" H 12000 1600 60  0000 C CNN
+	1    12000 1600
 	0    1    -1   0   
 $EndComp
-Text GLabel 12700 2050 3    60   Input ~ 0
+Text GLabel 11900 1950 3    60   Input ~ 0
 +5V
-Text GLabel 12900 2050 3    60   Input ~ 0
-GND
+Text GLabel 12100 1950 3    60   Input ~ 0
+GND_5V
 Text Label 12625 5550 0    39   ~ 0
 SDA
 Text Label 12625 5450 0    39   ~ 0
@@ -539,55 +517,33 @@ Text GLabel 12875 5650 2    47   Input ~ 0
 PUMP1_V
 Text GLabel 12875 5750 2    47   Input ~ 0
 PUMP2_V
-Text GLabel 8950 4950 0    47   Input ~ 0
+Text GLabel 8950 4650 0    47   Input ~ 0
 PUMP1_V
-Text GLabel 8950 5050 0    47   Input ~ 0
+Text GLabel 8950 4750 0    47   Input ~ 0
 PUMP2_V
 Text Notes 6750 9500 0    236  ~ 0
-Narwhal Arduino Mega Shield
+Arduino Mega Shield
 $Comp
 L EA50-5V U?
 U 1 1 55E66878
-P 15050 1250
-F 0 "U?" H 15050 1250 60  0001 C CNN
-F 1 "EA50-5V" H 15050 1250 60  0000 C CNN
-F 2 "" H 15050 1250 60  0000 C CNN
-F 3 "" H 15050 1250 60  0000 C CNN
-	1    15050 1250
-	-1   0    0    1   
+P 13950 1000
+F 0 "U?" H 13950 1000 60  0001 C CNN
+F 1 "EA50-5V" H 13950 1000 60  0000 C CNN
+F 2 "" H 13950 1000 60  0000 C CNN
+F 3 "" H 13950 1000 60  0000 C CNN
+	1    13950 1000
+	-1   0    0    -1  
 $EndComp
-Text GLabel 14300 1050 0    60   Input ~ 0
-GND
-Text GLabel 14300 1450 0    60   Input ~ 0
+Text GLabel 13350 800  0    60   Input ~ 0
 +5V
-$Comp
-L +12V #PWR?
-U 1 1 55E66AB2
-P 15850 950
-F 0 "#PWR?" H 15850 900 20  0001 C CNN
-F 1 "+12V" H 15850 1050 30  0000 C CNN
-F 2 "" H 15850 950 60  0000 C CNN
-F 3 "" H 15850 950 60  0000 C CNN
-	1    15850 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 55E66ABA
-P 15850 1600
-F 0 "#PWR?" H 15850 1600 30  0001 C CNN
-F 1 "GND" H 15850 1530 30  0001 C CNN
-F 2 "" H 15850 1600 60  0000 C CNN
-F 3 "" H 15850 1600 60  0000 C CNN
-	1    15850 1600
-	1    0    0    -1  
-$EndComp
+Text GLabel 13350 1200 0    60   Input ~ 0
+GND_5V
 Text GLabel 2550 6950 0    47   Input ~ 0
-EN2 (RB1)
+Spare
 Text GLabel 2550 6850 0    47   Input ~ 0
-EN2 (RB1)
+Spare
 Text GLabel 2550 6750 0    47   Input ~ 0
-EN2 (RB1)
+GND_5V
 $Comp
 L CONN_7 22-01-2075
 U 1 1 561AC95F
@@ -646,7 +602,7 @@ $EndComp
 Text GLabel 5725 3850 2    43   Input ~ 0
 +12V
 Text GLabel 5725 3950 2    43   Input ~ 0
-GND
+GND_12V
 $Comp
 L CONN_7 22-23-2071
 U 1 1 561AE004
@@ -670,56 +626,107 @@ F 3 "" H 12225 5800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_2 U?
+L CONN_2 U
 U 1 1 56401AA1
-P 12300 1600
-F 0 "U?" V 12250 1600 40  0000 C CNN
-F 1 "CONN_2" V 12350 1600 40  0000 C CNN
-F 2 "" H 12300 1600 60  0000 C CNN
-F 3 "" H 12300 1600 60  0000 C CNN
-	1    12300 1600
+P 11500 1600
+F 0 "U" V 11450 1600 40  0000 C CNN
+F 1 "CONN_2" V 11550 1600 40  0000 C CNN
+F 2 "" H 11500 1600 60  0000 C CNN
+F 3 "" H 11500 1600 60  0000 C CNN
+	1    11500 1600
 	0    1    -1   0   
 $EndComp
-Text GLabel 12200 2050 3    60   Input ~ 0
+Text GLabel 11400 1950 3    60   Input ~ 0
 +12V
-Text GLabel 12400 2050 3    60   Input ~ 0
-GND
+Text GLabel 11600 1950 3    60   Input ~ 0
+GND_12V
 $Comp
-L CONN_2 U?
+L CONN_2 U
 U 1 1 56401AAB
-P 12300 1250
-F 0 "U?" V 12250 1250 40  0000 C CNN
-F 1 "CONN_2" V 12350 1250 40  0000 C CNN
-F 2 "" H 12300 1250 60  0000 C CNN
-F 3 "" H 12300 1250 60  0000 C CNN
-	1    12300 1250
+P 11500 1300
+F 0 "U" V 11450 1300 40  0000 C CNN
+F 1 "CONN_2" V 11550 1300 40  0000 C CNN
+F 2 "" H 11500 1300 60  0000 C CNN
+F 3 "" H 11500 1300 60  0000 C CNN
+	1    11500 1300
 	0    -1   1    0   
 $EndComp
-Text GLabel 12200 800  1    60   Input ~ 0
+Text GLabel 11400 950  1    60   Input ~ 0
 +12V
-Text GLabel 12400 800  1    60   Input ~ 0
-GND
+Text GLabel 11600 950  1    60   Input ~ 0
+GND_12V
 $Comp
-L SDCARD U?
+L SDCARD U
 U 1 1 56401C9B
-P 6700 5800
-F 0 "U?" H 6700 5100 60  0000 C CNN
-F 1 "SDCARD" H 6700 6350 60  0000 C CNN
-F 2 "" H 6700 5750 60  0000 C CNN
-F 3 "" H 6700 5750 60  0000 C CNN
-	1    6700 5800
+P 6750 5800
+F 0 "U" H 6750 5100 60  0000 C CNN
+F 1 "SDCARD" H 6750 6350 60  0000 C CNN
+F 2 "" H 6750 5750 60  0000 C CNN
+F 3 "" H 6750 5750 60  0000 C CNN
+	1    6750 5800
 	1    0    0    -1  
 $EndComp
-Text GLabel 7605 5350 2    60   Input ~ 0
-GND
-Text GLabel 7625 6400 2    60   Input ~ 0
-GND
+Text GLabel 7600 5350 2    60   Input ~ 0
+GND_5V
+Text GLabel 7600 6400 2    60   Input ~ 0
+GND_5V
 Text GLabel 8950 2950 0    47   Input ~ 0
 +3.3V
-Text GLabel 7605 5650 2    47   Input ~ 0
+Text GLabel 7600 5650 2    47   Input ~ 0
 +5V
-Text GLabel 7605 5500 2    47   Input ~ 0
+Text GLabel 7600 5500 2    47   Input ~ 0
 +3.3V
+Text Notes 800  10100 0    60   ~ 0
+Note 1: Molex connector pin numbering convention: With female connector ears to the right, pin 1 is located at the top.\n        Pin 1 is generally set as power.
+Text Notes 800  10250 0    60   ~ 0
+Note 2: GND_12V is the ground from the 12V power supply.  GND_5V is the ground from the 5V step down voltage converter.
+Text Notes 11950 5250 0    60   ~ 0
+Ribbon cable red\nstripe is Pin 1.
+Text GLabel 13000 7000 0    60   Input ~ 0
++5V
+$Comp
+L CONN_2 P
+U 1 1 57E36CA0
+P 13350 7100
+F 0 "P" V 13300 7100 40  0000 C CNN
+F 1 "CONN_2" V 13400 7100 40  0000 C CNN
+F 2 "" H 13350 7100 60  0000 C CNN
+F 3 "" H 13350 7100 60  0000 C CNN
+	1    13350 7100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_2 P
+U 1 1 57E36DF9
+P 13700 7100
+F 0 "P" V 13650 7100 40  0000 C CNN
+F 1 "CONN_2" V 13750 7100 40  0000 C CNN
+F 2 "" H 13700 7100 60  0000 C CNN
+F 3 "" H 13700 7100 60  0000 C CNN
+	1    13700 7100
+	-1   0    0    -1  
+$EndComp
+Text GLabel 13000 7200 0    60   Input ~ 0
+GND_5V
+Text GLabel 14050 7000 2    60   Input ~ 0
++5V
+Text GLabel 14050 7200 2    60   Input ~ 0
+GND_5V
+$Comp
+L PowerSupply 12V
+U 1 1 57E3A5DF
+P 15700 1000
+F 0 "12V Linear Power Supply" H 15700 800 60  0000 C CNN
+F 1 "PowerSupply" H 15700 1200 60  0000 C CNN
+F 2 "" H 15700 1000 60  0000 C CNN
+F 3 "" H 15700 1000 60  0000 C CNN
+	1    15700 1000
+	1    0    0    -1  
+$EndComp
+Text GLabel 14800 900  0    60   Input ~ 0
++12V
+Text GLabel 14800 1100 0    60   Input ~ 0
+GND_12V
 Wire Wire Line
 	7750 3550 9050 3550
 Wire Wire Line
@@ -730,10 +737,6 @@ Wire Wire Line
 	7600 3850 9050 3850
 Wire Wire Line
 	7550 3950 9050 3950
-Wire Wire Line
-	5600 9000 5750 9000
-Wire Wire Line
-	5600 7650 5750 7650
 Wire Wire Line
 	10950 5450 11825 5450
 Wire Wire Line
@@ -825,11 +828,9 @@ Wire Wire Line
 Wire Wire Line
 	4575 9000 3675 9000
 Wire Wire Line
-	5800 4650 9050 4650
+	5575 4850 9050 4850
 Wire Wire Line
-	5975 4750 9050 4750
-Wire Wire Line
-	6050 4850 9050 4850
+	6150 5050 9050 5050
 Wire Wire Line
 	5600 6850 8025 6850
 Wire Wire Line
@@ -870,10 +871,6 @@ Wire Wire Line
 	8950 3050 9050 3050
 Wire Wire Line
 	8950 3150 9050 3150
-Wire Wire Line
-	12900 800  12900 900 
-Wire Wire Line
-	12700 800  12700 900 
 Wire Wire Line
 	1300 1450 1250 1450
 Wire Wire Line
@@ -963,10 +960,6 @@ Wire Notes Line
 Wire Notes Line
 	5025 9100 3225 9100
 Wire Wire Line
-	12700 1950 12700 2050
-Wire Wire Line
-	12900 1950 12900 2050
-Wire Wire Line
 	10950 4850 13350 4850
 Wire Wire Line
 	10950 4950 13300 4950
@@ -974,10 +967,6 @@ Wire Wire Line
 	12625 5650 12875 5650
 Wire Wire Line
 	12625 5750 12875 5750
-Wire Wire Line
-	9050 4950 8950 4950
-Wire Wire Line
-	8950 5050 9050 5050
 Wire Notes Line
 	5100 1450 5100 9550
 Wire Notes Line
@@ -986,18 +975,6 @@ Wire Notes Line
 	13500 9550 13500 1450
 Wire Notes Line
 	13500 1450 5100 1450
-Wire Wire Line
-	14300 1050 14450 1050
-Wire Wire Line
-	14450 1450 14300 1450
-Wire Wire Line
-	15650 1450 15850 1450
-Wire Wire Line
-	15850 1450 15850 1600
-Wire Wire Line
-	15650 1050 15850 1050
-Wire Wire Line
-	15850 1050 15850 950 
 Wire Wire Line
 	2650 6750 2550 6750
 Wire Wire Line
@@ -1103,23 +1080,13 @@ Wire Wire Line
 Wire Wire Line
 	12925 5850 12625 5850
 Wire Wire Line
-	5575 5050 5675 5050
-Wire Wire Line
-	5575 5450 5700 5450
-Wire Wire Line
 	5575 5875 5700 5875
 Wire Wire Line
-	5575 4850 5800 4850
+	5800 4850 5800 4850
 Wire Wire Line
-	5800 4850 5800 4650
+	5575 5675 6150 5675
 Wire Wire Line
-	5575 5250 5975 5250
-Wire Wire Line
-	5975 5250 5975 4750
-Wire Wire Line
-	5575 5675 6050 5675
-Wire Wire Line
-	6050 5675 6050 4850
+	6150 5675 6150 5050
 Wire Wire Line
 	11725 8900 11725 6700
 Wire Wire Line
@@ -1185,39 +1152,91 @@ Wire Wire Line
 Wire Wire Line
 	8025 6100 9050 6100
 Wire Wire Line
-	12200 1950 12200 2050
-Wire Wire Line
-	12400 1950 12400 2050
-Wire Wire Line
-	12400 800  12400 900 
-Wire Wire Line
-	12200 800  12200 900 
-Wire Wire Line
 	8950 2950 9050 2950
 Wire Wire Line
-	7550 6250 7950 6250
+	7600 6250 7950 6250
 Wire Wire Line
 	7950 6250 7950 5950
 Wire Wire Line
 	7950 5950 9050 5950
 Wire Wire Line
-	7550 6100 7900 6100
+	7600 6100 7900 6100
 Wire Wire Line
 	7900 6100 7900 5750
 Wire Wire Line
 	7900 5750 9050 5750
 Wire Wire Line
-	7550 5950 7650 5950
+	7600 5950 7650 5950
 Wire Wire Line
 	7650 5950 7650 5850
 Wire Wire Line
 	7650 5850 9050 5850
 Wire Wire Line
-	7550 5800 7850 5800
+	7600 5800 7850 5800
 Wire Wire Line
 	7850 5800 7850 5650
 Wire Wire Line
 	7850 5650 9050 5650
 Wire Wire Line
-	7550 6400 7625 6400
+	14550 800  14900 800 
+Wire Wire Line
+	14900 1200 14550 1200
+Wire Wire Line
+	14900 800  14900 950 
+Connection ~ 14900 900 
+Wire Wire Line
+	14900 1050 14900 1200
+Connection ~ 14900 1100
+Wire Wire Line
+	14800 900  14900 900 
+Wire Wire Line
+	14800 1100 14900 1100
+Wire Wire Line
+	5575 5450 5700 5450
+Wire Wire Line
+	5575 5050 5675 5050
+Wire Wire Line
+	5600 5250 6100 5250
+Wire Wire Line
+	6100 5250 6100 4950
+Wire Wire Line
+	6100 4950 9050 4950
+Text GLabel 5650 7650 2    60   Input ~ 0
+GND_5V
+Text GLabel 5650 9000 2    60   Input ~ 0
+GND_5V
+Wire Wire Line
+	5600 7650 5650 7650
+Wire Wire Line
+	5600 9000 5650 9000
+Text Notes 4600 4800 0    60   ~ 0
+L
+Text Notes 4600 5000 0    60   ~ 0
+R
+Text Notes 4600 5250 0    60   ~ 0
+T
+Text Notes 4600 5450 0    60   ~ 0
+G
+Text Notes 4600 5650 0    60   ~ 0
+C
+Text Notes 4600 5850 0    60   ~ 0
+S
+Text Notes 4300 4800 0    60   ~ 0
+Blue
+Text Notes 4300 5250 0    60   ~ 0
+Blue
+Text Notes 4300 5650 0    60   ~ 0
+Blue
+Text Notes 4300 5050 0    60   ~ 0
+Yellow
+Text Notes 4300 5500 0    60   ~ 0
+Yellow
+Text Notes 4300 5900 0    60   ~ 0
+Yellow
+Text Notes 4200 6200 0    60   ~ 0
+Quick Disconnect\nPin Out
+Wire Wire Line
+	8950 4650 9050 4650
+Wire Wire Line
+	8950 4750 9050 4750
 $EndSCHEMATC
