@@ -36,8 +36,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "AC Box Wiring"
-Date "2016-09-19"
-Rev "1"
+Date "2016-10-05"
+Rev "3"
 Comp "Project Narwhal"
 Comment1 ""
 Comment2 ""
@@ -58,27 +58,27 @@ $EndComp
 $Comp
 L Switch_DPST Pump~#2
 U 1 1 57E073AF
-P 5950 5550
-F 0 "Pump #2" H 6250 5600 50  0000 C CNN
-F 1 "Switch_DPST" H 6250 5500 50  0000 C CNN
-F 2 "" H 5950 5550 50  0000 C CNN
-F 3 "" H 5950 5550 50  0000 C CNN
-	1    5950 5550
+P 5750 5550
+F 0 "Pump #2" H 6050 5600 50  0000 C CNN
+F 1 "Switch_DPST" H 6050 5500 50  0000 C CNN
+F 2 "" H 5750 5550 50  0000 C CNN
+F 3 "" H 5750 5550 50  0000 C CNN
+	1    5750 5550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Switch_DPST Pump~#1
 U 1 1 57E07432
-P 5950 4500
-F 0 "Pump #1" H 6250 4550 50  0000 C CNN
-F 1 "Switch_DPST" H 6250 4450 50  0000 C CNN
-F 2 "" H 5950 4500 50  0000 C CNN
-F 3 "" H 5950 4500 50  0000 C CNN
-	1    5950 4500
+P 5750 4500
+F 0 "Pump #1" H 6050 4550 50  0000 C CNN
+F 1 "Switch_DPST" H 6050 4450 50  0000 C CNN
+F 2 "" H 5750 4500 50  0000 C CNN
+F 3 "" H 5750 4500 50  0000 C CNN
+	1    5750 4500
 	1    0    0    -1  
 $EndComp
 $Comp
-L SPST E-Stop
+L SPST E-Stop~Switch
 U 1 1 57E074A7
 P 2300 2150
 F 0 "E-Stop Switch" H 2300 2250 50  0000 C CNN
@@ -91,23 +91,23 @@ $EndComp
 $Comp
 L SPST 12V
 U 1 1 57E0755E
-P 4700 2150
-F 0 "12V Power Switch" H 4700 2250 50  0000 C CNN
-F 1 "SPST" H 4700 2050 50  0000 C CNN
-F 2 "" H 4700 2150 50  0000 C CNN
-F 3 "" H 4700 2150 50  0000 C CNN
-	1    4700 2150
+P 4300 2150
+F 0 "12V Power Switch" H 4300 2250 50  0000 C CNN
+F 1 "SPST" H 4300 2050 50  0000 C CNN
+F 2 "" H 4300 2150 50  0000 C CNN
+F 3 "" H 4300 2150 50  0000 C CNN
+	1    4300 2150
 	1    0    0    -1  
 $EndComp
 $Comp
-L SPST 120V
+L SPST 120V~Power~Switch
 U 1 1 57E075BA
-P 4700 4300
-F 0 "120V Power Switch" H 4700 4400 50  0000 C CNN
-F 1 "SPST" H 4700 4200 50  0000 C CNN
-F 2 "" H 4700 4300 50  0000 C CNN
-F 3 "" H 4700 4300 50  0000 C CNN
-	1    4700 4300
+P 4300 4300
+F 0 "120V Power Switch" H 4300 4400 50  0000 C CNN
+F 1 "SPST" H 4300 4200 50  0000 C CNN
+F 2 "" H 4300 4300 50  0000 C CNN
+F 3 "" H 4300 4300 50  0000 C CNN
+	1    4300 4300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -157,18 +157,18 @@ $EndComp
 Text GLabel 1550 2150 0    60   Input ~ 0
 +120VAC
 Text GLabel 1550 2550 0    60   Input ~ 0
-NeutralAC
+Neutral_120VAC
 Text GLabel 1550 3000 0    60   Input ~ 0
-GND_AC
+GND_120VAC
 $Comp
-L SPST Master
+L SPST Master~Switch
 U 1 1 57E07B25
-P 3500 2150
-F 0 "Master Switch" H 3500 2250 50  0000 C CNN
-F 1 "SPST" H 3500 2050 50  0000 C CNN
-F 2 "" H 3500 2150 50  0000 C CNN
-F 3 "" H 3500 2150 50  0000 C CNN
-	1    3500 2150
+P 3250 2150
+F 0 "Master Switch" H 3250 2250 50  0000 C CNN
+F 1 "SPST" H 3250 2050 50  0000 C CNN
+F 2 "" H 3250 2150 50  0000 C CNN
+F 3 "" H 3250 2150 50  0000 C CNN
+	1    3250 2150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -187,29 +187,29 @@ Wire Wire Line
 Wire Wire Line
 	5350 2350 5800 2350
 Wire Wire Line
-	5200 2150 5800 2150
+	4800 2150 5800 2150
 Wire Wire Line
 	5800 2150 5800 3200
 Wire Wire Line
-	4000 2150 4200 2150
+	3750 2150 3800 2150
 Wire Wire Line
 	2800 2150 3000 2150
 Wire Wire Line
 	1550 2150 1800 2150
 Wire Wire Line
-	4000 2150 4000 4300
+	3750 2150 3750 4300
 Wire Wire Line
-	4000 4300 4200 4300
+	3750 4300 3800 4300
 Wire Wire Line
-	5200 4300 5650 4300
+	4600 4300 5450 4300
 Wire Wire Line
-	5150 4300 5150 5350
+	4750 4300 4750 5350
 Wire Wire Line
-	5150 5350 5650 5350
+	4750 5350 5450 5350
 Text GLabel 7300 4450 0    60   Input ~ 0
-NeutralAC
+Neutral_120VAC
 Text GLabel 7300 5650 0    60   Input ~ 0
-GND_AC
+GND_120VAC
 Wire Wire Line
 	7300 5650 7650 5650
 Wire Wire Line
@@ -232,26 +232,24 @@ Wire Wire Line
 	7450 2300 8150 2300
 Wire Wire Line
 	8150 2300 8150 2450
-Text GLabel 5650 4700 0    60   Input ~ 0
-+5V
-Text GLabel 5650 5750 0    60   Input ~ 0
-+5V
-Text GLabel 6250 4700 2    60   Input ~ 0
+Text GLabel 5450 4700 0    60   Input ~ 0
++5VLinear
+Text GLabel 5450 5750 0    60   Input ~ 0
++5VLinear
+Text GLabel 6050 4700 2    60   Input ~ 0
 ToArduino
-Text GLabel 6250 5750 2    60   Input ~ 0
+Text GLabel 6050 5750 2    60   Input ~ 0
 ToArduino
 Wire Wire Line
-	6250 4300 7650 4300
-Wire Wire Line
-	6250 5350 7650 5350
+	6050 4300 7650 4300
 Text GLabel 8150 1800 2    60   Input ~ 0
-+12VLinearSupply
++12VLinear
 Text GLabel 8150 2700 2    60   Input ~ 0
-GND_12VLinearSupply
+GND_12VLinear
 Text GLabel 9350 2050 2    60   Input ~ 0
-+5VLinearSupply
++5VLinear
 Text GLabel 9350 2450 2    60   Input ~ 0
-GND_5VLinearSupply
+GND_5VLinear
 Wire Wire Line
 	7800 2300 7800 2700
 Wire Wire Line
@@ -263,9 +261,9 @@ Wire Wire Line
 	7800 1800 8150 1800
 Connection ~ 7800 2200
 Text GLabel 7800 3150 2    60   Input ~ 0
-+12VSwitchModeSupply
++12VSwitchMode
 Text GLabel 7800 3450 2    60   Input ~ 0
-GND_12VSwitchModeSupply
+GND_12VSwitchMode
 Wire Wire Line
 	7450 3250 7600 3250
 Wire Wire Line
@@ -281,4 +279,6 @@ Wire Wire Line
 	7600 3350 7600 3450
 Wire Wire Line
 	7600 3450 7800 3450
+Wire Wire Line
+	6050 5350 7650 5350
 $EndSCHEMATC

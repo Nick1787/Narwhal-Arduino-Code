@@ -36,8 +36,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 2 4
 Title "Front Panel Connection Board"
-Date "2016-09-18"
-Rev "2"
+Date "2016-10-05"
+Rev "4"
 Comp "Project Narwhal"
 Comment1 ""
 Comment2 ""
@@ -177,21 +177,21 @@ F 3 "" H 1750 5950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 2500 4000 2    60   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 2500 4600 2    60   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 2500 4900 2    60   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 2500 5200 2    60   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 2500 5500 2    60   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 2500 5750 2    60   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 2500 6050 2    60   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 2500 4300 2    60   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 1350 4100 0    50   Input ~ 0
 ENC_A (HLT)
 Text GLabel 1350 4000 0    50   Input ~ 0
@@ -290,9 +290,9 @@ F 3 "" H 8200 1250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7750 1300 0    50   Input ~ 0
-+5V
++5VLinear
 Text GLabel 7750 1400 0    53   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 9700 2700 2    50   Input ~ 0
 DISP_VCC (BK)
 Text GLabel 9700 2600 2    50   Input ~ 0
@@ -341,9 +341,9 @@ F 3 "" H 8200 1950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7750 2000 0    50   Input ~ 0
-+5V
++5VLinear
 Text GLabel 7750 2100 0    53   Input ~ 0
-GND_5V
+GND_5VLinear
 $Comp
 L CONN_4 22-23-2041
 U 1 1 55E3CE7C
@@ -356,9 +356,9 @@ F 3 "" H 8200 2650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7750 2700 0    50   Input ~ 0
-+5V
++5VLinear
 Text GLabel 7750 2800 0    53   Input ~ 0
-GND_5V
+GND_5VLinear
 $Comp
 L CONN_4 22-23-2041
 U 1 1 55E3CE88
@@ -371,48 +371,48 @@ F 3 "" H 8200 3350 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7750 3400 0    50   Input ~ 0
-+5V
++5VLinear
 Text GLabel 7750 3500 0    53   Input ~ 0
-GND_5V
+GND_5VLinear
 $Comp
 L CONN_2 22-01-2025
 U 1 1 561AFBF3
-P 1750 2700
-F 0 "22-01-2025" V 1700 2700 40  0000 C CNN
-F 1 "CONN_2" V 1800 2700 40  0000 C CNN
-F 2 "" H 1750 2700 60  0000 C CNN
-F 3 "" H 1750 2700 60  0000 C CNN
-	1    1750 2700
+P 8200 5700
+F 0 "22-01-2025" V 8150 5700 40  0000 C CNN
+F 1 "CONN_2" V 8250 5700 40  0000 C CNN
+F 2 "" H 8200 5700 60  0000 C CNN
+F 3 "" H 8200 5700 60  0000 C CNN
+	1    8200 5700
 	1    0    0    -1  
 $EndComp
-Text GLabel 1300 2800 0    50   Input ~ 0
-GND_5V
-Text GLabel 1300 2600 0    50   Input ~ 0
-+5V
+Text GLabel 6450 5800 0    50   Input ~ 0
+GND_5VLinear
+Text GLabel 7750 5600 0    50   Input ~ 0
++5VLinear
 $Comp
 L CONN_2 22-23-2021
 U 1 1 561AFC02
-P 2050 2700
-F 0 "22-23-2021" V 2000 2700 40  0000 C CNN
-F 1 "CONN_2" V 2100 2700 40  0000 C CNN
-F 2 "" H 2050 2700 60  0000 C CNN
-F 3 "" H 2050 2700 60  0000 C CNN
-	1    2050 2700
+P 8500 5700
+F 0 "22-23-2021" V 8450 5700 40  0000 C CNN
+F 1 "CONN_2" V 8550 5700 40  0000 C CNN
+F 2 "" H 8500 5700 60  0000 C CNN
+F 3 "" H 8500 5700 60  0000 C CNN
+	1    8500 5700
 	-1   0    0    -1  
 $EndComp
-Text GLabel 2500 2600 2    50   Input ~ 0
-+5V
-Text GLabel 2500 2800 2    50   Input ~ 0
-GND_5V
+Text GLabel 8950 5600 2    50   Input ~ 0
++5VLinear
+Text GLabel 8950 5800 2    50   Input ~ 0
+GND_5VLinear
 $Comp
 L CONN_8X2 5103309-3
 U 1 1 561AFC12
-P 3650 4850
-F 0 "5103309-3" H 3650 5300 60  0000 C CNN
-F 1 "CONN_8X2" V 3650 4850 50  0000 C CNN
-F 2 "" H 3650 4850 60  0000 C CNN
-F 3 "" H 3650 4850 60  0000 C CNN
-	1    3650 4850
+P 4250 4850
+F 0 "5103309-3" H 4250 5300 60  0000 C CNN
+F 1 "CONN_8X2" V 4250 4850 50  0000 C CNN
+F 2 "" H 4250 4850 60  0000 C CNN
+F 3 "" H 4250 4850 60  0000 C CNN
+	1    4250 4850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -488,33 +488,17 @@ Wire Notes Line
 Wire Notes Line
 	8350 6600 1900 6600
 Wire Wire Line
-	4200 1100 4950 1100
+	4200 1100 7850 1100
 Wire Wire Line
-	4950 1100 7850 1100
+	4950 1100 4950 4500
 Wire Wire Line
-	4950 1100 4950 1800
+	4950 4500 4650 4500
 Wire Wire Line
-	4950 1800 4950 2500
+	5050 4600 4650 4600
 Wire Wire Line
-	4950 2500 4950 3200
+	5050 1200 5050 4600
 Wire Wire Line
-	4950 3200 4950 4500
-Wire Wire Line
-	4950 4500 4050 4500
-Wire Wire Line
-	5050 4600 4050 4600
-Wire Wire Line
-	5050 1200 5050 1900
-Wire Wire Line
-	5050 1900 5050 2600
-Wire Wire Line
-	5050 2600 5050 3300
-Wire Wire Line
-	5050 3300 5050 4600
-Wire Wire Line
-	4200 1200 5050 1200
-Wire Wire Line
-	5050 1200 7850 1200
+	4200 1200 7850 1200
 Wire Wire Line
 	7850 1800 4950 1800
 Connection ~ 4950 1800
@@ -534,95 +518,87 @@ Wire Wire Line
 	7850 3300 5050 3300
 Connection ~ 5050 3300
 Wire Wire Line
-	1300 2800 1400 2800
+	6450 5800 7850 5800
 Wire Wire Line
-	1300 2600 1400 2600
+	7750 5600 7850 5600
 Wire Wire Line
-	2500 2600 2400 2600
+	8950 5600 8850 5600
 Wire Wire Line
-	2500 2800 2400 2800
+	8950 5800 8850 5800
 Wire Wire Line
-	3250 4500 3250 4100
+	3750 4500 3750 4100
 Wire Wire Line
-	3250 4100 2450 4100
+	3750 4100 2450 4100
 Wire Wire Line
-	3250 4600 3200 4600
+	3850 4600 3700 4600
 Wire Wire Line
-	3200 4600 3200 4200
+	3700 4600 3700 4200
 Wire Wire Line
-	3200 4200 2450 4200
+	3700 4200 2450 4200
 Wire Wire Line
-	3250 4700 3150 4700
+	3850 4700 3650 4700
 Wire Wire Line
-	3150 4700 3150 4400
+	3650 4700 3650 4400
 Wire Wire Line
-	3150 4400 2450 4400
+	3650 4400 2450 4400
 Wire Wire Line
-	3250 4800 3100 4800
+	3850 4800 3600 4800
 Wire Wire Line
-	3100 4800 3100 4700
+	3600 4800 3600 4700
 Wire Wire Line
-	3100 4700 2450 4700
+	3600 4700 2450 4700
 Wire Wire Line
-	3250 4900 3050 4900
+	3850 4900 3550 4900
 Wire Wire Line
-	3050 4900 3050 4800
+	3550 4900 3550 4800
 Wire Wire Line
-	3050 4800 2450 4800
+	3550 4800 2450 4800
 Wire Wire Line
-	3250 5000 2450 5000
+	3850 5000 2450 5000
 Wire Wire Line
-	2450 5300 3050 5300
+	2450 5300 3650 5300
 Wire Wire Line
-	3050 5300 3050 5100
+	3650 5300 3650 5100
 Wire Wire Line
-	3050 5100 3250 5100
+	3650 5100 3850 5100
 Wire Wire Line
-	2450 5400 3100 5400
+	2450 5400 3750 5400
 Wire Wire Line
-	3100 5400 3100 5200
+	3750 5400 3750 5200
 Wire Wire Line
-	3100 5200 3250 5200
+	3750 5200 3850 5200
 Wire Wire Line
-	2450 5600 4200 5600
+	2450 5600 4750 5600
 Wire Wire Line
-	4200 5600 4200 5200
+	4750 5600 4750 5200
 Wire Wire Line
-	4200 5200 4050 5200
+	4750 5200 4650 5200
 Wire Wire Line
-	2450 5850 4300 5850
+	2450 5850 4850 5850
 Wire Wire Line
-	4300 5850 4300 5100
+	4850 5850 4850 5100
 Wire Wire Line
-	4300 5100 4050 5100
+	4850 5100 4650 5100
 Wire Wire Line
-	2450 5950 4400 5950
+	2450 5950 4950 5950
 Wire Wire Line
-	4400 5950 4400 5000
+	4950 5950 4950 5000
 Wire Wire Line
-	4400 5000 4050 5000
+	4950 5000 4650 5000
 Wire Wire Line
-	2450 6150 4500 6150
+	2450 6150 5050 6150
 Wire Wire Line
-	4500 6150 4500 4900
+	5050 6150 5050 4900
 Wire Wire Line
-	4500 4900 4050 4900
+	5050 4900 4650 4900
 Text GLabel 8950 4800 2    50   Input ~ 0
 Pump Volt 2 (-)
 Text GLabel 7750 4600 0    50   Input ~ 0
-+5V
++5VLinear
 Wire Wire Line
-	7250 4700 7850 4700
+	4650 4700 7850 4700
 Wire Wire Line
-	7150 4800 7850 4800
-Wire Wire Line
-	7250 4700 7250 4700
-Wire Wire Line
-	7250 4700 4050 4700
-Wire Wire Line
-	7150 4800 7150 4800
-Wire Wire Line
-	7150 4800 4050 4800
+	4650 4800 7850 4800
 Text Notes 600  7600 0    60   ~ 0
 Note 1: Molex connector pin numbering convention: With female connector ears to the right, pin 1 is located at the top.\n        Pin 1 is generally set as power.
 $Comp
@@ -639,12 +615,12 @@ $EndComp
 Text Notes 600  7800 0    60   ~ 0
 Note 2: GND_5V is the ground from the 5V step down voltage converter.
 Text GLabel 4200 1400 2    50   Input ~ 0
-GND_5V
+GND_5VLinear
 Text GLabel 4200 1300 2    50   Input ~ 0
-+5V
++5VLinear
 Connection ~ 4950 1100
 Connection ~ 5050 1200
-Text Notes 3400 4300 0    60   ~ 0
+Text Notes 3950 4250 0    60   ~ 0
 Ribbon cable red\nstripe is Pin 1.
 $Comp
 L CONN_3 K
@@ -676,4 +652,40 @@ Wire Wire Line
 	8850 4700 8950 4700
 Wire Wire Line
 	8850 4800 8950 4800
+$Comp
+L R R
+U 1 1 57F1B0D5
+P 6700 5150
+F 0 "R" V 6780 5150 50  0000 C CNN
+F 1 "2000" V 6700 5150 50  0000 C CNN
+F 2 "" V 6630 5150 50  0000 C CNN
+F 3 "" H 6700 5150 50  0000 C CNN
+	1    6700 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R
+U 1 1 57F1B148
+P 6900 5400
+F 0 "R" V 6980 5400 50  0000 C CNN
+F 1 "2000" V 6900 5400 50  0000 C CNN
+F 2 "" V 6830 5400 50  0000 C CNN
+F 3 "" H 6900 5400 50  0000 C CNN
+	1    6900 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 5000 6700 4700
+Connection ~ 6700 4700
+Wire Wire Line
+	6700 5300 6700 5800
+Connection ~ 6700 5800
+Wire Wire Line
+	6900 4800 6900 5250
+Connection ~ 6900 4800
+Wire Wire Line
+	6900 5550 6900 5800
+Connection ~ 6900 5800
+Wire Wire Line
+	3750 4500 3850 4500
 $EndSCHEMATC
