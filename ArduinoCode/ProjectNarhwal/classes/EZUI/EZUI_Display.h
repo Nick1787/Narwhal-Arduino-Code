@@ -14,9 +14,15 @@
 #include "EZUI.h"
 #include "./Controls/EZUI_Control_Link.h"
 #include "./Controls/EZUI_Control_ToggleOption.h"
-#include "./Controls/EZUI_Control_ListOption.h"
-#include "./Controls/EZUI_Control_Button.h"
+#include "../EnhancedTypes/ListOption.h"
 
+//Forward Declarations
+class EZUI;
+class EZUI_Control;
+class EZUI_Control_Link;
+class EZUI_Control_ToggleOption;
+class EZUI_Control_ListOption;
+class EZUI_Control_Button;
 
 /*-----------------------------------------------
 	EZUI_MenuItem
@@ -62,6 +68,9 @@ class EZUI_Display{
 		virtual void prevItem(EZUI *UI);				//Moves cursor to next item (also calls display to refresh the LCD)
 		virtual void nextItem(EZUI *UI);				//Moves cursor to next item (also calls display to refresh the LCD)
 		virtual void selectItem(EZUI *UI);		//Select the Item, Passes the User interface parent by reference
+		
+		//Functions
+		static void EditListOption(EZUI_Control_ListOption * ListOptRef);
 		
 		//Constructors
 		EZUI_Display() : Type(EZUI_DisplayType::None) {};
@@ -135,7 +144,33 @@ class EZUI_Page : public EZUI_Display{
 };
 
 /*-----------------------------------------------
-	List Option Edit
+	EZUI_ListOptionEditor
 ------------------------------------------------*/
+class EZUI_ListOptionEditor : public EZUI_Display{
+	private:
+		GenericListOption *ListOptRef;
+		EZUI_Display *ParentDispRef;
+		
+		bool APPLY;
+		unsigned int temp_index;
+		
+		enum ListEditMode{ ERR, ONITEM, SEL, OKCANCEL};
+		ListEditMode Mode;
+		
+		void drawListItems( EZUI *UI);
+	protected:
+	public:
+		EZUI_ListOptionEditor(GenericListOption * Ref, EZUI_Display * ParentDisp): ListOptRef(Ref), ParentDispRef(ParentDisp), EZUI_Display(EZUI_DisplayType::ListOpt){};
+	
+		//Actions
+		void display(EZUI *UI) override;
+		void init(EZUI *UI) override;
+		void cleanup(EZUI *UI) override;
+		void prevItem(EZUI *UI) override;
+		void nextItem(EZUI *UI)  override;
+		void selectItem(EZUI *UI) override;
+	
+	private:
+};
 
 #endif //__LCDMENU_H__

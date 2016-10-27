@@ -8,33 +8,15 @@
 
 #include "EZUI_Control_ListOption.h"
 
-// Constructor with Menu Label
-EZUI_Control_ListOption::EZUI_Control_ListOption(EZUI_ListOption items[], unsigned int size)
-{
-	this->itemCount = size;
-	this->MenuLabel = "";
-	this->items = items;
+//Destructor
+
+EZUI_Control_ListOption::~EZUI_Control_ListOption(){};
 	
-} //EZUI_Control_ListOption
-
-// Constructor Without Menu Label
-EZUI_Control_ListOption::EZUI_Control_ListOption(String Label, EZUI_ListOption[], unsigned int size)
-{
-	this->itemCount = size;
-	this->MenuLabel = Label;
-	this->items = items;
-} //EZUI_Control_ListOption
-
-
-// Destructor
-EZUI_Control_ListOption::~EZUI_Control_ListOption()
-{
-} //~EZUI_Control_ListOption
-
-
-// default destructor
-String EZUI_Control_ListOption::Text() const
-{
-	return "";
-} //~EZUI_Control_ListOption
+boolean EZUI_Control_ListOption::isSelectable() const { return true; };
+boolean EZUI_Control_ListOption::hasValueText() const { return false; };
+String EZUI_Control_ListOption::LabelText(void) { return String(this->_Label); };
+String EZUI_Control_ListOption::ValueText(void) { return _Ref->itemText(_Ref->currentItem()); };
+void EZUI_Control_ListOption::Select(EZUI *UI) const {
+	UI->EditListOption(_Ref);
+};
 

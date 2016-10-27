@@ -18,6 +18,7 @@
 
 //Forward Declarations
 class EZUI;
+class EZUI_Display;
 class EZUI_Page;
 class EZUI_Menu;
 class DigitalIO;
@@ -35,15 +36,13 @@ private:
 public:
 
 	//Over-ridden base class functions
-	boolean isSelectable() const  override {return true;};
-	boolean hasValueText() const override { return false;};
-	String LabelText(void) override{ return String(this->_Label); };
-	void Select(EZUI *UI) const override {
-		UI->setDisplay(_LinkRef);
-	};
+	boolean isSelectable() const  override;
+	boolean hasValueText() const override;
+	String LabelText(void) override;
+	void Select(EZUI *UI) const override;
 	
 	//Default Destructor
-	~EZUI_Control_Link() override {};	
+	~EZUI_Control_Link() {};	
 		
 	//void FollowLink(EZUI *UI) const;
 	EZUI_Control_Link(char Text[], EZUI_Display * Link): EZUI_Control(EZUI_ControlType::Link), _LinkRef(Link), _Label(Text){};

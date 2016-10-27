@@ -5,13 +5,11 @@
 * Author: Customer
 */
 
-
 #ifndef __EZUI_ADJUSTPARAM_H__
 #define __EZUI_ADJUSTPARAM_H__
 
-
 #include "../EZUI.h"
-#include "../../EnhancedIO/DigitalIO.h"
+#include "EZUI_Control.h"
 
 class EZUI_Control_AdjustParam : public EZUI_Control
 {

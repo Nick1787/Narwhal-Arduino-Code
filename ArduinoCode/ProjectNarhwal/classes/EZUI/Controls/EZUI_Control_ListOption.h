@@ -8,7 +8,12 @@
 #ifndef __EZUI_CONTROL_LISTOPTION_H__
 #define __EZUI_CONTROL_LISTOPTION_H__
 
+#include "../EZUI.h"
 #include "../../EnhancedTypes/ListOption.h"
+#include "EZUI_Control.h"
+
+//Forward Declarations
+class EZUI;
 
 class EZUI_Control_ListOption : public EZUI_Control
 {
@@ -17,25 +22,23 @@ class EZUI_Control_ListOption : public EZUI_Control
 	protected:
 	private:
 		const char* _Label;
-		//ListOption * _Ref = NULL;
+		GenericListOption *_Ref;
 
 	//functions
 	public:
 
 	//Over-ridden base classes
-	boolean isSelectable() const  override {return true;};
-	boolean hasValueText() const override {return true;};
-	String LabelText() override {return _Label;};
-	String ValueText() override { return ""; };
-	void Select(EZUI *UI) const override {
-		
-	};
+	boolean isSelectable() const  override;
+	boolean hasValueText() const override;
+	String LabelText() override;
+	String ValueText() override;
+	void Select(EZUI *UI) const override;
 	
-	~EZUI_Control_ListOption(){};
+	~EZUI_Control_ListOption();
 	
 	//Constructors
 	//EZUI_Control_ToggleOption(char* _Label, ListOption * ObjRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(_Label), _Ref(ObjRef){};
-	EZUI_Control_ListOption(char* _Label): EZUI_Control(EZUI_ControlType::ListControl), _Label(_Label){};
+	EZUI_Control_ListOption(char* Label, GenericListOption *ListRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), _Ref(ListRef){};
 	
 	protected:
 	private:

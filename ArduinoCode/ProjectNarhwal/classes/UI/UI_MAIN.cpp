@@ -10,6 +10,9 @@
 
 #include "UI_MAIN.h"
 #include "../EZUI/Controls/EZUI_Control.h"
+#include "../EZUI/Controls/EZUI_Control_ListOption.h"
+
+
 
 namespace UI_MAIN{
 	EZUI *UI = new EZUI();
@@ -101,30 +104,27 @@ namespace UI_MAIN{
 	
 	
 	/***************************************
-	 Menu - TestItems
+	 Menu - Burner Modes
 	***************************************/
-	/*EZUI_Menu Menu_BurnerModes;
+	EZUI_Menu Menu_BurnerModes;
 	EZUI_Control_Link Lnk_Menu_BurnerModes("Burner Modes",&Menu_BurnerModes);
-	EZUI_ListOption Lst_BurnerModes[]={
-		{0,"Off"},
-		{1,"Manual"},
-		{2,"Active"}
-	};
-	int Cntr1 = 1;
-	int Cntr2 = 1;
-	int Cntr3 = 1;
-	EZUI_Control_ListOption Lst_HLT_Mode(&Cntr1, "HLT Control", A(Lst_BurnerModes));
-	EZUI_Control_ListOption Lst_MLT_Mode(&Cntr2, "MLT Control", A(Lst_BurnerModes));
-	EZUI_Control_ListOption Lst_BK_Mode(&Cntr3, "BK Control", A(Lst_BurnerModes));
+	EZUI_Control_ListOption Lst_HLT_Mode("HLT Mode", &HLT_Controller.Mode);
+	EZUI_Control_ListOption Lst_MLT_Mode("MLT Mode", &MLT_Controller.Mode);
+	EZUI_Control_ListOption Lst_BK_Mode("BK Mode", &BK_Controller.Mode);
 	MenuItem Menu_BurnerModes_Items[4] = {
 		{&Lst_HLT_Mode},
 		{&Lst_MLT_Mode},
 		{&Lst_BK_Mode},
 		{&Lnk_BackMainMenu}
 	};
-	*/
+	
+	
+	/***************************************
+	 Main Menu Items
+	***************************************/
 	MenuItem Menu_MainMenu_Items[] = {
 		{  &Lnk_MenuPumpMonitor},
+		{  &Lnk_Menu_BurnerModes},
 		{  &Lnk_PageTCMonitor},
 		{  &Lnk_MenuPilotMonitor},
 		{  &Lnk_PagePumpMonitor}

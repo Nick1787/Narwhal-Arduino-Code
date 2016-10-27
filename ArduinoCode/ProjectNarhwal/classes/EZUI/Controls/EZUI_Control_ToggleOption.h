@@ -30,44 +30,11 @@ private:
 public:
 
 	//Over-ridden base classes
-	boolean isSelectable() const  override {return true;};
-	boolean hasValueText() const override {return true;};
-	String LabelText() override {return _Label;};
-	String ValueText() override{
-		int val = Value();
-		switch(ToggleType){
-			case(VarDigIO):
-			DigitalIO *DIO;
-			DIO = DIORef;
-			if(val){
-				return (*DIO).TrueLabel;
-			}else{
-				return (*DIO).FalseLabel;
-			}
-		case(VarBool):
-			if(val){
-				return BoolTrueText;
-			}else{
-				return BoolFalseText;
-			}
-		}
-	}
-	void Select(EZUI *UI) const override {
-		switch(ToggleType){
-			case(VarDigIO):
-				DigitalIO *DIO;
-				DIO = DIORef;
-				if ((*DIO).Value()){
-					(*DIO).Write(0);
-					}else{
-					(*DIO).Write(1);
-				}
-				break;
-			case(VarBool):
-				*BlnRef = !(*BlnRef);
-				break;
-		}
-	};
+	boolean isSelectable() const  override;
+	boolean hasValueText() const override;
+	String LabelText() override;
+	String ValueText() override;
+	void Select(EZUI *UI) const override;
 	
 	~EZUI_Control_ToggleOption(){};
 	
@@ -80,16 +47,7 @@ public:
 	EZUI_Control_ToggleOption(const char* Label, bool * val, const char* TrueLabel, const char* FalseLabel):	EZUI_Control(EZUI_ControlType::ToggleControl), _Label(Label), ToggleType(VarBool),  BlnRef(val), BoolTrueText(TrueLabel), BoolFalseText(FalseLabel){};
 	
 	//Get the Value
-	int Value(){
-		switch(ToggleType){
-			case(VarDigIO):
-				DigitalIO *DIO;
-				DIO = DIORef;
-				return (*DIO).Value();
-			case(VarBool):
-				return *BlnRef;
-		}
-	};
+	int Value();
 	
 protected:
 private:

@@ -81,7 +81,19 @@ void EZUI::setDisplay(EZUI_Display *Disp){
 	if(CurrentDisplay!=NULL){
 		CurrentDisplay->cleanup(this);
 	}
+	
+	//If the current display is a List Option Editor, Delete it!
+	if( CurrentDisplay->Type == EZUI_Display::EZUI_DisplayType::ListOpt){
+		EZUI_ListOptionEditor* Editor = (EZUI_ListOptionEditor*)CurrentDisplay;
+		delete Editor;
+	}
+	
+	//Set the Current Display
 	CurrentDisplay = Disp;
 	CurrentDisplay->init(this);
 };
 
+void EZUI::EditListOption(GenericListOption * ListOptRef){
+	EZUI_ListOptionEditor * editor = new EZUI_ListOptionEditor(ListOptRef,this->CurrentDisplay);
+	this->setDisplay(editor);
+}

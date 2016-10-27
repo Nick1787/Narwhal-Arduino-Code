@@ -8,21 +8,26 @@
  * ----------------------------------------------------------------
  */
 
-#include "../../include/LiquidCrystal/LiquidCrystal_I2C.h"
-#include "../WheatstoneBridge.h"
-#include "./EZUI_Display.h"
-#include "./ClickEncoderWithEvents.h"
-#include "./Controls/EZUI_Control.h"
 
 #ifndef __EZUI_H_
 #define __EZUI_H_
+
+#include "../../include/LiquidCrystal/LiquidCrystal_I2C.h"
+#include "EZUI_Display.h"
+#include "../EnhancedTypes/ListOption.h"
+#include "./ClickEncoderWithEvents.h"
+#include "./Controls/EZUI_Control.h"
 
 #ifndef A
 	#define A(x)  x,((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
 #endif
 
-class ClickEncoderWithEvents;
+//Forward Declaration
 class EZUI_Display;
+class EZUI_ListOptionEditor;
+class ClickEncoderWithEvents;
+class EZUI_Control_ListOption;
+
 class EZUI{
 	
 	private:
@@ -49,6 +54,9 @@ class EZUI{
 		void refresh();
 		void setDisplay(EZUI_Display *Disp);
 			
+		//Functions
+		void EditListOption(GenericListOption * ListOptRef);
+		
 		~EZUI(){};
 };
 

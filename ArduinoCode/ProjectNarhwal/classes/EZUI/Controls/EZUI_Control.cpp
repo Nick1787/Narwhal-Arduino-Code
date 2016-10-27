@@ -8,11 +8,22 @@
 
 #include "EZUI_Control.h"
 
-// default constructor
-EZUI_Control::EZUI_Control()
-{
-} //EZUI_Control
-
+boolean EZUI_Control::isSelectable()  const { 
+	return false;
+};
+boolean EZUI_Control::hasValueText()  const {
+	 return false; 
+};
+void EZUI_Control::Select(EZUI *UI) const {
+	/* Do nothing */
+};
+String EZUI_Control::LabelText()  { 
+	return "LabelText!"; 
+};
+String EZUI_Control::ValueText()  { 
+	return "ValueText!"; 
+};
+		
 // default destructor
 EZUI_Control::~EZUI_Control()
 {

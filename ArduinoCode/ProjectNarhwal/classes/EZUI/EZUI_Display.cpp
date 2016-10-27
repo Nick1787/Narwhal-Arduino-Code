@@ -7,6 +7,8 @@
 
 #include "EZUI_Display.h"
 
+/* Page ********************************************************************/
+
 void EZUI_Page::setItems(const PageItem _items[], unsigned int _size){
 	
 	this->items = _items;
@@ -169,6 +171,8 @@ void EZUI_Page::selectItem(EZUI *UI){
 	}
 }
 
+/* MENU ********************************************************************/
+
 void EZUI_Menu::display(EZUI *UI){
 	LiquidCrystal_I2C *LCD = UI->LCD;
 	
@@ -251,11 +255,11 @@ void EZUI_Menu::selectItem(EZUI *UI){
 	EZUI_Control::EZUI_ControlType Type = items[currentItem].Control->Type;
 	switch (Type) {
 		case(EZUI_Control::Link):{
-			EZUI_Control_Link const * Item = (EZUI_Control_Link const*)(items[currentItem].Control);
+			const EZUI_Control_Link * Item = (EZUI_Control_Link const*)(items[currentItem].Control);
 			Item->Select(UI);
 			}break;
 		case(EZUI_Control::ToggleControl):{
-			EZUI_Control_ToggleOption const * Item = (EZUI_Control_ToggleOption const*)(items[currentItem].Control);
+			const EZUI_Control_ToggleOption * Item = (EZUI_Control_ToggleOption const*)(items[currentItem].Control);
 			Item->Select(UI);
 			UI->display();
 			refresh = true;
@@ -367,5 +371,154 @@ void EZUI_Menu::printPage(EZUI *UI){
 		}
 		*/
 		ln++;
+	}
+}
+
+
+/* ListOptionEditor ********************************************************************/
+
+
+void EZUI_ListOptionEditor::drawListItems(EZUI *UI){
+	//Clear Each Line Item
+	for(int i=0; i++; i<3){
+		UI->LCD->setCursor(0,i);
+		UI->LCD->print("                    ");
+	}
+	
+	int currentIndex = ListOptRef->currentItem();
+	if( !(temp_index == 0)){
+		//Not Starting at Item 0;
+		int firstIndex = temp_index - 1;
+		for(int i=0; i++; i< min(ListOptRef->itemCount()-temp_index,3)){
+			UI->LCD->setCursor(2,i);
+			if( i == 1){
+				UI->LCD->print(">");
+			}
+			if( (firstIndex + i) == currentIndex){
+				UI->LCD->print("*");
+			}
+			UI->LCD->print( ListOptRef->itemText(firstIndex + i));
+		}
+	}else{
+		//Starting at Item 0, Special Case
+			
+		//Print Item 0
+		UI->LCD->setCursor(2,1);
+		UI->LCD->print(">");
+		if( currentIndex == 0 ){
+			UI->LCD->print("*");
+		}else{
+			UI->LCD->print(" ");
+		}
+		UI->LCD->print( ListOptRef->itemText(0) );
+			
+		//Print Item 1
+		UI->LCD->setCursor(3,2);
+		if( currentIndex == 1 ){
+			UI->LCD->print("*");
+		}else{
+			UI->LCD->print(" ");
+		}
+		UI->LCD->print( ListOptRef->itemText(1) );
+		
+	}
+}
+
+void EZUI_ListOptionEditor::init(EZUI *UI){
+	UI->LCD->clear();
+	
+	temp_index = ListOptRef->currentItem();
+	
+	
+	//Handle all the cases
+	if(ListOptRef->itemCount() == 0){
+		// No Items In List
+		Mode = ERR;
+	}else if(ListOptRef->itemCount() == 1){
+		//One Item In List
+		Mode = ONITEM;
+	}
+	
+	drawListItems(UI);
+}
+
+void EZUI_ListOptionEditor::cleanup(EZUI *UI){
+	//Nothing To Do Here
+}
+
+void EZUI_ListOptionEditor::display(EZUI *UI){
+	//Nothing To Do Here
+}
+
+void EZUI_ListOptionEditor::prevItem(EZUI *UI){
+	if(Mode == SEL){
+		temp_index = max(temp_index-1,0);
+		drawListItems(UI);
+	}else if(Mode == OKCANCEL){
+		APPLY = !APPLY;
+		if(APPLY){
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(" ");
+		}else{
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(" ");
+		
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(">");
+		}
+	}
+}
+
+void EZUI_ListOptionEditor::nextItem(EZUI *UI){
+	if(Mode == SEL){
+		temp_index = min(temp_index+1, ListOptRef->itemCount()-1);
+		drawListItems(UI);
+	}else if(Mode == OKCANCEL){
+		APPLY = !APPLY;
+		if(APPLY){
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(" ");
+		}else{
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(" ");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(">");
+		}
+	}
+}
+
+void EZUI_ListOptionEditor::selectItem(EZUI *UI){
+	//See if theres a previously selectable item, if so set current item to that.
+	if(Mode == ERR){
+		UI->setDisplay(ParentDispRef);
+	}else if(Mode == ONITEM){
+		UI->setDisplay(ParentDispRef);
+	}else if(Mode == SEL){
+		Mode = OKCANCEL;
+		if(APPLY){
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(" ");
+		}else{
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(" ");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(">");
+		}
+	}else if (Mode == OKCANCEL){
+		if(APPLY){
+			ListOptRef->setItem(temp_index);
+		}
+		UI->setDisplay(ParentDispRef);
 	}
 }

@@ -27,16 +27,17 @@ private:
 
 //functions
 public:
-	virtual boolean isSelectable()  const { return false; };
-	virtual boolean hasValueText()  const { return false; };
-	virtual void Select(EZUI *UI) const { };
-	virtual String LabelText()  { return "LabelText!"; };
-	virtual String ValueText()  { return "ValueText!"; };
+	//Virtual Functions
+	virtual boolean isSelectable()  const;
+	virtual boolean hasValueText()  const;
+	virtual void Select(EZUI *UI) const;
+	virtual String LabelText();
+	virtual String ValueText();
 		
 	//Default constructors / destructor
-	constexpr EZUI_Control() : Type(EZUI_ControlType::None) {};
-	constexpr EZUI_Control(EZUI_ControlType _Type) : Type(_Type) {};
-	virtual ~EZUI_Control() {};
+	EZUI_Control() : Type(EZUI_ControlType::None){};
+	EZUI_Control(EZUI_ControlType _Type) : Type(_Type){};
+	~EZUI_Control();
 	
 protected:
 private:

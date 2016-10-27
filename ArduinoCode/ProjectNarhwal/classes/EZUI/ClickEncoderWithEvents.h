@@ -8,8 +8,11 @@
 #ifndef __CLICKENCODERWITHEVENTS_H__
 #define __CLICKENCODERWITHEVENTS_H__
 
-#include "../../include/ClickEncoder/ClickEncoder.h"
 #include "EZUI.h"
+#include "../../include/ClickEncoder/ClickEncoder.h"
+
+//Forward Declaration
+class EZUI;
 
 class ClickEncoderWithEvents : public ClickEncoder
 {

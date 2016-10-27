@@ -8,6 +8,14 @@
 #ifndef __LISTOPT
 #define __LISTOPT
 
+class GenericListOption{
+	public:
+		virtual unsigned int currentItem(){return 0;};
+		virtual unsigned int itemCount(){return -1;};
+		virtual void setItem(unsigned int i){};
+		virtual const char* itemText(unsigned int i){ return "";};
+};
+
 template <typename T>
 struct ListOptionItem{
 	T Value;
@@ -15,7 +23,7 @@ struct ListOptionItem{
 };
 
 template <typename T>
-class ListOption{
+class ListOption : public GenericListOption{
 	private:
 		ListOptionItem<T> *items;
 		unsigned int itemCount;

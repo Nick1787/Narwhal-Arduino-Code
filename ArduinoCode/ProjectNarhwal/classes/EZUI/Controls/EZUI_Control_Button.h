@@ -12,9 +12,8 @@
 #ifndef __EZUI_CONTROL_Button_H__
 #define __EZUI_CONTROL_Button_H__
 
-//Includes
-#include "EZUI_Control.h"
 #include "../EZUI.h"
+#include "EZUI_Control.h"
 
 //Forward Declarations
 class EZUI;
@@ -54,7 +53,7 @@ public:
 	};
 	
 	//Default Destructor
-	~EZUI_Control_Button() override {};	
+	~EZUI_Control_Button() {};	
 		
 	//void FollowButton(EZUI *UI) const;
 	EZUI_Control_Button(char Text[]): EZUI_Control(EZUI_ControlType::Button), _Label(Text){};
