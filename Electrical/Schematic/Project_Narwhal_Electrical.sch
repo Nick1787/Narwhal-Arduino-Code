@@ -36,8 +36,8 @@ $Descr USLedger 17000 11000
 encoding utf-8
 Sheet 1 4
 Title "Arduino Mega Shield"
-Date "2016-10-05"
-Rev "3"
+Date "2016-10-30"
+Rev "4"
 Comp "Project Narwhal"
 Comment1 ""
 Comment2 ""
@@ -439,17 +439,17 @@ Arduino Mega Shield
 $Comp
 L EA50-5V U?
 U 1 1 55E66878
-P 8750 9800
-F 0 "U?" H 8750 9800 60  0001 C CNN
-F 1 "EA50-5V" H 8750 9800 60  0000 C CNN
-F 2 "" H 8750 9800 60  0000 C CNN
-F 3 "" H 8750 9800 60  0000 C CNN
-	1    8750 9800
-	-1   0    0    -1  
+P 10250 9800
+F 0 "U?" H 10250 9800 60  0001 C CNN
+F 1 "EA50-5V" H 10250 9800 60  0000 C CNN
+F 2 "" H 10250 9800 60  0000 C CNN
+F 3 "" H 10250 9800 60  0000 C CNN
+	1    10250 9800
+	1    0    0    -1  
 $EndComp
-Text GLabel 8150 9600 0    60   Input ~ 0
+Text GLabel 10850 9600 2    60   Input ~ 0
 +5VLinear
-Text GLabel 8150 10000 0    60   Input ~ 0
+Text GLabel 10850 10000 2    60   Input ~ 0
 GND_5VLinear
 Text GLabel 2550 7000 0    47   Input ~ 0
 Spare
@@ -607,19 +607,19 @@ Text GLabel 15700 6500 2    60   Input ~ 0
 Text GLabel 15700 6700 2    60   Input ~ 0
 GND_5VLinear
 $Comp
-L PowerSupply 12V~Linear~Power~Supply
+L PowerSupply 12V
 U 1 1 57E3A5DF
-P 10850 9800
-F 0 "12V Linear Power Supply" H 10850 9600 60  0000 C CNN
-F 1 "PowerSupply" H 10850 10000 60  0000 C CNN
-F 2 "" H 10850 9800 60  0000 C CNN
-F 3 "" H 10850 9800 60  0000 C CNN
-	1    10850 9800
-	1    0    0    -1  
+P 8150 9800
+F 0 "12V" H 8150 9600 60  0000 C CNN
+F 1 "PowerSupply" H 8150 10000 60  0000 C CNN
+F 2 "" H 8150 9800 60  0000 C CNN
+F 3 "" H 8150 9800 60  0000 C CNN
+	1    8150 9800
+	-1   0    0    -1  
 $EndComp
-Text GLabel 9950 9700 0    60   Input ~ 0
+Text GLabel 9200 9350 2    60   Input ~ 0
 +12VLinear
-Text GLabel 9950 9900 0    60   Input ~ 0
+Text GLabel 9200 10250 2    60   Input ~ 0
 GND_12VLinear
 Wire Wire Line
 	9750 3000 10600 3000
@@ -939,20 +939,6 @@ Wire Wire Line
 	9500 5650 10600 5650
 Wire Wire Line
 	10450 2400 10600 2400
-Wire Wire Line
-	9350 9600 10050 9600
-Wire Wire Line
-	10050 10000 9350 10000
-Wire Wire Line
-	10050 9600 10050 9750
-Connection ~ 10050 9700
-Wire Wire Line
-	10050 9850 10050 10000
-Connection ~ 10050 9900
-Wire Wire Line
-	9950 9700 10050 9700
-Wire Wire Line
-	9950 9900 10050 9900
 Text GLabel 5650 7700 2    60   Input ~ 0
 GND_5VLinear
 Text GLabel 5650 8900 2    60   Input ~ 0
@@ -1225,10 +1211,8 @@ Connection ~ 8250 4200
 Wire Wire Line
 	6650 4350 6650 4200
 Connection ~ 8250 4350
-Text GLabel 6250 4000 0    60   Input ~ 0
-GND_120VAC
 Wire Wire Line
-	6250 4000 6300 4000
+	5700 4000 6300 4000
 Wire Wire Line
 	6600 4000 6650 4000
 Wire Wire Line
@@ -1303,7 +1287,7 @@ F 3 "" H 5250 6050 60  0000 C CNN
 	1    5250 6050
 	-1   0    0    -1  
 $EndComp
-Text GLabel 5700 6150 2    60   Input ~ 0
+Text GLabel 5900 6150 2    60   Input ~ 0
 GND_120VAC
 Text GLabel 14250 2450 2    60   Input ~ 0
 CS
@@ -1433,10 +1417,8 @@ Connection ~ 8250 5150
 Wire Wire Line
 	6650 5300 6650 5150
 Connection ~ 8250 5300
-Text GLabel 6250 4950 0    60   Input ~ 0
-GND_120VAC
 Wire Wire Line
-	6250 4950 6300 4950
+	5700 4950 6300 4950
 Wire Wire Line
 	6600 4950 6650 4950
 Wire Wire Line
@@ -1529,17 +1511,15 @@ Connection ~ 8250 6050
 Wire Wire Line
 	6650 6200 6650 6050
 Connection ~ 8250 6200
-Text GLabel 6250 5850 0    60   Input ~ 0
-GND_120VAC
 Wire Wire Line
-	6250 5850 6300 5850
+	5700 5850 6300 5850
 Wire Wire Line
 	6600 5850 6650 5850
 Wire Wire Line
 	6600 5950 6650 5950
-Text GLabel 5700 4300 2    60   Input ~ 0
+Text GLabel 5900 4300 2    60   Input ~ 0
 GND_120VAC
-Text GLabel 5700 5250 2    60   Input ~ 0
+Text GLabel 5900 5250 2    60   Input ~ 0
 GND_120VAC
 Text Notes 4200 5500 0    60   ~ 0
 Quick Disconnect\nPin Out
@@ -1548,15 +1528,15 @@ Quick Disconnect\nPin Out
 Wire Wire Line
 	5600 4100 6300 4100
 Wire Wire Line
-	5600 4300 5700 4300
+	5600 4300 5900 4300
 Wire Wire Line
 	5600 5050 6300 5050
 Wire Wire Line
-	5600 5250 5700 5250
+	5600 5250 5900 5250
 Wire Wire Line
 	5600 5950 6300 5950
 Wire Wire Line
-	5600 6150 5700 6150
+	5600 6150 5900 6150
 Wire Wire Line
 	9300 5950 8200 5950
 Wire Wire Line
@@ -1577,4 +1557,34 @@ Wire Wire Line
 	9300 4500 10600 4500
 Text Notes 9650 5100 0    60   ~ 0
 SD Card\nConnections
+Text GLabel 8800 10250 0    60   Input ~ 0
+GND_120VAC
+Wire Wire Line
+	9100 9750 8950 9750
+Wire Wire Line
+	9100 9350 9100 9750
+Wire Wire Line
+	9100 9600 9650 9600
+Wire Wire Line
+	8950 9850 9100 9850
+Wire Wire Line
+	9100 9850 9100 10250
+Wire Wire Line
+	9100 9350 9200 9350
+Connection ~ 9100 9600
+Wire Wire Line
+	8800 10250 9200 10250
+Connection ~ 9100 10000
+Wire Wire Line
+	9100 10000 9650 10000
+Connection ~ 9100 10250
+Wire Wire Line
+	5700 4300 5700 4000
+Connection ~ 5700 4300
+Wire Wire Line
+	5700 5250 5700 4950
+Connection ~ 5700 5250
+Wire Wire Line
+	5700 6150 5700 5850
+Connection ~ 5700 6150
 $EndSCHEMATC

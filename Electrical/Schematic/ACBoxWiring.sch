@@ -36,8 +36,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "AC Box Wiring"
-Date "2016-10-05"
-Rev "3"
+Date "2016-10-30"
+Rev "4"
 Comp "Project Narwhal"
 Comment1 ""
 Comment2 ""
@@ -89,7 +89,7 @@ F 3 "" H 2300 2150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SPST 12V
+L SPST 12V~Power~Switch
 U 1 1 57E0755E
 P 4300 2150
 F 0 "12V Power Switch" H 4300 2250 50  0000 C CNN
@@ -133,14 +133,14 @@ F 3 "" H 8450 5550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power_Supply_with_AC Switch~Mode~Power~Supply
+L Power_Supply_with_AC Switch
 U 1 1 57E07805
-P 6650 3300
-F 0 "Switch Mode Power Supply" H 6650 3150 60  0000 C CNN
-F 1 "Power_Supply_with_AC" H 6650 3550 60  0000 C CNN
-F 2 "" H 6650 3300 60  0000 C CNN
-F 3 "" H 6650 3300 60  0000 C CNN
-	1    6650 3300
+P 6650 3550
+F 0 "Switch Mode Power Supply" H 6650 3400 60  0000 C CNN
+F 1 "Power_Supply_with_AC" H 6650 3800 60  0000 C CNN
+F 2 "" H 6650 3550 60  0000 C CNN
+F 3 "" H 6650 3550 60  0000 C CNN
+	1    6650 3550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -174,22 +174,22 @@ $EndComp
 Wire Wire Line
 	5800 2250 5550 2250
 Wire Wire Line
-	5550 2250 5550 3300
+	5550 2250 5550 3550
 Wire Wire Line
 	5550 2550 1550 2550
 Wire Wire Line
-	5550 3300 5800 3300
+	5550 3550 5800 3550
 Connection ~ 5550 2550
 Wire Wire Line
-	5350 2350 5350 3400
+	5350 2350 5350 3650
 Wire Wire Line
-	5350 3400 5800 3400
+	5350 3650 5800 3650
 Wire Wire Line
 	5350 2350 5800 2350
 Wire Wire Line
 	4800 2150 5800 2150
 Wire Wire Line
-	5800 2150 5800 3200
+	5800 2150 5800 3450
 Wire Wire Line
 	3750 2150 3800 2150
 Wire Wire Line
@@ -260,25 +260,28 @@ Wire Wire Line
 Wire Wire Line
 	7800 1800 8150 1800
 Connection ~ 7800 2200
-Text GLabel 7800 3150 2    60   Input ~ 0
+Text GLabel 7800 3400 2    60   Input ~ 0
 +12VSwitchMode
-Text GLabel 7800 3450 2    60   Input ~ 0
+Text GLabel 7800 3700 2    60   Input ~ 0
 GND_12VSwitchMode
 Wire Wire Line
-	7450 3250 7600 3250
-Wire Wire Line
-	7600 3250 7600 3150
-Wire Wire Line
-	7600 3150 7800 3150
-Wire Wire Line
-	1550 3000 5350 3000
+	1550 3000 7500 3000
 Connection ~ 5350 3000
 Wire Wire Line
-	7450 3350 7600 3350
-Wire Wire Line
-	7600 3350 7600 3450
-Wire Wire Line
-	7600 3450 7800 3450
-Wire Wire Line
 	6050 5350 7650 5350
+Wire Wire Line
+	7450 3500 7650 3500
+Wire Wire Line
+	7650 3500 7650 3400
+Wire Wire Line
+	7650 3400 7800 3400
+Wire Wire Line
+	7450 3600 7650 3600
+Wire Wire Line
+	7650 3600 7650 3700
+Wire Wire Line
+	7650 3700 7800 3700
+Wire Wire Line
+	7500 3000 7500 2300
+Connection ~ 7500 2300
 $EndSCHEMATC
