@@ -7,8 +7,14 @@
 
 
 #include "UI_Shared.h"
-#include "../EZUI/Controls/EZUI_Control.h"
+#include "../EZUI/EZUI.h"
+#include "../EZUI/EZUI_Display.h"
+#include "../EZUI/Controls/EZUI_Control_AdjustParam.h"
+#include "../EZUI/Controls/EZUI_Control_Button.h"
 #include "../EZUI/Controls/EZUI_Control_Label.h"
+#include "../EZUI/Controls/EZUI_Control_Link.h"
+#include "../EZUI/Controls/EZUI_Control_ListOption.h"
+#include "../EZUI/Controls/EZUI_Control_ToggleOption.h"
 
 EZUI_Control_Label Shared_Lbl_HLT("HLT:");
 EZUI_Control_Label Shared_Lbl_MLT("MLT:");
@@ -28,3 +34,10 @@ EZUI_Control_Label Shared_Lbl_Vs("Vs:");
 EZUI_Control_Label Shared_Lbl_R("R:");
 EZUI_Control_Label Shared_Lbl_dC("dC:");
 EZUI_Control_Label Shared_Lbl_dF("dF:");
+
+
+//Commmon Display Labels
+EZUI_Control_Label Shared_Lbl_CTRL("CTRL:");
+EZUI_Control_Label Shared_Lbl_PRBE("PRBE:");
+EZUI_Control_Label Shared_Lbl_DMD("DMD:");
+EZUI_Control_Label Shared_Lbl_FBK("FBK:");

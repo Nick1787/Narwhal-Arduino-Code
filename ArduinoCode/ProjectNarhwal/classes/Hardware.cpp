@@ -179,7 +179,7 @@ DigitalIO * HLT_SOL1 = &RC1_OUT1;
 DigitalIO * HLT_SOL2 = &RC1_OUT2;
 WheatstoneBridge HLT_RTD_BP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
 WheatstoneBridge HLT_RTD_OP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
-BurnerController HLT_Controller(&HLT_TC_ON, &HLT_RTD_BP, &HLT_RTD_OP, HLT_SOL1, HLT_SOL2);
+BurnerController HLT_Controller(&HLT_TC_ON, &HLT_RTD_BP, &HLT_RTD_OP, HLT_SOL1, HLT_SOL2, &HLT_SetTemp, &HLT_HighErrLim, &HLT_OffErrLim, &HLT_HighErrHys, &HLT_OffErrHys);
 	
 /**************************
 *	Mash Lauter Tun
@@ -190,7 +190,7 @@ DigitalIO * MLT_SOL1 = &RC1_OUT3;
 DigitalIO * MLT_SOL2 = &RC1_OUT4;
 WheatstoneBridge MLT_RTD_BP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
 WheatstoneBridge MLT_RTD_OP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
-BurnerController MLT_Controller(&MLT_TC_ON, &MLT_RTD_BP, &MLT_RTD_OP, MLT_SOL1, MLT_SOL2);
+BurnerController MLT_Controller(&MLT_TC_ON, &MLT_RTD_BP, &MLT_RTD_OP, MLT_SOL1, MLT_SOL2, &MLT_SetTemp, &MLT_HighErrLim, &MLT_OffErrLim, &MLT_HighErrHys, &MLT_OffErrHys);
 
 /**************************
 *	Boil Kettle
@@ -201,4 +201,4 @@ DigitalIO * BK_SOL1 = &RC1_OUT5;
 DigitalIO * BK_SOL2 = &RC1_OUT6;
 WheatstoneBridge BK_RTD_BP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
 WheatstoneBridge BK_RTD_OP(LUTREF, WB_R2, WB_R3, WB_R4, WB_OpAmpGn, WB_Rs);
-BurnerController BK_Controller(&BK_TC_ON, &BK_RTD_BP, &BK_RTD_OP, BK_SOL1, BK_SOL2);
+BurnerController BK_Controller(&BK_TC_ON, &BK_RTD_BP, &BK_RTD_OP, BK_SOL1, BK_SOL2, &BK_SetTemp, &BK_HighErrLim, &BK_OffErrLim, &BK_HighErrHys, &BK_OffErrHys);

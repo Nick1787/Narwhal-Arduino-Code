@@ -1,12 +1,14 @@
-/* 
-* LCDToggleOption.cpp
-*
-* Created: 1/4/2016 9:06:37 PM
-* Author: Customer
-*/
-
+/*
+ *        File: EZUI_Control_ToggleOption.cpp
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - Toggle Option
+ *			- Control for interacting with a Toggle Option
+ */
 
 #include "EZUI_Control_ToggleOption.h"
+
+#include "../EZUI.h"
+#include "../EZUI_Display.h"
 
 int EZUI_Control_ToggleOption::Value(){
 	switch(ToggleType){

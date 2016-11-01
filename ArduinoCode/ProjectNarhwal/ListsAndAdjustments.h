@@ -6,6 +6,7 @@
  */ 
 
 #include "classes/EnhancedTypes/ListOption.h"
+#include "classes/EnhancedTypes/AdjustableParam.h"
 #include "classes/Hardware.h"
 
 #ifndef _LISTS_H
@@ -44,5 +45,26 @@ enum EnumBurnerStatus{
 	ProfileFault
 };
 extern ListOptionItem<EnumBurnerStatus> BurnerStatus[7];
+
+
+/*Adjustment Values********************************/
+
+extern AdjustableParam HLT_SetTemp;
+extern AdjustableParam HLT_HighErrLim;
+extern AdjustableParam HLT_OffErrLim;
+extern AdjustableParam HLT_HighErrHys;
+extern AdjustableParam HLT_OffErrHys;
+
+extern AdjustableParam MLT_SetTemp;
+extern AdjustableParam MLT_HighErrLim;
+extern AdjustableParam MLT_OffErrLim;
+extern AdjustableParam MLT_HighErrHys;
+extern AdjustableParam MLT_OffErrHys;	
+
+extern AdjustableParam BK_SetTemp;
+extern AdjustableParam BK_HighErrLim;
+extern AdjustableParam BK_OffErrLim;
+extern AdjustableParam BK_HighErrHys;
+extern AdjustableParam BK_OffErrHys;
 
 #endif

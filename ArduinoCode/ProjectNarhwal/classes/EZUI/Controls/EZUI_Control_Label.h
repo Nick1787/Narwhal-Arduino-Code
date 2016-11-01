@@ -2,22 +2,22 @@
  *        File: EZUI_Control_Label.h
  *      Author: Nick Dodds <Nick1787@gmail.com>
  * Description: EZ User Interface Class - Label Control
- * ----------------------------------------------------------------
- *    Revision:
- *		11062015 - NRD - Initial Version
- * ----------------------------------------------------------------
  */
 
 #ifndef __EZUI_CONTROL_LABEL_H__
 #define __EZUI_CONTROL_LABEL_H__
 
-#include "../EZUI.h"
+//Includes
+#include <Arduino.h>
 #include "EZUI_Control.h"
+#include "../../EnhancedTypes/AdjustableParam.h"
 #include "../../EnhancedTypes/ListOption.h"
 #include "../../EnhancedTypes/DigitalIO.h"
 
+//Forward Declaration
+class EZUI;
+class EZUI_Display;
 
-//Forward Declarations
 class EZUI_Control_Label : public EZUI_Control
 {
 //variables
@@ -25,7 +25,7 @@ public:
 protected:
 private:
 	//what type of variable are we displaying
-	enum EZUI_Control_Label_Type {None, LblCharArr, LblCCharArr, LblFloat, LblDouble, LblInt, LblUInt, LblLong, LblULong, LblBoolWithText, LblDigitalIO, LblListOpt};
+	enum EZUI_Control_Label_Type {None, LblCharArr, LblCCharArr, LblFloat, LblDouble, LblInt, LblUInt, LblLong, LblULong, LblBoolWithText, LblDigitalIO, LblListOpt, LblAdjParam};
 	const PROGMEM EZUI_Control_Label_Type _Label_Type;	//Not initialized to any value
 
 	//Pointers to the items
@@ -61,6 +61,7 @@ public:
 	EZUI_Control_Label(boolean *val):		EZUI_Control(EZUI_ControlType::Label), _Label_Type(EZUI_Control_Label_Type::LblBoolWithText), _ItemRef(val), _blnTrueTxt("1"), _blnFalseTxt("0"){};
 	EZUI_Control_Label(DigitalIO *val):		EZUI_Control(EZUI_ControlType::Label), _Label_Type(EZUI_Control_Label_Type::LblDigitalIO), _ItemRef(val){};
 	EZUI_Control_Label(GenericListOption *val):	EZUI_Control(EZUI_ControlType::Label), _Label_Type(EZUI_Control_Label_Type::LblListOpt), _ItemRef(val){};
+	EZUI_Control_Label(AdjustableParam *val):	EZUI_Control(EZUI_ControlType::Label), _Label_Type(EZUI_Control_Label_Type::LblAdjParam), _ItemRef(val){};
 	
 protected:
 private:

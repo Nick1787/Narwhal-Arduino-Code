@@ -11,18 +11,17 @@
 #ifndef __EZUI_MENU_H__
 #define __EZUI_MENU_H__
 
-#include "EZUI.h"
-#include "./Controls/EZUI_Control_Link.h"
-#include "./Controls/EZUI_Control_ToggleOption.h"
+#include <Arduino.h>
+#include "../EnhancedTypes/AdjustableParam.h"
 #include "../EnhancedTypes/ListOption.h"
 
 //Forward Declarations
 class EZUI;
 class EZUI_Control;
 class EZUI_Control_Link;
-class EZUI_Control_ToggleOption;
 class EZUI_Control_ListOption;
-class EZUI_Control_Button;
+class EZUI_Control_AdjustParam;
+class EZUI_Control_ToggleOption;
 
 /*-----------------------------------------------
 	EZUI_MenuItem
@@ -43,7 +42,7 @@ struct PageItem
 	uint8_t fieldWidth;
 	EZUI_Control *Control;
 };
-
+ 
 
 /*-----------------------------------------------
 	EZUI_Display
@@ -173,4 +172,33 @@ class EZUI_ListOptionEditor : public EZUI_Display{
 	private:
 };
 
+
+/*-----------------------------------------------
+	EZUI_AdjustParamEditor
+------------------------------------------------*/
+class EZUI_AdjustParamEditor : public EZUI_Display{
+	private:
+		AdjustableParam *AdjParamRef;
+		EZUI_Display *ParentDispRef;
+		
+		bool APPLY;
+		float _tempValue;
+		
+		enum AdjEditMode{ ERR, ADJUST, OKCANCEL};
+		AdjEditMode Mode = ADJUST;
+		
+	protected:
+	public:
+		EZUI_AdjustParamEditor(AdjustableParam * Ref, EZUI_Display * ParentDisp): AdjParamRef(Ref), ParentDispRef(ParentDisp), EZUI_Display(EZUI_DisplayType::AdjOpt){};
+	
+		//Actions
+		void display(EZUI *UI) override;
+		void init(EZUI *UI) override;
+		void cleanup(EZUI *UI) override;
+		void prevItem(EZUI *UI) override;
+		void nextItem(EZUI *UI)  override;
+		void selectItem(EZUI *UI) override;
+	
+	private:
+};
 #endif //__LCDMENU_H__

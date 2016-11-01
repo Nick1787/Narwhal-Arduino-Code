@@ -12,11 +12,13 @@
 #ifndef __EZUI_H_
 #define __EZUI_H_
 
+//Hardware Includes
 #include "../../include/LiquidCrystal/LiquidCrystal_I2C.h"
-#include "EZUI_Display.h"
-#include "../EnhancedTypes/ListOption.h"
 #include "./ClickEncoderWithEvents.h"
-#include "./Controls/EZUI_Control.h"
+
+//Type Includes
+#include "../EnhancedTypes/ListOption.h"
+#include "../EnhancedTypes/AdjustableParam.h"
 
 #ifndef A
 	#define A(x)  x,((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
@@ -56,6 +58,7 @@ class EZUI{
 			
 		//Functions
 		void EditListOption(GenericListOption * ListOptRef);
+		void EditAdjustParam(AdjustableParam * ParamRef);
 		
 		~EZUI(){};
 };

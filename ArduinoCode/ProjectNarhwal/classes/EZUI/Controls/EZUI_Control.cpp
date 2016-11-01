@@ -1,12 +1,12 @@
-/* 
-* EZUI_Control.cpp
-*
-* Created: 5/20/2016 6:24:34 PM
-* Author: Customer
-*/
+/*
+ *        File: EZUI_Control.cpp
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - Control Base Class
+ */
 
 
 #include "EZUI_Control.h"
+#include "../EZUI.h"
 
 boolean EZUI_Control::isSelectable()  const { 
 	return false;

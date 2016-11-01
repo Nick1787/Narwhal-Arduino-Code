@@ -2,11 +2,6 @@
  *        File: EZUI_Control_Link.h
  *      Author: Nick Dodds <Nick1787@gmail.com>
  * Description: EZ User Interface Class - Link Control
- *			- Links can be created to other pages or menus
- * ----------------------------------------------------------------
- *    Revision:
- *		11062015 - NRD - Initial Version
- * ----------------------------------------------------------------
  */
 
 #ifndef __EZUI_CONTROL_LINK_H__
@@ -14,14 +9,10 @@
 
 //Includes
 #include "EZUI_Control.h"
-#include "../EZUI.h"
 
-//Forward Declarations
+//Forward Declaration
 class EZUI;
 class EZUI_Display;
-class EZUI_Page;
-class EZUI_Menu;
-class DigitalIO;
 
 class EZUI_Control_Link : public EZUI_Control
 {

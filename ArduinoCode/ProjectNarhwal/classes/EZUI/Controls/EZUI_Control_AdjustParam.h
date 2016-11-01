@@ -1,15 +1,19 @@
-/* 
-* EZUI_AdjustParam.h
-*
-* Created: 7/9/2016 9:37:19 AM
-* Author: Customer
-*/
+/*
+ *        File: EZUI_Control_AdjustParam.cpp
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - Adjustable Param
+ */
 
 #ifndef __EZUI_ADJUSTPARAM_H__
 #define __EZUI_ADJUSTPARAM_H__
 
-#include "../EZUI.h"
+//Includes
 #include "EZUI_Control.h"
+#include "../../EnhancedTypes/AdjustableParam.h"
+
+//Forward Declarations
+class EZUI;
+class EZUI_Display;
 
 class EZUI_Control_AdjustParam : public EZUI_Control
 {
@@ -17,17 +21,23 @@ class EZUI_Control_AdjustParam : public EZUI_Control
 public:
 protected:
 private:
+	const char* _Label;
+	AdjustableParam *_Ref;
 
 //functions
 public:
-	boolean isSelectable() const  override {return true;};
+	boolean isSelectable() const  override;
+	boolean hasValueText() const override;
+	String LabelText() override;
+	String ValueText() override;
+	void Select(EZUI *UI) const override;
 		
-	EZUI_Control_AdjustParam();
+	EZUI_Control_AdjustParam(char* Label, AdjustableParam *ParamRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), _Ref(ParamRef){};
 	~EZUI_Control_AdjustParam();
 protected:
 private:
-	EZUI_Control_AdjustParam( const EZUI_Control_AdjustParam &c );
-	EZUI_Control_AdjustParam& operator=( const EZUI_Control_AdjustParam &c );
+	//EZUI_Control_AdjustParam( const EZUI_Control_AdjustParam &c );
+	//EZUI_Control_AdjustParam& operator=( const EZUI_Control_AdjustParam &c );
 
 }; //EZUI_AdjustParam
 

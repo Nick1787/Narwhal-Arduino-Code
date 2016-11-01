@@ -1,16 +1,15 @@
 /*
- * EZUI_Control_ListOption.c
- *
- * Created: 8/13/2016 9:41:30 AM
- *  Author: Customer
- */ 
+ *        File: EZUI_Control_ListOption.h
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - List Option
+ */
 
 #ifndef __EZUI_CONTROL_LISTOPTION_H__
 #define __EZUI_CONTROL_LISTOPTION_H__
 
-#include "../EZUI.h"
-#include "../../EnhancedTypes/ListOption.h"
+//Includes
 #include "EZUI_Control.h"
+#include "../../EnhancedTypes/ListOption.h"
 
 //Forward Declarations
 class EZUI;

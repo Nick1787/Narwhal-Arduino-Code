@@ -12,25 +12,13 @@
 #ifndef __EZUI_CONTROL_Button_H__
 #define __EZUI_CONTROL_Button_H__
 
-#include "../EZUI.h"
+//Includes
+#include <Arduino.h>
 #include "EZUI_Control.h"
 
 //Forward Declarations
 class EZUI;
-class EZUI_Page;
-class EZUI_Menu;
-class DigitalIO;
-
-//Generic Callback Function
-template < class T() >
-class BTNcallback
-{
-public:
-	BTNcallback(){};	// No Objects Used in Callback
-	void execute() {};	// launch callback function
-private:
-	T* Callback;
-};
+class EZUI_Display;
 
 //Button Class
 class EZUI_Control_Button : public EZUI_Control

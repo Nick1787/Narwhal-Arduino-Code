@@ -35,5 +35,9 @@ extern EZUI_Control_Label Shared_Lbl_R;
 extern EZUI_Control_Label Shared_Lbl_dC;
 extern EZUI_Control_Label Shared_Lbl_dF;
 
+extern EZUI_Control_Label Shared_Lbl_CTRL;
+extern EZUI_Control_Label Shared_Lbl_PRBE;
+extern EZUI_Control_Label Shared_Lbl_DMD;
+extern EZUI_Control_Label Shared_Lbl_FBK;
 
 #endif //__UI_SHARED_H__

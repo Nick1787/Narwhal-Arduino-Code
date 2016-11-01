@@ -13,59 +13,54 @@
 
 #include<Arduino.h>
 
-template<typename t>
 class AdjustableParam
 {
 //variables
 public:
 protected:
 private:
-	t *_refParam = NULL;
-	t _maxValue;
-	t _minValue;
-	t _incr;
+	float _value = NULL;
 
 //functions
 public:
-	AdjustableParam(t *refParam, t minValue, t maxValue, t incr): _refParam(refParam), _minValue(minValue), _maxValue(maxValue), _incr(incr){};
+	AdjustableParam(float defaultVal, float minValue, float maxValue, float increment): _value(defaultVal), minValue(minValue), maxValue(maxValue), increment(increment){};
 	~AdjustableParam(){};
 	
-	//Handling Values
-	void incr(){ 
-		if(*_refParam > _maxValue){
-			*_refParam = _maxValue;
+	//Min-Max-Increment
+	const float maxValue;
+	const float minValue;
+	const float increment;
+	
+	//Values
+	float getValue(){return _value;};
+	void set(float value){
+		if(value > maxValue){
+			_value = maxValue; 
+		}else if(value < minValue){
+			_value = minValue;
 		}else{
-			*_refParam += incr;
+			_value = value;
 		}
 	};
-	void decr(){
-		if(*_refParam < _minValue){
-			*_refParam = _minValue;
-		}else{
-			*_refParam -= incr;
-		}
+		
+	//Value Text - Overrides
+	String valueText()   {	return String( getValue() ); };
+	String minVaueText() {	return String( minValue  ); };
+	String maxVaueText() {	return String( maxValue  ); };
+	float pctOfMinMax()  {
+		return 100*(getValue() - minValue) / (maxValue-minValue);
 	};
-	void incrLarge(){
-		if(*_refParam > _maxValue){
-			*_refParam = _maxValue;
-		}else{
-			*_refParam += 10*incr;
-		}
-	};
-	void decrLarge(){
-		if(*_refParam < _minValue){
-			*_refParam = _minValue;
-		}else{
-			*_refParam -= 10*incr;
-		}
-	};
-	t getValue(){return *_refParam;};
-	void set(t Value){*_refParam = Value; incr(); decr();};
+		
+	//Increment / Decrement - Overrides
+	void incr() 	{ set( getValue() + increment ); };
+	void decr() 	{ set( getValue() - increment ); };
+	void incrBig() 	{ set( getValue() + 10*increment ); };
+	void decrBig() 	{ set( getValue() - 10*increment ); };
 	
 protected:
 private:
-	AdjustableParam( const AdjustableParam &c );
-	AdjustableParam& operator=( const AdjustableParam &c );
+	//AdjustableParam( const AdjustableParam &c );
+	//AdjustableParam& operator=( const AdjustableParam &c );
 
 }; //AdjustableParam
 

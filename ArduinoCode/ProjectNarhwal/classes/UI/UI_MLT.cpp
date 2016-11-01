@@ -9,6 +9,14 @@
  */
 
 #include "UI_MLT.h"
+#include "../EZUI/EZUI.h"
+#include "../EZUI/EZUI_Display.h"
+#include "../EZUI/Controls/EZUI_Control_AdjustParam.h"
+#include "../EZUI/Controls/EZUI_Control_Button.h"
+#include "../EZUI/Controls/EZUI_Control_Label.h"
+#include "../EZUI/Controls/EZUI_Control_Link.h"
+#include "../EZUI/Controls/EZUI_Control_ListOption.h"
+#include "../EZUI/Controls/EZUI_Control_ToggleOption.h"
 
 namespace UI_MLT{
 	//using namespace UI_SHARED;

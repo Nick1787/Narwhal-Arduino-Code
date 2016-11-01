@@ -1,9 +1,8 @@
-/* 
-* EZUI_Control.h
-*
-* Created: 5/20/2016 6:24:34 PM
-* Author: Customer
-*/
+/*
+ *        File: EZUI_Control.h
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - Control Base Class
+ */
 
 #ifndef __EZUI_CONTROL_H__
 #define __EZUI_CONTROL_H__
@@ -13,7 +12,6 @@
 
 //Forward Declarations
 class EZUI;
-
 	
 class EZUI_Control
 {

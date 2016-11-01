@@ -9,6 +9,14 @@
  */
 
 #include "UI_BK.h"
+#include "../EZUI/EZUI.h"
+#include "../EZUI/EZUI_Display.h"
+#include "../EZUI/Controls/EZUI_Control_AdjustParam.h"
+#include "../EZUI/Controls/EZUI_Control_Button.h"
+#include "../EZUI/Controls/EZUI_Control_Label.h"
+#include "../EZUI/Controls/EZUI_Control_Link.h"
+#include "../EZUI/Controls/EZUI_Control_ListOption.h"
+#include "../EZUI/Controls/EZUI_Control_ToggleOption.h"
 
 namespace UI_BK{
 	//using namespace UI_SHARED;
@@ -22,12 +30,19 @@ namespace UI_BK{
 	EZUI_Control_Link Lnk_Menu_MainBack("Back",&Menu_Main);
 
 	/***************************************
-	 Page - Monitor
+	 Page - Monitor - Manual Control
 	***************************************/
-	EZUI_Page Page_Monitor;
-	EZUI_Control_Link Lnk_Page_Monitor("Monitor",&Page_Monitor);
-	EZUI_Control_Link Lnk_Page_MonitorBack("Back",&Page_Monitor);
+	EZUI_Page Page_ManualMonitor;
+	EZUI_Control_Link Lnk_Page_ManualMonitor("Monitor - Manual Control",&Page_ManualMonitor);
+	EZUI_Control_Link Lnk_Page_ManualMonitorBack("Back",&Page_ManualMonitor);
 
+	/***************************************
+	 Page - Monitor - Closed Loop Control
+	***************************************/
+	EZUI_Page Page_ClosedLoopMonitor;
+	EZUI_Control_Link Lnk_Page_ClosedLoopMonitor("Monitor - Manual Control",&Page_ClosedLoopMonitor);
+	EZUI_Control_Link Lnk_Page_ClosedLoopMonitorBack("Back",&Page_ClosedLoopMonitor);
+	
 	/***************************************
 	 Page - RTD - BK - BP
 	***************************************/
@@ -50,7 +65,7 @@ namespace UI_BK{
 		{ 14,  1, 5, &Lbl_RTDs_BK_BP_degC},
 		{  1,  2, 4, &Shared_Lbl_dF},
 		{  4,  2, 5, &Lbl_RTDs_BK_BP_degF},
-		{  0,  3, 4, &Lnk_Page_MonitorBack}
+		{  0,  3, 4, &Lnk_Page_ManualMonitorBack}
 	};
 
 	/***************************************
@@ -75,12 +90,12 @@ namespace UI_BK{
 		{ 14,  1, 5, &Lbl_RTDs_BK_OP_degC},
 		{  1,  2, 4, &Shared_Lbl_dF},
 		{  4,  2, 5, &Lbl_RTDs_BK_OP_degF},
-		{  0,  3, 4, &Lnk_Page_MonitorBack}
+		{  0,  3, 4, &Lnk_Page_ManualMonitorBack}
 	};
 	
 	
 	/***************************************
-	 Monitor Items
+	 Manual Monitor Items
 	***************************************/
 	EZUI_Control_ToggleOption Tgl_Sol1Val("Sol#1:",BK_SOL1);
 	EZUI_Control_Label Lbl_Sol1Val(BK_SOL1);
@@ -102,6 +117,26 @@ namespace UI_BK{
 	};
 	
 	/***************************************
+	 Closed Loop Monitor Items
+	***************************************/
+	EZUI_Control_Label Lbl_BK_Status(&BK_Controller.Status);
+	EZUI_Control_ListOption Lst_BK_FBProbe("PRBE:", &BK_Controller.FeedbackProbe);
+	EZUI_Control_Label Lbl_BK_FBProbe(&BK_Controller.FeedbackProbe);
+	EZUI_Control_AdjustParam Lst_BK_Dmd("DMD:", BK_Controller.SetTemp);
+	EZUI_Control_Label Lbl_BK_Dmd(BK_Controller.SetTemp);
+	EZUI_Control_Label Lst_BK_FBK(&BK_Controller.TProbe1->degF);
+	
+	PageItem Page_ClosedLoopMonitor_Items[] = {
+		{  0,  0, 4,  &Shared_Lbl_BK},
+		{  5,  0, 15, &Lbl_BK_Status},
+		{  0,  2, 4,  &Lst_BK_FBProbe},
+		{  13,  1, 4, &Lst_BK_Dmd},
+		{  17,  1, 3, &Lbl_BK_Dmd},
+		{  13,  2, 3, &Shared_Lbl_FBK},
+		{  17,  2, 3, &Lst_BK_FBK},
+		{  13,  3, 4, &Lnk_Menu_MainBack}
+	};
+	/***************************************
 	 Main Diagnostics
 	***************************************/
 	EZUI_Menu Menu_Diag;
@@ -112,7 +147,8 @@ namespace UI_BK{
 	 Menu - Main Menu Items
 	***************************************/
 	MenuItem Menu_Main_Items[] = {
-		{  &Lnk_Page_Monitor },
+		{  &Lnk_Page_ManualMonitor },
+		{  &Lnk_Page_ClosedLoopMonitor },
 		{  &Lnk_Menu_Diag },
 	};
 
@@ -132,7 +168,8 @@ namespace UI_BK{
 		  Init Items
 		***************************************/
 		Menu_Main.setItems(A(Menu_Main_Items));
-		Page_Monitor.setItems(A(Page_Monitor_Items));
+		Page_ManualMonitor.setItems(A(Page_Monitor_Items));
+		Page_ClosedLoopMonitor.setItems(A(Page_ClosedLoopMonitor_Items));
 		Menu_Diag.setItems(A(Menu_Diag_Items));
 		Page_RTDs_BP.setItems(A(Page_RTDs_BP_Items));
 		Page_RTDs_OP.setItems(A(Page_RTDs_OP_Items));

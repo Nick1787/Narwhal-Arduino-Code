@@ -1,15 +1,18 @@
-/* 
-* LCDToggleOption.h
-*
-* Created: 1/4/2016 9:06:37 PM
-* Author: Customer
-*/
+/*
+ *        File: EZUI_Control_ToggleOption.h
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - Toggle Option
+ */
 
 #ifndef __LCDTOGGLEOPTION_H__
 #define __LCDTOGGLEOPTION_H__
 
-#include "../EZUI.h"
+//Includes
+#include "EZUI_Control.h"
 #include "../../EnhancedTypes/DigitalIO.h"
+
+//Forward Declarations
+class EZUI;
 
 class EZUI_Control_ToggleOption : public EZUI_Control
 {

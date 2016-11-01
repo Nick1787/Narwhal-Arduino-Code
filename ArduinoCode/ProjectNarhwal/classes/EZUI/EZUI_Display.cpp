@@ -7,6 +7,16 @@
 
 #include "EZUI_Display.h"
 
+#include "EZUI.h"
+#include "./Controls/EZUI_Control.h"
+#include "./Controls/EZUI_Control_Link.h"
+#include "./Controls/EZUI_Control_Label.h"
+#include "./Controls/EZUI_Control_ListOption.h"
+#include "./Controls/EZUI_Control_ToggleOption.h"
+#include "./Controls/EZUI_Control_AdjustParam.h"
+#include "../EnhancedTypes/ListOption.h"
+#include "../EnhancedTypes/AdjustableParam.h"
+
 /* Page ********************************************************************/
 
 void EZUI_Page::setItems(const PageItem _items[], unsigned int _size){
@@ -440,6 +450,12 @@ void EZUI_ListOptionEditor::init(EZUI *UI){
 	}
 	
 	drawListItems(UI);
+	
+	//Print Apply/Cancel Buttons
+	UI->LCD->setCursor(1,3);
+	UI->LCD->print("Cancel");
+	UI->LCD->setCursor(15,3);
+	UI->LCD->print("Apply");
 }
 
 void EZUI_ListOptionEditor::cleanup(EZUI *UI){
@@ -518,6 +534,129 @@ void EZUI_ListOptionEditor::selectItem(EZUI *UI){
 	}else if (Mode == OKCANCEL){
 		if(APPLY){
 			ListOptRef->setItem(temp_index);
+		}
+		UI->setDisplay(ParentDispRef);
+	}
+}
+
+
+/* EZUI_AdjustParamEditor ********************************************************************/
+
+void EZUI_AdjustParamEditor::init(EZUI *UI){
+	UI->LCD->clear();
+	
+	//Print Min Value Text
+	UI->LCD->setCursor(10,0);
+	UI->LCD->print("MIN:");
+	UI->LCD->print(AdjParamRef->minVaueText());
+	
+	//Print Max Value Text
+	UI->LCD->setCursor(10,1);
+	UI->LCD->print("MAX:");
+	UI->LCD->setCursor(20-(AdjParamRef->maxVaueText()).length(),0);
+	UI->LCD->print(AdjParamRef->maxVaueText());
+	
+	//Print Current Value Text
+	UI->LCD->setCursor(10,2);
+	UI->LCD->print("VAL:");
+	UI->LCD->setCursor(10-((AdjParamRef->valueText()).length())/2,0);
+	UI->LCD->print(AdjParamRef->valueText());
+	
+	//Print the Current Value
+	_tempValue = AdjParamRef->getValue();
+	UI->LCD->setCursor(1,1);
+	UI->LCD->print(">");
+	String CV = AdjParamRef->valueText();
+	UI->LCD->print(CV.substring(0,min(CV.length()-1,7)));
+		
+	//Print Apply/Cancel Buttons
+	UI->LCD->setCursor(1,3);
+	UI->LCD->print("Cancel");
+	UI->LCD->setCursor(15,3);
+	UI->LCD->print("Apply");
+	
+}
+
+void EZUI_AdjustParamEditor::cleanup(EZUI *UI){
+	//Nothing To Do Here
+}
+
+void EZUI_AdjustParamEditor::display(EZUI *UI){
+	//Nothing To Do Here
+}
+
+void EZUI_AdjustParamEditor::prevItem(EZUI *UI){
+	if( Mode == ADJUST ){
+		_tempValue = max( AdjParamRef->maxValue, _tempValue - AdjParamRef->increment);
+		String strTempVal = String(_tempValue);
+		UI->LCD->setCursor(1,2);
+		UI->LCD->print("        ");
+		UI->LCD->setCursor(1,2);
+		UI->LCD->print( strTempVal.substring(0, min(7, strTempVal.length())));
+	}else if(Mode == OKCANCEL){
+		if(APPLY){
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(" ");
+		}else{
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(" ");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(">");
+		}
+	}
+}
+
+void EZUI_AdjustParamEditor::nextItem(EZUI *UI){
+	
+	if( Mode == ADJUST ){
+		_tempValue = min( AdjParamRef->minValue, _tempValue + AdjParamRef->increment);
+		String strTempVal = String(_tempValue);
+		UI->LCD->setCursor(1,2);
+		UI->LCD->print("        ");
+		UI->LCD->setCursor(1,2);
+		UI->LCD->print( strTempVal.substring(0, min(7, strTempVal.length())));
+	}else if(Mode == OKCANCEL){
+		if(APPLY){
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(" ");
+		}else{
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(" ");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(">");
+		}
+	}
+}
+
+void EZUI_AdjustParamEditor::selectItem(EZUI *UI){
+	if(Mode == ERR){
+		UI->setDisplay(ParentDispRef);
+	}else if(Mode == ADJUST){
+		Mode = OKCANCEL;
+		if(APPLY){
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(" ");
+		}else{
+			UI->LCD->setCursor(0,3);
+			UI->LCD->print(" ");
+			
+			UI->LCD->setCursor(13,3);
+			UI->LCD->print(">");
+		}
+	}else if (Mode == OKCANCEL){
+		if(APPLY){
+			AdjParamRef->set(_tempValue);
 		}
 		UI->setDisplay(ParentDispRef);
 	}

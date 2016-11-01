@@ -1,12 +1,15 @@
-/* 
-* EZUI_Control_Lablel.cpp
-*
-* Created: 1/10/2016 9:22:27 AM
-* Author: Customer
-*/
+/*
+ *        File: EZUI_Control_Label.cpp
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - Label Control
+ *			- Labels are test displays which users cannot interact with
+ */
 
 
 #include "EZUI_Control_Label.h"
+
+#include "../EZUI.h"
+#include "../EZUI_Display.h"
 
 /****************************************************************************
 	Over-ride Functions
@@ -64,6 +67,11 @@ String EZUI_Control_Label::LabelText(){
 			GenericListOption lObj = *(GenericListOption*)(this->_ItemRef);
 			int listval = lObj.currentItem();
 			Str = lObj.itemText(listval);
+			break;
+		}
+		case(LblAdjParam):{
+			AdjustableParam aObj = *(AdjustableParam*)(this->_ItemRef);
+			Str = aObj.valueText();
 			break;
 		}
 	}

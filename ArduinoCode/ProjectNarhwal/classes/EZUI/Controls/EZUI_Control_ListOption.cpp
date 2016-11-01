@@ -1,12 +1,14 @@
-/* 
-* EZUI_Control_ListOption.cpp
-*
-* Created: 1/10/2016 9:31:32 AM
-* Author: Customer
-*/
-
+/*
+ *        File: EZUI_Control_ListOption.cpp
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: EZ User Interface Class - List Option
+ *			- Control for interacting with a list option
+ */
 
 #include "EZUI_Control_ListOption.h"
+
+#include "../EZUI.h"
+#include "../EZUI_Display.h"
 
 //Destructor
 

@@ -31,22 +31,17 @@ class BurnerController
 {
 //variables
 private:
-	float _SetTemp = 212;
-	float _HighErrLim = 5;
-	float _OffErrLim = 0;
-	float _HighErrHys = 2;
-	float _OffErrHys= 2;
-	
+
 public:	
 	//Error Limits
 	float ControlError = 0;
 
 	//Adjustable Parameters for UI
-	AdjustableParam<float> SetTemp;
-	AdjustableParam<float> HighErrLim;
-	AdjustableParam<float> OffErrLim;
-	AdjustableParam<float> HighErrHys;
-	AdjustableParam<float> OffErrHys;
+	AdjustableParam * SetTemp;
+	AdjustableParam * HighErrLim;
+	AdjustableParam * OffErrLim;
+	AdjustableParam * HighErrHys;
+	AdjustableParam * OffErrHys;
 	
 	//Feedback
 	WheatstoneBridge * TProbe1 = NULL;
@@ -57,6 +52,7 @@ public:
 	DigitalIO *GasValve2 = NULL;
 	
 	//Options
+	boolean ControlEnabled = false;
 	ListOption<EnumBurnerModes> Mode;
 	ListOption<EnumBurnerStatus> Status;
 	ListOption<EnumFeedbackProbes> FeedbackProbe;
@@ -67,15 +63,11 @@ private:
 	
 //functions
 public:
-	BurnerController(bool *PolotLit, WheatstoneBridge *BP, WheatstoneBridge *OP, DigitalIO *Sol1, DigitalIO *Sol2): 
-		SetTemp(&_SetTemp, 0, 212, 1), HighErrLim(&_HighErrHys, 0, 10, 0.1), OffErrLim(&_HighErrHys, 0, 10, 0.1),
-		HighErrHys(&_HighErrHys, 0, 10, 0.1), OffErrHys(&_HighErrHys, 0, 10, 0.1),
-		Mode(A(BurnerModes)), Status(A(BurnerStatus)), FeedbackProbe(A(FeedbackProbes)){
-			PilotLitRef = PolotLit;
-			TProbe1 = BP;
-			TProbe2 = OP;
-			GasValve1 = Sol1;
-			GasValve2 = Sol2;
+	BurnerController(bool *PolotLit, WheatstoneBridge *BP, WheatstoneBridge *OP, DigitalIO *Sol1, DigitalIO *Sol2, AdjustableParam * Set, AdjustableParam *HighErr, AdjustableParam *OffErr, AdjustableParam *HighHys, AdjustableParam *OffHys): 
+		PilotLitRef(PolotLit), TProbe1(BP), TProbe2(OP), GasValve1(Sol1), GasValve2(Sol2),
+		SetTemp(Set), HighErrLim(HighErr), OffErrLim(OffErr), HighErrHys(HighHys), OffErrHys(OffHys),
+		Mode(A(BurnerModes)), Status(A(BurnerStatus)), FeedbackProbe(A(FeedbackProbes))
+		{
 			Mode.setValue(EnumBurnerModes::Off);
 	} //BurnerController;
 	~BurnerController(){};
@@ -120,7 +112,7 @@ public:
 			ControlError=-99;
 			Faulted = true;
 		}else{
-			ControlError = _SetTemp - FB->degF;
+			ControlError = SetTemp->getValue() - FB->degF;
 		}
 				
 		//Check that the Pilot light is lit
@@ -154,9 +146,9 @@ public:
 					// *** In High Mode ***/
 					
 					//Check if TRansition to Another Mode
-					if( ControlError > _HighErrHys){
+					if( ControlError > HighErrHys->getValue()){
 						/*Do Nothing, Stay in High Mode */
-					}else if(ControlError > _OffErrHys){
+					}else if(ControlError > OffErrHys->getValue()){
 						/* TRansition to Low Mode */
 						GasValve1->Write(0);	//On
 						GasValve2->Write(1); //Off
@@ -170,11 +162,11 @@ public:
 					// *** In Low Mode ***/
 					
 					//Check if TRansition to Another Mode
-					if( ControlError > (_HighErrLim + _HighErrHys)){
+					if( ControlError > (HighErrLim->getValue() + HighErrHys->getValue())){
 						/* TRansition to High Mode */
 						GasValve1->Write(0); //On
 						GasValve2->Write(0); //On
-					}else if(ControlError > _OffErrLim){
+					}else if(ControlError > OffErrLim->getValue()){
 						/* Do Nothing Stay in Low Mode */
 					}else{
 						/* Transtion to Off Mode */
@@ -186,11 +178,11 @@ public:
 					// *** In Off Mode ***/
 				
 					//Check if TRansition to Another Mode
-					if( ControlError > (_HighErrLim + _HighErrHys)){
+					if( ControlError > (HighErrLim->getValue() + HighErrHys->getValue())){
 						/* TRansition to High Mode */
 						GasValve1->Write(0);	//On
 						GasValve2->Write(0); //On
-					}else if(ControlError > (_OffErrLim + _OffErrHys)){
+					}else if(ControlError > (OffErrLim->getValue() + OffErrHys->getValue())){
 						/* Transition to Low Mode */
 						GasValve1->Write(0);	//On
 						GasValve2->Write(1); //Off

@@ -5,5 +5,7 @@
 * Author: Customer
 */
 
-
 #include "EZUI_Control_Button.h"
+
+#include "../EZUI.h"
+#include "EZUI_Control.h"

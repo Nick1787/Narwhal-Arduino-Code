@@ -6,6 +6,7 @@
  */ 
 
 #include "EZUI.h"
+#include "EZUI_Display.h"
 
 void EZUI::attatchEncoder(ClickEncoderWithEvents* _Encoder){
 	Encoder = _Encoder;
@@ -95,5 +96,10 @@ void EZUI::setDisplay(EZUI_Display *Disp){
 
 void EZUI::EditListOption(GenericListOption * ListOptRef){
 	EZUI_ListOptionEditor * editor = new EZUI_ListOptionEditor(ListOptRef,this->CurrentDisplay);
+	this->setDisplay(editor);
+}
+
+void EZUI::EditAdjustParam(AdjustableParam * AdjRef){
+	EZUI_AdjustParamEditor* editor = new EZUI_AdjustParamEditor(AdjRef,this->CurrentDisplay);
 	this->setDisplay(editor);
 }
