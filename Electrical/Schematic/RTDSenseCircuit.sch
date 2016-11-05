@@ -34,10 +34,10 @@ EELAYER 25 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 4
+Sheet 4 4
 Title "RTD Wheatstone Bridge Sensing Circuit"
-Date "2016-10-30"
-Rev "3"
+Date "2016-11-05"
+Rev "4"
 Comp "Project Narwhal"
 Comment1 "Constant voltage 3-wire 100 Ohm RTD circuit"
 Comment2 ""
@@ -51,7 +51,7 @@ P 1700 2900
 AR Path="/55E57BF5/55E5D538" Ref="22-23-2031"  Part="1" 
 AR Path="/55E5C9A3/55E5D538" Ref="K?"  Part="1" 
 AR Path="/55E62603/55E5D538" Ref="K"  Part="1" 
-F 0 "22-23-2031" V 1650 2900 50  0000 C CNN
+F 0 "K" V 1650 2900 50  0000 C CNN
 F 1 "CONN_3" V 1750 2900 40  0000 C CNN
 F 2 "" H 1700 2900 60  0000 C CNN
 F 3 "" H 1700 2900 60  0000 C CNN
@@ -65,7 +65,7 @@ P 1700 4050
 AR Path="/55E57BF5/55E5D545" Ref="22-23-2031"  Part="1" 
 AR Path="/55E5C9A3/55E5D545" Ref="K?"  Part="1" 
 AR Path="/55E62603/55E5D545" Ref="K"  Part="1" 
-F 0 "22-23-2031" V 1650 4050 50  0000 C CNN
+F 0 "K" V 1650 4050 50  0000 C CNN
 F 1 "CONN_3" V 1750 4050 40  0000 C CNN
 F 2 "" H 1700 4050 60  0000 C CNN
 F 3 "" H 1700 4050 60  0000 C CNN
@@ -79,7 +79,7 @@ P 1700 5150
 AR Path="/55E57BF5/55E5D54B" Ref="22-23-2031"  Part="1" 
 AR Path="/55E5C9A3/55E5D54B" Ref="K?"  Part="1" 
 AR Path="/55E62603/55E5D54B" Ref="K"  Part="1" 
-F 0 "22-23-2031" V 1650 5150 50  0000 C CNN
+F 0 "K" V 1650 5150 50  0000 C CNN
 F 1 "CONN_3" V 1750 5150 40  0000 C CNN
 F 2 "" H 1700 5150 60  0000 C CNN
 F 3 "" H 1700 5150 60  0000 C CNN
@@ -213,7 +213,7 @@ P 1700 6200
 AR Path="/55E57BF5/55E5D6DF" Ref="22-23-2031"  Part="1" 
 AR Path="/55E5C9A3/55E5D6DF" Ref="K?"  Part="1" 
 AR Path="/55E62603/55E5D6DF" Ref="K"  Part="1" 
-F 0 "22-23-2031" V 1650 6200 50  0000 C CNN
+F 0 "K" V 1650 6200 50  0000 C CNN
 F 1 "CONN_3" V 1750 6200 40  0000 C CNN
 F 2 "" H 1700 6200 60  0000 C CNN
 F 3 "" H 1700 6200 60  0000 C CNN
@@ -420,7 +420,7 @@ U 1 1 561AA936
 P 9750 3500
 AR Path="/55E57BF5/561AA936" Ref="22-23-2071"  Part="1" 
 AR Path="/55E62603/561AA936" Ref="P"  Part="1" 
-F 0 "22-23-2071" V 9720 3500 60  0000 C CNN
+F 0 "P" V 9720 3500 60  0000 C CNN
 F 1 "CONN_7" V 9820 3500 60  0000 C CNN
 F 2 "" H 9750 3500 60  0000 C CNN
 F 3 "" H 9750 3500 60  0000 C CNN
@@ -846,11 +846,11 @@ Text Notes 600  7000 0    60   ~ 0
 Note 1: Molex connector pin numbering convention: With female connector ears to the right, pin 1 is located at the top.\n        Pin 1 is generally set as power.
 Text Notes 600  7200 0    60   ~ 0
 Note 2: GND_12V is the ground from the 12V power supply.
-Text Label 1300 3750 0    60   ~ 0
+Text Label 1300 3950 0    60   ~ 0
 Red
-Text Label 1300 3900 0    60   ~ 0
+Text Label 1300 4100 0    60   ~ 0
 Red
-Text Label 1300 4050 0    60   ~ 0
+Text Label 1300 4250 0    60   ~ 0
 White
 Wire Wire Line
 	2000 3000 2700 3000
@@ -875,11 +875,11 @@ Wire Wire Line
 	2550 2900 2550 2600
 Wire Wire Line
 	2550 2600 5200 2600
-Text Label 1300 4850 0    60   ~ 0
+Text Label 1300 5050 0    60   ~ 0
 Red
-Text Label 1300 5000 0    60   ~ 0
+Text Label 1300 5200 0    60   ~ 0
 Red
-Text Label 1300 5150 0    60   ~ 0
+Text Label 1300 5350 0    60   ~ 0
 White
 Text Label 1300 2800 0    60   ~ 0
 Red
@@ -887,11 +887,11 @@ Text Label 1300 2950 0    60   ~ 0
 Red
 Text Label 1300 3100 0    60   ~ 0
 White
-Text Label 1300 5900 0    60   ~ 0
+Text Label 1300 6100 0    60   ~ 0
 Red
-Text Label 1300 6050 0    60   ~ 0
+Text Label 1300 6250 0    60   ~ 0
 Red
-Text Label 1300 6200 0    60   ~ 0
+Text Label 1300 6400 0    60   ~ 0
 White
 $Comp
 L R-RESCUE-Project_Narwhal_Electrical R
