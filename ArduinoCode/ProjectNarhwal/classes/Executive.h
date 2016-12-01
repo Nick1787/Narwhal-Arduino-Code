@@ -11,10 +11,7 @@
 #ifndef _EXECUTIVE_H
 #define _EXECUTIVE_H
 
-#include <Arduino.h>
-#include "Hardware.h"
-
-#include "../config.h"
+#include "../Main.h"
 
 class Executive{
   public:

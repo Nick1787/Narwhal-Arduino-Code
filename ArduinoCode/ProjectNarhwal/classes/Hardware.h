@@ -11,25 +11,34 @@
 #ifndef __HARDWARE_H__
 #define __HARDWARE_H__
 
+
+#include "../Main.h"
+/*
+//Hardware Includes
 #include "../include/LiquidCrystal/LiquidCrystal_I2C.h"
 #include "../include/TimerOne/TimerOne.h"
 #include "../include/AdvancedSerial/AdvancedSerial.h"
 #include "../include/MemoryFree/MemoryFree.h"
+
+//Configuration File includes
 #include "../iodef.h"
 #include "../config.h"
-#include "BurnerController.h"
+#include "../ListsAndAdjustments.h"
 
+//Custom Code Includes
+#include "BurnerController.h"
 #include "WheatstoneBridge.h"
 #include "Executive.h"
+
+//UI Includes
+#include "EZUI/ClickEncoderWithEvents.h"
+
+//Enhanced Data Type Includes
 #include "EnhancedTypes/DigitalIO.h"
 #include "EnhancedTypes/AdjustableParam.h"
+#include "EnhancedTypes/ListOption.h"*/
 
-#include "EZUI/ClickEncoderWithEvents.h"
-#include "EZUI/EZUI.h"
-#include "UI/UI_MAIN.h"
-#include "UI/UI_HLT.h"
-#include "UI/UI_MLT.h"
-#include "UI/UI_BK.h"
+class BurnerController;
 
 /**************************
 *	Functions
@@ -95,19 +104,15 @@ extern DigitalIO RC2_OUT8;
 extern LiquidCrystal_I2C MAIN_LCD;
 extern ClickEncoderWithEvents MAIN_ENC;
 
-extern EZUI *MAIN_UI;
-
 /**************************
 *	Hot Liquor Tank
 **************************/
-extern BurnerController HLT_Controller;
+
+BurnerController& HLT_Controller();
 extern LiquidCrystal_I2C HLT_LCD;
 extern ClickEncoderWithEvents HLT_ENC;
 extern WheatstoneBridge HLT_RTD_BP;
 extern WheatstoneBridge HLT_RTD_OP;
-
-//User Interface
-extern EZUI *HLTUI;
 
 //IO
 extern DigitalIO *HLT_SOL1;
@@ -116,14 +121,11 @@ extern DigitalIO *HLT_SOL2;
 /**************************
 *	Mach Liquor Tank
 **************************/
-extern BurnerController MLT_Controller;
+BurnerController& MLT_Controller();
 extern LiquidCrystal_I2C MLT_LCD;
 extern ClickEncoderWithEvents MLT_ENC;
 extern WheatstoneBridge MLT_RTD_BP;
 extern WheatstoneBridge MLT_RTD_OP;
-
-//User Interface
-extern EZUI *MLTUI;
 
 //IO
 extern DigitalIO *MLT_SOL1;
@@ -132,15 +134,11 @@ extern DigitalIO *MLT_SOL2;
 /**************************
 *	Boil Kettle
 **************************/
-
-extern BurnerController BK_Controller;
+BurnerController& BK_Controller();
 extern LiquidCrystal_I2C BK_LCD;
 extern ClickEncoderWithEvents BK_ENC;
 extern WheatstoneBridge BK_RTD_BP;
 extern WheatstoneBridge BK_RTD_OP;
-
-//User Interface
-extern EZUI *BKUI;
 
 //IO
 extern DigitalIO *BK_SOL1;

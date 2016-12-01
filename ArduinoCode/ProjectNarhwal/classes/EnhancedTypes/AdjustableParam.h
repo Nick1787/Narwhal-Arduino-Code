@@ -17,34 +17,36 @@ class AdjustableParam
 {
 //variables
 public:
+
+	//Min-Max-Increment
+	const float maxValue = -1;
+	const float minValue = -1;
+	const float increment = -1;
+	float value = NULL;
+
 protected:
 private:
-	float _value = NULL;
 
 //functions
 public:
-	AdjustableParam(float defaultVal, float minValue, float maxValue, float increment): _value(defaultVal), minValue(minValue), maxValue(maxValue), increment(increment){};
+	AdjustableParam(float defaultVal, float mnValue, float mxValue, float incr): value(defaultVal), minValue(mnValue), maxValue(mxValue), increment(incr){};
 	~AdjustableParam(){};
 	
-	//Min-Max-Increment
-	const float maxValue;
-	const float minValue;
-	const float increment;
 	
 	//Values
-	float getValue(){return _value;};
-	void set(float value){
+	float getValue(){ return value;};
+	void set(float _value){
 		if(value > maxValue){
-			_value = maxValue; 
+			value = maxValue; 
 		}else if(value < minValue){
-			_value = minValue;
+			value = minValue;
 		}else{
-			_value = value;
+			value = _value;
 		}
 	};
 		
 	//Value Text - Overrides
-	String valueText()   {	return String( getValue() ); };
+	String valueText()   {	return String(value); };
 	String minVaueText() {	return String( minValue  ); };
 	String maxVaueText() {	return String( maxValue  ); };
 	float pctOfMinMax()  {
@@ -52,10 +54,10 @@ public:
 	};
 		
 	//Increment / Decrement - Overrides
-	void incr() 	{ set( getValue() + increment ); };
-	void decr() 	{ set( getValue() - increment ); };
-	void incrBig() 	{ set( getValue() + 10*increment ); };
-	void decrBig() 	{ set( getValue() - 10*increment ); };
+	void incr() 	{  Serial.print("-mx"); Serial.print(maxValue); Serial.println("-"); set( value + increment ); };
+	void decr() 	{ set( value - increment ); };
+	void incrBig() 	{ set( value + 10*increment ); };
+	void decrBig() 	{ set( value - 10*increment ); };
 	
 protected:
 private:

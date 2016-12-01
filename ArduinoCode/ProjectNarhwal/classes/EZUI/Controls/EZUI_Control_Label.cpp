@@ -10,6 +10,7 @@
 
 #include "../EZUI.h"
 #include "../EZUI_Display.h"
+#include "../../Hardware.h"
 
 /****************************************************************************
 	Over-ride Functions
@@ -64,9 +65,8 @@ String EZUI_Control_Label::LabelText(){
 			break;
 		}
 		case(LblListOpt):{
-			GenericListOption lObj = *(GenericListOption*)(this->_ItemRef);
-			int listval = lObj.currentItem();
-			Str = lObj.itemText(listval);
+			GenericListOption *lObj = (GenericListOption*)(this->_ItemRef);
+			Str = lObj->itemText(lObj->currentItem());
 			break;
 		}
 		case(LblAdjParam):{

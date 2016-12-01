@@ -56,59 +56,19 @@ void EZUI_Page::display(EZUI *UI){
 			unsigned long ctime = millis();
 			if( refresh || !(newText.equals(oldText)) ) {
 				
-				//Print the new Text, if its a selectable item put a space before it;
-				switch(Item->Control->Type){
-					case(EZUI_Control::Label):
-					{
-						//Clear the old text
-						LCD->setCursor(Item->col,Item->row);
-						for(int k=0; k<oldText.length(); k++){
-							LCD->print(" ");
-						}
-						
-						//Write the New Text
-						itemsText[i] = newText;
-						LCD->setCursor(Item->col,Item->row);
-						LCD->print(newText);
-					} break;
-					case(EZUI_Control::Link):
-					{
-						//Clear the old text
-						LCD->setCursor(Item->col+1,Item->row);
-						for(int k=0; k<oldText.length(); k++){
-							LCD->print(" ");
-						}
-						
-						//Write the New Text
-						itemsText[i] = newText;
-						LCD->setCursor(Item->col+1,Item->row);
-						LCD->print(newText);
-					} break;
-					case(EZUI_Control::ToggleControl):
-					{
-						//Clear the old text
-						LCD->setCursor(Item->col+1,Item->row);
-						for(int k=0; k<oldText.length(); k++){
-							LCD->print(" ");
-						}
-						
-						//Write the New Tex
-						itemsText[i] = newText;
-						LCD->setCursor(Item->col+1,Item->row);
-						LCD->print(newText);
-					} break;
-					default:{
-						//Clear the old text
-						LCD->setCursor(Item->col,Item->row);
-						for(int k=0; k<oldText.length(); k++){
-							LCD->print(" ");
-						}
-						
-						//Write the New Text
-						LCD->setCursor(Item->col+1,Item->row);
-						LCD->print(newText);
-					}break;
+				//Clear the old text
+				LCD->setCursor(Item->col,Item->row);
+				for(int k=0; k<oldText.length(); k++){
+					LCD->print(" ");
 				}
+				
+				//Write the New Text
+				itemsText[i] = newText;
+				LCD->setCursor(Item->col,Item->row);
+				if(Item->Control->isSelectable()){
+					LCD->print(" ");
+				}
+				LCD->print(newText);
 			}
 		}
 	}
@@ -163,7 +123,6 @@ void EZUI_Page::prevItem(EZUI *UI){
 
 void EZUI_Page::nextItem(EZUI *UI){
 	//See if theres a previously selectable item, if so set current item to that.
-	//See if theres a previously selectable item, if so set current item to that.
 	for(int i=(currentItem+1);i<itemCount;i++){
 		if( this->items[i].Control->isSelectable()){
 			currentItem = i;
@@ -199,7 +158,7 @@ void EZUI_Menu::display(EZUI *UI){
 			if (i==currentItem)
 			{
 				LCD->print(">");
-				}else{
+			}else{
 				LCD->print(" ");
 			}
 			ln++;
@@ -227,38 +186,34 @@ void EZUI_Menu::setItems(const MenuItem _items[], unsigned int _size){
 
 void EZUI_Menu::prevItem(EZUI *UI){
 	int oldCurrentItem = currentItem;
-	currentItem--;
-	if (currentItem < 0){
-		currentItem = 0;
-	}
+	currentItem = max(0,currentItem-1);
 	itemChanged = true;
 	
 	//Determine if we changed the menu page, if so- reprint it;
-	if((currentItem % 4==0) && (currentItem < oldCurrentItem)){
-		Serial.println(F("  Redraw"));
+	if(oldCurrentItem % 4 == 0){
 		refresh = true;
 	}
 	
-	Serial.print(F("  Menu Item:"));
-	Serial.println(currentItem);
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+		Serial.print(F("  Menu Item:"));
+		Serial.println(currentItem);
+	#endif
 }
 
 void EZUI_Menu::nextItem(EZUI *UI){
 	int oldCurrentItem = currentItem;
-	currentItem++;
-	if (currentItem >= itemCount){
-		currentItem = itemCount-1;
-	}
+	currentItem = min(itemCount-1,currentItem+1);
 	itemChanged = true;
 	
 	//Determine if we changed the menu page, if so- reprint it;
-	if((currentItem % 4 == 0) && (currentItem>oldCurrentItem)){
-		Serial.println(F("  Redraw"));
+	if( oldCurrentItem % 4 == 3){
 		refresh = true;
 	}
 	
-	Serial.print(F("  Menu Item:"));
-	Serial.println(currentItem);
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+		Serial.print(F("  Menu Item:"));
+		Serial.println(currentItem);
+	#endif
 }
 
 void EZUI_Menu::selectItem(EZUI *UI){
@@ -275,63 +230,14 @@ void EZUI_Menu::selectItem(EZUI *UI){
 			refresh = true;
 			itemChanged = true;
 			}break;
+		case(EZUI_Control::ListControl):{
+			const EZUI_Control_ListOption * Item = (EZUI_Control_ListOption const*)(items[currentItem].Control);
+			Item->Select(UI);
+			refresh = true;
+			itemChanged = true;
+		}break;
 	}
 }
-
-/*void EZUI_Menu::printItem(int col, int row, LiquidCrystal_I2C * LCD, EZUI_Control_ToggleOption const * ToggleOptRef){
-	if (!(ToggleOptRef == NULL)){
-		EZUI_Control_ToggleOption TglOpt = *ToggleOptRef;
-		LCD->setCursor(col,row);
-		LCD->print(TglOpt._Label);
-		
-		String TrueLabel = TglOpt.TrueLabel();
-		int TrueTextLen = TrueLabel.length();
-		String FalseLabel = TglOpt.FalseLabel();
-		int FalseTextLen = FalseLabel.length();
-		
-		//Set Cursor Position
-		int display_width = 20;
-		if(TrueTextLen>FalseTextLen){
-			int StartPos = display_width-TrueTextLen - 1;
-			LCD->setCursor(StartPos,row);
-			
-			//Print spaces to clear the label
-			int i=0;
-			for(i=StartPos; i<=display_width; i++){
-				LCD->print(" ");
-			}
-			
-			LCD->setCursor(StartPos,row);
-		}else{
-			int StartPos = display_width-FalseTextLen - 1;
-			LCD->setCursor(StartPos,row);
-			
-			//Print spaces to clear the label
-			int i=0;
-			for(i=StartPos; i<=display_width; i++){
-				LCD->print(" ");
-			}
-			LCD->setCursor(StartPos,row);
-		} 
-		
-		//Print current value
-		if(TglOpt.Value() == 1){
-			LCD->print(TrueLabel);
-		}else{
-			LCD->print(FalseLabel);
-		}
-	}
-}
-*/
-
-/*
-void EZUI_Menu::printItem(int col, int row, LiquidCrystal_I2C * LCD, EZUI_Control_Link const *LinkRef){
-	if(!(LinkRef == NULL)){
-		LCD->setCursor(col,row);
-		LCD->print((*LinkRef).Label());
-	}
-}
-*/
 
 void EZUI_Menu::printPage(EZUI *UI){
 	LiquidCrystal_I2C *LCD = UI->LCD;
@@ -341,14 +247,29 @@ void EZUI_Menu::printPage(EZUI *UI){
 	refresh = false;
 
 	//print the items
-	int firstItemToPrint = (int)(currentItem/3);
+	int firstItemToPrint = (int)(currentItem/4);
 	int ln = 0;
+	
+	
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+	Serial.print(F("  Menu-currentItem:"));
+	Serial.println(currentItem);
+	Serial.print(F("  Menu-ItemCount:"));
+	Serial.println(itemCount);
+	Serial.print(F("  Menu-firstItem:"));
+	Serial.println(firstItemToPrint);
+	#endif
+	
 	for(int i=firstItemToPrint; i<min(itemCount,firstItemToPrint + 4); i++){
 		LCD->setCursor(0,ln);
+		Serial.println(i);
 		if (i==currentItem)
 		{
+			Serial.print(ln);
+			Serial.println("*");
 			LCD->print(">");
-			}else{
+		}else{
+			Serial.println(ln);
 			LCD->print(" ");
 		}
 		
@@ -363,23 +284,7 @@ void EZUI_Menu::printPage(EZUI *UI){
 			LCD->setCursor(row,ln);
 			LCD->print(valTxt);
 		}
-		/*switch (items[i].Control->Type) {
-			case(EZUI_Control::Link):{
-				Serial.println("Link");
-				EZUI_Control_Link const * Item = (EZUI_Control_Link const*)(items[i].Control);
-				EZUI_Menu::printItem(1,ln,LCD,Item);
-			}break;
-			case(EZUI_Control::ToggleControl):{
-				Serial.println("ToggleOpt");
-				EZUI_Control_ToggleOption const * Item = (EZUI_Control_ToggleOption const*)(items[i].Control);
-				EZUI_Menu::printItem(1,ln,LCD,Item);
-			}break;
-			default:{
-				Serial.println("Default");
-				Serial.println(F("  ERR! Unknown Menu Item Type"));
-			}break;
-		}
-		*/
+		
 		ln++;
 	}
 }
@@ -389,49 +294,80 @@ void EZUI_Menu::printPage(EZUI *UI){
 
 
 void EZUI_ListOptionEditor::drawListItems(EZUI *UI){
-	//Clear Each Line Item
-	for(int i=0; i++; i<3){
-		UI->LCD->setCursor(0,i);
-		UI->LCD->print("                    ");
-	}
+	UI->LCD->clear();
 	
 	int currentIndex = ListOptRef->currentItem();
-	if( !(temp_index == 0)){
-		//Not Starting at Item 0;
-		int firstIndex = temp_index - 1;
-		for(int i=0; i++; i< min(ListOptRef->itemCount()-temp_index,3)){
-			UI->LCD->setCursor(2,i);
-			if( i == 1){
-				UI->LCD->print(">");
-			}
-			if( (firstIndex + i) == currentIndex){
-				UI->LCD->print("*");
-			}
-			UI->LCD->print( ListOptRef->itemText(firstIndex + i));
-		}
-	}else{
+	if( (temp_index == 0)){
 		//Starting at Item 0, Special Case
-			
+		
 		//Print Item 0
 		UI->LCD->setCursor(2,1);
 		UI->LCD->print(">");
 		if( currentIndex == 0 ){
 			UI->LCD->print("*");
-		}else{
+			}else{
 			UI->LCD->print(" ");
 		}
 		UI->LCD->print( ListOptRef->itemText(0) );
-			
+		
 		//Print Item 1
-		UI->LCD->setCursor(3,2);
+		UI->LCD->setCursor(2,2);
+		UI->LCD->print(" ");
 		if( currentIndex == 1 ){
+			UI->LCD->print("*");
+			}else{
+			UI->LCD->print(" ");
+		}
+		UI->LCD->print( ListOptRef->itemText(1) );
+	}else if( temp_index == (ListOptRef->itemCount() - 1)){
+		//Starting at Item N - Last Item, Special Case
+		
+		//Print Item N-1
+		UI->LCD->setCursor(2,0);
+		UI->LCD->print(" ");
+		if( currentIndex == temp_index - 1 ){
 			UI->LCD->print("*");
 		}else{
 			UI->LCD->print(" ");
 		}
-		UI->LCD->print( ListOptRef->itemText(1) );
+		UI->LCD->print( ListOptRef->itemText(temp_index - 1) );
+		
+		//Print Item N
+		UI->LCD->setCursor(2,1);
+		UI->LCD->print(">");
+		if( currentIndex == temp_index ){
+			UI->LCD->print("*");
+			}else{
+			UI->LCD->print(" ");
+		}
+		UI->LCD->print( ListOptRef->itemText(temp_index) );
+	}else{
+		//Not Starting at Item 0;
+		int firstIndex = temp_index - 1;
+		for(int i=0; i<3; i++){
+			UI->LCD->setCursor(2,i);
+			if( i == 1){
+				UI->LCD->print(">");
+				}else{
+				UI->LCD->print(" ");
+			}
+			
+			if( (firstIndex + i) == currentIndex){
+				UI->LCD->print("*");
+				}else{
+				UI->LCD->print(" ");
+			}
+			UI->LCD->print( ListOptRef->itemText(firstIndex + i));
+		}
+		
 		
 	}
+	
+	//Print Apply/Cancel Buttons
+	UI->LCD->setCursor(1,3);
+	UI->LCD->print("Cancel");
+	UI->LCD->setCursor(15,3);
+	UI->LCD->print("Apply");
 }
 
 void EZUI_ListOptionEditor::init(EZUI *UI){
@@ -447,15 +383,11 @@ void EZUI_ListOptionEditor::init(EZUI *UI){
 	}else if(ListOptRef->itemCount() == 1){
 		//One Item In List
 		Mode = ONITEM;
+	}else{
+		Mode = SEL;
 	}
 	
 	drawListItems(UI);
-	
-	//Print Apply/Cancel Buttons
-	UI->LCD->setCursor(1,3);
-	UI->LCD->print("Cancel");
-	UI->LCD->setCursor(15,3);
-	UI->LCD->print("Apply");
 }
 
 void EZUI_ListOptionEditor::cleanup(EZUI *UI){
@@ -467,58 +399,91 @@ void EZUI_ListOptionEditor::display(EZUI *UI){
 }
 
 void EZUI_ListOptionEditor::prevItem(EZUI *UI){
+	
 	if(Mode == SEL){
-		temp_index = max(temp_index-1,0);
+		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+			Serial.print(F("  ListEditor - Previous Item - CurrentValue:"));
+			Serial.print(temp_index);
+			Serial.print(F(" - NextValue:"));
+			Serial.print(temp_index-1);
+			Serial.print(F(" - ItemCount:"));
+			Serial.println(ListOptRef->itemCount()-1);
+		#endif
+		
+		if(temp_index > 0){
+			temp_index = temp_index-1;
+		}
 		drawListItems(UI);
 	}else if(Mode == OKCANCEL){
 		APPLY = !APPLY;
-		if(APPLY){
+		if(!APPLY){
 			UI->LCD->setCursor(0,3);
 			UI->LCD->print(">");
 			
-			UI->LCD->setCursor(13,3);
+			UI->LCD->setCursor(14,3);
 			UI->LCD->print(" ");
 		}else{
 			UI->LCD->setCursor(0,3);
 			UI->LCD->print(" ");
 		
-			UI->LCD->setCursor(13,3);
+			UI->LCD->setCursor(14,3);
 			UI->LCD->print(">");
 		}
 	}
 }
 
 void EZUI_ListOptionEditor::nextItem(EZUI *UI){
+	
 	if(Mode == SEL){
-		temp_index = min(temp_index+1, ListOptRef->itemCount()-1);
+		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+			Serial.print(F("  ListEditor - Next Item - CurrentValue:"));
+			Serial.print(temp_index);
+			Serial.print(F(" - NextValue:"));
+			Serial.print(temp_index+1);
+			Serial.print(F(" - ItemCount:"));
+			Serial.println(ListOptRef->itemCount());
+		#endif
+		
+		if(temp_index < ListOptRef->itemCount()-1){
+			temp_index = temp_index+1;
+		}
 		drawListItems(UI);
 	}else if(Mode == OKCANCEL){
 		APPLY = !APPLY;
-		if(APPLY){
+		if(!APPLY){
 			UI->LCD->setCursor(0,3);
 			UI->LCD->print(">");
 			
-			UI->LCD->setCursor(13,3);
+			UI->LCD->setCursor(14,3);
 			UI->LCD->print(" ");
 		}else{
 			UI->LCD->setCursor(0,3);
 			UI->LCD->print(" ");
 			
-			UI->LCD->setCursor(13,3);
+			UI->LCD->setCursor(14,3);
 			UI->LCD->print(">");
 		}
 	}
 }
 
 void EZUI_ListOptionEditor::selectItem(EZUI *UI){
+	
 	//See if theres a previously selectable item, if so set current item to that.
 	if(Mode == ERR){
 		UI->setDisplay(ParentDispRef);
 	}else if(Mode == ONITEM){
 		UI->setDisplay(ParentDispRef);
 	}else if(Mode == SEL){
+		//Clear the Select arrow
+		UI->LCD->setCursor(2,0);
+		UI->LCD->print("  ");
+		UI->LCD->setCursor(2,1);
+		UI->LCD->print(" *");
+		UI->LCD->setCursor(2,2);
+		UI->LCD->print("  ");
+		
 		Mode = OKCANCEL;
-		if(APPLY){
+		if(!APPLY){
 			UI->LCD->setCursor(0,3);
 			UI->LCD->print(">");
 			
@@ -528,7 +493,7 @@ void EZUI_ListOptionEditor::selectItem(EZUI *UI){
 			UI->LCD->setCursor(0,3);
 			UI->LCD->print(" ");
 			
-			UI->LCD->setCursor(13,3);
+			UI->LCD->setCursor(14,3);
 			UI->LCD->print(">");
 		}
 	}else if (Mode == OKCANCEL){
@@ -543,25 +508,34 @@ void EZUI_ListOptionEditor::selectItem(EZUI *UI){
 /* EZUI_AdjustParamEditor ********************************************************************/
 
 void EZUI_AdjustParamEditor::init(EZUI *UI){
+	
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+		Serial.println(F("   Adjustment Editor"));
+		Serial.print(F("    MIN:"));
+		Serial.println(AdjParamRef->minValue);
+		Serial.print(F("    MAX:"));
+		Serial.println(AdjParamRef->maxValue);
+		Serial.print(F("    VAL:"));
+		Serial.println(AdjParamRef->value);
+	#endif
+			
 	UI->LCD->clear();
 	
 	//Print Min Value Text
 	UI->LCD->setCursor(10,0);
 	UI->LCD->print("MIN:");
 	UI->LCD->print(AdjParamRef->minVaueText());
-	
+		
 	//Print Max Value Text
 	UI->LCD->setCursor(10,1);
 	UI->LCD->print("MAX:");
-	UI->LCD->setCursor(20-(AdjParamRef->maxVaueText()).length(),0);
 	UI->LCD->print(AdjParamRef->maxVaueText());
 	
 	//Print Current Value Text
 	UI->LCD->setCursor(10,2);
 	UI->LCD->print("VAL:");
-	UI->LCD->setCursor(10-((AdjParamRef->valueText()).length())/2,0);
 	UI->LCD->print(AdjParamRef->valueText());
-	
+		
 	//Print the Current Value
 	_tempValue = AdjParamRef->getValue();
 	UI->LCD->setCursor(1,1);
@@ -587,25 +561,45 @@ void EZUI_AdjustParamEditor::display(EZUI *UI){
 
 void EZUI_AdjustParamEditor::prevItem(EZUI *UI){
 	if( Mode == ADJUST ){
-		_tempValue = max( AdjParamRef->maxValue, _tempValue - AdjParamRef->increment);
+		unsigned long diff = millis() - lastUpdate;
+		if( diff < 50 ){
+			
+			#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
+				Serial.print(F("     Decrement Adjustment Value - Big - "));
+				Serial.println(diff);
+			#endif
+			
+			_tempValue = max( AdjParamRef->minValue, _tempValue - 10*AdjParamRef->increment);
+		}else{
+			
+			#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
+				Serial.print(F("     Decrement Adjustment Value - Small - "));
+				Serial.println(diff);
+			#endif
+			
+			_tempValue = max( AdjParamRef->minValue, _tempValue - AdjParamRef->increment);
+		}
+		lastUpdate += diff;
 		String strTempVal = String(_tempValue);
-		UI->LCD->setCursor(1,2);
+		
+		UI->LCD->setCursor(2,1);
 		UI->LCD->print("        ");
-		UI->LCD->setCursor(1,2);
+		UI->LCD->setCursor(2,1);
 		UI->LCD->print( strTempVal.substring(0, min(7, strTempVal.length())));
 	}else if(Mode == OKCANCEL){
+		APPLY = !APPLY;
 		if(APPLY){
 			UI->LCD->setCursor(0,3);
-			UI->LCD->print(">");
-			
-			UI->LCD->setCursor(13,3);
 			UI->LCD->print(" ");
+			
+			UI->LCD->setCursor(14,3);
+			UI->LCD->print(">");
 		}else{
 			UI->LCD->setCursor(0,3);
-			UI->LCD->print(" ");
-			
-			UI->LCD->setCursor(13,3);
 			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(14,3);
+			UI->LCD->print(" ");
 		}
 	}
 }
@@ -613,25 +607,43 @@ void EZUI_AdjustParamEditor::prevItem(EZUI *UI){
 void EZUI_AdjustParamEditor::nextItem(EZUI *UI){
 	
 	if( Mode == ADJUST ){
-		_tempValue = min( AdjParamRef->minValue, _tempValue + AdjParamRef->increment);
+		unsigned long diff = millis() - lastUpdate;
+		if( diff < 50 ){
+			#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
+				Serial.print(F("     Increment Adjustment Value - Big - "));
+				Serial.println(diff);
+			#endif
+			
+			_tempValue = min( AdjParamRef->maxValue, _tempValue + 10*AdjParamRef->increment);
+		}else{
+			#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>1)
+				Serial.print(F("     Increment Adjustment Value - Small - "));
+				Serial.println(diff);
+			#endif
+			
+			_tempValue = min( AdjParamRef->maxValue, _tempValue + AdjParamRef->increment);
+		}
+		lastUpdate += diff;
 		String strTempVal = String(_tempValue);
-		UI->LCD->setCursor(1,2);
+		
+		UI->LCD->setCursor(2,1);
 		UI->LCD->print("        ");
-		UI->LCD->setCursor(1,2);
+		UI->LCD->setCursor(2,1);
 		UI->LCD->print( strTempVal.substring(0, min(7, strTempVal.length())));
 	}else if(Mode == OKCANCEL){
+		APPLY = !APPLY;
 		if(APPLY){
 			UI->LCD->setCursor(0,3);
-			UI->LCD->print(">");
-			
-			UI->LCD->setCursor(13,3);
 			UI->LCD->print(" ");
+			
+			UI->LCD->setCursor(14,3);
+			UI->LCD->print(">");
 		}else{
 			UI->LCD->setCursor(0,3);
-			UI->LCD->print(" ");
-			
-			UI->LCD->setCursor(13,3);
 			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(14,3);
+			UI->LCD->print(" ");
 		}
 	}
 }
@@ -641,18 +653,21 @@ void EZUI_AdjustParamEditor::selectItem(EZUI *UI){
 		UI->setDisplay(ParentDispRef);
 	}else if(Mode == ADJUST){
 		Mode = OKCANCEL;
+		UI->LCD->setCursor(1,1);
+		UI->LCD->print(" ");
+		
 		if(APPLY){
 			UI->LCD->setCursor(0,3);
-			UI->LCD->print(">");
-			
-			UI->LCD->setCursor(13,3);
 			UI->LCD->print(" ");
+			
+			UI->LCD->setCursor(14,3);
+			UI->LCD->print(">");
 		}else{
 			UI->LCD->setCursor(0,3);
-			UI->LCD->print(" ");
-			
-			UI->LCD->setCursor(13,3);
 			UI->LCD->print(">");
+			
+			UI->LCD->setCursor(14,3);
+			UI->LCD->print(" ");
 		}
 	}else if (Mode == OKCANCEL){
 		if(APPLY){

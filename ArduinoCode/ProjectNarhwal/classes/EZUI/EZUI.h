@@ -13,12 +13,21 @@
 #define __EZUI_H_
 
 //Hardware Includes
+#include "../../config.h"
 #include "../../include/LiquidCrystal/LiquidCrystal_I2C.h"
 #include "./ClickEncoderWithEvents.h"
 
 //Type Includes
 #include "../EnhancedTypes/ListOption.h"
 #include "../EnhancedTypes/AdjustableParam.h"
+
+#include "./EZUI_Display.h"
+#include "./Controls/EZUI_Control_AdjustParam.h"
+#include "./Controls/EZUI_Control_Button.h"
+#include "./Controls/EZUI_Control_Label.h"
+#include "./Controls/EZUI_Control_Link.h"
+#include "./Controls/EZUI_Control_ListOption.h"
+#include "./Controls/EZUI_Control_ToggleOption.h"
 
 #ifndef A
 	#define A(x)  x,((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))

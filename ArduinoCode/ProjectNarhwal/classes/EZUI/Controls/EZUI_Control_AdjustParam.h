@@ -32,7 +32,10 @@ public:
 	String ValueText() override;
 	void Select(EZUI *UI) const override;
 		
-	EZUI_Control_AdjustParam(char* Label, AdjustableParam *ParamRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), _Ref(ParamRef){};
+	EZUI_Control_AdjustParam(char* Label, AdjustableParam *ParamRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), _Ref(ParamRef){
+		Serial.print("REF:");
+		Serial.print((unsigned int)_Ref);
+	};
 	~EZUI_Control_AdjustParam();
 protected:
 private:

@@ -9,9 +9,8 @@
 #ifndef __UI_SHARED_H__
 #define __UI_SHARED_H__
 
-#include "../EZUI/EZUI.h"
-#include "../EZUI/EZUI_Display.h"
-#include "../EZUI/Controls/EZUI_Control.h"
+//Includes
+#include "../../Main.h"
 
 class EZUI_Control_Label;
 
@@ -28,6 +27,8 @@ extern EZUI_Control_Label Shared_Lbl_OP;
 	
 	
 //Commmon Display Labels
+extern EZUI_Control_Label Shared_Lbl_Sts;
+extern EZUI_Control_Label Shared_Lbl_PL;
 extern EZUI_Control_Label Shared_Lbl_V;
 extern EZUI_Control_Label Shared_Lbl_Vo;
 extern EZUI_Control_Label Shared_Lbl_Vs;

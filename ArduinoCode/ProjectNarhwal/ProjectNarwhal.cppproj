@@ -261,7 +261,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="classes\BurnerController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="classes\BurnerController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\DataLogger.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\DataLogger.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EnhancedTypes\AdjustableParam.h">
@@ -577,6 +586,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Main.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\abi.cpp">

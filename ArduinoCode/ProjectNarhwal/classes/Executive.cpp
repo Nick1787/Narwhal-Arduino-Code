@@ -35,7 +35,7 @@ void Executive::run(){
 		Serial.print(freeMemory());
 		Serial.println(F(" bytes free."));
 		Serial.flush();
-		
+				
 		//reset counters
 		temp_time = time;
 		temp_frame_count=0;
@@ -67,8 +67,7 @@ void Executive::exec_frame1(){
 	}else{
 		HLT_TC_ON = false;
 	}
-	Serial.print("HLTTC:");
-	Serial.println(HLT_TC_V);
+	
 	//MLT Thermocouple
 	MLT_TC_V = 5.0 * ((float)analogRead(MLT_TC_VIN) / 1023.0);
 	if(MLT_TC_V > 0.25){
@@ -77,8 +76,6 @@ void Executive::exec_frame1(){
 		MLT_TC_ON = false;
 	}
 	
-	Serial.print("MLTTC:");
-	Serial.println(MLT_TC_V);
 	//BK Thermocouple
 	BK_TC_V = 5.0 * ((float)analogRead(BK_TC_VIN) / 1023.0);
 	if(BK_TC_V > 0.25){
@@ -87,8 +84,6 @@ void Executive::exec_frame1(){
 		BK_TC_ON = false;
 	}
 	
-	Serial.print("BKTC:");
-	Serial.println(BK_TC_V);
 	//Encoders
 	MAIN_ENC.Read();
 	MLT_ENC.Read();
@@ -106,9 +101,9 @@ void Executive::exec_frame2(){
 	BK_RTD_OP.Calculate(  (float)analogRead(BK_RTD_Vs_AN)  / 1023.0, (float)analogRead(BK_RTD_OP_AN)  / 1023.0 );
 	
 	//Controllers
-	HLT_Controller.Exec();
-	MLT_Controller.Exec();
-	BK_Controller.Exec();
+	HLT_Controller().Exec();
+	MLT_Controller().Exec();
+	BK_Controller().Exec();
 }
 
 void Executive::exec_frame3(){

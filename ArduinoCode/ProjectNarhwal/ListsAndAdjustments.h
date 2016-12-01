@@ -7,7 +7,7 @@
 
 #include "classes/EnhancedTypes/ListOption.h"
 #include "classes/EnhancedTypes/AdjustableParam.h"
-#include "classes/Hardware.h"
+//#include "classes/Hardware.h"
 
 #ifndef _LISTS_H
 #define _LISTS_H

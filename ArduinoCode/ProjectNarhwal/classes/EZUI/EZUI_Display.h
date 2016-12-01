@@ -12,8 +12,7 @@
 #define __EZUI_MENU_H__
 
 #include <Arduino.h>
-#include "../EnhancedTypes/AdjustableParam.h"
-#include "../EnhancedTypes/ListOption.h"
+#include "EZUI.h"
 
 //Forward Declarations
 class EZUI;
@@ -86,6 +85,7 @@ class EZUI_Menu : public EZUI_Display{
 		bool itemChanged = false;
 		const MenuItem * items;
 		unsigned int size;
+		unsigned int cursorLine = 1;
 		
 	protected:
 	public:
@@ -150,7 +150,7 @@ class EZUI_ListOptionEditor : public EZUI_Display{
 		GenericListOption *ListOptRef;
 		EZUI_Display *ParentDispRef;
 		
-		bool APPLY;
+		bool APPLY = false;
 		unsigned int temp_index;
 		
 		enum ListEditMode{ ERR, ONITEM, SEL, OKCANCEL};
@@ -181,11 +181,13 @@ class EZUI_AdjustParamEditor : public EZUI_Display{
 		AdjustableParam *AdjParamRef;
 		EZUI_Display *ParentDispRef;
 		
-		bool APPLY;
+		bool APPLY = false;
 		float _tempValue;
 		
 		enum AdjEditMode{ ERR, ADJUST, OKCANCEL};
 		AdjEditMode Mode = ADJUST;
+		
+		unsigned long lastUpdate = 0;
 		
 	protected:
 	public:

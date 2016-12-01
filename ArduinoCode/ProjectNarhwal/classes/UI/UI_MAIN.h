@@ -11,11 +11,8 @@
 #ifndef MAIN_UI_H_
 #define MAIN_UI_H_
 
-#include "../EZUI/EZUI.h"
-#include "../EZUI/EZUI_Display.h"
-#include "../Executive.h"
-#include "../Hardware.h"
-#include "../../config.h"
+//Includes
+#include "../../Main.h"
 
 namespace UI_MAIN{
 	extern EZUI *UI;

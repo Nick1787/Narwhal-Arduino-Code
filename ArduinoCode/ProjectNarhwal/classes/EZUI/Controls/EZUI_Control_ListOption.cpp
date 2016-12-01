@@ -15,7 +15,7 @@
 EZUI_Control_ListOption::~EZUI_Control_ListOption(){};
 	
 boolean EZUI_Control_ListOption::isSelectable() const { return true; };
-boolean EZUI_Control_ListOption::hasValueText() const { return false; };
+boolean EZUI_Control_ListOption::hasValueText() const { return true; };
 String EZUI_Control_ListOption::LabelText(void) { return String(this->_Label); };
 String EZUI_Control_ListOption::ValueText(void) { return _Ref->itemText(_Ref->currentItem()); };
 void EZUI_Control_ListOption::Select(EZUI *UI) const {

@@ -9,14 +9,6 @@
  */
 
 #include "UI_BK.h"
-#include "../EZUI/EZUI.h"
-#include "../EZUI/EZUI_Display.h"
-#include "../EZUI/Controls/EZUI_Control_AdjustParam.h"
-#include "../EZUI/Controls/EZUI_Control_Button.h"
-#include "../EZUI/Controls/EZUI_Control_Label.h"
-#include "../EZUI/Controls/EZUI_Control_Link.h"
-#include "../EZUI/Controls/EZUI_Control_ListOption.h"
-#include "../EZUI/Controls/EZUI_Control_ToggleOption.h"
 
 namespace UI_BK{
 	//using namespace UI_SHARED;
@@ -33,15 +25,24 @@ namespace UI_BK{
 	 Page - Monitor - Manual Control
 	***************************************/
 	EZUI_Page Page_ManualMonitor;
-	EZUI_Control_Link Lnk_Page_ManualMonitor("Monitor - Manual Control",&Page_ManualMonitor);
+	EZUI_Control_Link Lnk_Page_ManualMonitor("Monitor - Manual",&Page_ManualMonitor);
 	EZUI_Control_Link Lnk_Page_ManualMonitorBack("Back",&Page_ManualMonitor);
 
 	/***************************************
 	 Page - Monitor - Closed Loop Control
 	***************************************/
+	
 	EZUI_Page Page_ClosedLoopMonitor;
-	EZUI_Control_Link Lnk_Page_ClosedLoopMonitor("Monitor - Manual Control",&Page_ClosedLoopMonitor);
+	EZUI_Control_Link Lnk_Page_ClosedLoopMonitor("Monitor - CL",&Page_ClosedLoopMonitor);
 	EZUI_Control_Link Lnk_Page_ClosedLoopMonitorBack("Back",&Page_ClosedLoopMonitor);
+	
+	/***************************************
+	 Page - Diagnostics
+	***************************************/
+	
+	EZUI_Page Page_Diag;
+	EZUI_Control_Link Lnk_Page_Diag("Diagnostics",&Page_Diag);
+	EZUI_Control_Link Lnk_Page_BackDiag("Back",&Page_Diag);
 	
 	/***************************************
 	 Page - RTD - BK - BP
@@ -65,7 +66,7 @@ namespace UI_BK{
 		{ 14,  1, 5, &Lbl_RTDs_BK_BP_degC},
 		{  1,  2, 4, &Shared_Lbl_dF},
 		{  4,  2, 5, &Lbl_RTDs_BK_BP_degF},
-		{  0,  3, 4, &Lnk_Page_ManualMonitorBack}
+		{  0,  3, 4, &Lnk_Page_BackDiag}
 	};
 
 	/***************************************
@@ -90,74 +91,94 @@ namespace UI_BK{
 		{ 14,  1, 5, &Lbl_RTDs_BK_OP_degC},
 		{  1,  2, 4, &Shared_Lbl_dF},
 		{  4,  2, 5, &Lbl_RTDs_BK_OP_degF},
-		{  0,  3, 4, &Lnk_Page_ManualMonitorBack}
+		{  0,  3, 4, &Lnk_Page_BackDiag}
 	};
 	
 	
 	/***************************************
 	 Manual Monitor Items
 	***************************************/
-	EZUI_Control_ToggleOption Tgl_Sol1Val("Sol#1:",BK_SOL1);
-	EZUI_Control_Label Lbl_Sol1Val(BK_SOL1);
-	EZUI_Control_ToggleOption Tgl_Sol2Val("Sol#2:",BK_SOL2);
-	EZUI_Control_Label Lbl_Sol2Val(BK_SOL2);
+	EZUI_Control_Label Lbl_Status(&BK_Controller().Status);
+	EZUI_Control_ToggleOption Tgl_Sol1Val("Sol#1:",BK_Controller().GasValve1);
+	EZUI_Control_Label Lbl_Sol1Val(BK_Controller().GasValve1);
+	EZUI_Control_ToggleOption Tgl_Sol2Val("Sol#2:",BK_Controller().GasValve2);
+	EZUI_Control_Label Lbl_Sol2Val(BK_Controller().GasValve2);
 	EZUI_Control_Label Lbl_BPVal(&BK_RTD_BP.degF);
 	EZUI_Control_Label Lbl_OPVal(&BK_RTD_OP.degF);
 	PageItem Page_Monitor_Items[] = {
-		{ 0,  0, 20, &Shared_Lbl_BK},
+		{ 0,  0, 4, &Shared_Lbl_BK},
+		{ 4,  0, 16, &Lbl_Status},
 		{ 0,  1, 6, &Tgl_Sol1Val},
 		{ 7,  1, 3, &Lbl_Sol1Val},
-		{  0,  2, 3, &Lnk_Page_RTDs_BP},
+		{  1,  2, 3, &Shared_Lbl_BP},
 		{  4,  2, 5, &Lbl_BPVal},
-		{  0, 3, 4, &Lnk_Menu_MainBack},
 		{ 10,  1, 6, &Tgl_Sol2Val},
 		{ 17,  1, 3, &Lbl_Sol2Val},
-		{ 10,  2, 3, &Lnk_Page_RTDs_OP},
-		{ 14,  2, 5, &Lbl_OPVal}
+		{ 11,  2, 3, &Shared_Lbl_OP},
+		{ 14,  2, 5, &Lbl_OPVal},
+		{  0, 3, 4, &Lnk_Menu_MainBack}
 	};
 	
 	/***************************************
 	 Closed Loop Monitor Items
 	***************************************/
-	EZUI_Control_Label Lbl_BK_Status(&BK_Controller.Status);
-	EZUI_Control_ListOption Lst_BK_FBProbe("PRBE:", &BK_Controller.FeedbackProbe);
-	EZUI_Control_Label Lbl_BK_FBProbe(&BK_Controller.FeedbackProbe);
-	EZUI_Control_AdjustParam Lst_BK_Dmd("DMD:", BK_Controller.SetTemp);
-	EZUI_Control_Label Lbl_BK_Dmd(BK_Controller.SetTemp);
-	EZUI_Control_Label Lst_BK_FBK(&BK_Controller.TProbe1->degF);
+	EZUI_Control_ListOption Lst_FBProbe("PRB:", &BK_Controller().FeedbackProbe);
+	EZUI_Control_Label Lbl_FBProbe(&BK_Controller().FeedbackProbe);
+	EZUI_Control_AdjustParam Lst_Dmd("DMD:", BK_Controller().SetTemp);
+	EZUI_Control_Label Lbl_Dmd(&BK_Controller().SetTemp->value);
+	EZUI_Control_Label Lbl_FBK(&BK_Controller().TProbe1->degF);
 	
 	PageItem Page_ClosedLoopMonitor_Items[] = {
 		{  0,  0, 4,  &Shared_Lbl_BK},
-		{  5,  0, 15, &Lbl_BK_Status},
-		{  0,  2, 4,  &Lst_BK_FBProbe},
-		{  13,  1, 4, &Lst_BK_Dmd},
-		{  17,  1, 3, &Lbl_BK_Dmd},
-		{  13,  2, 3, &Shared_Lbl_FBK},
-		{  17,  2, 3, &Lst_BK_FBK},
+		{  3,  0, 15, &Lbl_Status},
+		{  0,  1, 4,  &Lst_FBProbe},
+		{  5,  1, 5,  &Lbl_FBProbe},
+		{  0,  2, 4, &Lst_Dmd},
+		{  5,  2, 5, &Lbl_Dmd},
+		{  1,  3, 4, &Shared_Lbl_FBK},
+		{  5,  3, 5, &Lbl_FBK},
+		{  11, 1, 6, &Shared_Lbl_Sol1},
+		{  17, 1, 6, &Lbl_Sol1Val},
+		{  11, 2, 6, &Shared_Lbl_Sol2},
+		{  17, 2, 6, &Lbl_Sol2Val},
 		{  13,  3, 4, &Lnk_Menu_MainBack}
 	};
+	
 	/***************************************
 	 Main Diagnostics
 	***************************************/
-	EZUI_Menu Menu_Diag;
-	EZUI_Control_Link Lnk_Menu_Diag("Diagnostics",&Menu_Diag);
-	EZUI_Control_Link Lnk_Menu_DiagBack("Back",&Menu_Diag);
-
+	EZUI_Control_Label Lbl_PilotStatus(&BK_TC_ON,"On","Off");
+	EZUI_Control_Label Lbl_PilotVoltage(&BK_TC_V);
+		
+	PageItem Page_Diag_Items[] = {
+		{ 0,  0,   4, &Shared_Lbl_Sts},
+		{ 4,  0,  16, &Lbl_Status},
+		{ 2,  1,   3, &Shared_Lbl_PL},
+		{ 5,  1,   3, &Lbl_PilotStatus},
+		{ 13,  1,  2, &Shared_Lbl_V},
+		{ 15,  1,  6, &Lbl_PilotVoltage},
+		{  1,  2,  3, &Lnk_Page_RTDs_BP},
+		{  5,  2,  5, &Lbl_BPVal},
+		{  11, 2,  3, &Lnk_Page_RTDs_OP},
+		{  15, 2,  5, &Lbl_OPVal},
+		{  1,  3,  4, &Lnk_Menu_MainBack}
+	};
+	
 	/***************************************
 	 Menu - Main Menu Items
 	***************************************/
+	EZUI_Control_ListOption Lst_ControlMode("Mode",&BK_Controller().Mode);
 	MenuItem Menu_Main_Items[] = {
+		{  &Lst_ControlMode },
 		{  &Lnk_Page_ManualMonitor },
 		{  &Lnk_Page_ClosedLoopMonitor },
-		{  &Lnk_Menu_Diag },
+		{  &Lnk_Page_Diag },
 	};
 
 	/***************************************
 	 Menu - Diagnostics Items
 	***************************************/
-	MenuItem Menu_Diag_Items[] = {
-		{ &Lnk_Menu_MainBack}
-	};
+
 	
 	void UI_init(){
 		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
@@ -170,7 +191,7 @@ namespace UI_BK{
 		Menu_Main.setItems(A(Menu_Main_Items));
 		Page_ManualMonitor.setItems(A(Page_Monitor_Items));
 		Page_ClosedLoopMonitor.setItems(A(Page_ClosedLoopMonitor_Items));
-		Menu_Diag.setItems(A(Menu_Diag_Items));
+		Page_Diag.setItems(A(Page_Diag_Items));
 		Page_RTDs_BP.setItems(A(Page_RTDs_BP_Items));
 		Page_RTDs_OP.setItems(A(Page_RTDs_OP_Items));
 	

@@ -89,17 +89,31 @@ void EZUI::setDisplay(EZUI_Display *Disp){
 		delete Editor;
 	}
 	
+	//If the current display is a List Option Editor, Delete it!
+	else if( CurrentDisplay->Type == EZUI_Display::EZUI_DisplayType::AdjOpt){
+		EZUI_AdjustParamEditor* Editor = (EZUI_AdjustParamEditor*)CurrentDisplay;
+		delete Editor;
+	}
+		
 	//Set the Current Display
 	CurrentDisplay = Disp;
 	CurrentDisplay->init(this);
 };
 
 void EZUI::EditListOption(GenericListOption * ListOptRef){
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+		Serial.println(F("  Open List Editor."));
+	#endif
+		
 	EZUI_ListOptionEditor * editor = new EZUI_ListOptionEditor(ListOptRef,this->CurrentDisplay);
 	this->setDisplay(editor);
 }
 
 void EZUI::EditAdjustParam(AdjustableParam * AdjRef){
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+		Serial.println(F("  Open Adjustment Editor."));
+	#endif
+		
 	EZUI_AdjustParamEditor* editor = new EZUI_AdjustParamEditor(AdjRef,this->CurrentDisplay);
 	this->setDisplay(editor);
 }

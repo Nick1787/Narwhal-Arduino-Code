@@ -10,18 +10,7 @@
 
 
 // include the library code:
-#include <Arduino.h>
-#include "classes/Executive.h"
-#include "classes/Hardware.h"
-#include "include/FastDelegate/FastDelegate.h"
-#include "include/FastDelegate/FastDelegateBind.h"
-#include "include/AdvancedSerial/AdvancedSerial.h"
-#include "iodef.h"
-#include "config.h"
-#include "classes/UI/UI_MAIN.h"
-#include "classes/UI/UI_MLT.h"
-#include "classes/UI/UI_HLT.h"
-#include "classes/UI/UI_BK.h"
+#include "Main.h"
 
 //typedef FastDelegate2<int, char *> EvtHandler;
 unsigned long BootScreenTime = 0;
@@ -88,6 +77,7 @@ void setup() {
 }
 
 void loop() {
+
 	//On first pass print out a verbose message
 	if(firstpass){
 		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
