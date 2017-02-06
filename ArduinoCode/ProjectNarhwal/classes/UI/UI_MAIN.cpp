@@ -26,7 +26,7 @@ namespace UI_MAIN{
 	EZUI_Control_Link Lnk_MenuPumpMonitor("Alarms",&Menu_AlarmMonitor);
 	EZUI_Control_ToggleOption Tgl_Alarm1Opt("Alarm#1",&RC2_OUT4);
 	EZUI_Control_ToggleOption Tgl_Alarm2Opt("Alarm#2",&RC2_OUT5);
-	MenuItem Menu_AlarmText_Items[3] = {
+	EZUI_MenuItems Menu_AlarmText_Items[3] = {
 		{&Tgl_Alarm1Opt},
 		{&Tgl_Alarm2Opt},
 		{&Lnk_BackMainMenu}
@@ -40,7 +40,7 @@ namespace UI_MAIN{
 	EZUI_Control_ToggleOption Tgl_Pilot1Opt("Pilot #1",&RC2_OUT1);
 	EZUI_Control_ToggleOption Tgl_Pilot2Opt("Pilot #2",&RC2_OUT2);
 	EZUI_Control_ToggleOption Tgl_Pilot3Opt("Pilot #3",&RC2_OUT3);
-	MenuItem Menu_PilotMonitor_Items[4] = {
+	EZUI_MenuItems Menu_PilotMonitor_Items[4] = {
 		{&Tgl_Pilot1Opt},
 		{&Tgl_Pilot2Opt},
 		{&Tgl_Pilot3Opt},
@@ -59,7 +59,7 @@ namespace UI_MAIN{
 	EZUI_Control_Label Lbl_TC_HLTVolt(&HLT_TC_V);
 	EZUI_Control_Label Lbl_TC_MLTVolt(&MLT_TC_V);
 	EZUI_Control_Label Lbl_TC_BKVolt(&BK_TC_V);
-	PageItem Page_TCMonitor_Items[] = {
+	EZUI_PageItems Page_TCMonitor_Items[] = {
 		{ 0,  0, 4, &Shared_Lbl_HLT},
 		{ 5,  0, 3, &Lbl_TC_HLTVal},
 		{ 10, 0, 2, &Lbl_Vlbl},
@@ -86,7 +86,7 @@ namespace UI_MAIN{
 	EZUI_Control_Label Lbl_Pump2Val(&Pump2_On, "ON", "OFF");
 	EZUI_Control_Label Lbl_Pump1Volt(&Pump1_V);
 	EZUI_Control_Label Lbl_Pump2Volt(&Pump2_V);
-	PageItem Page_PumpMonitor_Items[9] = {
+	EZUI_PageItems Page_PumpMonitor_Items[9] = {
 		{ 0,  0, 6, &Lbl_Pump1lbl},
 		{ 8,  0, 3, &Lbl_Pump1Val},
 		{ 0,  1, 6, &Lbl_Pump2lbl},
@@ -107,7 +107,7 @@ namespace UI_MAIN{
 	EZUI_Control_ListOption Lst_HLT_Mode("HLT Mode", &HLT_Controller().Mode);
 	EZUI_Control_ListOption Lst_MLT_Mode("MLT Mode", &MLT_Controller().Mode);
 	EZUI_Control_ListOption Lst_BK_Mode("BK Mode", &BK_Controller().Mode);
-	MenuItem Menu_BurnerModes_Items[4] = {
+	EZUI_MenuItems Menu_BurnerModes_Items[4] = {
 		{&Lst_HLT_Mode},
 		{&Lst_MLT_Mode},
 		{&Lst_BK_Mode},
@@ -122,7 +122,7 @@ namespace UI_MAIN{
 	EZUI_Control_Label Lbl_HLT_Mode(&HLT_Controller().Mode);
 	EZUI_Control_Label Lbl_MLT_Mode(&MLT_Controller().Mode);
 	EZUI_Control_Label Lbl_BK_Mode(&BK_Controller().Mode);
-	PageItem Page_BurnerModes_Items[7] = {
+	EZUI_PageItems Page_BurnerModes_Items[7] = {
 		{0,0,8,&Lst_HLT_Mode},
 		{10,0,10,&Lbl_HLT_Mode},
 		{0,1,8,&Lst_MLT_Mode},
@@ -135,7 +135,7 @@ namespace UI_MAIN{
 	/***************************************
 	 Main Menu Items
 	***************************************/
-	MenuItem Menu_MainMenu_Items[] = {
+	EZUI_MenuItems Menu_MainMenu_Items[] = {
 		{  &Lnk_MenuPumpMonitor},
 		{  &Lnk_Menu_BurnerModes},
 		{  &Lnk_Page_BurnerModes},

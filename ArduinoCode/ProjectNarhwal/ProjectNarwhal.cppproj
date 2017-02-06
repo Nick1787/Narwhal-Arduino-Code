@@ -136,6 +136,13 @@
             <Value>../include\yun</Value>
             <Value>../include/avr-stl</Value>
             <Value>../lib</Value>
+            <Value>../include</Value>
+            <Value>../include/SD</Value>
+            <Value>../include/SPI</Value>
+            <Value>../include/Wire</Value>
+            <Value>../classes/EZUI</Value>
+            <Value>../include/LiquidCrystal</Value>
+            <Value>../include/ClickEncoder</Value>
           </ListValues>
         </avrgcccpp.compiler.directories.IncludePaths>
         <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -267,13 +274,10 @@
     <Compile Include="classes\BurnerController.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\DataLogger.cpp">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="classes\DataLogger.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\EnhancedTypes\AdjustableParam.h">
+    <Compile Include="classes\DS323RealTimeClock.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EnhancedTypes\DigitalIO.h">
@@ -282,49 +286,58 @@
     <Compile Include="classes\EnhancedTypes\ListOption.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control.cpp">
+    <Compile Include="classes\EZUI\AdjustableParam.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_AdjustParam.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_AdjustParam.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_Button.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_Button.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_Label.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_Label.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_Link.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_Link.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_ListOption.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_ListOption.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_ToggleOption.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\Controls\EZUI_Control_ToggleOption.h">
+    <Compile Include="classes\EZUI\DigitalIO.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EZUI\EZUI.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_AdjustParam.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_AdjustParam.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_Button.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_Button.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_Label.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_Label.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_Link.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_Link.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_ListOption.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_ListOption.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_ToggleOption.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Control_ToggleOption.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\EZUI\EZUI_Display.cpp">
@@ -333,7 +346,19 @@
     <Compile Include="classes\EZUI\EZUI_Display.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="classes\EZUI\EZUI_Hardware_ClickEncoder.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\EZUI_Hardware_ClickEncoder.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\EZUI\ListOption.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="classes\Hardware.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="classes\SDDataLogger.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\UI\UI_BK.cpp">
@@ -358,15 +383,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\UI\UI_MLT.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\ClickEncoderWithEvents.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\ClickEncoderWithEvents.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="classes\EZUI\EZUI.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="classes\Executive.cpp">
@@ -549,6 +565,51 @@
     <Compile Include="include\robot_motor\pins_arduino.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\SD\File.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\SD.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\SD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\FatStructs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\Sd2Card.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\Sd2Card.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\Sd2PinMap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\SdFat.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\SdFatmainpage.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\SdFatUtil.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\SdFile.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\SdInfo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SD\utility\SdVolume.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SPI\SPI.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\SPI\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\standard\pins_arduino.h">
       <SubType>compile</SubType>
     </Compile>
@@ -665,7 +726,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="classes\EZUI\Controls" />
     <Folder Include="classes\UI" />
     <Folder Include="classes\EZUI" />
     <Folder Include="classes\EnhancedTypes" />
@@ -682,6 +742,9 @@
     <Folder Include="include\FastDelegate" />
     <Folder Include="include\AdvancedSerial" />
     <Folder Include="include\MemoryFree" />
+    <Folder Include="include\SPI" />
+    <Folder Include="include\SD" />
+    <Folder Include="include\SD\utility" />
     <Folder Include="include\TimerOne" />
     <Folder Include="include\TimerOne\config" />
     <Folder Include="include\Wire" />

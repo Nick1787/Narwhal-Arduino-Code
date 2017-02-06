@@ -7,27 +7,20 @@
 
 #include "EZUI_Display.h"
 
-#include "EZUI.h"
-#include "./Controls/EZUI_Control.h"
-#include "./Controls/EZUI_Control_Link.h"
-#include "./Controls/EZUI_Control_Label.h"
-#include "./Controls/EZUI_Control_ListOption.h"
-#include "./Controls/EZUI_Control_ToggleOption.h"
-#include "./Controls/EZUI_Control_AdjustParam.h"
-#include "../EnhancedTypes/ListOption.h"
-#include "../EnhancedTypes/AdjustableParam.h"
-
 /* Page ********************************************************************/
 
 void EZUI_Page::setItems(const PageItem _items[], unsigned int _size){
 	
 	this->items = _items;
 	this->itemCount = _size;
+	this->refresh = true;
 	
 	//Determine the current item as the first selectable item
 	currentItem = -1;
 	for(int i=0; i<_size;i++){
-		if(items[i].Control->isSelectable()){
+		PageItem Item;
+		PROGMEM_readAnything (&this->items[i], Item);
+		if(Item.Control->isSelectable()){
 			currentItem = i;
 			break;
 		}
@@ -44,12 +37,14 @@ void EZUI_Page::display(EZUI *UI){
 		lastPrint = ctime;
 		
 		for(int i=0; i<(itemCount); i++){
-			const PageItem *Item = &items[i];
-			String newText = Item->Control->LabelText();
+			
+			PageItem Item;
+			PROGMEM_readAnything (&this->items[i], Item);
+			String newText = Item.Control->LabelText();
 			
 			//Truncate the string if needed
-			if(newText.length() > Item->fieldWidth){
-				newText = newText.substring(0,Item->fieldWidth);
+			if(newText.length() > Item.fieldWidth){
+				newText = newText.substring(0,Item.fieldWidth);
 			}
 			String oldText = itemsText[i];
 			
@@ -57,15 +52,15 @@ void EZUI_Page::display(EZUI *UI){
 			if( refresh || !(newText.equals(oldText)) ) {
 				
 				//Clear the old text
-				LCD->setCursor(Item->col,Item->row);
+				LCD->setCursor(Item.col,Item.row);
 				for(int k=0; k<oldText.length(); k++){
 					LCD->print(" ");
 				}
 				
 				//Write the New Text
 				itemsText[i] = newText;
-				LCD->setCursor(Item->col,Item->row);
-				if(Item->Control->isSelectable()){
+				LCD->setCursor(Item.col,Item.row);
+				if(Item.Control->isSelectable()){
 					LCD->print(" ");
 				}
 				LCD->print(newText);
@@ -80,13 +75,14 @@ void EZUI_Page::display(EZUI *UI){
 		//Place the Cursor
 		itemChanged = false;
 		for(int i=0;i<itemCount;i++){
-			const PageItem *Item = &items[i];
-			if( Item->Control->isSelectable()){
+			PageItem Item;
+			PROGMEM_readAnything (&this->items[i], Item);
+			if( Item.Control->isSelectable()){
 				if(i==currentItem){
-					LCD->setCursor(Item->col,Item->row);
+					LCD->setCursor(Item.col,Item.row);
 					LCD->print(">");
 					}else{
-					LCD->setCursor(Item->col,Item->row);
+					LCD->setCursor(Item.col,Item.row);
 					LCD->print(" ");
 				}
 			}
@@ -113,7 +109,9 @@ void EZUI_Page::cleanup(EZUI *UI){
 void EZUI_Page::prevItem(EZUI *UI){
 	//See if theres a previously selectable item, if so set current item to that.
 	for(int i=(currentItem-1);i>=0;i--){
-		if( this->items[i].Control->isSelectable()){
+		PageItem Item;
+		PROGMEM_readAnything (&this->items[i], Item);
+		if( Item.Control->isSelectable()){
 			currentItem = i;
 			break;
 		}
@@ -124,7 +122,9 @@ void EZUI_Page::prevItem(EZUI *UI){
 void EZUI_Page::nextItem(EZUI *UI){
 	//See if theres a previously selectable item, if so set current item to that.
 	for(int i=(currentItem+1);i<itemCount;i++){
-		if( this->items[i].Control->isSelectable()){
+		PageItem Item;
+		PROGMEM_readAnything (&this->items[i], Item);
+		if( Item.Control->isSelectable()){
 			currentItem = i;
 			itemChanged = true;
 			break;
@@ -136,48 +136,52 @@ void EZUI_Page::nextItem(EZUI *UI){
 void EZUI_Page::selectItem(EZUI *UI){
 	//See if theres a previously selectable item, if so set current item to that.
 	if(currentItem > -1){
-		items[currentItem].Control->Select(UI);
+		PageItem Item;
+		PROGMEM_readAnything (&this->items[currentItem], Item);
+		Item.Control->Select(UI);
 	}
 }
 
 /* MENU ********************************************************************/
+
+void EZUI_Menu::init(EZUI *UI){
+	refresh = true;
+	itemChanged = true;
+}
 
 void EZUI_Menu::display(EZUI *UI){
 	LiquidCrystal_I2C *LCD = UI->LCD;
 	
 	if(refresh){
 		printPage(UI);
+		refresh = false;
 	}
 	
-	if (refresh || itemChanged){
+	if (itemChanged){
 		//Print each menu item (3 items left on line)
-		int firstItemToPrint = (int)(currentItem/4);
-		int ln = 0;
-		for(int i=firstItemToPrint; i<min(itemCount,firstItemToPrint + 4); i++){
-			LCD->setCursor(0,ln);
-			if (i==currentItem)
-			{
+		for(int i=0; i<4; i++){
+			LCD->setCursor(0,i);
+			if (i==cursorLine){
 				LCD->print(">");
 			}else{
 				LCD->print(" ");
 			}
-			ln++;
 		}
-	}
-	
-	if(refresh){
-		refresh = false;
 	}
 }
 
 void EZUI_Menu::setItems(const MenuItem _items[], unsigned int _size){
 	this->items = _items;
 	this->itemCount = _size;
+	this->refresh = true;
 	
 	//Determine the current item as the first selectable item
 	currentItem = -1;
 	for(int i=0; i<_size;i++){
-		if(_items[i].Control->isSelectable()){
+		MenuItem Item;
+		PROGMEM_readAnything (&this->items[i], Item);
+		
+		if(Item.Control->isSelectable()){
 			currentItem = i;
 			break;
 		}
@@ -189,9 +193,10 @@ void EZUI_Menu::prevItem(EZUI *UI){
 	currentItem = max(0,currentItem-1);
 	itemChanged = true;
 	
-	//Determine if we changed the menu page, if so- reprint it;
-	if(oldCurrentItem % 4 == 0){
+	if(cursorLine == 0){
 		refresh = true;
+	}else if(cursorLine > 0){
+		cursorLine--;
 	}
 	
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
@@ -205,34 +210,47 @@ void EZUI_Menu::nextItem(EZUI *UI){
 	currentItem = min(itemCount-1,currentItem+1);
 	itemChanged = true;
 	
-	//Determine if we changed the menu page, if so- reprint it;
-	if( oldCurrentItem % 4 == 3){
+	if(cursorLine == 3){
 		refresh = true;
 	}
 	
-	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
+	if(cursorLine < itemCount-1){
+		cursorLine++;
+	}
+	
+	//Determine if we changed the menu page, if so- reprint it;
+	if(cursorLine > 3){
+		cursorLine = 3;
+	}
+	
+#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
 		Serial.print(F("  Menu Item:"));
 		Serial.println(currentItem);
-	#endif
+#endif
 }
 
 void EZUI_Menu::selectItem(EZUI *UI){
-	EZUI_Control::EZUI_ControlType Type = items[currentItem].Control->Type;
+	MenuItem Item;
+	PROGMEM_readAnything (&this->items[currentItem], Item);
+			
+	EZUI_Control::EZUI_ControlType Type = Item.Control->Type;
 	switch (Type) {
 		case(EZUI_Control::Link):{
-			const EZUI_Control_Link * Item = (EZUI_Control_Link const*)(items[currentItem].Control);
-			Item->Select(UI);
+			const EZUI_Control_Link * CtrlItem = (EZUI_Control_Link*)(Item.Control);
+			CtrlItem->Select(UI);
+			refresh = true;
+			itemChanged = true;
 			}break;
 		case(EZUI_Control::ToggleControl):{
-			const EZUI_Control_ToggleOption * Item = (EZUI_Control_ToggleOption const*)(items[currentItem].Control);
-			Item->Select(UI);
+			const EZUI_Control_ToggleOption * CtrlItem = (EZUI_Control_ToggleOption const*)(Item.Control);
+			CtrlItem->Select(UI);
 			UI->display();
 			refresh = true;
 			itemChanged = true;
 			}break;
 		case(EZUI_Control::ListControl):{
-			const EZUI_Control_ListOption * Item = (EZUI_Control_ListOption const*)(items[currentItem].Control);
-			Item->Select(UI);
+			const EZUI_Control_ListOption * CtrlItem = (EZUI_Control_ListOption const*)(Item.Control);
+			CtrlItem->Select(UI);
 			refresh = true;
 			itemChanged = true;
 		}break;
@@ -243,52 +261,72 @@ void EZUI_Menu::printPage(EZUI *UI){
 	LiquidCrystal_I2C *LCD = UI->LCD;
 	UI->LCD->clear();
 	
-	//Clear the refresh flag
-	refresh = false;
-
-	//print the items
-	int firstItemToPrint = (int)(currentItem/4);
-	int ln = 0;
-	
-	
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
-	Serial.print(F("  Menu-currentItem:"));
-	Serial.println(currentItem);
-	Serial.print(F("  Menu-ItemCount:"));
-	Serial.println(itemCount);
-	Serial.print(F("  Menu-firstItem:"));
-	Serial.println(firstItemToPrint);
+		Serial.print(F("  Menu-currentItem:"));
+		Serial.println(currentItem);
+		Serial.print(F("  Menu-CursorLocation:"));
+		Serial.println(cursorLine);
+		Serial.print(F("  ItemCount:"));
+		Serial.println(itemCount);
 	#endif
-	
-	for(int i=firstItemToPrint; i<min(itemCount,firstItemToPrint + 4); i++){
-		LCD->setCursor(0,ln);
-		Serial.println(i);
-		if (i==currentItem)
-		{
-			Serial.print(ln);
-			Serial.println("*");
-			LCD->print(">");
+		
+	//print the items 
+	if(cursorLine == 0){
+		//If cursor is at line0, print the current item first
+		int ln = 0;
+		for(int i=currentItem; i<min(itemCount,currentItem+4); i++){
+			printItem( UI, ln, i);
+			ln++;
+		}
+	}else if(cursorLine == 3){
+		//If cursor is at line3, print the current item last
+		if( itemCount > 3){
+			int ln = 3;
+			for(int i=currentItem; i>=max(0,currentItem-3); i--){
+				printItem( UI, ln, i);
+				ln--;
+			}
 		}else{
-			Serial.println(ln);
-			LCD->print(" ");
+			//This shouldnt happen, so try and recover
+			cursorLine = itemCount-1;
+			int ln = cursorLine;
+			for(int i=currentItem; i--; i>0){
+				printItem( UI, ln, i);
+				ln--;
+			}
 		}
-		
-		//Print the Label
-		String Label = items[i].Control->LabelText();
-		LCD->print(Label);
-		
-		//If theres a value print it too, with alteast one space, but as far right as possible.
-		if( items[i].Control->hasValueText()){
-			String valTxt = items[i].Control->ValueText();
-			int row = max(Label.length() + 2, 20-valTxt.length()-1);
-			LCD->setCursor(row,ln);
-			LCD->print(valTxt);
+	}else{
+		//Were somewhere in between, so figure out first item to print and go from there
+		int firstItemToPrint = currentItem - cursorLine ;
+		int ln = 0;
+		for( int i = firstItemToPrint; i<min(itemCount, firstItemToPrint+4); i++){
+			printItem( UI, ln, i);
+			ln++;
 		}
-		
-		ln++;
 	}
+	
+	
+	
 }
 
+void EZUI_Menu::printItem(EZUI *UI, unsigned int line, unsigned int ItemIndex){
+	
+	//Print the Label
+	MenuItem Item;
+	PROGMEM_readAnything (&this->items[ItemIndex], Item);
+	String Label = Item.Control->LabelText();
+	
+	UI->LCD->setCursor(1,line);
+	UI->LCD->print(Label);
+		
+	//If theres a value print it too, with alteast one space, but as far right as possible.
+	if( Item.Control->hasValueText()){
+		String valTxt = Item.Control->ValueText();
+		int row = max(Label.length() + 2, 20-valTxt.length()-1);
+		UI->LCD->setCursor(row,line);
+		UI->LCD->print(valTxt);
+	}
+}
 
 /* ListOptionEditor ********************************************************************/
 
@@ -372,7 +410,7 @@ void EZUI_ListOptionEditor::drawListItems(EZUI *UI){
 
 void EZUI_ListOptionEditor::init(EZUI *UI){
 	UI->LCD->clear();
-	
+	this->refresh = true;
 	temp_index = ListOptRef->currentItem();
 	
 	
@@ -520,6 +558,7 @@ void EZUI_AdjustParamEditor::init(EZUI *UI){
 	#endif
 			
 	UI->LCD->clear();
+	this->refresh = true;
 	
 	//Print Min Value Text
 	UI->LCD->setCursor(10,0);

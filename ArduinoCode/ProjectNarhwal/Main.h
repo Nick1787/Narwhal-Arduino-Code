@@ -14,23 +14,27 @@
 #include "config.h"
 #include "ListsAndAdjustments.h"
 
+//Executive
+#include "./classes/Executive.h"
+
 //Hardware Includes
 #include "./include/LiquidCrystal/LiquidCrystal_I2C.h"
 #include "./include/TimerOne/TimerOne.h"
 #include "./include/AdvancedSerial/AdvancedSerial.h"
 #include "./include/MemoryFree/MemoryFree.h"
-#include "./classes/EZUI/ClickEncoderWithEvents.h"
+#include "./classes/EZUI/EZUI_Hardware_ClickEncoder.h"
 
 //Enhanced Types
-#include "./classes/EnhancedTypes/DigitalIO.h"
-#include "./classes/EnhancedTypes/AdjustableParam.h"
-#include "./classes/EnhancedTypes/ListOption.h"
+#include "./classes/EZUI/DigitalIO.h"
+#include "./classes/EZUI/AdjustableParam.h"
+#include "./classes/EZUI/ListOption.h"
 
 //Custom Class Code
 #include "./classes/WheatstoneBridge.h"
 #include "./classes/BurnerController.h"
+#include "./classes/DataLogger.h"
 #include "./classes/Hardware.h"
-#include "./classes/Executive.h"
+#include "./classes/DS323RealTimeClock.h"
 
 //UIs
 #include "./classes/EZUI/EZUI.h"

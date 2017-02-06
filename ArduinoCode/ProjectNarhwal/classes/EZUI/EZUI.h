@@ -12,31 +12,51 @@
 #ifndef __EZUI_H_
 #define __EZUI_H_
 
+//Standard
+#include <Arduino.h>
+
 //Hardware Includes
-#include "../../config.h"
-#include "../../include/LiquidCrystal/LiquidCrystal_I2C.h"
-#include "./ClickEncoderWithEvents.h"
+#include <LiquidCrystal_I2C.h>
+#include "EZUI_Hardware_ClickEncoder.h"
 
-//Type Includes
-#include "../EnhancedTypes/ListOption.h"
-#include "../EnhancedTypes/AdjustableParam.h"
+//Types
+#include "EZUI_Display.h"
+#include "ListOption.h"
+#include "AdjustableParam.h"
+#include "DigitalIO.h"
 
-#include "./EZUI_Display.h"
-#include "./Controls/EZUI_Control_AdjustParam.h"
-#include "./Controls/EZUI_Control_Button.h"
-#include "./Controls/EZUI_Control_Label.h"
-#include "./Controls/EZUI_Control_Link.h"
-#include "./Controls/EZUI_Control_ListOption.h"
-#include "./Controls/EZUI_Control_ToggleOption.h"
+//Controls
+#include "EZUI_Control.h"
+#include "EZUI_Control_AdjustParam.h"
+#include "EZUI_Control_Button.h"
+#include "EZUI_Control_Label.h"
+#include "EZUI_Control_Link.h"
+#include "EZUI_Control_ListOption.h"
+#include "EZUI_Control_ToggleOption.h"
 
+// number of items in an array
+template< typename T, size_t N > size_t ArraySize (T (&) [N]){ return N; }
+	
 #ifndef A
-	#define A(x)  x,((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
+	#define A(x)  x,ArraySize(x)
 #endif
+
+template <typename T> void PROGMEM_readAnything (const T * sce, T& dest)
+{
+	memcpy_P (&dest, sce, sizeof (T));
+}
+
+template <typename T> T PROGMEM_getAnything (const T * sce)
+{
+	static T temp;
+	memcpy_P (&temp, sce, sizeof (T));
+	return temp;
+}
 
 //Forward Declaration
 class EZUI_Display;
 class EZUI_ListOptionEditor;
-class ClickEncoderWithEvents;
+class EZUI_ClickEncoder;
 class EZUI_Control_ListOption;
 
 class EZUI{
@@ -49,9 +69,9 @@ class EZUI{
 		
 		//User Interaction
 		LiquidCrystal_I2C *LCD;
-		ClickEncoderWithEvents *Encoder;
+		EZUI_ClickEncoder *Encoder;
 		
-		void attatchEncoder(ClickEncoderWithEvents* _Encoder);
+		void attatchEncoder(EZUI_ClickEncoder* _Encoder);
 		void attatchLCD(LiquidCrystal_I2C* _LCD){LCD = _LCD;};
 		
 		//LCD Menu Interactions

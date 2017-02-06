@@ -5,9 +5,8 @@
  *  Author: Customer
  */ 
 
-#include "classes/EnhancedTypes/ListOption.h"
-#include "classes/EnhancedTypes/AdjustableParam.h"
-//#include "classes/Hardware.h"
+#include "classes/EZUI/ListOption.h"
+#include "classes/EZUI/AdjustableParam.h"
 
 #ifndef _LISTS_H
 #define _LISTS_H
@@ -28,11 +27,12 @@ enum EnumBurnerModes{
 	Off,
 	Manual,
 	Auto,
+	PWM,
 	Profile1,
 	Profile2,
 	Profile3
 };
-extern ListOptionItem<EnumBurnerModes> BurnerModes[6];
+extern ListOptionItem<EnumBurnerModes> BurnerModes[7];
 
 /*Burner Status********************************/
 enum EnumBurnerStatus{
@@ -46,25 +46,45 @@ enum EnumBurnerStatus{
 };
 extern ListOptionItem<EnumBurnerStatus> BurnerStatus[7];
 
+/*PWMModes********************************/
+enum EnumPWMLevels{
+	//Off,
+	Low,
+	Medium,
+	High
+};
+extern ListOptionItem<EnumPWMLevels> PWMLevels[3];
 
 /*Adjustment Values********************************/
 
 extern AdjustableParam HLT_SetTemp;
-extern AdjustableParam HLT_HighErrLim;
-extern AdjustableParam HLT_OffErrLim;
-extern AdjustableParam HLT_HighErrHys;
-extern AdjustableParam HLT_OffErrHys;
+extern AdjustableParam HLT_HighOffset;
+extern AdjustableParam HLT_MedOffset;
+extern AdjustableParam HLT_LowOffset;
+extern AdjustableParam HLT_Hysteresis;
+
+//PWM Control
+extern AdjustableParam HLT_PWMPeriod;
+extern AdjustableParam HLT_PWMDuty;
 
 extern AdjustableParam MLT_SetTemp;
-extern AdjustableParam MLT_HighErrLim;
-extern AdjustableParam MLT_OffErrLim;
-extern AdjustableParam MLT_HighErrHys;
-extern AdjustableParam MLT_OffErrHys;	
+extern AdjustableParam MLT_HighOffset;
+extern AdjustableParam MLT_MedOffset;
+extern AdjustableParam MLT_LowOffset;
+extern AdjustableParam MLT_Hysteresis;	
+
+//PWM Control
+extern AdjustableParam MLT_PWMPeriod;
+extern AdjustableParam MLT_PWMDuty;
 
 extern AdjustableParam BK_SetTemp;
-extern AdjustableParam BK_HighErrLim;
-extern AdjustableParam BK_OffErrLim;
-extern AdjustableParam BK_HighErrHys;
-extern AdjustableParam BK_OffErrHys;
+extern AdjustableParam BK_HighOffset;
+extern AdjustableParam BK_MedOffset;
+extern AdjustableParam BK_LowOffset;
+extern AdjustableParam BK_Hysteresis;
+
+//PWM Control
+extern AdjustableParam BK_PWMPeriod;
+extern AdjustableParam BK_PWMDuty;
 
 #endif

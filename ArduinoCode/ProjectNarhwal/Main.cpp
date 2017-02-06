@@ -16,8 +16,6 @@
 unsigned long BootScreenTime = 0;
 bool firstpass = true;
 
-Executive Exec;
-
 void setup() {
 	
 	//Setup Analog for External
@@ -103,6 +101,7 @@ void loop() {
 	
 	//Run the Executive
 	Exec.run();
+	//Logger.log();
 }
 
 

@@ -1,26 +1,43 @@
 /*
- *        File: EZUI_MENU.h
+ *        File: EZUI_Display.h
  *      Author: Nick Dodds <Nick1787@gmail.com>
- * Description: EZ User Interface Menu Class
- * ----------------------------------------------------------------
- *    Revision:
- *		11062015 - NRD - Initial Version
- * ----------------------------------------------------------------
+ * Description: EZ User Interface Display Class - Menus and Pages
  */
 
 #ifndef __EZUI_MENU_H__
 #define __EZUI_MENU_H__
 
+//Standard
 #include <Arduino.h>
-#include "EZUI.h"
 
-//Forward Declarations
-class EZUI;
-class EZUI_Control;
-class EZUI_Control_Link;
-class EZUI_Control_ListOption;
-class EZUI_Control_AdjustParam;
-class EZUI_Control_ToggleOption;
+//Hardware Includes
+#include <LiquidCrystal_I2C.h>
+#include "EZUI_Hardware_ClickEncoder.h"
+
+//Types
+#include "EZUI_Display.h"
+#include "ListOption.h"
+#include "AdjustableParam.h"
+#include "DigitalIO.h"
+
+//Controls
+#include "EZUI.h"
+#include "EZUI_Control.h"
+#include "EZUI_Control_AdjustParam.h"
+#include "EZUI_Control_Button.h"
+#include "EZUI_Control_Label.h"
+#include "EZUI_Control_Link.h"
+#include "EZUI_Control_ListOption.h"
+#include "EZUI_Control_ToggleOption.h"
+
+//Make Types Alittle Easier
+#ifndef MenuItems
+	#define EZUI_MenuItems const PROGMEM MenuItem
+#endif
+
+#ifndef PageItems
+	#define EZUI_PageItems const PROGMEM PageItem
+#endif
 
 /*-----------------------------------------------
 	EZUI_MenuItem
@@ -85,7 +102,7 @@ class EZUI_Menu : public EZUI_Display{
 		bool itemChanged = false;
 		const MenuItem * items;
 		unsigned int size;
-		unsigned int cursorLine = 1;
+		unsigned int cursorLine = 0;
 		
 	protected:
 	public:
@@ -95,13 +112,14 @@ class EZUI_Menu : public EZUI_Display{
 		//Actions
 		void display(EZUI *UI);
 		
-		void init(EZUI *UI){refresh = true;};
+		void init(EZUI *UI);
 		void cleanup(EZUI *UI){ /* Do Nothing */};
 		void prevItem(EZUI *UI);
 		void nextItem(EZUI *UI);
 		void selectItem(EZUI *UI);
 		
 	private:
+		void printItem(EZUI *UI, unsigned int line, unsigned int itemIndex);
 		void selectItem(EZUI *UI, EZUI_Control_ToggleOption const * ToggleOptRef);
 		void selectItem(EZUI *UI, EZUI_Control_Link const * LinkOptRef);
 		//void printItem(int col, int row, LiquidCrystal_I2C * LCD, EZUI_Control_Link const *LinkRef);

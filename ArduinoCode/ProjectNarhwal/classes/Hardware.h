@@ -13,32 +13,22 @@
 
 
 #include "../Main.h"
-/*
-//Hardware Includes
-#include "../include/LiquidCrystal/LiquidCrystal_I2C.h"
-#include "../include/TimerOne/TimerOne.h"
-#include "../include/AdvancedSerial/AdvancedSerial.h"
-#include "../include/MemoryFree/MemoryFree.h"
 
-//Configuration File includes
-#include "../iodef.h"
-#include "../config.h"
-#include "../ListsAndAdjustments.h"
-
-//Custom Code Includes
-#include "BurnerController.h"
-#include "WheatstoneBridge.h"
-#include "Executive.h"
-
-//UI Includes
-#include "EZUI/ClickEncoderWithEvents.h"
-
-//Enhanced Data Type Includes
-#include "EnhancedTypes/DigitalIO.h"
-#include "EnhancedTypes/AdjustableParam.h"
-#include "EnhancedTypes/ListOption.h"*/
-
+//Forward Declaration
 class BurnerController;
+class Executive;
+class DS323RealTimeClock;
+
+//Executive
+extern Executive Exec;
+
+//Datalogger
+#define LoggerSize 50
+#define LoggerRateMs 1000
+extern DataLogger<LoggerSize> Logger;
+
+//Real time Clock
+extern DS323RealTimeClock RTC;
 
 /**************************
 *	Functions
@@ -102,7 +92,7 @@ extern DigitalIO RC2_OUT8;
 *	Main Screen
 **************************/
 extern LiquidCrystal_I2C MAIN_LCD;
-extern ClickEncoderWithEvents MAIN_ENC;
+extern EZUI_ClickEncoder MAIN_ENC;
 
 /**************************
 *	Hot Liquor Tank
@@ -110,7 +100,7 @@ extern ClickEncoderWithEvents MAIN_ENC;
 
 BurnerController& HLT_Controller();
 extern LiquidCrystal_I2C HLT_LCD;
-extern ClickEncoderWithEvents HLT_ENC;
+extern EZUI_ClickEncoder HLT_ENC;
 extern WheatstoneBridge HLT_RTD_BP;
 extern WheatstoneBridge HLT_RTD_OP;
 
@@ -123,7 +113,7 @@ extern DigitalIO *HLT_SOL2;
 **************************/
 BurnerController& MLT_Controller();
 extern LiquidCrystal_I2C MLT_LCD;
-extern ClickEncoderWithEvents MLT_ENC;
+extern EZUI_ClickEncoder MLT_ENC;
 extern WheatstoneBridge MLT_RTD_BP;
 extern WheatstoneBridge MLT_RTD_OP;
 
@@ -136,7 +126,7 @@ extern DigitalIO *MLT_SOL2;
 **************************/
 BurnerController& BK_Controller();
 extern LiquidCrystal_I2C BK_LCD;
-extern ClickEncoderWithEvents BK_ENC;
+extern EZUI_ClickEncoder BK_ENC;
 extern WheatstoneBridge BK_RTD_BP;
 extern WheatstoneBridge BK_RTD_OP;
 

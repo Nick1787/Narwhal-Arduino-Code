@@ -8,7 +8,7 @@
 #include "EZUI.h"
 #include "EZUI_Display.h"
 
-void EZUI::attatchEncoder(ClickEncoderWithEvents* _Encoder){
+void EZUI::attatchEncoder(EZUI_ClickEncoder* _Encoder){
 	Encoder = _Encoder;
 	//Encoder->ClearHandlers();
 	Encoder->UI = this;
@@ -55,6 +55,9 @@ void EZUI::EncoderDecrement(){
 };
 
 void EZUI::display(){
+	//Read the Encoder
+	Encoder->Read();     //Read Encoder
+  
 	//Attatch all event handlers
 	if (CurrentDisplay != NULL){
 		lastDisplayMillis = millis();

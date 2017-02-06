@@ -23,10 +23,10 @@ void Executive::run(){
 	//Execution rate
 	temp_frame_count++;
 	if((time - temp_time)>3000){
-		float Hz = (((float)temp_frame_count) / ((float)(time-temp_time)/1000));
+		execHz = (((float)temp_frame_count) / ((float)(time-temp_time)/1000));
 		
 		Serial.print(F("Running at "));
-		Serial.print(Hz);
+		Serial.print(execHz);
 		Serial.print(F(" Hertz ("));
 		Serial.print(temp_frame_count);
 		Serial.print(F(" frames / "));
@@ -43,7 +43,8 @@ void Executive::run(){
 	
 }
 
-void Executive::exec_frame1(){		
+void Executive::exec_frame1(){	
+		
 	//Pump Monitor #1
 	Pump1_V = 5.0 * ((float)analogRead(PUMP1_VIN) / 1023.0);
 	if(Pump1_V > 2.5){
@@ -89,9 +90,11 @@ void Executive::exec_frame1(){
 	MLT_ENC.Read();
 	HLT_ENC.Read();
 	BK_ENC.Read();
+	
 }
 
 void Executive::exec_frame2(){
+	
 	//Update the RTD values
 	HLT_RTD_BP.Calculate( (float)analogRead(HLT_RTD_Vs_AN) / 1023.0, (float)analogRead(HLT_RTD_BP_AN) / 1023.0 );
 	HLT_RTD_OP.Calculate( (float)analogRead(HLT_RTD_Vs_AN) / 1023.0, (float)analogRead(HLT_RTD_OP_AN) / 1023.0 );
@@ -101,12 +104,13 @@ void Executive::exec_frame2(){
 	BK_RTD_OP.Calculate(  (float)analogRead(BK_RTD_Vs_AN)  / 1023.0, (float)analogRead(BK_RTD_OP_AN)  / 1023.0 );
 	
 	//Controllers
-	HLT_Controller().Exec();
-	MLT_Controller().Exec();
-	BK_Controller().Exec();
+	//HLT_Controller().Exec();
+	//MLT_Controller().Exec();
+	//BK_Controller().Exec();
 }
 
 void Executive::exec_frame3(){
+	
 	//Update the UI
 	UI_MAIN::UI->display();
 	UI_HLT::UI->display();
@@ -115,6 +119,7 @@ void Executive::exec_frame3(){
 }
 
 void Executive::exec_frame4(){
+	
 	//Update Free Memory Calculations
 	freeSramBytes=freeMemory();
 	freeSramPct=100.0*(float)(freeSramBytes/8000);

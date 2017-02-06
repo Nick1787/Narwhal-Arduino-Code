@@ -29,6 +29,13 @@ namespace UI_BK{
 	EZUI_Control_Link Lnk_Page_ManualMonitorBack("Back",&Page_ManualMonitor);
 
 	/***************************************
+	 Page - Monitor - Manual Control
+	***************************************/
+	EZUI_Menu Menu_ClosedLoopControllersettings;
+	EZUI_Control_Link Lnk_Menu_ClosedLoopControllersettings("Set",&Menu_ClosedLoopControllersettings);
+	EZUI_Control_Link Lnk_Menu_ClosedLoopControllersettingsBack("Back",&Menu_ClosedLoopControllersettings);
+	
+	/***************************************
 	 Page - Monitor - Closed Loop Control
 	***************************************/
 	
@@ -55,7 +62,7 @@ namespace UI_BK{
 	EZUI_Control_Label Lbl_RTDs_BK_BP_degC(&BK_RTD_BP.degC);
 	EZUI_Control_Label Lbl_RTDs_BK_BP_degF(&BK_RTD_BP.degF);
 
-	PageItem Page_RTDs_BP_Items[] = {
+	EZUI_PageItems Page_RTDs_BP_Items[]  = {
 		{  1,  0, 4, &Shared_Lbl_Vo},
 		{  4,  0, 5, &Lbl_RTDs_BK_BP_Vo},
 		{ 11,  0, 4, &Shared_Lbl_Vs},
@@ -80,7 +87,7 @@ namespace UI_BK{
 	EZUI_Control_Label Lbl_RTDs_BK_OP_degC(&BK_RTD_OP.degC);
 	EZUI_Control_Label Lbl_RTDs_BK_OP_degF(&BK_RTD_OP.degF);
 
-	PageItem Page_RTDs_OP_Items[] = {
+	EZUI_PageItems Page_RTDs_OP_Items[] = {
 		{  1,  0, 4, &Shared_Lbl_Vo},
 		{  4,  0, 5, &Lbl_RTDs_BK_OP_Vo},
 		{ 11,  0, 4, &Shared_Lbl_Vs},
@@ -99,13 +106,13 @@ namespace UI_BK{
 	 Manual Monitor Items
 	***************************************/
 	EZUI_Control_Label Lbl_Status(&BK_Controller().Status);
-	EZUI_Control_ToggleOption Tgl_Sol1Val("Sol#1:",BK_Controller().GasValve1);
-	EZUI_Control_Label Lbl_Sol1Val(BK_Controller().GasValve1);
-	EZUI_Control_ToggleOption Tgl_Sol2Val("Sol#2:",BK_Controller().GasValve2);
-	EZUI_Control_Label Lbl_Sol2Val(BK_Controller().GasValve2);
+	EZUI_Control_ToggleOption Tgl_Sol1Val("Sol#1:",BK_Controller().GasValve_Low);
+	EZUI_Control_Label Lbl_Sol1Val(BK_Controller().GasValve_Low);
+	EZUI_Control_ToggleOption Tgl_Sol2Val("Sol#2:",BK_Controller().GasValve_High);
+	EZUI_Control_Label Lbl_Sol2Val(BK_Controller().GasValve_High);
 	EZUI_Control_Label Lbl_BPVal(&BK_RTD_BP.degF);
 	EZUI_Control_Label Lbl_OPVal(&BK_RTD_OP.degF);
-	PageItem Page_Monitor_Items[] = {
+	EZUI_PageItems Page_Monitor_Items[] = {
 		{ 0,  0, 4, &Shared_Lbl_BK},
 		{ 4,  0, 16, &Lbl_Status},
 		{ 0,  1, 6, &Tgl_Sol1Val},
@@ -126,9 +133,9 @@ namespace UI_BK{
 	EZUI_Control_Label Lbl_FBProbe(&BK_Controller().FeedbackProbe);
 	EZUI_Control_AdjustParam Lst_Dmd("DMD:", BK_Controller().SetTemp);
 	EZUI_Control_Label Lbl_Dmd(&BK_Controller().SetTemp->value);
-	EZUI_Control_Label Lbl_FBK(&BK_Controller().TProbe1->degF);
+	EZUI_Control_Label Lbl_FBK(&BK_Controller().FeedbackTemp);
 	
-	PageItem Page_ClosedLoopMonitor_Items[] = {
+	EZUI_PageItems Page_ClosedLoopMonitor_Items[] = {
 		{  0,  0, 4,  &Shared_Lbl_BK},
 		{  3,  0, 15, &Lbl_Status},
 		{  0,  1, 4,  &Lst_FBProbe},
@@ -141,7 +148,30 @@ namespace UI_BK{
 		{  17, 1, 6, &Lbl_Sol1Val},
 		{  11, 2, 6, &Shared_Lbl_Sol2},
 		{  17, 2, 6, &Lbl_Sol2Val},
-		{  13,  3, 4, &Lnk_Menu_MainBack}
+		{  10, 3, 3, &Lnk_Menu_ClosedLoopControllersettings },
+		{  15,  3, 4, &Lnk_Menu_MainBack}
+	};
+	
+	
+	/***************************************
+	 Closed Loop Settings Menu
+	***************************************/
+	EZUI_Control_ToggleOption Tgl_FltInhibit("FltInhib:", &BK_Controller().enableFaultInhibit,"Off","On");
+	EZUI_Control_AdjustParam Adj_Demand("Demand:", BK_Controller().SetTemp);
+	EZUI_Control_AdjustParam Adj_HighOffset("HighOffset:", BK_Controller().HighOffset);
+	EZUI_Control_AdjustParam Adj_MedOffset("MedOffset:", BK_Controller().MediumOffset);
+	EZUI_Control_AdjustParam Adj_LowOffset("LowOffset:", BK_Controller().LowOffset);
+	EZUI_Control_AdjustParam Adj_Hysteresis("Hystersis:", BK_Controller().Hysteresis);
+	
+	
+	EZUI_MenuItems Menu_ClosedLoopControllersettings_Items[] = {
+		{  &Tgl_FltInhibit },
+		{  &Adj_Demand },
+		{  &Adj_HighOffset },
+		{  &Adj_MedOffset },
+		{  &Adj_LowOffset },
+		{  &Adj_Hysteresis },
+		{  &Lnk_Page_ClosedLoopMonitorBack }
 	};
 	
 	/***************************************
@@ -150,7 +180,7 @@ namespace UI_BK{
 	EZUI_Control_Label Lbl_PilotStatus(&BK_TC_ON,"On","Off");
 	EZUI_Control_Label Lbl_PilotVoltage(&BK_TC_V);
 		
-	PageItem Page_Diag_Items[] = {
+	EZUI_PageItems Page_Diag_Items[] = {
 		{ 0,  0,   4, &Shared_Lbl_Sts},
 		{ 4,  0,  16, &Lbl_Status},
 		{ 2,  1,   3, &Shared_Lbl_PL},
@@ -168,7 +198,7 @@ namespace UI_BK{
 	 Menu - Main Menu Items
 	***************************************/
 	EZUI_Control_ListOption Lst_ControlMode("Mode",&BK_Controller().Mode);
-	MenuItem Menu_Main_Items[] = {
+	EZUI_MenuItems Menu_Main_Items[] = {
 		{  &Lst_ControlMode },
 		{  &Lnk_Page_ManualMonitor },
 		{  &Lnk_Page_ClosedLoopMonitor },
@@ -191,6 +221,7 @@ namespace UI_BK{
 		Menu_Main.setItems(A(Menu_Main_Items));
 		Page_ManualMonitor.setItems(A(Page_Monitor_Items));
 		Page_ClosedLoopMonitor.setItems(A(Page_ClosedLoopMonitor_Items));
+		Menu_ClosedLoopControllersettings.setItems(A(Menu_ClosedLoopControllersettings_Items));
 		Page_Diag.setItems(A(Page_Diag_Items));
 		Page_RTDs_BP.setItems(A(Page_RTDs_BP_Items));
 		Page_RTDs_OP.setItems(A(Page_RTDs_OP_Items));

@@ -1,7 +1,7 @@
 /*
  *        File: MLT_UI.cpp
  *      Author: Nick Dodds <Nick1787@gmail.com>
- * Description: MLT display user interface
+ * Description: BK display user interface
  * ----------------------------------------------------------------
  *    Revision:
  *		01012015 - NRD - Initial Version
@@ -29,6 +29,13 @@ namespace UI_MLT{
 	EZUI_Control_Link Lnk_Page_ManualMonitorBack("Back",&Page_ManualMonitor);
 
 	/***************************************
+	 Page - Monitor - Manual Control
+	***************************************/
+	EZUI_Menu Menu_ClosedLoopControllersettings;
+	EZUI_Control_Link Lnk_Menu_ClosedLoopControllersettings("Set",&Menu_ClosedLoopControllersettings);
+	EZUI_Control_Link Lnk_Menu_ClosedLoopControllersettingsBack("Back",&Menu_ClosedLoopControllersettings);
+	
+	/***************************************
 	 Page - Monitor - Closed Loop Control
 	***************************************/
 	
@@ -45,7 +52,7 @@ namespace UI_MLT{
 	EZUI_Control_Link Lnk_Page_BackDiag("Back",&Page_Diag);
 	
 	/***************************************
-	 Page - RTD - MLT - BP
+	 Page - RTD - BK - BP
 	***************************************/
 	EZUI_Page Page_RTDs_BP;
 	EZUI_Control_Link Lnk_Page_RTDs_BP("BP:",&Page_RTDs_BP);
@@ -55,7 +62,7 @@ namespace UI_MLT{
 	EZUI_Control_Label Lbl_RTDs_MLT_BP_degC(&MLT_RTD_BP.degC);
 	EZUI_Control_Label Lbl_RTDs_MLT_BP_degF(&MLT_RTD_BP.degF);
 
-	PageItem Page_RTDs_BP_Items[] = {
+	EZUI_PageItems Page_RTDs_BP_Items[] = {
 		{  1,  0, 4, &Shared_Lbl_Vo},
 		{  4,  0, 5, &Lbl_RTDs_MLT_BP_Vo},
 		{ 11,  0, 4, &Shared_Lbl_Vs},
@@ -70,7 +77,7 @@ namespace UI_MLT{
 	};
 
 	/***************************************
-	 Page - RTD - MLT - OP	
+	 Page - RTD - BK - OP	
 	***************************************/
 	EZUI_Page Page_RTDs_OP;
 	EZUI_Control_Link Lnk_Page_RTDs_OP("OP:",&Page_RTDs_OP);
@@ -80,7 +87,7 @@ namespace UI_MLT{
 	EZUI_Control_Label Lbl_RTDs_MLT_OP_degC(&MLT_RTD_OP.degC);
 	EZUI_Control_Label Lbl_RTDs_MLT_OP_degF(&MLT_RTD_OP.degF);
 
-	PageItem Page_RTDs_OP_Items[] = {
+	EZUI_PageItems Page_RTDs_OP_Items[] = {
 		{  1,  0, 4, &Shared_Lbl_Vo},
 		{  4,  0, 5, &Lbl_RTDs_MLT_OP_Vo},
 		{ 11,  0, 4, &Shared_Lbl_Vs},
@@ -99,14 +106,14 @@ namespace UI_MLT{
 	 Manual Monitor Items
 	***************************************/
 	EZUI_Control_Label Lbl_Status(&MLT_Controller().Status);
-	EZUI_Control_ToggleOption Tgl_Sol1Val("Sol#1:",MLT_Controller().GasValve1);
-	EZUI_Control_Label Lbl_Sol1Val(MLT_Controller().GasValve1);
-	EZUI_Control_ToggleOption Tgl_Sol2Val("Sol#2:",MLT_Controller().GasValve2);
-	EZUI_Control_Label Lbl_Sol2Val(MLT_Controller().GasValve2);
+	EZUI_Control_ToggleOption Tgl_Sol1Val("Sol#1:",MLT_Controller().GasValve_Low);
+	EZUI_Control_Label Lbl_Sol1Val(MLT_Controller().GasValve_Low);
+	EZUI_Control_ToggleOption Tgl_Sol2Val("Sol#2:",MLT_Controller().GasValve_High);
+	EZUI_Control_Label Lbl_Sol2Val(MLT_Controller().GasValve_High);
 	EZUI_Control_Label Lbl_BPVal(&MLT_RTD_BP.degF);
 	EZUI_Control_Label Lbl_OPVal(&MLT_RTD_OP.degF);
-	PageItem Page_Monitor_Items[] = {
-		{ 0,  0, 4, &Shared_Lbl_MLT},
+	EZUI_PageItems Page_Monitor_Items[] = {
+		{ 0,  0, 4, &Shared_Lbl_BK},
 		{ 4,  0, 16, &Lbl_Status},
 		{ 0,  1, 6, &Tgl_Sol1Val},
 		{ 7,  1, 3, &Lbl_Sol1Val},
@@ -126,10 +133,10 @@ namespace UI_MLT{
 	EZUI_Control_Label Lbl_FBProbe(&MLT_Controller().FeedbackProbe);
 	EZUI_Control_AdjustParam Lst_Dmd("DMD:", MLT_Controller().SetTemp);
 	EZUI_Control_Label Lbl_Dmd(&MLT_Controller().SetTemp->value);
-	EZUI_Control_Label Lbl_FBK(&MLT_Controller().TProbe1->degF);
+	EZUI_Control_Label Lbl_FBK(&MLT_Controller().FeedbackTemp);
 	
-	PageItem Page_ClosedLoopMonitor_Items[] = {
-		{  0,  0, 4,  &Shared_Lbl_MLT},
+	EZUI_PageItems Page_ClosedLoopMonitor_Items[] = {
+		{  0,  0, 4,  &Shared_Lbl_BK},
 		{  3,  0, 15, &Lbl_Status},
 		{  0,  1, 4,  &Lst_FBProbe},
 		{  5,  1, 5,  &Lbl_FBProbe},
@@ -141,7 +148,29 @@ namespace UI_MLT{
 		{  17, 1, 6, &Lbl_Sol1Val},
 		{  11, 2, 6, &Shared_Lbl_Sol2},
 		{  17, 2, 6, &Lbl_Sol2Val},
-		{  13,  3, 4, &Lnk_Menu_MainBack}
+		{  10, 3, 3, &Lnk_Menu_ClosedLoopControllersettings },
+		{  15,  3, 4, &Lnk_Menu_MainBack}
+	};
+	
+	
+	/***************************************
+	 Closed Loop Settings Menu
+	***************************************/
+	EZUI_Control_ToggleOption Tgl_FltInhibit("FltInhib:", &MLT_Controller().enableFaultInhibit,"Off","On");
+	EZUI_Control_AdjustParam Adj_Demand("Demand:", MLT_Controller().SetTemp);
+	EZUI_Control_AdjustParam Adj_HighOffset("HighOffset:", MLT_Controller().HighOffset);
+	EZUI_Control_AdjustParam Adj_MedOffset("MedOffset:", MLT_Controller().MediumOffset);
+	EZUI_Control_AdjustParam Adj_LowOffset("LowOffset:", MLT_Controller().LowOffset);
+	EZUI_Control_AdjustParam Adj_Hysteresis("Hystersis:", MLT_Controller().Hysteresis);
+	
+	EZUI_MenuItems  Menu_ClosedLoopControllersettings_Items[] = {
+		{  &Tgl_FltInhibit },
+		{  &Adj_Demand },
+		{  &Adj_HighOffset },
+		{  &Adj_MedOffset },
+		{  &Adj_LowOffset },
+		{  &Adj_Hysteresis },
+		{  &Lnk_Page_ClosedLoopMonitorBack }
 	};
 	
 	/***************************************
@@ -150,7 +179,7 @@ namespace UI_MLT{
 	EZUI_Control_Label Lbl_PilotStatus(&MLT_TC_ON,"On","Off");
 	EZUI_Control_Label Lbl_PilotVoltage(&MLT_TC_V);
 		
-	PageItem Page_Diag_Items[] = {
+	EZUI_PageItems Page_Diag_Items[] = {
 		{ 0,  0,   4, &Shared_Lbl_Sts},
 		{ 4,  0,  16, &Lbl_Status},
 		{ 2,  1,   3, &Shared_Lbl_PL},
@@ -168,7 +197,7 @@ namespace UI_MLT{
 	 Menu - Main Menu Items
 	***************************************/
 	EZUI_Control_ListOption Lst_ControlMode("Mode",&MLT_Controller().Mode);
-	MenuItem Menu_Main_Items[] = {
+	EZUI_MenuItems Menu_Main_Items[] = {
 		{  &Lst_ControlMode },
 		{  &Lnk_Page_ManualMonitor },
 		{  &Lnk_Page_ClosedLoopMonitor },
@@ -182,7 +211,7 @@ namespace UI_MLT{
 	
 	void UI_init(){
 		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-			Serial.print(F("Initializing MLT UI..."));
+			Serial.print(F("Initializing BK UI..."));
 		#endif
 	
 		/***************************************
@@ -191,6 +220,7 @@ namespace UI_MLT{
 		Menu_Main.setItems(A(Menu_Main_Items));
 		Page_ManualMonitor.setItems(A(Page_Monitor_Items));
 		Page_ClosedLoopMonitor.setItems(A(Page_ClosedLoopMonitor_Items));
+		Menu_ClosedLoopControllersettings.setItems(A(Menu_ClosedLoopControllersettings_Items));
 		Page_Diag.setItems(A(Page_Diag_Items));
 		Page_RTDs_BP.setItems(A(Page_RTDs_BP_Items));
 		Page_RTDs_OP.setItems(A(Page_RTDs_OP_Items));

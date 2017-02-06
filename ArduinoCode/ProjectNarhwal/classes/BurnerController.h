@@ -17,25 +17,35 @@ class BurnerController
 {
 //variables
 private:
-
+	int PWMOnTime;
+	
 public:	
 	//Error Limits
+	boolean enableFaultInhibit = false;
+	boolean isFaulted = false;
+	
 	float ControlError = 0;
-
-	//Adjustable Parameters for UI
+	float FeedbackTemp = 0;
+	
+	//PWMController - Adjustable Parameters for UI
+	ListOption<EnumPWMLevels> PWMLevel;
+	AdjustableParam * PWMPeriod;
+	AdjustableParam * PWMDutyCycle;
+	
+	//AutoController - Adjustable Parameters
 	AdjustableParam * SetTemp;
-	AdjustableParam * HighErrLim;
-	AdjustableParam * OffErrLim;
-	AdjustableParam * HighErrHys;
-	AdjustableParam * OffErrHys;
+	AdjustableParam * HighOffset;
+	AdjustableParam * MediumOffset;
+	AdjustableParam * LowOffset;
+	AdjustableParam * Hysteresis;
 	
 	//Feedback
 	WheatstoneBridge * TProbe1;
 	WheatstoneBridge * TProbe2;
 	
 	//Output
-	DigitalIO *GasValve1;
-	DigitalIO *GasValve2;
+	DigitalIO *GasValve_Low;
+	DigitalIO *GasValve_High;
 	
 	//Options
 	boolean ControlEnabled = false;
@@ -46,16 +56,19 @@ public:
 protected:
 private:
 	bool *PilotLitRef = NULL;
+	void runAuto();
+	void runPWM();
 	
 //functions
 public:
 	//Constructor
-	BurnerController(bool *PolotLit, WheatstoneBridge *BP, WheatstoneBridge *OP, DigitalIO *Sol1, DigitalIO *Sol2, AdjustableParam * SetT, AdjustableParam * HErrHys, AdjustableParam * HErrLim, AdjustableParam * OErrHys, AdjustableParam *OErrLim): 
-		PilotLitRef(PolotLit), TProbe1(BP), TProbe2(OP), GasValve1(Sol1), GasValve2(Sol2),
-		Mode(A(BurnerModes)), Status(A(BurnerStatus)), FeedbackProbe(A(FeedbackProbes)),
-		SetTemp(SetT), HighErrHys(HighErrHys), HighErrLim(HErrLim), OffErrHys(OErrHys), OffErrLim(OErrLim)
+	BurnerController(bool *PilotLit, WheatstoneBridge *BP, WheatstoneBridge *OP, DigitalIO *Sol1, DigitalIO *Sol2, AdjustableParam * SetT, AdjustableParam * HOffset, AdjustableParam * MOffset, AdjustableParam * LOffset, AdjustableParam *Hys, AdjustableParam * PwmP, AdjustableParam *PwmD): 
+		PilotLitRef(PilotLit), TProbe1(BP), TProbe2(OP), GasValve_Low(Sol1), GasValve_High(Sol2),
+		Mode(A(BurnerModes)), Status(A(BurnerStatus)), FeedbackProbe(A(FeedbackProbes)), 
+		SetTemp(SetT), HighOffset(HOffset), MediumOffset(MOffset), LowOffset(LOffset), Hysteresis(Hys) ,
+		PWMPeriod(PwmP), PWMDutyCycle(PwmD), PWMLevel(A(PWMLevels))
 	{
-		Mode.setValue(EnumBurnerModes::Off);	
+		Mode.setValue(EnumBurnerModes::Off);
 	} 
 	
 	//Destructor
