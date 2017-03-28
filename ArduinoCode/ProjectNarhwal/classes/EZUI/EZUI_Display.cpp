@@ -32,6 +32,7 @@ void EZUI_Page::display(EZUI *UI){
 	LiquidCrystal_I2C *LCD = UI->LCD;
 	
 	//Cycle through page items and refresh those which need it.
+
 	unsigned long ctime = millis();
 	if ((ctime - lastPrint)>=refreshRate){
 		lastPrint = ctime;

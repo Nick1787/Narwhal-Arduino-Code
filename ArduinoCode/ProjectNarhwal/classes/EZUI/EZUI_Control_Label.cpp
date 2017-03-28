@@ -70,6 +70,10 @@ String EZUI_Control_Label::LabelText(){
 			Str = aObj.valueText();
 			break;
 		}
+		case(LblStr):{
+			Str = *(String*)this->_ItemRef;
+			break;
+		}
 	}
 	return Str;
 };

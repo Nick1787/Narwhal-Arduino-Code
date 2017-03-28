@@ -48,6 +48,17 @@ ListOptionItem<EnumPWMLevels> PWMLevels[3]{
 };
 
 
+/*LOG********************************/
+AdjustableParam LOG_logRateMs( 1.0, 0.1, 60.0, 0.1);
+
+/*RTC********************************/
+AdjustableParam RTC_Months( 0.0, 0.0, 12.0, 1.0);
+AdjustableParam RTC_Days( 0.0, 0.0, 31.0, 1.0);
+AdjustableParam RTC_Years( 0.0, 1990.0, 2999.0, 1.0);
+AdjustableParam RTC_Hour( 0.0, 0.0, 24.0, 1.0);
+AdjustableParam RTC_Minutes( 0.0, 0.0, 59.0, 1.0);
+AdjustableParam RTC_Seconds( 0.0, 0.0, 59.0, 1.0);
+
 /*Burner Set Point Adjustments********************************/
 
 /* HLT */

@@ -31,97 +31,31 @@ void serviceEncoders(){
 
 void hardware_init(){
 		
-	//--Setup the LCDs-------
-	
-	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-		Serial.print(F("Initializing LCDs..."));
-	#endif
-	
-	MAIN_LCD.setBacklightPin(LCD_BACKLIGHT_PIN,POSITIVE);
-	MAIN_LCD.setBacklight(HIGH);
-	MAIN_LCD.begin (20,4);
-	
-	HLT_LCD.setBacklightPin(LCD_BACKLIGHT_PIN,POSITIVE);
-	HLT_LCD.setBacklight(HIGH);
-	HLT_LCD.begin (20,4);
-	
-	MLT_LCD.setBacklightPin(LCD_BACKLIGHT_PIN,POSITIVE);
-	MLT_LCD.setBacklight(HIGH);
-	MLT_LCD.begin (20,4);
-	
-	BK_LCD.setBacklightPin(LCD_BACKLIGHT_PIN,POSITIVE);
-	BK_LCD.setBacklight(HIGH);
-	BK_LCD.begin (20,4);
-		
-	//--Initialize the Encoders-------
-	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-		Serial.println(F("Done."));
-		Serial.print(F("Initializing Encoders..."));
-	#endif
-
-	//Attach the Timer
-	Timer1.initialize(1000);
-	Timer1.attachInterrupt(serviceEncoders);
 		
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-		Serial.println(F("Done."));
-		Serial.print(F("Initializing Burner Controllers..."));
-	#endif
-	
-	//Burner Controllers
-	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-		Serial.println(F("Done."));
-		Serial.print(F("Initializing Solenoids..."));
-	#endif
-	
-	//Setup HLT
-	HLT_Controller().FeedbackProbe.setValue(EnumFeedbackProbes::HLTBP);
-	MLT_Controller().FeedbackProbe.setValue(EnumFeedbackProbes::MLTBP);
-	BK_Controller().FeedbackProbe.setValue(EnumFeedbackProbes::BKBP);
-	
-	//Set all Solenoids to output high which is "off" mode
-	RC1_OUT1.Write(1);
-	RC1_OUT2.Write(1);
-	RC1_OUT3.Write(1);
-	RC1_OUT4.Write(1);
-	RC1_OUT5.Write(1);
-	RC1_OUT6.Write(1);
-	RC1_OUT7.Write(1);
-	RC1_OUT8.Write(1);
-	RC2_OUT1.Write(1);
-	RC2_OUT2.Write(1);
-	RC2_OUT3.Write(1);
-	RC2_OUT4.Write(1);
-	RC2_OUT5.Write(1);
-	RC2_OUT6.Write(1);
-	RC2_OUT7.Write(1);
-	RC2_OUT8.Write(1);
-	
-	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
-		Serial.println(F("Done."));
 		Serial.print(F("Initializing SD Card..."));
 	#endif
-	
-	pinMode(53, OUTPUT);
-	if (!SD.begin(53)) {
+
+	if(!Logger().init()){
 		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
 			Serial.println(F("Failed!!!"));
 			Serial.println(F("Data Logging Disabled!!!"));
 		#endif
 	}else{
+			
 		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
 			Serial.println(F("Done."));
 			Serial.print(F("Initializing DataLogger..."));
 		#endif
 		
 		// --General--
-		/*
-		Logger.addParam("freeMemory",&freeSramBytes);
-		Logger.addParam("execHz",&Exec.execHz);
+		
+		Logger().addParam(F("freeMemory"),&freeSramBytes);
+		Logger().addParam(F("execHz"),&Exec.execHz);
 		
 		// --HLT Signals--
 		
-		Logger.addParam("HLT.Enabled",&HLT_Controller().ControlEnabled);
+		/*Logger.addParam("HLT.Enabled",&HLT_Controller().ControlEnabled);
 		Logger.addParam("HLT.SetTemp",&HLT_Controller().SetTemp->value);
 		Logger.addParam("HLT.FeedbackTemp",&HLT_Controller().FeedbackTemp);
 		Logger.addParam("HLT.Hysteresis",&HLT_Controller().Hysteresis->value);
@@ -159,7 +93,84 @@ void hardware_init(){
 			Serial.println(F("Done."));
 		#endif
 	}
+		
+	//--Setup the LCDs-------
 	
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+		Serial.print(F("Initializing LCDs..."));
+	#endif
+	
+	MAIN_LCD.setBacklightPin(LCD_BACKLIGHT_PIN,POSITIVE);
+	MAIN_LCD.setBacklight(HIGH);
+	MAIN_LCD.begin (20,4);
+	
+	HLT_LCD.setBacklightPin(LCD_BACKLIGHT_PIN,POSITIVE);
+	HLT_LCD.setBacklight(HIGH);
+	HLT_LCD.begin (20,4);
+	
+	MLT_LCD.setBacklightPin(LCD_BACKLIGHT_PIN,POSITIVE);
+	MLT_LCD.setBacklight(HIGH);
+	MLT_LCD.begin (20,4);
+	
+	BK_LCD.setBacklightPin(LCD_BACKLIGHT_PIN,POSITIVE);
+	BK_LCD.setBacklight(HIGH);
+	BK_LCD.begin (20,4);
+		
+	//--Initialize the Encoders-------
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+		Serial.println(F("Done."));
+		Serial.print(F("Initializing Encoders..."));
+	#endif
+
+	//Attach the Timer
+	Timer1.initialize(1000);
+	Timer1.attachInterrupt(serviceEncoders);
+		
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+		Serial.println(F("Done."));
+		Serial.print(F("Initializing Burner Controllers..."));
+	#endif
+	
+	//Setup HLT
+	HLT_Controller().FeedbackProbe.setValue(EnumFeedbackProbes::HLTBP);
+	MLT_Controller().FeedbackProbe.setValue(EnumFeedbackProbes::MLTBP);
+	BK_Controller().FeedbackProbe.setValue(EnumFeedbackProbes::BKBP);
+	
+	//Burner Controllers
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+		Serial.println(F("Done."));
+		Serial.print(F("Initializing Solenoids..."));
+	#endif
+	
+	//Set all Solenoids to output high which is "off" mode
+	RC1_OUT1.Write(1);
+	RC1_OUT2.Write(1);
+	RC1_OUT3.Write(1);
+	RC1_OUT4.Write(1);
+	RC1_OUT5.Write(1);
+	RC1_OUT6.Write(1);
+	RC1_OUT7.Write(1);
+	RC1_OUT8.Write(1);
+	RC2_OUT1.Write(1);
+	RC2_OUT2.Write(1);
+	RC2_OUT3.Write(1);
+	RC2_OUT4.Write(1);
+	RC2_OUT5.Write(1);
+	RC2_OUT6.Write(1);
+	RC2_OUT7.Write(1);
+	RC2_OUT8.Write(1);
+	
+		
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+		Serial.println(F("Done."));
+		Serial.print(F("Initializing RealTimeClock..."));
+	#endif
+		
+	RTC().init();
+		
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+	Serial.println(F("Done."));
+	#endif
 	
 	freeSramBytes=freeMemory();
 	freeSramPct=100.0*(8000.0-(float)freeSramBytes)/8000.0;
@@ -178,14 +189,26 @@ float freeSramPct = 0;
 Executive Exec;
 
 /**************************
-*	Data Logger
-**************************/
-DataLogger<LoggerSize> Logger(LoggerRateMs);
-
-/**************************
 *	Real Time Clock
 **************************/
-DS323RealTimeClock RTC(RTC_ADDR);
+String CurrentDateTime = "";
+DS323RealTimeClock& RTC()
+{
+	static DS323RealTimeClock* ans = new DS323RealTimeClock(DS3231_I2C_ADDR, &RTC_Seconds, &RTC_Minutes, &RTC_Hour,&RTC_Days,&RTC_Months,&RTC_Years);
+	return *ans;
+}
+
+/**************************
+*	Data Logger
+**************************/
+DataLogger<LoggerSize>& Logger()
+{
+	static DataLogger<LoggerSize> * ans = new DataLogger<LoggerSize>(&LOG_logRateMs, &RTC());
+	return *ans;
+}
+
+
+
 
 /**************************
 *	Digital IO

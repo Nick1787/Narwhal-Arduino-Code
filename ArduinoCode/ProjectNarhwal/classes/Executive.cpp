@@ -39,6 +39,8 @@ void Executive::run(){
 		//reset counters
 		temp_time = time;
 		temp_frame_count=0;
+		
+		CurrentDateTime = RTC().getDateStamp(DS323RealTimeClock::DATETIME);
 	}
 	
 }
@@ -91,6 +93,9 @@ void Executive::exec_frame1(){
 	HLT_ENC.Read();
 	BK_ENC.Read();
 	
+	//Real Time Clock
+	RTC().exec();
+	Logger().log();
 }
 
 void Executive::exec_frame2(){

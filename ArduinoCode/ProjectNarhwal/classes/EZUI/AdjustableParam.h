@@ -32,13 +32,12 @@ public:
 	AdjustableParam(float defaultVal, float mnValue, float mxValue, float incr): value(defaultVal), minValue(mnValue), maxValue(mxValue), increment(incr){};
 	~AdjustableParam(){};
 	
-	
 	//Values
 	float getValue(){ return value;};
 	void set(float _value){
-		if(value > maxValue){
+		if(_value > maxValue){
 			value = maxValue; 
-		}else if(value < minValue){
+		}else if(_value < minValue){
 			value = minValue;
 		}else{
 			value = _value;

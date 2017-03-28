@@ -55,12 +55,12 @@ public:
 	};
 	void Write(int newValue){
 		
-		Serial.println("--DIGIO---");
-		Serial.print("CVal:");
-		Serial.println(value);
-		Serial.print("nVal:");
-		Serial.println(newValue);
-		Serial.println("----------");
+		//Serial.println("--DIGIO---");
+		//Serial.print("CVal:");
+		//Serial.println(value);
+		//Serial.print("nVal:");
+		//Serial.println(newValue);
+		//Serial.println("----------");
 		
 		if(!(_Mode == OUT)){
 			pinMode(_Pin,OUTPUT);

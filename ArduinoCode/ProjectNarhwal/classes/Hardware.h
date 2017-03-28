@@ -25,10 +25,10 @@ extern Executive Exec;
 //Datalogger
 #define LoggerSize 50
 #define LoggerRateMs 1000
-extern DataLogger<LoggerSize> Logger;
+extern DataLogger<LoggerSize>& Logger();
 
 //Real time Clock
-extern DS323RealTimeClock RTC;
+DS323RealTimeClock& RTC();
 
 /**************************
 *	Functions

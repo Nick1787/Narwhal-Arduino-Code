@@ -44,6 +44,7 @@ class ParamRef : public GenericParamRef{
 template <unsigned int Size>
 class SDDataLogger{
 	private:
+		uint8_t i2Caddress;
 		boolean initialized = false;
 		PROGMEM GenericParamRef *Items[Size] ;
 		File outFile;
@@ -56,33 +57,45 @@ class SDDataLogger{
 	
 		//Constructor, Destructor
 		SDDataLogger<Size>(uint8_t address){
-			if(SD.begin(address)){
-				initialized = true;
-			}
+			i2Caddress = address;
 		};
 			
 		~SDDataLogger(){};
 	
 		//Create Output File
-		int createOutFile(char* filename){
+		boolean createOutFile(String filename){
 			if(initialized){
-				outFile = SD.open(filename, FILE_WRITE);
-			
+				char fn[filename.length()+1];
+				filename.toCharArray(fn, sizeof(fn));
+				outFile = SD.open(fn, FILE_WRITE);
 				if( outFile ){
+					
+					Serial.println("HERE3!");
 					//Write each parameter Name as a header
 					for( int i=0; i<itemCount; i++){
 						outFile.print(Items[i]->strLabel());
 						outFile.print(",");
 					}
 					outFile.println(" ");
-					return 1;
+					return true;
 				}else{
-					return 0;
-			
+					
+					Serial.println("HERE4!");
+					return false;
 				}
 			}
 		}
-		
+				
+		//is SD card ready
+		boolean init(){
+			if( SD.begin(i2Caddress)){
+				 initialized = true;
+			}else{
+				initialized = false;	
+			}
+			return initialized;
+		}
+				
 		//is SD card ready
 		boolean isSDReady(){
 			return initialized;
@@ -93,6 +106,13 @@ class SDDataLogger{
 			if(outFile){
 				outFile.close();
 			}
+		}
+		
+		//Check if out file exists
+		boolean fileExists(String Name){
+			char fn[Name.length()+1];
+			Name.toCharArray(fn, sizeof(fn));
+			return SD.exists(fn);
 		}
 		
 		//See if outfile is ready to write to
@@ -127,6 +147,17 @@ class SDDataLogger{
 		void addParam(const char* Label, unsigned long * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<unsigned long>(Label, Ref);itemCount++;}};
 		void addParam(const char* Label, float * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<float>(Label, Ref);itemCount++;}};
 		void addParam(const char* Label, double * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<double>(Label, Ref);itemCount++;}};
+			
+		void addParam(const __FlashStringHelper * Label, byte * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<byte>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, boolean * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<boolean>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, short * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<short>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, unsigned short * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<unsigned short>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, int * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<int>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, unsigned int * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<unsigned int>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, long * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<long>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, unsigned long * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<unsigned long>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, float * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<float>(Label, Ref);itemCount++;}};
+		void addParam(const __FlashStringHelper * Label, double * Ref){	if(itemCount < maxItemCount){ Items[itemCount] = new ParamRef<double>(Label, Ref);itemCount++;}};
 	
 }; 
 

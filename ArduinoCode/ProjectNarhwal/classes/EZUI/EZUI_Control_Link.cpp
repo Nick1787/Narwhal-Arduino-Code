@@ -12,8 +12,5 @@ boolean EZUI_Control_Link::isSelectable() const {return true;};
 boolean EZUI_Control_Link::hasValueText() const { return false;};
 String EZUI_Control_Link::LabelText(void) { return String(this->_Label); };
 void EZUI_Control_Link::Select(EZUI *UI) const {
-	Serial.print("SelectLinRef:");
-	Serial.println((unsigned int)_LinkRef);
-	Serial.flush();
 	UI->setDisplay(_LinkRef);
 };

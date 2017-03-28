@@ -21,7 +21,7 @@ public:
 protected:
 private:
 	//what type of variable are we displaying
-	enum EZUI_Control_Label_Type {None, LblCharArr, LblCCharArr, LblFloat, LblDouble, LblInt, LblUInt, LblLong, LblULong, LblBoolWithText, LblDigitalIO, LblListOpt, LblListOptRef, LblAdjParam};
+	enum EZUI_Control_Label_Type {None, LblCharArr, LblCCharArr, LblFloat, LblDouble, LblInt, LblUInt, LblLong, LblULong, LblBoolWithText, LblDigitalIO, LblListOpt, LblListOptRef, LblAdjParam, LblStr};
 	const PROGMEM EZUI_Control_Label_Type _Label_Type;	//Not initialized to any value
 
 	//Pointers to the items
@@ -58,6 +58,7 @@ public:
 	EZUI_Control_Label(DigitalIO *val):		EZUI_Control(EZUI_ControlType::Label), _Label_Type(EZUI_Control_Label_Type::LblDigitalIO), _ItemRef(val){};
 	EZUI_Control_Label(GenericListOption *val):	EZUI_Control(EZUI_ControlType::Label), _Label_Type(EZUI_Control_Label_Type::LblListOpt), _ItemRef(val){};
 	EZUI_Control_Label(AdjustableParam *val):	EZUI_Control(EZUI_ControlType::Label), _Label_Type(EZUI_Control_Label_Type::LblAdjParam), _ItemRef(val){};
+	EZUI_Control_Label(String *val):	EZUI_Control(EZUI_ControlType::Label), _Label_Type(EZUI_Control_Label_Type::LblStr), _ItemRef(val){};
 	
 protected:
 private:

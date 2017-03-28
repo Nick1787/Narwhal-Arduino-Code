@@ -12,6 +12,7 @@
 #define _EXECUTIVE_H
 
 #include "../Main.h"
+extern String CurrentDateTime;
 
 class Executive{
   public:

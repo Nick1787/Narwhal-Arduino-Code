@@ -55,6 +55,18 @@ enum EnumPWMLevels{
 };
 extern ListOptionItem<EnumPWMLevels> PWMLevels[3];
 
+
+/*LOG********************************/
+extern AdjustableParam LOG_logRateMs;
+
+/*RTC********************************/
+extern AdjustableParam RTC_Months;
+extern AdjustableParam RTC_Days;
+extern AdjustableParam RTC_Years;
+extern AdjustableParam RTC_Hour;
+extern AdjustableParam RTC_Minutes;
+extern AdjustableParam RTC_Seconds;
+
 /*Adjustment Values********************************/
 
 extern AdjustableParam HLT_SetTemp;
