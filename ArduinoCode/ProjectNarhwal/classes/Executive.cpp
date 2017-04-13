@@ -70,6 +70,8 @@ void Executive::exec_frame1(){
 	}else{
 		HLT_TC_ON = false;
 	}
+	RC2_OUT1.Write(!HLT_TC_ON);
+	
 	
 	//MLT Thermocouple
 	MLT_TC_V = 5.0 * ((float)analogRead(MLT_TC_VIN) / 1023.0);
@@ -77,7 +79,8 @@ void Executive::exec_frame1(){
 		MLT_TC_ON = true;
 	}else{
 		MLT_TC_ON = false;
-	}
+}
+RC2_OUT2.Write(!MLT_TC_ON);
 	
 	//BK Thermocouple
 	BK_TC_V = 5.0 * ((float)analogRead(BK_TC_VIN) / 1023.0);
@@ -85,7 +88,9 @@ void Executive::exec_frame1(){
 		BK_TC_ON = true;
 	}else{
 		BK_TC_ON = false;
-	}
+}
+RC2_OUT3.Write(!BK_TC_ON);
+	
 	
 	//Encoders
 	MAIN_ENC.Read();
@@ -109,9 +114,9 @@ void Executive::exec_frame2(){
 	BK_RTD_OP.Calculate(  (float)analogRead(BK_RTD_Vs_AN)  / 1023.0, (float)analogRead(BK_RTD_OP_AN)  / 1023.0 );
 	
 	//Controllers
-	//HLT_Controller().Exec();
-	//MLT_Controller().Exec();
-	//BK_Controller().Exec();
+	HLT_Controller().Exec();
+	MLT_Controller().Exec();
+	BK_Controller().Exec();
 }
 
 void Executive::exec_frame3(){
