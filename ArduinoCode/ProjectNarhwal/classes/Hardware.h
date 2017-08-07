@@ -18,6 +18,7 @@
 class BurnerController;
 class Executive;
 class DS323RealTimeClock;
+class NarwhalTimer;
 
 //Executive
 extern Executive Exec;
@@ -25,7 +26,11 @@ extern Executive Exec;
 //Datalogger
 #define LoggerSize 50
 #define LoggerRateMs 1000
-extern DataLogger<LoggerSize>& Logger();
+extern DataLogger& Logger();
+
+//Timers
+extern NarwhalTimer& NarwhalTimer1();
+extern NarwhalTimer& NarwhalTimer2();
 
 //Real time Clock
 DS323RealTimeClock& RTC();

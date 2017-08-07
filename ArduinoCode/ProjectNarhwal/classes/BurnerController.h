@@ -13,6 +13,22 @@
 
 #include "../Main.h"
 
+
+#ifndef PROGTEMPLATES
+#define PROGTEMPLATES
+template <typename T> void PROGMEM_readAnything (const T * sce, T& dest)
+{
+	memcpy_P (&dest, sce, sizeof (T));
+}
+
+template <typename T> T PROGMEM_getAnything (const T * sce)
+{
+	static T temp;
+	memcpy_P (&temp, sce, sizeof (T));
+	return temp;
+}
+#endif
+
 class BurnerController
 {
 //variables
@@ -66,7 +82,7 @@ public:
 		PilotLitRef(PilotLit), TProbe1(BP), TProbe2(OP), GasValve_Low(Sol1), GasValve_High(Sol2),
 		Mode(A(BurnerModes)), Status(A(BurnerStatus)), FeedbackProbe(A(FeedbackProbes)), 
 		SetTemp(SetT), HighOffset(HOffset), MediumOffset(MOffset), LowOffset(LOffset), Hysteresis(Hys) ,
-		PWMPeriod(PwmP), PWMDutyCycle(PwmD), PWMLevel(A(PWMLevels))
+		PWMLevel(A(PWMLevels)), PWMPeriod(PwmP), PWMDutyCycle(PwmD)
 	{
 		Mode.setValue(EnumBurnerModes::Off);
 	} 

@@ -10,6 +10,8 @@
 void BurnerController::Exec(){
 	//Store the last controller error
 	float LastErr = ControlError;
+	isFaulted = false;
+	Status.setValue(EnumBurnerStatus::PilotLit);
 	
 	//Check Feedback Error to Active Probe
 	WheatstoneBridge *FB = NULL;
@@ -43,13 +45,16 @@ void BurnerController::Exec(){
 	}
 	FeedbackTemp = FB->degF;
 	
-	if( FB->Faulted == true){
+	if( FB->isFaulted == true){
 		Status.setValue(EnumBurnerStatus::FeedbackFault);
 		ControlError=-99;
-		isFaulted = true;
+		if( Mode.currentValue() == EnumBurnerModes::Auto){
+			isFaulted = true;
+		}
 	}else{
 		ControlError = SetTemp->getValue() - FB->degF;
 	}
+
 	
 	//Check that the Pilot light is lit
 	if(Mode.currentValue() == EnumBurnerModes::Off){
@@ -65,7 +70,11 @@ void BurnerController::Exec(){
 	}else{
 		if(*PilotLitRef == false){
 			Status.setValue(EnumBurnerStatus::PilotFault);
-			isFaulted = true;
+			if( (Mode.currentValue() == EnumBurnerModes::Auto) || (Mode.currentValue() == EnumBurnerModes::PWM)){
+				if( !enableFaultInhibit){
+					isFaulted = true;
+				}
+			}
 		}
 	}
 	
@@ -110,7 +119,7 @@ void BurnerController::runPWM(){
 }
 
 void BurnerController::runAuto(){
-	if(isFaulted && enableFaultInhibit){
+	if(isFaulted && !enableFaultInhibit){
 		GasValve_Low->Write(1); //Off
 		GasValve_High->Write(1); //Off
 	}else{

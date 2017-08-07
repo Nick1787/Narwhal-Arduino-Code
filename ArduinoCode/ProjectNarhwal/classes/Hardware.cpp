@@ -29,6 +29,47 @@ void serviceEncoders(){
 	BK_ENC.service();
 }
 
+/**************************
+*	Functions
+**************************/
+const PROGMEM LogItem ItemsToLog[]{
+	{ LogItemType::int_ptr, "freeMemory" , &freeSramBytes },
+	{ LogItemType::int_ptr, "execHz" , &Exec.execHz },
+	
+	// --HLT Signals--
+	/*{ LogItemType::int_ptr , "HLT.Enabled" , &HLT_Controller().ControlEnabled },
+	{ LogItemType::float_ptr , "HLT.SetTemp" , &HLT_Controller().SetTemp->value },
+	{ LogItemType::float_ptr , "HLT.FeedbackTemp" , &HLT_Controller().FeedbackTemp },
+	{ LogItemType::float_ptr , "HLT.Hysteresis" , &HLT_Controller().Hysteresis->value },
+	{ LogItemType::float_ptr , "HLT.HighOffset" , &HLT_Controller().HighOffset->value },
+	{ LogItemType::float_ptr , "HLT.MediumOffset" , &HLT_Controller().MediumOffset->value },
+	{ LogItemType::float_ptr , "HLT.LowOffset" , &HLT_Controller().LowOffset->value },
+	{ LogItemType::bool_ptr , "HLT.GasValve_Low" , &HLT_Controller().GasValve_Low->value },
+	{ LogItemType::bool_ptr , "HLT.GasValve_High" , &HLT_Controller().GasValve_High->value },
+	
+	// --MLT Signals--
+	/*{ LogItemType::int_ptr , "MLT.Enabled" , &MLT_Controller().ControlEnabled },
+	{ LogItemType::int_ptr , "MLT.SetTemp" , &MLT_Controller().SetTemp->value },
+	{ LogItemType::int_ptr , "MLT.FeedbackTemp" , &MLT_Controller().FeedbackTemp },
+	{ LogItemType::int_ptr , "MLT.Hysteresis" , &MLT_Controller().Hysteresis->value },
+	{ LogItemType::int_ptr , "MLT.HighOffset" , &MLT_Controller().HighOffset->value },
+	{ LogItemType::int_ptr , "MLT.MediumOffset" , &MLT_Controller().MediumOffset->value },
+	{ LogItemType::int_ptr , "MLT.LowOffset" , &MLT_Controller().LowOffset->value },
+	{ LogItemType::int_ptr , "MLT.GasValve_Low" , &MLT_Controller().GasValve_Low->value },
+	{ LogItemType::int_ptr , "MLT.GasValve_High" , &MLT_Controller().GasValve_High->value },
+	
+	// --BK Signals--
+	{ LogItemType::int_ptr , "BK.Enabled" , &BK_Controller().ControlEnabled },
+	{ LogItemType::int_ptr , "BK.SetTemp" , &BK_Controller().SetTemp->value },
+	{ LogItemType::int_ptr , "BK.FeedbackTemp" , &BK_Controller().FeedbackTemp },
+	{ LogItemType::int_ptr , "BK.Hysteresis" , &BK_Controller().Hysteresis->value },
+	{ LogItemType::int_ptr , "BK.HighOffset" , &BK_Controller().HighOffset->value },
+	{ LogItemType::int_ptr , "BK.MediumOffset" , &BK_Controller().MediumOffset->value },
+	{ LogItemType::int_ptr , "BK.LowOffset" , &BK_Controller().LowOffset->value },
+	{ LogItemType::int_ptr , "BK.GasValve_Low" , &BK_Controller().GasValve_Low->value },
+	{ LogItemType::int_ptr , "BK.GasValve_High" , &BK_Controller().GasValve_High->value }*/
+};
+	
 void hardware_init(){
 		
 		
@@ -45,49 +86,10 @@ void hardware_init(){
 			
 		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
 			Serial.println(F("Done."));
-			Serial.print(F("Initializing DataLogger..."));
+			Serial.print(F("Initializing DataLogger()..."));
 		#endif
 		
-		// --General--
 		
-		Logger().addParam(F("freeMemory"),&freeSramBytes);
-		Logger().addParam(F("execHz"),&Exec.execHz);
-		
-		// --HLT Signals--
-		
-		/*Logger.addParam("HLT.Enabled",&HLT_Controller().ControlEnabled);
-		Logger.addParam("HLT.SetTemp",&HLT_Controller().SetTemp->value);
-		Logger.addParam("HLT.FeedbackTemp",&HLT_Controller().FeedbackTemp);
-		Logger.addParam("HLT.Hysteresis",&HLT_Controller().Hysteresis->value);
-		Logger.addParam("HLT.HighOffset",&HLT_Controller().HighOffset->value);
-		Logger.addParam("HLT.MediumOffset",&HLT_Controller().MediumOffset->value);
-		Logger.addParam("HLT.LowOffset",&HLT_Controller().LowOffset->value);
-		Logger.addParam("HLT.GasValve_Low",&HLT_Controller().GasValve1_Low->value);
-		Logger.addParam("HLT.GasValve_High",&HLT_Controller().GasValve2_High->value);
-		
-		// --MLT Signals--
-		
-		Logger.addParam("MLT.Enabled",&MLT_Controller().ControlEnabled);
-		Logger.addParam("MLT.SetTemp",&MLT_Controller().SetTemp->value);
-		Logger.addParam("MLT.FeedbackTemp",&MLT_Controller().FeedbackTemp);
-		Logger.addParam("MLT.Hysteresis",&MLT_Controller().Hysteresis->value);
-		Logger.addParam("MLT.HighOffset",&MLT_Controller().HighOffset->value);
-		Logger.addParam("MLT.MediumOffset",&MLT_Controller().MediumOffset->value);
-		Logger.addParam("MLT.LowOffset",&MLT_Controller().LowOffset->value);
-		Logger.addParam("MLT.GasValve_Low",&MLT_Controller().GasValve1_Low->value);
-		Logger.addParam("MLT.GasValve_High",&MLT_Controller().GasValve2_High->value);
-		
-		// --BK Signals--
-		
-		Logger.addParam("BK.Enabled",&BK_Controller().ControlEnabled);
-		Logger.addParam("BK.SetTemp",&BK_Controller().SetTemp->value);
-		Logger.addParam("BK.FeedbackTemp",&BK_Controller().FeedbackTemp);
-		Logger.addParam("BK.Hysteresis",&BK_Controller().Hysteresis->value);
-		Logger.addParam("BK.HighOffset",&BK_Controller().HighOffset->value);
-		Logger.addParam("BK.MediumOffset",&BK_Controller().MediumOffset->value);
-		Logger.addParam("BK.LowOffset",&BK_Controller().LowOffset->value);
-		Logger.addParam("BK.GasValve_Low",&BK_Controller().GasValve1_Low->value);
-		Logger.addParam("BK.GasValve_High",&BK_Controller().GasValve2_High->value);*/
 		
 		#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
 			Serial.println(F("Done."));
@@ -95,8 +97,18 @@ void hardware_init(){
 	}
 		
 	//--Setup the LCDs-------
+		
+	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+		Serial.print(F("Initializing Timers..."));
+	#endif
+		
+		NarwhalTimer1().init();
+		NarwhalTimer2().init();
+		
+	//--Setup the LCDs-------
 	
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+		Serial.println(F("Done."));
 		Serial.print(F("Initializing LCDs..."));
 	#endif
 	
@@ -191,7 +203,7 @@ Executive Exec;
 /**************************
 *	Real Time Clock
 **************************/
-String CurrentDateTime = "";
+String CurrentDateTime;
 DS323RealTimeClock& RTC()
 {
 	static DS323RealTimeClock* ans = new DS323RealTimeClock(DS3231_I2C_ADDR, &RTC_Seconds, &RTC_Minutes, &RTC_Hour,&RTC_Days,&RTC_Months,&RTC_Years);
@@ -201,35 +213,52 @@ DS323RealTimeClock& RTC()
 /**************************
 *	Data Logger
 **************************/
-DataLogger<LoggerSize>& Logger()
+DataLogger& Logger()
 {
-	static DataLogger<LoggerSize> * ans = new DataLogger<LoggerSize>(&LOG_logRateMs, &RTC());
+	static DataLogger * ans = new DataLogger(&LOG_logRateMs, &RTC(), A(ItemsToLog));
 	return *ans;
 }
 
+/**************************
+*	NarwhalTimer1
+**************************/
+NarwhalTimer& NarwhalTimer1()
+{
+	static NarwhalTimer * ans = new NarwhalTimer(&Timer1_Minutes);
+	return *ans;
+}
+
+/**************************
+*	NarwhalTimer2
+**************************/
+NarwhalTimer& NarwhalTimer2()
+{
+	static NarwhalTimer * ans = new NarwhalTimer(&Timer2_Minutes);
+	return *ans;
+}
 
 
 
 /**************************
 *	Digital IO
 **************************/
-DigitalIO RC1_OUT1 = DigitalIO(49, DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC1_OUT2 = DigitalIO(48 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC1_OUT3 = DigitalIO(47 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC1_OUT4 = DigitalIO(46 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC1_OUT5 = DigitalIO(45 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC1_OUT6 = DigitalIO(44 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC1_OUT7 = DigitalIO(43 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC1_OUT8 = DigitalIO(42 , DigitalIO::OUT, "OFF", "ON");
+DigitalIO RC1_OUT1 = DigitalIO(49, DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC1_OUT2 = DigitalIO(48 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC1_OUT3 = DigitalIO(47 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC1_OUT4 = DigitalIO(46 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC1_OUT5 = DigitalIO(45 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC1_OUT6 = DigitalIO(44 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC1_OUT7 = DigitalIO(43 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC1_OUT8 = DigitalIO(42 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
 
-DigitalIO RC2_OUT1 = DigitalIO(40, DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC2_OUT2 = DigitalIO(41 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC2_OUT3 = DigitalIO(38 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC2_OUT4 = DigitalIO(39 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC2_OUT5 = DigitalIO(36 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC2_OUT6 = DigitalIO(37 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC2_OUT7 = DigitalIO(35 , DigitalIO::OUT, "OFF", "ON");
-DigitalIO RC2_OUT8 = DigitalIO(34 , DigitalIO::OUT, "OFF", "ON");
+DigitalIO RC2_OUT1 = DigitalIO(40, DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC2_OUT2 = DigitalIO(41 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC2_OUT3 = DigitalIO(38 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC2_OUT4 = DigitalIO(39 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC2_OUT5 = DigitalIO(36 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC2_OUT6 = DigitalIO(37 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC2_OUT7 = DigitalIO(35 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
+DigitalIO RC2_OUT8 = DigitalIO(34 , DigitalIO::OUT, pTXT_Off_NoColon, pTXT_On_NoColon);
 
 
 /**************************
@@ -257,8 +286,10 @@ bool Pump2_On = false;
 /**************************
 *	Wheatstone Bridge
 **************************/
-const float WB_R2C_X[36] = {80.31, 84.27, 88.22, 92.16, 96.09, 100, 103.9, 107.79, 111.67, 115.54, 119.4, 123.24, 127.08, 130.9, 134.71, 138.51, 142.29, 146.07, 149.83, 153.58, 157.33, 161.05, 164.77, 168.48, 172.17, 175.86, 179.53, 183.19, 186.84, 190.47, 194.1, 197.71, 201.31, 204.9, 208.48, 212.05};
-const float WB_R2C_Z[36] = {-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300};
+//const float WB_R2C_X[36] = {80.31, 84.27, 88.22, 92.16, 96.09, 100, 103.9, 107.79, 111.67, 115.54, 119.4, 123.24, 127.08, 130.9, 134.71, 138.51, 142.29, 146.07, 149.83, 153.58, 157.33, 161.05, 164.77, 168.48, 172.17, 175.86, 179.53, 183.19, 186.84, 190.47, 194.1, 197.71, 201.31, 204.9, 208.48, 212.05};
+//const float WB_R2C_Z[36] = {-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300};
+const float WB_R2C_X[36] = {80.31, 84.27, 208.48, 212.05};
+const float WB_R2C_Z[36] = {-50, -40, 290, 300};
 LUT1D<36> RTDLUT(WB_R2C_X, WB_R2C_Z);
 LUT * LUTREF = &RTDLUT;
 

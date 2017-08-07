@@ -39,13 +39,19 @@ void Executive::run(){
 		//reset counters
 		temp_time = time;
 		temp_frame_count=0;
-		
+		//Serial.println(F("RTC Before"));
+		//Serial.flush();
 		CurrentDateTime = RTC().getDateStamp(DS323RealTimeClock::DATETIME);
+		//Serial.println(F("RTC After"));
+		//Serial.flush();
 	}
 	
 }
 
 void Executive::exec_frame1(){	
+		
+		//Serial.println(F("Frame1"));
+		//Serial.flush();
 		
 	//Pump Monitor #1
 	Pump1_V = 5.0 * ((float)analogRead(PUMP1_VIN) / 1023.0);
@@ -65,30 +71,42 @@ void Executive::exec_frame1(){
 	
 	//HLT Thermocouple
 	HLT_TC_V = 5.0 * ((float)analogRead(HLT_TC_VIN) / 1023.0);
-	if(HLT_TC_V > 0.25){
-		HLT_TC_ON = true;
+	if(HLT_TC_ON){
+		if(HLT_TC_V < 0.6){
+			HLT_TC_ON = false;
+		}
 	}else{
-		HLT_TC_ON = false;
+		if(HLT_TC_V > 0.8){
+			HLT_TC_ON = true;
+		}
 	}
 	RC2_OUT1.Write(!HLT_TC_ON);
 	
 	
 	//MLT Thermocouple
 	MLT_TC_V = 5.0 * ((float)analogRead(MLT_TC_VIN) / 1023.0);
-	if(MLT_TC_V > 0.25){
-		MLT_TC_ON = true;
+	if(MLT_TC_ON){
+		if(MLT_TC_V < 0.6){
+			MLT_TC_ON = false;
+		}
 	}else{
-		MLT_TC_ON = false;
-}
-RC2_OUT2.Write(!MLT_TC_ON);
+		if(MLT_TC_V > 0.8){
+			MLT_TC_ON = true;
+		}
+	}
+	RC2_OUT2.Write(!MLT_TC_ON);
 	
 	//BK Thermocouple
 	BK_TC_V = 5.0 * ((float)analogRead(BK_TC_VIN) / 1023.0);
-	if(BK_TC_V > 0.25){
-		BK_TC_ON = true;
+	if(BK_TC_ON){
+		if(BK_TC_V < 0.6){
+			BK_TC_ON = false;
+		}
 	}else{
-		BK_TC_ON = false;
-}
+		if(BK_TC_V > 0.8){
+			BK_TC_ON = true;
+		}
+	}
 RC2_OUT3.Write(!BK_TC_ON);
 	
 	
@@ -100,18 +118,23 @@ RC2_OUT3.Write(!BK_TC_ON);
 	
 	//Real Time Clock
 	RTC().exec();
-	Logger().log();
+	
+	//Run the Timers
+	NarwhalTimer1().exec();
+	NarwhalTimer2().exec();
 }
 
 void Executive::exec_frame2(){
+	//Serial.println(F("Frame2"));
+	//Serial.flush();
 	
 	//Update the RTD values
-	HLT_RTD_BP.Calculate( (float)analogRead(HLT_RTD_Vs_AN) / 1023.0, (float)analogRead(HLT_RTD_BP_AN) / 1023.0 );
-	HLT_RTD_OP.Calculate( (float)analogRead(HLT_RTD_Vs_AN) / 1023.0, (float)analogRead(HLT_RTD_OP_AN) / 1023.0 );
-	MLT_RTD_BP.Calculate( (float)analogRead(MLT_RTD_Vs_AN) / 1023.0, (float)analogRead(MLT_RTD_BP_AN) / 1023.0 );
-	MLT_RTD_OP.Calculate( (float)analogRead(MLT_RTD_Vs_AN) / 1023.0, (float)analogRead(MLT_RTD_OP_AN) / 1023.0 );
-	BK_RTD_BP.Calculate(  (float)analogRead(BK_RTD_Vs_AN)  / 1023.0, (float)analogRead(BK_RTD_BP_AN)  / 1023.0 );
-	BK_RTD_OP.Calculate(  (float)analogRead(BK_RTD_Vs_AN)  / 1023.0, (float)analogRead(BK_RTD_OP_AN)  / 1023.0 );
+	HLT_RTD_BP.Calculate( 5.0*(float)analogRead(HLT_RTD_Vs_AN) / 1023.0, 5.0*(float)analogRead(HLT_RTD_BP_AN) / 1023.0 );
+	HLT_RTD_OP.Calculate( 5.0*(float)analogRead(HLT_RTD_Vs_AN) / 1023.0, 5.0*(float)analogRead(HLT_RTD_OP_AN) / 1023.0 );
+	MLT_RTD_BP.Calculate( 5.0*(float)analogRead(MLT_RTD_Vs_AN) / 1023.0, 5.0*(float)analogRead(MLT_RTD_BP_AN) / 1023.0 );
+	MLT_RTD_OP.Calculate( 5.0*(float)analogRead(MLT_RTD_Vs_AN) / 1023.0, 5.0*(float)analogRead(MLT_RTD_OP_AN) / 1023.0 );
+	BK_RTD_BP.Calculate(  5.0*(float)analogRead(BK_RTD_Vs_AN)  / 1023.0, 5.0*(float)analogRead(BK_RTD_BP_AN)  / 1023.0 );
+	BK_RTD_OP.Calculate(  5.0*(float)analogRead(BK_RTD_Vs_AN)  / 1023.0, 5.0*(float)analogRead(BK_RTD_OP_AN)  / 1023.0 );
 	
 	//Controllers
 	HLT_Controller().Exec();
@@ -121,21 +144,43 @@ void Executive::exec_frame2(){
 
 void Executive::exec_frame3(){
 	
+	//Serial.println(F("Frame3"));
+	//Serial.flush();
+	
 	//Update the UI
+	//Serial.println(F("Main Display"));
+	//Serial.flush();
 	UI_MAIN::UI->display();
+	//Serial.println(F("HLT Display"));
+	//Serial.flush();
 	UI_HLT::UI->display();
+	//Serial.println(F("MLT Display"));
+	//Serial.flush();
 	UI_MLT::UI->display();
+	//Serial.println(F("BK Display"));
+	//Serial.flush();
 	UI_BK::UI->display();
+	//Serial.println(F("DisplayDone"));
+	//Serial.flush();
 }
 
 void Executive::exec_frame4(){
 	
+	//Serial.println(F("Frame4"));
+	//Serial.flush();
 	//Update Free Memory Calculations
 	freeSramBytes=freeMemory();
 	freeSramPct=100.0*(float)(freeSramBytes/8000);
 	
-	//Transmit Serial DAta
-	//	AdvSerial.exec();
-	
-	//Do logging + PHM
+	//Alarm when Faulted
+	if( HLT_Controller().isFaulted || MLT_Controller().isFaulted || BK_Controller().isFaulted  ){
+		faultDetected = true;
+		RC2_OUT4.Write(0);
+	}else{
+		//Clear the fault, but dont continuusly fire. 
+		if(faultDetected){
+			RC2_OUT4.Write(1);
+		}
+		faultDetected = false;
+	}
 }

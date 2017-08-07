@@ -12,7 +12,7 @@
 
 //Forward Declarations
 class EZUI;
-class EZUI_Display;
+class EZUI_UI;
 
 class EZUI_Control_Link : public EZUI_Control
 {
@@ -20,23 +20,26 @@ class EZUI_Control_Link : public EZUI_Control
 public:	
 protected:
 private:
-	EZUI_Display * _LinkRef;
-	char * _Label;
+	EZUI_UI * _LinkRef;
+	const PROGMEM void * _Label;
 
 //functions
 public:
-
+	boolean PROGMEM isFlash = false;
+	
 	//Over-ridden base class functions
 	boolean isSelectable() const  override;
 	boolean hasValueText() const override;
-	String LabelText(void) override;
+	const char* LabelText(void) override;
+	const char* ValueText(void) override;
 	void Select(EZUI *UI) const override;
 	
 	//Default Destructor
 	~EZUI_Control_Link() {};	
 		
 	//void FollowLink(EZUI *UI) const;
-	EZUI_Control_Link(char Text[], EZUI_Display * Link): EZUI_Control(EZUI_ControlType::Link), _LinkRef(Link), _Label(Text){};
+	EZUI_Control_Link(const char Text[], EZUI_UI * Link): EZUI_Control(EZUI_ControlType::Link), _LinkRef(Link), _Label(Text){};
+	EZUI_Control_Link(const __FlashStringHelper * Text, EZUI_UI * Link): EZUI_Control(EZUI_ControlType::Link), _LinkRef(Link), _Label(Text), isFlash(true){};
 
 protected:
 private:

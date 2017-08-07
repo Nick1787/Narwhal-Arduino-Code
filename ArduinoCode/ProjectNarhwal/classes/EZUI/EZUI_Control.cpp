@@ -16,10 +16,10 @@ boolean EZUI_Control::hasValueText()  const {
 void EZUI_Control::Select(EZUI *UI) const {
 	/* Do nothing */
 };
-String EZUI_Control::LabelText()  { 
+const char* EZUI_Control::LabelText()  { 
 	return "LabelText!"; 
 };
-String EZUI_Control::ValueText()  { 
+const char* EZUI_Control::ValueText()  { 
 	return "ValueText!"; 
 };
 		

@@ -574,19 +574,16 @@ File File::openNextFile(uint8_t mode) {
 
     // done if past last used entry
     if (p.name[0] == DIR_NAME_FREE) {
-      //Serial.println("end");
       return File();
     }
 
     // skip deleted entry and entries for . and  ..
     if (p.name[0] == DIR_NAME_DELETED || p.name[0] == '.') {
-      //Serial.println("dots");
       continue;
     }
 
     // only list subdirectories and files
     if (!DIR_IS_FILE_OR_SUBDIR(&p)) {
-      //Serial.println("notafile");
       continue;
     }
 
@@ -594,19 +591,14 @@ File File::openNextFile(uint8_t mode) {
     SdFile f;
     char name[13];
     _file->dirName(p, name);
-    //Serial.print("try to open file ");
-    //Serial.println(name);
 
     if (f.open(_file, name, mode)) {
-      //Serial.println("OK!");
       return File(f, name);    
     } else {
-      //Serial.println("ugh");
       return File();
     }
   }
 
-  //Serial.println("nothing");
   return File();
 }
 

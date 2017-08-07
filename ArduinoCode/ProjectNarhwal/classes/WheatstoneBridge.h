@@ -23,7 +23,7 @@ class WheatstoneBridge{
 		//Voltages
 		float Vo;	//Output Voltage	
 		float Vs;	//Source Voltage
-		boolean Faulted = false;
+		boolean isFaulted = false;
 		
 		//Bridge Properties
 		float AmpGain;
@@ -84,11 +84,13 @@ class WheatstoneBridge{
 			degC = LUT_R2DEGC->lookup(Rcalc);
 			degF = degC * 9/5 + 32;
 			
-			return degC;
 			
-			if((Vo < 0.1) || (Vo>Vs)){
-				Faulted = true;
+			if((Vs < 4) ||( Vo < 0.1 ) || ( Vo>Vs )){
+				isFaulted = true;
+			}else{
+				isFaulted = false;
 			}
+			return degC;
 		};
 };
 

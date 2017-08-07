@@ -48,7 +48,6 @@ extern ListOptionItem<EnumBurnerStatus> BurnerStatus[7];
 
 /*PWMModes********************************/
 enum EnumPWMLevels{
-	//Off,
 	Low,
 	Medium,
 	High
@@ -56,8 +55,12 @@ enum EnumPWMLevels{
 extern ListOptionItem<EnumPWMLevels> PWMLevels[3];
 
 
-/*LOG********************************/
+/*Logger********************************/
 extern AdjustableParam LOG_logRateMs;
+
+/*Timer stuff********************************/
+extern AdjustableParam Timer1_Minutes;
+extern AdjustableParam Timer2_Minutes;
 
 /*RTC********************************/
 extern AdjustableParam RTC_Months;

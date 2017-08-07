@@ -1,7 +1,8 @@
 /*
- *        File: EZUI_Display.h
- *      Author: Nick Dodds <Nick1787@gmail.com>
- * Description: EZ User Interface Display Class - Menus and Pages
+ *         File: EZUI_UI.cpp
+ *       Author: Nick Dodds <Nick1787@gmail.com>
+ *  Description: EZ User Display Class 
+ * Dependencies: None
  */
 
 #ifndef __EZUI_MENU_H__
@@ -11,11 +12,12 @@
 #include <Arduino.h>
 
 //Hardware Includes
+#include <avr/pgmspace.h>
 #include <LiquidCrystal_I2C.h>
 #include "EZUI_Hardware_ClickEncoder.h"
 
 //Types
-#include "EZUI_Display.h"
+#include "EZUI_UI.h"
 #include "ListOption.h"
 #include "AdjustableParam.h"
 #include "DigitalIO.h"
@@ -30,13 +32,19 @@
 #include "EZUI_Control_ListOption.h"
 #include "EZUI_Control_ToggleOption.h"
 
+//string Buffer side
+#ifndef str_buffer_size
+#define str_buffer_size 100
+#endif
+extern char strbuffer[];
+
 //Make Types Alittle Easier
-#ifndef MenuItems
-	#define EZUI_MenuItems const PROGMEM MenuItem
+#ifndef EZUI_MenuItems
+	#define EZUI_MenuItems static const PROGMEM MenuItem
 #endif
 
-#ifndef PageItems
-	#define EZUI_PageItems const PROGMEM PageItem
+#ifndef EZUI_PageItems
+	#define EZUI_PageItems static const PROGMEM PageItem
 #endif
 
 /*-----------------------------------------------
@@ -61,9 +69,9 @@ struct PageItem
  
 
 /*-----------------------------------------------
-	EZUI_Display
+	EZUI_UI
 ------------------------------------------------*/
-class EZUI_Display{
+class EZUI_UI{
 	private:
 		
 	public:
@@ -73,8 +81,8 @@ class EZUI_Display{
 		bool refresh = true;
 		
 		//Set Items
-		enum EZUI_DisplayType{ None, Menu, Page, ListOpt, AdjOpt};
-		const PROGMEM EZUI_DisplayType Type;
+		enum EZUI_UIType{ None, Menu, Page, ListOpt, AdjOpt};
+		const PROGMEM EZUI_UIType Type;
 		
 		//Actions
 		virtual void display(EZUI *UI);			//Default display function
@@ -88,16 +96,16 @@ class EZUI_Display{
 		static void EditListOption(EZUI_Control_ListOption * ListOptRef);
 		
 		//Constructors
-		EZUI_Display() : Type(EZUI_DisplayType::None) {};
-		EZUI_Display(EZUI_DisplayType _Type) : Type(_Type) {};
-		virtual ~EZUI_Display() {};
+		EZUI_UI() : Type(EZUI_UIType::None) {};
+		EZUI_UI(EZUI_UIType _Type) : Type(_Type) {};
+		virtual ~EZUI_UI() {};
 };
 
 
 /*-----------------------------------------------
 	EZUI_Menu
 ------------------------------------------------*/
-class EZUI_Menu : public EZUI_Display{
+class EZUI_Menu : public EZUI_UI{
 	private:
 		bool itemChanged = false;
 		const MenuItem * items;
@@ -106,7 +114,7 @@ class EZUI_Menu : public EZUI_Display{
 		
 	protected:
 	public:
-		EZUI_Menu(): EZUI_Display(EZUI_DisplayType::Menu){};
+		EZUI_Menu(): EZUI_UI(EZUI_UIType::Menu){};
 		void setItems(const MenuItem _items[], unsigned int _size);
 		
 		//Actions
@@ -122,8 +130,6 @@ class EZUI_Menu : public EZUI_Display{
 		void printItem(EZUI *UI, unsigned int line, unsigned int itemIndex);
 		void selectItem(EZUI *UI, EZUI_Control_ToggleOption const * ToggleOptRef);
 		void selectItem(EZUI *UI, EZUI_Control_Link const * LinkOptRef);
-		//void printItem(int col, int row, LiquidCrystal_I2C * LCD, EZUI_Control_Link const *LinkRef);
-		//void printItem(int col, int row, LiquidCrystal_I2C * LCD, EZUI_Control_ToggleOption const *LinkRef);
 		void printPage(EZUI *UI);
 		
 };
@@ -132,9 +138,9 @@ class EZUI_Menu : public EZUI_Display{
 /*-----------------------------------------------
 	EZUI_PAGE
 ------------------------------------------------*/
-class EZUI_Page : public EZUI_Display{
+class EZUI_Page : public EZUI_UI{
 	private:
-		String *itemsText;
+		//String *itemsText;
 		
 		const PageItem *items;
 		int itemCount = 0;
@@ -142,11 +148,11 @@ class EZUI_Page : public EZUI_Display{
 		boolean itemChanged = true;
 		boolean refresh = false;
 		unsigned long lastPrint = 0;
-		unsigned long refreshRate = 500;
+		unsigned long refreshRate = 1000;
 		
 	protected:
 	public:
-		EZUI_Page(): EZUI_Display(EZUI_DisplayType::Page){};
+		EZUI_Page(): EZUI_UI(EZUI_UIType::Page){};
 		void setItems(const PageItem _items[], unsigned int _size);
 	
 		//Actions
@@ -163,10 +169,10 @@ class EZUI_Page : public EZUI_Display{
 /*-----------------------------------------------
 	EZUI_ListOptionEditor
 ------------------------------------------------*/
-class EZUI_ListOptionEditor : public EZUI_Display{
+class EZUI_ListOptionEditor : public EZUI_UI{
 	private:
 		GenericListOption *ListOptRef;
-		EZUI_Display *ParentDispRef;
+		EZUI_UI *ParentDispRef;
 		
 		bool APPLY = false;
 		unsigned int temp_index;
@@ -177,7 +183,7 @@ class EZUI_ListOptionEditor : public EZUI_Display{
 		void drawListItems( EZUI *UI);
 	protected:
 	public:
-		EZUI_ListOptionEditor(GenericListOption * Ref, EZUI_Display * ParentDisp): ListOptRef(Ref), ParentDispRef(ParentDisp), EZUI_Display(EZUI_DisplayType::ListOpt){};
+		EZUI_ListOptionEditor(GenericListOption * Ref, EZUI_UI * ParentDisp): ListOptRef(Ref), ParentDispRef(ParentDisp), EZUI_UI(EZUI_UIType::ListOpt){};
 	
 		//Actions
 		void display(EZUI *UI) override;
@@ -194,10 +200,10 @@ class EZUI_ListOptionEditor : public EZUI_Display{
 /*-----------------------------------------------
 	EZUI_AdjustParamEditor
 ------------------------------------------------*/
-class EZUI_AdjustParamEditor : public EZUI_Display{
+class EZUI_AdjustParamEditor : public EZUI_UI{
 	private:
 		AdjustableParam *AdjParamRef;
-		EZUI_Display *ParentDispRef;
+		EZUI_UI *ParentDispRef;
 		
 		bool APPLY = false;
 		float _tempValue;
@@ -209,7 +215,7 @@ class EZUI_AdjustParamEditor : public EZUI_Display{
 		
 	protected:
 	public:
-		EZUI_AdjustParamEditor(AdjustableParam * Ref, EZUI_Display * ParentDisp): AdjParamRef(Ref), ParentDispRef(ParentDisp), EZUI_Display(EZUI_DisplayType::AdjOpt){};
+		EZUI_AdjustParamEditor(AdjustableParam * Ref, EZUI_UI * ParentDisp): AdjParamRef(Ref), ParentDispRef(ParentDisp), EZUI_UI(EZUI_UIType::AdjOpt){};
 	
 		//Actions
 		void display(EZUI *UI) override;

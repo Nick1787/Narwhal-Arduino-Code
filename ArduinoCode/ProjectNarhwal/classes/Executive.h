@@ -18,7 +18,9 @@ class Executive{
   public:
 	unsigned long time = 0;
 	int frame_count;
+	bool faultDetected = false;
 	float execHz;
+	
 	void exec_frame1(void);
 	void exec_frame2(void);
 	void exec_frame3(void);

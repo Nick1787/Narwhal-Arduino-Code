@@ -18,25 +18,49 @@ class DigitalIO
 //variables
 public:
 	enum PinModes {IN, OUT, IN_PULLUP};
-	const char* TrueLabel = "true";
-	const char* FalseLabel = "false";
+	const void* _TrueLabel;
+	const void* _FalseLabel;
 	int value;
 	
 protected:
 	
 private:
+	boolean _isFlash = false;
 	const int _Pin = -1;
 	PinModes _Mode = IN;
 	
 //functions
 public:
 	//Constructors
-	DigitalIO(int Pin, PinModes Mode): _Pin(Pin), _Mode(Mode){};
-	DigitalIO(int Pin, PinModes Mode, const char* StrTrueLabel, const char* StrFalseLabel): _Pin(Pin), _Mode(Mode), TrueLabel(StrTrueLabel), FalseLabel(StrFalseLabel){};
+	DigitalIO(int Pin, PinModes Mode):  _isFlash(true), _TrueLabel(F("True")), _FalseLabel(F("False")), _Pin(Pin), _Mode(Mode){};
+	DigitalIO(int Pin, PinModes Mode, const char* StrTrueLabel, const char* StrFalseLabel): _Pin(Pin), _Mode(Mode), _isFlash(false), _TrueLabel(StrTrueLabel), _FalseLabel(StrFalseLabel){};
+	DigitalIO(int Pin, PinModes Mode, const  __FlashStringHelper* StrTrueLabel, const __FlashStringHelper* StrFalseLabel): _isFlash(true), _Pin(Pin), _Mode(Mode), _TrueLabel(StrTrueLabel), _FalseLabel(StrFalseLabel){};
 
 	//Destructor
 	~DigitalIO(){};
 
+	//Text Functions
+	const char* TrueLabel(){
+		if(_isFlash){
+			String ret = (__FlashStringHelper*)_TrueLabel;
+			char copy[64];
+			ret.toCharArray(copy, 64);
+			return (copy);
+		}else{
+			return ((const char*)_TrueLabel);
+		}
+	}
+	//Text Functions
+	const char* FalseLabel(){
+		if(_isFlash){
+			String ret = (__FlashStringHelper*)_FalseLabel;
+			char copy[64];
+			ret.toCharArray(copy, 64);
+			return (copy);
+		}else{
+			return ((const char*)_FalseLabel);
+		}
+	}
 	//Custom Functions
 	void SetMode(PinModes Mode){_Mode = Mode;};
 	PinModes GetMode(void){ return _Mode;};
@@ -54,13 +78,6 @@ public:
 		return value;
 	};
 	void Write(int newValue){
-		
-		//Serial.println("--DIGIO---");
-		//Serial.print("CVal:");
-		//Serial.println(value);
-		//Serial.print("nVal:");
-		//Serial.println(newValue);
-		//Serial.println("----------");
 		
 		if(!(_Mode == OUT)){
 			pinMode(_Pin,OUTPUT);

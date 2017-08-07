@@ -5,6 +5,7 @@
  *			- Control for interacting with a Toggle Option
  */
 
+#include "EZUI.h"
 #include "EZUI_Control_ToggleOption.h"
 
 int EZUI_Control_ToggleOption::Value(){
@@ -21,34 +22,40 @@ int EZUI_Control_ToggleOption::Value(){
 //Over-ridden base classes
 boolean EZUI_Control_ToggleOption::isSelectable() const  {return true;};
 boolean EZUI_Control_ToggleOption::hasValueText() const {return true;};
-String EZUI_Control_ToggleOption::LabelText() { 
-	if(isFlash){
-		return ((__FlashStringHelper*)_Label);
+const char* EZUI_Control_ToggleOption::LabelText() { 
+	if(isFlash){	
+		String ret = (__FlashStringHelper*)_Label;	
+		ret.toCharArray(strbuffer, str_buffer_size);
+		return (strbuffer);
 	}else{
 		return ((const char*)_Label);
 	}
 };
-String EZUI_Control_ToggleOption::ValueText() {
+const char* EZUI_Control_ToggleOption::ValueText() {
 	int val = Value();
 	switch(ToggleType){
 		case(VarDigIO):
-		DigitalIO *DIO;
-		DIO = DIORef;
-		if(val){
-			return (*DIO).TrueLabel;
+			DigitalIO *DIO;
+			DIO = DIORef;
+			if(val){
+				return (*DIO).TrueLabel();
 			}else{
-			return (*DIO).FalseLabel;
-		}
+				return (*DIO).FalseLabel();
+			}
 		case(VarBool):
 		if(val){
 			if(isFlash){
-				return (__FlashStringHelper*) BoolTrueText;
+				String ret = (__FlashStringHelper*)BoolTrueText;
+				ret.toCharArray(strbuffer, str_buffer_size);
+				return (strbuffer);
 			}else{
 				return (const char*) BoolTrueText;
 			}
 		}else{
 			if(isFlash){
-				return (__FlashStringHelper*) BoolFalseText;
+				String ret = (__FlashStringHelper*)BoolFalseText;
+				ret.toCharArray(strbuffer, str_buffer_size);
+				return (strbuffer);
 			}else{
 				return (const char*) BoolFalseText;
 			}

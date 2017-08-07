@@ -17,7 +17,7 @@ class DS323RealTimeClock{
 	private:
 		bool initComplete  = false;
 		const int i2cAddress = 0;
-
+		
 		float _RTC_second = 0;
 		float _RTC_minute = 0;
 		float _RTC_hour = 0;
@@ -160,7 +160,7 @@ class DS323RealTimeClock{
 			initComplete = true;
 			
 			if(userChanged){
-				#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>0)
+				#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>3)
 					Serial.print(F(" Setting Date Time - "));
 					Serial.print(t_str.mon);
 					Serial.print(F("/"));
@@ -186,7 +186,9 @@ class DS323RealTimeClock{
 			String mon = String((int)t_str.mon);
 			String mday = String((int)t_str.mday);
 			String hour = String((int)t_str.hour);
-			String hour12 = String((int)(t_str.hour % 12));
+			int Hr12 = (int)(t_str.hour % 12);
+			if(Hr12 ==0){ Hr12 = 12;}
+			String hour12 = String(Hr12);
 			String min = String((int)t_str.min);
 			String sec = String((int)t_str.sec);
 				
@@ -198,10 +200,12 @@ class DS323RealTimeClock{
 			if(sec.length() == 1) sec = "0"+sec;
 						
 			if( format == YYYYMMDD){
-				return  year + mon + mday;
+				return year + mon + mday;
+				
 			}else if( format == DATETIME){
-				return   mon + "/" + mday + "/" +  year + " " + hour12 + ":" + min ;
+				return mon + "/" + mday + "/" +  year + " " + hour12 + ":" + min ;
 			}
+			
 		}
 			
 };

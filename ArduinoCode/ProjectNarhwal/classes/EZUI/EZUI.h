@@ -20,7 +20,7 @@
 #include "EZUI_Hardware_ClickEncoder.h"
 
 //Types
-#include "EZUI_Display.h"
+#include "EZUI_UI.h"
 #include "ListOption.h"
 #include "AdjustableParam.h"
 #include "DigitalIO.h"
@@ -41,6 +41,8 @@ template< typename T, size_t N > size_t ArraySize (T (&) [N]){ return N; }
 	#define A(x)  x,ArraySize(x)
 #endif
 
+#ifndef PROGTEMPLATES
+#define PROGTEMPLATES
 template <typename T> void PROGMEM_readAnything (const T * sce, T& dest)
 {
 	memcpy_P (&dest, sce, sizeof (T));
@@ -52,9 +54,10 @@ template <typename T> T PROGMEM_getAnything (const T * sce)
 	memcpy_P (&temp, sce, sizeof (T));
 	return temp;
 }
+#endif
 
 //Forward Declaration
-class EZUI_Display;
+class EZUI_UI;
 class EZUI_ListOptionEditor;
 class EZUI_ClickEncoder;
 class EZUI_Control_ListOption;
@@ -65,14 +68,14 @@ class EZUI{
 		unsigned long lastDisplayMillis;
 		
 	public:	
-		EZUI_Display *CurrentDisplay = NULL;
+		EZUI_UI *CurrentDisplay = NULL;
 		
 		//User Interaction
-		LiquidCrystal_I2C *LCD;
+		LiquidCrystal_I2C *LC;
 		EZUI_ClickEncoder *Encoder;
 		
 		void attatchEncoder(EZUI_ClickEncoder* _Encoder);
-		void attatchLCD(LiquidCrystal_I2C* _LCD){LCD = _LCD;};
+		void attatchLCD(LiquidCrystal_I2C* _LCD){LC = _LCD;};
 		
 		//LCD Menu Interactions
 		void EncoderClick();
@@ -83,7 +86,7 @@ class EZUI{
 		void EncoderDecrement();
 		void display();
 		void refresh();
-		void setDisplay(EZUI_Display *Disp);
+		void setUI(EZUI_UI *Disp);
 			
 		//Functions
 		void EditListOption(GenericListOption * ListOptRef);

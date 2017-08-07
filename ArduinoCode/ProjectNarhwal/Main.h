@@ -37,6 +37,7 @@
 #include "./classes/DataLogger.h"
 #include "./classes/Hardware.h"
 #include "./classes/DS323RealTimeClock.h"
+#include "./classes/NarwhalTimer.h"
 
 //UIs
 #include "./classes/EZUI/EZUI.h"

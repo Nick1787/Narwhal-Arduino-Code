@@ -17,7 +17,7 @@
 
 //Forward Declarations
 class EZUI;
-class EZUI_Display;
+class EZUI_UI;
 
 //Button Class
 class EZUI_Control_Button : public EZUI_Control
@@ -26,7 +26,7 @@ class EZUI_Control_Button : public EZUI_Control
 public:	
 protected:
 private:
-	char * _Label;
+	const char * _Label;
 	
 //functions
 public:
@@ -34,7 +34,7 @@ public:
 	//Over-ridden base class functions
 	boolean isSelectable() const  override {return true;};
 	boolean hasValueText() const override { return false;};
-	String LabelText(void) override{ return String(this->_Label); };
+	const char* LabelText(void) override{ return this->_Label; };
 	void Select(EZUI *UI) const override {
 		
 	};
@@ -43,7 +43,7 @@ public:
 	~EZUI_Control_Button() {};	
 		
 	//void FollowButton(EZUI *UI) const;
-	EZUI_Control_Button(char Text[]): EZUI_Control(EZUI_ControlType::Button), _Label(Text){};
+	EZUI_Control_Button(const char Text[]): EZUI_Control(EZUI_ControlType::Button), _Label(Text){};
 
 protected:
 private:

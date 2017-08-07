@@ -43,7 +43,11 @@ void setup() {
 	Serial.flush();
 	
 	hardware_init();
+	
+	//Report free memory after initialization
+
 	UI_MAIN::UI_init();
+	Serial.flush();
 	UI_HLT::UI_init();
 	UI_MLT::UI_init();
 	UI_BK::UI_init();
@@ -90,8 +94,6 @@ void loop() {
 		}
 		
 		//Clear the Displays
-		Serial.println(F("======================="));
-		Serial.flush();
 		UI_MAIN::UI->refresh();
 		UI_HLT::UI->refresh();
 		UI_MLT::UI->refresh();
@@ -101,7 +103,7 @@ void loop() {
 	
 	//Run the Executive
 	Exec.run();
-	//Logger.log();
+	//Logger().log();
 }
 
 

@@ -6,7 +6,7 @@
  */ 
 
 #include "EZUI.h"
-#include "EZUI_Display.h"
+#include "EZUI_UI.h"
 
 void EZUI::attatchEncoder(EZUI_ClickEncoder* _Encoder){
 	Encoder = _Encoder;
@@ -66,9 +66,9 @@ void EZUI::display(){
 		//display nothing
 		if((millis() - lastDisplayMillis) > 3000){
 			lastDisplayMillis = millis();
-			LCD->clear();
-			LCD->println("ERROR!");
-			LCD->println("  No Page or Menu");
+			LC->clear();
+			LC->println("ERROR!");
+			LC->println("  No Page or Menu");
 		}
 	}
 };
@@ -81,19 +81,19 @@ void EZUI::refresh(){
 	}
 };
 
-void EZUI::setDisplay(EZUI_Display *Disp){
+void EZUI::setUI(EZUI_UI *Disp){
 	if(CurrentDisplay!=NULL){
 		CurrentDisplay->cleanup(this);
 	}
 	
 	//If the current display is a List Option Editor, Delete it!
-	if( CurrentDisplay->Type == EZUI_Display::EZUI_DisplayType::ListOpt){
+	if( CurrentDisplay->Type == EZUI_UI::EZUI_UIType::ListOpt){
 		EZUI_ListOptionEditor* Editor = (EZUI_ListOptionEditor*)CurrentDisplay;
 		delete Editor;
 	}
 	
 	//If the current display is a List Option Editor, Delete it!
-	else if( CurrentDisplay->Type == EZUI_Display::EZUI_DisplayType::AdjOpt){
+	else if( CurrentDisplay->Type == EZUI_UI::EZUI_UIType::AdjOpt){
 		EZUI_AdjustParamEditor* Editor = (EZUI_AdjustParamEditor*)CurrentDisplay;
 		delete Editor;
 	}
@@ -109,7 +109,7 @@ void EZUI::EditListOption(GenericListOption * ListOptRef){
 	#endif
 		
 	EZUI_ListOptionEditor * editor = new EZUI_ListOptionEditor(ListOptRef,this->CurrentDisplay);
-	this->setDisplay(editor);
+	this->setUI(editor);
 }
 
 void EZUI::EditAdjustParam(AdjustableParam * AdjRef){
@@ -118,5 +118,5 @@ void EZUI::EditAdjustParam(AdjustableParam * AdjRef){
 	#endif
 		
 	EZUI_AdjustParamEditor* editor = new EZUI_AdjustParamEditor(AdjRef,this->CurrentDisplay);
-	this->setDisplay(editor);
+	this->setUI(editor);
 }

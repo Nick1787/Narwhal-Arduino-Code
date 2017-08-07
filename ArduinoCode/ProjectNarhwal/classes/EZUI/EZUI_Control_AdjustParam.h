@@ -16,18 +16,20 @@ class EZUI_Control_AdjustParam : public EZUI_Control
 public:
 protected:
 private:
-	const char * _Label;
+	boolean isFlash;
+	const void * _Label;
 	AdjustableParam *_Ref;
 
 //functions
 public:
 	boolean isSelectable() const  override;
 	boolean hasValueText() const override;
-	String LabelText() override;
-	String ValueText() override;
+	const char* LabelText() override;
+	const char* ValueText() override;
 	void Select(EZUI *UI) const override;
 		
-	EZUI_Control_AdjustParam(char * Label, AdjustableParam *ParamRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), _Ref(ParamRef){};
+	EZUI_Control_AdjustParam(char * Label, AdjustableParam *ParamRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), _Ref(ParamRef), isFlash(false){};
+	EZUI_Control_AdjustParam(const __FlashStringHelper * Label, AdjustableParam *ParamRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), _Ref(ParamRef), isFlash(true){};
 	~EZUI_Control_AdjustParam();
 protected:
 private:

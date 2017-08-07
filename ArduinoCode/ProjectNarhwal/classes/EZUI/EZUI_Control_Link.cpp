@@ -10,7 +10,19 @@
 
 boolean EZUI_Control_Link::isSelectable() const {return true;};
 boolean EZUI_Control_Link::hasValueText() const { return false;};
-String EZUI_Control_Link::LabelText(void) { return String(this->_Label); };
+const char* EZUI_Control_Link::LabelText(void) { 
+	
+	if(isFlash){
+		String ret = (__FlashStringHelper*)_Label;
+		ret.toCharArray(strbuffer, str_buffer_size);
+		return (strbuffer);
+	}else{
+		return ((const char*)_Label);
+	}
+};
+const char* EZUI_Control_Link::ValueText(void) {
+	return "";
+};
 void EZUI_Control_Link::Select(EZUI *UI) const {
-	UI->setDisplay(_LinkRef);
+	UI->setUI(_LinkRef);
 };

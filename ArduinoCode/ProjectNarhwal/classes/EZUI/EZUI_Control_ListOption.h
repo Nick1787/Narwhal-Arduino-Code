@@ -13,7 +13,7 @@
 
 //Forward Declarations
 class EZUI;
-class EZUI_Display;
+class EZUI_UI;
 
 class EZUI_Control_ListOption : public EZUI_Control
 {
@@ -21,8 +21,9 @@ class EZUI_Control_ListOption : public EZUI_Control
 	public:
 	protected:
 	private:
-		const char* _Label;
-		GenericListOption *_Ref;
+		boolean isFlash;
+		const PROGMEM void * _Label;
+		GenericListOption PROGMEM *_Ref;
 
 	//functions
 	public:
@@ -30,14 +31,15 @@ class EZUI_Control_ListOption : public EZUI_Control
 	//Over-ridden base classes
 	boolean isSelectable() const  override;
 	boolean hasValueText() const override;
-	String LabelText() override;
-	String ValueText() override;
+	const char* LabelText() override;
+	const char* ValueText() override;
 	void Select(EZUI *UI) const override;
 	
 	~EZUI_Control_ListOption();
 	
 	//Constructors
-	EZUI_Control_ListOption(char* Label, GenericListOption *ListRef): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), _Ref(ListRef){};
+	EZUI_Control_ListOption(const char* Label, GenericListOption ListRef[]): EZUI_Control(EZUI_ControlType::ListControl), _Label(Label), isFlash(false), _Ref(ListRef){};
+	EZUI_Control_ListOption(const __FlashStringHelper * Label, GenericListOption ListRef[]): EZUI_Control(EZUI_ControlType::ListControl), isFlash(true), _Label(Label), _Ref(ListRef){};
 	
 	protected:
 	private:

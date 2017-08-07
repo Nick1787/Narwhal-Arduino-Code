@@ -15,7 +15,7 @@
 
 //Forward Declrartion
 class EZUI;
-class EZUI_Display;
+class EZUI_UI;
 
 class EZUI_Control
 {
@@ -33,8 +33,8 @@ public:
 	virtual boolean isSelectable()  const;
 	virtual boolean hasValueText()  const;
 	virtual void Select(EZUI *UI) const;
-	virtual String LabelText();
-	virtual String ValueText();
+	virtual const char* LabelText();
+	virtual const char* ValueText();
 		
 	//Default constructors / destructor
 	EZUI_Control() : Type(EZUI_ControlType::None){};

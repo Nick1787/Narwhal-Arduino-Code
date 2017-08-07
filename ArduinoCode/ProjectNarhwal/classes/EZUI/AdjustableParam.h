@@ -45,9 +45,6 @@ public:
 	};
 		
 	//Value Text - Overrides
-	String valueText()   {	return String(value); };
-	String minVaueText() {	return String( minValue  ); };
-	String maxVaueText() {	return String( maxValue  ); };
 	float pctOfMinMax()  {
 		return 100*(getValue() - minValue) / (maxValue-minValue);
 	};

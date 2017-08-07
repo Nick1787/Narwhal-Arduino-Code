@@ -13,13 +13,13 @@ class GenericListOption{
 		virtual unsigned int currentItem(){return 0;};
 		virtual unsigned int itemCount(){return -1;};
 		virtual void setItem(unsigned int indx){};
-		virtual const char* itemText(unsigned int indx){ return "--";};
+		virtual const __FlashStringHelper* itemText(unsigned int indx){ return F("--");};
 };
 
 template <typename T>
 struct ListOptionItem{
 	T Value;
-	const PROGMEM char* Text;
+	const __FlashStringHelper* Text;
 };
 
 template <typename T>
@@ -37,7 +37,9 @@ class ListOption : public GenericListOption{
 		unsigned int currentItem() override{return cindex;};
 		unsigned int itemCount() override{ return length;};
 		void setItem (unsigned int indx) override{ cindex = indx; };
-		const char* itemText (unsigned int indx) override{ return items[indx].Text;	};
+		const __FlashStringHelper* itemText (unsigned int indx) override{ 
+			return items[indx].Text;
+		};
 		
 		//Other Values
 		const ListOptionItem<T>* Items(){return this->items; };
@@ -63,7 +65,7 @@ class ListOption : public GenericListOption{
 		const char * valueText (T val){
 			for(int i=0; i<length; i++){
 				if( items[i].Value == val){
-					return items[i].Text;
+					return itemText(i);
 				}
 			}
 			return "--";

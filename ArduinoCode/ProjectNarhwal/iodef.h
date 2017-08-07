@@ -75,13 +75,22 @@
 // Main Screen
 ///////////////////////////////
 
-//LCD
+//LCD - Product
 #define MAIN_LCD_I2C_ADDR    0x27  // Define I2C Address where the PCF8574A is 0x27
 
-//Encoder
+//LCD - DevBoard
+//#define MAIN_LCD_I2C_ADDR    0x30 //27  // Define I2C Address where the PCF8574A is 0x27
+
+//Encoder - Product
 #define MAIN_ENC_A 32
 #define MAIN_ENC_B 31
 #define MAIN_ENC_SW 33
+
+//Encoder - DevBoard
+/*#define MAIN_ENC_A 29
+#define MAIN_ENC_B 28
+#define MAIN_ENC_SW 30*/
+
 #define MAIN_ENC_DEG_PER_NOTCH 4
 
 ///////////////////////////////
@@ -92,14 +101,21 @@
 #define HLT_SOLENOID_1 53			//Ctrl Digital out
 #define HLT_SOLENOID_2 52			//Ctrl Digital out
 
-//LCD
-#define HLT_LCD_I2C_ADDR    0x26  // Define I2C Address where the PCF8574A is 0x27
+//LCD - Product
+#define HLT_LCD_I2C_ADDR    0x26 
 
-//Encoder
+//LCD - DevBoard
+//#define HLT_LCD_I2C_ADDR    0x27 //26  // Define I2C Address where the PCF8574A is 0x27
 
+//Encoder - Product
 #define HLT_ENC_A 29
 #define HLT_ENC_B 28
 #define HLT_ENC_SW 30
+
+//Encoder - DevBoard
+/*#define HLT_ENC_A 32
+#define HLT_ENC_B 31
+#define HLT_ENC_SW 33*/
 
 #define HLT_ENC_DEG_PER_NOTCH 4
 
