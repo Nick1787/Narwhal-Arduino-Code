@@ -27,7 +27,9 @@ extern __FlashStringHelper *pTXT_Settings_NoColon;
 extern __FlashStringHelper *pTXT_Alarms_NoColon;
 extern __FlashStringHelper *pTXT_PilotLights_NoColon;
 extern __FlashStringHelper *pTXT_Clock_NoColon;
+extern __FlashStringHelper *pTXT_RtdProbes_NoColon;
 extern __FlashStringHelper *pTXT_TCMonitor_NoColon;
+extern __FlashStringHelper *pTXT_Pilots_NoColon;
 extern __FlashStringHelper *pTXT_PumpMonitor_NoColon;
 extern __FlashStringHelper *pTXT_BurnerModes_NoColon;
 extern __FlashStringHelper *pTXT_HLTMode_NoColon;
@@ -80,6 +82,13 @@ extern __FlashStringHelper *pTXT_Sol1;
 extern __FlashStringHelper *pTXT_Sol2;
 extern __FlashStringHelper *pTXT_BP;
 extern __FlashStringHelper *pTXT_OP;
+
+extern __FlashStringHelper *pTXT_HLTBP;
+extern __FlashStringHelper *pTXT_HLTOP;
+extern __FlashStringHelper *pTXT_MLTBP;
+extern __FlashStringHelper *pTXT_MLTOP;
+extern __FlashStringHelper *pTXT_BKBP;
+extern __FlashStringHelper *pTXT_BKOP;
 
 extern EZUI_Control_Label Shared_Lbl_Sol1;
 extern EZUI_Control_Label Shared_Lbl_Sol2;
@@ -139,6 +148,7 @@ extern __FlashStringHelper *pTXT_Reset;
 
 //Closed Loop Control
 
+extern __FlashStringHelper *pTXT_FaultInhibit_NoColon;
 extern __FlashStringHelper *pTXT_FltInhib;
 extern __FlashStringHelper *pTXT_Demand;
 extern __FlashStringHelper *pTXT_HighOffset;

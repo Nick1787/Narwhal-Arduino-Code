@@ -146,7 +146,6 @@ namespace UI_HLT{
 		/***************************************
 		 Closed Loop Settings Menu
 		***************************************/
-		EZUI_Control_ToggleOption Tgl_FltInhibit(pTXT_FltInhib, &HLT_Controller().enableFaultInhibit,pTXT_On_NoColon,pTXT_Off_NoColon);
 		EZUI_Control_AdjustParam Adj_Demand(pTXT_Demand, HLT_Controller().SetTemp);
 		EZUI_Control_AdjustParam Adj_HighOffset(pTXT_HighOffset, HLT_Controller().HighOffset);
 		EZUI_Control_AdjustParam Adj_MedOffset(pTXT_MedOffset, HLT_Controller().MediumOffset);
@@ -154,7 +153,6 @@ namespace UI_HLT{
 		EZUI_Control_AdjustParam Adj_Hysteresis(pTXT_Hystersis, HLT_Controller().Hysteresis);
 		
 		EZUI_MenuItems Menu_ClosedLoopControllersettings_Items[] = {
-			{  &Tgl_FltInhibit },
 			{  &Adj_Demand },
 			{  &Adj_HighOffset },
 			{  &Adj_MedOffset },
@@ -165,33 +163,21 @@ namespace UI_HLT{
 	
 		/***************************************
 		 PWM Monitor Items
-		***************************************/	
-		EZUI_PageItems Page_PWMMonitor_Items[] = {
-			{  0,  0, 20, &Lbl_Status},
-			{  0,  1, 10,  &Lst_FBProbe},
-			{  11,  1, 9, &LBL_Sol1},
-			{  0,  2, 9, &Lbl_FBK},
-			{  11,  2, 9, &LBL_Sol2},
-			{  0, 3, 3, &Lnk_Menu_PWMControllersettings },
-			{  11,  3, 4, &Lnk_Menu_MainBack}
-		};
-		
-		
-		/***************************************
-		 PWM Settings Menu
 		***************************************/
 		EZUI_Control_ListOption Lst_PwmMode(pTXT_PWMLevel_NoColon, &HLT_Controller().PWMLevel);
 		EZUI_Control_AdjustParam Adj_PWMPeriod(pTXT_PWMPeriod_NoColon, HLT_Controller().PWMPeriod);
 		EZUI_Control_AdjustParam Adj_PWMDuty(pTXT_PWMDuty_NoColon, HLT_Controller().PWMDutyCycle);
-		
-		EZUI_MenuItems Menu_PWMControllersettings_Items[] = {
-			{  &Lst_PwmMode },
-			{  &Adj_PWMPeriod },
-			{  &Adj_PWMDuty },
-			{  &Lnk_Page_PWMMonitorBack }
+		EZUI_PageItems Page_PWMMonitor_Items[] = {
+			{  0,  0, 20, &Lbl_Status},
+			{  0,  1, 10,  &Lst_FBProbe},
+			{  11,  1, 8, &Lst_PwmMode},
+			{  1,  2, 9, &Lbl_FBK},
+			{  11,  2, 8, &Adj_PWMPeriod},
+			{  11, 3, 8, &Adj_PWMDuty },
+			{  0,  3, 4, &Lnk_Menu_MainBack}
 		};
-	
-	
+		
+			
 		/***************************************
 		 Main Diagnostics
 		***************************************/
@@ -214,6 +200,7 @@ namespace UI_HLT{
 		/***************************************
 		 Menu - Main Menu Items
 		***************************************/
+		EZUI_Control_ToggleOption Tgl_FltInhibit(pTXT_FaultInhibit_NoColon, &HLT_Controller().enableFaultInhibit,pTXT_On_NoColon,pTXT_Off_NoColon);
 		EZUI_Control_ListOption Lst_ControlMode("Mode",&HLT_Controller().Mode);
 		EZUI_MenuItems Menu_Main_Items[] = {
 			{  &Lst_ControlMode },
@@ -221,6 +208,7 @@ namespace UI_HLT{
 			{  &Lnk_Page_ClosedLoopMonitor },
 			{  &Lnk_Page_PWMMonitor },
 			{  &Lnk_Page_Diag },
+			{  &Tgl_FltInhibit },
 		};
 
 
@@ -241,7 +229,6 @@ namespace UI_HLT{
 		Page_ClosedLoopMonitor.setItems(A(Page_ClosedLoopMonitor_Items));
 		Menu_ClosedLoopControllersettings.setItems(A(Menu_ClosedLoopControllersettings_Items));
 		Page_PWMMonitor.setItems(A(Page_PWMMonitor_Items));
-		Menu_PWMControllersettings.setItems(A(Menu_PWMControllersettings_Items));
 		Page_Diag.setItems(A(Page_Diag_Items));
 		Page_RTDs_BP.setItems(A(Page_RTDs_BP_Items));
 		Page_RTDs_OP.setItems(A(Page_RTDs_OP_Items));

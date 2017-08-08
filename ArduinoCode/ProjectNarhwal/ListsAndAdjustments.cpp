@@ -9,27 +9,27 @@
 
 /*Feedback Probes********************************/
 
-const PROGMEM char TXT_HLTBP[] = "HLTBP";
-__FlashStringHelper *pTXT_HLTBP = (__FlashStringHelper*)&TXT_HLTBP;
-const PROGMEM char TXT_HLTOP[] = "HLTOP";
-__FlashStringHelper *pTXT_HLTOP = (__FlashStringHelper*)&TXT_HLTOP;
-const PROGMEM char TXT_MLTBP[] = "MLTBP";
-__FlashStringHelper *pTXT_MLTBP = (__FlashStringHelper*)&TXT_MLTBP;
-const PROGMEM char TXT_MLTOP[] = "MLTOP";
-__FlashStringHelper *pTXT_MLTOP = (__FlashStringHelper*)&TXT_MLTOP;
-const PROGMEM char TXT_BKBP[] = "BKBP";
-__FlashStringHelper *pTXT_BKBP = (__FlashStringHelper*)&TXT_BKBP;
-const PROGMEM char TXT_BKOP[] = "BKOP";
-__FlashStringHelper *pTXT_BKOP = (__FlashStringHelper*)&TXT_BKOP;
+const PROGMEM char LST_HLTBP[] = "HLTBP";
+__FlashStringHelper *pLST_HLTBP = (__FlashStringHelper*)&LST_HLTBP;
+const PROGMEM char LST_HLTOP[] = "HLTOP";
+__FlashStringHelper *pLST_HLTOP = (__FlashStringHelper*)&LST_HLTOP;
+const PROGMEM char LST_MLTBP[] = "MLTBP";
+__FlashStringHelper *pLST_MLTBP = (__FlashStringHelper*)&LST_MLTBP;
+const PROGMEM char LST_MLTOP[] = "MLTOP";
+__FlashStringHelper *pLST_MLTOP = (__FlashStringHelper*)&LST_MLTOP;
+const PROGMEM char LST_BKBP[] = "BKBP";
+__FlashStringHelper *pLST_BKBP = (__FlashStringHelper*)&LST_BKBP;
+const PROGMEM char LST_BKOP[] = "BKOP";
+__FlashStringHelper *pLST_BKOP = (__FlashStringHelper*)&LST_BKOP;
 
 
 ListOptionItem<EnumFeedbackProbes> FeedbackProbes[6]{
-	{EnumFeedbackProbes::HLTBP,pTXT_HLTBP},
-	{EnumFeedbackProbes::HLTOP,pTXT_HLTOP},
-	{EnumFeedbackProbes::MLTBP,pTXT_MLTBP},
-	{EnumFeedbackProbes::MLTOP,pTXT_MLTOP},
-	{EnumFeedbackProbes::BKBP,pTXT_BKBP},
-	{EnumFeedbackProbes::BKOP,pTXT_BKOP},
+	{EnumFeedbackProbes::HLTBP,pLST_HLTBP},
+	{EnumFeedbackProbes::HLTOP,pLST_HLTOP},
+	{EnumFeedbackProbes::MLTBP,pLST_MLTBP},
+	{EnumFeedbackProbes::MLTOP,pLST_MLTOP},
+	{EnumFeedbackProbes::BKBP,pLST_BKBP},
+	{EnumFeedbackProbes::BKOP,pLST_BKOP},
 };
 
 /*Burner Modes********************************/
@@ -41,21 +41,12 @@ const PROGMEM char TXT_Controller[] = "Controller";
 __FlashStringHelper *pTXT_Controller = (__FlashStringHelper*)&TXT_Controller;
 const PROGMEM char TXT_PWM[] = "PWM";
 __FlashStringHelper *pTXT_PWM = (__FlashStringHelper*)&TXT_PWM;
-const PROGMEM char TXT_Profile1[] = "Profile1";
-__FlashStringHelper *pTXT_Profile1= (__FlashStringHelper*)&TXT_Profile1;
-const PROGMEM char TXT_Profile2[] = "Profile2";
-__FlashStringHelper *pTXT_Profile2 = (__FlashStringHelper*)&TXT_Profile2;
-const PROGMEM char TXT_Profile3[] = "Profile3";
-__FlashStringHelper *pTXT_Profile3 = (__FlashStringHelper*)&TXT_Profile3;
 
-ListOptionItem<EnumBurnerModes> BurnerModes[7]{
+ListOptionItem<EnumBurnerModes> BurnerModes[4]{
 	{EnumBurnerModes::Off,pTXT_Off},
 	{EnumBurnerModes::Manual,pTXT_Manual},
 	{EnumBurnerModes::Auto,pTXT_Controller},
-	{EnumBurnerModes::PWM,pTXT_PWM},
-	{EnumBurnerModes::Profile1,pTXT_Profile1},
-	{EnumBurnerModes::Profile2,pTXT_Profile2},
-	{EnumBurnerModes::Profile3,pTXT_Profile3}
+	{EnumBurnerModes::PWM,pTXT_PWM}
 };
 
 /*Burner Status********************************/
@@ -89,12 +80,13 @@ ListOptionItem<EnumBurnerStatus> BurnerStatus[7]{
 
 const PROGMEM char TXT_Low[] = "Low";
 __FlashStringHelper *pTXT_Low = (__FlashStringHelper*)&TXT_Low;
-const PROGMEM char TXT_Medium[] = "Medium";
+const PROGMEM char TXT_Medium[] = "Med";
 __FlashStringHelper *pTXT_Medium = (__FlashStringHelper*)&TXT_Medium;
 const PROGMEM char TXT_High[] = "High";
 __FlashStringHelper *pTXT_High = (__FlashStringHelper*)&TXT_High;
 
-ListOptionItem<EnumPWMLevels> PWMLevels[3]{
+ListOptionItem<EnumPWMLevels> PWMLevels[4]{
+	{EnumPWMLevels::PwmOff,pTXT_Off},
 	{EnumPWMLevels::Low,pTXT_Low},
 	{EnumPWMLevels::Medium,pTXT_Medium},
 	{EnumPWMLevels::High,pTXT_High},
@@ -122,8 +114,8 @@ AdjustableParam RTC_Seconds( 0.0, 0.0, 59.0, 1.0);
 
 //Closed Loop Control
 AdjustableParam HLT_SetTemp( 60.0, 0.0, 212.0, 1.0);
-AdjustableParam HLT_HighOffset( 4, 0, 50, 0.1);
-AdjustableParam HLT_MedOffset( 2, 0, 25, 0.1);
+AdjustableParam HLT_HighOffset( 3, 0, 50, 0.1);
+AdjustableParam HLT_MedOffset( 1.5, 0, 25, 0.1);
 AdjustableParam HLT_LowOffset(   0, 0, 10, 0.1);
 AdjustableParam HLT_Hysteresis(      0.5, 0, 10, 0.1);
 
@@ -135,8 +127,8 @@ AdjustableParam HLT_PWMDuty( 50.0, 1, 100.0, 1.0);
 
 //Closed Loop Control
 AdjustableParam MLT_SetTemp( 60.0, 0.0, 212.0, 1.0);
-AdjustableParam MLT_HighOffset( 4, 0, 50, 0.1);
-AdjustableParam MLT_MedOffset( 2, 0, 25, 0.1);
+AdjustableParam MLT_HighOffset( 3, 0, 50, 0.1);
+AdjustableParam MLT_MedOffset( 1.5, 0, 25, 0.1);
 AdjustableParam MLT_LowOffset(   0, 0, 10, 0.1); 
 AdjustableParam MLT_Hysteresis(      0.5, 0, 10, 0.1);
 
@@ -147,8 +139,8 @@ AdjustableParam MLT_PWMDuty( 50.0, 1, 100.0, 1.0);
 /* BK */
 
 AdjustableParam BK_SetTemp( 60.0, 0.0, 212.0, 1.0);
-AdjustableParam BK_HighOffset( 4, 0, 50, 0.1);
-AdjustableParam BK_MedOffset(  2, 0, 25, 0.1);
+AdjustableParam BK_HighOffset( 3, 0, 50, 0.1);
+AdjustableParam BK_MedOffset(  1.5, 0, 25, 0.1);
 AdjustableParam BK_LowOffset(   0, 0, 10, 0.1);
 AdjustableParam BK_Hysteresis(      0.5, 0, 10, 0.1);
 

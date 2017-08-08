@@ -36,7 +36,7 @@ namespace UI_BK{
 		EZUI_Control_Label Lbl_BPVal(pTXT_BP,&BK_RTD_BP.degF);
 		EZUI_Control_Label Lbl_OPVal(pTXT_OP,&BK_RTD_OP.degF);
 		EZUI_PageItems Page_Monitor_Items[] = {
-			{  0,  0, 16, &Lbl_Status},
+			{  0,  0, 20, &Lbl_Status},
 			{  0,  1, 10,  &Tgl_Sol1Val},
 			{ 10,  1, 10,  &Tgl_Sol2Val},
 			{  1,  2, 8,  &Lbl_BPVal},
@@ -132,7 +132,7 @@ namespace UI_BK{
 		EZUI_Control_Label LBL_Sol2(pTXT_Sol2,BK_Controller().GasValve_High);
 	
 		EZUI_PageItems Page_ClosedLoopMonitor_Items[] = {
-			{  0,  0, 15, &Lbl_Status},
+			{  0,  0, 20, &Lbl_Status},
 			{  0,  1, 10,  &Lst_FBProbe},
 			{  11,  1, 9, &LBL_Sol1},
 			{  0,  2, 9, &Lst_Dmd},
@@ -146,7 +146,6 @@ namespace UI_BK{
 		/***************************************
 		 Closed Loop Settings Menu
 		***************************************/
-		EZUI_Control_ToggleOption Tgl_FltInhibit(pTXT_FltInhib, &BK_Controller().enableFaultInhibit,pTXT_On_NoColon,pTXT_Off_NoColon);
 		EZUI_Control_AdjustParam Adj_Demand(pTXT_Demand, BK_Controller().SetTemp);
 		EZUI_Control_AdjustParam Adj_HighOffset(pTXT_HighOffset, BK_Controller().HighOffset);
 		EZUI_Control_AdjustParam Adj_MedOffset(pTXT_MedOffset, BK_Controller().MediumOffset);
@@ -154,7 +153,6 @@ namespace UI_BK{
 		EZUI_Control_AdjustParam Adj_Hysteresis(pTXT_Hystersis, BK_Controller().Hysteresis);
 		
 		EZUI_MenuItems Menu_ClosedLoopControllersettings_Items[] = {
-			{  &Tgl_FltInhibit },
 			{  &Adj_Demand },
 			{  &Adj_HighOffset },
 			{  &Adj_MedOffset },
@@ -165,33 +163,21 @@ namespace UI_BK{
 	
 		/***************************************
 		 PWM Monitor Items
-		***************************************/	
-		EZUI_PageItems Page_PWMMonitor_Items[] = {
-			{  0,  0, 15, &Lbl_Status},
-			{  0,  1, 10,  &Lst_FBProbe},
-			{  11,  1, 9, &LBL_Sol1},
-			{  0,  2, 9, &Lbl_FBK},
-			{  11,  2, 9, &LBL_Sol2},
-			{  0, 3, 3, &Lnk_Menu_PWMControllersettings },
-			{  11,  3, 4, &Lnk_Menu_MainBack}
-		};
-		
-		
-		/***************************************
-		 PWM Settings Menu
 		***************************************/
 		EZUI_Control_ListOption Lst_PwmMode(pTXT_PWMLevel_NoColon, &BK_Controller().PWMLevel);
 		EZUI_Control_AdjustParam Adj_PWMPeriod(pTXT_PWMPeriod_NoColon, BK_Controller().PWMPeriod);
 		EZUI_Control_AdjustParam Adj_PWMDuty(pTXT_PWMDuty_NoColon, BK_Controller().PWMDutyCycle);
-		
-		EZUI_MenuItems Menu_PWMControllersettings_Items[] = {
-			{  &Lst_PwmMode },
-			{  &Adj_PWMPeriod },
-			{  &Adj_PWMDuty },
-			{  &Lnk_Page_PWMMonitorBack }
+		EZUI_PageItems Page_PWMMonitor_Items[] = {
+			{  0,  0, 20, &Lbl_Status},
+			{  0,  1, 10,  &Lst_FBProbe},
+			{  11,  1, 8, &Lst_PwmMode},
+			{  1,  2, 9, &Lbl_FBK},
+			{  11,  2, 8, &Adj_PWMPeriod},
+			{  11, 3, 8, &Adj_PWMDuty },
+			{  0,  3, 4, &Lnk_Menu_MainBack}
 		};
-	
-	
+		
+			
 		/***************************************
 		 Main Diagnostics
 		***************************************/
@@ -201,7 +187,7 @@ namespace UI_BK{
 		EZUI_Control_Label Lbl_OPTemp(&BK_RTD_OP.degF);
 		
 		EZUI_PageItems Page_Diag_Items[] = {
-			{  0,  0, 15, &Lbl_Status},
+			{  0,  0, 20, &Lbl_Status},
 			{  2,  1, 10, &Lbl_PilotStatus},
 			{ 12,  1,  8, &Lbl_PilotVoltage},
 			{  1,  2,  3, &Lnk_Page_RTDs_BP},
@@ -214,6 +200,7 @@ namespace UI_BK{
 		/***************************************
 		 Menu - Main Menu Items
 		***************************************/
+		EZUI_Control_ToggleOption Tgl_FltInhibit(pTXT_FaultInhibit_NoColon, &BK_Controller().enableFaultInhibit,pTXT_On_NoColon,pTXT_Off_NoColon);
 		EZUI_Control_ListOption Lst_ControlMode("Mode",&BK_Controller().Mode);
 		EZUI_MenuItems Menu_Main_Items[] = {
 			{  &Lst_ControlMode },
@@ -221,6 +208,7 @@ namespace UI_BK{
 			{  &Lnk_Page_ClosedLoopMonitor },
 			{  &Lnk_Page_PWMMonitor },
 			{  &Lnk_Page_Diag },
+			{  &Tgl_FltInhibit },
 		};
 
 
@@ -241,7 +229,6 @@ namespace UI_BK{
 		Page_ClosedLoopMonitor.setItems(A(Page_ClosedLoopMonitor_Items));
 		Menu_ClosedLoopControllersettings.setItems(A(Menu_ClosedLoopControllersettings_Items));
 		Page_PWMMonitor.setItems(A(Page_PWMMonitor_Items));
-		Menu_PWMControllersettings.setItems(A(Menu_PWMControllersettings_Items));
 		Page_Diag.setItems(A(Page_Diag_Items));
 		Page_RTDs_BP.setItems(A(Page_RTDs_BP_Items));
 		Page_RTDs_OP.setItems(A(Page_RTDs_OP_Items));

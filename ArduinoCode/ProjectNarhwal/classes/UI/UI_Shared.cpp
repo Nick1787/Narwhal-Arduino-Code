@@ -10,9 +10,6 @@
 
 
 // SHARED TEXT in PROGMEM - Common Menu Link Labels
-const PROGMEM char TXT_Empty[] = "";
-__FlashStringHelper *pTXT_Empty = (__FlashStringHelper*)&TXT_Empty;
-
 
 const PROGMEM char TXT_Back_NoColon[] = "Back";
 __FlashStringHelper *pTXT_Back_NoColon = (__FlashStringHelper*)&TXT_Back_NoColon;
@@ -46,6 +43,9 @@ __FlashStringHelper *pTXT_PilotLights_NoColon= (__FlashStringHelper*)&TXT_PilotL
 
 const PROGMEM char TXT_Clock_NoColon[] = "Clock";
 __FlashStringHelper *pTXT_Clock_NoColon= (__FlashStringHelper*)&TXT_Clock_NoColon;
+
+const PROGMEM char TXT_RtdProbes_NoColon[] = "RTD Probes";
+__FlashStringHelper *pTXT_RtdProbes_NoColon= (__FlashStringHelper*)&TXT_RtdProbes_NoColon;
 
 const PROGMEM char TXT_TCMonitor_NoColon[] = "TC Monitor";
 __FlashStringHelper *pTXT_TCMonitor_NoColon= (__FlashStringHelper*)&TXT_TCMonitor_NoColon;
@@ -205,6 +205,21 @@ EZUI_Control_Label Shared_Lbl_Sol2(pTXT_Sol2);
 
 //Commmon Display Labels
 
+const PROGMEM char TXT_HLTBP[] = "HLTBP:";
+__FlashStringHelper *pTXT_HLTBP = (__FlashStringHelper*)&TXT_HLTBP;
+const PROGMEM char TXT_HLTOP[] = "HLTOP:";
+__FlashStringHelper *pTXT_HLTOP = (__FlashStringHelper*)&TXT_HLTOP;
+
+const PROGMEM char TXT_MLTBP[] = "MLTBP:";
+__FlashStringHelper *pTXT_MLTBP = (__FlashStringHelper*)&TXT_MLTBP;
+const PROGMEM char TXT_MLTOP[] = "MLTOP:";
+__FlashStringHelper *pTXT_MLTOP = (__FlashStringHelper*)&TXT_MLTOP;
+
+const PROGMEM char TXT_BKBP[] = "BKBP:";
+__FlashStringHelper *pTXT_BKBP = (__FlashStringHelper*)&TXT_BKBP;
+const PROGMEM char TXT_BKOP[] = "BKOP:";
+__FlashStringHelper *pTXT_BKOP = (__FlashStringHelper*)&TXT_BKOP;
+
 const PROGMEM char TXT_BP[] = "BP:";
 __FlashStringHelper *pTXT_BP = (__FlashStringHelper*)&TXT_BP;
 
@@ -279,6 +294,8 @@ EZUI_Control_Label Shared_Lbl_FBK(pTXT_FBK);
 
 //Closed Loop Control
 
+const PROGMEM char TXT_FaultInhibit_NoColon[] = "Fault Inhibit";
+__FlashStringHelper *pTXT_FaultInhibit_NoColon = (__FlashStringHelper*)&TXT_FaultInhibit_NoColon;
 const PROGMEM char TXT_FltInhib[] = "FltInhib:";
 __FlashStringHelper *pTXT_FltInhib = (__FlashStringHelper*)&TXT_FltInhib;
 const PROGMEM char TXT_Demand[] = "Demand:";
@@ -295,13 +312,13 @@ __FlashStringHelper *pTXT_Hystersis = (__FlashStringHelper*)&TXT_Hystersis;
 
 //PWM Control
 
-const PROGMEM char TXT_PWMLevel_NoColon[] = "PWM Level";
+const PROGMEM char TXT_PWMLevel_NoColon[] = "Lvl:";
 __FlashStringHelper *pTXT_PWMLevel_NoColon = (__FlashStringHelper*)&TXT_PWMLevel_NoColon;
 
-const PROGMEM char TXT_PWMPeriod_NoColon[] = "PWM Period";
+const PROGMEM char TXT_PWMPeriod_NoColon[] = "Prd:";
 __FlashStringHelper *pTXT_PWMPeriod_NoColon = (__FlashStringHelper*)&TXT_PWMPeriod_NoColon;
 
-const PROGMEM char TXT_PWMDuty_NoColon[] = "PWM Duty";
+const PROGMEM char TXT_PWMDuty_NoColon[] = "Dty:";
 __FlashStringHelper *pTXT_PWMDuty_NoColon = (__FlashStringHelper*)&TXT_PWMDuty_NoColon;
 
 

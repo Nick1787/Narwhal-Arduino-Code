@@ -31,6 +31,12 @@ namespace UI_MAIN{
 	EZUI_Control_Link Lnk_MainPage(pTXT_Monitor_NoColon,&Page_Main);
 	
 	/***************************************
+	  Page - RTDProbes
+	***************************************/
+	EZUI_Page Page_RTDProbeTemps;
+	EZUI_Control_Link Lnk_Page_RTDProbeTemps(pTXT_RtdProbes_NoColon, &Page_RTDProbeTemps);
+	
+	/***************************************
 	  Page - Data Logger
 	***************************************/
 	EZUI_Page Page_Logger;
@@ -83,6 +89,26 @@ namespace UI_MAIN{
 		{ 11,  2, 6, &Adj_Secs},
 		{ 11,  3, 4, &Lnk_BackMainMenu},
 	};
+	
+	/***************************************
+	  Page - RTD Probes
+	***************************************/
+	/*EZUI_Control_Label Lbl_HLTBP(pTXT_HLTBP, &HLT_RTD_BP.degF);
+	EZUI_Control_Label Lbl_HLTOP(pTXT_HLTOP, &HLT_RTD_OP.degF);
+	EZUI_Control_Label Lbl_MLTBP(pTXT_MLTBP, &MLT_RTD_BP.degF);
+	EZUI_Control_Label Lbl_MLTOP(pTXT_MLTOP, &MLT_RTD_OP.degF);
+	EZUI_Control_Label Lbl_BKBP(pTXT_BKBP, &BK_RTD_BP.degF);
+	EZUI_Control_Label Lbl_BKOP(pTXT_BKOP, &BK_RTD_BP.degF);
+	EZUI_PageItems Page_RTDProbeTemps_Items[] = {
+		{ 0,  0, 9, &Lbl_HLTBP},
+		{ 10,  0, 9, &Lbl_HLTOP},
+		{ 0,  1, 9, &Lbl_MLTBP},
+		{ 10,  1, 9, &Lbl_MLTOP},
+		{ 0,  2, 9, &Lbl_BKBP},
+		{ 10,  2, 9, &Lbl_BKOP},
+		{  0, 3, 4, &Lnk_BackMainMenu}
+	};*/
+
 	
 	/***************************************
 	  Page - ThermoCouples Monitor
@@ -190,6 +216,7 @@ namespace UI_MAIN{
 		{  &Lnk_MainPage },
 		{  &Lnk_MenuAlarmMonitor},
 		{  &Lnk_RealTimeClock},
+		//{  &Lnk_Page_RTDProbeTemps},
 		{  &Lnk_PageTCMonitor},
 	};
 
@@ -205,6 +232,7 @@ namespace UI_MAIN{
 		Menu_Main.setItems(A(Menu_MainMenu_Items));
 		Menu_AlarmMonitor.setItems(A(Menu_AlarmText_Items));
 		Page_RealTimeClock.setItems(A(Page_RealTimeClock_Items));
+		//Page_RTDProbeTemps.setItems(A(Page_RTDProbeTemps_Items));
 		Page_Logger.setItems(A(Page_Logger_Items));
 		Page_TCMonitor.setItems(A(Page_TCMonitor_Items));
 		Page_Main.setItems(A(Page_Main_Items));

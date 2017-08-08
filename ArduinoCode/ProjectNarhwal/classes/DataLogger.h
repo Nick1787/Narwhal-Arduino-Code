@@ -48,7 +48,7 @@ enum LogItemType{
 
 struct LogItem{
 	LogItemType Type;
-	char * Name;
+	const char * Name;
 	void* ItemRef;
 };
 
@@ -88,7 +88,8 @@ class DataLogger{
 					for( int i=0; i<itemCount; i++){
 						LogItem Item;
 						PROGMEM_readAnything (&this->items[i], Item);
-						outFile.print(Item.Name);
+						String ItemName = (__FlashStringHelper*)Item.Name;
+						outFile.print(ItemName);
 						outFile.print(",");
 					}
 					outFile.println(" ");

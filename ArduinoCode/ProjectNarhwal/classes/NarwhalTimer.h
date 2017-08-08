@@ -23,6 +23,7 @@ class NarwhalTimer{
 	bool isPaused = true;
 	bool expired = false;
 	bool reset = false;
+	bool alarmon = false;
 	int elapsedSecs;
 	int remainingSecs;
 	String totalTimeMMSS = "";
@@ -51,6 +52,16 @@ class NarwhalTimer{
 		if(!isPaused){
 			ellapsedMillis = ellapsedMillis + deltaMillis;
 			elapsedSecs = ellapsedMillis/1000;
+			
+			if(expired){
+				if((int)elapsedSecs % 2){
+					alarmon = true;
+				}else{
+					alarmon = false;
+				}
+			}
+		}else{
+			alarmon = false;
 		}
 		
 		unsigned int totalSecs = (unsigned int)(TotalTime->getValue() * 60);
@@ -58,6 +69,8 @@ class NarwhalTimer{
 		
 		if(remainingSecs <=0){
 			expired = true;
+		}else{
+			expired = false;
 		}
 		totalTimeMMSS = _totalTimeMMSS();
 		remainingMMSS = _remainingTimeMMSS();

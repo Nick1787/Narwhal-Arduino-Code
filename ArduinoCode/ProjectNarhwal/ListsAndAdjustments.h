@@ -28,11 +28,8 @@ enum EnumBurnerModes{
 	Manual,
 	Auto,
 	PWM,
-	Profile1,
-	Profile2,
-	Profile3
 };
-extern ListOptionItem<EnumBurnerModes> BurnerModes[7];
+extern ListOptionItem<EnumBurnerModes> BurnerModes[4];
 
 /*Burner Status********************************/
 enum EnumBurnerStatus{
@@ -48,11 +45,12 @@ extern ListOptionItem<EnumBurnerStatus> BurnerStatus[7];
 
 /*PWMModes********************************/
 enum EnumPWMLevels{
+	PwmOff,
 	Low,
 	Medium,
-	High
+	High,
 };
-extern ListOptionItem<EnumPWMLevels> PWMLevels[3];
+extern ListOptionItem<EnumPWMLevels> PWMLevels[4];
 
 
 /*Logger********************************/

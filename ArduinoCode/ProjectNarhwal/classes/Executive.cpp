@@ -165,12 +165,14 @@ void Executive::exec_frame3(){
 }
 
 void Executive::exec_frame4(){
+	Logger().log();
 	
-	//Serial.println(F("Frame4"));
-	//Serial.flush();
 	//Update Free Memory Calculations
 	freeSramBytes=freeMemory();
 	freeSramPct=100.0*(float)(freeSramBytes/8000);
+	
+	//If Timers Expired then sound Timers
+	RC2_OUT5.Write(!(NarwhalTimer1().alarmon || NarwhalTimer2().alarmon));
 	
 	//Alarm when Faulted
 	if( HLT_Controller().isFaulted || MLT_Controller().isFaulted || BK_Controller().isFaulted  ){

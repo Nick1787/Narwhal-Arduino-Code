@@ -34,7 +34,7 @@
 
 //string Buffer side
 #ifndef str_buffer_size
-#define str_buffer_size 100
+#define str_buffer_size 40
 #endif
 extern char strbuffer[];
 

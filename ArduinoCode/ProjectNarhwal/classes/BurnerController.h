@@ -33,7 +33,7 @@ class BurnerController
 {
 //variables
 private:
-	int PWMOnTime;
+	unsigned long PWMOnTime = -1;
 	
 public:	
 	//Error Limits
@@ -80,11 +80,12 @@ public:
 	//Constructor
 	BurnerController(bool *PilotLit, WheatstoneBridge *BP, WheatstoneBridge *OP, DigitalIO *Sol1, DigitalIO *Sol2, AdjustableParam * SetT, AdjustableParam * HOffset, AdjustableParam * MOffset, AdjustableParam * LOffset, AdjustableParam *Hys, AdjustableParam * PwmP, AdjustableParam *PwmD): 
 		PilotLitRef(PilotLit), TProbe1(BP), TProbe2(OP), GasValve_Low(Sol1), GasValve_High(Sol2),
-		Mode(A(BurnerModes)), Status(A(BurnerStatus)), FeedbackProbe(A(FeedbackProbes)), 
+		Mode(A(BurnerModes)), Status(A(BurnerStatus)), PWMLevel(A(PWMLevels)), FeedbackProbe(A(FeedbackProbes)), 
 		SetTemp(SetT), HighOffset(HOffset), MediumOffset(MOffset), LowOffset(LOffset), Hysteresis(Hys) ,
-		PWMLevel(A(PWMLevels)), PWMPeriod(PwmP), PWMDutyCycle(PwmD)
+		PWMPeriod(PwmP), PWMDutyCycle(PwmD)
 	{
 		Mode.setValue(EnumBurnerModes::Off);
+		PWMLevel.setValue(EnumPWMLevels::PwmOff);
 	} 
 	
 	//Destructor

@@ -48,6 +48,7 @@ void BurnerController::Exec(){
 	if( FB->isFaulted == true){
 		Status.setValue(EnumBurnerStatus::FeedbackFault);
 		ControlError=-99;
+		PWMOnTime = -1;
 		if( Mode.currentValue() == EnumBurnerModes::Auto){
 			isFaulted = true;
 		}
@@ -67,12 +68,14 @@ void BurnerController::Exec(){
 		//Disable the output solenoids (High == Off)
 		GasValve_Low->Write(1);
 		GasValve_High->Write(1);
+		PWMOnTime = -1;
 	}else{
 		if(*PilotLitRef == false){
 			Status.setValue(EnumBurnerStatus::PilotFault);
 			if( (Mode.currentValue() == EnumBurnerModes::Auto) || (Mode.currentValue() == EnumBurnerModes::PWM)){
 				if( !enableFaultInhibit){
 					isFaulted = true;
+					PWMOnTime = -1;
 				}
 			}
 		}
@@ -96,10 +99,16 @@ void BurnerController::Exec(){
 
 void BurnerController::runPWM(){
 	//See how far into a period we are
-	float millisecondsIntoPeriod = ( PWMOnTime % (int)(1000*PWMPeriod->getValue()) );
-	float pctIntoPeriod = 100*( (float)millisecondsIntoPeriod / PWMPeriod->getValue() );
+	unsigned long millisecondsIntoPeriod = ((millis() -  PWMOnTime) % ((unsigned long)(1000*PWMPeriod->getValue())) );
+	unsigned long periodMS = (PWMDutyCycle->getValue()*0.01*1000*PWMPeriod->getValue());
 	
-	if(pctIntoPeriod <= PWMDutyCycle->getValue()){
+	/*Serial.print(F("millIntoPeriod:"));
+	Serial.println(millisecondsIntoPeriod);
+	Serial.print(F("PeriodMS:"));
+	Serial.println(periodMS);
+	Serial.flush(); */
+	
+	if((millisecondsIntoPeriod <= periodMS) && !isFaulted){
 		//The PWM is On, so just set the level now
 		if(PWMLevel.currentValue() == EnumPWMLevels::Low){
 			GasValve_Low->Write(0);
@@ -114,6 +123,9 @@ void BurnerController::runPWM(){
 			GasValve_Low->Write(1);
 			GasValve_High->Write(1);
 		}
+	}else{
+		GasValve_Low->Write(1);
+		GasValve_High->Write(1);
 	}
 	
 }
