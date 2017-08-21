@@ -93,7 +93,7 @@ namespace UI_MAIN{
 	/***************************************
 	  Page - RTD Probes
 	***************************************/
-	/*EZUI_Control_Label Lbl_HLTBP(pTXT_HLTBP, &HLT_RTD_BP.degF);
+	EZUI_Control_Label Lbl_HLTBP(pTXT_HLTBP, &HLT_RTD_BP.degF);
 	EZUI_Control_Label Lbl_HLTOP(pTXT_HLTOP, &HLT_RTD_OP.degF);
 	EZUI_Control_Label Lbl_MLTBP(pTXT_MLTBP, &MLT_RTD_BP.degF);
 	EZUI_Control_Label Lbl_MLTOP(pTXT_MLTOP, &MLT_RTD_OP.degF);
@@ -107,7 +107,7 @@ namespace UI_MAIN{
 		{ 0,  2, 9, &Lbl_BKBP},
 		{ 10,  2, 9, &Lbl_BKOP},
 		{  0, 3, 4, &Lnk_BackMainMenu}
-	};*/
+	};
 
 	
 	/***************************************
@@ -216,7 +216,7 @@ namespace UI_MAIN{
 		{  &Lnk_MainPage },
 		{  &Lnk_MenuAlarmMonitor},
 		{  &Lnk_RealTimeClock},
-		//{  &Lnk_Page_RTDProbeTemps},
+		{  &Lnk_Page_RTDProbeTemps},
 		{  &Lnk_PageTCMonitor},
 	};
 
@@ -232,7 +232,7 @@ namespace UI_MAIN{
 		Menu_Main.setItems(A(Menu_MainMenu_Items));
 		Menu_AlarmMonitor.setItems(A(Menu_AlarmText_Items));
 		Page_RealTimeClock.setItems(A(Page_RealTimeClock_Items));
-		//Page_RTDProbeTemps.setItems(A(Page_RTDProbeTemps_Items));
+		Page_RTDProbeTemps.setItems(A(Page_RTDProbeTemps_Items));
 		Page_Logger.setItems(A(Page_Logger_Items));
 		Page_TCMonitor.setItems(A(Page_TCMonitor_Items));
 		Page_Main.setItems(A(Page_Main_Items));

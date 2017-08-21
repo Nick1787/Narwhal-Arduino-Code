@@ -8,7 +8,7 @@
 #include "EZUI.h"
 #include "EZUI_Control_ToggleOption.h"
 
-int EZUI_Control_ToggleOption::Value(){
+bool EZUI_Control_ToggleOption::Value(){
 	switch(ToggleType){
 		case(VarDigIO):
 			DigitalIO *DIO;

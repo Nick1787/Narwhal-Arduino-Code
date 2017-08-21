@@ -31,6 +31,8 @@ template <typename T> T PROGMEM_getAnything (const T * sce)
 }
 #endif
 
+#define str_buffer_size 50
+
 enum LogItemType{
 	byte_ptr,
 	short_ptr,
@@ -59,11 +61,11 @@ class DataLogger{
 		File outFile;
 		DS323RealTimeClock * RTC;
 		boolean prevRunState = false;
-		unsigned int logStartTimeMillis = 0;
-		unsigned int lastRecordMillis = 0;
+		unsigned long logStartTimeMillis = 0;
+		unsigned long lastRecordMillis = 0;
 		float logTime = 0;
 		const LogItem *items;
-		unsigned int itemCount = 0;
+		uint16_t itemCount = 0;
 		boolean initialized = false;
 		
 	public:
@@ -86,8 +88,7 @@ class DataLogger{
 			
 					//Write each parameter Name as a header
 					for( int i=0; i<itemCount; i++){
-						LogItem Item;
-						PROGMEM_readAnything (&this->items[i], Item);
+						LogItem Item = PROGMEM_getAnything (&this->items[i]);
 						String ItemName = (__FlashStringHelper*)Item.Name;
 						outFile.print(ItemName);
 						outFile.print(",");
@@ -146,9 +147,10 @@ class DataLogger{
 			if(initialized && outFile){
 				//Write each parameter
 				for( int i=0; i<itemCount; i++){
-					LogItem Item;
-					PROGMEM_readAnything (&this->items[i], Item);
-					outFile.print(GetLogItemValueString(&Item));
+					LogItem Item = PROGMEM_getAnything (&this->items[i]);
+					char outBuff[20];
+					GetLogItemValueString(&Item,outBuff,20);
+					outFile.print(outBuff);
 					outFile.print(",");
 				}
 				outFile.println(" ");
@@ -229,7 +231,7 @@ class DataLogger{
 		}
 		
 		
-	const char* GetLogItemValueString(const LogItem *Item){
+	void GetLogItemValueString(const LogItem *Item, char * outString, uint8_t outStringsize){
 		String StrValue;
 		if( Item->Type == LogItemType::byte_ptr ){
 				StrValue = String( *(byte*)Item->ItemRef );
@@ -257,9 +259,8 @@ class DataLogger{
 			}
 	
 			//Convert to c string and return
-			char copy[str_buffer_size];
-			StrValue.toCharArray(copy, str_buffer_size);
-			return (copy);
+			//char copy[str_buffer_size];
+			StrValue.toCharArray(outString, outStringsize);
 		}
 	};
 

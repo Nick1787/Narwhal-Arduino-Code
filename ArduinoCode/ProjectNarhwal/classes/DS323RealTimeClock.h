@@ -16,15 +16,15 @@
 class DS323RealTimeClock{
 	private:
 		bool initComplete  = false;
-		const int i2cAddress = 0;
+		uint8_t i2cAddress = 0;
 		
-		float _RTC_second = 0;
-		float _RTC_minute = 0;
-		float _RTC_hour = 0;
-		float _RTC_weekday = 0;
-		float _RTC_day = 0;
-		float _RTC_month = 0;
-		float _RTC_year = 0;
+		uint8_t _RTC_second = 0;
+		uint8_t _RTC_minute = 0;
+		uint8_t _RTC_hour = 0;
+		uint8_t _RTC_weekday = 0;
+		uint8_t _RTC_day = 0;
+		uint8_t _RTC_month = 0;
+		uint8_t _RTC_year = 0;
 	public:
 		AdjustableParam *Second;
 		AdjustableParam *Minute;
@@ -56,104 +56,104 @@ class DS323RealTimeClock{
 			
 			//-Seconds
 			if(!initComplete){
-				_RTC_second = (float)t_str.sec;
+				_RTC_second = t_str.sec;
 				Second->set(_RTC_second);
 			}else{
-				if(Second->getValue() != _RTC_second){
+				if((uint8_t)Second->getValue() != _RTC_second){
 					//User changed value, use the users value
-					_RTC_second = Second->getValue();
+					_RTC_second = (uint8_t)Second->getValue();
 					userChanged = true;
-					t_str.sec = (uint8_t)_RTC_second;
+					t_str.sec = _RTC_second;
 				}else{
 					//Value changed on own, use the RTC value
-					_RTC_second = (float)t_str.sec;
+					_RTC_second = t_str.sec;
 					Second->set(_RTC_second);
 				}
 			}
 					
 			//-Minutes
 			if(!initComplete){
-				_RTC_minute = (float)t_str.min;
+				_RTC_minute = t_str.min;
 				Minute->set(_RTC_minute);
 			}else{
-				if(Minute->getValue() != _RTC_minute){
+				if((uint8_t)Minute->getValue() != _RTC_minute){
 				//User changed value, use the users value
-					_RTC_minute = Minute->getValue();
+					_RTC_minute = (uint8_t)Minute->getValue();
 					userChanged = true;
-					t_str.min = (uint8_t)_RTC_minute;
+					t_str.min = _RTC_minute;
 				}else{
 					//Value changed on own, use the RTC value
-					_RTC_minute = (float)t_str.min;
-					Minute->set(_RTC_minute);
+					_RTC_minute = t_str.min;
+					Minute->set((float)_RTC_minute);
 				}
 			}
 			
 			//-Hour
 			if(!initComplete){
-				_RTC_hour = (float)t_str.hour;
+				_RTC_hour = t_str.hour;
 				Hour->set(_RTC_hour);
 			}else{
-				if (Hour->getValue() != _RTC_hour){
+				if ((uint8_t)Hour->getValue() != _RTC_hour){
 					//User changed value, use the users value
-					_RTC_hour = Hour->getValue();
+					_RTC_hour = (uint8_t)Hour->getValue();
 					userChanged = true;
-					t_str.hour = (uint8_t)_RTC_hour;
+					t_str.hour = _RTC_hour;
 				}else{
 					//Value changed on own, use the RTC value
-					_RTC_hour = (float)t_str.hour;
-					Hour->set(_RTC_hour);
+					_RTC_hour = t_str.hour;
+					Hour->set((float)_RTC_hour);
 				}
 			}
 			
 			//-Day
 			if(!initComplete){
-				_RTC_day = (float)t_str.mday;
+				_RTC_day = t_str.mday;
 				Day->set(_RTC_day);
 			}else{
-				if(Day->getValue() != _RTC_day){
+				if((uint8_t)Day->getValue() != _RTC_day){
 					//User changed value, use the users value
-					_RTC_day = Day->getValue();
+					_RTC_day = (uint8_t)Day->getValue();
 					userChanged = true;
-					t_str.mday = (uint8_t)_RTC_day;
+					t_str.mday = _RTC_day;
 				}else{
 					//Value changed on own, use the RTC value
-					_RTC_day = (float)t_str.mday;
-					Day->set(_RTC_day);
+					_RTC_day = t_str.mday;
+					Day->set((float)_RTC_day);
 				}
 			}
 			
 			//-Month
 			if(!initComplete){
-				_RTC_month = (float)t_str.mon;
+				_RTC_month = t_str.mon;
 				Month->set(_RTC_month);
 			}else{
-				if(Month->getValue() != _RTC_month){
+				if((uint8_t)Month->getValue() != _RTC_month){
 					//User changed value, use the users value
-					_RTC_month = Month->getValue();
+					_RTC_month = (uint8_t)Month->getValue();
 					userChanged = true;
-					t_str.mon = (uint8_t)_RTC_month;
+					t_str.mon = _RTC_month;
 				}else{
 					//Value changed on own, use the RTC value
-					_RTC_month = (float)t_str.mon;
-					Month->set(_RTC_month);
+					_RTC_month = t_str.mon;
+					Month->set((float)_RTC_month);
 				}
 			}
 			
 			//-Year
 			if(!initComplete){
-				_RTC_year = (float)t_str.year;
-				Year->set(_RTC_year);
+				_RTC_year = t_str.year;
+				Year->set((float)_RTC_year);
 			}else{
-				if(Year->getValue() != _RTC_year){								
+				if((uint8_t)Year->getValue() != _RTC_year){								
 					//User changed value, use the users value
-					_RTC_year = Year->getValue();
+					_RTC_year = (uint8_t)Year->getValue();
 					userChanged = true;
-					t_str.year = (uint8_t)_RTC_year;
+					t_str.year = _RTC_year;
 
 				}else{
 					//Value changed on own, use the RTC value
-					_RTC_year = (float)t_str.year;
-					Year->set(_RTC_year);
+					_RTC_year = t_str.year;
+					Year->set((float)_RTC_year);
 				}
 			}
 			
@@ -182,15 +182,15 @@ class DS323RealTimeClock{
 		String getDateStamp(DateStampFormat format){
 			ts t_str;
 			DS3231_get(&t_str);
-			String year = String((int)t_str.year);
-			String mon = String((int)t_str.mon);
-			String mday = String((int)t_str.mday);
-			String hour = String((int)t_str.hour);
-			int Hr12 = (int)(t_str.hour % 12);
+			String year = String(t_str.year);
+			String mon = String(t_str.mon);
+			String mday = String(t_str.mday);
+			String hour = String(t_str.hour);
+			int Hr12 = (t_str.hour % 12);
 			if(Hr12 ==0){ Hr12 = 12;}
 			String hour12 = String(Hr12);
-			String min = String((int)t_str.min);
-			String sec = String((int)t_str.sec);
+			String min = String(t_str.min);
+			String sec = String(t_str.sec);
 				
 			if(mon.length() == 1) mon = "0"+mon;
 			if(mday.length() == 1) mday = "0"+mday;

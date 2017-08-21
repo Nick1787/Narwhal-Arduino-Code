@@ -21,7 +21,7 @@ public:
 protected:
 private:
 	EZUI_UI * _LinkRef;
-	const PROGMEM void * _Label;
+	const void * _Label;
 
 //functions
 public:

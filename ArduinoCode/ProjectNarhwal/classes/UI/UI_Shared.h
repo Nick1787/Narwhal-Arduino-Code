@@ -15,7 +15,6 @@
 class EZUI_Control_Label;
 
 //Shared Text
-extern __FlashStringHelper *pTXT_Empty;
 extern __FlashStringHelper *pTXT_Back_NoColon;
 extern __FlashStringHelper *pTXT_Diagnostics_NoColon;
 extern __FlashStringHelper *pTXT_Monitor_NoColon;
@@ -114,20 +113,6 @@ extern __FlashStringHelper *pTXT_PRBE;
 extern __FlashStringHelper *pTXT_PRB;
 extern __FlashStringHelper *pTXT_DMD;
 extern __FlashStringHelper *pTXT_FBK;
-
-extern EZUI_Control_Label Shared_Lbl_Sts;
-extern EZUI_Control_Label Shared_Lbl_PL;
-extern EZUI_Control_Label Shared_Lbl_V;
-extern EZUI_Control_Label Shared_Lbl_Vo;
-extern EZUI_Control_Label Shared_Lbl_Vs;
-extern EZUI_Control_Label Shared_Lbl_R;
-extern EZUI_Control_Label Shared_Lbl_dC;
-extern EZUI_Control_Label Shared_Lbl_dF;
-
-extern EZUI_Control_Label Shared_Lbl_CTRL;
-extern EZUI_Control_Label Shared_Lbl_PRBE;
-extern EZUI_Control_Label Shared_Lbl_DMD;
-extern EZUI_Control_Label Shared_Lbl_FBK;
 
 
 //Main Monitor

@@ -33,46 +33,7 @@ void serviceEncoders(){
 *	Functions
 **************************/
 
-const PROGMEM char TXT_freememory[] = "freeMemory";
-const PROGMEM char TXT_execHz[] = "execHz";
-const PROGMEM LogItem ItemsToLog[]{
-	{ LogItemType::int_ptr, TXT_freememory , &freeSramBytes },
-	{ LogItemType::int_ptr, TXT_execHz , &Exec.execHz },
-	
-	// --HLT Signals--
-	/*{ LogItemType::int_ptr , "HLT.Enabled" , &HLT_Controller().ControlEnabled },
-	{ LogItemType::float_ptr , "HLT.SetTemp" , &HLT_Controller().SetTemp->value },
-	{ LogItemType::float_ptr , "HLT.FeedbackTemp" , &HLT_Controller().FeedbackTemp },
-	{ LogItemType::float_ptr , "HLT.Hysteresis" , &HLT_Controller().Hysteresis->value },
-	{ LogItemType::float_ptr , "HLT.HighOffset" , &HLT_Controller().HighOffset->value },
-	{ LogItemType::float_ptr , "HLT.MediumOffset" , &HLT_Controller().MediumOffset->value },
-	{ LogItemType::float_ptr , "HLT.LowOffset" , &HLT_Controller().LowOffset->value },
-	{ LogItemType::bool_ptr , "HLT.GasValve_Low" , &HLT_Controller().GasValve_Low->value },
-	{ LogItemType::bool_ptr , "HLT.GasValve_High" , &HLT_Controller().GasValve_High->value },
-	
-	// --MLT Signals--
-	/*{ LogItemType::int_ptr , "MLT.Enabled" , &MLT_Controller().ControlEnabled },
-	{ LogItemType::int_ptr , "MLT.SetTemp" , &MLT_Controller().SetTemp->value },
-	{ LogItemType::int_ptr , "MLT.FeedbackTemp" , &MLT_Controller().FeedbackTemp },
-	{ LogItemType::int_ptr , "MLT.Hysteresis" , &MLT_Controller().Hysteresis->value },
-	{ LogItemType::int_ptr , "MLT.HighOffset" , &MLT_Controller().HighOffset->value },
-	{ LogItemType::int_ptr , "MLT.MediumOffset" , &MLT_Controller().MediumOffset->value },
-	{ LogItemType::int_ptr , "MLT.LowOffset" , &MLT_Controller().LowOffset->value },
-	{ LogItemType::int_ptr , "MLT.GasValve_Low" , &MLT_Controller().GasValve_Low->value },
-	{ LogItemType::int_ptr , "MLT.GasValve_High" , &MLT_Controller().GasValve_High->value },
-	
-	// --BK Signals--
-	{ LogItemType::int_ptr , "BK.Enabled" , &BK_Controller().ControlEnabled },
-	{ LogItemType::int_ptr , "BK.SetTemp" , &BK_Controller().SetTemp->value },
-	{ LogItemType::int_ptr , "BK.FeedbackTemp" , &BK_Controller().FeedbackTemp },
-	{ LogItemType::int_ptr , "BK.Hysteresis" , &BK_Controller().Hysteresis->value },
-	{ LogItemType::int_ptr , "BK.HighOffset" , &BK_Controller().HighOffset->value },
-	{ LogItemType::int_ptr , "BK.MediumOffset" , &BK_Controller().MediumOffset->value },
-	{ LogItemType::int_ptr , "BK.LowOffset" , &BK_Controller().LowOffset->value },
-	{ LogItemType::int_ptr , "BK.GasValve_Low" , &BK_Controller().GasValve_Low->value },
-	{ LogItemType::int_ptr , "BK.GasValve_High" , &BK_Controller().GasValve_High->value }*/
-};
-	
+
 void hardware_init(){
 		
 		
@@ -289,11 +250,11 @@ bool Pump2_On = false;
 /**************************
 *	Wheatstone Bridge
 **************************/
-const float WB_R2C_X[36] = {80.31, 84.27, 88.22, 92.16, 96.09, 100, 103.9, 107.79, 111.67, 115.54, 119.4, 123.24, 127.08, 130.9, 134.71, 138.51, 142.29, 146.07, 149.83, 153.58, 157.33, 161.05, 164.77, 168.48, 172.17, 175.86, 179.53, 183.19, 186.84, 190.47, 194.1, 197.71, 201.31, 204.9, 208.48, 212.05};
-const float WB_R2C_Z[36] = {-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300};
-//const float WB_R2C_X[36] = {80.31, 84.27, 208.48, 212.05};
-//const float WB_R2C_Z[36] = {-50, -40, 290, 300};
-LUT1D<36> RTDLUT(WB_R2C_X, WB_R2C_Z);
+//const float WB_R2C_X[36] = {80.31, 84.27, 88.22, 92.16, 96.09, 100, 103.9, 107.79, 111.67, 115.54, 119.4, 123.24, 127.08, 130.9, 134.71, 138.51, 142.29, 146.07, 149.83, 153.58, 157.33, 161.05, 164.77, 168.48, 172.17, 175.86, 179.53, 183.19, 186.84, 190.47, 194.1, 197.71, 201.31, 204.9, 208.48, 212.05};
+//const float WB_R2C_Z[36] = {-50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300};
+const float WB_R2C_X[4] = {80.31, 84.27, 208.48, 212.05};
+const float WB_R2C_Z[4] = {-50, -40, 290, 300};
+LUT1D<4> RTDLUT(WB_R2C_X, WB_R2C_Z);
 LUT * LUTREF = &RTDLUT;
 
 /**************************

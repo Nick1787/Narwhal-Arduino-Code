@@ -75,8 +75,8 @@ class EZUI_UI{
 	private:
 		
 	public:
-		int currentItem = -1;
-		unsigned int itemCount = 0;
+		uint8_t currentItem = 0;
+		uint8_t itemCount = 0;
 		void * items;
 		bool refresh = true;
 		

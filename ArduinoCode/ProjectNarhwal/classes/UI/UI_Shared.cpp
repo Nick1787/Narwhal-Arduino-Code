@@ -50,38 +50,7 @@ __FlashStringHelper *pTXT_RtdProbes_NoColon= (__FlashStringHelper*)&TXT_RtdProbe
 const PROGMEM char TXT_TCMonitor_NoColon[] = "TC Monitor";
 __FlashStringHelper *pTXT_TCMonitor_NoColon= (__FlashStringHelper*)&TXT_TCMonitor_NoColon;
 
-const PROGMEM char TXT_PumpMonitor_NoColon[] = "Pump Monitor";
-__FlashStringHelper *pTXT_PumpMonitor_NoColon= (__FlashStringHelper*)&TXT_PumpMonitor_NoColon;
 
-const PROGMEM char TXT_BurnerModes_NoColon[] = "Burner Modes";
-__FlashStringHelper *pTXT_BurnerModes_NoColon= (__FlashStringHelper*)&TXT_BurnerModes_NoColon;
-
-const PROGMEM char TXT_HLTMode_NoColon[] = "HLT Mode";
-__FlashStringHelper *pTXT_HLTMode_NoColon= (__FlashStringHelper*)&TXT_HLTMode_NoColon;
-
-const PROGMEM char TXT_HLTSol1_NoColon[] = "HLT Sol1";
-__FlashStringHelper *pTXT_HLTSol1_NoColon= (__FlashStringHelper*)&TXT_HLTSol1_NoColon;
-
-const PROGMEM char TXT_HLTSol2_NoColon[] = "HLT Sol2";
-__FlashStringHelper *pTXT_HLTSol2_NoColon= (__FlashStringHelper*)&TXT_HLTSol2_NoColon;
-
-const PROGMEM char TXT_MLTMode_NoColon[] = "MLT Mode";
-__FlashStringHelper *pTXT_MLTMode_NoColon= (__FlashStringHelper*)&TXT_MLTMode_NoColon;
-
-const PROGMEM char TXT_MLTSol1_NoColon[] = "HLT Sol1";
-__FlashStringHelper *pTXT_MLTSol1_NoColon= (__FlashStringHelper*)&TXT_MLTSol1_NoColon;
-
-const PROGMEM char TXT_MLTSol2_NoColon[] = "HLT Sol2";
-__FlashStringHelper *pTXT_MLTSol2_NoColon= (__FlashStringHelper*)&TXT_MLTSol2_NoColon;
-
-const PROGMEM char TXT_BKMode_NoColon[] = "BK Mode";
-__FlashStringHelper *pTXT_BKMode_NoColon= (__FlashStringHelper*)&TXT_BKMode_NoColon;
-
-const PROGMEM char TXT_BKSol1_NoColon[] = "HLT Sol1";
-__FlashStringHelper *pTXT_BKSol1_NoColon= (__FlashStringHelper*)&TXT_BKSol1_NoColon;
-
-const PROGMEM char TXT_BKSol2_NoColon[] = "HLT Sol2";
-__FlashStringHelper *pTXT_BKSol2_NoColon= (__FlashStringHelper*)&TXT_BKSol2_NoColon;
 
 //Main Monitor
 const PROGMEM char TXT_Log[] = "Log:";
@@ -199,9 +168,6 @@ __FlashStringHelper *pTXT_Sol1 = (__FlashStringHelper*)&TXT_Sol1;
 const PROGMEM char TXT_Sol2[] = "Sol#2:";
 __FlashStringHelper *pTXT_Sol2 = (__FlashStringHelper*)&TXT_Sol2;
 
-EZUI_Control_Label Shared_Lbl_Sol1(pTXT_Sol1);
-EZUI_Control_Label Shared_Lbl_Sol2(pTXT_Sol2);
-
 
 //Commmon Display Labels
 
@@ -226,9 +192,6 @@ __FlashStringHelper *pTXT_BP = (__FlashStringHelper*)&TXT_BP;
 const PROGMEM char TXT_OP[] = "OP:";
 __FlashStringHelper *pTXT_OP = (__FlashStringHelper*)&TXT_OP;
 
-const PROGMEM char TXT_PL[] = "PL:";
-__FlashStringHelper *pTXT_PL = (__FlashStringHelper*)&TXT_PL;
-
 const PROGMEM char TXT_V[] = "V:";
 __FlashStringHelper *pTXT_V = (__FlashStringHelper*)&TXT_V;
 
@@ -244,39 +207,17 @@ __FlashStringHelper *pTXT_R = (__FlashStringHelper*)&TXT_R;
 const PROGMEM char TXT_Rcalc[] = "Rcalc:";
 __FlashStringHelper *pTXT_Rcalc = (__FlashStringHelper*)&TXT_Rcalc;
 
-const PROGMEM char TXT_dC[] = "dC:";
-__FlashStringHelper *pTXT_dC = (__FlashStringHelper*)&TXT_dC;
-
-const PROGMEM char TXT_dF[] = "dF:";
-__FlashStringHelper *pTXT_dF = (__FlashStringHelper*)&TXT_dF;
-
 const PROGMEM char TXT_degC[] = "degC:";
 __FlashStringHelper *pTXT_degC = (__FlashStringHelper*)&TXT_degC;
 
 const PROGMEM char TXT_degF[] = "degF:";
 __FlashStringHelper *pTXT_degF = (__FlashStringHelper*)&TXT_degF;
 
-EZUI_Control_Label Shared_Lbl_BP(pTXT_BP);
-EZUI_Control_Label Shared_Lbl_OP(pTXT_OP);
-EZUI_Control_Label Shared_Lbl_PL(pTXT_PL);
-EZUI_Control_Label Shared_Lbl_V(pTXT_V);
-EZUI_Control_Label Shared_Lbl_Vo(pTXT_Vo);
-EZUI_Control_Label Shared_Lbl_Vs(pTXT_Vs);
-EZUI_Control_Label Shared_Lbl_R(pTXT_R);
-EZUI_Control_Label Shared_Lbl_dC(pTXT_dC);
-EZUI_Control_Label Shared_Lbl_d(pTXT_dF);
-
 
 //Commmon Display Labels
 
-const PROGMEM char TXT_Mode_NoColon[] = "Mode";
-__FlashStringHelper *pTXT_Mode_NoColon = (__FlashStringHelper*)&TXT_Mode_NoColon;
-
 const PROGMEM char TXT_CTRL[] = "CTRL:";
 __FlashStringHelper *pTXT_CTRL = (__FlashStringHelper*)&TXT_CTRL;
-
-const PROGMEM char TXT_PRBE[] = "PRBE:";
-__FlashStringHelper *pTXT_PRBE = (__FlashStringHelper*)&TXT_PRBE;
 
 const PROGMEM char TXT_PRB[] = "PRB:";
 __FlashStringHelper *pTXT_PRB = (__FlashStringHelper*)&TXT_PRB;
@@ -287,17 +228,10 @@ __FlashStringHelper *pTXT_DMD = (__FlashStringHelper*)&TXT_DMD;
 const PROGMEM char TXT_FBK[] = "FBK:";
 __FlashStringHelper *pTXT_FBK = (__FlashStringHelper*)&TXT_FBK;
 
-EZUI_Control_Label Shared_Lbl_CTRL(pTXT_CTRL);
-EZUI_Control_Label Shared_Lbl_PRBE(pTXT_PRBE);
-EZUI_Control_Label Shared_Lbl_DMD(pTXT_DMD);
-EZUI_Control_Label Shared_Lbl_FBK(pTXT_FBK);
-
 //Closed Loop Control
 
 const PROGMEM char TXT_FaultInhibit_NoColon[] = "Fault Inhibit";
 __FlashStringHelper *pTXT_FaultInhibit_NoColon = (__FlashStringHelper*)&TXT_FaultInhibit_NoColon;
-const PROGMEM char TXT_FltInhib[] = "FltInhib:";
-__FlashStringHelper *pTXT_FltInhib = (__FlashStringHelper*)&TXT_FltInhib;
 const PROGMEM char TXT_Demand[] = "Demand:";
 __FlashStringHelper *pTXT_Demand = (__FlashStringHelper*)&TXT_Demand;
 const PROGMEM char TXT_HighOffset[] = "HighOffset:";

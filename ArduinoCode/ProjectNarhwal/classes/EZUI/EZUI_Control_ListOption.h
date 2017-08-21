@@ -23,7 +23,7 @@ class EZUI_Control_ListOption : public EZUI_Control
 	private:
 		boolean isFlash;
 		const PROGMEM void * _Label;
-		GenericListOption PROGMEM *_Ref;
+		GenericListOption *_Ref;
 
 	//functions
 	public:

@@ -656,6 +656,12 @@
     <Compile Include="ListsAndAdjustments.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="LoggedItems.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LoggedItems.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Main.cpp">
       <SubType>compile</SubType>
     </Compile>

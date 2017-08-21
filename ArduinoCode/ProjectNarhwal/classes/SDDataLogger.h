@@ -13,7 +13,7 @@
 class SDDataLogger{
 	private:
 		LogItem *items;
-		unsigned int itemCount = 0;
+		uint16_t itemCount = 0;
 
 	//functions
 	public:

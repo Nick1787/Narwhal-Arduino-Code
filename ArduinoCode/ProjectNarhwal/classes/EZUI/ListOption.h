@@ -10,8 +10,8 @@
 #include<Arduino.h>
 class GenericListOption{
 	public:
-		virtual unsigned int currentItem(){return 0;};
-		virtual unsigned int itemCount(){return -1;};
+		virtual uint8_t currentItem(){return 0;};
+		virtual uint8_t itemCount(){return -1;};
 		virtual void setItem(unsigned int indx){};
 		virtual const __FlashStringHelper* itemText(unsigned int indx){ return F("--");};
 };
@@ -26,16 +26,16 @@ template <typename T>
 class ListOption : public GenericListOption{
 	private:
 		ListOptionItem<T> *items;
-		unsigned int length;
-		unsigned int cindex;
+		uint8_t length;
+		uint8_t cindex;
 		
 	public:
 		//constructor
 		ListOption<T>(ListOptionItem<T> * _items, unsigned int _size): length(_size), items(_items){};
 		
 		//Override Methods
-		unsigned int currentItem() override{return cindex;};
-		unsigned int itemCount() override{ return length;};
+		uint8_t currentItem() override{return cindex;};
+		uint8_t itemCount() override{ return length;};
 		void setItem (unsigned int indx) override{ cindex = indx; };
 		const __FlashStringHelper* itemText (unsigned int indx) override{ 
 			return items[indx].Text;

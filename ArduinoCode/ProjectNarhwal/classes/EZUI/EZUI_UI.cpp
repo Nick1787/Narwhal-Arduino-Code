@@ -22,8 +22,7 @@ void EZUI_Page::setItems(const PageItem _items[], unsigned int _size){
 	currentItem = -1;
 	for(int i=0; i<_size;i++){
 		//PageItem Item = this->items[i];
-		PageItem Item;
-		PROGMEM_readAnything (&this->items[i], Item);
+		PageItem Item = PROGMEM_getAnything (&this->items[i]);
 		if(Item.Control->isSelectable()){
 			currentItem = i;
 			break;
@@ -47,9 +46,8 @@ void EZUI_Page::display(EZUI *UI){
 						//Serial.print(i);
 						//Serial.flush();
 						
-			//PageItem Item = this->items[i];			
-			PageItem Item;
-			PROGMEM_readAnything (&this->items[i], Item);
+			//PageItem Item = this->items[i];
+			PageItem Item = PROGMEM_getAnything (&this->items[i]);
 			
 			String LabelText = Item.Control->LabelText();
 			String newText = Item.Control->ValueText();
@@ -108,8 +106,7 @@ void EZUI_Page::display(EZUI *UI){
 		
 		for(int i=0;i<itemCount;i++){
 			//PageItem Item = this->items[i];
-			PageItem Item;
-			PROGMEM_readAnything (&this->items[i], Item);
+			PageItem Item = PROGMEM_getAnything (&this->items[i]);
 			
 			if( Item.Control->isSelectable()){
 				if(i==currentItem){
@@ -138,8 +135,7 @@ void EZUI_Page::prevItem(EZUI *UI){
 	//See if theres a previously selectable item, if so set current item to that.
 	for(int i=(currentItem-1);i>=0;i--){
 		//PageItem Item = this->items[i];
-		PageItem Item;
-		PROGMEM_readAnything (&this->items[i], Item);
+		PageItem Item = PROGMEM_getAnything (&this->items[i]);
 		if( Item.Control->isSelectable()){
 			currentItem = i;
 			break;
@@ -152,8 +148,7 @@ void EZUI_Page::nextItem(EZUI *UI){
 	//See if theres a previously selectable item, if so set current item to that.
 	for(int i=(currentItem+1);i<itemCount;i++){
 		//PageItem Item = this->items[i];
-		PageItem Item;
-		PROGMEM_readAnything (&this->items[i], Item);
+		PageItem Item = PROGMEM_getAnything (&this->items[i]);
 		if( Item.Control->isSelectable()){
 			currentItem = i;
 			itemChanged = true;
@@ -167,8 +162,7 @@ void EZUI_Page::selectItem(EZUI *UI){
 	//See if theres a previously selectable item, if so set current item to that.
 	if(currentItem > -1){
 		//PageItem Item = this->items[currentItem];
-		PageItem Item;
-		PROGMEM_readAnything (&this->items[currentItem], Item);
+		PageItem Item = PROGMEM_getAnything (&this->items[currentItem]);
 		Item.Control->Select(UI);
 	}
 	itemChanged = true;
@@ -294,7 +288,7 @@ void EZUI_Menu::selectItem(EZUI *UI){
 
 void EZUI_Menu::printPage(EZUI *UI){
 	LiquidCrystal_I2C *LC = UI->LC;
-	UI->LC->clear();
+	//UI->LC->clear();
 	
 	#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>2)
 		Serial.print(F("  Menu-currentItem:"));

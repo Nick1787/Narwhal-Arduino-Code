@@ -20,13 +20,13 @@ public:
 	enum PinModes {IN, OUT, IN_PULLUP};
 	const void* _TrueLabel;
 	const void* _FalseLabel;
-	int value;
+	bool value;
 	
 protected:
 	
 private:
 	boolean _isFlash = false;
-	const int _Pin = -1;
+	const int8_t _Pin = -1;
 	PinModes _Mode = IN;
 	
 //functions

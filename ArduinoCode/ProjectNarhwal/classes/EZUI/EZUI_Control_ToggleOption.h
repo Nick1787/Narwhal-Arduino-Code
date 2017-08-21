@@ -54,7 +54,7 @@ public:
 	EZUI_Control_ToggleOption(bool * val, __FlashStringHelper* TrueLabel, __FlashStringHelper* FalseLabel):	isFlash(true), EZUI_Control(EZUI_ControlType::ToggleControl), _Label(F("")), ToggleType(VarBool),  BlnRef(val), BoolTrueText((void*)TrueLabel), BoolFalseText((void*)FalseLabel){};
 	
 	//Get the Value
-	int Value();
+	bool Value();
 	
 protected:
 private:

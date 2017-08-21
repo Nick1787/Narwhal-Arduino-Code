@@ -13,6 +13,7 @@
 #include "iodef.h"
 #include "config.h"
 #include "ListsAndAdjustments.h"
+#include "LoggedItems.h"
 
 //Executive
 #include "./classes/Executive.h"

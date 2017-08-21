@@ -24,8 +24,6 @@ class NarwhalTimer;
 extern Executive Exec;
 
 //Datalogger
-#define LoggerSize 50
-#define LoggerRateMs 1000
 extern DataLogger& Logger();
 
 //Timers
