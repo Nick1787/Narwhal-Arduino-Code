@@ -13,6 +13,12 @@
 
 #include "../Main.h"
 extern String CurrentDateTime;
+extern bool HLT_LowOn;
+extern bool HLT_HighOn;
+extern bool MLT_LowOn;
+extern bool MLT_HighOn;
+extern bool BK_LowOn;
+extern bool BK_HighOn;
 
 class Executive{
   public:

@@ -149,7 +149,8 @@ extern __FlashStringHelper *pTXT_PWMDuty_NoColon;
 
 //Logger
 extern __FlashStringHelper *pTXT_File;
-extern __FlashStringHelper *pTXT_Rate;
+extern __FlashStringHelper *pTXT_Period;
+extern __FlashStringHelper *pTXT_sec_NoColon;
 extern __FlashStringHelper *pTXT_Status;
 
 #endif //__UI_SHARED_H__

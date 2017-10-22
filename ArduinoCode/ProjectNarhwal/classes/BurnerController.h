@@ -64,7 +64,7 @@ public:
 	DigitalIO *GasValve_High;
 	
 	//Options
-	boolean ControlEnabled = false;
+	int ControlMode = 0;
 	ListOption<EnumBurnerModes> Mode;
 	ListOption<EnumBurnerStatus> Status;
 	ListOption<EnumFeedbackProbes> FeedbackProbe;
@@ -72,7 +72,7 @@ public:
 protected:
 private:
 	bool *PilotLitRef = NULL;
-	void runAuto();
+	void runClosedLoop();
 	void runPWM();
 	
 //functions

@@ -11,6 +11,12 @@
 #include "Executive.h"
 
 unsigned long lastms = 0;
+bool HLT_LowOn = false;
+bool HLT_HighOn = false;
+bool MLT_LowOn = false;
+bool MLT_HighOn = false	;
+bool BK_LowOn = false;
+bool BK_HighOn = false;
 
 void Executive::run(){
 	frame_count++;
@@ -129,6 +135,14 @@ void Executive::exec_frame2(){
 	HLT_Controller().Exec();
 	MLT_Controller().Exec();
 	BK_Controller().Exec();
+	
+	//Update whether variables are on/off
+	HLT_LowOn = !(HLT_Controller().GasValve_Low->value);
+	HLT_HighOn = !(HLT_Controller().GasValve_High->value);
+	MLT_LowOn = !(MLT_Controller().GasValve_Low->value);
+	MLT_HighOn = !(MLT_Controller().GasValve_High->value);
+	BK_LowOn = !(BK_Controller().GasValve_Low->value);
+	BK_HighOn = !(BK_Controller().GasValve_High->value);
 }
 
 void Executive::exec_frame3(){
@@ -148,7 +162,9 @@ void Executive::exec_frame4(){
 	freeSramPct=100.0*(float)(freeSramBytes/8000);
 	
 	//If Timers Expired then sound Timers
-	RC2_OUT5.Write(!(NarwhalTimer1().alarmon || NarwhalTimer2().alarmon));
+	if( !NarwhalTimer1().isPaused || !NarwhalTimer2().isPaused ){
+		RC2_OUT5.Write(!(NarwhalTimer1().alarmon || NarwhalTimer2().alarmon));
+	}
 	
 	//Alarm when Faulted
 	if( HLT_Controller().isFaulted || MLT_Controller().isFaulted || BK_Controller().isFaulted  ){

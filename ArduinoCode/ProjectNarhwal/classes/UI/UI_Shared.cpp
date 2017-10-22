@@ -262,8 +262,11 @@ __FlashStringHelper *pTXT_PWMDuty_NoColon = (__FlashStringHelper*)&TXT_PWMDuty_N
 const PROGMEM char TXT_File[] = "File:";
 __FlashStringHelper *pTXT_File = (__FlashStringHelper*)&TXT_File;
 
-const PROGMEM char TXT_Rate[] = "Rate:";
-__FlashStringHelper *pTXT_Rate = (__FlashStringHelper*)&TXT_Rate;
+const PROGMEM char TXT_Period[] = "Period:";
+__FlashStringHelper *pTXT_Period = (__FlashStringHelper*)&TXT_Period;
+
+const PROGMEM char TXT_sec_NoColon[] = "sec";
+__FlashStringHelper *pTXT_sec_NoColon = (__FlashStringHelper*)&TXT_sec_NoColon;
 
 const PROGMEM char TXT_Status[] = "Status:";
 __FlashStringHelper *pTXT_Status = (__FlashStringHelper*)&TXT_Status;

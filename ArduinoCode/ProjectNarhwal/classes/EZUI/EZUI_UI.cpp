@@ -51,13 +51,7 @@ void EZUI_Page::display(EZUI *UI){
 			
 			String LabelText = Item.Control->LabelText();
 			String newText = Item.Control->ValueText();
-			
-			//Serial.print(" Label:");
-			//Serial.print(LabelText);
-			//Serial.print(" Value:");
-			//Serial.println(newText);
-			//Serial.flush();
-			
+						
 			//Truncate the string if needed
 			if((LabelText.length() + newText.length()) > Item.fieldWidth){
 				newText = newText.substring(0,Item.fieldWidth - LabelText.length());

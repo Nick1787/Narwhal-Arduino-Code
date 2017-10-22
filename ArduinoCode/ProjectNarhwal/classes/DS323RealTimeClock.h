@@ -24,7 +24,7 @@ class DS323RealTimeClock{
 		uint8_t _RTC_weekday = 0;
 		uint8_t _RTC_day = 0;
 		uint8_t _RTC_month = 0;
-		uint8_t _RTC_year = 0;
+		uint16_t _RTC_year = 0;
 	public:
 		AdjustableParam *Second;
 		AdjustableParam *Minute;
@@ -143,9 +143,9 @@ class DS323RealTimeClock{
 				_RTC_year = t_str.year;
 				Year->set((float)_RTC_year);
 			}else{
-				if((uint8_t)Year->getValue() != _RTC_year){								
+				if((uint16_t)Year->getValue() != _RTC_year){								
 					//User changed value, use the users value
-					_RTC_year = (uint8_t)Year->getValue();
+					_RTC_year = (uint16_t)Year->getValue();
 					userChanged = true;
 					t_str.year = _RTC_year;
 
@@ -159,7 +159,7 @@ class DS323RealTimeClock{
 			initComplete = true;
 			
 			if(userChanged){
-				#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>3)
+				//#if defined(SERIAL_VERBOSE) && (SERIAL_VERBOSE>3)
 					Serial.print(F(" Setting Date Time - "));
 					Serial.print(t_str.mon);
 					Serial.print(F("/"));
@@ -172,7 +172,7 @@ class DS323RealTimeClock{
 					Serial.print(t_str.min);
 					Serial.print(F(":"));
 					Serial.println(t_str.sec);
-				#endif
+				//#endif
 				DS3231_set(t_str);
 			}
 		}
@@ -204,11 +204,11 @@ class DS323RealTimeClock{
 			}else if( format == YYMMDD){
 				return year2digit + mon + mday;
 			}else if( format == HHMM){
-				return hour12 + min;
+				return hour + min;
 			}else if( format == HHMMSS){
-				return hour12 + min + sec;
+				return hour + min + sec;
 			}else if( format == DATETIME){
-				return mon + "/" + mday + "/" +  year + " " + hour12 + ":" + min ;
+				return mon + "/" + mday + "/" +  year + " " + hour + ":" + min ;
 			}
 			
 		}

@@ -11,7 +11,7 @@
 #ifndef LOGGEDITEMS_H_
 #define LOGGEDITEMS_H_
 
-extern const LogItem ItemsToLog[18];
+extern LogItem ItemsToLog[34];
 
 
 

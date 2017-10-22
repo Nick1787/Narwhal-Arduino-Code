@@ -45,7 +45,7 @@ __FlashStringHelper *pTXT_PWM = (__FlashStringHelper*)&TXT_PWM;
 ListOptionItem<EnumBurnerModes> BurnerModes[4]{
 	{EnumBurnerModes::Off,pTXT_Off},
 	{EnumBurnerModes::Manual,pTXT_Manual},
-	{EnumBurnerModes::Auto,pTXT_Controller},
+	{EnumBurnerModes::ClosedLoop,pTXT_Controller},
 	{EnumBurnerModes::PWM,pTXT_PWM}
 };
 

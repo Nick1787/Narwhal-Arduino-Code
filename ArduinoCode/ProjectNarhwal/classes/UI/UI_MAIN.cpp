@@ -98,7 +98,7 @@ namespace UI_MAIN{
 	EZUI_Control_Label Lbl_MLTBP(pTXT_MLTBP, &MLT_RTD_BP.degF);
 	EZUI_Control_Label Lbl_MLTOP(pTXT_MLTOP, &MLT_RTD_OP.degF);
 	EZUI_Control_Label Lbl_BKBP(pTXT_BKBP, &BK_RTD_BP.degF);
-	EZUI_Control_Label Lbl_BKOP(pTXT_BKOP, &BK_RTD_BP.degF);
+	EZUI_Control_Label Lbl_BKOP(pTXT_BKOP, &BK_RTD_OP.degF);
 	EZUI_PageItems Page_RTDProbeTemps_Items[] = {
 		{ 0,  0, 9, &Lbl_HLTBP},
 		{ 10,  0, 9, &Lbl_HLTOP},
@@ -199,11 +199,13 @@ namespace UI_MAIN{
 	  Page - Data Logger
 	***************************************/
 	EZUI_Control_Label Lbl_File(pTXT_File,&(Logger().outFileName));
-	EZUI_Control_AdjustParam   Adj_LogRate(pTXT_Rate, Logger().logRate);
+	EZUI_Control_AdjustParam   Adj_LogRate(pTXT_Period, Logger().logRate);
+	EZUI_Control_Label  lbl_LogRateUnits(pTXT_sec_NoColon);
 	EZUI_Control_ToggleOption  Tgl_Status(pTXT_Status, &Logger().isRunning, pTXT_Running_NoColon, pTXT_Stopped_NoColon);
 	EZUI_PageItems Page_Logger_Items[] = {
-		{ 0,  0, 5, &Lbl_File},
-		{ 0,  1, 5, &Adj_LogRate},
+		{ 0,  0, 20, &Lbl_File},
+		{ 0,  1, 12, &Adj_LogRate},
+		{ 14, 1, 2, &lbl_LogRateUnits},
 		{ 0,  2, 6, &Tgl_Status},
 		{ 0,  3, 4, &Lnk_BackMainPage},
 	};

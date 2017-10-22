@@ -26,7 +26,7 @@ extern ListOptionItem<EnumFeedbackProbes> FeedbackProbes[6];
 enum EnumBurnerModes{
 	Off,
 	Manual,
-	Auto,
+	ClosedLoop,
 	PWM,
 };
 extern ListOptionItem<EnumBurnerModes> BurnerModes[4];

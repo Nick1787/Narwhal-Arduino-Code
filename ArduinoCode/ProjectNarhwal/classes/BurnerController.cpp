@@ -49,7 +49,7 @@ void BurnerController::Exec(){
 		Status.setValue(EnumBurnerStatus::FeedbackFault);
 		ControlError=-99;
 		PWMOnTime = -1;
-		if( Mode.currentValue() == EnumBurnerModes::Auto){
+		if( Mode.currentValue() == EnumBurnerModes::ClosedLoop){
 			isFaulted = true;
 		}
 	}else{
@@ -72,7 +72,7 @@ void BurnerController::Exec(){
 	}else{
 		if(*PilotLitRef == false){
 			Status.setValue(EnumBurnerStatus::PilotFault);
-			if( (Mode.currentValue() == EnumBurnerModes::Auto) || (Mode.currentValue() == EnumBurnerModes::PWM)){
+			if( (Mode.currentValue() == EnumBurnerModes::ClosedLoop) || (Mode.currentValue() == EnumBurnerModes::PWM)){
 				if( !enableFaultInhibit){
 					isFaulted = true;
 					PWMOnTime = -1;
@@ -83,12 +83,22 @@ void BurnerController::Exec(){
 	
 	
 	//Auto Control Mode
-	if(Mode.currentValue() == EnumBurnerModes::Auto){
-		runAuto();
+	if(Mode.currentValue() == EnumBurnerModes::Off){
+		ControlMode = 0;
+		PWMOnTime = -1;
+	}
+	else if(Mode.currentValue() == EnumBurnerModes::Manual){
+		ControlMode = 1;
+		PWMOnTime = -1;
+	}
+	else if(Mode.currentValue() == EnumBurnerModes::ClosedLoop){
+		ControlMode = 2;
+		runClosedLoop();
 		
 		//Set PWMOnTime to -1 to reset the PWM Timer
 		PWMOnTime = -1;
 	}else if(Mode.currentValue() == EnumBurnerModes::PWM){
+		ControlMode = 3;
 		//Keep Track if starting a new session
 		if( PWMOnTime < 0){
 			PWMOnTime = millis();
@@ -130,7 +140,7 @@ void BurnerController::runPWM(){
 	
 }
 
-void BurnerController::runAuto(){
+void BurnerController::runClosedLoop(){
 	if(isFaulted && !enableFaultInhibit){
 		GasValve_Low->Write(1); //Off
 		GasValve_High->Write(1); //Off

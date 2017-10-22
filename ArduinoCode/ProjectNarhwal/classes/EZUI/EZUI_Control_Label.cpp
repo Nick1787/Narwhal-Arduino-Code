@@ -109,8 +109,8 @@ const char* EZUI_Control_Label::ValueText(){
 			Str = *(String*)(this->_ItemRef);
 			String * Ref = (String*)(this->_ItemRef);
 
-Ref->toCharArray(strbuffer, str_buffer_size);
-return (strbuffer);
+			Ref->toCharArray(strbuffer, str_buffer_size);
+			return (strbuffer);
 			break;
 		}
 }

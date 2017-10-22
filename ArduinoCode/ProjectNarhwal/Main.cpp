@@ -19,7 +19,7 @@ bool firstpass = true;
 void setup() {
 	
 	//Setup Analog for External
-	analogReference(EXTERNAL);
+	//analogReference(EXTERNAL);
 	
 	//Setup the Hardware
 	Serial.begin(115200);      // open the serial port at 115200 bps:
