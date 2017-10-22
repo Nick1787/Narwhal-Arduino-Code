@@ -104,8 +104,8 @@ namespace UI_MAIN{
 		{ 10,  0, 9, &Lbl_HLTOP},
 		{ 0,  1, 9, &Lbl_MLTBP},
 		{ 10,  1, 9, &Lbl_MLTOP},
-		{ 0,  2, 9, &Lbl_BKBP},
-		{ 10,  2, 9, &Lbl_BKOP},
+		{ 1,  2, 8, &Lbl_BKBP},
+		{ 11,  2, 8, &Lbl_BKOP},
 		{  0, 3, 4, &Lnk_BackMainMenu}
 	};
 
@@ -153,10 +153,10 @@ namespace UI_MAIN{
 			{ 2,  0, 16, &Lbl_DateTime},
 			{ 0,  1, 5, &Lnk_DataLogger},
 			{ 5,  1, 7, &Lbl_LogStatus},
-			{ 0,  2, 10, &Lnk_T1},
-			{ 4,  2, 10, &Lbl_T1},
-			{ 10, 2, 10, &Lnk_T2},
-			{ 14,  2, 10, &Lbl_T2},
+			{ 0,  2, 4, &Lnk_T1},
+			{ 4,  2, 6, &Lbl_T1},
+			{ 10, 2, 4, &Lnk_T2},
+			{ 14,  2, 6, &Lbl_T2},
 			{ 0, 3, 7, &Lnk_SettingsMainMenu}
 	};
 	

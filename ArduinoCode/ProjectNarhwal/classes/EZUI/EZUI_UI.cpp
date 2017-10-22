@@ -180,6 +180,7 @@ void EZUI_Menu::display(EZUI *UI){
 	LiquidCrystal_I2C *LC = UI->LC;
 	
 	if(refresh){
+		UI->LC->clear();
 		printPage(UI);
 		refresh = false;
 	}
@@ -348,7 +349,12 @@ void EZUI_Menu::printItem(EZUI *UI, unsigned int line, unsigned int ItemIndex){
 	
 	UI->LC->setCursor(1,line);
 	UI->LC->print(Label);
-		
+	
+	//clear all text after the label
+	for( int i=1+Label.length(); i< 20; i++){
+		UI->LC->print(" ");
+	}
+	
 	//If theres a value print it too, with alteast one space, but as far right as possible.
 	if( Item.Control->hasValueText()){
 		String valTxt = Item.Control->ValueText();
