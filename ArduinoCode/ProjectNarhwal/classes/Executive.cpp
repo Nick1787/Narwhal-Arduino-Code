@@ -39,20 +39,13 @@ void Executive::run(){
 		//reset counters
 		temp_time = time;
 		temp_frame_count=0;
-		//Serial.println(F("RTC Before"));
-		//Serial.flush();
 		CurrentDateTime = RTC().getDateStamp(DS323RealTimeClock::DATETIME);
-		//Serial.println(F("RTC After"));
-		//Serial.flush();
 	}
 	
 }
 
 void Executive::exec_frame1(){	
-		
-		//Serial.println(F("Frame1"));
-		//Serial.flush();
-		
+				
 	//Pump Monitor #1
 	Pump1_V = 5.0 * ((float)analogRead(PUMP1_VIN) / 1023.0);
 	if(Pump1_V > 2.5){
@@ -82,7 +75,6 @@ void Executive::exec_frame1(){
 	}
 	RC2_OUT1.Write(!HLT_TC_ON);
 	
-	
 	//MLT Thermocouple
 	MLT_TC_V = 5.0 * ((float)analogRead(MLT_TC_VIN) / 1023.0);
 	if(MLT_TC_ON){
@@ -107,8 +99,7 @@ void Executive::exec_frame1(){
 			BK_TC_ON = true;
 		}
 	}
-RC2_OUT3.Write(!BK_TC_ON);
-	
+	RC2_OUT3.Write(!BK_TC_ON);
 	
 	//Encoders
 	MAIN_ENC.Read();
@@ -125,8 +116,6 @@ RC2_OUT3.Write(!BK_TC_ON);
 }
 
 void Executive::exec_frame2(){
-	//Serial.println(F("Frame2"));
-	//Serial.flush();
 	
 	//Update the RTD values
 	HLT_RTD_BP.Calculate( 5.0*(float)analogRead(HLT_RTD_Vs_AN) / 1023.0, 5.0*(float)analogRead(HLT_RTD_BP_AN) / 1023.0 );
@@ -144,24 +133,11 @@ void Executive::exec_frame2(){
 
 void Executive::exec_frame3(){
 	
-	//Serial.println(F("Frame3"));
-	//Serial.flush();
-	
 	//Update the UI
-	//Serial.println(F("Main Display"));
-	//Serial.flush();
 	UI_MAIN::UI->display();
-	//Serial.println(F("HLT Display"));
-	//Serial.flush();
 	UI_HLT::UI->display();
-	//Serial.println(F("MLT Display"));
-	//Serial.flush();
 	UI_MLT::UI->display();
-	//Serial.println(F("BK Display"));
-	//Serial.flush();
 	UI_BK::UI->display();
-	//Serial.println(F("DisplayDone"));
-	//Serial.flush();
 }
 
 void Executive::exec_frame4(){

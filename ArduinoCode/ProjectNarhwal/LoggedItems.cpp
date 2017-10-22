@@ -7,6 +7,7 @@
 
 #include "LoggedItems.h"
 
+const PROGMEM char TXT_DateTime[] = "DateTime";
 const PROGMEM char TXT_freememory[] = "freeMemory";
 const PROGMEM char TXT_execHz[] = "execHz";
 
@@ -29,6 +30,7 @@ const PROGMEM char TXT_BKGasValveLow[] = "BK.GasValveLow";
 const PROGMEM char TXT_BKGasValveHigh[] = "BK.GasValveHigh";
 
 const PROGMEM LogItem ItemsToLog[]{
+	{ LogItemType::string_ptr, TXT_DateTime , &CurrentDateTime },
 	{ LogItemType::int_ptr, TXT_freememory , &freeSramBytes },
 	{ LogItemType::int_ptr, TXT_execHz , &Exec.execHz },
 	

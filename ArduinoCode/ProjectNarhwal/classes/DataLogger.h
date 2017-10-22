@@ -45,6 +45,7 @@ enum LogItemType{
 	double_prt,
 	listopt_ptr,
 	adjparm_ptr,
+	string_ptr,
 };
 
 
@@ -63,7 +64,7 @@ class DataLogger{
 		boolean prevRunState = false;
 		unsigned long logStartTimeMillis = 0;
 		unsigned long lastRecordMillis = 0;
-		float logTime = 0;
+		double logTime = 0;
 		const LogItem *items;
 		uint16_t itemCount = 0;
 		boolean initialized = false;
@@ -85,7 +86,9 @@ class DataLogger{
 				filename.toCharArray(copy, str_buffer_size);
 				outFile = SD.open(filename, FILE_WRITE);
 				if( outFile ){
-			
+					//First write the time column
+					outFile.print("time,");
+					
 					//Write each parameter Name as a header
 					for( int i=0; i<itemCount; i++){
 						LogItem Item = PROGMEM_getAnything (&this->items[i]);
@@ -145,6 +148,9 @@ class DataLogger{
 		//Write a log line entry
 		void writeLog(){
 			if(initialized && outFile){
+				//Write the time
+				outFile.print(String(logTime));
+				
 				//Write each parameter
 				for( int i=0; i<itemCount; i++){
 					LogItem Item = PROGMEM_getAnything (&this->items[i]);
@@ -165,8 +171,8 @@ class DataLogger{
 			if((isRunning == true) && (prevRunState == false)){
 					
 				//Build a unique File name
-				//String BaseName = "L" + RTC->getDateStamp(DS323RealTimeClock::DateStampFormat::YYYYMMDD);
-				String BaseName = "Log";
+				String BaseName = "Log_" + RTC->getDateStamp(DS323RealTimeClock::DateStampFormat::YYYYMMDD) + "_" + RTC->getDateStamp(DS323RealTimeClock::DateStampFormat::HHMMSS);
+				//String BaseName = "Log";
 				String outName = BaseName + ".csv";
 				if( fileExists(outName)){
 					int cnt = 0;
@@ -218,7 +224,7 @@ class DataLogger{
 			
 			//Writing the Log
 			if(isRunning){
-				logTime = ((float)(millis()-logStartTimeMillis))/1000;
+				logTime = ((double)(millis()-logStartTimeMillis))/1000;
 				
 				//Write log if time passed
 				if( ((millis() - lastRecordMillis)/1000) > logRate->getValue() ){
@@ -235,8 +241,10 @@ class DataLogger{
 		String StrValue;
 		if( Item->Type == LogItemType::byte_ptr ){
 				StrValue = String( *(byte*)Item->ItemRef );
+			}else if( Item->Type == LogItemType::bool_ptr ){
+				StrValue = String( *(bool*)Item->ItemRef );
 			}else if( Item->Type == LogItemType::adjparm_ptr ){
-				StrValue = String( *(short*)Item->ItemRef );
+				StrValue = String( *(float*)Item->ItemRef );
 			}else if( Item->Type == LogItemType::char_ptr ){
 				StrValue = String( *(char*)Item->ItemRef );
 			}else if( Item->Type == LogItemType::uchar_ptr ){
@@ -249,6 +257,8 @@ class DataLogger{
 				StrValue = String( *(float*)Item->ItemRef );
 			}else if( Item->Type == LogItemType::double_prt ){
 				StrValue = String( *(double*)Item->ItemRef );
+			}else if( Item->Type == LogItemType::string_ptr ){
+				StrValue = *(String*)Item->ItemRef;
 			
 			/*}else if( Item->Type == LogItemType.listopt_ptr ){
 				ListOption * lst = (ListOption*)Item->ItemRef;

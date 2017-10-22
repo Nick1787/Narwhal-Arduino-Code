@@ -33,8 +33,7 @@ class DS323RealTimeClock{
 		AdjustableParam *Month;
 		AdjustableParam *Year;
 			
-		enum DateStampFormat{ YYYYMMDD, YYMMDD, MMDDYY, MMDDYYYY, MMDD, DATETIME };
-		enum TimeStampFormat{ HHMM, HHMMSS };
+		enum DateStampFormat{ YYYYMMDD, YYMMDD, HHMM, HHMMSS, DATETIME };
 			
 		//Constructors
 		DS323RealTimeClock(int address, AdjustableParam *_Second, AdjustableParam *_Minute,AdjustableParam *_Hour,AdjustableParam *_Day,AdjustableParam *_Month,AdjustableParam *_Year): i2cAddress(address), Second(_Second), Minute(_Minute),Hour(_Hour),Day(_Day),Month(_Month),Year(_Year){};
@@ -183,6 +182,7 @@ class DS323RealTimeClock{
 			ts t_str;
 			DS3231_get(&t_str);
 			String year = String(t_str.year);
+			String year2digit = String( t_str.year % 100);
 			String mon = String(t_str.mon);
 			String mday = String(t_str.mday);
 			String hour = String(t_str.hour);
@@ -201,12 +201,18 @@ class DS323RealTimeClock{
 						
 			if( format == YYYYMMDD){
 				return year + mon + mday;
-				
+			}else if( format == YYMMDD){
+				return year2digit + mon + mday;
+			}else if( format == HHMM){
+				return hour12 + min;
+			}else if( format == HHMMSS){
+				return hour12 + min + sec;
 			}else if( format == DATETIME){
 				return mon + "/" + mday + "/" +  year + " " + hour12 + ":" + min ;
 			}
 			
 		}
+		
 			
 };
 
