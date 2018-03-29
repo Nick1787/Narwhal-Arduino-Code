@@ -29,51 +29,42 @@ class LUT{
 template< size_t N>
 class LUT1D : public LUT{
   private:
-    float _xvals[N];
-    float _zvals[N];
+    const float *_xvals;
+    const float *_zvals;
     int _count;
 	
   public:
 	//Constructor
-	LUT1D(float xvals[N], float zvals[N]){
+	LUT1D(const float *xvals, const float *zvals): _xvals(xvals), _zvals(zvals) {
 		//Copy the X data
 		_count = N;
-		for(int i=0; i<N; i++){
-			_xvals[i] = xvals[i];
-			_zvals[i] = zvals[i];
-		}
-	};
-	
-	//Constructor - Constant Float Data
-	LUT1D(const float xvals[N],const float zvals[N]){
-		//Copy the X data
-		_count = N;
-		for(int i=0; i<N; i++){
-			_xvals[i] = xvals[i];
-			_zvals[i] = zvals[i];
-		}
 	};
 	
 	//Lookup Algoritm
 	virtual float lookup(float xval){
-		  if( xval <= _xvals[0]){
-			 return _zvals[0]; 
+		  if( xval <= pgm_read_float(&_xvals[0])){
+			 return pgm_read_float(&_zvals[0]); 
 		  }else{
-			if( xval >= _xvals[_count-1]){
-			  return _zvals[_count-1];
+			if( xval >= pgm_read_float(&_xvals[_count-1])){
+			  return pgm_read_float(&_zvals[_count-1]);
 			}else{
 			  // In the Middel of Table, interpolate to find value.
 			  int ix = 0;
-			  for ( ix = 0; ix < _count - 1 ; ix++ )
+			  for ( ix = 0; ix < _count - 2 ; ix++ )
 			  {
 				  //Find the location we are in the table.
-				  if( (xval >= _xvals[ix]) && (xval < _xvals[ix+1])){
+				  if( (xval >= pgm_read_float(&_xvals[ix])) && (xval < pgm_read_float(&_xvals[ix+1]))){
 					  break;
 				  }
 			  }
 			  
 			  //Interpolate z value
-			  return ((xval - _xvals[ix])*((_zvals[ix+1] - _zvals[ix])/(_xvals[ix+1]-_xvals[ix])) + _zvals[ix]);
+			  float xval_ix = pgm_read_float(&_xvals[ix]);
+			  float xval_ix1 = pgm_read_float(&_xvals[ix+1]);
+			  float zval_ix = pgm_read_float(&_zvals[ix]);
+			  float zval_ix1 = pgm_read_float(&_zvals[ix+1]);
+			  
+			  return ((xval - xval_ix)*((zval_ix1 - zval_ix)/(xval_ix1-xval_ix)) + zval_ix);
 			}
 		  }
 	};
@@ -83,6 +74,7 @@ class LUT1D : public LUT{
 /**************************
 *	LUT2D
 **************************/
+/*
 template<size_t M,size_t N>
 class LUT2D : public LUT{
   private:
@@ -228,6 +220,6 @@ class LUT2D : public LUT{
 		//Return Interpolated Value
 		return z;
 	};
-};
+}; */
 
 #endif
