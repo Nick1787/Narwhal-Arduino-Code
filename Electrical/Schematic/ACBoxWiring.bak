@@ -36,8 +36,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "AC Box Wiring"
-Date "2018-05-02"
-Rev "5"
+Date "2016-10-30"
+Rev "4"
 Comp "Project Narwhal"
 Comment1 ""
 Comment2 ""
@@ -133,7 +133,7 @@ F 3 "" H 8450 5550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power_Supply_with_AC Switch~Mode~Power~Supply
+L Power_Supply_with_AC Switch
 U 1 1 57E07805
 P 6650 3550
 F 0 "Switch Mode Power Supply" H 6650 3400 60  0000 C CNN
@@ -171,52 +171,6 @@ F 3 "" H 3250 2150 50  0000 C CNN
 	1    3250 2150
 	1    0    0    -1  
 $EndComp
-Text GLabel 7300 4450 0    60   Input ~ 0
-Neutral_120VAC
-Text GLabel 7300 5650 0    60   Input ~ 0
-GND_120VAC
-Text GLabel 5450 4700 0    60   Input ~ 0
-+5VLinear
-Text GLabel 5450 5750 0    60   Input ~ 0
-+5VLinear
-Text GLabel 6050 4700 2    60   Input ~ 0
-ToArduino
-Text GLabel 6050 5750 2    60   Input ~ 0
-ToArduino
-Text GLabel 8150 1800 2    60   Input ~ 0
-+12VLinear
-Text GLabel 8150 2700 2    60   Input ~ 0
-GND_12VLinear
-Text GLabel 9350 2050 2    60   Input ~ 0
-+5VLinear
-Text GLabel 9350 2450 2    60   Input ~ 0
-GND_5VLinear
-Text GLabel 7800 3400 2    60   Input ~ 0
-+12VSwitchMode
-Text GLabel 7800 3700 2    60   Input ~ 0
-GND_12VSwitchMode
-$Comp
-L VR MOV
-U 1 1 5AEA568E
-P 8300 3900
-F 0 "MOV Vrms 103V, ic=25A" V 8360 3854 50  0000 C TNN
-F 1 "VR" V 8300 3900 50  0000 C CNN
-F 2 "" H 8300 3900 50  0000 C CNN
-F 3 "" H 8300 3900 50  0000 C CNN
-	1    8300 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L VR MOV
-U 1 1 5AEA5794
-P 8300 4950
-F 0 "MOV Vrms 103V, ic=25A" V 8360 4904 50  0000 C TNN
-F 1 "VR" V 8300 4950 50  0000 C CNN
-F 2 "" H 8300 4950 50  0000 C CNN
-F 3 "" H 8300 4950 50  0000 C CNN
-	1    8300 4950
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	5800 2250 5550 2250
 Wire Wire Line
@@ -252,6 +206,10 @@ Wire Wire Line
 	4750 4300 4750 5350
 Wire Wire Line
 	4750 5350 5450 5350
+Text GLabel 7300 4450 0    60   Input ~ 0
+Neutral_120VAC
+Text GLabel 7300 5650 0    60   Input ~ 0
+GND_120VAC
 Wire Wire Line
 	7300 5650 7650 5650
 Wire Wire Line
@@ -262,7 +220,7 @@ Connection ~ 7450 5650
 Wire Wire Line
 	7300 4450 7650 4450
 Wire Wire Line
-	7550 3900 7550 5500
+	7550 4450 7550 5500
 Wire Wire Line
 	7550 5500 7650 5500
 Connection ~ 7550 4450
@@ -274,8 +232,24 @@ Wire Wire Line
 	7450 2300 8150 2300
 Wire Wire Line
 	8150 2300 8150 2450
+Text GLabel 5450 4700 0    60   Input ~ 0
++5VLinear
+Text GLabel 5450 5750 0    60   Input ~ 0
++5VLinear
+Text GLabel 6050 4700 2    60   Input ~ 0
+ToArduino
+Text GLabel 6050 5750 2    60   Input ~ 0
+ToArduino
 Wire Wire Line
 	6050 4300 7650 4300
+Text GLabel 8150 1800 2    60   Input ~ 0
++12VLinear
+Text GLabel 8150 2700 2    60   Input ~ 0
+GND_12VLinear
+Text GLabel 9350 2050 2    60   Input ~ 0
++5VLinear
+Text GLabel 9350 2450 2    60   Input ~ 0
+GND_5VLinear
 Wire Wire Line
 	7800 2300 7800 2700
 Wire Wire Line
@@ -286,6 +260,10 @@ Wire Wire Line
 Wire Wire Line
 	7800 1800 8150 1800
 Connection ~ 7800 2200
+Text GLabel 7800 3400 2    60   Input ~ 0
++12VSwitchMode
+Text GLabel 7800 3700 2    60   Input ~ 0
+GND_12VSwitchMode
 Wire Wire Line
 	1550 3000 7500 3000
 Connection ~ 5350 3000
@@ -306,25 +284,4 @@ Wire Wire Line
 Wire Wire Line
 	7500 3000 7500 2300
 Connection ~ 7500 2300
-Wire Wire Line
-	7650 4300 7650 4100
-Wire Wire Line
-	7650 4100 8850 4100
-Wire Wire Line
-	8850 4100 8850 3900
-Wire Wire Line
-	8850 3900 8550 3900
-Wire Wire Line
-	7650 5350 7650 5150
-Wire Wire Line
-	7650 5150 8850 5150
-Wire Wire Line
-	8850 5150 8850 4950
-Wire Wire Line
-	8850 4950 8550 4950
-Wire Wire Line
-	7550 3900 8050 3900
-Wire Wire Line
-	7550 4950 8050 4950
-Connection ~ 7550 4950
 $EndSCHEMATC
