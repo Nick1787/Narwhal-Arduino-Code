@@ -3,6 +3,7 @@
  *
  * Created: 8/22/2016 2:39:53 AM
  *  Author: Customer
+ * 11/17/18 Updated hysteresis and offsets for HLT, MLT, and BK
  */ 
  
 #include "ListsAndAdjustments.h"
@@ -114,10 +115,10 @@ AdjustableParam RTC_Seconds( 0.0, 0.0, 59.0, 1.0);
 
 //Closed Loop Control
 AdjustableParam HLT_SetTemp( 60.0, 0.0, 212.0, 1.0);
-AdjustableParam HLT_HighOffset( 3, 0, 50, 0.1);
-AdjustableParam HLT_MedOffset( 1.5, 0, 25, 0.1);
-AdjustableParam HLT_LowOffset(   0, 0, 10, 0.1);
-AdjustableParam HLT_Hysteresis(      0.5, 0, 10, 0.1);
+AdjustableParam HLT_HighOffset( 4, 0, 50, 0.1);
+AdjustableParam HLT_MedOffset( 2, 0, 25, 0.1);
+AdjustableParam HLT_LowOffset( 0, 0, 10, 0.1);
+AdjustableParam HLT_Hysteresis( 1, 0, 10, 0.1);
 
 //PWM Control
 AdjustableParam HLT_PWMPeriod( 10.0, 1.0, 300.0, 1.0);
@@ -127,10 +128,10 @@ AdjustableParam HLT_PWMDuty( 50.0, 1, 100.0, 1.0);
 
 //Closed Loop Control
 AdjustableParam MLT_SetTemp( 60.0, 0.0, 212.0, 1.0);
-AdjustableParam MLT_HighOffset( 3, 0, 50, 0.1);
-AdjustableParam MLT_MedOffset( 1.5, 0, 25, 0.1);
-AdjustableParam MLT_LowOffset(   0, 0, 10, 0.1); 
-AdjustableParam MLT_Hysteresis(      0.5, 0, 10, 0.1);
+AdjustableParam MLT_HighOffset( 4, 0, 50, 0.1);
+AdjustableParam MLT_MedOffset( 2, 0, 25, 0.1);
+AdjustableParam MLT_LowOffset( 0, 0, 10, 0.1); 
+AdjustableParam MLT_Hysteresis( 1, 0, 10, 0.1);
 
 //PWM Control
 AdjustableParam MLT_PWMPeriod( 10.0, 1.0, 300.0, 1.0);
@@ -139,10 +140,10 @@ AdjustableParam MLT_PWMDuty( 50.0, 1, 100.0, 1.0);
 /* BK */
 
 AdjustableParam BK_SetTemp( 60.0, 0.0, 212.0, 1.0);
-AdjustableParam BK_HighOffset( 3, 0, 50, 0.1);
-AdjustableParam BK_MedOffset(  1.5, 0, 25, 0.1);
-AdjustableParam BK_LowOffset(   0, 0, 10, 0.1);
-AdjustableParam BK_Hysteresis(      0.5, 0, 10, 0.1);
+AdjustableParam BK_HighOffset( 4, 0, 50, 0.1);
+AdjustableParam BK_MedOffset( 2, 0, 25, 0.1);
+AdjustableParam BK_LowOffset( 0, 0, 10, 0.1);
+AdjustableParam BK_Hysteresis( 1, 0, 10, 0.1);
 
 //PWM Control
 AdjustableParam BK_PWMPeriod( 10.0, 1.0, 300.0, 1.0);
