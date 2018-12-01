@@ -36,8 +36,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "AC Box Wiring"
-Date "2018-05-02"
-Rev "5"
+Date "2018-12-01"
+Rev "6"
 Comp "Project Narwhal"
 Comment1 ""
 Comment2 ""
@@ -56,10 +56,10 @@ F 3 "" H 8750 2250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch_DPST Pump~#2
+L Switch_DPST Pump
 U 1 1 57E073AF
 P 5750 5550
-F 0 "Pump #2" H 6050 5600 50  0000 C CNN
+F 0 "Pump" H 6050 5600 50  0000 C CNN
 F 1 "Switch_DPST" H 6050 5500 50  0000 C CNN
 F 2 "" H 5750 5550 50  0000 C CNN
 F 3 "" H 5750 5550 50  0000 C CNN
@@ -67,10 +67,10 @@ F 3 "" H 5750 5550 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch_DPST Pump~#1
+L Switch_DPST Pump
 U 1 1 57E07432
 P 5750 4500
-F 0 "Pump #1" H 6050 4550 50  0000 C CNN
+F 0 "Pump" H 6050 4550 50  0000 C CNN
 F 1 "Switch_DPST" H 6050 4450 50  0000 C CNN
 F 2 "" H 5750 4500 50  0000 C CNN
 F 3 "" H 5750 4500 50  0000 C CNN
@@ -78,10 +78,10 @@ F 3 "" H 5750 4500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SPST E-Stop~Switch
+L SPST E-Stop
 U 1 1 57E074A7
 P 2300 2150
-F 0 "E-Stop Switch" H 2300 2250 50  0000 C CNN
+F 0 "E-Stop" H 2300 2250 50  0000 C CNN
 F 1 "SPST" H 2300 2050 50  0000 C CNN
 F 2 "" H 2300 2150 50  0000 C CNN
 F 3 "" H 2300 2150 50  0000 C CNN
@@ -89,10 +89,10 @@ F 3 "" H 2300 2150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SPST 12V~Power~Switch
+L SPST 12V
 U 1 1 57E0755E
 P 4300 2150
-F 0 "12V Power Switch" H 4300 2250 50  0000 C CNN
+F 0 "12V" H 4300 2250 50  0000 C CNN
 F 1 "SPST" H 4300 2050 50  0000 C CNN
 F 2 "" H 4300 2150 50  0000 C CNN
 F 3 "" H 4300 2150 50  0000 C CNN
@@ -100,10 +100,10 @@ F 3 "" H 4300 2150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SPST 120V~Power~Switch
+L SPST 120V
 U 1 1 57E075BA
 P 4300 4300
-F 0 "120V Power Switch" H 4300 4400 50  0000 C CNN
+F 0 "120V" H 4300 4400 50  0000 C CNN
 F 1 "SPST" H 4300 4200 50  0000 C CNN
 F 2 "" H 4300 4300 50  0000 C CNN
 F 3 "" H 4300 4300 50  0000 C CNN
@@ -133,10 +133,10 @@ F 3 "" H 8450 5550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power_Supply_with_AC Switch~Mode~Power~Supply
+L Power_Supply_with_AC Switch
 U 1 1 57E07805
 P 6650 3550
-F 0 "Switch Mode Power Supply" H 6650 3400 60  0000 C CNN
+F 0 "Switch" H 6650 3400 60  0000 C CNN
 F 1 "Power_Supply_with_AC" H 6650 3800 60  0000 C CNN
 F 2 "" H 6650 3550 60  0000 C CNN
 F 3 "" H 6650 3550 60  0000 C CNN
@@ -144,10 +144,10 @@ F 3 "" H 6650 3550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power_Supply_with_AC Linear~Power~Supply
+L Power_Supply_with_AC Linear
 U 1 1 57E078E2
 P 6650 2250
-F 0 "Linear Power Supply" H 6650 2100 60  0000 C CNN
+F 0 "Linear" H 6650 2100 60  0000 C CNN
 F 1 "Power_Supply_with_AC" H 6650 2500 60  0000 C CNN
 F 2 "" H 6650 2250 60  0000 C CNN
 F 3 "" H 6650 2250 60  0000 C CNN
@@ -161,10 +161,10 @@ Neutral_120VAC
 Text GLabel 1550 3000 0    60   Input ~ 0
 GND_120VAC
 $Comp
-L SPST Master~Switch
+L SPST Master
 U 1 1 57E07B25
 P 3250 2150
-F 0 "Master Switch" H 3250 2250 50  0000 C CNN
+F 0 "Master" H 3250 2250 50  0000 C CNN
 F 1 "SPST" H 3250 2050 50  0000 C CNN
 F 2 "" H 3250 2150 50  0000 C CNN
 F 3 "" H 3250 2150 50  0000 C CNN
@@ -199,7 +199,7 @@ $Comp
 L VR MOV
 U 1 1 5AEA568E
 P 8300 3900
-F 0 "MOV Vrms 103V, ic=25A" V 8360 3854 50  0000 C TNN
+F 0 "MOV" V 8360 3854 50  0000 C TNN
 F 1 "VR" V 8300 3900 50  0000 C CNN
 F 2 "" H 8300 3900 50  0000 C CNN
 F 3 "" H 8300 3900 50  0000 C CNN
@@ -210,7 +210,7 @@ $Comp
 L VR MOV
 U 1 1 5AEA5794
 P 8300 4950
-F 0 "MOV Vrms 103V, ic=25A" V 8360 4904 50  0000 C TNN
+F 0 "MOV" V 8360 4904 50  0000 C TNN
 F 1 "VR" V 8300 4950 50  0000 C CNN
 F 2 "" H 8300 4950 50  0000 C CNN
 F 3 "" H 8300 4950 50  0000 C CNN
@@ -327,4 +327,8 @@ Wire Wire Line
 Wire Wire Line
 	7550 4950 8050 4950
 Connection ~ 7550 4950
+Text Notes 4950 5950 0    60   ~ 0
+Arduino side of switch is normally closed (NC)
+Text Notes 4950 4900 0    60   ~ 0
+Arduino side of switch is normally closed (NC)
 $EndSCHEMATC
