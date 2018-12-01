@@ -5,6 +5,7 @@
  * ----------------------------------------------------------------
  *    Revision:
  *		09152015 - NRD - Initial Version
+ *      11302018 - GAI - Added normally closed pump monitor switches, switched sign for pump on/off
  * ----------------------------------------------------------------
  */
 
@@ -54,7 +55,7 @@ void Executive::exec_frame1(){
 				
 	//Pump Monitor #1
 	Pump1_V = 5.0 * ((float)analogRead(PUMP1_VIN) / 1023.0);
-	if(Pump1_V > 2.5){
+	if(Pump1_V < 2.5){
 		Pump1_On = true;
 	}else{
 		Pump1_On = false;
@@ -62,7 +63,7 @@ void Executive::exec_frame1(){
 	
 	//Pump Monitor #2
 	Pump2_V = 5.0 * ((float)analogRead(PUMP2_VIN) / 1023.0);
-	if(Pump2_V > 2.5){
+	if(Pump2_V < 2.5){
 		Pump2_On = true;
 	}else{
 		Pump2_On = false;

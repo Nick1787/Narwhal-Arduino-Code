@@ -1,10 +1,14 @@
 /*
- * lists.cpp
- *
- * Created: 8/22/2016 2:39:53 AM
- *  Author: Customer
- * 11/17/18 Updated hysteresis and offsets for HLT, MLT, and BK
- */ 
+ *        File: ListsAndAdjustments.cpp
+ *      Author: Nick Dodds <Nick1787@gmail.com>
+ * Description: Narwhal adjustments
+ * ----------------------------------------------------------------
+ *    Revision:
+ *		08222016 - NRD - Initial Version
+ *      11172018 - GAI - Updated hysteresis and offsets for HLT, MLT, and BK
+ * ----------------------------------------------------------------
+ */
+
  
 #include "ListsAndAdjustments.h"
 
