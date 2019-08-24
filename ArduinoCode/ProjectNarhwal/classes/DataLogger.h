@@ -3,6 +3,11 @@
 *
 * Created: 11/30/2016 11:07:22 PM
 * Author: Nick1
+* ----------------------------------------------------------------
+*    Revision:
+*	   11302016 - NRD - Initial Version
+*      08222019 - GAI - Added flush() call to writeLog() in order to save data to card and prevent data loss during a reset (v1.04)
+* ----------------------------------------------------------------
 */
 
 
@@ -161,6 +166,7 @@ class DataLogger{
 					outFile.print(",");
 				}
 				outFile.println(" ");
+				outFile.flush(); // 8/22/19 update
 			}
 		};
 		

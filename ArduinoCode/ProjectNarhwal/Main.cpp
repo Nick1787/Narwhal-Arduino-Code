@@ -5,6 +5,7 @@
  * ----------------------------------------------------------------
  *    Revision:
  *		09152015 - NRD - Initial Version
+ *      08242019 - GAI - Added version date to boot screen
  * ----------------------------------------------------------------
  */
 
@@ -59,8 +60,10 @@ void setup() {
 	MAIN_LCD.setCursor(3,1);
 	MAIN_LCD.print("Narwhal v");
 	MAIN_LCD.print(VERSION);
-	MAIN_LCD.setCursor(2,2);
-	MAIN_LCD.print("Established 2015");
+	MAIN_LCD.setCursor(5,2);	
+	MAIN_LCD.print(VERSIONDATE);
+	MAIN_LCD.setCursor(2,3);
+	MAIN_LCD.print("Established 2015");	
 	
 	HLT_LCD.clear();
 	HLT_LCD.setCursor(2,1);
