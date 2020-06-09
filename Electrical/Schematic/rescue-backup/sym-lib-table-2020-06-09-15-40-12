@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Project_Narwhal_Electrical-rescue)(type Legacy)(uri ${KIPRJMOD}/Project_Narwhal_Electrical-rescue.lib)(options "")(descr ""))
+  (lib (name NarwhalLib)(type Legacy)(uri ${KIPRJMOD}/NarwhalLib/NarwhalLib.lib)(options "")(descr ""))
+)

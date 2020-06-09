@@ -1,5 +1,36 @@
-EESchema Schematic File Version 4
-EELAYER 30 0
+EESchema Schematic File Version 2
+LIBS:Project_Narwhal_Electrical-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:valves
+LIBS:NarwhalLib
+LIBS:Project_Narwhal_Electrical-cache
+EELAYER 25 0
 EELAYER END
 $Descr USLedger 17000 11000
 encoding utf-8
@@ -14,7 +45,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_10 22-01-2105
+L CONN_10 22-01-2105
 U 1 1 55E1ED7E
 P 4900 7250
 F 0 "22-01-2105" V 4850 7250 60  0000 C CNN
@@ -25,7 +56,7 @@ F 3 "" H 4900 7250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_10 22-01-2105
+L CONN_10 22-01-2105
 U 1 1 55E1ED8B
 P 4925 8450
 F 0 "22-01-2105" V 4875 8450 60  0000 C CNN
@@ -36,7 +67,7 @@ F 3 "" H 4925 8450 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_10 22-23-2101
+L CONN_10 22-23-2101
 U 1 1 55E1ED91
 P 5250 7250
 F 0 "22-23-2101" V 5200 7250 60  0000 C CNN
@@ -47,7 +78,7 @@ F 3 "" H 5250 7250 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_10 22-23-2101
+L CONN_10 22-23-2101
 U 1 1 55E1ED9C
 P 5250 8450
 F 0 "22-23-2101" V 5200 8450 60  0000 C CNN
@@ -64,7 +95,7 @@ Pilot Light Thermocouple (MLT)
 Text Notes 3650 5750 0    60   ~ 0
 Pilot Light Thermocouple (BK)
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_10 Onboard
+L CONN_10 Onboard
 U 1 1 55E371C2
 P 3000 7250
 F 0 "Onboard" V 2950 7250 60  0000 C CNN
@@ -75,7 +106,7 @@ F 3 "" H 3000 7250 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_10 Onboard
+L CONN_10 Onboard
 U 1 1 55E371C8
 P 3025 8450
 F 0 "Onboard" V 2975 8450 60  0000 C CNN
@@ -86,7 +117,7 @@ F 3 "" H 3025 8450 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_10 22-01-2105
+L CONN_10 22-01-2105
 U 1 1 55E371CE
 P 3300 7250
 F 0 "22-01-2105" V 3250 7250 60  0000 C CNN
@@ -97,7 +128,7 @@ F 3 "" H 3300 7250 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_10 22-01-2105
+L CONN_10 22-01-2105
 U 1 1 55E371D4
 P 3325 8450
 F 0 "22-01-2105" V 3275 8450 60  0000 C CNN
@@ -118,7 +149,7 @@ F0 "FrontPanel" 79
 F1 "FrontPanel.sch" 79
 $EndSheet
 $Comp
-L Project_Narwhal_Electrical-rescue:ARDUINO_MEGA_SHIELD SHIELD
+L ARDUINO_MEGA_SHIELD SHIELD
 U 1 1 55E3C008
 P 11600 4250
 F 0 "SHIELD" H 11200 6750 60  0000 C CNN
@@ -179,7 +210,7 @@ WB0_Vref
 Text Label 9850 3100 0    39   ~ 0
 HLT1 (WB0_RTD_0_Vout)
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-01-2035
+L CONN_3 22-01-2035
 U 1 1 55E57BCA
 P 1650 1000
 F 0 "22-01-2035" V 1600 1000 50  0000 C CNN
@@ -190,7 +221,7 @@ F 3 "" H 1650 1000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-01-2035
+L CONN_3 22-01-2035
 U 1 1 55E57BD7
 P 1650 1350
 F 0 "22-01-2035" V 1600 1350 50  0000 C CNN
@@ -201,7 +232,7 @@ F 3 "" H 1650 1350 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-01-2035
+L CONN_3 22-01-2035
 U 1 1 55E57BDD
 P 1650 1700
 F 0 "22-01-2035" V 1600 1700 50  0000 C CNN
@@ -242,7 +273,7 @@ RTD_B (MLT1)
 Text GLabel 1250 1800 0    47   Input ~ 0
 RTD_C (MLT1)
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-01-2035
+L CONN_3 22-01-2035
 U 1 1 55E61D17
 P 1650 2050
 F 0 "22-01-2035" V 1600 2050 50  0000 C CNN
@@ -265,7 +296,7 @@ RTD_B (BK1)
 Text GLabel 1250 2700 0    47   Input ~ 0
 RTD_C (BK1)
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-01-2035
+L CONN_3 22-01-2035
 U 1 1 55E624EE
 P 1650 2600
 F 0 "22-01-2035" V 1600 2600 50  0000 C CNN
@@ -276,7 +307,7 @@ F 3 "" H 1650 2600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-01-2035
+L CONN_3 22-01-2035
 U 1 1 55E624F4
 P 1650 2950
 F 0 "22-01-2035" V 1600 2950 50  0000 C CNN
@@ -287,7 +318,7 @@ F 3 "" H 1650 2950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-01-2035
+L CONN_3 22-01-2035
 U 1 1 55E624FA
 P 1650 3300
 F 0 "22-01-2035" V 1600 3300 50  0000 C CNN
@@ -310,7 +341,7 @@ RTD_B (SPARE1)
 Text GLabel 1250 3400 0    47   Input ~ 0
 RTD_C (SPARE1)
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-01-2035
+L CONN_3 22-01-2035
 U 1 1 55E62506
 P 1650 3650
 F 0 "22-01-2035" V 1600 3650 50  0000 C CNN
@@ -377,7 +408,7 @@ TIMER ENC_B
 Text Label 12500 6050 0    39   ~ 0
 TIMER ENC_SW
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-23-2021
+L CONN_2 22-23-2021
 U 1 1 55E648BF
 P 15000 8050
 F 0 "22-23-2021" V 14950 8050 40  0000 C CNN
@@ -406,7 +437,7 @@ PUMP2_V
 Text Notes 11350 1300 0    236  ~ 0
 Arduino Mega Shield
 $Comp
-L NarwhalLib:EA50-5V U?
+L EA50-5V U?
 U 1 1 55E66878
 P 10250 9800
 F 0 "U?" H 10250 9800 60  0001 C CNN
@@ -427,7 +458,7 @@ Spare
 Text GLabel 2550 6800 0    47   Input ~ 0
 GND_5VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_7 22-01-2075
+L CONN_7 22-01-2075
 U 1 1 561AC95F
 P 4900 1300
 F 0 "22-01-2075" V 4870 1300 60  0000 C CNN
@@ -438,7 +469,7 @@ F 3 "" H 4900 1300 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_7 22-01-2075
+L CONN_7 22-01-2075
 U 1 1 561AC96C
 P 3850 1300
 F 0 "22-01-2075" V 3820 1300 60  0000 C CNN
@@ -449,7 +480,7 @@ F 3 "" H 3850 1300 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_7 22-23-2071
+L CONN_7 22-23-2071
 U 1 1 561AD616
 P 5300 1300
 F 0 "22-23-2071" V 5270 1300 60  0000 C CNN
@@ -460,7 +491,7 @@ F 3 "" H 5300 1300 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_7 22-01-2075
+L CONN_7 22-01-2075
 U 1 1 561ADFEB
 P 4900 2900
 F 0 "22-01-2075" V 4870 2900 60  0000 C CNN
@@ -471,7 +502,7 @@ F 3 "" H 4900 2900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_7 22-01-2075
+L CONN_7 22-01-2075
 U 1 1 561ADFF1
 P 3850 2900
 F 0 "22-01-2075" V 3820 2900 60  0000 C CNN
@@ -486,7 +517,7 @@ Text GLabel 5725 2600 2    43   Input ~ 0
 Text GLabel 5725 2700 2    43   Input ~ 0
 GND_12VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_7 22-23-2071
+L CONN_7 22-23-2071
 U 1 1 561AE004
 P 5300 2900
 F 0 "22-23-2071" V 5270 2900 60  0000 C CNN
@@ -497,7 +528,7 @@ F 3 "" H 5300 2900 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_8X2 5103309-3
+L CONN_8X2 5103309-3
 U 1 1 561AE5F4
 P 13775 5250
 F 0 "5103309-3" H 13775 5700 60  0000 C CNN
@@ -508,7 +539,7 @@ F 3 "" H 13775 5250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 U
+L CONN_2 U
 U 1 1 56401AA1
 P 15000 8550
 F 0 "U" V 14950 8550 40  0000 C CNN
@@ -523,7 +554,7 @@ GND_12VLinear
 Text GLabel 14650 8450 0    60   Input ~ 0
 +12VLinear
 $Comp
-L NarwhalLib:SDCARD U
+L SDCARD U
 U 1 1 56401C9B
 P 13350 2450
 F 0 "U" H 13350 1750 60  0000 C CNN
@@ -548,7 +579,7 @@ Ribbon cable red\nstripe is Pin 1.
 Text GLabel 14650 6500 0    60   Input ~ 0
 +5VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 P
+L CONN_2 P
 U 1 1 57E36CA0
 P 15000 6600
 F 0 "P" V 14950 6600 40  0000 C CNN
@@ -559,7 +590,7 @@ F 3 "" H 15000 6600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 P
+L CONN_2 P
 U 1 1 57E36DF9
 P 15350 6600
 F 0 "P" V 15300 6600 40  0000 C CNN
@@ -576,7 +607,7 @@ Text GLabel 15700 6500 2    60   Input ~ 0
 Text GLabel 15700 6700 2    60   Input ~ 0
 GND_5VLinear
 $Comp
-L NarwhalLib:PowerSupply 12V
+L PowerSupply 12V
 U 1 1 57E3A5DF
 P 8150 9800
 F 0 "12V" H 8150 9600 60  0000 C CNN
@@ -1025,7 +1056,7 @@ Text GLabel 10450 2800 0    47   Input ~ 0
 Wire Wire Line
 	10450 2800 10600 2800
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-23-?
+L CONN_2 22-23-?
 U 1 1 57F3C002
 P 15300 8050
 F 0 "22-23-?" V 15250 8050 40  0000 C CNN
@@ -1040,7 +1071,7 @@ GND_5VLinear
 Text GLabel 15650 7950 2    60   Input ~ 0
 +5VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 U?
+L CONN_2 U?
 U 1 1 57F3C00A
 P 15300 8550
 F 0 "U?" V 15250 8550 40  0000 C CNN
@@ -1093,7 +1124,7 @@ Wire Wire Line
 Wire Wire Line
 	9300 4000 10600 4000
 $Comp
-L NarwhalLib:AD623 U?
+L AD623 U?
 U 1 1 57F5DE37
 P 7400 4050
 F 0 "U?" H 7400 4050 60  0001 C CNN
@@ -1104,7 +1135,7 @@ F 3 "" H 7400 4050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C
+L C C
 U 1 1 57F624FA
 P 8600 4000
 F 0 "C" H 8625 4100 50  0000 L CNN
@@ -1115,7 +1146,7 @@ F 3 "" H 8600 4000 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F62923
 P 7450 3750
 F 0 "R" V 7530 3750 50  0000 C CNN
@@ -1126,7 +1157,7 @@ F 3 "" H 7450 3750 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F62ABD
 P 6450 4000
 F 0 "R" V 6530 4000 50  0000 C CNN
@@ -1137,7 +1168,7 @@ F 3 "" H 6450 4000 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F62B6E
 P 6450 4100
 F 0 "R" V 6530 4100 50  0000 C CNN
@@ -1160,7 +1191,7 @@ Wire Wire Line
 Wire Wire Line
 	6650 3750 6650 3900
 Wire Wire Line
-	8200 4000 8250 4000
+	8200 4000 8450 4000
 Wire Wire Line
 	8250 4000 8250 3700
 Wire Wire Line
@@ -1171,11 +1202,11 @@ Wire Wire Line
 Wire Wire Line
 	8850 4000 8850 4200
 Wire Wire Line
-	8850 4200 8250 4200
+	8850 4200 8200 4200
 Wire Wire Line
 	8250 4200 8250 4350
 Wire Wire Line
-	6650 4350 8250 4350
+	6650 4350 8350 4350
 Connection ~ 8250 4200
 Wire Wire Line
 	6650 4350 6650 4200
@@ -1187,7 +1218,7 @@ Wire Wire Line
 Wire Wire Line
 	6600 4100 6650 4100
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-01
+L CONN_2 22-01
 U 1 1 57F668A6
 P 4950 6050
 F 0 "22-01" V 4900 6050 40  0000 C CNN
@@ -1202,7 +1233,7 @@ C
 Text Notes 4600 6150 0    60   ~ 0
 S
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-01
+L CONN_2 22-01
 U 1 1 57F67040
 P 4950 5150
 F 0 "22-01" V 4900 5150 40  0000 C CNN
@@ -1213,7 +1244,7 @@ F 3 "" H 4950 5150 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-01
+L CONN_2 22-01
 U 1 1 57F67968
 P 4950 4200
 F 0 "22-01" V 4900 4200 40  0000 C CNN
@@ -1224,7 +1255,7 @@ F 3 "" H 4950 4200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-01
+L CONN_2 22-01
 U 1 1 57F6A168
 P 5250 4200
 F 0 "22-01" V 5200 4200 40  0000 C CNN
@@ -1235,7 +1266,7 @@ F 3 "" H 5250 4200 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-01
+L CONN_2 22-01
 U 1 1 57F6A20A
 P 5250 5150
 F 0 "22-01" V 5200 5150 40  0000 C CNN
@@ -1246,7 +1277,7 @@ F 3 "" H 5250 5150 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-01
+L CONN_2 22-01
 U 1 1 57F6A2A3
 P 5250 6050
 F 0 "22-01" V 5200 6050 40  0000 C CNN
@@ -1299,7 +1330,7 @@ Wire Wire Line
 Wire Wire Line
 	14200 3050 14250 3050
 $Comp
-L NarwhalLib:AD623 U?
+L AD623 U?
 U 1 1 57F78729
 P 7400 5000
 F 0 "U?" H 7400 5000 60  0001 C CNN
@@ -1310,7 +1341,7 @@ F 3 "" H 7400 5000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C
+L C C
 U 1 1 57F7872F
 P 8600 4950
 F 0 "C" H 8625 5050 50  0000 L CNN
@@ -1321,7 +1352,7 @@ F 3 "" H 8600 4950 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F78735
 P 7450 4700
 F 0 "R" V 7530 4700 50  0000 C CNN
@@ -1332,7 +1363,7 @@ F 3 "" H 7450 4700 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F7873B
 P 6450 4950
 F 0 "R" V 6530 4950 50  0000 C CNN
@@ -1343,7 +1374,7 @@ F 3 "" H 6450 4950 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F78741
 P 6450 5050
 F 0 "R" V 6530 5050 50  0000 C CNN
@@ -1366,7 +1397,7 @@ Wire Wire Line
 Wire Wire Line
 	6650 4700 6650 4850
 Wire Wire Line
-	8200 4950 8250 4950
+	8200 4950 8450 4950
 Wire Wire Line
 	8250 4950 8250 4650
 Wire Wire Line
@@ -1377,11 +1408,11 @@ Wire Wire Line
 Wire Wire Line
 	8850 4950 8850 5150
 Wire Wire Line
-	8850 5150 8250 5150
+	8850 5150 8200 5150
 Wire Wire Line
 	8250 5150 8250 5300
 Wire Wire Line
-	6650 5300 8250 5300
+	6650 5300 8350 5300
 Connection ~ 8250 5150
 Wire Wire Line
 	6650 5300 6650 5150
@@ -1393,7 +1424,7 @@ Wire Wire Line
 Wire Wire Line
 	6600 5050 6650 5050
 $Comp
-L NarwhalLib:AD623 U?
+L AD623 U?
 U 1 1 57F78845
 P 7400 5900
 F 0 "U?" H 7400 5900 60  0001 C CNN
@@ -1404,7 +1435,7 @@ F 3 "" H 7400 5900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C
+L C C
 U 1 1 57F7884B
 P 8600 5850
 F 0 "C" H 8625 5950 50  0000 L CNN
@@ -1415,7 +1446,7 @@ F 3 "" H 8600 5850 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F78851
 P 7450 5600
 F 0 "R" V 7530 5600 50  0000 C CNN
@@ -1426,7 +1457,7 @@ F 3 "" H 7450 5600 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F78857
 P 6450 5850
 F 0 "R" V 6530 5850 50  0000 C CNN
@@ -1437,7 +1468,7 @@ F 3 "" H 6450 5850 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F7885D
 P 6450 5950
 F 0 "R" V 6530 5950 50  0000 C CNN
@@ -1460,7 +1491,7 @@ Wire Wire Line
 Wire Wire Line
 	6650 5600 6650 5750
 Wire Wire Line
-	8200 5850 8250 5850
+	8200 5850 8450 5850
 Wire Wire Line
 	8250 5850 8250 5550
 Wire Wire Line
@@ -1471,11 +1502,11 @@ Wire Wire Line
 Wire Wire Line
 	8850 5850 8850 6050
 Wire Wire Line
-	8850 6050 8250 6050
+	8850 6050 8200 6050
 Wire Wire Line
 	8250 6050 8250 6200
 Wire Wire Line
-	6650 6200 8250 6200
+	6650 6200 8350 6200
 Connection ~ 8250 6050
 Wire Wire Line
 	6650 6200 6650 6050
@@ -1497,15 +1528,15 @@ Quick Disconnect\nPin Out
 Wire Wire Line
 	5600 4100 6300 4100
 Wire Wire Line
-	5600 4300 5700 4300
+	5600 4300 5900 4300
 Wire Wire Line
 	5600 5050 6300 5050
 Wire Wire Line
-	5600 5250 5700 5250
+	5600 5250 5900 5250
 Wire Wire Line
 	5600 5950 6300 5950
 Wire Wire Line
-	5600 6150 5700 6150
+	5600 6150 5900 6150
 Wire Wire Line
 	9300 5950 8200 5950
 Wire Wire Line
@@ -1531,18 +1562,18 @@ GND_120VAC
 Wire Wire Line
 	9100 9750 8950 9750
 Wire Wire Line
-	9100 9350 9100 9600
+	9100 9350 9100 9750
 Wire Wire Line
 	9100 9600 9650 9600
 Wire Wire Line
 	8950 9850 9100 9850
 Wire Wire Line
-	9100 9850 9100 10000
+	9100 9850 9100 10250
 Wire Wire Line
 	9100 9350 9200 9350
 Connection ~ 9100 9600
 Wire Wire Line
-	8800 10250 9100 10250
+	8800 10250 9200 10250
 Connection ~ 9100 10000
 Wire Wire Line
 	9100 10000 9650 10000
@@ -1556,34 +1587,4 @@ Connection ~ 5700 5250
 Wire Wire Line
 	5700 6150 5700 5850
 Connection ~ 5700 6150
-Wire Wire Line
-	8250 4000 8450 4000
-Wire Wire Line
-	8250 4200 8200 4200
-Wire Wire Line
-	8250 4350 8350 4350
-Wire Wire Line
-	8250 4950 8450 4950
-Wire Wire Line
-	8250 5150 8200 5150
-Wire Wire Line
-	8250 5300 8350 5300
-Wire Wire Line
-	8250 5850 8450 5850
-Wire Wire Line
-	8250 6050 8200 6050
-Wire Wire Line
-	8250 6200 8350 6200
-Wire Wire Line
-	9100 9600 9100 9750
-Wire Wire Line
-	9100 10000 9100 10250
-Wire Wire Line
-	9100 10250 9200 10250
-Wire Wire Line
-	5700 4300 5900 4300
-Wire Wire Line
-	5700 5250 5900 5250
-Wire Wire Line
-	5700 6150 5900 6150
 $EndSCHEMATC

@@ -1,9 +1,40 @@
-EESchema Schematic File Version 4
-EELAYER 30 0
+EESchema Schematic File Version 2
+LIBS:Project_Narwhal_Electrical-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:valves
+LIBS:NarwhalLib
+LIBS:Project_Narwhal_Electrical-cache
+EELAYER 25 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 4
+Sheet 4 4
 Title "RTD Wheatstone Bridge Sensing Circuit"
 Date "2016-11-05"
 Rev "4"
@@ -14,13 +45,13 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-23-2031
+L CONN_3 22-23-2031
 U 1 1 55E5D538
 P 1700 2900
 AR Path="/55E57BF5/55E5D538" Ref="22-23-2031"  Part="1" 
 AR Path="/55E5C9A3/55E5D538" Ref="K?"  Part="1" 
 AR Path="/55E62603/55E5D538" Ref="K"  Part="1" 
-F 0 "22-23-2031" V 1650 2900 50  0000 C CNN
+F 0 "K" V 1650 2900 50  0000 C CNN
 F 1 "CONN_3" V 1750 2900 40  0000 C CNN
 F 2 "" H 1700 2900 60  0000 C CNN
 F 3 "" H 1700 2900 60  0000 C CNN
@@ -28,13 +59,13 @@ F 3 "" H 1700 2900 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-23-2031
+L CONN_3 22-23-2031
 U 1 1 55E5D545
 P 1700 4050
 AR Path="/55E57BF5/55E5D545" Ref="22-23-2031"  Part="1" 
 AR Path="/55E5C9A3/55E5D545" Ref="K?"  Part="1" 
 AR Path="/55E62603/55E5D545" Ref="K"  Part="1" 
-F 0 "22-23-2031" V 1650 4050 50  0000 C CNN
+F 0 "K" V 1650 4050 50  0000 C CNN
 F 1 "CONN_3" V 1750 4050 40  0000 C CNN
 F 2 "" H 1700 4050 60  0000 C CNN
 F 3 "" H 1700 4050 60  0000 C CNN
@@ -42,13 +73,13 @@ F 3 "" H 1700 4050 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-23-2031
+L CONN_3 22-23-2031
 U 1 1 55E5D54B
 P 1700 5150
 AR Path="/55E57BF5/55E5D54B" Ref="22-23-2031"  Part="1" 
 AR Path="/55E5C9A3/55E5D54B" Ref="K?"  Part="1" 
 AR Path="/55E62603/55E5D54B" Ref="K"  Part="1" 
-F 0 "22-23-2031" V 1650 5150 50  0000 C CNN
+F 0 "K" V 1650 5150 50  0000 C CNN
 F 1 "CONN_3" V 1750 5150 40  0000 C CNN
 F 2 "" H 1700 5150 60  0000 C CNN
 F 3 "" H 1700 5150 60  0000 C CNN
@@ -56,7 +87,7 @@ F 3 "" H 1700 5150 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D562
 P 3800 3000
 AR Path="/55E57BF5/55E5D562" Ref="R"  Part="1" 
@@ -71,7 +102,7 @@ F 3 "~" H 3800 3000 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D56F
 P 4400 3000
 AR Path="/55E57BF5/55E5D56F" Ref="R"  Part="1" 
@@ -86,7 +117,7 @@ F 3 "~" H 4400 3000 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D575
 P 3800 2800
 AR Path="/55E57BF5/55E5D575" Ref="R"  Part="1" 
@@ -101,7 +132,7 @@ F 3 "~" H 3800 2800 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D5A4
 P 3800 4150
 AR Path="/55E57BF5/55E5D5A4" Ref="R"  Part="1" 
@@ -116,7 +147,7 @@ F 3 "~" H 3800 4150 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D5AA
 P 4400 4150
 AR Path="/55E57BF5/55E5D5AA" Ref="R"  Part="1" 
@@ -131,7 +162,7 @@ F 3 "~" H 4400 4150 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D5B0
 P 3800 3950
 AR Path="/55E57BF5/55E5D5B0" Ref="R"  Part="1" 
@@ -146,7 +177,7 @@ F 3 "~" H 3800 3950 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D5B9
 P 3800 5250
 AR Path="/55E57BF5/55E5D5B9" Ref="R"  Part="1" 
@@ -161,7 +192,7 @@ F 3 "~" H 3800 5250 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D5BF
 P 4400 5250
 AR Path="/55E57BF5/55E5D5BF" Ref="R"  Part="1" 
@@ -176,13 +207,13 @@ F 3 "~" H 4400 5250 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 22-23-2031
+L CONN_3 22-23-2031
 U 1 1 55E5D6DF
 P 1700 6200
 AR Path="/55E57BF5/55E5D6DF" Ref="22-23-2031"  Part="1" 
 AR Path="/55E5C9A3/55E5D6DF" Ref="K?"  Part="1" 
 AR Path="/55E62603/55E5D6DF" Ref="K"  Part="1" 
-F 0 "22-23-2031" V 1650 6200 50  0000 C CNN
+F 0 "K" V 1650 6200 50  0000 C CNN
 F 1 "CONN_3" V 1750 6200 40  0000 C CNN
 F 2 "" H 1700 6200 60  0000 C CNN
 F 3 "" H 1700 6200 60  0000 C CNN
@@ -190,7 +221,7 @@ F 3 "" H 1700 6200 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D6E5
 P 3800 6300
 AR Path="/55E57BF5/55E5D6E5" Ref="R"  Part="1" 
@@ -205,7 +236,7 @@ F 3 "~" H 3800 6300 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D6EB
 P 4400 6300
 AR Path="/55E57BF5/55E5D6EB" Ref="R"  Part="1" 
@@ -220,7 +251,7 @@ F 3 "~" H 4400 6300 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L NarwhalLib:AD623 U?
+L AD623 U?
 U 1 1 55E5D9AD
 P 6450 2650
 AR Path="/55E57BF5/55E5D9AD" Ref="U?"  Part="1" 
@@ -234,7 +265,7 @@ F 3 "" H 6450 2650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5DAAC
 P 6450 2350
 AR Path="/55E57BF5/55E5DAAC" Ref="R"  Part="1" 
@@ -249,7 +280,7 @@ F 3 "~" H 6450 2350 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L NarwhalLib:AD623 U?
+L AD623 U?
 U 1 1 55E5DBED
 P 6450 3800
 AR Path="/55E57BF5/55E5DBED" Ref="U?"  Part="1" 
@@ -263,7 +294,7 @@ F 3 "" H 6450 3800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5DBF5
 P 6450 3500
 AR Path="/55E57BF5/55E5DBF5" Ref="R"  Part="1" 
@@ -278,7 +309,7 @@ F 3 "~" H 6450 3500 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L NarwhalLib:AD623 U?
+L AD623 U?
 U 1 1 55E5DC01
 P 6450 4900
 AR Path="/55E57BF5/55E5DC01" Ref="U?"  Part="1" 
@@ -292,7 +323,7 @@ F 3 "" H 6450 4900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5DC09
 P 6450 4600
 AR Path="/55E57BF5/55E5DC09" Ref="R"  Part="1" 
@@ -307,7 +338,7 @@ F 3 "~" H 6450 4600 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L NarwhalLib:AD623 U?
+L AD623 U?
 U 1 1 55E5DC15
 P 6450 5950
 AR Path="/55E57BF5/55E5DC15" Ref="U?"  Part="1" 
@@ -321,7 +352,7 @@ F 3 "" H 6450 5950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5DC1D
 P 6450 5650
 AR Path="/55E57BF5/55E5DC1D" Ref="R"  Part="1" 
@@ -336,7 +367,7 @@ F 3 "~" H 6450 5650 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L NarwhalLib:4.9V_REGULATOR U?
+L 4.9V_REGULATOR U?
 U 1 1 55E5E83D
 P 6600 1400
 AR Path="/55E57BF5/55E5E83D" Ref="U?"  Part="1" 
@@ -384,12 +415,12 @@ RTD_2_Vout
 Text Label 8900 3800 0    39   ~ 0
 RTD_3_Vout
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_7 22-23-2071
+L CONN_7 22-23-2071
 U 1 1 561AA936
 P 9750 3500
 AR Path="/55E57BF5/561AA936" Ref="22-23-2071"  Part="1" 
 AR Path="/55E62603/561AA936" Ref="P"  Part="1" 
-F 0 "22-23-2071" V 9720 3500 60  0000 C CNN
+F 0 "P" V 9720 3500 60  0000 C CNN
 F 1 "CONN_7" V 9820 3500 60  0000 C CNN
 F 2 "" H 9750 3500 60  0000 C CNN
 F 3 "" H 9750 3500 60  0000 C CNN
@@ -399,7 +430,7 @@ $EndComp
 Text Label 8900 3300 0    39   ~ 0
 GND_12V
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 561AB7E5
 P 2950 3000
 AR Path="/55E57BF5/561AB7E5" Ref="R"  Part="1" 
@@ -413,7 +444,7 @@ F 3 "~" H 2950 3000 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 561AB7EB
 P 2950 4150
 AR Path="/55E57BF5/561AB7EB" Ref="R"  Part="1" 
@@ -427,7 +458,7 @@ F 3 "~" H 2950 4150 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 561AB7F1
 P 2950 5250
 AR Path="/55E57BF5/561AB7F1" Ref="R"  Part="1" 
@@ -441,7 +472,7 @@ F 3 "~" H 2950 5250 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 561AB7F7
 P 2950 6300
 AR Path="/55E62603/561AB7F7" Ref="R"  Part="1" 
@@ -457,7 +488,7 @@ $EndComp
 Text Label 8900 3200 0    39   ~ 0
 +12V
 $Comp
-L Project_Narwhal_Electrical-rescue:C-RESCUE-Project_Narwhal_Electrical C
+L C-RESCUE-Project_Narwhal_Electrical C
 U 1 1 56403D01
 P 7950 2600
 AR Path="/55E57BF5/56403D01" Ref="C"  Part="1" 
@@ -471,7 +502,7 @@ F 3 "~" H 7950 2600 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:C-RESCUE-Project_Narwhal_Electrical C
+L C-RESCUE-Project_Narwhal_Electrical C
 U 1 1 56403F9B
 P 7950 3750
 AR Path="/55E57BF5/56403F9B" Ref="C"  Part="1" 
@@ -485,7 +516,7 @@ F 3 "~" H 7950 3750 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:C-RESCUE-Project_Narwhal_Electrical C
+L C-RESCUE-Project_Narwhal_Electrical C
 U 1 1 56403FA1
 P 7900 4850
 AR Path="/55E57BF5/56403FA1" Ref="C"  Part="1" 
@@ -499,7 +530,7 @@ F 3 "~" H 7900 4850 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:C-RESCUE-Project_Narwhal_Electrical C
+L C-RESCUE-Project_Narwhal_Electrical C
 U 1 1 56403FA7
 P 7900 5900
 AR Path="/55E57BF5/56403FA7" Ref="C"  Part="1" 
@@ -512,7 +543,7 @@ F 3 "~" H 7900 5900 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:C-RESCUE-Project_Narwhal_Electrical C
+L C-RESCUE-Project_Narwhal_Electrical C
 U 1 1 57DEC465
 P 7350 1550
 AR Path="/55E57BF5/57DEC465" Ref="C"  Part="1" 
@@ -525,7 +556,7 @@ F 3 "~" H 7350 1550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 57DF551F
 P 5450 5900
 AR Path="/55E57BF5/57DF551F" Ref="R"  Part="1" 
@@ -538,7 +569,7 @@ F 3 "~" H 5450 5900 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 57DF560A
 P 5200 6000
 AR Path="/55E57BF5/57DF560A" Ref="R"  Part="1" 
@@ -583,44 +614,44 @@ Wire Wire Line
 Wire Wire Line
 	7250 4950 8400 4950
 Wire Wire Line
-	7250 4850 7650 4850
+	7250 4850 7700 4850
 Connection ~ 7650 4850
 Wire Wire Line
-	4050 6100 4800 6100
+	4050 6100 5700 6100
 Wire Wire Line
 	7250 5050 7250 5150
 Wire Wire Line
-	5700 5150 7250 5150
+	5700 5150 8150 5150
 Wire Wire Line
 	5700 5050 5700 5150
 Wire Wire Line
 	7250 6100 7250 6200
 Wire Wire Line
-	5700 6200 7250 6200
+	5700 6200 8200 6200
 Wire Wire Line
 	5700 6100 5700 6200
 Wire Wire Line
 	7250 3950 7250 4050
 Wire Wire Line
-	5700 4050 7250 4050
+	5700 4050 8200 4050
 Wire Wire Line
 	5700 3950 5700 4050
 Wire Wire Line
 	7250 2800 7250 2900
 Wire Wire Line
-	5700 2900 7250 2900
+	5700 2900 8200 2900
 Wire Wire Line
 	5700 2800 5700 2900
 Wire Wire Line
-	4050 2800 4800 2800
+	4050 2800 5700 2800
 Connection ~ 4800 2800
 Wire Wire Line
-	4050 5050 4800 5050
+	4050 5050 5700 5050
 Connection ~ 4800 5050
 Wire Wire Line
 	8500 3300 9400 3300
 Wire Wire Line
-	4800 2100 6600 2100
+	4800 2100 8500 2100
 Wire Wire Line
 	8500 2100 8500 3300
 Wire Wire Line
@@ -628,15 +659,15 @@ Wire Wire Line
 Wire Wire Line
 	8600 1300 8600 3200
 Wire Wire Line
-	7250 1300 7350 1300
+	7250 1300 8600 1300
 Wire Wire Line
 	6600 1950 6600 2100
 Connection ~ 6600 2100
 Wire Wire Line
-	3450 1300 4800 1300
+	3450 1300 5950 1300
 Connection ~ 7250 2900
 Wire Wire Line
-	4800 2100 4800 2800
+	4800 2100 4800 6300
 Connection ~ 7250 4050
 Connection ~ 7250 5150
 Connection ~ 7250 6200
@@ -678,13 +709,13 @@ Wire Wire Line
 Wire Wire Line
 	8200 3750 8150 3750
 Wire Wire Line
-	7250 3750 7650 3750
+	7250 3750 7750 3750
 Wire Wire Line
 	8200 2900 8200 2600
 Wire Wire Line
 	8200 2600 8150 2600
 Wire Wire Line
-	7250 2600 7650 2600
+	7250 2600 7750 2600
 Wire Wire Line
 	6700 2350 7250 2350
 Wire Wire Line
@@ -698,19 +729,19 @@ Wire Wire Line
 Wire Wire Line
 	7250 4600 7250 4750
 Wire Wire Line
-	7250 5900 7650 5900
+	7250 5900 7700 5900
 Wire Wire Line
 	8100 5900 8200 5900
 Wire Wire Line
 	8200 5900 8200 6200
 Wire Wire Line
-	7650 1300 7650 2600
+	7650 1300 7650 5900
 Connection ~ 7650 5900
 Connection ~ 7650 3750
 Connection ~ 7650 2600
 Connection ~ 7650 1300
 Wire Wire Line
-	3450 1300 3450 3000
+	3450 1300 3450 6300
 Wire Wire Line
 	6700 5650 7250 5650
 Wire Wire Line
@@ -724,7 +755,7 @@ Connection ~ 7350 2100
 Wire Wire Line
 	5450 6000 5700 6000
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 57DF85ED
 P 5450 4850
 AR Path="/55E57BF5/57DF85ED" Ref="R"  Part="1" 
@@ -737,7 +768,7 @@ F 3 "~" H 5450 4850 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 57DF86B6
 P 5200 4950
 AR Path="/55E57BF5/57DF86B6" Ref="R"  Part="1" 
@@ -750,7 +781,7 @@ F 3 "~" H 5200 4950 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 57DF910E
 P 5200 3850
 AR Path="/55E57BF5/57DF910E" Ref="R"  Part="1" 
@@ -763,7 +794,7 @@ F 3 "~" H 5200 3850 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 57DF919F
 P 5450 3750
 AR Path="/55E57BF5/57DF919F" Ref="R"  Part="1" 
@@ -776,7 +807,7 @@ F 3 "~" H 5450 3750 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 57DF97AD
 P 5200 2700
 AR Path="/55E57BF5/57DF97AD" Ref="R"  Part="1" 
@@ -789,7 +820,7 @@ F 3 "~" H 5200 2700 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 57DF9858
 P 5450 2600
 AR Path="/55E57BF5/57DF9858" Ref="R"  Part="1" 
@@ -824,9 +855,9 @@ White
 Wire Wire Line
 	2000 3000 2700 3000
 Wire Wire Line
-	4050 3000 4100 3000
+	4050 3000 4150 3000
 Wire Wire Line
-	3200 3000 3450 3000
+	3200 3000 3550 3000
 Connection ~ 3450 3000
 Wire Wire Line
 	4100 3000 4100 2700
@@ -863,7 +894,7 @@ Red
 Text Label 1300 6400 0    60   ~ 0
 White
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 55E5D5C5
 P 3800 5050
 AR Path="/55E57BF5/55E5D5C5" Ref="R"  Part="1" 
@@ -878,11 +909,9 @@ F 3 "~" H 3800 5050 30  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:R-RESCUE-Project_Narwhal_Electrical R
+L R-RESCUE-Project_Narwhal_Electrical R
 U 1 1 5816CB63
 P 3800 6100
-AR Path="/55E57BF5/5816CB63" Ref="R"  Part="1" 
-AR Path="/55E62603/5816CB63" Ref="R"  Part="1" 
 F 0 "R" V 3880 6100 40  0000 C CNN
 F 1 "2000" V 3807 6101 40  0000 C CNN
 F 2 "~" V 3730 6100 30  0000 C CNN
@@ -893,15 +922,15 @@ $EndComp
 Wire Wire Line
 	2050 4150 2700 4150
 Wire Wire Line
-	3200 4150 3450 4150
+	3200 4150 3550 4150
 Connection ~ 3450 4150
 Wire Wire Line
-	4050 4150 4100 4150
+	4050 4150 4150 4150
 Wire Wire Line
 	4650 4150 4800 4150
 Connection ~ 4800 4150
 Wire Wire Line
-	4050 3950 4800 3950
+	4050 3950 5700 3950
 Connection ~ 4800 3950
 Wire Wire Line
 	3550 3950 2050 3950
@@ -917,10 +946,10 @@ Connection ~ 4100 4150
 Wire Wire Line
 	2050 5250 2700 5250
 Wire Wire Line
-	3200 5250 3450 5250
+	3200 5250 3550 5250
 Connection ~ 3450 5250
 Wire Wire Line
-	4050 5250 4100 5250
+	4050 5250 4150 5250
 Wire Wire Line
 	4650 5250 4800 5250
 Connection ~ 4800 5250
@@ -938,9 +967,9 @@ Wire Wire Line
 Wire Wire Line
 	2050 6300 2700 6300
 Wire Wire Line
-	3200 6300 3450 6300
+	3200 6300 3550 6300
 Wire Wire Line
-	4050 6300 4100 6300
+	4050 6300 4150 6300
 Wire Wire Line
 	4800 6300 4650 6300
 Connection ~ 4800 6100
@@ -958,80 +987,4 @@ Wire Wire Line
 Connection ~ 4100 6300
 Wire Wire Line
 	2050 6100 3550 6100
-Wire Wire Line
-	7650 4850 7700 4850
-Wire Wire Line
-	7650 4850 7650 5900
-Wire Wire Line
-	4800 2800 5700 2800
-Wire Wire Line
-	4800 2800 4800 3000
-Wire Wire Line
-	4800 5050 5700 5050
-Wire Wire Line
-	4800 5050 4800 5250
-Wire Wire Line
-	6600 2100 7350 2100
-Wire Wire Line
-	7250 2900 8200 2900
-Wire Wire Line
-	7250 4050 8200 4050
-Wire Wire Line
-	7250 5150 8150 5150
-Wire Wire Line
-	7250 6200 8200 6200
-Wire Wire Line
-	4800 1300 5950 1300
-Wire Wire Line
-	7650 5900 7700 5900
-Wire Wire Line
-	7650 3750 7750 3750
-Wire Wire Line
-	7650 3750 7650 4850
-Wire Wire Line
-	7650 2600 7750 2600
-Wire Wire Line
-	7650 2600 7650 3750
-Wire Wire Line
-	7650 1300 8600 1300
-Wire Wire Line
-	7350 1300 7650 1300
-Wire Wire Line
-	7350 2100 8500 2100
-Wire Wire Line
-	3450 3000 3450 4150
-Wire Wire Line
-	3450 3000 3550 3000
-Wire Wire Line
-	4100 3000 4150 3000
-Wire Wire Line
-	4800 3000 4800 3950
-Wire Wire Line
-	3450 4150 3550 4150
-Wire Wire Line
-	3450 4150 3450 5250
-Wire Wire Line
-	4800 4150 4800 5050
-Wire Wire Line
-	4800 3950 5700 3950
-Wire Wire Line
-	4800 3950 4800 4150
-Wire Wire Line
-	4100 4150 4150 4150
-Wire Wire Line
-	3450 5250 3550 5250
-Wire Wire Line
-	3450 5250 3450 6300
-Wire Wire Line
-	4800 5250 4800 6100
-Wire Wire Line
-	4100 5250 4150 5250
-Wire Wire Line
-	4800 6100 5700 6100
-Wire Wire Line
-	4800 6100 4800 6300
-Wire Wire Line
-	3450 6300 3550 6300
-Wire Wire Line
-	4100 6300 4150 6300
 $EndSCHEMATC

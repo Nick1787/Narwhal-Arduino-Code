@@ -1,5 +1,36 @@
-EESchema Schematic File Version 4
-EELAYER 30 0
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:NarwhalLib
+LIBS:ACBoxWiring-cache
+EELAYER 25 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
@@ -14,7 +45,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L NarwhalLib:EA50-5V U?
+L EA50-5V U?
 U 1 1 57E07319
 P 8750 2250
 F 0 "U?" H 8750 2250 60  0001 C CNN
@@ -25,7 +56,7 @@ F 3 "" H 8750 2250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ACBoxWiring-rescue:Switch_DPST Pump
+L Switch_DPST Pump
 U 1 1 57E073AF
 P 5750 5550
 F 0 "Pump" H 6050 5600 50  0000 C CNN
@@ -36,7 +67,7 @@ F 3 "" H 5750 5550 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ACBoxWiring-rescue:Switch_DPST Pump
+L Switch_DPST Pump
 U 1 1 57E07432
 P 5750 4500
 F 0 "Pump" H 6050 4550 50  0000 C CNN
@@ -47,7 +78,7 @@ F 3 "" H 5750 4500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ACBoxWiring-rescue:SPST E-Stop
+L SPST E-Stop
 U 1 1 57E074A7
 P 2300 2150
 F 0 "E-Stop" H 2300 2250 50  0000 C CNN
@@ -58,7 +89,7 @@ F 3 "" H 2300 2150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ACBoxWiring-rescue:SPST 12V
+L SPST 12V
 U 1 1 57E0755E
 P 4300 2150
 F 0 "12V" H 4300 2250 50  0000 C CNN
@@ -69,7 +100,7 @@ F 3 "" H 4300 2150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ACBoxWiring-rescue:SPST 120V
+L SPST 120V
 U 1 1 57E075BA
 P 4300 4300
 F 0 "120V" H 4300 4400 50  0000 C CNN
@@ -80,7 +111,7 @@ F 3 "" H 4300 4300 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L NarwhalLib:Pump #1
+L Pump #1
 U 1 1 57E0769C
 P 8450 4500
 F 0 "#1" H 8450 4400 60  0001 C CNN
@@ -91,7 +122,7 @@ F 3 "" H 8450 4500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L NarwhalLib:Pump #2
+L Pump #2
 U 1 1 57E0770F
 P 8450 5550
 F 0 "#2" H 8450 5450 60  0001 C CNN
@@ -102,7 +133,7 @@ F 3 "" H 8450 5550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L NarwhalLib:Power_Supply_with_AC Switch
+L Power_Supply_with_AC Switch
 U 1 1 57E07805
 P 6650 3550
 F 0 "Switch" H 6650 3400 60  0000 C CNN
@@ -113,7 +144,7 @@ F 3 "" H 6650 3550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L NarwhalLib:Power_Supply_with_AC Linear
+L Power_Supply_with_AC Linear
 U 1 1 57E078E2
 P 6650 2250
 F 0 "Linear" H 6650 2100 60  0000 C CNN
@@ -130,7 +161,7 @@ Neutral_120VAC
 Text GLabel 1550 3000 0    60   Input ~ 0
 GND_120VAC
 $Comp
-L ACBoxWiring-rescue:SPST Master
+L SPST Master
 U 1 1 57E07B25
 P 3250 2150
 F 0 "Master" H 3250 2250 50  0000 C CNN
@@ -165,7 +196,7 @@ Text GLabel 7800 3400 2    60   Input ~ 0
 Text GLabel 7800 3700 2    60   Input ~ 0
 GND_12VSwitchMode
 $Comp
-L ACBoxWiring-rescue:VR MOV
+L VR MOV
 U 1 1 5AEA568E
 P 8300 3900
 F 0 "MOV" V 8360 3854 50  0000 C TNN
@@ -176,7 +207,7 @@ F 3 "" H 8300 3900 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L ACBoxWiring-rescue:VR MOV
+L VR MOV
 U 1 1 5AEA5794
 P 8300 4950
 F 0 "MOV" V 8360 4904 50  0000 C TNN
@@ -189,14 +220,14 @@ $EndComp
 Wire Wire Line
 	5800 2250 5550 2250
 Wire Wire Line
-	5550 2250 5550 2550
+	5550 2250 5550 3550
 Wire Wire Line
 	5550 2550 1550 2550
 Wire Wire Line
 	5550 3550 5800 3550
 Connection ~ 5550 2550
 Wire Wire Line
-	5350 2350 5350 3000
+	5350 2350 5350 3650
 Wire Wire Line
 	5350 3650 5800 3650
 Wire Wire Line
@@ -222,25 +253,25 @@ Wire Wire Line
 Wire Wire Line
 	4750 5350 5450 5350
 Wire Wire Line
-	7300 5650 7450 5650
+	7300 5650 7650 5650
 Wire Wire Line
 	7450 5650 7450 4600
 Wire Wire Line
 	7450 4600 7650 4600
 Connection ~ 7450 5650
 Wire Wire Line
-	7300 4450 7550 4450
+	7300 4450 7650 4450
 Wire Wire Line
-	7550 3900 7550 4450
+	7550 3900 7550 5500
 Wire Wire Line
 	7550 5500 7650 5500
 Connection ~ 7550 4450
 Wire Wire Line
-	7450 2200 7800 2200
+	7450 2200 8150 2200
 Wire Wire Line
 	8150 2200 8150 2050
 Wire Wire Line
-	7450 2300 7500 2300
+	7450 2300 8150 2300
 Wire Wire Line
 	8150 2300 8150 2450
 Wire Wire Line
@@ -256,7 +287,7 @@ Wire Wire Line
 	7800 1800 8150 1800
 Connection ~ 7800 2200
 Wire Wire Line
-	1550 3000 5350 3000
+	1550 3000 7500 3000
 Connection ~ 5350 3000
 Wire Wire Line
 	6050 5350 7650 5350
@@ -300,24 +331,4 @@ Text Notes 4950 5950 0    60   ~ 0
 Arduino side of switch is normally closed (NC)
 Text Notes 4950 4900 0    60   ~ 0
 Arduino side of switch is normally closed (NC)
-Wire Wire Line
-	5550 2550 5550 3550
-Wire Wire Line
-	7450 5650 7650 5650
-Wire Wire Line
-	7550 4450 7650 4450
-Wire Wire Line
-	7550 4450 7550 4950
-Wire Wire Line
-	7800 2300 8150 2300
-Wire Wire Line
-	7800 2200 8150 2200
-Wire Wire Line
-	5350 3000 5350 3650
-Wire Wire Line
-	5350 3000 7500 3000
-Wire Wire Line
-	7500 2300 7800 2300
-Wire Wire Line
-	7550 4950 7550 5500
 $EndSCHEMATC

@@ -1,5 +1,36 @@
-EESchema Schematic File Version 4
-EELAYER 30 0
+EESchema Schematic File Version 2
+LIBS:Project_Narwhal_Electrical-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:valves
+LIBS:NarwhalLib
+LIBS:Project_Narwhal_Electrical-cache
+EELAYER 25 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
@@ -14,7 +45,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-01-2045
+L CONN_4 22-01-2045
 U 1 1 55E39953
 P 8500 1950
 F 0 "22-01-2045" V 8450 1950 50  0000 C CNN
@@ -25,7 +56,7 @@ F 3 "" H 8500 1950 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-01-2045
+L CONN_4 22-01-2045
 U 1 1 55E39954
 P 8500 1250
 F 0 "22-01-2045" V 8450 1250 50  0000 C CNN
@@ -36,7 +67,7 @@ F 3 "" H 8500 1250 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-01-2045
+L CONN_4 22-01-2045
 U 1 1 55E39955
 P 8500 3350
 F 0 "22-01-2045" V 8450 3350 50  0000 C CNN
@@ -47,7 +78,7 @@ F 3 "" H 8500 3350 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-01-2045
+L CONN_4 22-01-2045
 U 1 1 55E39956
 P 8500 2650
 F 0 "22-01-2045" V 8450 2650 50  0000 C CNN
@@ -58,7 +89,7 @@ F 3 "" H 8500 2650 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_5 22-01-2055
+L CONN_5 22-01-2055
 U 1 1 55E39959
 P 2050 4200
 F 0 "22-01-2055" V 2000 4200 50  0000 C CNN
@@ -69,7 +100,7 @@ F 3 "" H 2050 4200 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_5 22-01-2055
+L CONN_5 22-01-2055
 U 1 1 55E3995A
 P 2050 4800
 F 0 "22-01-2055" V 2000 4800 50  0000 C CNN
@@ -80,7 +111,7 @@ F 3 "" H 2050 4800 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_5 22-01-2055
+L CONN_5 22-01-2055
 U 1 1 55E3995B
 P 2050 5400
 F 0 "22-01-2055" V 2000 5400 50  0000 C CNN
@@ -91,7 +122,7 @@ F 3 "" H 2050 5400 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_5 22-01-2055
+L CONN_5 22-01-2055
 U 1 1 55E3995C
 P 2050 5950
 F 0 "22-01-2055" V 2000 5950 50  0000 C CNN
@@ -102,7 +133,7 @@ F 3 "" H 2050 5950 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_5 22-23-2051
+L CONN_5 22-23-2051
 U 1 1 55E3995D
 P 1750 4200
 F 0 "22-23-2051" V 1700 4200 50  0000 C CNN
@@ -113,7 +144,7 @@ F 3 "" H 1750 4200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_5 22-23-2051
+L CONN_5 22-23-2051
 U 1 1 55E3995E
 P 1750 4800
 F 0 "22-23-2051" V 1700 4800 50  0000 C CNN
@@ -124,7 +155,7 @@ F 3 "" H 1750 4800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_5 22-23-2051
+L CONN_5 22-23-2051
 U 1 1 55E3995F
 P 1750 5400
 F 0 "22-23-2051" V 1700 5400 50  0000 C CNN
@@ -135,7 +166,7 @@ F 3 "" H 1750 5400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_5 22-23-2051
+L CONN_5 22-23-2051
 U 1 1 55E39960
 P 1750 5950
 F 0 "22-23-2051" V 1700 5950 50  0000 C CNN
@@ -202,7 +233,7 @@ ENC_SW1 (MAIN)
 Text GLabel 1350 6150 0    50   Input ~ 0
 ENC_SW2 (MAIN)
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-01-2045
+L CONN_4 22-01-2045
 U 1 1 55E39961
 P 9500 2650
 F 0 "22-01-2045" V 9450 2650 50  0000 C CNN
@@ -213,7 +244,7 @@ F 3 "" H 9500 2650 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-01-2045
+L CONN_4 22-01-2045
 U 1 1 55E39962
 P 9500 3350
 F 0 "22-01-2045" V 9450 3350 50  0000 C CNN
@@ -224,7 +255,7 @@ F 3 "" H 9500 3350 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-01-2045
+L CONN_4 22-01-2045
 U 1 1 55E39963
 P 9500 1250
 F 0 "22-01-2045" V 9450 1250 50  0000 C CNN
@@ -235,7 +266,7 @@ F 3 "" H 9500 1250 60  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-01-2045
+L CONN_4 22-01-2045
 U 1 1 55E39964
 P 9500 1950
 F 0 "22-01-2045" V 9450 1950 50  0000 C CNN
@@ -248,7 +279,7 @@ $EndComp
 Text GLabel 9700 2800 2    50   Input ~ 0
 DISP_GND (BK)
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-23-2041
+L CONN_4 22-23-2041
 U 1 1 55E39965
 P 8200 1250
 F 0 "22-23-2041" V 8150 1250 50  0000 C CNN
@@ -299,7 +330,7 @@ Pump Volt 1 (-)
 Text Notes 2950 750  0    200  ~ 0
 Front Panel Connection Board
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-23-2041
+L CONN_4 22-23-2041
 U 1 1 55E3CE70
 P 8200 1950
 F 0 "22-23-2041" V 8150 1950 50  0000 C CNN
@@ -314,7 +345,7 @@ Text GLabel 7750 2000 0    50   Input ~ 0
 Text GLabel 7750 2100 0    53   Input ~ 0
 GND_5VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-23-2041
+L CONN_4 22-23-2041
 U 1 1 55E3CE7C
 P 8200 2650
 F 0 "22-23-2041" V 8150 2650 50  0000 C CNN
@@ -329,7 +360,7 @@ Text GLabel 7750 2700 0    50   Input ~ 0
 Text GLabel 7750 2800 0    53   Input ~ 0
 GND_5VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_4 22-23-2041
+L CONN_4 22-23-2041
 U 1 1 55E3CE88
 P 8200 3350
 F 0 "22-23-2041" V 8150 3350 50  0000 C CNN
@@ -344,7 +375,7 @@ Text GLabel 7750 3400 0    50   Input ~ 0
 Text GLabel 7750 3500 0    53   Input ~ 0
 GND_5VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-01-2025
+L CONN_2 22-01-2025
 U 1 1 561AFBF3
 P 8200 5700
 F 0 "22-01-2025" V 8150 5700 40  0000 C CNN
@@ -359,7 +390,7 @@ GND_5VLinear
 Text GLabel 7750 5600 0    50   Input ~ 0
 +5VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_2 22-23-2021
+L CONN_2 22-23-2021
 U 1 1 561AFC02
 P 8500 5700
 F 0 "22-23-2021" V 8450 5700 40  0000 C CNN
@@ -374,7 +405,7 @@ Text GLabel 8950 5600 2    50   Input ~ 0
 Text GLabel 8950 5800 2    50   Input ~ 0
 GND_5VLinear
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_8X2 5103309-3
+L CONN_8X2 5103309-3
 U 1 1 561AFC12
 P 4250 4850
 F 0 "5103309-3" H 4250 5300 60  0000 C CNN
@@ -571,7 +602,7 @@ Wire Wire Line
 Text Notes 600  7600 0    60   ~ 0
 Note 1: Molex connector pin numbering convention: With female connector ears to the right, pin 1 is located at the top.\n        Pin 1 is generally set as power.
 $Comp
-L NarwhalLib:RealTimeClock U
+L RealTimeClock U
 U 1 1 57E1C5C4
 P 3450 1250
 F 0 "U" H 3450 1100 60  0000 C CNN
@@ -592,7 +623,7 @@ Connection ~ 5050 1200
 Text Notes 3950 4250 0    60   ~ 0
 Ribbon cable red\nstripe is Pin 1.
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 K
+L CONN_3 K
 U 1 1 57E314BF
 P 8200 4700
 F 0 "K" V 8150 4700 50  0000 C CNN
@@ -603,7 +634,7 @@ F 3 "" H 8200 4700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Project_Narwhal_Electrical-rescue:CONN_3 K
+L CONN_3 K
 U 1 1 57E31695
 P 8500 4700
 F 0 "K" V 8450 4700 50  0000 C CNN
@@ -622,7 +653,7 @@ Wire Wire Line
 Wire Wire Line
 	8850 4800 8950 4800
 $Comp
-L Device:R R
+L R R
 U 1 1 57F1B0D5
 P 6700 5150
 F 0 "R" V 6780 5150 50  0000 C CNN
@@ -633,7 +664,7 @@ F 3 "" H 6700 5150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R
+L R R
 U 1 1 57F1B148
 P 6900 5400
 F 0 "R" V 6980 5400 50  0000 C CNN
